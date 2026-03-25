@@ -303,7 +303,10 @@
     color: var(--accent);
     border-color: rgba(79,122,255,0.3);
   }
-  .adprev-section { margin-bottom: 18px; }
+  .adprev-section {
+    margin-bottom: 18px;
+    position: relative;
+  }
   .adprev-section-label {
     font-size: 10px;
     font-weight: 700;
@@ -385,6 +388,8 @@
     overflow: hidden;
     font-size: 13px;
     flex-shrink: 0;
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
   }
   @media (max-width: 600px) { .fb-feed { width: 100%; } }
   .fb-feed-header {
@@ -392,6 +397,17 @@
     align-items: center;
     gap: 10px;
     padding: 12px 14px;
+    position: relative;
+  }
+  .fb-header-menu {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
   }
   .fb-avatar {
     width: 36px; height: 36px;
@@ -438,6 +454,25 @@
     border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     position: relative;
   }
+
+  /* Feed engagement bar */
+  .fb-engagement-icons {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px 2px;
+    gap: 14px;
+  }
+  .fb-engagement-icons .fb-engage-icon {
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .fb-engagement-icons .fb-engage-icon:hover { color: var(--text); }
+  .fb-engagement-icons .fb-engage-icon.fb-engage-bookmark {
+    margin-left: auto;
+  }
+
   .fb-feed-cta {
     display: flex; align-items: center; justify-content: space-between;
     padding: 10px 14px; border-bottom: 1px solid var(--border);
@@ -449,21 +484,40 @@
   }
   .fb-feed-cta-desc { font-size: 11px; color: var(--text2); }
   .fb-cta-btn {
-    background: var(--surface2); border: 1px solid var(--border);
-    color: var(--text); padding: 6px 14px; border-radius: 6px;
+    background: #e4e6eb; border: none;
+    color: #1c1e21; padding: 7px 16px; border-radius: 6px;
     font-size: 12px; font-weight: 600; white-space: nowrap;
     flex-shrink: 0; margin-left: 12px;
   }
+  /* Dark theme CTA adaptation */
+  @media (prefers-color-scheme: dark) {
+    .fb-cta-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+  }
+  /* Force dark CTA since we're always dark */
+  .fb-cta-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
   .fb-reactions {
     display: flex; align-items: center; gap: 20px;
-    padding: 10px 14px; color: var(--text2); font-size: 12px; font-weight: 600;
+    padding: 6px 14px 10px; color: var(--text2); font-size: 12px; font-weight: 600;
   }
 
   /* Carousel */
+  .fb-carousel-wrap {
+    position: relative;
+  }
   .fb-carousel-track {
     display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
     border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    scroll-behavior: smooth;
   }
+  .fb-carousel-track::-webkit-scrollbar { display: none; }
   .fb-carousel-card {
     min-width: 260px; max-width: 260px; scroll-snap-align: start;
     border-right: 1px solid var(--border); flex-shrink: 0;
@@ -480,6 +534,41 @@
   .fb-carousel-card-caption {
     padding: 10px 12px; font-size: 12px; line-height: 1.4; color: var(--text);
   }
+  /* Carousel navigation arrows */
+  .carousel-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.15s;
+  }
+  .carousel-nav-arrow:hover { background: rgba(0,0,0,0.8); }
+  .carousel-nav-arrow.left { left: 8px; }
+  .carousel-nav-arrow.right { right: 8px; }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 0 4px;
+  }
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.2s;
+  }
+  .carousel-dot.active { background: var(--accent); }
 
   /* Stories mockup */
   .ig-story {
@@ -487,11 +576,12 @@
     border-radius: 14px; overflow: hidden;
     position: relative; display: flex; flex-direction: column;
     justify-content: center; align-items: center;
-    padding: 20px 16px; text-align: center;
+    padding: 24px 18px 60px; text-align: center;
     border: 1px solid var(--border);
     background: linear-gradient(180deg, #1a1a2e, #16213e);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
   }
-  .ig-story-has-img { justify-content: flex-end; padding-bottom: 60px; }
+  .ig-story-has-img { justify-content: flex-end; padding-bottom: 70px; }
   .ig-story-bg {
     position: absolute; inset: 0;
     width: 100%; height: 100%; object-fit: cover; opacity: 0.45;
@@ -501,6 +591,36 @@
     height: 2px; background: rgba(255,255,255,0.3); border-radius: 2px; z-index: 2;
   }
   .ig-story-progress-fill { width: 40%; height: 100%; background: white; border-radius: 2px; }
+  /* Story account info */
+  .ig-story-account {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 3;
+  }
+  .ig-story-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    border: 2px solid rgba(255,255,255,0.5);
+    flex-shrink: 0;
+  }
+  .ig-story-handle {
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
   .ig-story-text {
     color: white; font-size: 15px; font-weight: 700; line-height: 1.4;
     margin-bottom: 8px; text-shadow: 0 1px 6px rgba(0,0,0,0.7);
@@ -511,11 +631,50 @@
     margin-bottom: 16px; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     position: relative; z-index: 2;
   }
+  /* Swipe up chevron */
+  .ig-story-swipe-up {
+    position: absolute;
+    bottom: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255,255,255,0.7);
+    animation: swipeUpBounce 2s ease-in-out infinite;
+  }
+  @keyframes swipeUpBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-4px); }
+  }
   .ig-story-cta {
     background: white; color: #1a1a2e;
     padding: 8px 20px; border-radius: 20px;
     font-size: 12px; font-weight: 700;
-    position: absolute; bottom: 24px; z-index: 2;
+    position: absolute; bottom: 32px; z-index: 2;
+  }
+  /* Story message bar */
+  .ig-story-message-bar {
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+    right: 12px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ig-story-message-input {
+    flex: 1;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+  }
+  .ig-story-message-send {
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
   }
 
   /* Reels mockup */
@@ -526,6 +685,7 @@
     justify-content: flex-end; padding: 16px;
     border: 1px solid var(--border);
     background: linear-gradient(180deg, #0a0a0a, #1a1a1a);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
   }
   .ig-reel-video-label {
     position: absolute; top: 50%; left: 50%;
@@ -533,13 +693,250 @@
     color: rgba(255,255,255,0.3); font-size: 11px; font-weight: 600;
     text-transform: uppercase; letter-spacing: 1px;
   }
-  .ig-reel-caption { color: white; font-size: 11px; line-height: 1.4; margin-bottom: 8px; position: relative; z-index: 2; }
-  .ig-reel-handle { color: rgba(255,255,255,0.6); font-size: 10px; margin-bottom: 12px; position: relative; z-index: 2; }
+  .ig-reel-caption {
+    color: white; font-size: 11px; line-height: 1.4; margin-bottom: 4px;
+    position: relative; z-index: 2;
+    padding-right: 40px; /* space for right sidebar */
+  }
+  .ig-reel-more {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .ig-reel-handle {
+    color: white; font-size: 11px; font-weight: 600;
+    margin-bottom: 8px; position: relative; z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .ig-reel-verified {
+    display: inline-flex;
+    align-items: center;
+  }
   .ig-reel-cta {
     background: white; color: #0a0a0a;
     padding: 8px 20px; border-radius: 20px;
     font-size: 12px; font-weight: 700; text-align: center;
     width: 100%; position: relative; z-index: 2;
+  }
+  /* Reel right sidebar */
+  .ig-reel-sidebar {
+    position: absolute;
+    right: 10px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 3;
+  }
+  .ig-reel-sidebar-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: white;
+  }
+  .ig-reel-sidebar-icon svg {
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+  }
+  .ig-reel-sidebar-count {
+    font-size: 9px;
+    color: rgba(255,255,255,0.8);
+  }
+  /* Reel music ticker */
+  .ig-reel-music-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 0 2px;
+    position: relative;
+    z-index: 2;
+  }
+  .ig-reel-music-text {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1;
+  }
+  .ig-reel-music-disc {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #333, #666);
+    border: 2px solid rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    animation: spinDisc 3s linear infinite;
+  }
+  @keyframes spinDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── PIN DROP SYSTEM ─────────────────────────────────────────────── */
+  .pin-mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+    margin-bottom: 10px;
+  }
+  .pin-mode-toggle:hover { border-color: var(--accent); color: var(--text); }
+  .pin-mode-toggle.active {
+    background: rgba(79,122,255,0.15);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .pin-mode-toggle svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Pin marker */
+  .pin-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+    line-height: 1;
+  }
+  .pin-marker:hover { transform: translate(-50%, -50%) scale(1.15); }
+  .pin-marker.existing {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    opacity: 0.85;
+  }
+  .pin-marker.existing:hover { opacity: 1; }
+
+  /* New pin: slightly larger pulsing animation */
+  .pin-marker.new-pin {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    animation: pinPulse 0.3s ease-out;
+  }
+  @keyframes pinPulse {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    70% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+
+  /* Pin popup (for creating a new pin comment) */
+  .pin-popup {
+    position: absolute;
+    z-index: 20;
+    width: 220px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .pin-popup textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 60px;
+    margin-bottom: 8px;
+  }
+  .pin-popup textarea:focus { border-color: var(--accent); }
+  .pin-popup-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .pin-popup-save {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pin-popup-save:hover { opacity: 0.9; }
+  .pin-popup-cancel {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pin-popup-cancel:hover { color: var(--text); border-color: var(--text2); }
+
+  /* Pin tooltip (for viewing existing pin comment) */
+  .pin-tooltip {
+    position: absolute;
+    z-index: 20;
+    width: 200px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .pin-tooltip-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .pin-tooltip-name { font-weight: 600; color: var(--text); }
+  .pin-tooltip-close {
+    margin-left: auto;
+    cursor: pointer;
+    color: var(--text2);
+    font-size: 14px;
+    line-height: 1;
+  }
+  .pin-tooltip-close:hover { color: var(--text); }
+
+  /* Pinnable containers: cursor change in pin mode */
+  body.pin-mode-active .fb-feed,
+  body.pin-mode-active .ig-story,
+  body.pin-mode-active .ig-reel,
+  body.pin-mode-active .adprev-section {
+    cursor: crosshair;
   }
 
   /* STICKY FEEDBACK DRAWER */
@@ -834,7 +1231,8 @@
       <div class="kb-tooltip">
         <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
         <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
-        <kbd>F</kbd> Toggle feedback drawer
+        <kbd>F</kbd> Toggle feedback drawer<br>
+        <kbd>P</kbd> Toggle pin mode
       </div>
     </div>
   </div>
@@ -854,7 +1252,7 @@
 
 <!-- FOOTER -->
 <div class="site-footer">
-  Confidential &mdash; Prepared by Mileage Design for internal and client review only.
+  Confidential &mdash; Powered by Mileage Intelligence &mdash; For internal and client review only.
 </div>
 
 <!-- STICKY FEEDBACK DRAWER -->
@@ -890,12 +1288,35 @@ try {
   console.warn('Supabase not configured yet:', e.message);
 }
 
+// ── SVG Icon Library ──────────────────────────────────────────────────────
+const SVG_ICONS = {
+  heart: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  comment: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  share: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
+  bookmark: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
+  threeDots: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>`,
+  music: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  chevronUp: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`,
+  chevronLeft: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>`,
+  chevronRight: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`,
+  pin: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  verified: `<svg width="12" height="12" viewBox="0 0 24 24" fill="#4f7aff"><path d="M12 2L9.19 4.47 5.5 4.04 4.64 7.64 1.64 9.81 3.04 13.31 1.64 16.81 4.64 19 5.5 22.59 9.19 22.16 12 24.63 14.81 22.16 18.5 22.59 19.36 19 22.36 16.81 20.96 13.31 22.36 9.81 19.36 7.64 18.5 4.04 14.81 4.47 12 2z"/><path d="M9.5 12.5l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  // Smaller versions for reels sidebar
+  heartSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  commentSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  shareSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
+  musicSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+};
+
 // ── State ──────────────────────────────────────────────────────────────────
 let _data = null;
 let _currentAd = 0;
 let _drawerExpanded = false;
 let _reviewerMode = localStorage.getItem('adpreview_reviewer_mode') || 'client';
 let _draftSaveTimer = null;
+let _pinModeActive = false;
+let _activePinPopup = null; // track open popup/tooltip
+let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 const CAMPAIGN_ID = 'confluence-fp';
 
 // ── Load ad data ───────────────────────────────────────────────────────────
@@ -999,6 +1420,7 @@ function selectTab(idx) {
   document.querySelectorAll('.adprev-tab').forEach((t, i) => {
     t.classList.toggle('active', i === idx);
   });
+  closeActivePinPopup();
   renderAd(idx);
   renderDrawer();
 }
@@ -1025,6 +1447,15 @@ function renderAd(idx) {
 
   const pageName = _pageName(_data);
   let html = '';
+
+  // Pin mode toggle
+  html += `<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+    <button class="pin-mode-toggle${_pinModeActive ? ' active' : ''}" id="pin-mode-btn" onclick="togglePinMode()">
+      ${SVG_ICONS.pin}
+      <span>${_pinModeActive ? 'Pin Mode ON' : 'Pin Mode'}</span>
+    </button>
+    ${_pinModeActive ? '<span style="font-size:11px;color:var(--text2)">Click on mockups or copy sections to drop a pin</span>' : ''}
+  </div>`;
 
   // Title bar
   html += `<div style="margin-bottom:20px">
@@ -1057,18 +1488,18 @@ function renderAd(idx) {
   html += `<div class="adprev-copy-panel">`;
 
   if (ad.primary_text) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-primary-text">
       <div class="adprev-section-label">Primary Text</div>
       <div class="adprev-section-body">${esc(ad.primary_text)}</div>
     </div>`;
   }
   if (ad.hook) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-hook">
       <div class="adprev-section-label">Hook Line</div>
       <div class="adprev-section-body" style="font-style:italic">${esc(ad.hook)}</div>
     </div>`;
   }
-  html += `<div class="adprev-section">
+  html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
     <div class="adprev-section-label">Headline / Description / CTA</div>
     <div class="adprev-section-body">
       <strong>${esc(ad.headline)}</strong><br>
@@ -1078,7 +1509,7 @@ function renderAd(idx) {
   </div>`;
 
   if (ad.alt_headlines && ad.alt_headlines.length) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-alt-headlines">
       <div class="adprev-section-label">Alt Headlines</div>
       <ul class="adprev-alt-list">
         ${ad.alt_headlines.map(h => `<li>${esc(h)}</li>`).join('')}
@@ -1086,7 +1517,7 @@ function renderAd(idx) {
     </div>`;
   }
   if (ad.cards && ad.cards.length) {
-    html += `<div class="adprev-section"><div class="adprev-section-label">Card Captions</div>`;
+    html += `<div class="adprev-section" data-pin-target="copy-cards"><div class="adprev-section-label">Card Captions</div>`;
     ad.cards.forEach(card => {
       html += `<div style="margin-bottom:8px">
         <div style="font-size:11px;font-weight:600;color:var(--text2)">Card ${card.num}: ${esc(card.label)}</div>
@@ -1096,7 +1527,7 @@ function renderAd(idx) {
     html += `</div>`;
   }
   if (ad.stories) {
-    html += `<div class="adprev-section"><div class="adprev-section-label">Stories Copy</div>
+    html += `<div class="adprev-section" data-pin-target="copy-stories"><div class="adprev-section-label">Stories Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.stories)) {
       html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
@@ -1104,7 +1535,7 @@ function renderAd(idx) {
     html += `</div></div>`;
   }
   if (ad.reels) {
-    html += `<div class="adprev-section"><div class="adprev-section-label">Reels Copy</div>
+    html += `<div class="adprev-section" data-pin-target="copy-reels"><div class="adprev-section-label">Reels Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.reels)) {
       html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
@@ -1145,6 +1576,13 @@ function renderAd(idx) {
   html += `</div>`; // close detail grid
 
   container.innerHTML = html;
+
+  // After rendering, attach pin click handlers and load existing pins
+  attachPinClickHandlers(ad.num);
+  loadAndRenderPins(ad.num);
+
+  // Initialize carousel navigation if present
+  initCarouselNav();
 }
 
 // ── Mockup renderers ───────────────────────────────────────────────────────
@@ -1191,16 +1629,24 @@ function renderFeedMockup(ad) {
     mediaHtml = `<div class="fb-image-placeholder">IMAGE &middot; ${esc(ad.format || '1080x1080')}</div>`;
   }
 
-  return `<div class="fb-feed">
+  return `<div class="fb-feed" data-pin-target="mockup-feed">
     <div class="fb-feed-header">
       <div class="fb-avatar">${initials}</div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
-        <div class="fb-sponsored">Sponsored</div>
+        <div class="fb-sponsored">Sponsored &middot; 2h</div>
       </div>
+      <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
     </div>
     <div class="fb-feed-text" style="white-space:pre-wrap">${esc(ad.primary_text)}</div>
     ${mediaHtml}
+    <div class="fb-engagement-icons">
+      <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.comment}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.share}</span>
+      <span class="fb-engage-icon fb-engage-bookmark">${SVG_ICONS.bookmark}</span>
+    </div>
+    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
     <div class="fb-feed-cta">
       <div class="fb-feed-cta-text">
         <div class="fb-feed-cta-headline">${esc(ad.headline)}</div>
@@ -1208,13 +1654,13 @@ function renderFeedMockup(ad) {
       </div>
       <div class="fb-cta-btn">${esc(ad.cta)}</div>
     </div>
-    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
   </div>`;
 }
 
 function renderCarouselMockup(ad) {
   const initials = _clientInitials();
   const pageName = _pageName(_data);
+  const cardCount = (ad.cards && ad.cards.length) || 0;
   let cardsHtml = '';
   if (ad.cards && ad.cards.length) {
     ad.cards.forEach(card => {
@@ -1226,16 +1672,40 @@ function renderCarouselMockup(ad) {
         <div class="fb-carousel-card-caption">${esc(card.caption)}</div></div>`;
     });
   }
-  return `<div class="fb-feed">
+
+  // Carousel dots
+  let dotsHtml = '';
+  if (cardCount > 1) {
+    dotsHtml = `<div class="carousel-dots" data-carousel-dots>`;
+    for (let i = 0; i < cardCount; i++) {
+      dotsHtml += `<div class="carousel-dot${i === 0 ? ' active' : ''}"></div>`;
+    }
+    dotsHtml += `</div>`;
+  }
+
+  return `<div class="fb-feed" data-pin-target="mockup-carousel">
     <div class="fb-feed-header">
       <div class="fb-avatar">${initials}</div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
-        <div class="fb-sponsored">Sponsored</div>
+        <div class="fb-sponsored">Sponsored &middot; 2h</div>
       </div>
+      <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
     </div>
     <div class="fb-feed-text" style="white-space:pre-wrap">${esc(ad.primary_text)}</div>
-    <div class="fb-carousel-track">${cardsHtml}</div>
+    <div class="fb-carousel-wrap">
+      ${cardCount > 1 ? `<button class="carousel-nav-arrow left" onclick="scrollCarousel(this, -1)" aria-label="Previous card">${SVG_ICONS.chevronLeft}</button>` : ''}
+      <div class="fb-carousel-track" data-carousel-track>${cardsHtml}</div>
+      ${cardCount > 1 ? `<button class="carousel-nav-arrow right" onclick="scrollCarousel(this, 1)" aria-label="Next card">${SVG_ICONS.chevronRight}</button>` : ''}
+    </div>
+    ${dotsHtml}
+    <div class="fb-engagement-icons">
+      <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.comment}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.share}</span>
+      <span class="fb-engage-icon fb-engage-bookmark">${SVG_ICONS.bookmark}</span>
+    </div>
+    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
     <div class="fb-feed-cta">
       <div class="fb-feed-cta-text">
         <div class="fb-feed-cta-headline">${esc(ad.headline)}</div>
@@ -1243,7 +1713,6 @@ function renderCarouselMockup(ad) {
       </div>
       <div class="fb-cta-btn">${esc(ad.cta)}</div>
     </div>
-    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
   </div>`;
 }
 
@@ -1254,12 +1723,24 @@ function renderStoryMockup(ad) {
   const cta = s.cta_sticker || ad.cta || 'Learn More';
   const bgImg = _findStoryImage(ad);
   const hasImg = !!bgImg;
-  return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}">
+  const initials = _clientInitials();
+  const handle = _data.client || '';
+
+  return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-pin-target="mockup-story">
     ${hasImg ? `<img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">` : ''}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
+    <div class="ig-story-account">
+      <div class="ig-story-avatar">${initials}</div>
+      <div class="ig-story-handle">@${esc(handle)}</div>
+    </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
+    <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
     <div class="ig-story-cta">${esc(cta)}</div>
+    <div class="ig-story-message-bar">
+      <div class="ig-story-message-input">Send message</div>
+      <div class="ig-story-message-send">${SVG_ICONS.share}</div>
+    </div>
   </div>`;
 }
 
@@ -1267,13 +1748,309 @@ function renderReelMockup(ad) {
   const r = ad.reels || {};
   const caption = r.caption || ad.primary_text || '';
   const cta = ad.cta || 'Learn More';
-  const truncCaption = caption.length > 120 ? caption.slice(0, 120) + '...' : caption;
-  return `<div class="ig-reel">
+  const handle = _data.client || '';
+  const maxLen = 100;
+  const truncCaption = caption.length > maxLen ? caption.slice(0, maxLen) : caption;
+  const showMore = caption.length > maxLen;
+
+  return `<div class="ig-reel" data-pin-target="mockup-reel">
     <div class="fb-play-btn" style="top:40%"></div>
-    <div class="ig-reel-caption">${esc(truncCaption)}</div>
-    <div class="ig-reel-handle">@${esc(_data.client || '')}</div>
+    <div class="ig-reel-sidebar">
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.heartSm}<span class="ig-reel-sidebar-count">1.2K</span></div>
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.commentSm}<span class="ig-reel-sidebar-count">48</span></div>
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.shareSm}<span class="ig-reel-sidebar-count">Share</span></div>
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.musicSm}</div>
+    </div>
+    <div class="ig-reel-handle">@${esc(handle)} ${SVG_ICONS.verified}</div>
+    <div class="ig-reel-caption">${esc(truncCaption)}${showMore ? ` <span class="ig-reel-more">... more</span>` : ''}</div>
+    <div class="ig-reel-music-bar">
+      ${SVG_ICONS.music}
+      <span class="ig-reel-music-text">&#9835; Original audio - ${esc(handle)}</span>
+      <div class="ig-reel-music-disc"></div>
+    </div>
     <div class="ig-reel-cta">${esc(cta)}</div>
   </div>`;
+}
+
+// ── Carousel Navigation ────────────────────────────────────────────────────
+function scrollCarousel(btn, direction) {
+  // Prevent pin drop when clicking carousel arrows
+  event.stopPropagation();
+  const wrap = btn.closest('.fb-carousel-wrap');
+  const track = wrap.querySelector('[data-carousel-track]');
+  if (!track) return;
+  const cardWidth = 260;
+  track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+
+function initCarouselNav() {
+  const tracks = document.querySelectorAll('[data-carousel-track]');
+  tracks.forEach(track => {
+    track.addEventListener('scroll', () => {
+      const dotsContainer = track.closest('.fb-feed').querySelector('[data-carousel-dots]');
+      if (!dotsContainer) return;
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      const cardWidth = 260;
+      const activeIdx = Math.round(track.scrollLeft / cardWidth);
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
+    });
+  });
+}
+
+// ── PIN DROP SYSTEM ────────────────────────────────────────────────────────
+function togglePinMode() {
+  _pinModeActive = !_pinModeActive;
+  document.body.classList.toggle('pin-mode-active', _pinModeActive);
+  const btn = document.getElementById('pin-mode-btn');
+  if (btn) {
+    btn.classList.toggle('active', _pinModeActive);
+    btn.querySelector('span').textContent = _pinModeActive ? 'Pin Mode ON' : 'Pin Mode';
+  }
+  closeActivePinPopup();
+}
+
+function closeActivePinPopup() {
+  if (_activePinPopup) {
+    _activePinPopup.remove();
+    _activePinPopup = null;
+  }
+}
+
+function attachPinClickHandlers(adNum) {
+  // Pinnable targets: mockup containers + copy sections
+  const targets = document.querySelectorAll('[data-pin-target]');
+  targets.forEach(target => {
+    target.addEventListener('click', function(e) {
+      if (!_pinModeActive) return;
+
+      // Do not create pins when clicking on existing pins, popups, or interactive elements
+      if (e.target.closest('.pin-marker') || e.target.closest('.pin-popup') ||
+          e.target.closest('.pin-tooltip') || e.target.closest('.carousel-nav-arrow') ||
+          e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu')) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+      closeActivePinPopup();
+
+      const rect = target.getBoundingClientRect();
+      const pinX = ((e.clientX - rect.left) / rect.width * 100);
+      const pinY = ((e.clientY - rect.top) / rect.height * 100);
+      const targetSelector = target.getAttribute('data-pin-target');
+      const targetType = targetSelector.startsWith('mockup-') ? 'mockup' : 'copy';
+
+      // Determine next pin number
+      const existingPins = _pinsCache[adNum] || [];
+      const pinNumber = existingPins.length + 1;
+
+      // Create the pin marker
+      const marker = document.createElement('div');
+      marker.className = 'pin-marker new-pin';
+      marker.style.left = pinX + '%';
+      marker.style.top = pinY + '%';
+      marker.textContent = pinNumber;
+      target.appendChild(marker);
+
+      // Create the popup
+      showPinCreationPopup(target, marker, pinX, pinY, pinNumber, adNum, targetType, targetSelector);
+    });
+  });
+}
+
+function showPinCreationPopup(container, marker, pinX, pinY, pinNumber, adNum, targetType, targetSelector) {
+  const popup = document.createElement('div');
+  popup.className = 'pin-popup';
+
+  // Position popup adjacent to pin. Offset so it doesn't cover the pin.
+  let popupLeft = pinX;
+  let popupTop = pinY;
+  // If pin is on the right half, put popup to the left
+  if (pinX > 60) {
+    popup.style.right = (100 - pinX + 2) + '%';
+  } else {
+    popup.style.left = (pinX + 2) + '%';
+  }
+  popup.style.top = pinY + '%';
+
+  const savedName = localStorage.getItem('adpreview_name') || '';
+
+  popup.innerHTML = `
+    <div style="font-size:11px;font-weight:600;color:var(--accent);margin-bottom:6px">Pin #${pinNumber}</div>
+    <textarea placeholder="Leave your comment here..." autofocus></textarea>
+    <div class="pin-popup-actions">
+      <button class="pin-popup-cancel" data-pin-cancel>Cancel</button>
+      <button class="pin-popup-save" data-pin-save>Save</button>
+    </div>
+  `;
+
+  container.appendChild(popup);
+  _activePinPopup = popup;
+
+  // Focus the textarea
+  const textarea = popup.querySelector('textarea');
+  setTimeout(() => textarea.focus(), 50);
+
+  // Cancel
+  popup.querySelector('[data-pin-cancel]').addEventListener('click', function(e) {
+    e.stopPropagation();
+    marker.remove();
+    popup.remove();
+    _activePinPopup = null;
+  });
+
+  // Save
+  popup.querySelector('[data-pin-save]').addEventListener('click', function(e) {
+    e.stopPropagation();
+    const comment = textarea.value.trim();
+    if (!comment) {
+      textarea.style.borderColor = 'var(--danger)';
+      return;
+    }
+
+    const reviewerName = localStorage.getItem('adpreview_name') || 'Anonymous';
+
+    const pinData = {
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      pin_x: pinX,
+      pin_y: pinY,
+      target_type: targetType,
+      target_selector: targetSelector,
+      reviewer_name: reviewerName,
+      comment: comment,
+      created_at: new Date().toISOString(),
+      pin_number: pinNumber,
+    };
+
+    // Save pin
+    savePinData(pinData);
+
+    // Update cache
+    if (!_pinsCache[adNum]) _pinsCache[adNum] = [];
+    _pinsCache[adNum].push(pinData);
+
+    // Convert marker to existing style
+    marker.className = 'pin-marker existing';
+    marker.addEventListener('click', function(ev) {
+      ev.stopPropagation();
+      showPinTooltip(container, marker, pinData);
+    });
+
+    popup.remove();
+    _activePinPopup = null;
+  });
+}
+
+function showPinTooltip(container, marker, pinData) {
+  closeActivePinPopup();
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'pin-tooltip';
+
+  const pinX = parseFloat(marker.style.left);
+  if (pinX > 60) {
+    tooltip.style.right = (100 - pinX + 2) + '%';
+  } else {
+    tooltip.style.left = (pinX + 2) + '%';
+  }
+  tooltip.style.top = marker.style.top;
+
+  tooltip.innerHTML = `
+    <div class="pin-tooltip-header">
+      <span class="pin-tooltip-name">${esc(pinData.reviewer_name)}</span>
+      <span>${new Date(pinData.created_at).toLocaleString()}</span>
+      <span class="pin-tooltip-close" data-tooltip-close>&times;</span>
+    </div>
+    <div>${esc(pinData.comment)}</div>
+  `;
+
+  container.appendChild(tooltip);
+  _activePinPopup = tooltip;
+
+  tooltip.querySelector('[data-tooltip-close]').addEventListener('click', function(e) {
+    e.stopPropagation();
+    tooltip.remove();
+    _activePinPopup = null;
+  });
+}
+
+async function savePinData(pinData) {
+  // Save to localStorage as fallback (always)
+  const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${pinData.ad_num}`;
+  let localPins = [];
+  try { localPins = JSON.parse(localStorage.getItem(lsKey)) || []; } catch(e) {}
+  localPins.push(pinData);
+  localStorage.setItem(lsKey, JSON.stringify(localPins));
+
+  // Try Supabase
+  if (sb) {
+    try {
+      const { error } = await sb.from('pins').insert({
+        campaign_id: pinData.campaign_id,
+        ad_num: pinData.ad_num,
+        pin_x: pinData.pin_x,
+        pin_y: pinData.pin_y,
+        target_type: pinData.target_type,
+        target_selector: pinData.target_selector,
+        reviewer_name: pinData.reviewer_name,
+        comment: pinData.comment,
+      });
+      if (error) console.warn('Supabase pin save failed:', error.message);
+    } catch(e) {
+      console.warn('Supabase pin save failed:', e.message);
+    }
+  }
+}
+
+async function loadAndRenderPins(adNum) {
+  let pins = [];
+
+  // Try Supabase first
+  if (sb) {
+    try {
+      const { data, error } = await sb.from('pins').select('*')
+        .eq('campaign_id', CAMPAIGN_ID)
+        .eq('ad_num', adNum)
+        .order('created_at');
+      if (!error && data && data.length) {
+        pins = data.map((p, i) => ({
+          ...p,
+          pin_number: i + 1,
+        }));
+      }
+    } catch(e) {
+      console.warn('Supabase pin load failed:', e.message);
+    }
+  }
+
+  // Fallback to localStorage if no Supabase pins
+  if (pins.length === 0) {
+    const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+    try {
+      const localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+      pins = localPins.map((p, i) => ({ ...p, pin_number: i + 1 }));
+    } catch(e) {}
+  }
+
+  // Cache
+  _pinsCache[adNum] = pins;
+
+  // Render each pin
+  pins.forEach(pin => {
+    const container = document.querySelector(`[data-pin-target="${pin.target_selector}"]`);
+    if (!container) return;
+
+    const marker = document.createElement('div');
+    marker.className = 'pin-marker existing';
+    marker.style.left = pin.pin_x + '%';
+    marker.style.top = pin.pin_y + '%';
+    marker.textContent = pin.pin_number;
+    container.appendChild(marker);
+
+    marker.addEventListener('click', function(ev) {
+      ev.stopPropagation();
+      showPinTooltip(container, marker, pin);
+    });
+  });
 }
 
 // ── Feedback Drawer ────────────────────────────────────────────────────────
@@ -1572,6 +2349,23 @@ document.addEventListener('keydown', function(e) {
   } else if (e.key === 'f' || e.key === 'F') {
     e.preventDefault();
     toggleDrawer();
+  } else if (e.key === 'p' || e.key === 'P') {
+    e.preventDefault();
+    togglePinMode();
+    // Re-render to update button state
+    const btn = document.getElementById('pin-mode-btn');
+    if (btn) {
+      btn.classList.toggle('active', _pinModeActive);
+      btn.querySelector('span').textContent = _pinModeActive ? 'Pin Mode ON' : 'Pin Mode';
+    }
+  }
+});
+
+// Close pin popups/tooltips when clicking outside
+document.addEventListener('click', function(e) {
+  if (_activePinPopup && !e.target.closest('.pin-popup') &&
+      !e.target.closest('.pin-tooltip') && !e.target.closest('.pin-marker')) {
+    closeActivePinPopup();
   }
 });
 

@@ -250,19 +250,68 @@
   }
   .adprev-tab.active .tab-week { color: var(--accent); opacity: 0.7; }
 
-  /* Tab status dot */
-  .tab-status-dot {
+  /* Tab notification badge */
+  .tab-badge {
     position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: none;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0 5px;
   }
-  .tab-status-dot.approved { background: var(--green); display: block; }
-  .tab-status-dot.changes { background: var(--orange); display: block; }
-  .tab-status-dot.commented { background: var(--accent); display: block; }
+  .tab-badge.not-started {
+    width: 18px;
+    padding: 0;
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    color: var(--text2);
+    font-size: 14px;
+  }
+  .tab-badge.has-count {
+    background: var(--danger);
+    color: #fff;
+    border: 1.5px solid var(--bg);
+  }
+  .tab-badge.all-done {
+    width: 18px;
+    padding: 0;
+    background: var(--green);
+    color: #fff;
+    font-size: 11px;
+    border: 1.5px solid var(--bg);
+  }
+
+  /* Mark complete toggle */
+  .mark-complete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .mark-complete-btn:hover {
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .mark-complete-btn.resolved {
+    background: rgba(34,197,94,0.15);
+    border-color: var(--green);
+    color: var(--green);
+  }
 
   /* Two-column layout */
   .adprev-detail {
@@ -1708,6 +1757,100 @@ let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 const CAMPAIGN_ID = '__CAMPAIGN_ID__';
+
+// ── Resolved comment tracking ─────────────────────────────────────────────
+function getResolvedSet() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(`adpreview_resolved_${CAMPAIGN_ID}`)) || []);
+  } catch(e) { return new Set(); }
+}
+function saveResolvedSet(s) {
+  localStorage.setItem(`adpreview_resolved_${CAMPAIGN_ID}`, JSON.stringify([...s]));
+}
+function toggleResolved(itemId) {
+  const s = getResolvedSet();
+  if (s.has(itemId)) s.delete(itemId); else s.add(itemId);
+  saveResolvedSet(s);
+  updateTabBadges();
+}
+function isResolved(itemId) {
+  return getResolvedSet().has(itemId);
+}
+
+async function updateTabBadges() {
+  if (!_data || !_data.ads) return;
+
+  const resolved = getResolvedSet();
+
+  for (let i = 0; i < _data.ads.length; i++) {
+    const ad = _data.ads[i];
+    const adNum = ad.num;
+    const tab = document.getElementById(`tab-${i}`);
+    if (!tab) continue;
+
+    // Remove existing badge
+    const oldBadge = tab.querySelector('.tab-badge');
+    if (oldBadge) oldBadge.remove();
+
+    let totalItems = 0;
+    let resolvedCount = 0;
+
+    // Count feedback from Supabase
+    if (sb) {
+      try {
+        const { data: fbData, error: fbErr } = await sb.from('feedback').select('id')
+          .eq('campaign_id', CAMPAIGN_ID)
+          .eq('ad_num', adNum);
+        if (!fbErr && fbData) {
+          totalItems += fbData.length;
+          fbData.forEach(f => { if (resolved.has('fb-' + f.id)) resolvedCount++; });
+        }
+      } catch(e) {}
+
+      try {
+        const { data: pinData, error: pinErr } = await sb.from('pins').select('id')
+          .eq('campaign_id', CAMPAIGN_ID)
+          .eq('ad_num', adNum);
+        if (!pinErr && pinData) {
+          totalItems += pinData.length;
+          pinData.forEach(p => { if (resolved.has('pin-' + p.id)) resolvedCount++; });
+        }
+      } catch(e) {}
+    }
+
+    // Also check localStorage pins if no Supabase pins found
+    if (totalItems === 0) {
+      const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+      try {
+        const localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+        totalItems += localPins.length;
+        localPins.forEach(p => {
+          const pinId = 'pin-' + (p.id || p.created_at);
+          if (resolved.has(pinId)) resolvedCount++;
+        });
+      } catch(e) {}
+    }
+
+    // Create badge
+    const badge = document.createElement('span');
+    badge.className = 'tab-badge';
+
+    if (totalItems === 0) {
+      badge.classList.add('not-started');
+      badge.innerHTML = '&#8212;';  // em dash as "nothing yet"
+    } else if (resolvedCount >= totalItems) {
+      badge.classList.add('all-done');
+      badge.innerHTML = '&#10003;';  // checkmark
+    } else {
+      badge.classList.add('has-count');
+      const unresolved = totalItems - resolvedCount;
+      badge.textContent = unresolved;
+    }
+
+    tab.appendChild(badge);
+  }
+}
+
 const SCOPE_CURSOR = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%234f7aff' stroke-width='2' opacity='0.35'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%234f7aff' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='16' y1='4' x2='16' y2='12' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='20' x2='16' y2='28' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='4' y1='16' x2='12' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='16' x2='28' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234f7aff'/%3E%3C/svg%3E") 16 16, crosshair`;
 
 // ── Load ad data ───────────────────────────────────────────────────────────
@@ -1779,31 +1922,18 @@ function renderTabs(data) {
   const weekNames = {1:'Trust', 2:'Emotion', 3:'Authority', 4:'Urgency'};
   tabsEl.innerHTML = data.ads.map((ad, i) => {
     const wk = weekNames[ad.week] || 'Wk' + ad.week;
-    const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`);
-    let dotClass = '';
-    if (verdict === 'approve') dotClass = 'approved';
-    else if (verdict === 'request_changes') dotClass = 'changes';
-    else if (verdict === 'comment_only') dotClass = 'commented';
     return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
-      <span class="tab-status-dot ${dotClass}"></span>
       Ad ${ad.num}
       <span class="tab-week">Wk ${ad.week} &middot; ${wk}</span>
     </div>`;
   }).join('');
+  // Load badge counts async
+  updateTabBadges();
 }
 
 function updateTabDot(adNum, verdict) {
-  if (!_data || !_data.ads) return;
-  const idx = _data.ads.findIndex(a => a.num === adNum);
-  if (idx < 0) return;
-  const tab = document.getElementById(`tab-${idx}`);
-  if (!tab) return;
-  const dot = tab.querySelector('.tab-status-dot');
-  if (!dot) return;
-  dot.className = 'tab-status-dot';
-  if (verdict === 'approve') dot.classList.add('approved');
-  else if (verdict === 'request_changes') dot.classList.add('changes');
-  else if (verdict === 'comment_only') dot.classList.add('commented');
+  // Badge system now handles tab indicators
+  updateTabBadges();
 }
 
 function selectTab(idx) {
@@ -2116,11 +2246,13 @@ async function renderInlineFeedback(adNum) {
             const isOwn = f.reviewer_name === myName && myName !== '';
             const ownClass = isOwn ? ' own-comment' : '';
 
+            const fbResolved = isResolved('fb-' + f.id);
             let actionsHtml = '';
             if (isMileage || isOwn) {
               actionsHtml = '<div class="feedback-entry-actions">';
               if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-ifb-edit="${f.id}">Edit</button>`;
               if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-ifb-delete="${f.id}">Delete</button>`;
+              if (isMileage) actionsHtml += `<button class="mark-complete-btn${fbResolved ? ' resolved' : ''}" data-ifb-resolve="fb-${f.id}">${fbResolved ? '&#10003; Done' : 'Mark Complete'}</button>`;
               actionsHtml += '</div>';
             }
 
@@ -2145,6 +2277,7 @@ async function renderInlineFeedback(adNum) {
               try {
                 await sb.from('feedback').delete().eq('id', fid);
                 renderInlineFeedback(adNum);
+                updateTabBadges();
               } catch(err) { console.warn('Delete failed:', err); }
             });
           });
@@ -2179,6 +2312,15 @@ async function renderInlineFeedback(adNum) {
                   renderInlineFeedback(adNum);
                 } catch(err) { console.warn('Edit failed:', err); }
               });
+            });
+          });
+
+          // Attach mark-complete handlers
+          threadEl.querySelectorAll('[data-ifb-resolve]').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const itemId = this.getAttribute('data-ifb-resolve');
+              toggleResolved(itemId);
+              renderInlineFeedback(adNum);
             });
           });
         } else {
@@ -2267,6 +2409,7 @@ async function submitInlineFeedback(adNum) {
 
     // Re-render to show the new comment
     renderInlineFeedback(adNum);
+    updateTabBadges();
 
     // Update identity display
     const identityName = document.getElementById('reviewer-identity-name');
@@ -2786,11 +2929,14 @@ function showPinTooltip(container, marker, pinData) {
   const isMileage = _reviewerMode === 'mileage';
   const isOwn = pinData.reviewer_name === myName && myName !== '';
 
+  const pinItemId = 'pin-' + (pinData.id || pinData.created_at);
+  const pinIsResolved = isResolved(pinItemId);
   let actionsHtml = '';
   if (isMileage || isOwn) {
     actionsHtml = '<div class="pin-tooltip-actions">';
     if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-pin-edit>Edit</button>`;
     if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-pin-delete>Delete</button>`;
+    if (isMileage) actionsHtml += `<button class="mark-complete-btn${pinIsResolved ? ' resolved' : ''}" data-pin-resolve="${pinItemId}">${pinIsResolved ? '&#10003; Done' : 'Mark Complete'}</button>`;
     actionsHtml += '</div>';
   }
 
@@ -2837,6 +2983,21 @@ function showPinTooltip(container, marker, pinData) {
       marker.remove();
       tooltip.remove();
       _activePinPopup = null;
+      updateTabBadges();
+    });
+  }
+
+  // Mark complete handler for pin
+  const resolveBtn = tooltip.querySelector('[data-pin-resolve]');
+  if (resolveBtn) {
+    resolveBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const itemId = this.getAttribute('data-pin-resolve');
+      toggleResolved(itemId);
+      // Update button state
+      const isNowResolved = isResolved(itemId);
+      this.classList.toggle('resolved', isNowResolved);
+      this.innerHTML = isNowResolved ? '&#10003; Done' : 'Mark Complete';
     });
   }
 
@@ -2917,6 +3078,7 @@ async function savePinData(pinData) {
       console.warn('Supabase pin save failed:', e.message);
     }
   }
+  updateTabBadges();
 }
 
 async function loadAndRenderPins(adNum) {
@@ -3170,6 +3332,7 @@ async function submitDrawerFeedback() {
 
     // Reload thread
     loadFeedbackThread(adNum);
+    updateTabBadges();
 
   } catch (e) {
     errorEl.textContent = `Error: ${e.message || 'Could not submit feedback.'}`;
@@ -3284,6 +3447,7 @@ async function loadFeedbackThread(adNum) {
             const { error } = await sb.from('feedback').delete().eq('id', feedbackId);
             if (error) { console.warn('Delete failed:', error); return; }
             loadFeedbackThread(adNum);
+            updateTabBadges();
           } catch(err) { console.warn('Delete failed:', err); }
         }
       });

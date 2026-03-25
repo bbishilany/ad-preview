@@ -379,6 +379,82 @@
     font-family: monospace, monospace;
   }
 
+  /* Feedback & Reviews accordion */
+  .inline-feedback-accordion {
+    margin-top: 14px;
+    background: rgba(79,122,255,0.06);
+    border: 1px solid rgba(79,122,255,0.25);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .inline-feedback-accordion summary {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  .inline-feedback-accordion summary::-webkit-details-marker { display: none; }
+  .inline-feedback-accordion summary::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent var(--accent);
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+  .inline-feedback-accordion[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .inline-feedback-body {
+    padding: 0 16px 14px;
+  }
+  .inline-feedback-empty {
+    font-size: 12px;
+    color: var(--text2);
+    padding: 8px 0;
+    font-style: italic;
+  }
+  .inline-fb-form { margin-top: 12px; }
+  .inline-fb-form textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 70px;
+    transition: border-color 0.15s;
+  }
+  .inline-fb-form textarea:focus { border-color: var(--accent); }
+  .inline-fb-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .inline-fb-submit {
+    background: var(--accent); color: white; border: none;
+    padding: 8px 18px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .inline-fb-submit:hover { opacity: 0.9; }
+  .inline-fb-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
   /* Feed mockup */
   .fb-feed {
     width: 380px;
@@ -1557,8 +1633,8 @@
   <div class="adprev-tabs" id="adprev-tabs"></div>
   <div id="adprev-container"></div>
 
-  <!-- FEEDBACK SECTION — always visible -->
-  <div class="feedback-drawer" id="feedback-drawer">
+  <!-- Legacy feedback drawer — hidden, replaced by inline accordion -->
+  <div class="feedback-drawer" id="feedback-drawer" style="display:none">
     <div class="drawer-collapsed-bar">
       <span class="drawer-title" id="drawer-title">Leave Feedback</span>
     </div>
@@ -1981,6 +2057,15 @@ function renderAd(idx) {
     </div>`;
   }
 
+  // Feedback & Reviews accordion — in copy panel
+  html += `<details class="inline-feedback-accordion" open>
+    <summary>Feedback &amp; Reviews</summary>
+    <div class="inline-feedback-body">
+      <div id="inline-feedback-thread"></div>
+      <div id="inline-feedback-form-wrap"></div>
+    </div>
+  </details>`;
+
   html += `</div>`; // close copy-panel
   html += `</div>`; // close detail grid
 
@@ -1992,6 +2077,206 @@ function renderAd(idx) {
 
   // Initialize carousel navigation if present
   initCarouselNav();
+
+  // Render inline feedback content
+  renderInlineFeedback(ad.num);
+}
+
+// ── Inline Feedback (replaces bottom drawer) ──────────────────────────────
+async function renderInlineFeedback(adNum) {
+  const threadEl = document.getElementById('inline-feedback-thread');
+  const formWrap = document.getElementById('inline-feedback-form-wrap');
+  if (!threadEl || !formWrap) return;
+
+  // Load and render feedback thread
+  if (sb) {
+    try {
+      const { data, error } = await sb.from('feedback').select('*')
+        .eq('campaign_id', CAMPAIGN_ID)
+        .eq('ad_num', adNum)
+        .order('created_at');
+
+      if (!error && data && data.length > 0) {
+        const myName = localStorage.getItem('adpreview_name') || '';
+        const isMileage = _reviewerMode === 'mileage';
+
+        // In client mode, only show own feedback
+        let entries = data;
+        if (!isMileage) {
+          entries = data.filter(f => f.reviewer_name === myName);
+        }
+
+        if (entries.length > 0) {
+          let html = '';
+          entries.forEach(f => {
+            const verdictLabel = f.verdict === 'approve' ? 'Approved' :
+                                 f.verdict === 'request_changes' ? 'Changes Requested' : 'Comment';
+            const ts = f.created_at ? new Date(f.created_at).toLocaleString() : '';
+            const isOwn = f.reviewer_name === myName && myName !== '';
+            const ownClass = isOwn ? ' own-comment' : '';
+
+            let actionsHtml = '';
+            if (isMileage || isOwn) {
+              actionsHtml = '<div class="feedback-entry-actions">';
+              if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-ifb-edit="${f.id}">Edit</button>`;
+              if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-ifb-delete="${f.id}">Delete</button>`;
+              actionsHtml += '</div>';
+            }
+
+            html += `<div class="feedback-entry${ownClass}" data-feedback-id="${f.id}">
+              <div class="feedback-entry-header">
+                <span class="feedback-entry-name">${esc(f.reviewer_name)}</span>
+                <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
+                <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
+                <span class="feedback-entry-time">${esc(ts)}</span>
+              </div>
+              ${f.comment ? `<div class="feedback-entry-comment" data-comment-id="${f.id}">${esc(f.comment)}</div>` : ''}
+              ${actionsHtml}
+            </div>`;
+          });
+          threadEl.innerHTML = html;
+
+          // Attach delete handlers
+          threadEl.querySelectorAll('[data-ifb-delete]').forEach(btn => {
+            btn.addEventListener('click', async function() {
+              const fid = this.getAttribute('data-ifb-delete');
+              if (!confirm('Delete this feedback?')) return;
+              try {
+                await sb.from('feedback').delete().eq('id', fid);
+                renderInlineFeedback(adNum);
+              } catch(err) { console.warn('Delete failed:', err); }
+            });
+          });
+
+          // Attach edit handlers
+          threadEl.querySelectorAll('[data-ifb-edit]').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const fid = this.getAttribute('data-ifb-edit');
+              const entry = threadEl.querySelector(`[data-feedback-id="${fid}"]`);
+              const commentDiv = entry ? entry.querySelector(`[data-comment-id="${fid}"]`) : null;
+              const actionsDiv = entry ? entry.querySelector('.feedback-entry-actions') : null;
+              if (!commentDiv) return;
+
+              const oldText = commentDiv.textContent;
+              commentDiv.innerHTML = `<div class="feedback-edit-area">
+                <textarea>${esc(oldText)}</textarea>
+                <div style="display:flex;gap:6px;margin-top:6px">
+                  <button class="feedback-edit-cancel">Cancel</button>
+                  <button class="feedback-edit-save">Save</button>
+                </div>
+              </div>`;
+              if (actionsDiv) actionsDiv.style.display = 'none';
+
+              commentDiv.querySelector('.feedback-edit-cancel').addEventListener('click', () => {
+                renderInlineFeedback(adNum);
+              });
+              commentDiv.querySelector('.feedback-edit-save').addEventListener('click', async () => {
+                const newText = commentDiv.querySelector('textarea').value.trim();
+                if (!newText) return;
+                try {
+                  await sb.from('feedback').update({ comment: newText }).eq('id', fid);
+                  renderInlineFeedback(adNum);
+                } catch(err) { console.warn('Edit failed:', err); }
+              });
+            });
+          });
+        } else {
+          threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
+        }
+      } else {
+        threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
+      }
+    } catch(e) {
+      threadEl.innerHTML = '';
+    }
+  } else {
+    threadEl.innerHTML = '<div class="inline-feedback-empty">Feedback system not connected.</div>';
+  }
+
+  // Render inline feedback form
+  const savedName = localStorage.getItem('adpreview_name') || '';
+  const savedRole = localStorage.getItem('adpreview_role') || 'Client';
+  const roleOverride = _reviewerMode === 'client' ? 'Client' : savedRole;
+  const roleHidden = _reviewerMode === 'client' ? ' style="display:none"' : '';
+
+  formWrap.innerHTML = `<div class="inline-fb-form">
+    <div style="display:flex;gap:10px;margin-bottom:8px">
+      <input type="text" class="feedback-input" id="inline-fb-name" value="${esc(savedName)}" placeholder="Your name" style="flex:1">
+      <select class="feedback-select" id="inline-fb-role" style="width:auto"${roleHidden}>
+        <option value="Client"${roleOverride==='Client' ? ' selected' : ''}>Client</option>
+        <option value="Mileage"${roleOverride==='Mileage' ? ' selected' : ''}>Mileage</option>
+      </select>
+    </div>
+    <textarea id="inline-fb-comment" placeholder="Add your feedback..."></textarea>
+    <div class="inline-fb-form-actions">
+      <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit</button>
+      <span id="inline-fb-error" style="color:var(--danger);font-size:12px;display:none"></span>
+    </div>
+  </div>`;
+}
+
+async function submitInlineFeedback(adNum) {
+  const name = document.getElementById('inline-fb-name').value.trim();
+  const roleEl = document.getElementById('inline-fb-role');
+  const role = _reviewerMode === 'client' ? 'Client' : roleEl.value;
+  const comment = document.getElementById('inline-fb-comment').value.trim();
+  const errorEl = document.getElementById('inline-fb-error');
+  const submitBtn = document.getElementById('inline-fb-submit');
+  const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) || 'comment_only';
+
+  if (!name) {
+    errorEl.textContent = 'Enter your name.';
+    errorEl.style.display = 'inline';
+    return;
+  }
+  if (!comment) {
+    errorEl.textContent = 'Enter feedback.';
+    errorEl.style.display = 'inline';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  localStorage.setItem('adpreview_name', name);
+  localStorage.setItem('adpreview_role', role);
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  try {
+    if (!sb) throw new Error('Not connected');
+    const { error } = await sb.from('feedback').insert({
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      reviewer_name: name,
+      reviewer_role: role,
+      verdict: verdict,
+      comment: comment,
+    });
+    if (error) throw error;
+
+    // Mark submitted
+    const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
+    submitted[`${CAMPAIGN_ID}-${adNum}`] = true;
+    localStorage.setItem('adpreview_submitted', JSON.stringify(submitted));
+    localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, verdict);
+
+    updateTabDot(adNum, verdict);
+    renderProgressBar();
+    localStorage.removeItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`);
+
+    // Re-render to show the new comment
+    renderInlineFeedback(adNum);
+
+    // Update identity display
+    const identityName = document.getElementById('reviewer-identity-name');
+    if (identityName) identityName.textContent = name;
+
+  } catch(e) {
+    errorEl.textContent = `Error: ${e.message}`;
+    errorEl.style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+  }
 }
 
 // ── Mockup renderers ───────────────────────────────────────────────────────

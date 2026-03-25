@@ -1082,12 +1082,12 @@
   }
   .pin-tooltip-close:hover { color: var(--text); }
 
-  /* Pinnable containers: cursor change in pin mode */
+  /* Pinnable containers: scope cursor in pin mode */
   body.pin-mode-active .fb-feed,
   body.pin-mode-active .ig-story,
   body.pin-mode-active .ig-reel,
   body.pin-mode-active .adprev-section {
-    cursor: crosshair;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%234f7aff' stroke-width='2' opacity='0.35'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%234f7aff' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='16' y1='4' x2='16' y2='12' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='20' x2='16' y2='28' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='4' y1='16' x2='12' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='16' x2='28' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234f7aff'/%3E%3C/svg%3E") 16 16, crosshair;
   }
 
   /* FEEDBACK SECTION — always visible inline below ad content */
@@ -1708,6 +1708,7 @@ let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 const CAMPAIGN_ID = 'confluence-fp';
+const SCOPE_CURSOR = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%234f7aff' stroke-width='2' opacity='0.35'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%234f7aff' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='16' y1='4' x2='16' y2='12' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='20' x2='16' y2='28' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='4' y1='16' x2='12' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='16' x2='28' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234f7aff'/%3E%3C/svg%3E") 16 16, crosshair`;
 
 // ── Load ad data ───────────────────────────────────────────────────────────
 async function init() {
@@ -2562,7 +2563,7 @@ function openMockupZoom(element) {
   });
 
   // Set cursor based on pin mode
-  if (_pinModeActive) clone.style.cursor = 'crosshair';
+  if (_pinModeActive) clone.style.cursor = SCOPE_CURSOR;
 
   overlay.classList.add('active');
   overlay.scrollTop = 0;
@@ -2601,7 +2602,7 @@ function togglePinModeFromZoom(e) {
   const content = document.getElementById('mockup-zoom-content');
   if (content) {
     const clone = content.firstElementChild;
-    if (clone) clone.style.cursor = _pinModeActive ? 'crosshair' : 'zoom-out';
+    if (clone) clone.style.cursor = _pinModeActive ? SCOPE_CURSOR : 'zoom-out';
   }
 }
 

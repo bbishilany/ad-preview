@@ -548,7 +548,10 @@ let _currentAd = 0;
 const CAMPAIGN_ID = getCampaignId();
 
 function getCampaignId() {
-  // Check URL param first, fallback to 'confluence-fp'
+  // Priority: hash path (#/slug) > query param (?campaign=slug) > default
+  // Share URL: bbishilany.github.io/ad-preview/#/confluence-fp
+  const hashPath = window.location.hash.replace(/^#\/?/, '');
+  if (hashPath) return hashPath;
   const params = new URLSearchParams(window.location.search);
   return params.get('campaign') || 'confluence-fp';
 }

@@ -1,0 +1,320 @@
+{
+  "campaign": "Key Conversations to Help Protect Autonomy and Assets",
+  "event_date": "Wednesday, May 14, 2026 at 12:00 PM",
+  "venue": "The Capital Grille, 9005 Mercato Drive, Naples, FL 34108",
+  "co_presenters": "Brandon Beck, Wealth Manager (Confluence FP) + Ehren Frey, Associate Attorney (Zacharia Brown & Bratkovich)",
+  "compliance_notes": [],
+  "ads": [
+    {
+      "num": 1,
+      "title": "Brand introduction image",
+      "format": "Static image, 1080x1080 (square)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "",
+      "primary_text": "Most people who come to our workshops already have a financial plan. They come to find out if it's actually coordinated.\n\nOn Wednesday, May 14, fiduciary wealth manager Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch at The Capital Grille in Naples. The focus: the gaps that show up between your investment plan, your estate documents, and your tax strategy when nobody's looking at them together.\n\nBring your spouse. This one works better as a couple.\n\n24 seats. No follow-up calls. No obligation.",
+      "headline": "Is Your Plan Coordinated?",
+      "description": "Complimentary Lunch Workshop",
+      "cta": "Sign Up",
+      "hook": "Most people who come already have a plan. They come to find out if it's coordinated.",
+      "alt_headlines": [
+        "The Gaps Between Your Plans",
+        "A Working Lunch Worth Having"
+      ],
+      "cards": [],
+      "stories": null,
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "image",
+      "week": 1,
+      "images": [
+        "ad1-brand-intro.png"
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Educational carousel (5 cards)",
+      "format": "Carousel, 5 cards at 1080x1080",
+      "placements": [
+        "Feed"
+      ],
+      "production": "",
+      "primary_text": "You've done the planning. But when was the last time your estate attorney, your tax advisor, and your wealth manager were in the same conversation?\n\nOn Wednesday, May 14 at The Capital Grille in Naples, Brandon Beck and estate planning attorney Ehren Frey are sitting down together to walk through the four areas where plans tend to fall out of sync. Complimentary lunch included.\n\n24 seats. Couples welcome.",
+      "headline": "Where Plans Fall Out of Sync",
+      "description": "Wed May 14 | Naples",
+      "cta": "Sign Up",
+      "hook": "You've done the planning. But when was the last time all your advisors were in the same conversation?",
+      "alt_headlines": [
+        "4 Gaps Worth Checking",
+        "Your Plan's Blind Spots"
+      ],
+      "cards": [
+        {
+          "num": 1,
+          "label": "Hook",
+          "caption": "You have an investment advisor. You have estate documents. You probably have a tax strategy. The question is whether they're working together — or just sitting in different folders."
+        },
+        {
+          "num": 2,
+          "label": "Control & Autonomy",
+          "caption": "If something happened tomorrow, does your family know who steps in? Do your documents say what you actually want them to say — or what you wanted five years ago?"
+        },
+        {
+          "num": 3,
+          "label": "Roth Conversions",
+          "caption": "Roth conversions have a window. Converting in the right year versus the wrong year can change your tax bill by thousands. Timing matters more than most people realize."
+        },
+        {
+          "num": 4,
+          "label": "Legacy",
+          "caption": "Your heirs shouldn't have to guess your intentions. We'll talk about putting wishes in writing and how charitable giving fits the bigger picture."
+        },
+        {
+          "num": 5,
+          "label": "CTA",
+          "caption": "Wednesday, May 14 at 12:00 PM\nThe Capital Grille, Naples\nComplimentary lunch. 24 seats. Couples welcome.\nReserve yours."
+        }
+      ],
+      "stories": null,
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "carousel",
+      "week": 1,
+      "images": [
+        "ad2-carousel-card1.png",
+        "ad2-carousel-card2.png",
+        "ad2-carousel-card3.png",
+        "ad2-carousel-card4.png",
+        "ad2-carousel-card5.png"
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Personal invite video",
+      "format": "Video, 30-45 seconds, 1:1 (square)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "Brandon Beck direct-to-camera, filmed in office. Lapel mic. Captions mandatory.",
+      "primary_text": "I host these workshops a few times a year. The people who show up aren't starting from scratch — they've already done the planning. What surprises most of them is how much has drifted since they last looked at everything together.\n\nOn Wednesday, May 14, I'm sitting down with estate planning attorney Ehren Frey at The Capital Grille in Naples. Complimentary lunch. We'll cover Roth conversion timing, autonomy documents, and how families are thinking about legacy and charitable giving.\n\nBring your spouse. No follow-up afterward. I'd be glad to meet you there.",
+      "headline": "A Personal Invitation",
+      "description": "From Brandon Beck",
+      "cta": "Sign Up",
+      "hook": "The people who show up aren't starting from scratch.",
+      "alt_headlines": [
+        "You're Invited to the Table",
+        "Join Us Wednesday, May 14"
+      ],
+      "cards": [],
+      "stories": null,
+      "reels": null,
+      "video_script": "1. Open with the audience, not yourself: \"The people who come to these workshops aren't starting from scratch. They've done the planning. What surprises most of them is how much has drifted.\"\n2. Middle: \"On May 14, I'm sitting down with estate planning attorney Ehren Frey at The Capital Grille. We'll cover Roth conversion timing, autonomy documents, and how families are thinking about legacy.\"\n3. Close: \"Bring your spouse. Complimentary lunch, no follow-up. I'd be glad to meet you there.\"",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "video",
+      "week": 1,
+      "images": []
+    },
+    {
+      "num": 4,
+      "title": "Peace of mind image",
+      "format": "Static image, 1080x1080 (square)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "",
+      "primary_text": "You chose Naples for a reason. You built a life here worth taking care of.\n\nThe financial decisions that matter most right now aren't about returns. They're about coordination: does your family know who steps in if you can't make decisions? Do your estate documents still reflect what you actually want? Is your Roth conversion timing aligned with your tax picture?\n\nOn Wednesday, May 14, fiduciary wealth manager Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch at The Capital Grille. This is for couples and individuals who've already done the work and want to make sure the pieces still fit together.\n\n24 seats. No follow-up calls. No obligation.",
+      "headline": "Confidence in What You've Built",
+      "description": "Complimentary Lunch Workshop",
+      "cta": "Sign Up",
+      "hook": "You chose Naples for a reason.",
+      "alt_headlines": [
+        "Do the Pieces Still Fit?",
+        "For People Who've Already Planned"
+      ],
+      "cards": [],
+      "stories": null,
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "image",
+      "week": 2,
+      "images": [
+        "ad4-peace-of-mind.png"
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Local connection video",
+      "format": "Video, 15-30 seconds, 9:16 (vertical for Stories/Reels)",
+      "placements": [
+        "Stories",
+        "Reels"
+      ],
+      "production": "Naples B-roll montage: Gulf, beaches, Mercato, Third Street, waterfront sunsets. Mix with brief Confluence FP office clips. Text overlays throughout. No voiceover needed. Warm background music. Captions mandatory.",
+      "primary_text": "You didn't build this life by accident. The retirement, the move to Naples, the years of decisions that got you here.\n\nOn Wednesday, May 14 at The Capital Grille, fiduciary wealth manager Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch on the planning that comes next — Roth conversion timing, autonomy documents, estate updates, and the conversations couples should be having together.\n\n24 seats. No follow-up. Reserve yours.",
+      "headline": "Built for Naples Families",
+      "description": "Wed May 14 | 24 Seats",
+      "cta": "Sign Up",
+      "hook": "You didn't build this life by accident.",
+      "alt_headlines": [
+        "Right Here in Naples",
+        "For SW Florida Couples"
+      ],
+      "cards": [],
+      "stories": {
+        "text_overlay": "\"You didn't build this life by accident.\"",
+        "secondary_text": "\"Complimentary lunch workshop | Wed, May 14 | Naples\"",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": {
+        "caption": "You didn't build this life by accident. Complimentary lunch workshop Wednesday, May 14 at The Capital Grille. Roth conversions, autonomy planning, estate documents, legacy. Brandon Beck and Ehren Frey. 24 seats.",
+        "description": "Complimentary wealth planning workshop | Wed May 14 | Naples"
+      },
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "video",
+      "week": 2,
+      "images": []
+    },
+    {
+      "num": 6,
+      "title": "Infographic / visual concept",
+      "format": "Static image/infographic, 1080x1080 (square)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "",
+      "primary_text": "There's a real difference between having a financial plan and having a coordinated one.\n\nWith coordination: your estate documents name the people you trust, your Roth conversions are timed with your full tax picture in mind, and your heirs aren't left guessing.\n\nWithout it: a court may choose who manages your affairs. Tax timing works against you on distributions. Your family sorts it out under pressure.\n\nOn Wednesday, May 14, Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch at The Capital Grille in Naples. The workshop covers what a coordinated plan looks like and the questions worth asking. Couples encouraged.",
+      "headline": "Planned vs. Uncoordinated",
+      "description": "See Where You Stand",
+      "cta": "Sign Up",
+      "hook": "There's a real difference between having a plan and having a coordinated one.",
+      "alt_headlines": [
+        "Coordinated vs. Piecemeal",
+        "Two Sides of Wealth Planning"
+      ],
+      "cards": [],
+      "stories": null,
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "Left column, \"Coordinated plan\":\n- Trusted decision-makers named in advance\n- Roth conversions timed with your tax picture\n- Estate documents up to date and working together\n- Heirs prepared and informed\n- Charitable giving structured for income and legacy\n\nRight column, \"Without coordination\":\n- Court-appointed decision-makers\n- Tax timing working against your distributions\n- Outdated or conflicting estate documents\n- Family left guessing\n- Charitable intentions unfulfilled",
+      "type": "image",
+      "week": 3,
+      "images": [
+        "ad6-infographic.png"
+      ]
+    },
+    {
+      "num": 7,
+      "title": "Expert insight video",
+      "format": "Video, ~30 seconds, 1:1 (square) + 9:16 (vertical)",
+      "placements": [
+        "Feed",
+        "Stories"
+      ],
+      "production": "Brandon at desk or conference room. Conversational, not scripted. Lapel mic. Captions mandatory.",
+      "primary_text": "Roth conversion timing is something people tend to set and forget. But the right year versus the wrong year can mean a significant difference in your tax bill — and for a lot of people in retirement, the window is narrowing.\n\nIt's one of several topics we'll cover at our complimentary lunch on Wednesday, May 14 at The Capital Grille in Naples. Fiduciary wealth manager Brandon Beck and estate planning attorney Ehren Frey. Couples welcome.",
+      "headline": "A Question of Timing",
+      "description": "Wed May 14 | Naples",
+      "cta": "Sign Up",
+      "hook": "Roth conversion timing is something people tend to set and forget.",
+      "alt_headlines": [
+        "A Costly Timing Question",
+        "The Window Is Narrowing"
+      ],
+      "cards": [],
+      "stories": {
+        "text_overlay": "\"The Roth conversion timing question most people set and forget\"",
+        "secondary_text": "\"Complimentary lunch | Wed, May 14 | Naples\"",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "1. Open with the topic, not yourself: \"Here's something people tend to set and forget: the timing on Roth conversions.\"\n2. Middle: \"The right year versus the wrong year can mean a significant difference in your tax bill. For a lot of people in retirement, the window is narrowing.\"\n3. Bridge: \"This is one of several things we'll cover at our complimentary lunch on May 14 at The Capital Grille. Couples welcome.\"\n4. Close: \"Details below. I think you'll be glad you came.\"",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "video",
+      "week": 3,
+      "images": []
+    },
+    {
+      "num": 8,
+      "title": "Last call image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical for Stories)",
+      "placements": [
+        "Feed",
+        "Stories"
+      ],
+      "production": "",
+      "primary_text": "Wednesday, May 14 is next week. We have 8 seats left.\n\nOur complimentary lunch at The Capital Grille with estate planning attorney Ehren Frey covers Roth conversion timing, autonomy planning, and the estate questions that couples should be reviewing together. Most people who attend already have a plan — they come to find out if the pieces are still working together.\n\nNo follow-up calls. No obligation. We'd like to meet you.",
+      "headline": "8 Seats Left — Wednesday",
+      "description": "May 14 | Naples",
+      "cta": "Sign Up",
+      "hook": "Wednesday, May 14 is next week. We have 8 seats left.",
+      "alt_headlines": [
+        "Next Wednesday, May 14",
+        "Almost Full — Reserve Now"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "High-contrast text on brand dark navy background",
+        "text_overlay": "\"8 seats left | Wednesday, May 14\"",
+        "secondary_text": "\"Complimentary lunch with Brandon Beck and Ehren Frey\"",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "type": "image",
+      "week": 4,
+      "images": [
+        "ad8-last-call-story.png",
+        "ad8-last-call.png"
+      ]
+    },
+    {
+      "num": 9,
+      "title": "Final reminder video",
+      "format": "Video, 10-15 seconds, 9:16 (vertical)",
+      "placements": [
+        "Stories",
+        "Reels"
+      ],
+      "production": "iPhone selfie-style from Brandon. Raw, personal, authentic. No graphics, no music. Captions added in post. Should NOT look like an ad.",
+      "primary_text": "Quick note: our complimentary lunch at The Capital Grille is this Wednesday, May 14. A few seats left. Bring your spouse if you can. Would be glad to meet you there.",
+      "headline": "Last Few Seats",
+      "description": "This Wednesday",
+      "cta": "Sign Up",
+      "hook": "Quick note from Brandon Beck.",
+      "alt_headlines": [
+        "This Wednesday, May 14",
+        "A Few Seats Left"
+      ],
+      "cards": [],
+      "stories": {
+        "text_overlay": "\"This Wednesday | A few seats left\"",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": {
+        "caption": "Quick note. Complimentary lunch at The Capital Grille this Wednesday, May 14. A few seats left. Bring your spouse. Brandon Beck and Ehren Frey — Roth conversions, autonomy planning, legacy. Reserve below.",
+        "description": "A few seats left | This Wednesday | The Capital Grille, Naples"
+      },
+      "video_script": "",
+      "video_talking_points": "1. \"Hey, just a quick note. Our lunch at The Capital Grille this Wednesday is almost full.\"\n2. \"A few seats left. Complimentary, no strings, no follow-up.\"\n3. \"Bring your spouse if you can. Would be glad to meet you. Link below.\"",
+      "infographic_direction": "",
+      "type": "video",
+      "week": 4,
+      "images": []
+    }
+  ],
+  "client": "confluence-fp"
+}

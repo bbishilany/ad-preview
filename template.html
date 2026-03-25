@@ -1199,6 +1199,222 @@
     .drawer-body { padding: 0 16px 16px; }
     .feedback-drawer.expanded { max-height: 70vh; }
   }
+
+  /* ── FEATURE 1: Mockup Zoom Overlay ────────────────────────────────── */
+  .mockup-zoom-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 50;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .mockup-zoom-overlay.active {
+    opacity: 1; pointer-events: auto;
+  }
+  .mockup-zoom-content {
+    transform: scale(1.5);
+    transform-origin: center;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .mockup-zoom-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: none;
+    color: white; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 51;
+  }
+  .mockup-zoom-close:hover { background: rgba(255,255,255,0.25); }
+
+  /* Zoom hint on mockup hover (only when NOT in pin mode) */
+  body:not(.pin-mode-active) [data-pin-target^="mockup-"] {
+    cursor: zoom-in;
+  }
+  body:not(.pin-mode-active) [data-pin-target^="mockup-"]:hover::after {
+    content: 'Click to zoom';
+    position: absolute; bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7); color: white;
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 10px; font-weight: 600;
+    pointer-events: none; white-space: nowrap;
+    z-index: 5;
+  }
+  /* Override zoom-in cursor when in pin mode */
+  body.pin-mode-active [data-pin-target^="mockup-"] {
+    cursor: crosshair;
+  }
+
+  /* ── FEATURE 2: Mileage Password Prompt ────────────────────────────── */
+  .mileage-password-prompt {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .mileage-password-prompt input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: var(--text);
+    outline: none;
+    width: 130px;
+  }
+  .mileage-password-prompt input:focus { border-color: var(--accent); }
+  .mileage-password-prompt input.error { border-color: var(--danger); }
+  .mileage-password-prompt button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .mileage-password-prompt button:hover { opacity: 0.9; }
+  .mileage-lock-icon {
+    font-size: 12px;
+    margin-right: 2px;
+  }
+  .mileage-signed-in {
+    font-size: 10px;
+    color: var(--green);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .reviewer-toggle {
+    position: relative;
+  }
+
+  /* ── FEATURE 3: Comment Management (Delete/Edit) ───────────────────── */
+  .feedback-entry-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .feedback-action-btn {
+    background: none;
+    border: none;
+    color: var(--text2);
+    font-size: 11px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.15s;
+  }
+  .feedback-action-btn:hover {
+    color: var(--text);
+    text-decoration-color: var(--text);
+  }
+  .feedback-action-btn.delete-btn:hover {
+    color: var(--danger);
+    text-decoration-color: var(--danger);
+  }
+  .feedback-edit-area {
+    margin-top: 6px;
+  }
+  .feedback-edit-area textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 60px;
+    margin-bottom: 6px;
+  }
+  .feedback-edit-area textarea:focus { border-color: var(--accent); }
+  .feedback-edit-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .feedback-edit-save {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .feedback-edit-cancel {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pin-tooltip-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+    border-top: 1px solid var(--border);
+    padding-top: 6px;
+  }
+
+  /* ── FEATURE 4: Reviewer Identity ──────────────────────────────────── */
+  .welcome-banner {
+    background: linear-gradient(135deg, rgba(79,122,255,0.1), rgba(124,58,237,0.1));
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex; align-items: center; gap: 12px;
+    justify-content: center;
+  }
+  .welcome-banner input {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; color: var(--text);
+    font-size: 14px; outline: none; width: 200px;
+  }
+  .welcome-banner input:focus { border-color: var(--accent); }
+  .welcome-banner button {
+    background: var(--accent); color: white; border: none;
+    padding: 8px 18px; border-radius: 8px; font-weight: 600;
+    font-size: 13px; cursor: pointer;
+  }
+  .welcome-banner button:hover { opacity: 0.9; }
+  .welcome-banner .welcome-text {
+    font-size: 13px;
+    color: var(--text2);
+  }
+  .reviewer-identity {
+    font-size: 11px; color: var(--text2);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .reviewer-identity strong { color: var(--text); }
+  .reviewer-identity .edit-name-btn {
+    background: none; border: none; color: var(--text2);
+    cursor: pointer; font-size: 12px; padding: 2px;
+  }
+  .reviewer-identity .edit-name-btn:hover { color: var(--text); }
+  .feedback-entry.own-comment {
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+  }
 </style>
 </head>
 <body>
@@ -1222,20 +1438,33 @@
     </div>
   </div>
   <div class="header-right">
+    <div class="reviewer-identity" id="reviewer-identity" style="display:none">
+      Reviewing as: <strong id="reviewer-identity-name"></strong>
+      <button class="edit-name-btn" onclick="showEditNamePrompt()" title="Change name">&#9998;</button>
+    </div>
     <div class="reviewer-toggle">
       <span class="reviewer-toggle-label">Reviewing as:</span>
-      <button class="reviewer-pill" id="mode-mileage" onclick="setReviewerMode('mileage')">Mileage</button>
+      <button class="reviewer-pill" id="mode-mileage" onclick="handleMileageClick()"><span class="mileage-lock-icon" id="mileage-lock">&#128274;</span> Mileage</button>
       <button class="reviewer-pill" id="mode-client" onclick="setReviewerMode('client')">Client</button>
+      <div class="mileage-signed-in" id="mileage-signed-in" style="display:none">Signed in as Mileage</div>
     </div>
     <div class="kb-help">?
       <div class="kb-tooltip">
         <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
         <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
         <kbd>F</kbd> Toggle feedback drawer<br>
-        <kbd>P</kbd> Toggle pin mode
+        <kbd>P</kbd> Toggle pin mode<br>
+        <kbd>Esc</kbd> Close zoom overlay
       </div>
     </div>
   </div>
+</div>
+
+<!-- WELCOME BANNER (Feature 4) -->
+<div class="welcome-banner" id="welcome-banner" style="display:none">
+  <span class="welcome-text">Welcome! Enter your name to get started:</span>
+  <input type="text" id="welcome-name-input" placeholder="Your name" autocomplete="name">
+  <button onclick="submitWelcomeName()">Continue</button>
 </div>
 
 <!-- CAMPAIGN BANNER -->
@@ -1267,6 +1496,12 @@
     </span>
   </div>
   <div class="drawer-body" id="drawer-body"></div>
+</div>
+
+<!-- MOCKUP ZOOM OVERLAY (Feature 1) -->
+<div class="mockup-zoom-overlay" id="mockup-zoom-overlay">
+  <button class="mockup-zoom-close" onclick="closeMockupZoom()">&times;</button>
+  <div class="mockup-zoom-content" id="mockup-zoom-content"></div>
 </div>
 
 <!-- Supabase SDK -->
@@ -1426,6 +1661,71 @@ function selectTab(idx) {
 }
 
 // ── Reviewer Mode ──────────────────────────────────────────────────────────
+const MILEAGE_PASSWORD = 'mileage2026';
+
+function handleMileageClick() {
+  // If already unlocked, just switch
+  if (localStorage.getItem('adpreview_mileage_unlocked') === 'true') {
+    setReviewerMode('mileage');
+    return;
+  }
+  // Show password prompt
+  showMileagePasswordPrompt();
+}
+
+function showMileagePasswordPrompt() {
+  // Remove existing prompt if any
+  const existing = document.querySelector('.mileage-password-prompt');
+  if (existing) { existing.remove(); return; }
+
+  const toggle = document.querySelector('.reviewer-toggle');
+  const prompt = document.createElement('div');
+  prompt.className = 'mileage-password-prompt';
+  prompt.innerHTML = `
+    <input type="password" id="mileage-pw-input" placeholder="Password" autocomplete="off">
+    <button onclick="verifyMileagePassword()">Unlock</button>
+  `;
+  toggle.appendChild(prompt);
+
+  const input = prompt.querySelector('input');
+  setTimeout(() => input.focus(), 50);
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') verifyMileagePassword();
+    if (e.key === 'Escape') prompt.remove();
+  });
+
+  // Close when clicking outside
+  setTimeout(() => {
+    document.addEventListener('click', function closePwPrompt(e) {
+      if (!e.target.closest('.mileage-password-prompt') && !e.target.closest('#mode-mileage')) {
+        const p = document.querySelector('.mileage-password-prompt');
+        if (p) p.remove();
+        document.removeEventListener('click', closePwPrompt);
+      }
+    });
+  }, 100);
+}
+
+function verifyMileagePassword() {
+  const input = document.getElementById('mileage-pw-input');
+  if (!input) return;
+  if (input.value === MILEAGE_PASSWORD) {
+    localStorage.setItem('adpreview_mileage_unlocked', 'true');
+    const prompt = document.querySelector('.mileage-password-prompt');
+    if (prompt) prompt.remove();
+    setReviewerMode('mileage');
+  } else {
+    input.classList.add('error');
+    input.value = '';
+    input.placeholder = 'Wrong password';
+    setTimeout(() => {
+      input.classList.remove('error');
+      input.placeholder = 'Password';
+    }, 1500);
+  }
+}
+
 function setReviewerMode(mode) {
   _reviewerMode = mode;
   localStorage.setItem('adpreview_reviewer_mode', mode);
@@ -1437,6 +1737,18 @@ function applyReviewerMode(mode) {
   document.getElementById('mode-mileage').classList.toggle('active', mode === 'mileage');
   document.getElementById('mode-client').classList.toggle('active', mode === 'client');
   document.body.classList.toggle('client-mode', mode === 'client');
+
+  // Feature 2: Update lock icon and signed-in indicator
+  const lockIcon = document.getElementById('mileage-lock');
+  const signedIn = document.getElementById('mileage-signed-in');
+  const isUnlocked = localStorage.getItem('adpreview_mileage_unlocked') === 'true';
+
+  if (lockIcon) {
+    lockIcon.style.display = isUnlocked ? 'none' : 'inline';
+  }
+  if (signedIn) {
+    signedIn.style.display = (mode === 'mileage' && isUnlocked) ? 'inline' : 'none';
+  }
 }
 
 // ── Render ad detail ───────────────────────────────────────────────────────
@@ -1797,6 +2109,78 @@ function initCarouselNav() {
   });
 }
 
+// ── MOCKUP ZOOM (Feature 1) ───────────────────────────────────────────────
+let _zoomOriginalParent = null;
+let _zoomOriginalElement = null;
+
+function openMockupZoom(element) {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  const content = document.getElementById('mockup-zoom-content');
+  if (!overlay || !content) return;
+
+  // Clone the element so original stays in place
+  const clone = element.cloneNode(true);
+  content.innerHTML = '';
+  content.appendChild(clone);
+
+  // Store reference for pin mode support inside zoom
+  _zoomOriginalElement = element;
+
+  // Attach pin click to the zoomed clone so pin mode works while zoomed
+  clone.addEventListener('click', function(e) {
+    if (!_pinModeActive) return;
+    if (e.target.closest('.pin-marker') || e.target.closest('.pin-popup') ||
+        e.target.closest('.pin-tooltip') || e.target.closest('.carousel-nav-arrow') ||
+        e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu')) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    closeActivePinPopup();
+
+    const adNum = _data.ads[_currentAd].num;
+    const rect = clone.getBoundingClientRect();
+    const pinX = ((e.clientX - rect.left) / rect.width * 100);
+    const pinY = ((e.clientY - rect.top) / rect.height * 100);
+    const targetSelector = clone.getAttribute('data-pin-target');
+    const targetType = targetSelector.startsWith('mockup-') ? 'mockup' : 'copy';
+    const existingPins = _pinsCache[adNum] || [];
+    const pinNumber = existingPins.length + 1;
+
+    // Add pin to both clone and original
+    const marker = document.createElement('div');
+    marker.className = 'pin-marker new-pin';
+    marker.style.left = pinX + '%';
+    marker.style.top = pinY + '%';
+    marker.textContent = pinNumber;
+    clone.appendChild(marker);
+
+    showPinCreationPopup(clone, marker, pinX, pinY, pinNumber, adNum, targetType, targetSelector);
+  });
+
+  overlay.classList.add('active');
+}
+
+function closeMockupZoom() {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('active');
+  closeActivePinPopup();
+
+  // If pins were added while zoomed, re-render to sync original view
+  if (_zoomOriginalElement && _data && _data.ads[_currentAd]) {
+    const adNum = _data.ads[_currentAd].num;
+    // Re-render the whole ad to pick up any new pins
+    renderAd(_currentAd);
+  }
+  _zoomOriginalElement = null;
+
+  // Clean up content after transition
+  setTimeout(() => {
+    const content = document.getElementById('mockup-zoom-content');
+    if (content) content.innerHTML = '';
+  }, 250);
+}
+
 // ── PIN DROP SYSTEM ────────────────────────────────────────────────────────
 function togglePinMode() {
   _pinModeActive = !_pinModeActive;
@@ -1821,12 +2205,23 @@ function attachPinClickHandlers(adNum) {
   const targets = document.querySelectorAll('[data-pin-target]');
   targets.forEach(target => {
     target.addEventListener('click', function(e) {
-      if (!_pinModeActive) return;
-
-      // Do not create pins when clicking on existing pins, popups, or interactive elements
+      // Do not interact with existing pins, popups, or interactive elements
       if (e.target.closest('.pin-marker') || e.target.closest('.pin-popup') ||
           e.target.closest('.pin-tooltip') || e.target.closest('.carousel-nav-arrow') ||
           e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu')) return;
+
+      const targetSelector = target.getAttribute('data-pin-target');
+      const isMockup = targetSelector.startsWith('mockup-');
+
+      // Feature 1: If NOT in pin mode and it's a mockup, zoom in
+      if (!_pinModeActive && isMockup) {
+        e.preventDefault();
+        e.stopPropagation();
+        openMockupZoom(target);
+        return;
+      }
+
+      if (!_pinModeActive) return;
 
       e.preventDefault();
       e.stopPropagation();
@@ -1835,8 +2230,7 @@ function attachPinClickHandlers(adNum) {
       const rect = target.getBoundingClientRect();
       const pinX = ((e.clientX - rect.left) / rect.width * 100);
       const pinY = ((e.clientY - rect.top) / rect.height * 100);
-      const targetSelector = target.getAttribute('data-pin-target');
-      const targetType = targetSelector.startsWith('mockup-') ? 'mockup' : 'copy';
+      const targetType = isMockup ? 'mockup' : 'copy';
 
       // Determine next pin number
       const existingPins = _pinsCache[adNum] || [];
@@ -1954,13 +2348,27 @@ function showPinTooltip(container, marker, pinData) {
   }
   tooltip.style.top = marker.style.top;
 
+  // Feature 3: Action buttons for pins
+  const myName = localStorage.getItem('adpreview_name') || '';
+  const isMileage = _reviewerMode === 'mileage';
+  const isOwn = pinData.reviewer_name === myName && myName !== '';
+
+  let actionsHtml = '';
+  if (isMileage || isOwn) {
+    actionsHtml = '<div class="pin-tooltip-actions">';
+    if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-pin-edit>Edit</button>`;
+    if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-pin-delete>Delete</button>`;
+    actionsHtml += '</div>';
+  }
+
   tooltip.innerHTML = `
     <div class="pin-tooltip-header">
       <span class="pin-tooltip-name">${esc(pinData.reviewer_name)}</span>
       <span>${new Date(pinData.created_at).toLocaleString()}</span>
       <span class="pin-tooltip-close" data-tooltip-close>&times;</span>
     </div>
-    <div>${esc(pinData.comment)}</div>
+    <div class="pin-tooltip-comment">${esc(pinData.comment)}</div>
+    ${actionsHtml}
   `;
 
   container.appendChild(tooltip);
@@ -1971,6 +2379,83 @@ function showPinTooltip(container, marker, pinData) {
     tooltip.remove();
     _activePinPopup = null;
   });
+
+  // Delete pin
+  const deleteBtn = tooltip.querySelector('[data-pin-delete]');
+  if (deleteBtn) {
+    deleteBtn.addEventListener('click', async function(e) {
+      e.stopPropagation();
+      if (!confirm('Are you sure you want to delete this pin?')) return;
+      if (sb && pinData.id) {
+        try { await sb.from('pins').delete().eq('id', pinData.id); } catch(err) { console.warn('Pin delete failed:', err); }
+      }
+      // Remove from localStorage
+      const adNum = pinData.ad_num;
+      const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+      try {
+        let localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+        localPins = localPins.filter(p => p.created_at !== pinData.created_at || p.comment !== pinData.comment);
+        localStorage.setItem(lsKey, JSON.stringify(localPins));
+      } catch(err) {}
+      // Remove from cache
+      if (_pinsCache[adNum]) {
+        _pinsCache[adNum] = _pinsCache[adNum].filter(p => p !== pinData);
+      }
+      marker.remove();
+      tooltip.remove();
+      _activePinPopup = null;
+    });
+  }
+
+  // Edit pin
+  const editBtn = tooltip.querySelector('[data-pin-edit]');
+  if (editBtn) {
+    editBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const commentDiv = tooltip.querySelector('.pin-tooltip-comment');
+      const actionsDiv = tooltip.querySelector('.pin-tooltip-actions');
+      const oldComment = pinData.comment;
+
+      commentDiv.innerHTML = `<div class="feedback-edit-area">
+        <textarea>${esc(oldComment)}</textarea>
+        <div class="feedback-edit-actions">
+          <button class="feedback-edit-cancel" data-edit-cancel>Cancel</button>
+          <button class="feedback-edit-save" data-edit-save>Save</button>
+        </div>
+      </div>`;
+      if (actionsDiv) actionsDiv.style.display = 'none';
+
+      const textarea = commentDiv.querySelector('textarea');
+      textarea.focus();
+
+      commentDiv.querySelector('[data-edit-cancel]').addEventListener('click', function(ev) {
+        ev.stopPropagation();
+        commentDiv.innerHTML = esc(oldComment);
+        if (actionsDiv) actionsDiv.style.display = '';
+      });
+
+      commentDiv.querySelector('[data-edit-save]').addEventListener('click', async function(ev) {
+        ev.stopPropagation();
+        const newComment = textarea.value.trim();
+        if (!newComment) return;
+
+        if (sb && pinData.id) {
+          try { await sb.from('pins').update({ comment: newComment }).eq('id', pinData.id); } catch(err) { console.warn('Pin edit failed:', err); }
+        }
+        // Update localStorage
+        const adNum = pinData.ad_num;
+        const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+        try {
+          let localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+          const idx = localPins.findIndex(p => p.created_at === pinData.created_at && p.comment === oldComment);
+          if (idx >= 0) { localPins[idx].comment = newComment; localStorage.setItem(lsKey, JSON.stringify(localPins)); }
+        } catch(err) {}
+        pinData.comment = newComment;
+        commentDiv.innerHTML = esc(newComment);
+        if (actionsDiv) actionsDiv.style.display = '';
+      });
+    });
+  }
 }
 
 async function savePinData(pinData) {
@@ -2296,12 +2781,14 @@ async function loadFeedbackThread(adNum) {
     if (!data || data.length === 0) { container.innerHTML = ''; return; }
 
     // In Client mode, only show the reviewer's own feedback
+    const myName = localStorage.getItem('adpreview_name') || '';
     let entries = data;
     if (_reviewerMode === 'client') {
-      const myName = localStorage.getItem('adpreview_name') || '';
       entries = data.filter(f => f.reviewer_name === myName);
     }
     if (entries.length === 0) { container.innerHTML = ''; return; }
+
+    const isMileage = _reviewerMode === 'mileage';
 
     let html = `<div class="feedback-thread">
       <div class="feedback-thread-title">Previous Feedback</div>`;
@@ -2310,20 +2797,88 @@ async function loadFeedbackThread(adNum) {
       const verdictLabel = f.verdict === 'approve' ? 'Approved' :
                            f.verdict === 'request_changes' ? 'Changes Requested' : 'Comment';
       const ts = f.created_at ? new Date(f.created_at).toLocaleString() : '';
+      const isOwn = f.reviewer_name === myName && myName !== '';
+      const ownClass = isOwn ? ' own-comment' : '';
 
-      html += `<div class="feedback-entry">
+      // Feature 3: action buttons
+      let actionsHtml = '';
+      if (isMileage || isOwn) {
+        actionsHtml = '<div class="feedback-entry-actions">';
+        if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-fb-edit="${f.id}">Edit</button>`;
+        if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-fb-delete="${f.id}">Delete</button>`;
+        actionsHtml += '</div>';
+      }
+
+      html += `<div class="feedback-entry${ownClass}" data-feedback-id="${f.id}">
         <div class="feedback-entry-header">
           <span class="feedback-entry-name">${esc(f.reviewer_name)}</span>
           <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
           <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
           <span class="feedback-entry-time">${esc(ts)}</span>
         </div>
-        ${f.comment ? `<div class="feedback-entry-comment">${esc(f.comment)}</div>` : ''}
+        ${f.comment ? `<div class="feedback-entry-comment" data-comment-id="${f.id}">${esc(f.comment)}</div>` : ''}
+        ${actionsHtml}
       </div>`;
     });
 
     html += `</div>`;
     container.innerHTML = html;
+
+    // Attach event handlers for delete buttons
+    container.querySelectorAll('[data-fb-delete]').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const feedbackId = this.getAttribute('data-fb-delete');
+        if (!confirm('Are you sure you want to delete this comment?')) return;
+        if (sb) {
+          try {
+            const { error } = await sb.from('feedback').delete().eq('id', feedbackId);
+            if (error) { console.warn('Delete failed:', error); return; }
+            loadFeedbackThread(adNum);
+          } catch(err) { console.warn('Delete failed:', err); }
+        }
+      });
+    });
+
+    // Attach event handlers for edit buttons
+    container.querySelectorAll('[data-fb-edit]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const feedbackId = this.getAttribute('data-fb-edit');
+        const entry = container.querySelector(`[data-feedback-id="${feedbackId}"]`);
+        const commentDiv = entry.querySelector(`[data-comment-id="${feedbackId}"]`);
+        const actionsDiv = entry.querySelector('.feedback-entry-actions');
+        if (!commentDiv) return;
+
+        const oldComment = commentDiv.textContent;
+        commentDiv.innerHTML = `<div class="feedback-edit-area">
+          <textarea>${esc(oldComment)}</textarea>
+          <div class="feedback-edit-actions">
+            <button class="feedback-edit-cancel">Cancel</button>
+            <button class="feedback-edit-save">Save</button>
+          </div>
+        </div>`;
+        if (actionsDiv) actionsDiv.style.display = 'none';
+
+        const textarea = commentDiv.querySelector('textarea');
+        textarea.focus();
+
+        commentDiv.querySelector('.feedback-edit-cancel').addEventListener('click', function() {
+          commentDiv.innerHTML = esc(oldComment);
+          if (actionsDiv) actionsDiv.style.display = '';
+        });
+
+        commentDiv.querySelector('.feedback-edit-save').addEventListener('click', async function() {
+          const newComment = textarea.value.trim();
+          if (!newComment) return;
+          if (sb) {
+            try {
+              const { error } = await sb.from('feedback').update({ comment: newComment }).eq('id', feedbackId);
+              if (error) { console.warn('Edit failed:', error); return; }
+              loadFeedbackThread(adNum);
+            } catch(err) { console.warn('Edit failed:', err); }
+          }
+        });
+      });
+    });
   } catch (e) {
     container.innerHTML = '';
   }
@@ -2331,6 +2886,16 @@ async function loadFeedbackThread(adNum) {
 
 // ── Keyboard Navigation ────────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
+  // Feature 1: Escape closes zoom overlay (works even from inputs)
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('mockup-zoom-overlay');
+    if (overlay && overlay.classList.contains('active')) {
+      e.preventDefault();
+      closeMockupZoom();
+      return;
+    }
+  }
+
   // Skip if user is typing in an input or textarea
   const tag = e.target.tagName.toLowerCase();
   if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
@@ -2369,6 +2934,14 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// Feature 1: Close zoom overlay when clicking the overlay background (not the content)
+document.addEventListener('click', function(e) {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  if (overlay && overlay.classList.contains('active') && e.target === overlay) {
+    closeMockupZoom();
+  }
+});
+
 // ── Utility ────────────────────────────────────────────────────────────────
 function esc(s) {
   if (!s) return '';
@@ -2377,8 +2950,73 @@ function esc(s) {
   return d.innerHTML;
 }
 
+// ── Feature 4: Reviewer Identity ──────────────────────────────────────────
+function initReviewerIdentity() {
+  const savedName = localStorage.getItem('adpreview_name') || '';
+  const banner = document.getElementById('welcome-banner');
+  const identity = document.getElementById('reviewer-identity');
+  const identityName = document.getElementById('reviewer-identity-name');
+
+  if (!savedName) {
+    // Show welcome banner
+    if (banner) banner.style.display = 'flex';
+    if (identity) identity.style.display = 'none';
+  } else {
+    // Hide banner, show identity
+    if (banner) banner.style.display = 'none';
+    if (identity) identity.style.display = 'flex';
+    if (identityName) identityName.textContent = savedName;
+  }
+}
+
+function submitWelcomeName() {
+  const input = document.getElementById('welcome-name-input');
+  if (!input) return;
+  const name = input.value.trim();
+  if (!name) {
+    input.style.borderColor = 'var(--danger)';
+    return;
+  }
+  localStorage.setItem('adpreview_name', name);
+  initReviewerIdentity();
+  // Re-render drawer to pick up new name
+  renderDrawer();
+}
+
+function showEditNamePrompt() {
+  const currentName = localStorage.getItem('adpreview_name') || '';
+  const newName = prompt('Change your reviewer name:', currentName);
+  if (newName !== null && newName.trim()) {
+    localStorage.setItem('adpreview_name', newName.trim());
+    initReviewerIdentity();
+    renderDrawer();
+  }
+}
+
+// Allow Enter key in welcome banner input
+document.addEventListener('DOMContentLoaded', function() {
+  const welcomeInput = document.getElementById('welcome-name-input');
+  if (welcomeInput) {
+    welcomeInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitWelcomeName();
+      }
+    });
+  }
+});
+
 // ── Init ───────────────────────────────────────────────────────────────────
-init();
+function fullInit() {
+  initReviewerIdentity();
+  // If mileage mode was stored but not unlocked, fall back to client
+  if (_reviewerMode === 'mileage' && localStorage.getItem('adpreview_mileage_unlocked') !== 'true') {
+    _reviewerMode = 'client';
+    localStorage.setItem('adpreview_reviewer_mode', 'client');
+  }
+  init();
+}
+fullInit();
 </script>
 </body>
 </html>

@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 """
-Bake script: parses ad-copy-draft.md -> JSON, copies images.
+Bake script: parses ad-copy-draft.md -> campaign folder with index.html + images.
+
+Output structure:
+  ad-preview/<client>/
+    index.html      ← copy of template with campaign ID baked in
+    data.json       ← parsed ad data
+    images/         ← ad creative PNGs
 
 Usage: python build.py confluence-fp
+Shareable URL: bbishilany.github.io/ad-preview/confluence-fp/
 """
 
 import json
@@ -37,12 +44,11 @@ def find_images(client: str) -> list[Path]:
     return sorted(img_dir.glob("*.png"))
 
 
-def assign_images(data: dict, client: str, images: list[Path]) -> None:
+def assign_images(data: dict, images: list[Path]) -> None:
     """Assign image filenames to ads based on naming convention (ad1-*, ad2-*, etc.)."""
     img_map: dict[int, list[str]] = {}
     for img in images:
         name = img.name
-        # Extract ad number from filename like "ad1-brand-intro.png"
         for ad in data["ads"]:
             prefix = f"ad{ad['num']}-"
             if name.startswith(prefix):
@@ -54,8 +60,12 @@ def assign_images(data: dict, client: str, images: list[Path]) -> None:
 
 
 def build(client: str) -> None:
-    """Run the full build for a client."""
+    """Run the full build for a client campaign folder."""
     print(f"Building ad preview for: {client}")
+
+    # Campaign output directory
+    campaign_dir = HERE / client
+    campaign_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. Parse the draft
     draft_path = find_draft(client)
@@ -63,9 +73,9 @@ def build(client: str) -> None:
     data = parse_ad_copy_file(draft_path)
     data["client"] = client
 
-    # 2. Copy images
+    # 2. Copy images into campaign folder
     images = find_images(client)
-    img_dest = HERE / "images" / client
+    img_dest = campaign_dir / "images"
     img_dest.mkdir(parents=True, exist_ok=True)
 
     for img in images:
@@ -73,19 +83,30 @@ def build(client: str) -> None:
         shutil.copy2(img, dest)
         print(f"  Copied: {img.name}")
 
-    # 3. Assign images to ads and update paths to relative
-    assign_images(data, client, images)
+    # 3. Assign images to ads
+    assign_images(data, images)
 
-    # 4. Write JSON
-    json_dest = HERE / "data" / f"{client}.json"
-    json_dest.parent.mkdir(parents=True, exist_ok=True)
+    # 4. Write data.json
+    json_dest = campaign_dir / "data.json"
     json_dest.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  Written: data/{client}.json")
+    print(f"  Written: {client}/data.json")
+
+    # 5. Copy template index.html, bake in the campaign ID
+    template = HERE / "template.html"
+    if not template.exists():
+        print(f"  ERROR: template.html not found at {template}")
+        sys.exit(1)
+
+    html = template.read_text(encoding="utf-8")
+    html = html.replace("__CAMPAIGN_ID__", client)
+    (campaign_dir / "index.html").write_text(html, encoding="utf-8")
+    print(f"  Written: {client}/index.html")
 
     # Summary
     ad_count = len(data["ads"])
     img_count = len(images)
     print(f"\nDone: {ad_count} ads, {img_count} images")
+    print(f"URL: bbishilany.github.io/ad-preview/{client}/")
 
 
 if __name__ == "__main__":

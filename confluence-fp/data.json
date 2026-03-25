@@ -32,7 +32,8 @@
       "week": 1,
       "images": [
         "ad1-brand-intro.png"
-      ]
+      ],
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-dominant (Archetype 1)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, small, navy)      |\n|                                      |\n|  [Branded photo: Brandon Beck in     |\n|   conference room with couple,       |\n|   warm lighting, branded mugs        |\n|   visible on table]                  |\n|                                      |\n|      [Bottom gradient: transparent   |\n|       → dark navy #0b1a2e]          |\n|                                      |\n|  \"Is Your Plan                       |\n|   Coordinated?\"                      |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Wed, May 14 | The Capital Grille    |\n|  (Rival Sans, small, white 80%)      |\n|                                      |\n|  [SIGN UP] (outlined, white)         |\n+--------------------------------------+\n```\n\n**Photo direction:** Branded office photo — Brandon across table from a couple (60s), natural conversation posture, warm overhead lighting. Conference room setting. If no Brandon meeting photo available, use stock-website couple reviewing documents with advisor.\n\n**Text overlay:** ~10% coverage. Headline in bottom third over gradient. Logo small top-center.\n\n**Gradient:** Bottom-up — transparent at 40%, dark navy 65% opacity at 100%."
     },
     {
       "num": 2,
@@ -91,7 +92,8 @@
         "ad2-carousel-card3.png",
         "ad2-carousel-card4.png",
         "ad2-carousel-card5.png"
-      ]
+      ],
+      "image_direction": "**Format:** 1080x1080 per card | **Placement:** Feed\n**Layout:** Mixed — Card 1 photo-dominant, Cards 2-4 text-forward on navy, Card 5 photo-dominant CTA\n\n```\nCARD 1 (HOOK):\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n|  [Lifestyle photo: couple on         |\n|   Naples waterfront at sunset,       |\n|   warm light, relaxed posture]       |\n|                                      |\n|  [Bottom gradient → navy]            |\n|                                      |\n|  \"You've done the planning.          |\n|   But are the pieces working         |\n|   together?\"                         |\n|  (Ivypresto, white, centered)        |\n+--------------------------------------+\n\nCARDS 2-4 (CONTENT):\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  [Diagonal line pattern,             |\n|   Lines-02.png, 8% opacity,          |\n|   upper-right corner]               |\n|                                      |\n|  CARD NUMBER                         |\n|  (Rival Sans, gold #c9a84c,         |\n|   small label)                       |\n|                                      |\n|  \"Topic Headline\"                    |\n|  (Ivypresto, white, 64px)           |\n|                                      |\n|  Supporting text from card caption   |\n|  (Rival Sans, white 80%, 32px)      |\n|                                      |\n|  [Thin gold accent line, bottom]     |\n+--------------------------------------+\n\nCARD 5 (CTA):\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n|  [Photo: The Capital Grille          |\n|   exterior or elegant dining         |\n|   setting — warm, inviting]          |\n|                                      |\n|  [Bottom gradient → navy]            |\n|                                      |\n|  Wednesday, May 14 at 12:00 PM       |\n|  The Capital Grille, Naples          |\n|  Complimentary lunch. 24 seats.      |\n|  (Ivypresto + Rival Sans, white)    |\n|                                      |\n|  [RESERVE YOUR SEAT] (outlined)      |\n+--------------------------------------+\n```\n\n**Card 2 label:** Control & Autonomy\n**Card 3 label:** Roth Conversions\n**Card 4 label:** Legacy & Family\n\n**Visual continuity:** All 5 cards share the same navy background, same font sizes, same logo position. Cards 2-4 use the diagonal line texture as subtle brand element. Gold accent color ties the number/label across content cards."
     },
     {
       "num": 3,
@@ -118,7 +120,8 @@
       "infographic_direction": "",
       "type": "video",
       "week": 1,
-      "images": []
+      "images": [],
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-under (Archetype 3) — thumbnail/cover frame\n\n```\nTHUMBNAIL FRAME:\n+--------------------------------------+\n|                                      |\n|  [Video still: Brandon Beck          |\n|   direct-to-camera, office bg,       |\n|   warm lighting, natural smile,      |\n|   lapel mic visible — fills          |\n|   top 55% of frame]                 |\n|                                      |\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  LOGO (center, white, small)         |\n|                                      |\n|  \"A Personal Invitation\"             |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Wed, May 14 | Naples                |\n|  (Rival Sans, white 70%)            |\n+--------------------------------------+\n```\n\n**Photo direction:** Brandon to camera — warm, approachable expression. Office or conference room background slightly blurred. Professional but not stiff. Lapel mic signals \"real content.\" This is the video thumbnail/cover image only — the video itself is Brandon speaking.\n\n**Play button:** Large centered circle overlay (standard platform play icon) signals this is video content."
     },
     {
       "num": 4,
@@ -147,7 +150,8 @@
       "week": 2,
       "images": [
         "ad4-peace-of-mind.png"
-      ]
+      ],
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-dominant (Archetype 1) — matches inspiration Ads 01/02 most closely\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, navy)             |\n|                                      |\n|  [Lifestyle photo: couple (60s)      |\n|   walking on Naples beach at         |\n|   golden hour. Relaxed, arms         |\n|   linked, looking at water.          |\n|   Warm tones, open sky above.]       |\n|                                      |\n|  \"Confidence in                      |\n|   What You've Built.\"                |\n|  (Ivypresto, dark navy, centered     |\n|   — positioned in open sky area)     |\n|                                      |\n|  [SIGN UP] (outlined, navy)          |\n|                                      |\n+--------------------------------------+\n```\n\n**Photo direction:** This ad mirrors the inspiration directly — lifestyle couple in warm outdoor Naples setting. Key: natural light, relaxed body language, Gulf/beach/waterfront visible. Text overlays onto open sky area (no gradient needed if sky provides contrast). Logo in navy (not white) since background is light.\n\n**This is the emotional anchor ad.** The photo should feel aspirational but real — \"this is your life, we help you protect it.\""
     },
     {
       "num": 5,
@@ -182,7 +186,8 @@
       "infographic_direction": "",
       "type": "video",
       "week": 2,
-      "images": []
+      "images": [],
+      "image_direction": "**Format:** 1080x1920 (vertical) | **Placement:** Stories, Reels\n**Layout:** Photo-dominant with text overlays — Stories/Reels format\n\n```\nSTORIES FRAME:\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [Naples B-roll:    |\n|  Gulf waters,      |\n|  Mercato shops,    |\n|  Third Street,     |\n|  waterfront        |\n|  sunset —          |\n|  full-bleed        |\n|  background]       |\n|                    |\n| \"You didn't build  |\n|  this life by      |\n|  accident.\"        |\n| (Ivypresto, white, |\n|  text-shadow,      |\n|  centered)         |\n|                    |\n| Complimentary      |\n| lunch workshop     |\n| Wed, May 14        |\n| (Rival Sans,       |\n|  white 80%)        |\n|                    |\n| [SIGN UP]          |\n| (pill CTA sticker, |\n|  white bg)         |\n+--------------------+\n```\n\n**Photo/video direction:** Naples montage — warm, golden, community feel. No advisor in frame. The city IS the subject. Gulf at golden hour, couples walking Mercato, Third Street boutiques, waterfront dining. Mix 3-4 shots in 15 seconds. Text overlays appear/dissolve with each scene transition.\n\n**Key visual difference from other ads:** No faces, no advisor — this is about PLACE and IDENTITY. The viewer sees their own life reflected."
     },
     {
       "num": 6,
@@ -211,7 +216,8 @@
       "week": 3,
       "images": [
         "ad6-infographic.png"
-      ]
+      ],
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Split comparison (custom — not directly from archetypes)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n+------------------+-------------------+\n|  COORDINATED     |  WITHOUT          |\n|  (gold accent)   |  COORDINATION     |\n|  (Rival Sans,    |  (white 60%)      |\n|  label)          |  (Rival Sans)     |\n|                  |                   |\n|  [Dark navy      |  [Darker navy     |\n|   #152d4b]       |   #0b1a2e]        |\n|                  |                   |\n|  ✓ Trusted       |  ✗ Court-appointed|\n|    decision-     |    decision-      |\n|    makers named  |    makers         |\n|                  |                   |\n|  ✓ Roth timed    |  ✗ Tax timing     |\n|    with tax      |    works against  |\n|    picture       |    you            |\n|                  |                   |\n|  ✓ Estate docs   |  ✗ Outdated or    |\n|    up to date    |    conflicting    |\n|                  |    documents      |\n|  ✓ Heirs         |                   |\n|    prepared      |  ✗ Family left    |\n|                  |    guessing       |\n|  ✓ Charitable    |                   |\n|    giving        |  ✗ Intentions     |\n|    structured    |    unfulfilled    |\n|                  |                   |\n+------------------+-------------------+\n|                                      |\n|  [SIGN UP] (outlined, white)         |\n|  Wed, May 14 | Naples                |\n+--------------------------------------+\n```\n\n**Design direction:** Two-column comparison on solid navy. Left column (coordinated) uses gold checkmarks (#c9a84c) and slightly lighter navy background. Right column (uncoordinated) uses white/red ✗ marks and darker navy. Thin vertical divider line (white, 1px, 30% opacity) separates columns.\n\n**Diagonal line texture:** Lines-02.png at 5% opacity across the full background — adds brand texture to what would otherwise be a flat navy card.\n\n**Typography:** Ivypresto for the column headers (\"Coordinated Plan\" / \"Without Coordination\"). Rival Sans Light for the bullet points. All white text.\n\n**This is the one ad that breaks the photo-dominant pattern.** The infographic comparison IS the visual. Keep it clean, readable at phone size. Max 5 items per column."
     },
     {
       "num": 7,
@@ -243,7 +249,8 @@
       "infographic_direction": "",
       "type": "video",
       "week": 3,
-      "images": []
+      "images": [],
+      "image_direction": "**Format:** 1080x1080 (square) + 1080x1920 (vertical) | **Placement:** Feed, Stories\n**Layout:** Photo-under (Archetype 3) — matches inspiration Ad 03\n\n```\nFEED THUMBNAIL (1080x1080):\n+--------------------------------------+\n|                                      |\n|  [Video still: Brandon at desk       |\n|   or small conference table,         |\n|   conversational posture, making     |\n|   a point with hands. Warm           |\n|   lighting. Professional but         |\n|   approachable.]                     |\n|                                      |\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  LOGO (center, white)                |\n|                                      |\n|  \"A Question of Timing.\"             |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Roth conversions | Wed, May 14      |\n|  (Rival Sans, white 70%)            |\n+--------------------------------------+\n\nSTORIES (1080x1920):\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [Video of Brandon  |\n|  speaking — fills  |\n|  full vertical     |\n|  frame]            |\n|                    |\n| \"The Roth          |\n|  conversion        |\n|  timing question   |\n|  most people set   |\n|  and forget\"       |\n| (Ivypresto, white, |\n|  text-shadow)      |\n|                    |\n| Complimentary      |\n| lunch | Wed, May 14|\n| (Rival Sans)       |\n|                    |\n| [SIGN UP]          |\n+--------------------+\n```\n\n**Photo/video direction:** Brandon teaching — not reading, not scripted-looking. Conversational energy. He should be at a desk or small table, maybe leaned slightly forward. Office background with natural light from a window. Branded elements subtly visible (Confluence mug, logo on wall). This is the \"authority\" ad — he's demonstrating expertise, not selling."
     },
     {
       "num": 8,
@@ -279,7 +286,8 @@
       "images": [
         "ad8-last-call-story.png",
         "ad8-last-call.png"
-      ]
+      ],
+      "image_direction": "**Format:** 1080x1080 (square) + 1080x1920 (vertical) | **Placement:** Feed, Stories\n**Layout:** Text-forward (Archetype 4) — urgency/scarcity\n\n```\nFEED (1080x1080):\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  [Diagonal line pattern,             |\n|   Lines-02.png, 10% opacity,        |\n|   full background texture]           |\n|                                      |\n|  LOGO (top-center, white)            |\n|                                      |\n|                                      |\n|  \"8 Seats Left.\"                     |\n|  (Ivypresto, white, 80px,           |\n|   centered, bold)                    |\n|                                      |\n|  Wednesday, May 14                   |\n|  The Capital Grille | Naples         |\n|  (Rival Sans, white 70%, 36px)      |\n|                                      |\n|  [Thin gold accent line]            |\n|                                      |\n|  [RESERVE YOUR SEAT]                 |\n|  (outlined, gold border + text)      |\n|                                      |\n+--------------------------------------+\n\nSTORIES (1080x1920):\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [Solid dark navy   |\n|  + diagonal lines  |\n|  texture]          |\n|                    |\n| LOGO (white)       |\n|                    |\n|                    |\n| \"8 Seats Left\"     |\n| (Ivypresto, white, |\n|  LARGE — 96px)     |\n|                    |\n| Wednesday, May 14  |\n| (Rival Sans)       |\n|                    |\n| Brandon Beck &     |\n| Ehren Frey         |\n| (Rival Sans, 70%)  |\n|                    |\n| [SIGN UP]          |\n+--------------------+\n```\n\n**Design direction:** This is the ONE text-forward ad in the campaign. No photo. The scarcity message IS the visual — \"8 Seats Left\" dominates the frame. Dark navy background with the diagonal line texture adds brand identity without distracting. Gold accent color used for the divider line and CTA border — the only ad that uses gold prominently. This signals urgency within the brand system.\n\n**Why no photo:** The number is the scroll-stopper. A photo would dilute the urgency. Inspiration precedent: PPC Ad 03 uses a similar text-heavy layout on navy background."
     },
     {
       "num": 9,
@@ -313,7 +321,8 @@
       "infographic_direction": "",
       "type": "video",
       "week": 4,
-      "images": []
+      "images": [],
+      "image_direction": "**Format:** 1080x1920 (vertical) | **Placement:** Stories, Reels\n**Layout:** Raw/authentic — NO designed template\n\n```\nSTORIES/REELS:\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [iPhone selfie     |\n|  video: Brandon    |\n|  holding phone,    |\n|  natural light,    |\n|  office or home    |\n|  background.       |\n|  NO graphics.      |\n|  NO music.         |\n|  NO brand overlay. |\n|  Auto-generated    |\n|  captions only.]   |\n|                    |\n| \"This Wednesday    |\n|  | A few seats     |\n|  left\"             |\n| (Platform auto-    |\n|  caption style,    |\n|  NOT designed      |\n|  overlay)          |\n|                    |\n| [SIGN UP]          |\n| (platform CTA      |\n|  sticker only)     |\n+--------------------+\n```\n\n**Photo/video direction:** This ad intentionally looks NOTHING like the other 8. It's a raw iPhone selfie — Brandon picks up his phone, talks for 10-15 seconds, puts it down. Natural lighting. No branded elements visible (or incidental at most). No music. The only \"design\" is platform-generated captions.\n\n**Why raw:** This is the authenticity play. After 3 weeks of polished branded ads, the pattern interrupt of a real person talking directly to you is the final conversion nudge. It should NOT look like an ad. If a viewer's first thought is \"this is a real person talking to me,\" the creative is working.\n\n**Do NOT add:** Logo overlay, brand colors, headline text, CTA button rendered into the image, music, or any post-production graphics. The platform CTA sticker is the only designed element."
     }
   ],
   "client": "confluence-fp"

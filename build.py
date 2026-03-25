@@ -59,6 +59,35 @@ def assign_images(data: dict, images: list[Path]) -> None:
         ad["images"] = sorted(img_map.get(ad["num"], []))
 
 
+def parse_creative_direction(client: str) -> dict[int, str]:
+    """Parse image creative direction markdown, extract per-ad blocks."""
+    copy_dir = MILEAGE_OS / "clients" / client / "copy"
+    candidates = sorted(copy_dir.glob("*image-creative-direction*.md"))
+    if not candidates:
+        return {}
+
+    text = candidates[0].read_text(encoding="utf-8")
+    result: dict[int, str] = {}
+
+    # Split by ### Ad N: headers
+    import re
+    blocks = re.split(r"(?=^### Ad \d+:)", text, flags=re.MULTILINE)
+    for block in blocks:
+        header = re.match(r"^### Ad (\d+):\s*(.+)", block)
+        if not header:
+            continue
+        ad_num = int(header.group(1))
+        # Get everything after the header until the next --- or end
+        content = block[header.end():].strip()
+        # Trim at the next top-level section (---)
+        end_marker = content.find("\n---")
+        if end_marker > 0:
+            content = content[:end_marker].strip()
+        result[ad_num] = content
+
+    return result
+
+
 def build(client: str) -> None:
     """Run the full build for a client campaign folder."""
     print(f"Building ad preview for: {client}")
@@ -86,12 +115,19 @@ def build(client: str) -> None:
     # 3. Assign images to ads
     assign_images(data, images)
 
-    # 4. Write data.json
+    # 4. Attach creative direction per ad
+    creative = parse_creative_direction(client)
+    for ad in data["ads"]:
+        ad["image_direction"] = creative.get(ad["num"], "")
+    if creative:
+        print(f"  Attached creative direction for {len(creative)} ads")
+
+    # 5. Write data.json
     json_dest = campaign_dir / "data.json"
     json_dest.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Written: {client}/data.json")
 
-    # 5. Copy template index.html, bake in the campaign ID
+    # 6. Copy template index.html, bake in the campaign ID
     template = HERE / "template.html"
     if not template.exists():
         print(f"  ERROR: template.html not found at {template}")

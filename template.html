@@ -712,6 +712,14 @@ function renderAd(idx) {
   html += `</div>`; // close copy-panel
   html += `</div>`; // close detail grid
 
+  // Image creative direction (full-width below the two-column layout)
+  if (ad.image_direction) {
+    html += `<div style="margin-top:24px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-left:4px solid #c9a84c;border-radius:10px;padding:20px">
+      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#c9a84c;margin-bottom:12px">Image Creative Direction</div>
+      <div style="font-size:13px;line-height:1.7;color:var(--text);white-space:pre-wrap;font-family:monospace,monospace">${esc(ad.image_direction)}</div>
+    </div>`;
+  }
+
   // Feedback panel
   html += renderFeedbackPanel(ad);
 

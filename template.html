@@ -15,9 +15,11 @@
     --accent: #4f7aff;
     --accent2: #7c3aed;
     --green: #22c55e;
+    --orange: #f59e0b;
     --text: #e8eaf6;
     --text2: #8b92b8;
     --danger: #ef4444;
+    --gold: #c9a84c;
   }
 
   body {
@@ -27,6 +29,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-bottom: 48px; /* space for collapsed drawer */
   }
 
   /* HEADER */
@@ -38,6 +41,17 @@
     align-items: center;
     gap: 12px;
     flex-shrink: 0;
+    justify-content: space-between;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
   .header-logo {
     display: flex;
@@ -63,6 +77,85 @@
     letter-spacing: 0.5px;
   }
 
+  /* Reviewer Mode Toggle */
+  .reviewer-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .reviewer-toggle-label {
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+  .reviewer-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .reviewer-pill:hover { border-color: var(--accent); color: var(--text); }
+  .reviewer-pill.active {
+    background: rgba(79,122,255,0.15);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Keyboard shortcut help */
+  .kb-help {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: help;
+    flex-shrink: 0;
+  }
+  .kb-help:hover .kb-tooltip { display: block; }
+  .kb-tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text2);
+    white-space: nowrap;
+    z-index: 200;
+    line-height: 2;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .kb-tooltip kbd {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 10px;
+    font-family: monospace;
+    margin-right: 4px;
+  }
+
   /* CAMPAIGN BANNER */
   .campaign-banner {
     background: var(--surface);
@@ -80,6 +173,36 @@
     line-height: 1.6;
   }
   .campaign-meta strong { color: var(--text); font-weight: 600; }
+
+  /* PROGRESS BAR */
+  .campaign-progress {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+  }
+  .progress-text {
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 6px;
+  }
+  .progress-text strong { color: var(--text); font-weight: 600; }
+  .progress-bar {
+    display: flex;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    gap: 2px;
+    background: var(--surface2);
+  }
+  .progress-segment {
+    flex: 1;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+  .progress-segment.approved { background: var(--green); }
+  .progress-segment.changes { background: var(--orange); }
+  .progress-segment.commented { background: var(--accent); }
+  .progress-segment.unreviewed { background: var(--surface2); }
 
   /* MAIN CONTAINER */
   .container {
@@ -112,6 +235,7 @@
     text-align: center;
     white-space: nowrap;
     user-select: none;
+    position: relative;
   }
   .adprev-tab:hover { border-color: var(--accent); color: var(--text); }
   .adprev-tab.active { background: rgba(79,122,255,0.15); color: var(--accent); border-color: var(--accent); }
@@ -125,6 +249,20 @@
     margin-top: 2px;
   }
   .adprev-tab.active .tab-week { color: var(--accent); opacity: 0.7; }
+
+  /* Tab status dot */
+  .tab-status-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: none;
+  }
+  .tab-status-dot.approved { background: var(--green); display: block; }
+  .tab-status-dot.changes { background: var(--orange); display: block; }
+  .tab-status-dot.commented { background: var(--accent); display: block; }
 
   /* Two-column layout */
   .adprev-detail {
@@ -190,6 +328,52 @@
     border-radius: 50%;
     margin-right: 8px;
     vertical-align: middle;
+  }
+
+  /* Inline creative direction (details element) */
+  .inline-creative-direction {
+    margin-top: 14px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .inline-creative-direction summary {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  .inline-creative-direction summary::-webkit-details-marker { display: none; }
+  .inline-creative-direction summary::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent var(--gold);
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+  .inline-creative-direction[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .inline-creative-direction .direction-body {
+    padding: 0 16px 14px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+    font-family: monospace, monospace;
   }
 
   /* Feed mockup */
@@ -358,14 +542,65 @@
     width: 100%; position: relative; z-index: 2;
   }
 
-  /* FEEDBACK PANEL */
-  .feedback-panel {
-    margin-top: 32px;
+  /* STICKY FEEDBACK DRAWER */
+  .feedback-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
+    border-top: 1px solid var(--border);
+    transition: max-height 0.3s ease;
+    max-height: 42px;
+    overflow: hidden;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
   }
+  .feedback-drawer.expanded {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  .drawer-collapsed-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    cursor: pointer;
+    min-height: 42px;
+    user-select: none;
+  }
+  .drawer-collapsed-bar:hover { background: var(--surface2); }
+  .drawer-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .drawer-expand-btn {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .drawer-expand-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s;
+  }
+  .feedback-drawer.expanded .drawer-expand-btn svg {
+    transform: rotate(180deg);
+  }
+  .drawer-body {
+    padding: 0 24px 20px;
+    max-width: 800px;
+  }
+
+  /* Feedback form inside drawer */
   .feedback-title {
     font-size: 14px;
     font-weight: 700;
@@ -460,6 +695,7 @@
     color: var(--accent);
     font-size: 13px;
     line-height: 1.5;
+    margin-bottom: 12px;
   }
   .feedback-already.visible { display: block; }
   .feedback-already-btn {
@@ -476,6 +712,79 @@
   }
   .feedback-already-btn:hover { background: rgba(79,122,255,0.1); }
 
+  /* Draft saved indicator */
+  .draft-saved-indicator {
+    font-size: 11px;
+    color: var(--green);
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-left: 8px;
+  }
+  .draft-saved-indicator.visible { opacity: 1; }
+
+  /* Feedback thread */
+  .feedback-thread {
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  .feedback-thread-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text2);
+    margin-bottom: 10px;
+  }
+  .feedback-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    background: var(--surface2);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .feedback-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .feedback-entry-name { font-weight: 600; color: var(--text); }
+  .feedback-entry-role {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-weight: 600;
+  }
+  .verdict-badge {
+    font-size: 10px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .verdict-badge.approve { background: rgba(34,197,94,0.15); color: var(--green); }
+  .verdict-badge.request_changes { background: rgba(245,158,11,0.15); color: var(--orange); }
+  .verdict-badge.comment_only { background: var(--surface); color: var(--text2); }
+  .feedback-entry-time {
+    font-size: 10px;
+    color: var(--text2);
+    margin-left: auto;
+  }
+  .feedback-entry-comment {
+    color: var(--text);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  /* Client mode: hide internal-only elements */
+  body.client-mode [data-internal-only] { display: none !important; }
+
   /* FOOTER */
   .site-footer {
     background: var(--surface);
@@ -486,41 +795,80 @@
     color: var(--text2);
     flex-shrink: 0;
   }
+
+  @media (max-width: 600px) {
+    .header { flex-wrap: wrap; gap: 8px; }
+    .reviewer-toggle-label { display: none; }
+    .drawer-body { padding: 0 16px 16px; }
+    .feedback-drawer.expanded { max-height: 70vh; }
+  }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <div class="header-logo">
-    <svg viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="8" fill="url(#g)"/>
-      <path d="M8 22L12 10L16 18L20 13L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#4f7aff"/>
-          <stop offset="1" stop-color="#7c3aed"/>
-        </linearGradient>
-      </defs>
-    </svg>
-    <span>Mileage Design</span>
-    <span class="header-badge">Ad Preview</span>
+  <div class="header-left">
+    <div class="header-logo">
+      <svg viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="url(#g)"/>
+        <path d="M8 22L12 10L16 18L20 13L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#4f7aff"/>
+            <stop offset="1" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>Mileage Design</span>
+      <span class="header-badge">Ad Preview</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="reviewer-toggle">
+      <span class="reviewer-toggle-label">Reviewing as:</span>
+      <button class="reviewer-pill" id="mode-mileage" onclick="setReviewerMode('mileage')">Mileage</button>
+      <button class="reviewer-pill" id="mode-client" onclick="setReviewerMode('client')">Client</button>
+    </div>
+    <div class="kb-help">?
+      <div class="kb-tooltip">
+        <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
+        <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
+        <kbd>F</kbd> Toggle feedback drawer
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- CAMPAIGN BANNER -->
 <div class="campaign-banner" id="campaign-banner"></div>
 
+<!-- PROGRESS BAR -->
+<div class="campaign-progress" id="campaign-progress"></div>
+
 <!-- MAIN -->
 <div class="container">
   <div class="adprev-tabs" id="adprev-tabs"></div>
   <div id="adprev-container"></div>
-  <div id="feedback-anchor"></div>
 </div>
 
 <!-- FOOTER -->
 <div class="site-footer">
   Confidential &mdash; Prepared by Mileage Design for internal and client review only.
+</div>
+
+<!-- STICKY FEEDBACK DRAWER -->
+<div class="feedback-drawer" id="feedback-drawer">
+  <div class="drawer-collapsed-bar" onclick="toggleDrawer()">
+    <span class="drawer-title" id="drawer-title">Leave Feedback</span>
+    <span class="drawer-expand-btn">
+      <span id="drawer-toggle-text">Expand</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </span>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
 </div>
 
 <!-- Supabase SDK -->
@@ -545,6 +893,9 @@ try {
 // ── State ──────────────────────────────────────────────────────────────────
 let _data = null;
 let _currentAd = 0;
+let _drawerExpanded = false;
+let _reviewerMode = localStorage.getItem('adpreview_reviewer_mode') || 'client';
+let _draftSaveTimer = null;
 const CAMPAIGN_ID = '__CAMPAIGN_ID__';
 
 // ── Load ad data ───────────────────────────────────────────────────────────
@@ -553,9 +904,12 @@ async function init() {
     const res = await fetch('data.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     _data = await res.json();
+    applyReviewerMode(_reviewerMode);
     renderBanner(_data);
+    renderProgressBar();
     renderTabs(_data);
     renderAd(0);
+    renderDrawer();
   } catch (e) {
     document.getElementById('adprev-container').innerHTML =
       `<p style="color:var(--danger)">Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.</p>`;
@@ -574,6 +928,38 @@ function renderBanner(data) {
     </div>`;
 }
 
+// ── Progress Bar ───────────────────────────────────────────────────────────
+function renderProgressBar() {
+  if (!_data || !_data.ads) return;
+  const total = _data.ads.length;
+  let reviewed = 0;
+  let approvedCount = 0;
+  let changesCount = 0;
+  let commentedCount = 0;
+
+  const statuses = _data.ads.map((ad, i) => {
+    const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`);
+    if (verdict) reviewed++;
+    if (verdict === 'approve') approvedCount++;
+    else if (verdict === 'request_changes') changesCount++;
+    else if (verdict === 'comment_only') commentedCount++;
+    return verdict;
+  });
+
+  const el = document.getElementById('campaign-progress');
+  el.innerHTML = `
+    <div class="progress-text"><strong>${reviewed} of ${total}</strong> ads reviewed</div>
+    <div class="progress-bar">
+      ${statuses.map(s => {
+        let cls = 'unreviewed';
+        if (s === 'approve') cls = 'approved';
+        else if (s === 'request_changes') cls = 'changes';
+        else if (s === 'comment_only') cls = 'commented';
+        return `<div class="progress-segment ${cls}"></div>`;
+      }).join('')}
+    </div>`;
+}
+
 // ── Tabs ───────────────────────────────────────────────────────────────────
 function renderTabs(data) {
   const tabsEl = document.getElementById('adprev-tabs');
@@ -581,11 +967,31 @@ function renderTabs(data) {
   const weekNames = {1:'Trust', 2:'Emotion', 3:'Authority', 4:'Urgency'};
   tabsEl.innerHTML = data.ads.map((ad, i) => {
     const wk = weekNames[ad.week] || 'Wk' + ad.week;
-    return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})">
+    const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`);
+    let dotClass = '';
+    if (verdict === 'approve') dotClass = 'approved';
+    else if (verdict === 'request_changes') dotClass = 'changes';
+    else if (verdict === 'comment_only') dotClass = 'commented';
+    return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
+      <span class="tab-status-dot ${dotClass}"></span>
       Ad ${ad.num}
       <span class="tab-week">Wk ${ad.week} &middot; ${wk}</span>
     </div>`;
   }).join('');
+}
+
+function updateTabDot(adNum, verdict) {
+  if (!_data || !_data.ads) return;
+  const idx = _data.ads.findIndex(a => a.num === adNum);
+  if (idx < 0) return;
+  const tab = document.getElementById(`tab-${idx}`);
+  if (!tab) return;
+  const dot = tab.querySelector('.tab-status-dot');
+  if (!dot) return;
+  dot.className = 'tab-status-dot';
+  if (verdict === 'approve') dot.classList.add('approved');
+  else if (verdict === 'request_changes') dot.classList.add('changes');
+  else if (verdict === 'comment_only') dot.classList.add('commented');
 }
 
 function selectTab(idx) {
@@ -594,6 +1000,21 @@ function selectTab(idx) {
     t.classList.toggle('active', i === idx);
   });
   renderAd(idx);
+  renderDrawer();
+}
+
+// ── Reviewer Mode ──────────────────────────────────────────────────────────
+function setReviewerMode(mode) {
+  _reviewerMode = mode;
+  localStorage.setItem('adpreview_reviewer_mode', mode);
+  applyReviewerMode(mode);
+  renderDrawer();
+}
+
+function applyReviewerMode(mode) {
+  document.getElementById('mode-mileage').classList.toggle('active', mode === 'mileage');
+  document.getElementById('mode-client').classList.toggle('active', mode === 'client');
+  document.body.classList.toggle('client-mode', mode === 'client');
 }
 
 // ── Render ad detail ───────────────────────────────────────────────────────
@@ -690,20 +1111,31 @@ function renderAd(idx) {
     }
     html += `</div></div>`;
   }
+
+  // Enhancement 7: Inline creative direction inside copy panel
+  if (ad.image_direction) {
+    const openAttr = _reviewerMode === 'mileage' ? ' open' : '';
+    html += `<details class="inline-creative-direction" data-internal-only${openAttr}>
+      <summary>Image Creative Direction</summary>
+      <div class="direction-body">${esc(ad.image_direction)}</div>
+    </details>`;
+  }
+
+  // Internal-only sections with data-internal-only attribute
   if (ad.video_script) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-internal-only>
       <div class="adprev-section-label">Video Script Notes</div>
       <div class="adprev-section-body" style="font-size:12px">${esc(ad.video_script)}</div>
     </div>`;
   }
   if (ad.video_talking_points) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-internal-only>
       <div class="adprev-section-label">Video Talking Points</div>
       <div class="adprev-section-body" style="font-size:12px">${esc(ad.video_talking_points)}</div>
     </div>`;
   }
   if (ad.infographic_direction) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-internal-only>
       <div class="adprev-section-label">Infographic Direction</div>
       <div class="adprev-section-body" style="font-size:12px">${esc(ad.infographic_direction)}</div>
     </div>`;
@@ -712,19 +1144,7 @@ function renderAd(idx) {
   html += `</div>`; // close copy-panel
   html += `</div>`; // close detail grid
 
-  // Image creative direction (full-width below the two-column layout)
-  if (ad.image_direction) {
-    html += `<div style="margin-top:24px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-left:4px solid #c9a84c;border-radius:10px;padding:20px">
-      <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#c9a84c;margin-bottom:12px">Image Creative Direction</div>
-      <div style="font-size:13px;line-height:1.7;color:var(--text);white-space:pre-wrap;font-family:monospace,monospace">${esc(ad.image_direction)}</div>
-    </div>`;
-  }
-
-  // Feedback panel
-  html += renderFeedbackPanel(ad);
-
   container.innerHTML = html;
-  checkExistingFeedback(ad.num);
 }
 
 // ── Mockup renderers ───────────────────────────────────────────────────────
@@ -856,95 +1276,141 @@ function renderReelMockup(ad) {
   </div>`;
 }
 
-// ── Feedback panel ─────────────────────────────────────────────────────────
-function renderFeedbackPanel(ad) {
+// ── Feedback Drawer ────────────────────────────────────────────────────────
+function toggleDrawer() {
+  _drawerExpanded = !_drawerExpanded;
+  const drawer = document.getElementById('feedback-drawer');
+  const toggleText = document.getElementById('drawer-toggle-text');
+  drawer.classList.toggle('expanded', _drawerExpanded);
+  toggleText.textContent = _drawerExpanded ? 'Collapse' : 'Expand';
+}
+
+function renderDrawer() {
+  if (!_data || !_data.ads || !_data.ads[_currentAd]) return;
+  const ad = _data.ads[_currentAd];
+
+  // Update drawer title
+  document.getElementById('drawer-title').textContent =
+    `Leave Feedback \u2014 Ad ${ad.num}: ${ad.title}`;
+
+  const body = document.getElementById('drawer-body');
+  let html = '';
+
+  // Enhancement 6: Feedback thread (Mileage mode or own feedback in Client mode)
+  html += `<div id="feedback-thread-container"></div>`;
+
+  // Already submitted notice
+  html += `<div class="feedback-already" id="drawer-feedback-already">
+    You already submitted feedback for this ad.
+    <br><button class="feedback-already-btn" onclick="enableDrawerResubmit()">Update your feedback</button>
+  </div>`;
+
+  // Feedback form
   const savedName = localStorage.getItem('adpreview_name') || '';
   const savedRole = localStorage.getItem('adpreview_role') || 'Client';
 
-  return `
-  <div class="feedback-panel" id="feedback-panel-${ad.num}">
-    <div class="feedback-title">Your Review &mdash; Ad ${ad.num}: ${esc(ad.title)}</div>
+  // Restore draft
+  const draftKey = `adpreview_draft_${CAMPAIGN_ID}_${ad.num}`;
+  let draft = null;
+  try { draft = JSON.parse(localStorage.getItem(draftKey)); } catch(e) {}
 
-    <div class="feedback-already" id="feedback-already-${ad.num}">
-      You already submitted feedback for this ad.
-      <br><button class="feedback-already-btn" onclick="enableResubmit(${ad.num})">Update your feedback</button>
-    </div>
+  const nameVal = draft ? (draft.name || savedName) : savedName;
+  const roleVal = draft ? (draft.role || savedRole) : savedRole;
+  const verdictVal = draft ? (draft.verdict || 'comment_only') : 'comment_only';
+  const commentVal = draft ? (draft.comment || '') : '';
 
-    <div id="feedback-form-${ad.num}">
-      <div class="feedback-row">
-        <div>
-          <div class="feedback-label">Name</div>
-          <input type="text" class="feedback-input" id="fb-name-${ad.num}" value="${esc(savedName)}" placeholder="Your name">
-        </div>
-        <div>
-          <div class="feedback-label">Role</div>
-          <select class="feedback-select" id="fb-role-${ad.num}">
-            <option value="Client"${savedRole==='Client' ? ' selected' : ''}>Client</option>
-            <option value="Mileage"${savedRole==='Mileage' ? ' selected' : ''}>Mileage</option>
-          </select>
-        </div>
+  const roleHidden = _reviewerMode === 'client' ? ' style="display:none"' : '';
+  const roleOverride = _reviewerMode === 'client' ? 'Client' : roleVal;
+
+  html += `<div id="drawer-feedback-form">
+    <div class="feedback-row">
+      <div>
+        <div class="feedback-label">Name</div>
+        <input type="text" class="feedback-input" id="drawer-fb-name" value="${esc(nameVal)}" placeholder="Your name">
       </div>
-
-      <div class="feedback-label">Verdict</div>
-      <div class="feedback-verdicts">
-        <label class="verdict-option">
-          <input type="radio" name="verdict-${ad.num}" value="approve"> Approve
-        </label>
-        <label class="verdict-option">
-          <input type="radio" name="verdict-${ad.num}" value="request_changes"> Request Changes
-        </label>
-        <label class="verdict-option">
-          <input type="radio" name="verdict-${ad.num}" value="comment_only" checked> Comment Only
-        </label>
-      </div>
-
-      <div class="feedback-label">Feedback</div>
-      <textarea class="feedback-textarea" id="fb-comment-${ad.num}" placeholder="Your feedback on this ad..."></textarea>
-
-      <div style="margin-top:12px;display:flex;align-items:center;gap:12px">
-        <button class="feedback-submit" id="fb-submit-${ad.num}" onclick="submitFeedback(${ad.num})">Submit Feedback</button>
-        <span id="fb-error-${ad.num}" style="color:var(--danger);font-size:12px;display:none"></span>
+      <div${roleHidden}>
+        <div class="feedback-label">Role</div>
+        <select class="feedback-select" id="drawer-fb-role">
+          <option value="Client"${roleOverride==='Client' ? ' selected' : ''}>Client</option>
+          <option value="Mileage"${roleOverride==='Mileage' ? ' selected' : ''}>Mileage</option>
+        </select>
       </div>
     </div>
 
-    <div class="feedback-success" id="feedback-success-${ad.num}">
-      Your feedback has been recorded.<br>
-      <span style="color:var(--text2);font-size:12px">Only the Mileage team can see all responses.</span>
+    <div class="feedback-label">Verdict</div>
+    <div class="feedback-verdicts">
+      <label class="verdict-option">
+        <input type="radio" name="drawer-verdict" value="approve"${verdictVal==='approve'?' checked':''}> Approve
+      </label>
+      <label class="verdict-option">
+        <input type="radio" name="drawer-verdict" value="request_changes"${verdictVal==='request_changes'?' checked':''}> Request Changes
+      </label>
+      <label class="verdict-option">
+        <input type="radio" name="drawer-verdict" value="comment_only"${verdictVal==='comment_only'?' checked':''}> Comment Only
+      </label>
     </div>
+
+    <div class="feedback-label">Feedback <span class="draft-saved-indicator" id="draft-saved">Draft saved</span></div>
+    <textarea class="feedback-textarea" id="drawer-fb-comment" placeholder="Your feedback on this ad...">${esc(commentVal)}</textarea>
+
+    <div style="margin-top:12px;display:flex;align-items:center;gap:12px">
+      <button class="feedback-submit" id="drawer-fb-submit" onclick="submitDrawerFeedback()">Submit Feedback</button>
+      <span id="drawer-fb-error" style="color:var(--danger);font-size:12px;display:none"></span>
+    </div>
+  </div>
+
+  <div class="feedback-success" id="drawer-feedback-success">
+    Your feedback has been recorded.<br>
+    <span style="color:var(--text2);font-size:12px">Only the Mileage team can see all responses.</span>
   </div>`;
+
+  body.innerHTML = html;
+
+  // Check existing submission
+  checkDrawerExistingFeedback(ad.num);
+
+  // Load feedback thread
+  loadFeedbackThread(ad.num);
+
+  // Attach auto-save listeners
+  attachDraftAutoSave(ad.num);
 }
 
-function checkExistingFeedback(adNum) {
+function checkDrawerExistingFeedback(adNum) {
   const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
   if (submitted[`${CAMPAIGN_ID}-${adNum}`]) {
-    const formEl = document.getElementById(`feedback-form-${adNum}`);
-    const alreadyEl = document.getElementById(`feedback-already-${adNum}`);
-    const successEl = document.getElementById(`feedback-success-${adNum}`);
+    const formEl = document.getElementById('drawer-feedback-form');
+    const alreadyEl = document.getElementById('drawer-feedback-already');
+    const successEl = document.getElementById('drawer-feedback-success');
     if (formEl) formEl.style.display = 'none';
     if (alreadyEl) alreadyEl.classList.add('visible');
-    if (successEl) { successEl.classList.add('visible'); }
+    if (successEl) successEl.classList.add('visible');
   }
 }
 
-function enableResubmit(adNum) {
-  const formEl = document.getElementById(`feedback-form-${adNum}`);
-  const alreadyEl = document.getElementById(`feedback-already-${adNum}`);
-  const successEl = document.getElementById(`feedback-success-${adNum}`);
+function enableDrawerResubmit() {
+  const formEl = document.getElementById('drawer-feedback-form');
+  const alreadyEl = document.getElementById('drawer-feedback-already');
+  const successEl = document.getElementById('drawer-feedback-success');
   if (formEl) formEl.style.display = 'block';
   if (alreadyEl) alreadyEl.classList.remove('visible');
   if (successEl) successEl.classList.remove('visible');
 }
 
-async function submitFeedback(adNum) {
-  const name = document.getElementById(`fb-name-${adNum}`).value.trim();
-  const role = document.getElementById(`fb-role-${adNum}`).value;
-  const verdictEl = document.querySelector(`input[name="verdict-${adNum}"]:checked`);
-  const verdict = verdictEl ? verdictEl.value : 'comment_only';
-  const comment = document.getElementById(`fb-comment-${adNum}`).value.trim();
-  const errorEl = document.getElementById(`fb-error-${adNum}`);
-  const submitBtn = document.getElementById(`fb-submit-${adNum}`);
+async function submitDrawerFeedback() {
+  if (!_data || !_data.ads[_currentAd]) return;
+  const ad = _data.ads[_currentAd];
+  const adNum = ad.num;
 
-  // Validate
+  const name = document.getElementById('drawer-fb-name').value.trim();
+  const roleEl = document.getElementById('drawer-fb-role');
+  const role = _reviewerMode === 'client' ? 'Client' : roleEl.value;
+  const verdictEl = document.querySelector('input[name="drawer-verdict"]:checked');
+  const verdict = verdictEl ? verdictEl.value : 'comment_only';
+  const comment = document.getElementById('drawer-fb-comment').value.trim();
+  const errorEl = document.getElementById('drawer-fb-error');
+  const submitBtn = document.getElementById('drawer-fb-submit');
+
   if (!name) {
     errorEl.textContent = 'Please enter your name.';
     errorEl.style.display = 'inline';
@@ -952,11 +1418,9 @@ async function submitFeedback(adNum) {
   }
   errorEl.style.display = 'none';
 
-  // Save name + role to localStorage
   localStorage.setItem('adpreview_name', name);
   localStorage.setItem('adpreview_role', role);
 
-  // Submit to Supabase
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';
 
@@ -974,14 +1438,25 @@ async function submitFeedback(adNum) {
 
     if (error) throw error;
 
-    // Mark as submitted in localStorage
+    // Mark as submitted
     const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
     submitted[`${CAMPAIGN_ID}-${adNum}`] = true;
     localStorage.setItem('adpreview_submitted', JSON.stringify(submitted));
 
+    // Save verdict for tab dot + progress bar
+    localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, verdict);
+    updateTabDot(adNum, verdict);
+    renderProgressBar();
+
+    // Clear draft
+    localStorage.removeItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`);
+
     // Show success
-    document.getElementById(`feedback-form-${adNum}`).style.display = 'none';
-    document.getElementById(`feedback-success-${adNum}`).classList.add('visible');
+    document.getElementById('drawer-feedback-form').style.display = 'none';
+    document.getElementById('drawer-feedback-success').classList.add('visible');
+
+    // Reload thread
+    loadFeedbackThread(adNum);
 
   } catch (e) {
     errorEl.textContent = `Error: ${e.message || 'Could not submit feedback.'}`;
@@ -990,6 +1465,115 @@ async function submitFeedback(adNum) {
     submitBtn.textContent = 'Submit Feedback';
   }
 }
+
+// ── Auto-Save Draft ────────────────────────────────────────────────────────
+function attachDraftAutoSave(adNum) {
+  const textarea = document.getElementById('drawer-fb-comment');
+  const nameInput = document.getElementById('drawer-fb-name');
+  const roleSelect = document.getElementById('drawer-fb-role');
+  const verdicts = document.querySelectorAll('input[name="drawer-verdict"]');
+
+  const saveDraft = () => {
+    clearTimeout(_draftSaveTimer);
+    _draftSaveTimer = setTimeout(() => {
+      const verdictEl = document.querySelector('input[name="drawer-verdict"]:checked');
+      const draft = {
+        name: nameInput ? nameInput.value : '',
+        role: roleSelect ? roleSelect.value : 'Client',
+        verdict: verdictEl ? verdictEl.value : 'comment_only',
+        comment: textarea ? textarea.value : '',
+      };
+      localStorage.setItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`, JSON.stringify(draft));
+
+      // Show "Draft saved" indicator
+      const indicator = document.getElementById('draft-saved');
+      if (indicator) {
+        indicator.classList.add('visible');
+        setTimeout(() => indicator.classList.remove('visible'), 1500);
+      }
+    }, 1000);
+  };
+
+  if (textarea) textarea.addEventListener('input', saveDraft);
+  if (nameInput) nameInput.addEventListener('input', saveDraft);
+  if (roleSelect) roleSelect.addEventListener('change', saveDraft);
+  verdicts.forEach(v => v.addEventListener('change', saveDraft));
+}
+
+// ── Feedback Thread ────────────────────────────────────────────────────────
+async function loadFeedbackThread(adNum) {
+  const container = document.getElementById('feedback-thread-container');
+  if (!container) return;
+
+  // Only show in Mileage mode, or show own feedback in Client mode
+  if (!sb) { container.innerHTML = ''; return; }
+
+  try {
+    let query = sb.from('feedback').select('*')
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum)
+      .order('created_at');
+
+    const { data, error } = await query;
+    if (error) throw error;
+    if (!data || data.length === 0) { container.innerHTML = ''; return; }
+
+    // In Client mode, only show the reviewer's own feedback
+    let entries = data;
+    if (_reviewerMode === 'client') {
+      const myName = localStorage.getItem('adpreview_name') || '';
+      entries = data.filter(f => f.reviewer_name === myName);
+    }
+    if (entries.length === 0) { container.innerHTML = ''; return; }
+
+    let html = `<div class="feedback-thread">
+      <div class="feedback-thread-title">Previous Feedback</div>`;
+
+    entries.forEach(f => {
+      const verdictLabel = f.verdict === 'approve' ? 'Approved' :
+                           f.verdict === 'request_changes' ? 'Changes Requested' : 'Comment';
+      const ts = f.created_at ? new Date(f.created_at).toLocaleString() : '';
+
+      html += `<div class="feedback-entry">
+        <div class="feedback-entry-header">
+          <span class="feedback-entry-name">${esc(f.reviewer_name)}</span>
+          <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
+          <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
+          <span class="feedback-entry-time">${esc(ts)}</span>
+        </div>
+        ${f.comment ? `<div class="feedback-entry-comment">${esc(f.comment)}</div>` : ''}
+      </div>`;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+  } catch (e) {
+    container.innerHTML = '';
+  }
+}
+
+// ── Keyboard Navigation ────────────────────────────────────────────────────
+document.addEventListener('keydown', function(e) {
+  // Skip if user is typing in an input or textarea
+  const tag = e.target.tagName.toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+
+  if (!_data || !_data.ads) return;
+
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    if (_currentAd > 0) selectTab(_currentAd - 1);
+  } else if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    if (_currentAd < _data.ads.length - 1) selectTab(_currentAd + 1);
+  } else if (e.key >= '1' && e.key <= '9') {
+    const idx = parseInt(e.key) - 1;
+    if (idx < _data.ads.length) selectTab(idx);
+  } else if (e.key === 'f' || e.key === 'F') {
+    e.preventDefault();
+    toggleDrawer();
+  }
+});
 
 // ── Utility ────────────────────────────────────────────────────────────────
 function esc(s) {

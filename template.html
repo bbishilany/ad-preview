@@ -218,7 +218,7 @@
     display: flex;
     gap: 6px;
     margin-bottom: 24px;
-    overflow: visible;
+    overflow-x: auto;
     padding: 8px 8px 4px;
     flex-wrap: wrap;
   }
@@ -235,7 +235,6 @@
     text-align: center;
     white-space: nowrap;
     user-select: none;
-    position: relative;
   }
   .adprev-tab:hover { border-color: var(--accent); color: var(--text); }
   .adprev-tab.active { background: rgba(79,122,255,0.15); color: var(--accent); border-color: var(--accent); }
@@ -250,49 +249,44 @@
   }
   .adprev-tab.active .tab-week { color: var(--accent); opacity: 0.7; }
 
-  /* Tab notification badge */
+  /* Tab notification badge — inline, never clipped */
   .tab-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: 4px;
+    line-height: 1;
+  }
+  .tab-badge.not-started {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    padding: 0;
+    border: 1.5px solid var(--text2);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .tab-badge.has-count {
     min-width: 16px;
     height: 16px;
     border-radius: 8px;
-    font-size: 9px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    padding: 0 4px;
-    pointer-events: none;
-  }
-  .tab-badge.not-started {
-    width: 8px;
-    height: 8px;
-    min-width: 8px;
-    padding: 0;
-    top: -2px;
-    right: -2px;
-    background: transparent;
-    border: 1.5px solid var(--border);
-    border-radius: 50%;
-  }
-  .tab-badge.has-count {
     background: var(--danger);
     color: #fff;
-    border: 2px solid var(--bg);
-    box-shadow: 0 1px 4px rgba(239,68,68,0.4);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 0 4px;
   }
   .tab-badge.all-done {
     width: 16px;
+    height: 16px;
     min-width: 16px;
     padding: 0;
+    border-radius: 50%;
     background: var(--green);
     color: #fff;
     font-size: 10px;
-    border: 2px solid var(--bg);
-    box-shadow: 0 1px 4px rgba(34,197,94,0.4);
   }
 
   /* Mark complete toggle */
@@ -1795,9 +1789,9 @@ async function updateTabBadges() {
     const tab = document.getElementById(`tab-${i}`);
     if (!tab) continue;
 
-    // Remove existing badge
-    const oldBadge = tab.querySelector('.tab-badge');
-    if (oldBadge) oldBadge.remove();
+    // Find the existing inline badge
+    const badge = tab.querySelector('.tab-badge');
+    if (!badge) continue;
 
     let totalItems = 0;
     let resolvedCount = 0;
@@ -1838,13 +1832,12 @@ async function updateTabBadges() {
       } catch(e) {}
     }
 
-    // Create badge
-    const badge = document.createElement('span');
+    // Update badge class and content in-place
     badge.className = 'tab-badge';
 
     if (totalItems === 0) {
       badge.classList.add('not-started');
-      badge.innerHTML = '';  // empty hollow circle
+      badge.innerHTML = '';  // subtle hollow circle
     } else if (resolvedCount >= totalItems) {
       badge.classList.add('all-done');
       badge.innerHTML = '&#10003;';  // checkmark
@@ -1853,8 +1846,6 @@ async function updateTabBadges() {
       const unresolved = totalItems - resolvedCount;
       badge.textContent = unresolved;
     }
-
-    tab.appendChild(badge);
   }
 }
 
@@ -1930,7 +1921,7 @@ function renderTabs(data) {
   tabsEl.innerHTML = data.ads.map((ad, i) => {
     const wk = weekNames[ad.week] || 'Wk' + ad.week;
     return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
-      Ad ${ad.num}
+      <span class="tab-label">Ad ${ad.num} <span class="tab-badge not-started"></span></span>
       <span class="tab-week">Wk ${ad.week} &middot; ${wk}</span>
     </div>`;
   }).join('');

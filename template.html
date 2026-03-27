@@ -2385,8 +2385,7 @@ function renderAd(idx) {
 
   // Enhancement 7: Inline creative direction inside copy panel
   if (ad.image_direction) {
-    const openAttr = _reviewerMode === 'mileage' ? ' open' : '';
-    html += `<details class="inline-creative-direction" data-internal-only${openAttr}>
+    html += `<details class="inline-creative-direction" data-internal-only>
       <summary>Image Creative Direction</summary>
       <div class="direction-body">${esc(ad.image_direction)}</div>
     </details>`;

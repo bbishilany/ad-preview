@@ -1612,6 +1612,74 @@
     border-left: 3px solid var(--accent);
     padding-left: 12px;
   }
+
+  /* ── IMAGE UPLOAD (Mileage mode only) ──────────────────────────────── */
+  .img-upload-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .img-upload-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .img-upload-btn:hover { transform: scale(1.1); background: #3a65e6; }
+  body.client-mode .img-upload-btn { display: none !important; }
+
+  .img-revert-pill {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--danger);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s;
+    letter-spacing: 0.3px;
+  }
+  .img-revert-pill:hover { transform: scale(1.05); }
+  body.client-mode .img-revert-pill { display: none !important; }
+
+  .upload-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    animation: toastIn 0.2s ease-out;
+  }
+  .upload-toast.success { border-color: var(--green); }
+  .upload-toast.error { border-color: var(--danger); }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -1749,6 +1817,7 @@ let _draftSaveTimer = null;
 let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
+let _imageOverrides = {};   // cache: `${adNum}_${slot}` → public_url
 const CAMPAIGN_ID = 'confluence-fp';
 
 // ── Resolved comment tracking ─────────────────────────────────────────────
@@ -1844,12 +1913,143 @@ async function updateTabBadges() {
 
 const SCOPE_CURSOR = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%234f7aff' stroke-width='2' opacity='0.35'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%234f7aff' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='16' y1='4' x2='16' y2='12' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='20' x2='16' y2='28' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='4' y1='16' x2='12' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='16' x2='28' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234f7aff'/%3E%3C/svg%3E") 16 16, crosshair`;
 
+// ── Image Upload / Override System ─────────────────────────────────────────
+async function loadImageOverrides() {
+  if (!sb) return;
+  try {
+    const { data, error } = await sb.from('ad_images')
+      .select('ad_num, slot, public_url')
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('is_active', true);
+    if (error) throw error;
+    _imageOverrides = {};
+    (data || []).forEach(row => {
+      _imageOverrides[`${row.ad_num}_${row.slot}`] = row.public_url;
+    });
+  } catch (e) {
+    console.warn('Could not load image overrides:', e.message);
+  }
+}
+
+function _detectSlot(filename) {
+  if (!filename) return 'feed';
+  if (filename.includes('story')) return 'story';
+  const cardMatch = filename.match(/card(\d+)/);
+  if (cardMatch) return `card${cardMatch[1]}`;
+  return 'feed';
+}
+
+function showUploadToast(msg, type) {
+  const existing = document.querySelector('.upload-toast');
+  if (existing) existing.remove();
+  const el = document.createElement('div');
+  el.className = `upload-toast ${type || ''}`;
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+
+function triggerUpload(adNum, slot) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png,image/jpeg,image/webp';
+  input.onchange = () => {
+    if (input.files && input.files[0]) handleFileSelected(input.files[0], adNum, slot);
+  };
+  input.click();
+}
+
+async function handleFileSelected(file, adNum, slot) {
+  if (!sb) { showUploadToast('Supabase not configured', 'error'); return; }
+  if (file.size > 5 * 1024 * 1024) { showUploadToast('File too large (max 5MB)', 'error'); return; }
+
+  showUploadToast('Uploading...', '');
+
+  const ext = file.name.split('.').pop() || 'png';
+  const storagePath = `${CAMPAIGN_ID}/ad${adNum}_${slot}_${Date.now()}.${ext}`;
+
+  try {
+    // Upload to Supabase Storage
+    const { error: uploadError } = await sb.storage
+      .from('ad-creatives')
+      .upload(storagePath, file, { upsert: true });
+    if (uploadError) throw uploadError;
+
+    // Get public URL
+    const { data: urlData } = sb.storage.from('ad-creatives').getPublicUrl(storagePath);
+    const publicUrl = urlData.publicUrl;
+
+    // Deactivate any existing override for this slot
+    await sb.from('ad_images')
+      .update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum)
+      .eq('slot', slot)
+      .eq('is_active', true);
+
+    // Find original filename from data.json
+    const ad = _data.ads.find(a => a.num === adNum);
+    let origFilename = '';
+    if (ad && ad.images) {
+      if (slot === 'story') origFilename = ad.images.find(f => f.includes('story')) || ad.images[0] || '';
+      else if (slot.startsWith('card')) origFilename = ad.images.find(f => f.includes(slot)) || '';
+      else origFilename = ad.images.find(f => !f.includes('story') && !f.includes('card')) || ad.images[0] || '';
+    }
+
+    // Insert new record
+    const { error: insertError } = await sb.from('ad_images').insert({
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      slot: slot,
+      filename: origFilename,
+      storage_path: storagePath,
+      public_url: publicUrl,
+      uploaded_by: 'mileage'
+    });
+    if (insertError) throw insertError;
+
+    // Update local cache
+    _imageOverrides[`${adNum}_${slot}`] = publicUrl;
+
+    // Re-render current ad
+    renderAd(_currentAd);
+    initCarouselNav();
+    loadPins(_data.ads[_currentAd].num);
+
+    showUploadToast('Image uploaded', 'success');
+  } catch (e) {
+    console.error('Upload failed:', e);
+    showUploadToast('Upload failed: ' + e.message, 'error');
+  }
+}
+
+async function revertImage(adNum, slot) {
+  if (!sb) return;
+  try {
+    await sb.from('ad_images')
+      .update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum)
+      .eq('slot', slot)
+      .eq('is_active', true);
+
+    delete _imageOverrides[`${adNum}_${slot}`];
+    renderAd(_currentAd);
+    initCarouselNav();
+    loadPins(_data.ads[_currentAd].num);
+    showUploadToast('Reverted to original', 'success');
+  } catch (e) {
+    showUploadToast('Revert failed: ' + e.message, 'error');
+  }
+}
+
 // ── Load ad data ───────────────────────────────────────────────────────────
 async function init() {
   try {
     const res = await fetch('data.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     _data = await res.json();
+    await loadImageOverrides();
     applyReviewerMode(_reviewerMode);
     renderBanner(_data);
     renderProgressBar();
@@ -2427,16 +2627,22 @@ function _imgUrl(filename) {
   return `images/${filename}`;
 }
 function _findFeedImage(ad) {
+  const override = _imageOverrides[`${ad.num}_feed`];
+  if (override) return override;
   if (!ad.images || !ad.images.length) return null;
   const img = ad.images.find(f => !f.includes('story'));
   return img ? _imgUrl(img) : null;
 }
 function _findStoryImage(ad) {
+  const override = _imageOverrides[`${ad.num}_story`];
+  if (override) return override;
   if (!ad.images || !ad.images.length) return null;
   const storyImg = ad.images.find(f => f.includes('story'));
   return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad);
 }
 function _findCarouselCardImage(ad, cardNum) {
+  const override = _imageOverrides[`${ad.num}_card${cardNum}`];
+  if (override) return override;
   if (!ad.images || !ad.images.length) return null;
   const img = ad.images.find(f => f.includes(`card${cardNum}`));
   return img ? _imgUrl(img) : null;
@@ -2449,13 +2655,17 @@ function renderFeedMockup(ad) {
   const isVideo = ad.type === 'video';
   const playOverlay = isVideo ? '<div class="fb-play-btn"></div>' : '';
 
+  const hasFeedOverride = !!_imageOverrides[`${ad.num}_feed`];
+  const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'feed')" title="Upload image">&#8679;</button>`;
+  const revertPill = hasFeedOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'feed')">Revert</button>` : '';
+
   let mediaHtml;
   if (imgUrl) {
-    mediaHtml = `<div class="fb-media-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${playOverlay}</div>`;
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${playOverlay}${uploadBtn}${revertPill}</div></div>`;
   } else if (isVideo) {
-    mediaHtml = `<div class="fb-image-placeholder">VIDEO &middot; ${esc(ad.format || '1080x1080')}${playOverlay}</div>`;
+    mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">VIDEO &middot; ${esc(ad.format || '1080x1080')}${playOverlay}${uploadBtn}</div></div>`;
   } else {
-    mediaHtml = `<div class="fb-image-placeholder">IMAGE &middot; ${esc(ad.format || '1080x1080')}</div>`;
+    mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
   }
 
   return `<div class="fb-feed" data-pin-target="mockup-feed">
@@ -2493,10 +2703,14 @@ function renderCarouselMockup(ad) {
   let cardsHtml = '';
   if (ad.cards && ad.cards.length) {
     ad.cards.forEach(card => {
+      const cardSlot = `card${card.num}`;
       const cardImgUrl = _findCarouselCardImage(ad, card.num);
+      const hasCardOverride = !!_imageOverrides[`${ad.num}_${cardSlot}`];
+      const cardUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${cardSlot}')" title="Upload image">&#8679;</button>`;
+      const cardRevertPill = hasCardOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${cardSlot}')">Revert</button>` : '';
       const cardImgHtml = cardImgUrl
-        ? `<img class="fb-carousel-card-img" src="${cardImgUrl}" alt="Card ${card.num}" loading="lazy">`
-        : `<div class="fb-carousel-card-placeholder">Card ${card.num}: ${esc(card.label)}</div>`;
+        ? `<div class="img-upload-wrap"><img class="fb-carousel-card-img" src="${cardImgUrl}" alt="Card ${card.num}" loading="lazy">${cardUploadBtn}${cardRevertPill}</div>`
+        : `<div class="img-upload-wrap"><div class="fb-carousel-card-placeholder">Card ${card.num}: ${esc(card.label)}</div>${cardUploadBtn}</div>`;
       cardsHtml += `<div class="fb-carousel-card">${cardImgHtml}
         <div class="fb-carousel-card-caption">${esc(card.caption)}</div></div>`;
     });
@@ -2555,8 +2769,12 @@ function renderStoryMockup(ad) {
   const initials = _clientInitials();
   const handle = _data.client || '';
 
+  const hasStoryOverride = !!_imageOverrides[`${ad.num}_story`];
+  const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'story')" title="Upload image">&#8679;</button>`;
+  const storyRevertPill = hasStoryOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'story')">Revert</button>` : '';
+
   return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-pin-target="mockup-story">
-    ${hasImg ? `<img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">` : ''}
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
       <div class="ig-story-avatar">${initials}</div>

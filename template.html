@@ -1680,6 +1680,29 @@
   .upload-toast.success { border-color: var(--green); }
   .upload-toast.error { border-color: var(--danger); }
   @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Expert Review Board Button ──────────────────────────────────── */
+  .review-board-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--accent2);
+    background: rgba(124,58,237,0.12);
+    color: var(--accent2);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-top: 12px;
+  }
+  .review-board-btn:hover { background: rgba(124,58,237,0.25); border-color: #9b5de5; }
+  .review-board-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .review-board-btn svg { width: 16px; height: 16px; }
+  body.client-mode .review-board-btn { display: none !important; }
 </style>
 </head>
 <body>
@@ -2076,6 +2099,38 @@ async function revertImage(adNum, slot) {
   }
 }
 
+// ── Expert Review Board ────────────────────────────────────────────────────
+async function requestExpertReview() {
+  const btn = document.getElementById('review-board-btn');
+  if (!sb || !_data) { showUploadToast('Not ready — data or Supabase not loaded', 'error'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  try {
+    // Compile full campaign payload
+    const payload = {
+      campaign_id: CAMPAIGN_ID,
+      campaign_name: _data.campaign || CAMPAIGN_ID,
+      client: _data.client || CAMPAIGN_ID,
+      submitted_at: new Date().toISOString(),
+      status: 'pending',
+      ad_count: _data.ads.length,
+      campaign_data: JSON.stringify(_data)
+    };
+
+    const { error } = await sb.from('review_requests').insert(payload);
+    if (error) throw error;
+
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg> Review Requested`;
+    showUploadToast('Expert Review Board request submitted. Run: python3 review-board.py ' + CAMPAIGN_ID, 'success');
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Send to Expert Review Board';
+    showUploadToast('Failed: ' + e.message, 'error');
+  }
+}
+
 // ── Load ad data ───────────────────────────────────────────────────────────
 async function init() {
   try {
@@ -2104,7 +2159,11 @@ function renderBanner(data) {
       ${data.event_date ? `<strong>Date:</strong> ${esc(data.event_date)}<br>` : ''}
       ${data.venue ? `<strong>Venue:</strong> ${esc(data.venue)}<br>` : ''}
       ${data.co_presenters ? `<strong>Presenters:</strong> ${esc(data.co_presenters)}` : ''}
-    </div>`;
+    </div>
+    <button class="review-board-btn" onclick="requestExpertReview()" id="review-board-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Send to Expert Review Board
+    </button>`;
 }
 
 // ── Progress Bar ───────────────────────────────────────────────────────────

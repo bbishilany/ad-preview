@@ -1949,6 +1949,34 @@ function showUploadToast(msg, type) {
   setTimeout(() => el.remove(), 3000);
 }
 
+function _patchImage(adNum, slot, newUrl, hasOverride) {
+  // Find all upload wraps and match by the onclick slot value
+  const wraps = document.querySelectorAll('.img-upload-wrap');
+  for (const wrap of wraps) {
+    const btn = wrap.querySelector('.img-upload-btn');
+    if (!btn) continue;
+    const onclick = btn.getAttribute('onclick') || '';
+    if (!onclick.includes(`(${adNum},'${slot}')`) && !onclick.includes(`(${adNum},"${slot}")`)) continue;
+
+    // Swap image src
+    const img = wrap.querySelector('img');
+    if (img && newUrl) img.src = newUrl;
+
+    // Toggle revert pill
+    let pill = wrap.querySelector('.img-revert-pill');
+    if (hasOverride && !pill) {
+      pill = document.createElement('button');
+      pill.className = 'img-revert-pill';
+      pill.textContent = 'Revert';
+      pill.onclick = (e) => { e.stopPropagation(); revertImage(adNum, slot); };
+      wrap.appendChild(pill);
+    } else if (!hasOverride && pill) {
+      pill.remove();
+    }
+    break;
+  }
+}
+
 function triggerUpload(adNum, slot) {
   const input = document.createElement('input');
   input.type = 'file';
@@ -2011,10 +2039,8 @@ async function handleFileSelected(file, adNum, slot) {
     // Update local cache
     _imageOverrides[`${adNum}_${slot}`] = publicUrl;
 
-    // Re-render current ad
-    renderAd(_currentAd);
-    initCarouselNav();
-    loadAndRenderPins(_data.ads[_currentAd].num);
+    // In-place update — no full re-render
+    _patchImage(adNum, slot, publicUrl, true);
 
     showUploadToast('Image uploaded', 'success');
   } catch (e) {
@@ -2034,9 +2060,16 @@ async function revertImage(adNum, slot) {
       .eq('is_active', true);
 
     delete _imageOverrides[`${adNum}_${slot}`];
-    renderAd(_currentAd);
-    initCarouselNav();
-    loadAndRenderPins(_data.ads[_currentAd].num);
+
+    // Find original local URL
+    const ad = _data.ads.find(a => a.num === adNum);
+    let origUrl = null;
+    if (ad) {
+      if (slot === 'story') origUrl = _findStoryImage(ad);
+      else if (slot.startsWith('card')) origUrl = _findCarouselCardImage(ad, parseInt(slot.replace('card', '')));
+      else origUrl = _findFeedImage(ad);
+    }
+    _patchImage(adNum, slot, origUrl, false);
     showUploadToast('Reverted to original', 'success');
   } catch (e) {
     showUploadToast('Revert failed: ' + e.message, 'error');

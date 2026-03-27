@@ -2014,7 +2014,7 @@ async function handleFileSelected(file, adNum, slot) {
     // Re-render current ad
     renderAd(_currentAd);
     initCarouselNav();
-    loadPins(_data.ads[_currentAd].num);
+    loadAndRenderPins(_data.ads[_currentAd].num);
 
     showUploadToast('Image uploaded', 'success');
   } catch (e) {
@@ -2036,7 +2036,7 @@ async function revertImage(adNum, slot) {
     delete _imageOverrides[`${adNum}_${slot}`];
     renderAd(_currentAd);
     initCarouselNav();
-    loadPins(_data.ads[_currentAd].num);
+    loadAndRenderPins(_data.ads[_currentAd].num);
     showUploadToast('Reverted to original', 'success');
   } catch (e) {
     showUploadToast('Revert failed: ' + e.message, 'error');

@@ -2478,25 +2478,7 @@ function renderAd(idx) {
     </details>`;
   }
 
-  // Internal-only sections with data-internal-only attribute
-  if (ad.video_script) {
-    html += `<div class="adprev-section" data-internal-only>
-      <div class="adprev-section-label">Video Script Notes</div>
-      <div class="adprev-section-body" style="font-size:12px">${esc(ad.video_script)}</div>
-    </div>`;
-  }
-  if (ad.video_talking_points) {
-    html += `<div class="adprev-section" data-internal-only>
-      <div class="adprev-section-label">Video Talking Points</div>
-      <div class="adprev-section-body" style="font-size:12px">${esc(ad.video_talking_points)}</div>
-    </div>`;
-  }
-  if (ad.infographic_direction) {
-    html += `<div class="adprev-section" data-internal-only>
-      <div class="adprev-section-label">Infographic Direction</div>
-      <div class="adprev-section-body" style="font-size:12px">${esc(ad.infographic_direction)}</div>
-    </div>`;
-  }
+  // Video script, talking points, infographic direction removed — production notes, not client-facing
 
   // Feedback & Reviews accordion — in copy panel
   html += `<details class="inline-feedback-accordion">

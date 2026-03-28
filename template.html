@@ -2383,31 +2383,56 @@ function renderAd(idx) {
   }
   html += `</div>`;
 
-  // Right: copy details
+  // Right: copy details — show only fields visible per placement
   html += `<div class="adprev-copy-panel">`;
+  const _pl = (ad.placements || []).map(p => p.toLowerCase());
+  const _hasFeed = _pl.includes('feed');
+  const _hasStories = _pl.includes('stories');
+  const _hasReels = _pl.includes('reels');
 
-  if (ad.primary_text) {
+  // Primary Text — only visible in Feed
+  if (_hasFeed && ad.primary_text) {
     html += `<div class="adprev-section" data-pin-target="copy-primary-text">
       <div class="adprev-section-label">Primary Text</div>
       <div class="adprev-section-body">${esc(ad.primary_text)}</div>
     </div>`;
   }
-  if (ad.hook) {
+  // Hook — only relevant for Feed
+  if (_hasFeed && ad.hook) {
     html += `<div class="adprev-section" data-pin-target="copy-hook">
       <div class="adprev-section-label">Hook Line</div>
       <div class="adprev-section-body" style="font-style:italic">${esc(ad.hook)}</div>
     </div>`;
   }
-  html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
-    <div class="adprev-section-label">Headline / Description / CTA</div>
-    <div class="adprev-section-body">
-      <strong>${esc(ad.headline)}</strong><br>
-      ${esc(ad.description)}<br>
-      CTA: <strong>${esc(ad.cta)}</strong>
-    </div>
-  </div>`;
+  // Headline/Description/CTA — Feed shows all; Stories shows headline+CTA; Reels-only shows CTA
+  if (_hasFeed) {
+    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+      <div class="adprev-section-label">Headline / Description / CTA</div>
+      <div class="adprev-section-body">
+        <strong>${esc(ad.headline)}</strong><br>
+        ${esc(ad.description)}<br>
+        CTA: <strong>${esc(ad.cta)}</strong>
+      </div>
+    </div>`;
+  } else if (_hasStories) {
+    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+      <div class="adprev-section-label">Headline / CTA</div>
+      <div class="adprev-section-body">
+        <strong>${esc(ad.headline)}</strong><br>
+        CTA: <strong>${esc(ad.cta)}</strong>
+      </div>
+    </div>`;
+  } else if (_hasReels) {
+    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+      <div class="adprev-section-label">CTA</div>
+      <div class="adprev-section-body">
+        CTA: <strong>${esc(ad.cta)}</strong>
+      </div>
+    </div>`;
+  }
 
-  if (ad.alt_headlines && ad.alt_headlines.length) {
+  // Alt Headlines — only relevant for Feed
+  if (_hasFeed && ad.alt_headlines && ad.alt_headlines.length) {
     html += `<div class="adprev-section" data-pin-target="copy-alt-headlines">
       <div class="adprev-section-label">Alt Headlines</div>
       <ul class="adprev-alt-list">
@@ -2415,6 +2440,7 @@ function renderAd(idx) {
       </ul>
     </div>`;
   }
+  // Card Captions — carousel is always Feed
   if (ad.cards && ad.cards.length) {
     html += `<div class="adprev-section" data-pin-target="copy-cards"><div class="adprev-section-label">Card Captions</div>`;
     ad.cards.forEach(card => {
@@ -2425,7 +2451,8 @@ function renderAd(idx) {
     });
     html += `</div>`;
   }
-  if (ad.stories) {
+  // Stories Copy — only if Stories placement
+  if (_hasStories && ad.stories) {
     html += `<div class="adprev-section" data-pin-target="copy-stories"><div class="adprev-section-label">Stories Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.stories)) {
@@ -2433,7 +2460,8 @@ function renderAd(idx) {
     }
     html += `</div></div>`;
   }
-  if (ad.reels) {
+  // Reels Copy — only if Reels placement
+  if (_hasReels && ad.reels) {
     html += `<div class="adprev-section" data-pin-target="copy-reels"><div class="adprev-section-label">Reels Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.reels)) {

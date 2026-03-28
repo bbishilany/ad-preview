@@ -154,4 +154,7 @@ if __name__ == '__main__':
     generate_placeholder(1080, 1080, 7, "Expert Insight Video", "ad7-expert-insight.png")
     generate_placeholder(1080, 1920, 7, "Expert Insight Video", "ad7-expert-insight-story.png")
 
+    # Ad 9 — Final reminder video (stories/reels, 1080x1920)
+    generate_placeholder(1080, 1920, 9, "Final Reminder Video", "ad9-final-reminder-story.png")
+
     print("Done!")

@@ -3712,8 +3712,27 @@ function getApprovalSummary() {
   return `<strong>${approved} of ${total}</strong> approved — still need: ${pendingAds}`;
 }
 
+function ensureReviewerName() {
+  const saved = localStorage.getItem('adpreview_name') || '';
+  if (saved.trim()) return saved.trim();
+
+  const name = prompt('Please enter your name to continue:');
+  if (!name || !name.trim()) return null;
+  localStorage.setItem('adpreview_name', name.trim());
+
+  // Update the name field in the feedback form if visible
+  const nameInput = document.getElementById('inline-fb-name');
+  if (nameInput) nameInput.value = name.trim();
+
+  return name.trim();
+}
+
 async function approveAd(adNum, btnEl) {
   if (btnEl.classList.contains('approved')) return;
+
+  // Require name before approving
+  const reviewerName = ensureReviewerName();
+  if (!reviewerName) return;
 
   // Save approval locally
   localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, 'approve');
@@ -3731,8 +3750,7 @@ async function approveAd(adNum, btnEl) {
   const statusMsg = document.getElementById('approve-status-msg');
   if (statusMsg) statusMsg.innerHTML = getApprovalSummary();
 
-  // Notify via Supabase
-  const reviewerName = localStorage.getItem('adpreview_name') || 'Client';
+  // Notify via Supabase (reviewerName already set above from ensureReviewerName)
   if (sb) {
     try {
       await sb.from('feedback').insert({

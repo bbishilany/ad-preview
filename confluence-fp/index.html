@@ -350,12 +350,12 @@
     position: relative;
   }
   .adprev-section-label {
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text2);
-    margin-bottom: 6px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--accent);
+    margin-bottom: 8px;
   }
   .adprev-section-body {
     font-size: 13px;
@@ -1334,6 +1334,13 @@
     margin-top: 2px;
   }
 
+  /* Simple feedback section */
+  .simple-feedback-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
   /* Client mode: hide internal-only elements */
   body.client-mode [data-internal-only] { display: none !important; }
 
@@ -1741,8 +1748,7 @@
         <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
         <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
         <kbd>F</kbd> Toggle feedback drawer<br>
-        <kbd>P</kbd> Toggle pin mode<br>
-        <kbd>Esc</kbd> Close zoom overlay
+          <kbd>Esc</kbd> Close zoom overlay
       </div>
     </div>
   </div>
@@ -1782,12 +1788,7 @@
 
 <!-- MOCKUP ZOOM OVERLAY (Feature 1) -->
 <div class="mockup-zoom-overlay" id="mockup-zoom-overlay" onclick="handleZoomOverlayClick(event)">
-  <div class="mockup-zoom-pin-toggle" id="zoom-pin-toggle">
-    <button id="zoom-pin-btn" onclick="togglePinModeFromZoom(event)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8m-4-4l4 4 4-4M12 22v-6m0 0l-3-3h6l-3 3z"/></svg>
-      <span>Pin Mode</span>
-    </button>
-  </div>
+  <!-- Pin mode removed -->
   <button class="mockup-zoom-close" onclick="closeMockupZoom()">&times;</button>
   <div class="mockup-zoom-content" id="mockup-zoom-content"></div>
 </div>
@@ -2340,32 +2341,7 @@ function renderAd(idx) {
     </div>
   </div>`;
 
-  // Status bar — verdict selection at first glance
-  const savedVerdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) || '';
-  html += `<div class="ad-status-bar" id="ad-status-bar">
-    <button class="ad-status-btn${savedVerdict === 'approve' ? ' selected-approve' : ''}" onclick="setAdStatus(${ad.num}, 'approve', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      Approve
-    </button>
-    <button class="ad-status-btn${savedVerdict === 'request_changes' ? ' selected-changes' : ''}" onclick="setAdStatus(${ad.num}, 'request_changes', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-      Request Changes
-    </button>
-    <button class="ad-status-btn${savedVerdict === 'comment_only' ? ' selected-comment' : ''}" onclick="setAdStatus(${ad.num}, 'comment_only', this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Comment
-    </button>
-    <span class="ad-status-saved" id="ad-status-saved">Saved</span>
-  </div>`;
-
-  // Comment Pin toggle — big and bright
-  html += `<div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:20px">
-    <button class="pin-mode-toggle${_pinModeActive ? ' active' : ''}" id="pin-mode-btn" onclick="togglePinMode()">
-      ${SVG_ICONS.pin}
-      <span>${_pinModeActive ? 'Comment Pin ON' : 'Comment Pin'}</span>
-      <div class="pin-mode-hint">Click anywhere on the mockup or copy to drop a comment pin</div>
-    </button>
-  </div>`;
+  // (Status bar and pin mode removed — simplified UI)
 
   // Two-column: mockups left, copy right
   html += `<div class="adprev-detail">`;
@@ -2392,21 +2368,21 @@ function renderAd(idx) {
 
   // Primary Text — only visible in Feed
   if (_hasFeed && ad.primary_text) {
-    html += `<div class="adprev-section" data-pin-target="copy-primary-text">
+    html += `<div class="adprev-section">
       <div class="adprev-section-label">Primary Text</div>
       <div class="adprev-section-body">${esc(ad.primary_text)}</div>
     </div>`;
   }
   // Hook — only relevant for Feed
   if (_hasFeed && ad.hook) {
-    html += `<div class="adprev-section" data-pin-target="copy-hook">
+    html += `<div class="adprev-section">
       <div class="adprev-section-label">Hook Line</div>
       <div class="adprev-section-body" style="font-style:italic">${esc(ad.hook)}</div>
     </div>`;
   }
   // Headline/Description/CTA — Feed shows all; Stories shows headline+CTA; Reels-only shows CTA
   if (_hasFeed) {
-    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+    html += `<div class="adprev-section">
       <div class="adprev-section-label">Headline / Description / CTA</div>
       <div class="adprev-section-body">
         <strong>${esc(ad.headline)}</strong><br>
@@ -2415,7 +2391,7 @@ function renderAd(idx) {
       </div>
     </div>`;
   } else if (_hasStories) {
-    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+    html += `<div class="adprev-section">
       <div class="adprev-section-label">Headline / CTA</div>
       <div class="adprev-section-body">
         <strong>${esc(ad.headline)}</strong><br>
@@ -2423,7 +2399,7 @@ function renderAd(idx) {
       </div>
     </div>`;
   } else if (_hasReels) {
-    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+    html += `<div class="adprev-section">
       <div class="adprev-section-label">CTA</div>
       <div class="adprev-section-body">
         CTA: <strong>${esc(ad.cta)}</strong>
@@ -2433,7 +2409,7 @@ function renderAd(idx) {
 
   // Alt Headlines — only relevant for Feed
   if (_hasFeed && ad.alt_headlines && ad.alt_headlines.length) {
-    html += `<div class="adprev-section" data-pin-target="copy-alt-headlines">
+    html += `<div class="adprev-section">
       <div class="adprev-section-label">Alt Headlines</div>
       <ul class="adprev-alt-list">
         ${ad.alt_headlines.map(h => `<li>${esc(h)}</li>`).join('')}
@@ -2442,7 +2418,7 @@ function renderAd(idx) {
   }
   // Card Captions — carousel is always Feed
   if (ad.cards && ad.cards.length) {
-    html += `<div class="adprev-section" data-pin-target="copy-cards"><div class="adprev-section-label">Card Captions</div>`;
+    html += `<div class="adprev-section"><div class="adprev-section-label">Card Captions</div>`;
     ad.cards.forEach(card => {
       html += `<div style="margin-bottom:8px">
         <div style="font-size:11px;font-weight:600;color:var(--text2)">Card ${card.num}: ${esc(card.label)}</div>
@@ -2453,7 +2429,7 @@ function renderAd(idx) {
   }
   // Stories Copy — only if Stories placement
   if (_hasStories && ad.stories) {
-    html += `<div class="adprev-section" data-pin-target="copy-stories"><div class="adprev-section-label">Stories Copy</div>
+    html += `<div class="adprev-section"><div class="adprev-section-label">Stories Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.stories)) {
       html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
@@ -2462,7 +2438,7 @@ function renderAd(idx) {
   }
   // Reels Copy — only if Reels placement
   if (_hasReels && ad.reels) {
-    html += `<div class="adprev-section" data-pin-target="copy-reels"><div class="adprev-section-label">Reels Copy</div>
+    html += `<div class="adprev-section"><div class="adprev-section-label">Reels Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.reels)) {
       html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
@@ -2480,23 +2456,19 @@ function renderAd(idx) {
 
   // Video script, talking points, infographic direction removed — production notes, not client-facing
 
-  // Feedback & Reviews accordion — in copy panel
-  html += `<details class="inline-feedback-accordion">
-    <summary>Feedback &amp; Reviews</summary>
-    <div class="inline-feedback-body">
-      <div id="inline-feedback-thread"></div>
-      <div id="inline-feedback-form-wrap"></div>
-    </div>
-  </details>`;
+  // Simple feedback section — always visible
+  html += `<div class="simple-feedback-section">
+    <div class="adprev-section-label">Feedback</div>
+    <div id="inline-feedback-thread"></div>
+    <div id="inline-feedback-form-wrap"></div>
+  </div>`;
 
   html += `</div>`; // close copy-panel
   html += `</div>`; // close detail grid
 
   container.innerHTML = html;
 
-  // After rendering, attach pin click handlers and load existing pins
-  attachPinClickHandlers(ad.num);
-  loadAndRenderPins(ad.num);
+  // Pin system removed — simplified UI
 
   // Initialize carousel navigation if present
   initCarouselNav();
@@ -2635,18 +2607,13 @@ async function renderInlineFeedback(adNum) {
   const roleHidden = _reviewerMode === 'client' ? ' style="display:none"' : '';
 
   formWrap.innerHTML = `<div class="inline-fb-form">
-    <div style="display:flex;gap:10px;margin-bottom:8px">
-      <input type="text" class="feedback-input" id="inline-fb-name" value="${esc(savedName)}" placeholder="Your name" style="flex:1">
-      <select class="feedback-select" id="inline-fb-role" style="width:auto"${roleHidden}>
-        <option value="Client"${roleOverride==='Client' ? ' selected' : ''}>Client</option>
-        <option value="Mileage"${roleOverride==='Mileage' ? ' selected' : ''}>Mileage</option>
-      </select>
-    </div>
-    <textarea id="inline-fb-comment" placeholder="Add your feedback..."></textarea>
+    <input type="text" class="feedback-input" id="inline-fb-name" value="${esc(savedName)}" placeholder="Your name" style="margin-bottom:8px">
+    <textarea id="inline-fb-comment" placeholder="Share your thoughts on this ad..." style="min-height:80px"></textarea>
     <div class="inline-fb-form-actions">
-      <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit</button>
+      <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit Feedback</button>
       <span id="inline-fb-error" style="color:var(--danger);font-size:12px;display:none"></span>
     </div>
+    <input type="hidden" id="inline-fb-role" value="${roleOverride}">
   </div>`;
 }
 

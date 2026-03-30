@@ -1678,29 +1678,6 @@
   }
 
   /* ── FEATURE 4: Reviewer Identity ──────────────────────────────────── */
-  .welcome-banner {
-    background: linear-gradient(135deg, rgba(79,122,255,0.1), rgba(124,58,237,0.1));
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
-    display: flex; align-items: center; gap: 12px;
-    justify-content: center;
-  }
-  .welcome-banner input {
-    background: var(--surface2); border: 1px solid var(--border);
-    border-radius: 8px; padding: 8px 14px; color: var(--text);
-    font-size: 14px; outline: none; width: 200px;
-  }
-  .welcome-banner input:focus { border-color: var(--accent); }
-  .welcome-banner button {
-    background: var(--accent); color: white; border: none;
-    padding: 8px 18px; border-radius: 8px; font-weight: 600;
-    font-size: 13px; cursor: pointer;
-  }
-  .welcome-banner button:hover { opacity: 0.9; }
-  .welcome-banner .welcome-text {
-    font-size: 13px;
-    color: var(--text2);
-  }
   .reviewer-identity {
     font-size: 11px; color: var(--text2);
     display: flex; align-items: center; gap: 6px;
@@ -1826,12 +1803,6 @@
   </div>
 </div>
 
-<!-- WELCOME BANNER (Feature 4) -->
-<div class="welcome-banner" id="welcome-banner" style="display:none">
-  <span class="welcome-text">Welcome! Enter your name to get started:</span>
-  <input type="text" id="welcome-name-input" placeholder="Your name" autocomplete="name">
-  <button onclick="submitWelcomeName()">Continue</button>
-</div>
 
 <!-- CAMPAIGN BANNER -->
 <div class="campaign-banner" id="campaign-banner"></div>
@@ -3724,33 +3695,15 @@ function esc(s) {
 // ── Feature 4: Reviewer Identity ──────────────────────────────────────────
 function initReviewerIdentity() {
   const savedName = localStorage.getItem('adpreview_name') || '';
-  const banner = document.getElementById('welcome-banner');
   const identity = document.getElementById('reviewer-identity');
   const identityName = document.getElementById('reviewer-identity-name');
 
-  if (!savedName) {
-    // Show welcome banner
-    if (banner) banner.style.display = 'flex';
-    if (identity) identity.style.display = 'none';
-  } else {
-    // Hide banner, show identity
-    if (banner) banner.style.display = 'none';
+  if (savedName) {
     if (identity) identity.style.display = 'flex';
     if (identityName) identityName.textContent = savedName;
+  } else {
+    if (identity) identity.style.display = 'none';
   }
-}
-
-function submitWelcomeName() {
-  const input = document.getElementById('welcome-name-input');
-  if (!input) return;
-  const name = input.value.trim();
-  if (!name) {
-    input.style.borderColor = 'var(--danger)';
-    return;
-  }
-  localStorage.setItem('adpreview_name', name);
-  initReviewerIdentity();
-  // Re-render drawer to pick up new name
 }
 
 function showEditNamePrompt() {
@@ -3761,19 +3714,6 @@ function showEditNamePrompt() {
     initReviewerIdentity();
   }
 }
-
-// Allow Enter key in welcome banner input
-document.addEventListener('DOMContentLoaded', function() {
-  const welcomeInput = document.getElementById('welcome-name-input');
-  if (welcomeInput) {
-    welcomeInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        submitWelcomeName();
-      }
-    });
-  }
-});
 
 // ── Init ───────────────────────────────────────────────────────────────────
 function fullInit() {

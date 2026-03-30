@@ -530,9 +530,14 @@
   .fb-avatar {
     width: 36px; height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: #fff;
     display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 14px; font-weight: 700; flex-shrink: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .fb-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
   }
   .fb-page-name { font-weight: 600; font-size: 13px; color: var(--text); }
   .fb-sponsored { font-size: 11px; color: var(--text2); }
@@ -2688,8 +2693,7 @@ function _clientInitials() {
   return name.split('-').map(w => (w[0] || '')).join('').toUpperCase().slice(0, 2);
 }
 function _pageName(d) {
-  const slug = d.client || '';
-  return slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  return 'Confluence Financial Partners';
 }
 function _imgUrl(filename) {
   return `images/${filename}`;
@@ -2738,7 +2742,7 @@ function renderFeedMockup(ad) {
 
   return `<div class="fb-feed" data-pin-target="mockup-feed">
     <div class="fb-feed-header">
-      <div class="fb-avatar">${initials}</div>
+      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
         <div class="fb-sponsored">Sponsored &middot; 2h</div>
@@ -2796,7 +2800,7 @@ function renderCarouselMockup(ad) {
 
   return `<div class="fb-feed" data-pin-target="mockup-carousel">
     <div class="fb-feed-header">
-      <div class="fb-avatar">${initials}</div>
+      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
         <div class="fb-sponsored">Sponsored &middot; 2h</div>

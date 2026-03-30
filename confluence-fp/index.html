@@ -1814,7 +1814,7 @@
 <div class="header">
   <div class="header-left">
     <div class="header-logo">
-      <img src="images/mileage-logo.png" alt="Mileage" style="height:24px;width:auto">
+      <img src="images/mileage-icon.jpg" alt="Mileage" style="height:28px;width:28px;border-radius:50%;object-fit:cover">
       <span class="header-badge">Ad Preview</span>
     </div>
   </div>
@@ -2742,7 +2742,6 @@ async function renderInlineFeedback(adNum) {
         const myName = localStorage.getItem('adpreview_name') || '';
         const isMileage = _reviewerMode === 'mileage';
 
-        if (entries.length > 0) {
           let html = '';
           entries.forEach(f => {
             const verdictLabel = f.verdict === 'approve' ? 'Approved' :

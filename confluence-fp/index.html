@@ -1814,17 +1814,7 @@
 <div class="header">
   <div class="header-left">
     <div class="header-logo">
-      <svg viewBox="0 0 32 32" fill="none">
-        <rect width="32" height="32" rx="8" fill="url(#g)"/>
-        <path d="M8 22L12 10L16 18L20 13L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#4f7aff"/>
-            <stop offset="1" stop-color="#7c3aed"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <span>Mileage Design</span>
+      <img src="images/mileage-logo.png" alt="Mileage" style="height:24px;width:auto">
       <span class="header-badge">Ad Preview</span>
     </div>
   </div>
@@ -2727,20 +2717,30 @@ async function renderInlineFeedback(adNum) {
   const formWrap = document.getElementById('inline-feedback-form-wrap');
   if (!threadEl || !formWrap) return;
 
-  // Load and render feedback thread
-  if (sb) {
-    try {
-      const { data, error } = await sb.from('feedback').select('*')
-        .eq('campaign_id', CAMPAIGN_ID)
-        .eq('ad_num', adNum)
-        .order('created_at');
+  // Load and render feedback thread — merge Supabase + localStorage cache
+  {
+    let entries = [];
+    if (sb) {
+      try {
+        const { data, error } = await sb.from('feedback').select('*')
+          .eq('campaign_id', CAMPAIGN_ID)
+          .eq('ad_num', adNum)
+          .order('created_at');
+        if (!error && data) entries = data;
+      } catch(e) { console.warn('Supabase query error:', e); }
+    }
 
-      if (!error && data && data.length > 0) {
+    // Merge localStorage-cached entries (covers RLS gaps)
+    const cacheKey = `adpreview_feedback_cache_${CAMPAIGN_ID}`;
+    const cached = JSON.parse(localStorage.getItem(cacheKey) || '[]')
+      .filter(c => c.ad_num === adNum);
+    const existingIds = new Set(entries.map(e => e.id));
+    cached.forEach(c => { if (!existingIds.has(c.id)) entries.push(c); });
+    entries.sort((a, b) => (a.created_at || '').localeCompare(b.created_at || ''));
+
+    if (entries.length > 0) {
         const myName = localStorage.getItem('adpreview_name') || '';
         const isMileage = _reviewerMode === 'mileage';
-
-        // Show all feedback to everyone
-        let entries = data;
 
         if (entries.length > 0) {
           let html = '';
@@ -2828,17 +2828,9 @@ async function renderInlineFeedback(adNum) {
               renderInlineFeedback(adNum);
             });
           });
-        } else {
-          threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
-        }
-      } else {
-        threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
-      }
-    } catch(e) {
-      threadEl.innerHTML = '';
+    } else {
+      threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
     }
-  } else {
-    threadEl.innerHTML = '<div class="inline-feedback-empty">Feedback system not connected.</div>';
   }
 
   // Render inline feedback form
@@ -2877,15 +2869,31 @@ async function submitInlineFeedback(adNum) {
 
   try {
     if (!sb) throw new Error('Not connected');
-    const { error } = await sb.from('feedback').insert({
+    const { data: insertedData, error } = await sb.from('feedback').insert({
       campaign_id: CAMPAIGN_ID,
       ad_num: adNum,
       reviewer_name: name,
       reviewer_role: role,
       verdict: verdict,
       comment: comment,
-    });
+    }).select();
     if (error) throw error;
+
+    // Cache locally so feedback shows even if RLS blocks SELECT
+    const cacheKey = `adpreview_feedback_cache_${CAMPAIGN_ID}`;
+    const cache = JSON.parse(localStorage.getItem(cacheKey) || '[]');
+    const newEntry = (insertedData && insertedData[0]) || {
+      id: 'local-' + Date.now(),
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      reviewer_name: name,
+      reviewer_role: role,
+      verdict: verdict,
+      comment: comment,
+      created_at: new Date().toISOString(),
+    };
+    cache.push(newEntry);
+    localStorage.setItem(cacheKey, JSON.stringify(cache));
 
     // Mark submitted
     const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
@@ -2898,7 +2906,7 @@ async function submitInlineFeedback(adNum) {
     localStorage.removeItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`);
 
     // Re-render to show the new comment
-    renderInlineFeedback(adNum);
+    await renderInlineFeedback(adNum);
     updateTabBadges();
 
     // Update identity display

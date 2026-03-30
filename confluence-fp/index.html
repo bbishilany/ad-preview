@@ -1843,7 +1843,6 @@
       <div class="kb-tooltip">
         <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
         <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
-        <kbd>F</kbd> Toggle feedback drawer<br>
           <kbd>Esc</kbd> Close zoom overlay
       </div>
     </div>
@@ -1868,13 +1867,6 @@
   <div class="adprev-tabs" id="adprev-tabs"></div>
   <div id="adprev-container"></div>
 
-  <!-- Legacy feedback drawer — hidden, replaced by inline accordion -->
-  <div class="feedback-drawer" id="feedback-drawer" style="display:none">
-    <div class="drawer-collapsed-bar">
-      <span class="drawer-title" id="drawer-title">Leave Feedback</span>
-    </div>
-    <div class="drawer-body" id="drawer-body"></div>
-  </div>
 </div>
 
 <!-- FOOTER -->
@@ -2245,7 +2237,6 @@ async function init() {
     renderProgressBar();
     renderTabs(_data);
     renderAd(0);
-    renderDrawer();
   } catch (e) {
     document.getElementById('adprev-container').innerHTML =
       `<p style="color:var(--danger)">Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.</p>`;
@@ -2317,7 +2308,6 @@ function selectTab(idx) {
   });
   closeActivePinPopup();
   renderAd(idx);
-  renderDrawer();
 }
 
 // ── Reviewer Mode ──────────────────────────────────────────────────────────
@@ -2390,7 +2380,6 @@ function setReviewerMode(mode) {
   _reviewerMode = mode;
   localStorage.setItem('adpreview_reviewer_mode', mode);
   applyReviewerMode(mode);
-  renderDrawer();
 }
 
 function applyReviewerMode(mode) {
@@ -4197,7 +4186,6 @@ function submitWelcomeName() {
   localStorage.setItem('adpreview_name', name);
   initReviewerIdentity();
   // Re-render drawer to pick up new name
-  renderDrawer();
 }
 
 function showEditNamePrompt() {
@@ -4206,7 +4194,6 @@ function showEditNamePrompt() {
   if (newName !== null && newName.trim()) {
     localStorage.setItem('adpreview_name', newName.trim());
     initReviewerIdentity();
-    renderDrawer();
   }
 }
 

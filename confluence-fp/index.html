@@ -1959,15 +1959,6 @@ async function updateTabBadges() {
         }
       } catch(e) {}
 
-      try {
-        const { data: pinData, error: pinErr } = await sb.from('pins').select('id')
-          .eq('campaign_id', CAMPAIGN_ID)
-          .eq('ad_num', adNum);
-        if (!pinErr && pinData) {
-          totalItems += pinData.length;
-          pinData.forEach(p => { if (resolved.has('pin-' + p.id)) resolvedCount++; });
-        }
-      } catch(e) {}
     }
 
     // Also check localStorage pins if no Supabase pins found
@@ -3433,9 +3424,7 @@ function showPinTooltip(container, marker, pinData) {
     deleteBtn.addEventListener('click', async function(e) {
       e.stopPropagation();
       if (!confirm('Are you sure you want to delete this pin?')) return;
-      if (sb && pinData.id) {
-        try { await sb.from('pins').delete().eq('id', pinData.id); } catch(err) { console.warn('Pin delete failed:', err); }
-      }
+      // Pins are localStorage-only (no Supabase table)
       // Remove from localStorage
       const adNum = pinData.ad_num;
       const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
@@ -3501,9 +3490,7 @@ function showPinTooltip(container, marker, pinData) {
         const newComment = textarea.value.trim();
         if (!newComment) return;
 
-        if (sb && pinData.id) {
-          try { await sb.from('pins').update({ comment: newComment }).eq('id', pinData.id); } catch(err) { console.warn('Pin edit failed:', err); }
-        }
+        // Pins are localStorage-only (no Supabase table)
         // Update localStorage
         const adNum = pinData.ad_num;
         const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
@@ -3528,50 +3515,15 @@ async function savePinData(pinData) {
   localPins.push(pinData);
   localStorage.setItem(lsKey, JSON.stringify(localPins));
 
-  // Try Supabase
-  if (sb) {
-    try {
-      const { error } = await sb.from('pins').insert({
-        campaign_id: pinData.campaign_id,
-        ad_num: pinData.ad_num,
-        pin_x: pinData.pin_x,
-        pin_y: pinData.pin_y,
-        target_type: pinData.target_type,
-        target_selector: pinData.target_selector,
-        reviewer_name: pinData.reviewer_name,
-        comment: pinData.comment,
-      });
-      if (error) console.warn('Supabase pin save failed:', error.message);
-    } catch(e) {
-      console.warn('Supabase pin save failed:', e.message);
-    }
-  }
+  // Pins are localStorage-only (no Supabase table)
   updateTabBadges();
 }
 
 async function loadAndRenderPins(adNum) {
   let pins = [];
 
-  // Try Supabase first
-  if (sb) {
-    try {
-      const { data, error } = await sb.from('pins').select('*')
-        .eq('campaign_id', CAMPAIGN_ID)
-        .eq('ad_num', adNum)
-        .order('created_at');
-      if (!error && data && data.length) {
-        pins = data.map((p, i) => ({
-          ...p,
-          pin_number: i + 1,
-        }));
-      }
-    } catch(e) {
-      console.warn('Supabase pin load failed:', e.message);
-    }
-  }
-
-  // Fallback to localStorage if no Supabase pins
-  if (pins.length === 0) {
+  // Load pins from localStorage
+  {
     const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
     try {
       const localPins = JSON.parse(localStorage.getItem(lsKey)) || [];

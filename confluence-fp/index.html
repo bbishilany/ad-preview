@@ -1823,19 +1823,6 @@
       Reviewing as: <strong id="reviewer-identity-name"></strong>
       <button class="edit-name-btn" onclick="showEditNamePrompt()" title="Change name">&#9998;</button>
     </div>
-    <div class="reviewer-toggle">
-      <span class="reviewer-toggle-label">Reviewing as:</span>
-      <button class="reviewer-pill" id="mode-mileage" onclick="handleMileageClick()"><span class="mileage-lock-icon" id="mileage-lock">&#128274;</span> Mileage</button>
-      <button class="reviewer-pill" id="mode-client" onclick="setReviewerMode('client')">Client</button>
-      <div class="mileage-signed-in" id="mileage-signed-in" style="display:none">Signed in as Mileage</div>
-    </div>
-    <div class="kb-help">?
-      <div class="kb-tooltip">
-        <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
-        <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
-          <kbd>Esc</kbd> Close zoom overlay
-      </div>
-    </div>
   </div>
 </div>
 
@@ -3875,12 +3862,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ── Init ───────────────────────────────────────────────────────────────────
 function fullInit() {
+  _reviewerMode = 'client';
   initReviewerIdentity();
-  // If mileage mode was stored but not unlocked, fall back to client
-  if (_reviewerMode === 'mileage' && localStorage.getItem('adpreview_mileage_unlocked') !== 'true') {
-    _reviewerMode = 'client';
-    localStorage.setItem('adpreview_reviewer_mode', 'client');
-  }
   // Ask for name once at session start if not already saved
   if (!localStorage.getItem('adpreview_name')) {
     const name = prompt('Welcome! Please enter your name to get started:');

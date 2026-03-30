@@ -2360,21 +2360,7 @@ function setReviewerMode(mode) {
 }
 
 function applyReviewerMode(mode) {
-  document.getElementById('mode-mileage').classList.toggle('active', mode === 'mileage');
-  document.getElementById('mode-client').classList.toggle('active', mode === 'client');
   document.body.classList.toggle('client-mode', mode === 'client');
-
-  // Feature 2: Update lock icon and signed-in indicator
-  const lockIcon = document.getElementById('mileage-lock');
-  const signedIn = document.getElementById('mileage-signed-in');
-  const isUnlocked = localStorage.getItem('adpreview_mileage_unlocked') === 'true';
-
-  if (lockIcon) {
-    lockIcon.style.display = isUnlocked ? 'none' : 'inline';
-  }
-  if (signedIn) {
-    signedIn.style.display = (mode === 'mileage' && isUnlocked) ? 'inline' : 'none';
-  }
 }
 
 // ── Render ad detail ───────────────────────────────────────────────────────

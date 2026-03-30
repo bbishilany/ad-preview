@@ -2690,7 +2690,7 @@ async function renderInlineFeedback(adNum) {
   const formWrap = document.getElementById('inline-feedback-form-wrap');
   if (!threadEl || !formWrap) return;
 
-  // Load and render feedback thread — merge Supabase + localStorage cache
+  // Load and render feedback thread
   {
     let entries = [];
     if (sb) {
@@ -2702,14 +2702,6 @@ async function renderInlineFeedback(adNum) {
         if (!error && data) entries = data;
       } catch(e) { console.warn('Supabase query error:', e); }
     }
-
-    // Merge localStorage-cached entries (covers RLS gaps)
-    const cacheKey = `adpreview_feedback_cache_${CAMPAIGN_ID}`;
-    const cached = JSON.parse(localStorage.getItem(cacheKey) || '[]')
-      .filter(c => c.ad_num === adNum);
-    const existingIds = new Set(entries.map(e => e.id));
-    cached.forEach(c => { if (!existingIds.has(c.id)) entries.push(c); });
-    entries.sort((a, b) => (a.created_at || '').localeCompare(b.created_at || ''));
 
     if (entries.length > 0) {
         const myName = localStorage.getItem('adpreview_name') || '';
@@ -2855,21 +2847,6 @@ async function submitInlineFeedback(adNum) {
       comment: comment,
     });
     if (error) throw error;
-
-    // Cache locally so feedback shows immediately
-    const cacheKey = `adpreview_feedback_cache_${CAMPAIGN_ID}`;
-    const cache = JSON.parse(localStorage.getItem(cacheKey) || '[]');
-    cache.push({
-      id: 'local-' + Date.now(),
-      campaign_id: CAMPAIGN_ID,
-      ad_num: adNum,
-      reviewer_name: name,
-      reviewer_role: role,
-      verdict: verdict,
-      comment: comment,
-      created_at: new Date().toISOString(),
-    });
-    localStorage.setItem(cacheKey, JSON.stringify(cache));
 
     // Mark submitted
     const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');

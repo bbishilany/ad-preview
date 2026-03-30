@@ -2842,13 +2842,10 @@ async function renderInlineFeedback(adNum) {
   }
 
   // Render inline feedback form
-  const savedName = localStorage.getItem('adpreview_name') || '';
   const savedRole = localStorage.getItem('adpreview_role') || 'Client';
   const roleOverride = _reviewerMode === 'client' ? 'Client' : savedRole;
-  const roleHidden = _reviewerMode === 'client' ? ' style="display:none"' : '';
 
   formWrap.innerHTML = `<div class="inline-fb-form">
-    <input type="text" class="feedback-input" id="inline-fb-name" value="${esc(savedName)}" placeholder="Your name" style="margin-bottom:8px">
     <textarea id="inline-fb-comment" placeholder="Share your thoughts on this ad..." style="min-height:80px"></textarea>
     <div class="inline-fb-form-actions">
       <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit Feedback</button>
@@ -2859,7 +2856,8 @@ async function renderInlineFeedback(adNum) {
 }
 
 async function submitInlineFeedback(adNum) {
-  const name = document.getElementById('inline-fb-name').value.trim();
+  const name = ensureReviewerName();
+  if (!name) return;
   const roleEl = document.getElementById('inline-fb-role');
   const role = _reviewerMode === 'client' ? 'Client' : roleEl.value;
   const comment = document.getElementById('inline-fb-comment').value.trim();
@@ -2867,20 +2865,12 @@ async function submitInlineFeedback(adNum) {
   const submitBtn = document.getElementById('inline-fb-submit');
   const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) || 'comment_only';
 
-  if (!name) {
-    errorEl.textContent = 'Enter your name.';
-    errorEl.style.display = 'inline';
-    return;
-  }
   if (!comment) {
     errorEl.textContent = 'Enter feedback.';
     errorEl.style.display = 'inline';
     return;
   }
   errorEl.style.display = 'none';
-
-  localStorage.setItem('adpreview_name', name);
-  localStorage.setItem('adpreview_role', role);
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';

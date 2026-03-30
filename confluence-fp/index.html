@@ -1357,6 +1357,11 @@
     border-color: var(--accent);
     background: rgba(79,122,255,0.06);
   }
+  .editable-field.locked {
+    cursor: default;
+    opacity: 0.7;
+    pointer-events: none;
+  }
   .editable-field-saved {
     position: absolute;
     top: 0; right: 0;
@@ -1368,6 +1373,62 @@
     pointer-events: none;
   }
   .editable-field-saved.visible { opacity: 1; }
+
+  /* Lock bar for approved ads */
+  .lock-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(34,197,94,0.06);
+    border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--text2);
+  }
+  .lock-bar svg { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; }
+  .lock-bar-text { flex: 1; }
+  .unlock-btn {
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .unlock-btn:hover { border-color: var(--accent); color: var(--text); }
+  .unlock-prompt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .unlock-prompt input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--text);
+    outline: none;
+    width: 120px;
+  }
+  .unlock-prompt input:focus { border-color: var(--accent); }
+  .unlock-prompt input.error { border-color: var(--danger); }
+  .unlock-prompt button {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
   /* Simple feedback section */
   .simple-feedback-section {
@@ -1877,6 +1938,7 @@ let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 let _imageOverrides = {};   // cache: `${adNum}_${slot}` → public_url
+let _unlockedAds = new Set(); // approved ads unlocked by Mileage password
 const CAMPAIGN_ID = 'confluence-fp';
 
 // ── Resolved comment tracking ─────────────────────────────────────────────
@@ -2397,52 +2459,72 @@ function renderAd(idx) {
 
   // Right: copy details — show only fields visible per placement
   html += `<div class="adprev-copy-panel">`;
+
+  // Lock bar for approved ads
+  const _adUnlocked = _unlockedAds.has(ad.num);
+  if (isApproved && !_adUnlocked) {
+    html += `<div class="lock-bar" id="lock-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span class="lock-bar-text">Approved — copy is locked</span>
+      <button class="unlock-btn" onclick="showUnlockPrompt(${ad.num})">Unlock Edits</button>
+    </div>`;
+  } else if (isApproved && _adUnlocked) {
+    html += `<div class="lock-bar" id="lock-bar" style="border-color:rgba(79,122,255,0.3);background:rgba(79,122,255,0.06)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span class="lock-bar-text" style="color:var(--accent)">Unlocked for editing (Mileage)</span>
+    </div>`;
+  }
+
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
   const _hasFeed = _pl.includes('feed');
   const _hasStories = _pl.includes('stories');
   const _hasReels = _pl.includes('reels');
 
+  const _canEdit = !isApproved || _adUnlocked;
+  const _ce = _canEdit ? 'true' : 'false';
+  const _lockCls = _canEdit ? '' : ' locked';
+
   // Primary Text — only visible in Feed
   if (_hasFeed && ad.primary_text) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Primary Text</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="primary_text">${esc(ad.primary_text)}</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="primary_text">${esc(ad.primary_text)}</div>
     </div>`;
   }
   // Hook — only relevant for Feed
   if (_hasFeed && ad.hook) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Hook Line</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="hook" style="font-style:italic">${esc(ad.hook)}</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="hook" style="font-style:italic">${esc(ad.hook)}</div>
     </div>`;
   }
   // Headline / Description / CTA — each editable separately
   if (_hasFeed) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Headline</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
     </div>`;
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Description</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="description">${esc(ad.description)}</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="description">${esc(ad.description)}</div>
     </div>`;
     html += `<div class="adprev-section">
       <div class="adprev-section-label">CTA</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
     </div>`;
   } else if (_hasStories) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Headline</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
     </div>`;
     html += `<div class="adprev-section">
       <div class="adprev-section-label">CTA</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
     </div>`;
   } else if (_hasReels) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">CTA</div>
-      <div class="adprev-section-body editable-field" contenteditable="true" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
     </div>`;
   }
 
@@ -2527,6 +2609,49 @@ function renderAd(idx) {
 
   // Render inline feedback content
   renderInlineFeedback(ad.num);
+}
+
+// ── Unlock approved ads for editing ───────────────────────────────────────
+function showUnlockPrompt(adNum) {
+  const lockBar = document.getElementById('lock-bar');
+  if (!lockBar) return;
+
+  // Replace the unlock button with a password input
+  const btn = lockBar.querySelector('.unlock-btn');
+  if (!btn) return;
+
+  btn.outerHTML = `<div class="unlock-prompt" id="unlock-prompt">
+    <input type="password" id="unlock-pw" placeholder="Password" autofocus>
+    <button onclick="tryUnlock(${adNum})">Go</button>
+  </div>`;
+
+  const input = document.getElementById('unlock-pw');
+  if (input) {
+    input.focus();
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') tryUnlock(adNum);
+    });
+  }
+}
+
+function tryUnlock(adNum) {
+  const input = document.getElementById('unlock-pw');
+  if (!input) return;
+
+  if (input.value === MILEAGE_PASSWORD) {
+    _unlockedAds.add(adNum);
+    // Re-render the current ad to unlock fields
+    renderAd(_currentAd);
+    showUploadToast('Edits unlocked for Ad ' + adNum, 'success');
+  } else {
+    input.classList.add('error');
+    input.value = '';
+    input.placeholder = 'Wrong password';
+    setTimeout(() => {
+      input.classList.remove('error');
+      input.placeholder = 'Password';
+    }, 1500);
+  }
 }
 
 // ── Editable copy fields ──────────────────────────────────────────────────

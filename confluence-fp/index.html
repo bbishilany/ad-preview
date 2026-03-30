@@ -2847,8 +2847,13 @@ async function renderInlineFeedback(adNum) {
 }
 
 async function submitInlineFeedback(adNum) {
-  const name = ensureReviewerName();
-  if (!name) return;
+  let name = localStorage.getItem('adpreview_name') || '';
+  if (!name) {
+    const entered = prompt('Please enter your name to submit feedback:');
+    if (!entered || !entered.trim()) return;
+    name = entered.trim();
+    localStorage.setItem('adpreview_name', name);
+  }
   const roleEl = document.getElementById('inline-fb-role');
   const role = _reviewerMode === 'client' ? 'Client' : roleEl.value;
   const comment = document.getElementById('inline-fb-comment').value.trim();
@@ -2868,20 +2873,20 @@ async function submitInlineFeedback(adNum) {
 
   try {
     if (!sb) throw new Error('Not connected');
-    const { data: insertedData, error } = await sb.from('feedback').insert({
+    const { error } = await sb.from('feedback').insert({
       campaign_id: CAMPAIGN_ID,
       ad_num: adNum,
       reviewer_name: name,
       reviewer_role: role,
       verdict: verdict,
       comment: comment,
-    }).select();
+    });
     if (error) throw error;
 
-    // Cache locally so feedback shows even if RLS blocks SELECT
+    // Cache locally so feedback shows immediately
     const cacheKey = `adpreview_feedback_cache_${CAMPAIGN_ID}`;
     const cache = JSON.parse(localStorage.getItem(cacheKey) || '[]');
-    const newEntry = (insertedData && insertedData[0]) || {
+    cache.push({
       id: 'local-' + Date.now(),
       campaign_id: CAMPAIGN_ID,
       ad_num: adNum,
@@ -2890,8 +2895,7 @@ async function submitInlineFeedback(adNum) {
       verdict: verdict,
       comment: comment,
       created_at: new Date().toISOString(),
-    };
-    cache.push(newEntry);
+    });
     localStorage.setItem(cacheKey, JSON.stringify(cache));
 
     // Mark submitted
@@ -3711,9 +3715,7 @@ function ensureReviewerName() {
 async function approveAd(adNum, btnEl) {
   if (btnEl.classList.contains('approved')) return;
 
-  // Require name before approving
-  const reviewerName = ensureReviewerName();
-  if (!reviewerName) return;
+  const reviewerName = localStorage.getItem('adpreview_name') || 'Anonymous';
 
   // Save approval locally
   localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, 'approve');
@@ -3878,6 +3880,13 @@ function fullInit() {
   if (_reviewerMode === 'mileage' && localStorage.getItem('adpreview_mileage_unlocked') !== 'true') {
     _reviewerMode = 'client';
     localStorage.setItem('adpreview_reviewer_mode', 'client');
+  }
+  // Ask for name once at session start if not already saved
+  if (!localStorage.getItem('adpreview_name')) {
+    const name = prompt('Welcome! Please enter your name to get started:');
+    if (name && name.trim()) {
+      localStorage.setItem('adpreview_name', name.trim());
+    }
   }
   init();
 }

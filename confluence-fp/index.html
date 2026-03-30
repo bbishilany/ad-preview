@@ -3086,8 +3086,8 @@ function renderStoryMockup(ad) {
     ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
-      <div class="ig-story-avatar">${initials}</div>
-      <div class="ig-story-handle">@${esc(handle)}</div>
+      <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
+      <div class="ig-story-handle">confluencefp</div>
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
@@ -3117,11 +3117,11 @@ function renderReelMockup(ad) {
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.shareSm}<span class="ig-reel-sidebar-count">Share</span></div>
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.musicSm}</div>
     </div>
-    <div class="ig-reel-handle">@${esc(handle)} ${SVG_ICONS.verified}</div>
+    <div class="ig-reel-handle">confluencefp ${SVG_ICONS.verified}</div>
     <div class="ig-reel-caption">${esc(truncCaption)}${showMore ? ` <span class="ig-reel-more">... more</span>` : ''}</div>
     <div class="ig-reel-music-bar">
       ${SVG_ICONS.music}
-      <span class="ig-reel-music-text">&#9835; Original audio - ${esc(handle)}</span>
+      <span class="ig-reel-music-text">&#9835; Original audio - confluencefp</span>
       <div class="ig-reel-music-disc"></div>
     </div>
     <div class="ig-reel-cta">${esc(cta)}</div>

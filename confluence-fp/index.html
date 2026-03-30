@@ -1626,6 +1626,12 @@
     background: rgba(239,68,68,0.15);
     border-color: var(--danger);
   }
+  .feedback-delete-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--text2); opacity: 0.4; padding: 2px;
+    margin-left: auto; line-height: 1; transition: all 0.15s;
+  }
+  .feedback-delete-btn:hover { opacity: 1; color: var(--danger); }
   .feedback-edit-area {
     margin-top: 6px;
   }
@@ -2677,15 +2683,7 @@ async function renderInlineFeedback(adNum) {
             const isOwn = f.reviewer_name === myName && myName !== '';
             const ownClass = isOwn ? ' own-comment' : '';
 
-            const fbResolved = isResolved('fb-' + f.id);
-            let actionsHtml = '';
-            if (isMileage || isOwn) {
-              actionsHtml = '<div class="feedback-entry-actions">';
-              if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-ifb-edit="${f.id}">Edit</button>`;
-              if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-ifb-delete="${f.id}">Delete</button>`;
-              if (isMileage) actionsHtml += `<button class="mark-complete-btn${fbResolved ? ' resolved' : ''}" data-ifb-resolve="fb-${f.id}">${fbResolved ? '&#10003; Done' : 'Mark Complete'}</button>`;
-              actionsHtml += '</div>';
-            }
+            let actionsHtml = `<button class="feedback-delete-btn" data-ifb-delete="${f.id}" title="Delete"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>`;
 
             html += `<div class="feedback-entry${ownClass}" data-feedback-id="${f.id}">
               <div class="feedback-entry-header">
@@ -2693,9 +2691,9 @@ async function renderInlineFeedback(adNum) {
                 <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
                 <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
                 <span class="feedback-entry-time">${esc(ts)}</span>
+                ${actionsHtml}
               </div>
               ${f.comment ? `<div class="feedback-entry-comment" data-comment-id="${f.id}">${esc(f.comment)}</div>` : ''}
-              ${actionsHtml}
             </div>`;
           });
           threadEl.innerHTML = html;

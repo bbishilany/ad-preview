@@ -2750,11 +2750,8 @@ async function renderInlineFeedback(adNum) {
         const myName = localStorage.getItem('adpreview_name') || '';
         const isMileage = _reviewerMode === 'mileage';
 
-        // In client mode, only show own feedback
+        // Show all feedback to everyone
         let entries = data;
-        if (!isMileage) {
-          entries = data.filter(f => f.reviewer_name === myName);
-        }
 
         if (entries.length > 0) {
           let html = '';
@@ -3990,12 +3987,9 @@ async function loadFeedbackThread(adNum) {
     if (error) throw error;
     if (!data || data.length === 0) { container.innerHTML = ''; return; }
 
-    // In Client mode, only show the reviewer's own feedback
+    // Show all feedback to everyone
     const myName = localStorage.getItem('adpreview_name') || '';
     let entries = data;
-    if (_reviewerMode === 'client') {
-      entries = data.filter(f => f.reviewer_name === myName);
-    }
     if (entries.length === 0) { container.innerHTML = ''; return; }
 
     const isMileage = _reviewerMode === 'mileage';

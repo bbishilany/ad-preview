@@ -3,28 +3,6 @@
   "event_date": "Tuesday, May 5, 2026 at 6:00 PM",
   "venue": "Westmoreland Country Club, 7100 Mellon Rd, Export, PA 15632",
   "co_presenters": "",
-  "panelists": [
-    {
-      "name": "Greg Weimer",
-      "title": "Chief Executive Officer",
-      "image": "greg-weimer-ceo.jpg"
-    },
-    {
-      "name": "Gregory Weimer, CFP, CPA",
-      "title": "President",
-      "image": "gregory-weimer-ii-president.jpg"
-    },
-    {
-      "name": "Bill Winkeler, CFA, CFP",
-      "title": "Chief Investment Officer",
-      "image": "bill-winkeler-cio.jpg"
-    },
-    {
-      "name": "Chuck Zuzak, CFA, CFP",
-      "title": "Director of Wealth Planning",
-      "image": "chuck-zuzak-dir-wealth-planning.jpg"
-    }
-  ],
   "compliance_notes": [],
   "ads": [
     {
@@ -35,14 +13,14 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "Confluence Financial Partners — Proud Wealth Management Partner of the Pittsburgh Steelers — is hosting a complimentary evening at Westmoreland Country Club.\n\nOn Tuesday, May 5, our CEO, President, Chief Investment Officer, and Director of Wealth Planning are sitting down for an honest conversation about the financial decisions that matter most right now. Estate planning. The economy. Charitable giving. The pitfalls families don't see coming. Technology that actually helps.\n\nCocktails and hors d'oeuvres included. No follow-up calls. No obligation.\n\nSeating is limited. Reserve your seat.",
+      "primary_text": "The Steelers' wealth management partner is hosting a complimentary evening at Westmoreland Country Club.\n\nTuesday, May 5 at 6:00 PM. Our CEO, President (CFP, CPA), CIO (CFA, CFP), and Director of Wealth Planning (CFA, CFP) sit down for an honest conversation about what's on your mind financially.\n\nThe economy. Estate planning. Charitable giving. The pitfalls nobody warns you about.\n\nCocktails and hors d'oeuvres included.\n\nWe won't follow up unless you ask us to. Seating is limited.",
       "headline": "An Evening of Clarity",
       "description": "Complimentary | May 5",
       "cta": "Sign Up",
       "hook": "The Steelers' wealth management partner is hosting an evening for Pittsburgh families.",
       "alt_headlines": [
         "Conversations Worth Having",
-        "Pittsburgh Families — Join Us"
+        "Pittsburgh Families, Join Us"
       ],
       "cards": [],
       "stories": null,
@@ -55,7 +33,7 @@
       "images": [
         "ad1-brand-intro.png"
       ],
-      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-dominant (Archetype 1)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, small, navy)      |\n|                                      |\n|  [Branded photo: Brandon Beck in     |\n|   conference room with couple,       |\n|   warm lighting, branded mugs        |\n|   visible on table]                  |\n|                                      |\n|      [Bottom gradient: transparent   |\n|       → dark navy #0b1a2e]          |\n|                                      |\n|  \"Is Your Plan                       |\n|   Coordinated?\"                      |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Wed, May 14 | The Capital Grille    |\n|  (Rival Sans, small, white 80%)      |\n|                                      |\n|  [SIGN UP] (outlined, white)         |\n+--------------------------------------+\n```\n\n**Photo direction:** Branded office photo — Brandon across table from a couple (60s), natural conversation posture, warm overhead lighting. Conference room setting. If no Brandon meeting photo available, use stock-website couple reviewing documents with advisor.\n\n**Text overlay:** ~10% coverage. Headline in bottom third over gradient. Logo small top-center.\n\n**Gradient:** Bottom-up — transparent at 40%, dark navy 65% opacity at 100%."
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-dominant (Archetype 1)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, small, white)     |\n|  [Steelers badge, small, right       |\n|   of logo — nav accent]             |\n|                                      |\n|  [Leadership team photo: two or      |\n|   more panelists in meeting with     |\n|   a couple/family, warm lighting,    |\n|   conference room or office          |\n|   setting, natural conversation]     |\n|                                      |\n|      [Bottom gradient: transparent   |\n|       → dark navy #0b1a2e]          |\n|                                      |\n|  \"Is Your Plan                       |\n|   Coordinated?\"                      |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Tue, May 5 | Westmoreland CC        |\n|  (Rival Sans, small, white 80%)      |\n|                                      |\n|  [RESERVE YOUR SEAT] (outlined)      |\n+--------------------------------------+\n```\n\n**Photo direction:** Use branded office photos from `assets/photos/branded/Highlights/` — leadership team across table from a couple or family, natural conversation posture, warm overhead lighting. Conference room or meeting setting. If no suitable group meeting photo is available, use stock-website advisor/client meeting images from `assets/photos/stock-website/ConfluenceWeb Images/`.\n\n**Text overlay:** ~10% coverage. Headline in bottom third over gradient. Logo + Steelers badge small top-center.\n\n**Gradient:** Bottom-up — transparent at 40%, dark navy 65% opacity at 100%."
     },
     {
       "num": 2,
@@ -65,11 +43,11 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "On Tuesday, May 5 at Westmoreland Country Club, four of our firm's leaders are sitting down together for a panel discussion — and you're invited.\n\nOur CEO, President, CIO, and Director of Wealth Planning will cover six topics families should be thinking about right now: your financial future, estate planning and family meetings, charitable giving, the common pitfalls families face, the global economy, and how technology can tie it all together.\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited.",
+      "primary_text": "Four leaders. Six topics. One evening at Westmoreland Country Club. You're invited.\n\nTuesday, May 5 at 6:00 PM. Our CEO, President, CIO, and Director of Wealth Planning will cover six topics worth your attention.\n\nYour financial future. Estate planning. Charitable giving. Common pitfalls. The economy. Technology in financial planning.\n\nComplimentary cocktails and hors d'oeuvres. We won't follow up unless you ask us to. Seating is limited.",
       "headline": "What Our Leadership Panel Covers",
       "description": "Tue May 5 | 6 PM",
       "cta": "Sign Up",
-      "hook": "Four firm leaders. Six conversations. One evening at Westmoreland Country Club.",
+      "hook": "Four firm leaders. Six topics. One evening at Westmoreland Country Club.",
       "alt_headlines": [
         "6 Topics Worth Discussing",
         "Meet Our Leadership Panel"
@@ -78,27 +56,27 @@
         {
           "num": 1,
           "label": "Hook",
-          "caption": "Your financial plan touches a lot of moving pieces — investments, estate documents, taxes, family goals. Most of the time, nobody's looking at all of them together. That's what this evening is about."
+          "caption": "Your financial plan touches investments, estate documents, taxes, family goals.\n\nMost of the time, nobody's looking at all of them together. That's what this evening is about."
         },
         {
           "num": 2,
           "label": "Economy & Portfolio",
-          "caption": "What does the current economy mean for your portfolio? Our Chief Investment Officer, Bill Winkeler, CFA, CFP, shares a forward-looking perspective on what families should be watching."
+          "caption": "What does the current economy mean for your portfolio?\n\nOur CIO, Bill Winkeler (CFA, CFP), will walk through what he's watching in the markets and what it means for the years ahead."
         },
         {
           "num": 3,
           "label": "Estate & Family Meetings",
-          "caption": "When was the last time your family sat down to talk about the plan? Estate documents get drafted and filed. Life changes. We'll discuss what a productive family meeting actually looks like."
+          "caption": "When was the last time your family sat down to talk about the plan?\n\nEstate documents get drafted and filed. Life changes. We'll discuss what a productive family meeting looks like."
         },
         {
           "num": 4,
           "label": "Charitable Giving & Pitfalls",
-          "caption": "Charitable giving can be one of the most rewarding — and most misunderstood — parts of a financial plan. We'll also cover the common pitfalls we see families make, and how to avoid them."
+          "caption": "Charitable giving is one of the most misunderstood parts of a financial plan.\n\nWe'll also cover the common pitfalls we see families make."
         },
         {
           "num": 5,
           "label": "CTA",
-          "caption": "Tuesday, May 5 at 6:00 PM\nWestmoreland Country Club, Export, PA\nComplimentary cocktails and hors d'oeuvres.\nSeating is limited. Reserve yours."
+          "caption": "Tuesday, May 5 at 6:00 PM\nWestmoreland Country Club, Export, PA\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited. Reserve yours."
         }
       ],
       "stories": null,
@@ -115,21 +93,21 @@
         "ad2-carousel-card4.png",
         "ad2-carousel-card5.png"
       ],
-      "image_direction": "**Format:** 1080x1080 per card | **Placement:** Feed\n**Layout:** Mixed — Card 1 photo-dominant, Cards 2-4 text-forward on navy, Card 5 photo-dominant CTA\n\n```\nCARD 1 (HOOK):\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n|  [Lifestyle photo: couple on         |\n|   Naples waterfront at sunset,       |\n|   warm light, relaxed posture]       |\n|                                      |\n|  [Bottom gradient → navy]            |\n|                                      |\n|  \"You've done the planning.          |\n|   But are the pieces working         |\n|   together?\"                         |\n|  (Ivypresto, white, centered)        |\n+--------------------------------------+\n\nCARDS 2-4 (CONTENT):\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  [Diagonal line pattern,             |\n|   Lines-02.png, 8% opacity,          |\n|   upper-right corner]               |\n|                                      |\n|  CARD NUMBER                         |\n|  (Rival Sans, gold #c9a84c,         |\n|   small label)                       |\n|                                      |\n|  \"Topic Headline\"                    |\n|  (Ivypresto, white, 64px)           |\n|                                      |\n|  Supporting text from card caption   |\n|  (Rival Sans, white 80%, 32px)      |\n|                                      |\n|  [Thin gold accent line, bottom]     |\n+--------------------------------------+\n\nCARD 5 (CTA):\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n|  [Photo: The Capital Grille          |\n|   exterior or elegant dining         |\n|   setting — warm, inviting]          |\n|                                      |\n|  [Bottom gradient → navy]            |\n|                                      |\n|  Wednesday, May 14 at 12:00 PM       |\n|  The Capital Grille, Naples          |\n|  Complimentary lunch. 24 seats.      |\n|  (Ivypresto + Rival Sans, white)    |\n|                                      |\n|  [RESERVE YOUR SEAT] (outlined)      |\n+--------------------------------------+\n```\n\n**Card 2 label:** Control & Autonomy\n**Card 3 label:** Roth Conversions\n**Card 4 label:** Legacy & Family\n\n**Visual continuity:** All 5 cards share the same navy background, same font sizes, same logo position. Cards 2-4 use the diagonal line texture as subtle brand element. Gold accent color ties the number/label across content cards."
+      "image_direction": "**Format:** 1080x1080 per card | **Placement:** Feed\n**Layout:** Mixed — Card 1 photo-dominant, Cards 2-4 text-forward on navy, Card 5 photo-dominant CTA\n\n```\nCARD 1 (HOOK):\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n|  [Lifestyle photo: Pittsburgh-area   |\n|   couple or family, autumn tones,    |\n|   warm natural light — park,         |\n|   country setting, or suburban       |\n|   neighborhood]                      |\n|                                      |\n|  [Bottom gradient → navy]            |\n|                                      |\n|  \"You've done the planning.          |\n|   But are the pieces working         |\n|   together?\"                         |\n|  (Ivypresto, white, centered)        |\n+--------------------------------------+\n\nCARDS 2-4 (CONTENT):\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  [Diagonal line pattern,             |\n|   Lines-02.png, 8% opacity,          |\n|   upper-right corner]               |\n|                                      |\n|  CARD NUMBER                         |\n|  (Rival Sans, gold #c9a84c,         |\n|   small label)                       |\n|                                      |\n|  \"Topic Headline\"                    |\n|  (Ivypresto, white, 64px)           |\n|                                      |\n|  Supporting text from card caption   |\n|  (Rival Sans, white 80%, 32px)      |\n|                                      |\n|  [Thin gold accent line, bottom]     |\n+--------------------------------------+\n\nCARD 5 (CTA):\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n|  [Photo: Westmoreland Country Club   |\n|   exterior, banquet room, or         |\n|   elegant event setting — warm,      |\n|   inviting evening atmosphere]       |\n|                                      |\n|  [Bottom gradient → navy]            |\n|                                      |\n|  Tuesday, May 5 at 6:00 PM          |\n|  Westmoreland Country Club           |\n|  Complimentary cocktails. Limited    |\n|  seating.                            |\n|  (Ivypresto + Rival Sans, white)    |\n|                                      |\n|  [RESERVE YOUR SEAT] (outlined)      |\n+--------------------------------------+\n```\n\n**Card 2 label:** Forward-Looking Planning\n**Card 3 label:** Estate & Family Meetings\n**Card 4 label:** Economy & Portfolio\n\n**Visual continuity:** All 5 cards share the same navy background, same font sizes, same logo position. Cards 2-4 use the diagonal line texture as subtle brand element. Gold accent color ties the number/label across content cards."
     },
     {
       "num": 3,
-      "title": "Personal invite video",
-      "format": "Video, 30-45 seconds, 1:1 (square)",
+      "title": "Personal invite image",
+      "format": "Static image, 1080x1080 (square)",
       "placements": [
         "Feed"
       ],
-      "production": "CEO (Greg Weimer) or President (Gregory Weimer) direct-to-camera, filmed in office. Lapel mic. Captions mandatory.",
-      "primary_text": "We host events like this because the most valuable conversations happen when people feel comfortable — not in a conference room, not on a sales call. Over cocktails, at a nice venue, with the people who actually run the firm.\n\nOn Tuesday, May 5, our CEO, President, CIO, and Director of Wealth Planning are hosting an evening at Westmoreland Country Club. We'll cover the economy, estate planning, charitable giving, and the questions families should be asking right now.\n\nComplimentary. No follow-up afterward. We'd be glad to meet you.",
+      "production": "",
+      "primary_text": "The financial conversations worth having don't happen in conference rooms. Or on sales calls.\n\nThey happen over cocktails, at a country club, with the people who actually run the firm.\n\nTuesday, May 5. Our CEO, President (CFP, CPA), CIO (CFA, CFP), and Director of Wealth Planning (CFA, CFP) are hosting an evening at Westmoreland Country Club.\n\nThe economy. Estate planning. Charitable giving. The questions most people put off too long.\n\nComplimentary. We won't follow up unless you ask us to. We'd be glad to meet you.",
       "headline": "A Personal Invitation",
       "description": "From Our Leadership Team",
       "cta": "Sign Up",
-      "hook": "The most valuable conversations happen when people feel comfortable.",
+      "hook": "The financial conversations worth having don't happen in conference rooms.",
       "alt_headlines": [
         "You're Invited to the Table",
         "Join Us Tuesday, May 5"
@@ -137,15 +115,15 @@
       "cards": [],
       "stories": null,
       "reels": null,
-      "video_script": "1. Open with WHY this event exists: \"We host these events because the best conversations happen when people are comfortable — not in a conference room.\"\n2. Middle: \"On May 5, our entire leadership team — myself, our President, our CIO, and our Director of Wealth Planning — are hosting an evening at Westmoreland Country Club. Cocktails, good food, and an honest conversation about the financial topics that matter right now.\"\n3. Close: \"Complimentary, no follow-up. We'd be glad to meet you there.\"",
+      "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
-      "type": "video",
+      "type": "image",
       "week": 1,
       "images": [
         "ad3-personal-invite.png"
       ],
-      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-under (Archetype 3) — thumbnail/cover frame\n\n```\nTHUMBNAIL FRAME:\n+--------------------------------------+\n|                                      |\n|  [Video still: Brandon Beck          |\n|   direct-to-camera, office bg,       |\n|   warm lighting, natural smile,      |\n|   lapel mic visible — fills          |\n|   top 55% of frame]                 |\n|                                      |\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  LOGO (center, white, small)         |\n|                                      |\n|  \"A Personal Invitation\"             |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Wed, May 14 | Naples                |\n|  (Rival Sans, white 70%)            |\n+--------------------------------------+\n```\n\n**Photo direction:** Brandon to camera — warm, approachable expression. Office or conference room background slightly blurred. Professional but not stiff. Lapel mic signals \"real content.\" This is the video thumbnail/cover image only — the video itself is Brandon speaking.\n\n**Play button:** Large centered circle overlay (standard platform play icon) signals this is video content."
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-under (Archetype 3)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|                                      |\n|  [Greg Weimer (CEO) professional     |\n|   headshot or meeting photo —        |\n|   warm, approachable expression,     |\n|   professional but not stiff.        |\n|   Fills top 55% of frame.]          |\n|                                      |\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  LOGO (center, white, small)         |\n|                                      |\n|  \"A Personal Invitation\"             |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Tue, May 5 | Westmoreland CC        |\n|  (Rival Sans, white 70%)            |\n+--------------------------------------+\n```\n\n**Photo direction:** Use the Greg Weimer headshot from `assets/photos/panelists/` — warm, approachable. Alternatively, a branded office photo of Greg in a professional setting. This ad humanizes the firm through its CEO. The photo should feel like a personal invitation, not a corporate portrait.\n\n**Key difference from video version:** The static image puts the CEO's face front and center without the production overhead. The photo-under layout (headshot top, brand panel bottom) creates the same parasocial connection the video would have."
     },
     {
       "num": 4,
@@ -155,13 +133,13 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "You're in the years where the decisions compound the most. The moves you make now with your portfolio, your estate, your tax strategy — they shape the next 20 years.\n\nThe question most families don't ask until later: are all those pieces actually working together?\n\nOn Tuesday, May 5, our leadership team is hosting a complimentary evening at Westmoreland Country Club. Cocktails, conversation, and a panel on the six topics that matter most to families in the Pittsburgh area right now.\n\nNo follow-up calls. No obligation. Seating is limited.",
-      "headline": "Clarity Starts with Conversation",
+      "primary_text": "You're in the years where the decisions compound the most.\n\nPortfolio. Estate. Tax strategy. What you do in the next few years shapes everything after.\n\nHere's what most people don't ask until later: are all those pieces actually working together?\n\nTuesday, May 5. Our leadership team is hosting a complimentary evening at Westmoreland Country Club. Cocktails, a panel on six topics that hit close to home, and our CEO, President (CFP, CPA), CIO (CFA, CFP), and Director of Wealth Planning (CFA, CFP).\n\nWe won't follow up unless you ask us to. Limited seating.",
+      "headline": "Are the Pieces Working Together?",
       "description": "Complimentary | May 5",
       "cta": "Sign Up",
       "hook": "You're in the years where the decisions compound the most.",
       "alt_headlines": [
-        "Are the Pieces Working Together?",
+        "Clarity Starts with Conversation",
         "The Questions Worth Asking Now"
       ],
       "cards": [],
@@ -175,45 +153,44 @@
       "images": [
         "ad4-peace-of-mind.png"
       ],
-      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-dominant (Archetype 1) — matches inspiration Ads 01/02 most closely\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, navy)             |\n|                                      |\n|  [Lifestyle photo: couple (60s)      |\n|   walking on Naples beach at         |\n|   golden hour. Relaxed, arms         |\n|   linked, looking at water.          |\n|   Warm tones, open sky above.]       |\n|                                      |\n|  \"Confidence in                      |\n|   What You've Built.\"                |\n|  (Ivypresto, dark navy, centered     |\n|   — positioned in open sky area)     |\n|                                      |\n|  [SIGN UP] (outlined, navy)          |\n|                                      |\n+--------------------------------------+\n```\n\n**Photo direction:** This ad mirrors the inspiration directly — lifestyle couple in warm outdoor Naples setting. Key: natural light, relaxed body language, Gulf/beach/waterfront visible. Text overlays onto open sky area (no gradient needed if sky provides contrast). Logo in navy (not white) since background is light.\n\n**This is the emotional anchor ad.** The photo should feel aspirational but real — \"this is your life, we help you protect it.\""
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Photo-dominant (Archetype 1) — matches inspiration Ads 01/02 most closely\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, navy)             |\n|                                      |\n|  [Lifestyle photo: couple (50s-60s)  |\n|   in Pittsburgh-area setting —       |\n|   autumn park, suburban garden,      |\n|   or country club grounds.           |\n|   Relaxed posture, warm tones,       |\n|   open sky or foliage above.]        |\n|                                      |\n|  \"Confidence in                      |\n|   What You've Built.\"                |\n|  (Ivypresto, dark navy, centered     |\n|   — positioned in open sky area)     |\n|                                      |\n|  [RESERVE YOUR SEAT] (outlined)      |\n|                                      |\n+--------------------------------------+\n```\n\n**Photo direction:** Lifestyle couple in warm outdoor Pittsburgh-area setting. Key: natural light, relaxed body language, autumn foliage or green park landscape visible. Text overlays onto open sky area (no gradient needed if sky provides contrast). Logo in navy (not white) since background is light. Use `assets/photos/stock-website/ConfluenceWeb Images/` for couple lifestyle photos — select images that feel Pittsburgh-appropriate (no beach, no palm trees, no waterfront).\n\n**This is the emotional anchor ad.** The photo should feel aspirational but real — \"this is your life, we help you protect it.\" The setting should feel like Western Pennsylvania, not a resort."
     },
     {
       "num": 5,
-      "title": "Local connection video",
-      "format": "Video, 15-30 seconds, 9:16 (vertical for Stories/Reels)",
+      "title": "Local connection image",
+      "format": "Static image, 1080x1920 (vertical for Stories/Reels) + 1080x1080 (square)",
       "placements": [
         "Stories",
-        "Reels"
+        "Reels",
+        "Feed"
       ],
-      "production": "Pittsburgh B-roll montage: the Point, bridges, skyline at golden hour, Heinz Field/Acrisure Stadium, local neighborhoods. Steelers badge overlay. Text overlays throughout. No voiceover needed. Warm background music. Captions mandatory.",
-      "primary_text": "Pittsburgh is home. It's where you built your career, raised your family, and made the decisions that got you here.\n\nOn Tuesday, May 5, Confluence Financial Partners — Proud Wealth Management Partner of the Pittsburgh Steelers — is hosting a complimentary evening at Westmoreland Country Club. Our CEO, President, CIO, and Director of Wealth Planning. Cocktails. A real conversation about your financial future.\n\nSeating is limited. Reserve yours.",
+      "production": "",
+      "primary_text": "Pittsburgh is home. Your portfolio, estate plan, and tax strategy deserve a real conversation.\n\nOn Tuesday, May 5, Confluence Financial Partners, Proud Wealth Management Partner of the Pittsburgh Steelers, is hosting a complimentary evening at Westmoreland Country Club.\n\nFour of our firm's leaders, including two CFAs and a CPA. Cocktails. A conversation about the financial decisions you're actually facing.\n\nSeating is limited. Reserve yours.\n\n*Marketing arrangement with the Steelers. The Steelers does not endorse Confluence's investment advisory services.*",
       "headline": "Built for Pittsburgh Families",
       "description": "May 5 | Private Event",
       "cta": "Sign Up",
-      "hook": "Pittsburgh is home. Let's make sure your family's future is built to last.",
+      "hook": "Pittsburgh is home. Your portfolio, estate plan, and tax strategy deserve a real conversation.",
       "alt_headlines": [
         "Right Here in Pittsburgh",
         "For Pittsburgh Families"
       ],
       "cards": [],
       "stories": {
+        "image": "Pittsburgh skyline or landmark photo with Steelers badge + Confluence branding",
         "text_overlay": "\"Pittsburgh is home.\"",
         "secondary_text": "\"Complimentary evening | Tue, May 5 | Westmoreland Country Club\"",
         "cta_sticker": "Sign Up"
       },
-      "reels": {
-        "caption": "Pittsburgh is home. Confluence Financial Partners — Proud Wealth Management Partner of the Pittsburgh Steelers — is hosting an evening at Westmoreland Country Club. Tuesday, May 5 at 6 PM. Cocktails, conversation, and our full leadership panel. Seating is limited.",
-        "description": "Complimentary evening | Tue May 5 | Pittsburgh"
-      },
+      "reels": null,
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
-      "type": "video",
+      "type": "image",
       "week": 2,
       "images": [
         "ad5-local-connection-story.png"
       ],
-      "image_direction": "**Format:** 1080x1920 (vertical) | **Placement:** Stories, Reels\n**Layout:** Photo-dominant with text overlays — Stories/Reels format\n\n```\nSTORIES FRAME:\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [Naples B-roll:    |\n|  Gulf waters,      |\n|  Mercato shops,    |\n|  Third Street,     |\n|  waterfront        |\n|  sunset —          |\n|  full-bleed        |\n|  background]       |\n|                    |\n| \"You didn't build  |\n|  this life by      |\n|  accident.\"        |\n| (Ivypresto, white, |\n|  text-shadow,      |\n|  centered)         |\n|                    |\n| Complimentary      |\n| lunch workshop     |\n| Wed, May 14        |\n| (Rival Sans,       |\n|  white 80%)        |\n|                    |\n| [SIGN UP]          |\n| (pill CTA sticker, |\n|  white bg)         |\n+--------------------+\n```\n\n**Photo/video direction:** Naples montage — warm, golden, community feel. No advisor in frame. The city IS the subject. Gulf at golden hour, couples walking Mercato, Third Street boutiques, waterfront dining. Mix 3-4 shots in 15 seconds. Text overlays appear/dissolve with each scene transition.\n\n**Key visual difference from other ads:** No faces, no advisor — this is about PLACE and IDENTITY. The viewer sees their own life reflected."
+      "image_direction": "**Format:** 1080x1920 (vertical) | **Placement:** Stories, Reels\n**Layout:** Photo-dominant with text overlays — Stories/Reels format\n\n```\nSTORIES FRAME:\n+--------------------+\n|                    |\n| [Pittsburgh        |\n|  landmark photo:   |\n|  skyline from      |\n|  Mt. Washington,   |\n|  Point State Park, |\n|  bridges at        |\n|  golden hour,      |\n|  or fall foliage   |\n|  along the rivers  |\n|  — full-bleed      |\n|  background]       |\n|                    |\n| \"You didn't build  |\n|  this life by      |\n|  accident.\"        |\n| (Ivypresto, white, |\n|  text-shadow,      |\n|  centered)         |\n|                    |\n| [Steelers badge,   |\n|  small, centered]  |\n|                    |\n| Complimentary      |\n| cocktails + panel  |\n| Tue, May 5         |\n| (Rival Sans,       |\n|  white 80%)        |\n|                    |\n| [RESERVE YOUR SEAT]|\n| (pill CTA sticker, |\n|  white bg)         |\n+--------------------+\n```\n\n**Photo direction:** Pittsburgh landmark photo — the city IS the subject. Pittsburgh skyline at golden hour from Mt. Washington, Point State Park fountain with bridges in background, or the confluence of the three rivers with fall foliage. One strong image, not a montage. The photo should make a Pittsburgh resident feel pride — \"this is my city, this is my life.\"\n\n**Steelers badge:** Small, centered below the headline — reinforces the local connection without dominating. The Steelers badge is the accent that says \"this firm is part of this city.\"\n\n**Key visual difference from other ads:** No faces, no advisor — this is about PLACE and IDENTITY. The viewer sees their own city reflected."
     },
     {
       "num": 6,
@@ -223,11 +200,11 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "There's a real difference between having a financial plan and having all the pieces working together.\n\nWith coordination: your estate documents are current, your portfolio is aligned to the economy, your family has had the conversation, and your charitable giving is structured thoughtfully.\n\nWithout it: advisors in separate silos, estate documents gathering dust, family guessing at intentions, and market reactions instead of a strategy.\n\nOn Tuesday, May 5, our CEO, President, CIO, and Director of Wealth Planning are hosting a complimentary evening at Westmoreland Country Club. Six panel topics. Cocktails and hors d'oeuvres. Seating is limited.",
+      "primary_text": "Having a financial plan isn't the same as having all the pieces working together.\n\nWith coordination: estate documents current, portfolio aligned, family conversations happening, charitable giving structured.\n\nWithout it: advisors in silos, estate documents gathering dust, market reactions instead of a strategy.\n\nTuesday, May 5. Our CEO, President, CIO, and Director of Wealth Planning are hosting a complimentary evening at Westmoreland Country Club.\n\nSix panel topics. Cocktails and hors d'oeuvres. Seating is limited.",
       "headline": "Coordinated vs. Fragmented",
-      "description": "See Where You Stand",
+      "description": "See the Difference",
       "cta": "Sign Up",
-      "hook": "There's a real difference between having a plan and having all the pieces working together.",
+      "hook": "Having a plan isn't the same as having all the pieces working together.",
       "alt_headlines": [
         "Connected vs. Siloed",
         "Two Sides of Planning"
@@ -237,35 +214,36 @@
       "reels": null,
       "video_script": "",
       "video_talking_points": "",
-      "infographic_direction": "Left column, \"Coordinated\":\n- Forward-looking strategy reviewed regularly\n- Family meetings happening — everyone aligned\n- Estate documents current and working together\n- Charitable giving structured for impact and tax benefit\n- Portfolio positioned for the current economy\n- Technology connecting the financial planning pieces\n\nRight column, \"Fragmented\":\n- Reacting to markets without a forward view\n- Family conversations put off or avoided\n- Estate documents outdated or conflicting\n- Charitable intentions unfulfilled\n- Portfolio disconnected from the broader plan\n- Advisors and documents in separate silos",
+      "infographic_direction": "Left column, \"Coordinated\":\n- Forward-looking strategy reviewed regularly\n- Family meeting facilitation and communication planning\n- Estate documents reviewed and coordinated with the full plan\n- Charitable giving strategies integrated into the plan\n- Portfolio strategy aligned with current conditions and long-term goals\n- Technology connecting the pieces\n\nRight column, \"Fragmented\":\n- Reacting to markets without a forward view\n- Family conversations put off or avoided\n- Estate documents outdated or conflicting\n- Charitable intentions unfulfilled\n- Portfolio disconnected from the broader plan\n- Advisors and documents in separate silos",
       "type": "image",
       "week": 3,
       "images": [
         "ad6-infographic.png"
       ],
-      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Split comparison (custom — not directly from archetypes)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n+------------------+-------------------+\n|  COORDINATED     |  WITHOUT          |\n|  (gold accent)   |  COORDINATION     |\n|  (Rival Sans,    |  (white 60%)      |\n|  label)          |  (Rival Sans)     |\n|                  |                   |\n|  [Dark navy      |  [Darker navy     |\n|   #152d4b]       |   #0b1a2e]        |\n|                  |                   |\n|  ✓ Trusted       |  ✗ Court-appointed|\n|    decision-     |    decision-      |\n|    makers named  |    makers         |\n|                  |                   |\n|  ✓ Roth timed    |  ✗ Tax timing     |\n|    with tax      |    works against  |\n|    picture       |    you            |\n|                  |                   |\n|  ✓ Estate docs   |  ✗ Outdated or    |\n|    up to date    |    conflicting    |\n|                  |    documents      |\n|  ✓ Heirs         |                   |\n|    prepared      |  ✗ Family left    |\n|                  |    guessing       |\n|  ✓ Charitable    |                   |\n|    giving        |  ✗ Intentions     |\n|    structured    |    unfulfilled    |\n|                  |                   |\n+------------------+-------------------+\n|                                      |\n|  [SIGN UP] (outlined, white)         |\n|  Wed, May 14 | Naples                |\n+--------------------------------------+\n```\n\n**Design direction:** Two-column comparison on solid navy. Left column (coordinated) uses gold checkmarks (#c9a84c) and slightly lighter navy background. Right column (uncoordinated) uses white/red ✗ marks and darker navy. Thin vertical divider line (white, 1px, 30% opacity) separates columns.\n\n**Diagonal line texture:** Lines-02.png at 5% opacity across the full background — adds brand texture to what would otherwise be a flat navy card.\n\n**Typography:** Ivypresto for the column headers (\"Coordinated Plan\" / \"Without Coordination\"). Rival Sans Light for the bullet points. All white text.\n\n**This is the one ad that breaks the photo-dominant pattern.** The infographic comparison IS the visual. Keep it clean, readable at phone size. Max 5 items per column."
+      "image_direction": "**Format:** 1080x1080 (square) | **Placement:** Feed\n**Layout:** Split comparison (custom — not directly from archetypes)\n\n```\nCOMPOSITION:\n+--------------------------------------+\n|  LOGO (top-center, white)            |\n|                                      |\n+------------------+-------------------+\n|  COORDINATED     |  WITHOUT          |\n|  (gold accent)   |  COORDINATION     |\n|  (Rival Sans,    |  (white 60%)      |\n|  label)          |  (Rival Sans)     |\n|                  |                   |\n|  [Dark navy      |  [Darker navy     |\n|   #152d4b]       |   #0b1a2e]        |\n|                  |                   |\n|  ✓ Trusted       |  ✗ Court-appointed|\n|    decision-     |    decision-      |\n|    makers named  |    makers         |\n|                  |                   |\n|  ✓ Roth timed    |  ✗ Tax timing     |\n|    with tax      |    works against  |\n|    picture       |    you            |\n|                  |                   |\n|  ✓ Estate docs   |  ✗ Outdated or    |\n|    up to date    |    conflicting    |\n|                  |    documents      |\n|  ✓ Heirs         |                   |\n|    prepared      |  ✗ Family left    |\n|                  |    guessing       |\n|  ✓ Charitable    |                   |\n|    giving        |  ✗ Intentions     |\n|    structured    |    unfulfilled    |\n|                  |                   |\n+------------------+-------------------+\n|                                      |\n|  [RESERVE YOUR SEAT] (outlined)      |\n|  Tue, May 5 | Westmoreland CC        |\n+--------------------------------------+\n```\n\n**Design direction:** Two-column comparison on solid navy. Left column (coordinated) uses gold checkmarks (#c9a84c) and slightly lighter navy background. Right column (uncoordinated) uses white/red X marks and darker navy. Thin vertical divider line (white, 1px, 30% opacity) separates columns.\n\n**Diagonal line texture:** Lines-02.png at 5% opacity across the full background — adds brand texture to what would otherwise be a flat navy card.\n\n**Typography:** Ivypresto for the column headers (\"Coordinated Plan\" / \"Without Coordination\"). Rival Sans Light for the bullet points. All white text.\n\n**This is the one ad that breaks the photo-dominant pattern.** The infographic comparison IS the visual. Keep it clean, readable at phone size. Max 5 items per column."
     },
     {
       "num": 7,
-      "title": "Expert insight video",
-      "format": "Video, ~30 seconds, 1:1 (square) + 9:16 (vertical)",
+      "title": "Expert insight image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
       "placements": [
         "Feed",
         "Stories"
       ],
-      "production": "CIO Bill Winkeler at desk or conference room. Conversational, not scripted. Lapel mic. Captions mandatory.",
-      "primary_text": "The economy is giving families a lot to think about right now. Interest rates, market volatility, what it means for the portfolio you've been building for years.\n\nOur Chief Investment Officer, Bill Winkeler, CFA, CFP, is one of four panelists at our complimentary evening on Tuesday, May 5 at Westmoreland Country Club. He'll cover the current trends in the global economy and what families should be considering for their portfolios.\n\nCocktails and hors d'oeuvres included. Seating is limited.",
-      "headline": "What Most Families Miss",
+      "production": "",
+      "primary_text": "The economy is keeping a lot of people up at night.\n\nInterest rates. Market volatility. What it means for the portfolio you've been building for years.\n\nOur CIO, Bill Winkeler (CFA, CFP), is one of four panelists at our complimentary evening on Tuesday, May 5 at Westmoreland Country Club.\n\nHe'll talk about what he's seeing in the economy and what it means for your portfolio.\n\nCocktails and hors d'oeuvres included. We won't follow up unless you ask us to. Limited seating.",
+      "headline": "What Our CIO Sees Right Now",
       "description": "From Our CIO",
       "cta": "Sign Up",
-      "hook": "The economy is giving families a lot to think about right now.",
+      "hook": "The economy is keeping a lot of people up at night.",
       "alt_headlines": [
         "A CIO's Perspective",
-        "What Our CIO Sees Right Now"
+        "What Most Families Miss"
       ],
       "cards": [],
       "stories": {
-        "text_overlay": "\"What our Chief Investment Officer sees families missing right now\"",
+        "image": "CIO headshot with economy-focused headline",
+        "text_overlay": "\"What our Chief Investment Officer sees families missing\"",
         "secondary_text": "\"Complimentary evening | Tue, May 5 | Westmoreland Country Club\"",
         "cta_sticker": "Sign Up"
       },
@@ -273,13 +251,13 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
-      "type": "video",
+      "type": "image",
       "week": 3,
       "images": [
         "ad7-expert-insight-story.png",
         "ad7-expert-insight.png"
       ],
-      "image_direction": "**Format:** 1080x1080 (square) + 1080x1920 (vertical) | **Placement:** Feed, Stories\n**Layout:** Photo-under (Archetype 3) — matches inspiration Ad 03\n\n```\nFEED THUMBNAIL (1080x1080):\n+--------------------------------------+\n|                                      |\n|  [Video still: Brandon at desk       |\n|   or small conference table,         |\n|   conversational posture, making     |\n|   a point with hands. Warm           |\n|   lighting. Professional but         |\n|   approachable.]                     |\n|                                      |\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  LOGO (center, white)                |\n|                                      |\n|  \"A Question of Timing.\"             |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Roth conversions | Wed, May 14      |\n|  (Rival Sans, white 70%)            |\n+--------------------------------------+\n\nSTORIES (1080x1920):\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [Video of Brandon  |\n|  speaking — fills  |\n|  full vertical     |\n|  frame]            |\n|                    |\n| \"The Roth          |\n|  conversion        |\n|  timing question   |\n|  most people set   |\n|  and forget\"       |\n| (Ivypresto, white, |\n|  text-shadow)      |\n|                    |\n| Complimentary      |\n| lunch | Wed, May 14|\n| (Rival Sans)       |\n|                    |\n| [SIGN UP]          |\n+--------------------+\n```\n\n**Photo/video direction:** Brandon teaching — not reading, not scripted-looking. Conversational energy. He should be at a desk or small table, maybe leaned slightly forward. Office background with natural light from a window. Branded elements subtly visible (Confluence mug, logo on wall). This is the \"authority\" ad — he's demonstrating expertise, not selling."
+      "image_direction": "**Format:** 1080x1080 (square) + 1080x1920 (vertical) | **Placement:** Feed, Stories\n**Layout:** Photo-under (Archetype 3)\n\n```\nFEED (1080x1080):\n+--------------------------------------+\n|                                      |\n|  [Bill Winkeler (CIO) headshot       |\n|   — professional, confident,         |\n|   approachable. Warm lighting.       |\n|   Fills top 55% of frame.]          |\n|                                      |\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  LOGO (center, white)                |\n|                                      |\n|  \"The Economy and                    |\n|   Your Portfolio.\"                   |\n|  (Ivypresto, white, centered)        |\n|                                      |\n|  Bill Winkeler, CFA, CFP | CIO      |\n|  Tue, May 5                          |\n|  (Rival Sans, white 70%)            |\n+--------------------------------------+\n\nSTORIES (1080x1920):\n+--------------------+\n|                    |\n| [Bill Winkeler     |\n|  headshot —        |\n|  fills upper       |\n|  portion of        |\n|  vertical frame]   |\n|                    |\n| [Gradient →        |\n|  dark navy         |\n|  bottom half]      |\n|                    |\n| \"What the current  |\n|  economy means     |\n|  for families at   |\n|  this stage of     |\n|  wealth\"           |\n| (Ivypresto, white, |\n|  text-shadow)      |\n|                    |\n| Bill Winkeler,     |\n| CFA, CFP           |\n| Chief Investment   |\n| Officer            |\n| (Rival Sans, 70%)  |\n|                    |\n| [RESERVE YOUR SEAT]|\n+--------------------+\n```\n\n**Photo direction:** Use the Bill Winkeler headshot from `assets/photos/panelists/`. This is the \"authority\" ad — his CFA and CFP credentials are displayed prominently. The headshot should convey competence and approachability. If a branded office photo of Bill is available in `assets/photos/branded/Highlights/`, use that instead for a more natural, in-context feel.\n\n**Key difference from video version:** The static image puts credentials front and center. The photo-under layout gives the CIO's face authority while the navy panel below delivers the insight headline. No video production needed — the headshot + credentials + insight headline work as a single compelling image."
     },
     {
       "num": 8,
@@ -290,14 +268,14 @@
         "Stories"
       ],
       "production": "",
-      "primary_text": "Tuesday, May 5 is next week. We have a few seats left at Westmoreland Country Club.\n\nOur CEO, President, CIO, and Director of Wealth Planning are hosting an evening of cocktails and conversation on the topics that matter most to Pittsburgh families right now — the economy, estate planning, charitable giving, and more.\n\nComplimentary. No follow-up calls. No obligation. We'd like to meet you.",
+      "primary_text": "Tuesday, May 5 is next week.\n\nWe have a few seats left at Westmoreland Country Club.\n\nOur CEO, President, CIO, and Director of Wealth Planning are hosting an evening of cocktails and conversation on the topics that matter to Pittsburgh families right now.\n\nWhat's happening in the economy. How your estate plan holds up. Where charitable giving fits.\n\nComplimentary. We won't follow up unless you ask us to. We'd like to meet you.",
       "headline": "This Tuesday — Last Seats",
       "description": "May 5 | 6 PM",
       "cta": "Sign Up",
       "hook": "Tuesday, May 5 is next week. A few seats left.",
       "alt_headlines": [
         "Next Tuesday, May 5",
-        "Almost Full — Reserve Now"
+        "Almost Full: Reserve Now"
       ],
       "cards": [],
       "stories": {
@@ -316,44 +294,46 @@
         "ad8-last-call-story.png",
         "ad8-last-call.png"
       ],
-      "image_direction": "**Format:** 1080x1080 (square) + 1080x1920 (vertical) | **Placement:** Feed, Stories\n**Layout:** Text-forward (Archetype 4) — urgency/scarcity\n\n```\nFEED (1080x1080):\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  [Diagonal line pattern,             |\n|   Lines-02.png, 10% opacity,        |\n|   full background texture]           |\n|                                      |\n|  LOGO (top-center, white)            |\n|                                      |\n|                                      |\n|  \"8 Seats Left.\"                     |\n|  (Ivypresto, white, 80px,           |\n|   centered, bold)                    |\n|                                      |\n|  Wednesday, May 14                   |\n|  The Capital Grille | Naples         |\n|  (Rival Sans, white 70%, 36px)      |\n|                                      |\n|  [Thin gold accent line]            |\n|                                      |\n|  [RESERVE YOUR SEAT]                 |\n|  (outlined, gold border + text)      |\n|                                      |\n+--------------------------------------+\n\nSTORIES (1080x1920):\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [Solid dark navy   |\n|  + diagonal lines  |\n|  texture]          |\n|                    |\n| LOGO (white)       |\n|                    |\n|                    |\n| \"8 Seats Left\"     |\n| (Ivypresto, white, |\n|  LARGE — 96px)     |\n|                    |\n| Wednesday, May 14  |\n| (Rival Sans)       |\n|                    |\n| Brandon Beck &     |\n| Ehren Frey         |\n| (Rival Sans, 70%)  |\n|                    |\n| [SIGN UP]          |\n+--------------------+\n```\n\n**Design direction:** This is the ONE text-forward ad in the campaign. No photo. The scarcity message IS the visual — \"8 Seats Left\" dominates the frame. Dark navy background with the diagonal line texture adds brand identity without distracting. Gold accent color used for the divider line and CTA border — the only ad that uses gold prominently. This signals urgency within the brand system.\n\n**Why no photo:** The number is the scroll-stopper. A photo would dilute the urgency. Inspiration precedent: PPC Ad 03 uses a similar text-heavy layout on navy background."
+      "image_direction": "**Format:** 1080x1080 (square) + 1080x1920 (vertical) | **Placement:** Feed, Stories\n**Layout:** Text-forward (Archetype 4) — urgency/scarcity\n\n```\nFEED (1080x1080):\n+--------------------------------------+\n|  [Solid dark navy #0b1a2e]           |\n|                                      |\n|  [Diagonal line pattern,             |\n|   Lines-02.png, 10% opacity,        |\n|   full background texture]           |\n|                                      |\n|  LOGO (top-center, white)            |\n|                                      |\n|                                      |\n|  \"A Few Seats Left.\"                 |\n|  (Ivypresto, white, 80px,           |\n|   centered, bold)                    |\n|                                      |\n|  Tuesday, May 5                      |\n|  Westmoreland Country Club           |\n|  (Rival Sans, white 70%, 36px)      |\n|                                      |\n|  [Thin gold accent line]            |\n|                                      |\n|  [RESERVE YOUR SEAT]                 |\n|  (outlined, gold border + text)      |\n|                                      |\n+--------------------------------------+\n\nSTORIES (1080x1920):\n+--------------------+\n|                    |\n| [Solid dark navy   |\n|  + diagonal lines  |\n|  texture]          |\n|                    |\n| LOGO (white)       |\n|                    |\n|                    |\n| \"A Few Seats Left\" |\n| (Ivypresto, white, |\n|  LARGE — 96px)     |\n|                    |\n| Tuesday, May 5     |\n| (Rival Sans)       |\n|                    |\n| 4 C-Suite Leaders  |\n| Cocktails & Panel  |\n| (Rival Sans, 70%)  |\n|                    |\n| [RESERVE YOUR SEAT]|\n+--------------------+\n```\n\n**Design direction:** This is the ONE text-forward ad in the campaign. No photo. The scarcity message IS the visual — \"A Few Seats Left\" dominates the frame. Dark navy background with the diagonal line texture adds brand identity without distracting. Gold accent color used for the divider line and CTA border — the only ad that uses gold prominently. This signals urgency within the brand system.\n\n**Why no photo:** The number is the scroll-stopper. A photo would dilute the urgency. Inspiration precedent: PPC Ad 03 uses a similar text-heavy layout on navy background.\n\n**Note:** Use \"A Few Seats Left\" rather than a specific number until client confirms venue capacity."
     },
     {
       "num": 9,
-      "title": "Final reminder video",
-      "format": "Video, 10-15 seconds, 9:16 (vertical)",
+      "title": "Final reminder image",
+      "format": "Static image, 1080x1920 (vertical)",
       "placements": [
         "Stories",
         "Reels"
       ],
-      "production": "iPhone selfie-style from CEO (Greg Weimer). Raw, personal, authentic. No graphics, no music. Captions added in post. Should NOT look like an ad.",
-      "primary_text": "Quick note — our evening at Westmoreland Country Club is this Tuesday. A few seats left. Cocktails, hors d'oeuvres, and our whole leadership panel. Would be glad to meet you there.",
+      "production": "",
+      "primary_text": "This Tuesday. A few seats left at Westmoreland Country Club.\n\nCocktails, hors d'oeuvres, and all four of our firm's leaders on stage.\n\nWould be glad to meet you there.",
       "headline": "Last Few Seats",
       "description": "This Tuesday",
       "cta": "Sign Up",
-      "hook": "Quick note from our CEO.",
+      "hook": "This Tuesday. A few seats left.",
       "alt_headlines": [
         "This Tuesday, May 5",
         "A Few Seats Left"
       ],
       "cards": [],
       "stories": {
+        "image": "Text-forward urgency design — stripped back, bold typography, minimal elements",
         "text_overlay": "\"This Tuesday | A few seats left\"",
         "cta_sticker": "Sign Up"
       },
       "reels": {
-        "caption": "Quick note. Our evening at Westmoreland Country Club is this Tuesday, May 5. A few seats left. Cocktails, hors d'oeuvres, and our full leadership panel — CEO, President, CIO, Director of Wealth Planning. Reserve below.",
+        "image": "Same stripped-back design optimized for Reels format",
+        "caption": "Our evening at Westmoreland Country Club is this Tuesday, May 5. A few seats left. Cocktails, hors d'oeuvres, and all four of our firm's leaders: CEO, President, CIO, Director of Wealth Planning. Reserve below.",
         "description": "A few seats left | This Tuesday | Westmoreland Country Club"
       },
       "video_script": "",
-      "video_talking_points": "1. \"Hey, just a quick note. Our evening at Westmoreland Country Club this Tuesday is almost full.\"\n2. \"A few seats left. Complimentary cocktails, great conversation, no strings.\"\n3. \"Bring your spouse if you can. Would be glad to meet you. Link below.\"",
+      "video_talking_points": "",
       "infographic_direction": "",
-      "type": "video",
+      "type": "image",
       "week": 4,
       "images": [
         "ad9-final-reminder-story.png"
       ],
-      "image_direction": "**Format:** 1080x1920 (vertical) | **Placement:** Stories, Reels\n**Layout:** Raw/authentic — NO designed template\n\n```\nSTORIES/REELS:\n+--------------------+\n| [Progress bar]     |\n|                    |\n| [iPhone selfie     |\n|  video: Brandon    |\n|  holding phone,    |\n|  natural light,    |\n|  office or home    |\n|  background.       |\n|  NO graphics.      |\n|  NO music.         |\n|  NO brand overlay. |\n|  Auto-generated    |\n|  captions only.]   |\n|                    |\n| \"This Wednesday    |\n|  | A few seats     |\n|  left\"             |\n| (Platform auto-    |\n|  caption style,    |\n|  NOT designed      |\n|  overlay)          |\n|                    |\n| [SIGN UP]          |\n| (platform CTA      |\n|  sticker only)     |\n+--------------------+\n```\n\n**Photo/video direction:** This ad intentionally looks NOTHING like the other 8. It's a raw iPhone selfie — Brandon picks up his phone, talks for 10-15 seconds, puts it down. Natural lighting. No branded elements visible (or incidental at most). No music. The only \"design\" is platform-generated captions.\n\n**Why raw:** This is the authenticity play. After 3 weeks of polished branded ads, the pattern interrupt of a real person talking directly to you is the final conversion nudge. It should NOT look like an ad. If a viewer's first thought is \"this is a real person talking to me,\" the creative is working.\n\n**Do NOT add:** Logo overlay, brand colors, headline text, CTA button rendered into the image, music, or any post-production graphics. The platform CTA sticker is the only designed element."
+      "image_direction": "**Format:** 1080x1920 (vertical) | **Placement:** Stories, Reels\n**Layout:** Text-forward urgency — designed but stripped back\n\n```\nSTORIES/REELS:\n+--------------------+\n|                    |\n| [Solid dark navy   |\n|  background with   |\n|  diagonal lines    |\n|  at 8% opacity]    |\n|                    |\n| LOGO (white,       |\n|  top-center)       |\n|                    |\n|                    |\n| \"This Tuesday.\"    |\n| (Ivypresto, white, |\n|  LARGE — 80px,     |\n|  centered)         |\n|                    |\n| May 5 at 6:00 PM   |\n| Westmoreland       |\n| Country Club       |\n| (Rival Sans,       |\n|  white 70%)        |\n|                    |\n| [Thin gold line]   |\n|                    |\n| Cocktails. Panel.  |\n| No obligation.     |\n| (Rival Sans,       |\n|  white 60%)        |\n|                    |\n| [RESERVE YOUR SEAT]|\n| (outlined, white)  |\n+--------------------+\n```\n\n**Design direction:** This is the LAST ad the audience sees. Unlike Ad 8 (which uses gold urgency), Ad 9 is stripped back — white on navy, minimal elements, no photo. The feeling should be quiet urgency, like a final personal note. \"This Tuesday.\" as a standalone sentence is the entire hook.\n\n**Key difference from Ad 8:** Ad 8 leads with scarcity (\"A Few Seats Left\" + gold accent). Ad 9 leads with proximity (\"This Tuesday.\" + stripped design). Both are text-forward but feel different — Ad 8 is louder, Ad 9 is quieter. The progression from loud urgency to quiet reminder mirrors how you'd actually remind a friend.\n\n**Why not raw/selfie video anymore:** The original plan called for a raw iPhone selfie video for authenticity. With the image-only pivot, this ad achieves the \"last personal touch\" through stripped-back design — fewer elements, more white space, quieter tone. It intentionally looks less produced than the rest of the campaign."
     }
   ],
   "client": "confluence-fp"

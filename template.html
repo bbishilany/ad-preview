@@ -3715,7 +3715,7 @@ function showEditNamePrompt() {
 
 // ── Init ───────────────────────────────────────────────────────────────────
 function fullInit() {
-  _reviewerMode = 'client';
+  _reviewerMode = localStorage.getItem('adpreview_reviewer_mode') || 'internal';
   initReviewerIdentity();
   // Ask for name once at session start if not already saved
   if (!localStorage.getItem('adpreview_name')) {

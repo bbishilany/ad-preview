@@ -2392,6 +2392,7 @@ function renderAd(idx) {
       <span class="adprev-chip">Week ${ad.week}</span>
       ${ad.format ? `<span class="adprev-chip">${esc(ad.format)}</span>` : ''}
     </div>
+    ${ad.arc ? `<div style="font-size:13px;color:var(--muted);margin-top:6px;font-style:italic">${esc(ad.arc)}</div>` : ''}
   </div>`;
 
   // Approve button

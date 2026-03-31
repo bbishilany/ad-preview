@@ -30,6 +30,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Institutional credibility — C-suite panel + firm brand (authority)",
       "type": "image",
       "week": 1,
       "images": [
@@ -88,6 +89,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Content preview — six topics from four leaders (reciprocity)",
       "type": "carousel",
       "week": 1,
       "images": [
@@ -125,6 +127,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Personal warmth — \"the financial conversations worth having\" (liking + permission)",
       "type": "image",
       "week": 1,
       "images": [
@@ -158,6 +161,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Emotional weight of peak earning years — \"the decisions compound the most\" (loss aversion)",
       "type": "image",
       "week": 2,
       "images": [
@@ -191,6 +195,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Pittsburgh community identity — local imagery + community language (in-group bias)",
       "type": "image",
       "week": 2,
       "images": [
@@ -224,6 +229,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "Six-panel visual — one tile per topic, each with an icon or simple illustration:\n- Forward-looking planning\n- Family meetings & estate planning\n- Charitable giving\n- Lessons learned & common pitfalls\n- Global economy & portfolio management\n- Technology connecting the pieces\n\nPanelist headshots along the bottom. Event details (date, venue, complimentary) as footer bar. Dark navy background, gold accents, Confluence branding.",
+      "arc": "Six-topic panel overview infographic (breadth of expertise)",
       "type": "image",
       "week": 3,
       "images": [
@@ -261,6 +267,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "CIO's perspective on the economy (authority)",
       "type": "image",
       "week": 3,
       "images": [
@@ -298,6 +305,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Specific seat scarcity — \"a few seats left\" (scarcity)",
       "type": "image",
       "week": 4,
       "images": [
@@ -339,6 +347,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
+      "arc": "Quiet final reminder — stripped urgency (authenticity + final push)",
       "type": "image",
       "week": 4,
       "images": [

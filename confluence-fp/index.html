@@ -215,20 +215,19 @@
 
   /* AD TABS */
   .adprev-tabs {
-    display: flex;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
     margin-bottom: 24px;
-    overflow: visible;
     padding: 12px 4px 4px;
-    flex-wrap: wrap;
   }
   .adprev-tab {
-    padding: 12px 20px;
-    border-radius: 10px;
+    padding: 14px 10px;
+    border-radius: 12px;
     background: var(--surface);
     border: 1px solid var(--border);
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--text2);
     transition: all 0.15s;
@@ -240,20 +239,20 @@
   .adprev-tab:hover { border-color: var(--accent); color: var(--text); }
   .adprev-tab.active { background: rgba(79,122,255,0.15); color: var(--accent); border-color: var(--accent); }
   .adprev-tab .tab-week {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.4px;
     color: var(--text2);
     display: block;
-    margin-top: 4px;
+    margin-top: 5px;
   }
   .adprev-tab.active .tab-week { color: var(--accent); opacity: 0.7; }
   .adprev-tab .tab-due {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     color: #e8a33c;
     display: block;
-    margin-top: 3px;
+    margin-top: 4px;
     letter-spacing: 0.3px;
   }
   .adprev-tab.active .tab-due { color: #e8a33c; }

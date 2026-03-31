@@ -3,6 +3,28 @@
   "event_date": "Tuesday, May 5, 2026 at 6:00 PM",
   "venue": "Westmoreland Country Club, 7100 Mellon Rd, Export, PA 15632",
   "co_presenters": "",
+  "panelists": [
+    {
+      "name": "Greg Weimer",
+      "title": "Chief Executive Officer",
+      "image": "greg-weimer-ceo.jpg"
+    },
+    {
+      "name": "Gregory Weimer, CFP, CPA",
+      "title": "President",
+      "image": "gregory-weimer-ii-president.jpg"
+    },
+    {
+      "name": "Bill Winkeler, CFA, CFP",
+      "title": "Chief Investment Officer",
+      "image": "bill-winkeler-cio.jpg"
+    },
+    {
+      "name": "Chuck Zuzak, CFA, CFP",
+      "title": "Director of Wealth Planning",
+      "image": "chuck-zuzak-dir-wealth-planning.jpg"
+    }
+  ],
   "compliance_notes": [],
   "ads": [
     {

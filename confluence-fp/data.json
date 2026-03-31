@@ -27,8 +27,8 @@
       "cards": [],
       "stories": {
         "image": "Panelist credential stack (4 headshots vertical with names/titles) on dark navy background",
-        "text_overlay": "\"An Evening of Clarity\" (22 chars)",
-        "secondary_text": "\"Complimentary | Tue, May 5 | Westmoreland Country Club\" (54 chars)",
+        "text_overlay": "An Evening of Clarity",
+        "secondary_text": "Complimentary | Tue, May 5 | Westmoreland Country Club",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -129,8 +129,8 @@
       "cards": [],
       "stories": {
         "image": "CEO or leadership team photo on dark navy background — warm, personal",
-        "text_overlay": "\"A Personal Invitation\" (22 chars)",
-        "secondary_text": "\"Complimentary | Tue, May 5 | 6 PM\" (33 chars)",
+        "text_overlay": "A Personal Invitation",
+        "secondary_text": "Complimentary | Tue, May 5 | 6 PM",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -168,8 +168,8 @@
       "cards": [],
       "stories": {
         "image": "Emotional \"pieces of your financial life\" visual — portfolio, estate, tax as connected elements",
-        "text_overlay": "\"Are the Pieces Working Together?\" (33 chars)",
-        "secondary_text": "\"Six topics | Tue, May 5 | Westmoreland Country Club\" (53 chars)",
+        "text_overlay": "Are the Pieces Working Together?",
+        "secondary_text": "Six topics | Tue, May 5 | Westmoreland Country Club",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -207,8 +207,8 @@
       "cards": [],
       "stories": {
         "image": "Pittsburgh skyline or landmark photo with Confluence branding",
-        "text_overlay": "\"Built for Pittsburgh families.\" (30 chars)",
-        "secondary_text": "\"Complimentary | Tue, May 5 | Westmoreland CC\" (45 chars)",
+        "text_overlay": "Built for Pittsburgh families.",
+        "secondary_text": "Complimentary | Tue, May 5 | Westmoreland CC",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -246,8 +246,8 @@
       "cards": [],
       "stories": {
         "image": "Vertical six-tile infographic — stacked topic tiles with icons, panelist headshots at bottom",
-        "text_overlay": "\"Six Topics. One Evening.\" (25 chars)",
-        "secondary_text": "\"Tue, May 5 | 6 PM | Westmoreland Country Club\" (48 chars)",
+        "text_overlay": "Six Topics. One Evening.",
+        "secondary_text": "Tue, May 5 | 6 PM | Westmoreland Country Club",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -284,8 +284,8 @@
       "cards": [],
       "stories": {
         "image": "CIO headshot with economy-focused headline",
-        "text_overlay": "\"What our CIO is watching right now\" (33 chars)",
-        "secondary_text": "\"Complimentary | Tue, May 5 | Westmoreland CC\" (45 chars)",
+        "text_overlay": "What our CIO is watching right now",
+        "secondary_text": "Complimentary | Tue, May 5 | Westmoreland CC",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -316,14 +316,13 @@
       "cta": "Sign Up",
       "hook": "Tuesday, May 5 is next week. A few seats left.",
       "alt_headlines": [
-        "Next Tuesday, May 5",
-        "Almost Full: Reserve Now"
+        "Next Tuesday, May 5- Almost Full: Reserve Now"
       ],
       "cards": [],
       "stories": {
         "image": "High-contrast text on brand dark navy background, gold accent dominant",
-        "text_overlay": "\"A few seats left | Tuesday, May 5\"",
-        "secondary_text": "\"Westmoreland Country Club | 6 PM | Complimentary\"",
+        "text_overlay": "A few seats left | Tuesday, May 5",
+        "secondary_text": "Westmoreland Country Club | 6 PM | Complimentary",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -355,19 +354,18 @@
       "cta": "Sign Up",
       "hook": "This Tuesday. A few seats left.",
       "alt_headlines": [
-        "This Tuesday, May 5",
-        "A Few Seats Left"
+        "This Tuesday, May 5- A Few Seats Left"
       ],
       "cards": [],
       "stories": {
         "image": "Text-forward urgency design — stripped back, bold typography, minimal elements",
-        "text_overlay": "\"This Tuesday | A few seats left\"",
+        "text_overlay": "This Tuesday | A few seats left",
         "cta_sticker": "Sign Up"
       },
       "reels": {
         "image": "Same stripped-back design optimized for Reels format",
-        "caption": "This Tuesday. A few seats left. Westmoreland CC, 6 PM. Reserve below. (72 chars)",
-        "description": "A few seats left | May 5 (25 chars)"
+        "caption": "This Tuesday. A few seats left. Westmoreland CC, 6 PM. Reserve below.",
+        "description": "A few seats left | May 5"
       },
       "video_script": "",
       "video_talking_points": "",

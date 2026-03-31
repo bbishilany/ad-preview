@@ -186,12 +186,7 @@
         "For Pittsburgh Families"
       ],
       "cards": [],
-      "stories": {
-        "image": "Pittsburgh skyline or landmark photo with Confluence branding",
-        "text_overlay": "\"Pittsburgh is home.\"",
-        "secondary_text": "\"Complimentary evening | Tue, May 5 | Westmoreland Country Club\"",
-        "cta_sticker": "Sign Up"
-      },
+      "stories": null,
       "reels": null,
       "video_script": "",
       "video_talking_points": "",
@@ -283,7 +278,7 @@
         "Stories"
       ],
       "production": "",
-      "primary_text": "Tuesday, May 5 is next week.\n\nWe have a few seats left at Westmoreland Country Club.\n\nGreg Weimer, Gregory Weimer, Bill Winkeler, and Chuck Zuzak — our CEO, President, CIO, and Director of Wealth Planning — are hosting an evening for Pittsburgh families.\n\n→ What's happening in the economy\n→ How your estate plan holds up\n→ Where charitable giving fits\n\nCocktails and hors d'oeuvres. Complimentary. We'd like to meet you.",
+      "primary_text": "Tuesday, May 5 is next week.\n\nWe have a few seats left at Westmoreland Country Club.\n\nFour leaders. One evening:\n\nGreg Weimer — CEO\nGregory Weimer, CFP, CPA — President\nBill Winkeler, CFA, CFP — CIO\nChuck Zuzak, CFA, CFP — Dir. of Wealth Planning\n\n→ What's happening in the economy\n→ How your estate plan holds up\n→ Where charitable giving fits\n\nCocktails and hors d'oeuvres. Complimentary.\n\nWe'd like to meet you.",
       "headline": "This Tuesday — Last Seats",
       "description": "May 5 | 6 PM",
       "cta": "Sign Up",
@@ -321,7 +316,7 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "This Tuesday. A few seats left at Westmoreland Country Club.\n\nCocktails, hors d'oeuvres, and all four of our firm's leaders on stage.\n\nWould be glad to meet you there.",
+      "primary_text": "This Tuesday. A few seats left at Westmoreland Country Club.\n\n6:00 PM. Cocktails and hors d'oeuvres.\n\nGreg Weimer — CEO\nGregory Weimer, CFP, CPA — President\nBill Winkeler, CFA, CFP — CIO\nChuck Zuzak, CFA, CFP — Dir. of Wealth Planning\n\nAll four. On stage. One evening.\n\nWould be glad to meet you there.",
       "headline": "Last Few Seats",
       "description": "This Tuesday",
       "cta": "Sign Up",
@@ -338,7 +333,7 @@
       },
       "reels": {
         "image": "Same stripped-back design optimized for Reels format",
-        "caption": "Our evening at Westmoreland Country Club is this Tuesday, May 5. A few seats left. Cocktails, hors d'oeuvres, and all four of our firm's leaders on stage. Reserve below.",
+        "caption": "This Tuesday, May 5. A few seats left at Westmoreland Country Club. Cocktails and hors d'oeuvres at 6 PM. Greg Weimer, Gregory Weimer, Bill Winkeler, and Chuck Zuzak on stage. Reserve below.",
         "description": "A few seats left | This Tuesday | Westmoreland Country Club"
       },
       "video_script": "",

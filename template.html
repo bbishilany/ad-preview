@@ -237,6 +237,80 @@
   .progress-segment.commented { background: var(--accent); }
   .progress-segment.unreviewed { background: var(--surface2); }
 
+  /* STRATEGY OVERVIEW */
+  .campaign-strategy {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+  }
+  .strategy-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .strategy-toggle:hover { background: var(--surface2); }
+  .strategy-toggle h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin: 0;
+  }
+  .strategy-toggle .arrow {
+    font-size: 12px;
+    color: var(--text2);
+    transition: transform 0.2s;
+  }
+  .campaign-strategy.open .strategy-toggle .arrow { transform: rotate(180deg); }
+  .strategy-body {
+    display: none;
+    padding: 0 24px 18px;
+  }
+  .campaign-strategy.open .strategy-body { display: block; }
+  .strategy-week {
+    margin-bottom: 14px;
+  }
+  .strategy-week:last-child { margin-bottom: 0; }
+  .strategy-week-header {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .strategy-week-header .week-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .strategy-ad {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .strategy-ad-num {
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    min-width: 42px;
+  }
+  .strategy-ad-arc {
+    color: var(--text2);
+    font-style: italic;
+  }
+
   /* MAIN CONTAINER */
   .container {
     max-width: 1200px;
@@ -1857,6 +1931,9 @@
 <!-- PROGRESS BAR -->
 <div class="campaign-progress" id="campaign-progress"></div>
 
+<!-- STRATEGY OVERVIEW -->
+<div class="campaign-strategy open" id="campaign-strategy"></div>
+
 <!-- MAIN -->
 <div class="container">
   <div class="adprev-tabs" id="adprev-tabs"></div>
@@ -2221,6 +2298,7 @@ async function init() {
     applyReviewerMode(_reviewerMode);
     renderBanner(_data);
     renderProgressBar();
+    renderStrategy(_data);
     renderTabs(_data);
     renderAd(0);
   } catch (e) {
@@ -2261,6 +2339,44 @@ function renderProgressBar() {
     <div class="progress-bar">
       ${statuses.map(s => `<div class="progress-segment ${s === 'approve' ? 'approved' : 'unreviewed'}"></div>`).join('')}
     </div>`;
+}
+
+// ── Strategy Overview ──────────────────────────────────────────────────────
+function renderStrategy(data) {
+  const el = document.getElementById('campaign-strategy');
+  if (!data.ads || !data.ads.length || !data.ads.some(a => a.arc)) {
+    el.style.display = 'none';
+    return;
+  }
+
+  const weekThemes = {1:'Trust-building', 2:'Emotional engagement', 3:'Expert authority', 4:'Urgency and final push'};
+  const weeks = {};
+  data.ads.forEach(ad => {
+    const w = ad.week || 0;
+    if (!weeks[w]) weeks[w] = [];
+    weeks[w].push(ad);
+  });
+
+  let body = '';
+  Object.keys(weeks).sort((a,b) => a - b).forEach(w => {
+    const theme = weekThemes[w] || 'Week ' + w;
+    body += `<div class="strategy-week">
+      <div class="strategy-week-header">Week ${w}: ${esc(theme)}<span class="week-line"></span></div>`;
+    weeks[w].forEach(ad => {
+      body += `<div class="strategy-ad">
+        <span class="strategy-ad-num">Ad ${ad.num}</span>
+        <span class="strategy-ad-arc">${esc(ad.arc || ad.title)}</span>
+      </div>`;
+    });
+    body += `</div>`;
+  });
+
+  el.innerHTML = `
+    <div class="strategy-toggle" onclick="this.parentElement.classList.toggle('open')">
+      <h3>Campaign Strategy: Emotional Arc</h3>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="strategy-body">${body}</div>`;
 }
 
 // ── Tabs ───────────────────────────────────────────────────────────────────

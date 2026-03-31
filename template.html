@@ -2122,7 +2122,7 @@ async function handleFileSelected(file, adNum, slot) {
     const ad = _data.ads.find(a => a.num === adNum);
     let origFilename = '';
     if (ad && ad.images) {
-      if (slot === 'story') origFilename = ad.images.find(f => f.includes('story')) || ad.images[0] || '';
+      if (slot === 'story' || slot === 'reel') origFilename = ad.images.find(f => f.includes('story')) || ad.images[0] || '';
       else if (slot.startsWith('card')) origFilename = ad.images.find(f => f.includes(slot)) || '';
       else origFilename = ad.images.find(f => !f.includes('story') && !f.includes('card')) || ad.images[0] || '';
     }
@@ -2168,7 +2168,7 @@ async function revertImage(adNum, slot) {
     const ad = _data.ads.find(a => a.num === adNum);
     let origUrl = null;
     if (ad) {
-      if (slot === 'story') origUrl = _findStoryImage(ad);
+      if (slot === 'story' || slot === 'reel') origUrl = _findStoryImage(ad);
       else if (slot.startsWith('card')) origUrl = _findCarouselCardImage(ad, parseInt(slot.replace('card', '')));
       else origUrl = _findFeedImage(ad);
     }
@@ -2409,13 +2409,13 @@ function renderAd(idx) {
 
   // Left: mockups
   html += `<div class="adprev-mockups">`;
-  if ((ad.placements || []).some(p => p.toLowerCase() === 'feed')) {
+  if ((ad.placements || []).some(p => p.toLowerCase().includes('feed'))) {
     html += ad.type === 'carousel' ? renderCarouselMockup(ad) : renderFeedMockup(ad);
   }
-  if ((ad.placements || []).some(p => p.toLowerCase() === 'stories')) {
+  if ((ad.placements || []).some(p => p.toLowerCase().includes('stories') || p.toLowerCase().includes('story'))) {
     html += renderStoryMockup(ad);
   }
-  if ((ad.placements || []).some(p => p.toLowerCase() === 'reels')) {
+  if ((ad.placements || []).some(p => p.toLowerCase().includes('reels') || p.toLowerCase().includes('reel'))) {
     html += renderReelMockup(ad);
   }
   html += `</div>`;
@@ -2439,9 +2439,9 @@ function renderAd(idx) {
   }
 
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
-  const _hasFeed = _pl.includes('feed');
-  const _hasStories = _pl.includes('stories');
-  const _hasReels = _pl.includes('reels');
+  const _hasFeed = _pl.some(p => p.includes('feed'));
+  const _hasStories = _pl.some(p => p.includes('stories') || p.includes('story'));
+  const _hasReels = _pl.some(p => p.includes('reels') || p.includes('reel'));
 
   const _canEdit = !isApproved || _adUnlocked;
   const _ce = _canEdit ? 'true' : 'false';
@@ -3062,8 +3062,17 @@ function renderReelMockup(ad) {
   const truncCaption = caption.length > maxLen ? caption.slice(0, maxLen) : caption;
   const showMore = caption.length > maxLen;
 
+  // Reels use the same image as Stories (9:16 vertical) — check for reel override first, then fall back to story image
+  const reelOverride = _imageOverrides[`${ad.num}_reel`];
+  const bgImg = reelOverride || _findStoryImage(ad);
+  const hasImg = !!bgImg;
+
+  const hasReelOverride = !!_imageOverrides[`${ad.num}_reel`];
+  const reelUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'reel')" title="Upload image">&#8679;</button>`;
+  const reelRevertPill = hasReelOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'reel')">Revert</button>` : '';
+
   return `<div class="ig-reel" data-pin-target="mockup-reel">
-    <div class="fb-play-btn" style="top:40%"></div>
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0"><img style="width:100%;height:100%;object-fit:cover" src="${bgImg}" alt="" loading="lazy">${reelUploadBtn}${reelRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0">${reelUploadBtn}</div>`}
     <div class="ig-reel-sidebar">
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.heartSm}<span class="ig-reel-sidebar-count">1.2K</span></div>
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.commentSm}<span class="ig-reel-sidebar-count">48</span></div>

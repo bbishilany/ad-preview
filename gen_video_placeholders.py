@@ -192,19 +192,46 @@ def generate_placeholder(width, height, ad_num, title, filename):
 
 
 if __name__ == '__main__':
-    print("Generating image placeholders...")
+    print("Generating image placeholders for all 9 ads...")
 
-    # Ad 3 — Personal invite (feed, 1080x1080)
+    # Ad 1 — Brand introduction (feed 1080x1080 + story 1080x1920)
+    generate_placeholder(1080, 1080, 1, "Brand Introduction", "ad1-brand-intro.png")
+    generate_placeholder(1080, 1920, 1, "Brand Introduction", "ad1-brand-intro-story.png")
+
+    # Ad 2 — Educational carousel (5 cards at 1080x1080 + stories fallback 1080x1920)
+    generate_placeholder(1080, 1080, 2, "Carousel Card 1: Hook", "ad2-carousel-card1.png")
+    generate_placeholder(1080, 1080, 2, "Carousel Card 2: Economy", "ad2-carousel-card2.png")
+    generate_placeholder(1080, 1080, 2, "Carousel Card 3: Estate", "ad2-carousel-card3.png")
+    generate_placeholder(1080, 1080, 2, "Carousel Card 4: Giving", "ad2-carousel-card4.png")
+    generate_placeholder(1080, 1080, 2, "Carousel Card 5: CTA", "ad2-carousel-card5.png")
+    generate_placeholder(1080, 1920, 2, "Carousel Stories Fallback", "ad2-stories-fallback.png")
+
+    # Ad 3 — Personal invite (feed 1080x1080 + story 1080x1920)
     generate_placeholder(1080, 1080, 3, "Personal Invite", "ad3-personal-invite.png")
+    generate_placeholder(1080, 1920, 3, "Personal Invite", "ad3-personal-invite-story.png")
 
-    # Ad 5 — Local connection (stories/reels, 1080x1920)
+    # Ad 4 — Peace of mind (feed 1080x1080 + story 1080x1920)
+    generate_placeholder(1080, 1080, 4, "Peace of Mind", "ad4-peace-of-mind.png")
+    generate_placeholder(1080, 1920, 4, "Peace of Mind", "ad4-peace-of-mind-story.png")
+
+    # Ad 5 — Local connection (story 1080x1920 + feed 1080x1080)
     generate_placeholder(1080, 1920, 5, "Local Connection", "ad5-local-connection-story.png")
+    generate_placeholder(1080, 1080, 5, "Local Connection", "ad5-local-connection.png")
+
+    # Ad 6 — Infographic (feed 1080x1080 + story 1080x1920)
+    generate_placeholder(1080, 1080, 6, "Six Topics Infographic", "ad6-infographic.png")
+    generate_placeholder(1080, 1920, 6, "Six Topics Infographic", "ad6-infographic-story.png")
 
     # Ad 7 — Expert insight (feed 1080x1080 + story 1080x1920)
     generate_placeholder(1080, 1080, 7, "Expert Insight", "ad7-expert-insight.png")
     generate_placeholder(1080, 1920, 7, "Expert Insight", "ad7-expert-insight-story.png")
 
-    # Ad 9 — Final reminder (stories/reels, 1080x1920)
+    # Ad 8 — Last call (feed 1080x1080 + story 1080x1920)
+    generate_placeholder(1080, 1080, 8, "Last Call", "ad8-last-call.png")
+    generate_placeholder(1080, 1920, 8, "Last Call", "ad8-last-call-story.png")
+
+    # Ad 9 — Final reminder (story 1080x1920 + feed 1080x1080)
     generate_placeholder(1080, 1920, 9, "Final Reminder", "ad9-final-reminder-story.png")
+    generate_placeholder(1080, 1080, 9, "Final Reminder", "ad9-final-reminder.png")
 
     print("Done!")

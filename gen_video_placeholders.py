@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate 'Video in Production' clapperboard placeholders for Confluence FP ads."""
+"""Generate 'Image Forthcoming' placeholders for Confluence FP ads."""
 
 from PIL import Image, ImageDraw, ImageFont
 import math
@@ -30,54 +30,41 @@ def load_font(size):
     return ImageFont.load_default()
 
 
-def draw_clapper(draw, cx, cy, scale, color_top, color_bottom):
-    """Draw a simplified movie clapperboard centered at (cx, cy)."""
-    w = int(260 * scale)
-    h_top = int(60 * scale)
-    h_bot = int(160 * scale)
-    stripe_w = int(32 * scale)
+def draw_image_icon(draw, cx, cy, scale, color_frame, color_accent):
+    """Draw a simplified image/photo icon centered at (cx, cy)."""
+    w = int(240 * scale)
+    h = int(180 * scale)
+    r = int(12 * scale)
+    border = max(3, int(4 * scale))
 
     x0 = cx - w // 2
-    y_top = cy - (h_top + h_bot) // 2
+    y0 = cy - h // 2
 
-    # Top clapper bar (angled stripes)
+    # Outer frame
     draw.rounded_rectangle(
-        [x0, y_top, x0 + w, y_top + h_top],
-        radius=int(8 * scale), fill=color_top
-    )
-    # Diagonal stripes on top bar
-    for i in range(0, w + h_top, stripe_w * 2):
-        pts = [
-            (x0 + i, y_top),
-            (x0 + i + stripe_w, y_top),
-            (x0 + i + stripe_w - h_top, y_top + h_top),
-            (x0 + i - h_top, y_top + h_top),
-        ]
-        # Clip to bar bounds
-        draw.polygon(pts, fill=color_bottom)
-
-    # Bottom board
-    draw.rounded_rectangle(
-        [x0, y_top + h_top - int(4 * scale), x0 + w, y_top + h_top + h_bot],
-        radius=int(8 * scale), fill=color_bottom
+        [x0, y0, x0 + w, y0 + h],
+        radius=r, fill=color_frame, outline=color_accent, width=border
     )
 
-    # Lines on board (like a slate)
-    line_y_start = y_top + h_top + int(24 * scale)
-    for i in range(4):
-        ly = line_y_start + i * int(32 * scale)
-        draw.line(
-            [(x0 + int(20 * scale), ly), (x0 + w - int(20 * scale), ly)],
-            fill=(*GOLD, 80), width=max(1, int(2 * scale))
-        )
+    # Mountain shape (bottom-left triangle)
+    m1 = [(x0 + int(20 * scale), y0 + h - int(20 * scale)),
+          (x0 + int(100 * scale), y0 + int(60 * scale)),
+          (x0 + int(160 * scale), y0 + h - int(20 * scale))]
+    draw.polygon(m1, fill=color_accent)
 
-    # Circle "lens" dot
-    dot_r = int(12 * scale)
-    dot_cx = x0 + w - int(36 * scale)
-    dot_cy = y_top + h_top + int(30 * scale)
+    # Smaller hill
+    m2 = [(x0 + int(120 * scale), y0 + h - int(20 * scale)),
+          (x0 + int(170 * scale), y0 + int(90 * scale)),
+          (x0 + int(220 * scale), y0 + h - int(20 * scale))]
+    draw.polygon(m2, fill=(*color_accent[:3], 180) if len(color_accent) > 3 else color_accent)
+
+    # Sun circle
+    sun_r = int(18 * scale)
+    sun_cx = x0 + w - int(55 * scale)
+    sun_cy = y0 + int(50 * scale)
     draw.ellipse(
-        [dot_cx - dot_r, dot_cy - dot_r, dot_cx + dot_r, dot_cy + dot_r],
-        fill=GOLD
+        [sun_cx - sun_r, sun_cy - sun_r, sun_cx + sun_r, sun_cy + sun_r],
+        fill=color_accent
     )
 
 
@@ -90,17 +77,17 @@ def generate_placeholder(width, height, ad_num, title, filename):
     for i in range(-height, width + height, 40):
         draw.line([(i, 0), (i + height, height)], fill=NAVY_LIGHT, width=1)
 
-    # Clapperboard
+    # Image icon
     scale = min(width, height) / 1080
-    clapper_y = int(height * 0.38)
-    draw_clapper(draw, width // 2, clapper_y, scale * 1.4, GOLD, SLATE)
+    icon_y = int(height * 0.38)
+    draw_image_icon(draw, width // 2, icon_y, scale * 1.4, SLATE, GOLD)
 
     # "VIDEO IN PRODUCTION" text
     font_big = load_font(int(52 * scale))
     font_mid = load_font(int(28 * scale))
     font_sm = load_font(int(22 * scale))
 
-    text_main = "VIDEO IN PRODUCTION"
+    text_main = "IMAGE FORTHCOMING"
     bbox = draw.textbbox((0, 0), text_main, font=font_big)
     tw = bbox[2] - bbox[0]
     text_y = int(height * 0.58)
@@ -142,19 +129,19 @@ def generate_placeholder(width, height, ad_num, title, filename):
 
 
 if __name__ == '__main__':
-    print("Generating video placeholder images...")
+    print("Generating image placeholder images...")
 
-    # Ad 3 — Personal invite video (feed, 1080x1080)
-    generate_placeholder(1080, 1080, 3, "Personal Invite Video", "ad3-personal-invite.png")
+    # Ad 3 — Personal invite (feed, 1080x1080)
+    generate_placeholder(1080, 1080, 3, "Personal Invite", "ad3-personal-invite.png")
 
-    # Ad 5 — Local connection video (stories/reels, 1080x1920)
-    generate_placeholder(1080, 1920, 5, "Local Connection Video", "ad5-local-connection-story.png")
+    # Ad 5 — Local connection (stories/reels, 1080x1920)
+    generate_placeholder(1080, 1920, 5, "Local Connection", "ad5-local-connection-story.png")
 
-    # Ad 7 — Expert insight video (feed 1080x1080 + story 1080x1920)
-    generate_placeholder(1080, 1080, 7, "Expert Insight Video", "ad7-expert-insight.png")
-    generate_placeholder(1080, 1920, 7, "Expert Insight Video", "ad7-expert-insight-story.png")
+    # Ad 7 — Expert insight (feed 1080x1080 + story 1080x1920)
+    generate_placeholder(1080, 1080, 7, "Expert Insight", "ad7-expert-insight.png")
+    generate_placeholder(1080, 1920, 7, "Expert Insight", "ad7-expert-insight-story.png")
 
-    # Ad 9 — Final reminder video (stories/reels, 1080x1920)
-    generate_placeholder(1080, 1920, 9, "Final Reminder Video", "ad9-final-reminder-story.png")
+    # Ad 9 — Final reminder (stories/reels, 1080x1920)
+    generate_placeholder(1080, 1920, 9, "Final Reminder", "ad9-final-reminder-story.png")
 
     print("Done!")

@@ -58,7 +58,7 @@
     align-items: center;
     gap: 10px;
   }
-  .header-logo img { height: 24px; width: auto; }
+  .header-logo svg { width: 28px; height: 28px; }
   .header-logo span {
     font-size: 16px;
     font-weight: 700;
@@ -350,12 +350,12 @@
     position: relative;
   }
   .adprev-section-label {
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 700;
-    text-transform: none;
-    letter-spacing: 0;
-    color: var(--accent);
-    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text2);
+    margin-bottom: 6px;
   }
   .adprev-section-body {
     font-size: 13px;
@@ -530,14 +530,9 @@
   .fb-avatar {
     width: 36px; height: 36px;
     border-radius: 50%;
-    background: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-  .fb-avatar img {
-    width: 100%; height: 100%;
-    object-fit: cover;
+    color: white; font-size: 14px; font-weight: 700; flex-shrink: 0;
   }
   .fb-page-name { font-weight: 600; font-size: 13px; color: var(--text); }
   .fb-sponsored { font-size: 11px; color: var(--text2); }
@@ -707,7 +702,7 @@
   .ig-story-has-img { justify-content: flex-end; padding-bottom: 70px; }
   .ig-story-bg {
     position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.7;
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.45;
   }
   .ig-story-progress {
     position: absolute; top: 8px; left: 8px; right: 8px;
@@ -953,45 +948,45 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
-  /* Approve button */
-  .approve-bar {
+  /* Ad status bar — always visible */
+  .ad-status-bar {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
   }
-  .approve-btn {
+  .ad-status-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 24px;
+    gap: 6px;
+    padding: 8px 18px;
     border-radius: 8px;
-    border: 2px solid var(--green);
-    background: rgba(34,197,94,0.08);
-    color: var(--green);
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .approve-btn:hover {
-    background: rgba(34,197,94,0.18);
-    transform: translateY(-1px);
-  }
-  .approve-btn svg { width: 18px; height: 18px; }
-  .approve-btn.approved {
-    background: var(--green);
-    color: #fff;
-    border-color: var(--green);
-    cursor: default;
-  }
-  .approve-btn.approved:hover { transform: none; }
-  .approve-status-msg {
-    font-size: 13px;
+    border: 2px solid var(--border);
+    background: var(--surface2);
     color: var(--text2);
-    line-height: 1.4;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
   }
-  .approve-status-msg strong { color: var(--green); font-weight: 600; }
+  .ad-status-btn:hover { border-color: var(--text2); color: var(--text); }
+  .ad-status-btn.selected-approve {
+    background: rgba(34,197,94,0.12);
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .ad-status-btn.selected-changes {
+    background: rgba(245,158,11,0.12);
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+  .ad-status-btn.selected-comment {
+    background: rgba(79,122,255,0.12);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .ad-status-btn svg { width: 16px; height: 16px; }
   .ad-status-saved {
     font-size: 11px;
     color: var(--green);
@@ -1339,104 +1334,6 @@
     margin-top: 2px;
   }
 
-  /* Editable copy fields */
-  .editable-field {
-    border: 1px solid transparent;
-    border-radius: 6px;
-    padding: 6px 8px;
-    margin: -6px -8px;
-    transition: border-color 0.15s, background 0.15s;
-    outline: none;
-    cursor: text;
-  }
-  .editable-field:hover {
-    border-color: var(--border);
-    background: rgba(79,122,255,0.04);
-  }
-  .editable-field:focus {
-    border-color: var(--accent);
-    background: rgba(79,122,255,0.06);
-  }
-  .editable-field.locked {
-    cursor: default;
-    opacity: 0.7;
-    pointer-events: none;
-  }
-  .editable-field-saved {
-    position: absolute;
-    top: 0; right: 0;
-    font-size: 10px;
-    color: var(--green);
-    font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.2s;
-    pointer-events: none;
-  }
-  .editable-field-saved.visible { opacity: 1; }
-
-  /* Lock bar for approved ads */
-  .lock-bar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: rgba(34,197,94,0.06);
-    border: 1px solid rgba(34,197,94,0.2);
-    border-radius: 8px;
-    margin-bottom: 16px;
-    font-size: 12px;
-    color: var(--text2);
-  }
-  .lock-bar svg { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; }
-  .lock-bar-text { flex: 1; }
-  .unlock-btn {
-    padding: 4px 12px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    color: var(--text2);
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .unlock-btn:hover { border-color: var(--accent); color: var(--text); }
-  .unlock-prompt {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .unlock-prompt input {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 4px 10px;
-    font-size: 11px;
-    color: var(--text);
-    outline: none;
-    width: 120px;
-  }
-  .unlock-prompt input:focus { border-color: var(--accent); }
-  .unlock-prompt input.error { border-color: var(--danger); }
-  .unlock-prompt button {
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: none;
-    background: var(--accent);
-    color: white;
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  /* Simple feedback section */
-  .simple-feedback-section {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-  }
-
   /* Client mode: hide internal-only elements */
   body.client-mode [data-internal-only] { display: none !important; }
 
@@ -1626,12 +1523,6 @@
     background: rgba(239,68,68,0.15);
     border-color: var(--danger);
   }
-  .feedback-delete-btn {
-    background: none; border: none; cursor: pointer;
-    color: var(--text2); opacity: 0.4; padding: 2px;
-    margin-left: auto; line-height: 1; transition: all 0.15s;
-  }
-  .feedback-delete-btn:hover { opacity: 1; color: var(--danger); }
   .feedback-edit-area {
     margin-top: 6px;
   }
@@ -1684,6 +1575,29 @@
   }
 
   /* ── FEATURE 4: Reviewer Identity ──────────────────────────────────── */
+  .welcome-banner {
+    background: linear-gradient(135deg, rgba(79,122,255,0.1), rgba(124,58,237,0.1));
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex; align-items: center; gap: 12px;
+    justify-content: center;
+  }
+  .welcome-banner input {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; color: var(--text);
+    font-size: 14px; outline: none; width: 200px;
+  }
+  .welcome-banner input:focus { border-color: var(--accent); }
+  .welcome-banner button {
+    background: var(--accent); color: white; border: none;
+    padding: 8px 18px; border-radius: 8px; font-weight: 600;
+    font-size: 13px; cursor: pointer;
+  }
+  .welcome-banner button:hover { opacity: 0.9; }
+  .welcome-banner .welcome-text {
+    font-size: 13px;
+    color: var(--text2);
+  }
   .reviewer-identity {
     font-size: 11px; color: var(--text2);
     display: flex; align-items: center; gap: 6px;
@@ -1797,7 +1711,17 @@
 <div class="header">
   <div class="header-left">
     <div class="header-logo">
-      <img src="images/mileage-icon.jpg" alt="Mileage" style="height:28px;width:28px;border-radius:50%;object-fit:cover">
+      <svg viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="url(#g)"/>
+        <path d="M8 22L12 10L16 18L20 13L24 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#4f7aff"/>
+            <stop offset="1" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>Mileage Design</span>
       <span class="header-badge">Ad Preview</span>
     </div>
   </div>
@@ -1806,9 +1730,30 @@
       Reviewing as: <strong id="reviewer-identity-name"></strong>
       <button class="edit-name-btn" onclick="showEditNamePrompt()" title="Change name">&#9998;</button>
     </div>
+    <div class="reviewer-toggle">
+      <span class="reviewer-toggle-label">Reviewing as:</span>
+      <button class="reviewer-pill" id="mode-mileage" onclick="handleMileageClick()"><span class="mileage-lock-icon" id="mileage-lock">&#128274;</span> Mileage</button>
+      <button class="reviewer-pill" id="mode-client" onclick="setReviewerMode('client')">Client</button>
+      <div class="mileage-signed-in" id="mileage-signed-in" style="display:none">Signed in as Mileage</div>
+    </div>
+    <div class="kb-help">?
+      <div class="kb-tooltip">
+        <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Navigate ads<br>
+        <kbd>1</kbd>-<kbd>9</kbd> Jump to ad<br>
+        <kbd>F</kbd> Toggle feedback drawer<br>
+        <kbd>P</kbd> Toggle pin mode<br>
+        <kbd>Esc</kbd> Close zoom overlay
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- WELCOME BANNER (Feature 4) -->
+<div class="welcome-banner" id="welcome-banner" style="display:none">
+  <span class="welcome-text">Welcome! Enter your name to get started:</span>
+  <input type="text" id="welcome-name-input" placeholder="Your name" autocomplete="name">
+  <button onclick="submitWelcomeName()">Continue</button>
+</div>
 
 <!-- CAMPAIGN BANNER -->
 <div class="campaign-banner" id="campaign-banner"></div>
@@ -1821,6 +1766,13 @@
   <div class="adprev-tabs" id="adprev-tabs"></div>
   <div id="adprev-container"></div>
 
+  <!-- Legacy feedback drawer — hidden, replaced by inline accordion -->
+  <div class="feedback-drawer" id="feedback-drawer" style="display:none">
+    <div class="drawer-collapsed-bar">
+      <span class="drawer-title" id="drawer-title">Leave Feedback</span>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -1830,7 +1782,12 @@
 
 <!-- MOCKUP ZOOM OVERLAY (Feature 1) -->
 <div class="mockup-zoom-overlay" id="mockup-zoom-overlay" onclick="handleZoomOverlayClick(event)">
-  <!-- Pin mode removed -->
+  <div class="mockup-zoom-pin-toggle" id="zoom-pin-toggle">
+    <button id="zoom-pin-btn" onclick="togglePinModeFromZoom(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8m-4-4l4 4 4-4M12 22v-6m0 0l-3-3h6l-3 3z"/></svg>
+      <span>Pin Mode</span>
+    </button>
+  </div>
   <button class="mockup-zoom-close" onclick="closeMockupZoom()">&times;</button>
   <div class="mockup-zoom-content" id="mockup-zoom-content"></div>
 </div>
@@ -1884,7 +1841,6 @@ let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 let _imageOverrides = {};   // cache: `${adNum}_${slot}` → public_url
-let _unlockedAds = new Set(); // approved ads unlocked by Mileage password
 const CAMPAIGN_ID = 'confluence-fp';
 
 // ── Resolved comment tracking ─────────────────────────────────────────────
@@ -1936,6 +1892,15 @@ async function updateTabBadges() {
         }
       } catch(e) {}
 
+      try {
+        const { data: pinData, error: pinErr } = await sb.from('pins').select('id')
+          .eq('campaign_id', CAMPAIGN_ID)
+          .eq('ad_num', adNum);
+        if (!pinErr && pinData) {
+          totalItems += pinData.length;
+          pinData.forEach(p => { if (resolved.has('pin-' + p.id)) resolvedCount++; });
+        }
+      } catch(e) {}
     }
 
     // Also check localStorage pins if no Supabase pins found
@@ -1951,15 +1916,11 @@ async function updateTabBadges() {
       } catch(e) {}
     }
 
-    // Create and append badge — approved ads always get green check
+    // Create and append badge
     const badge = document.createElement('span');
     badge.className = 'tab-badge';
-    const isAdApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) === 'approve';
 
-    if (isAdApproved) {
-      badge.classList.add('all-done');
-      badge.innerHTML = '&#10003;';
-    } else if (totalItems === 0) {
+    if (totalItems === 0) {
       badge.classList.add('not-started');
     } else if (resolvedCount >= totalItems) {
       badge.classList.add('all-done');
@@ -2182,6 +2143,7 @@ async function init() {
     renderProgressBar();
     renderTabs(_data);
     renderAd(0);
+    renderDrawer();
   } catch (e) {
     document.getElementById('adprev-container').innerHTML =
       `<p style="color:var(--danger)">Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.</p>`;
@@ -2208,20 +2170,31 @@ function renderBanner(data) {
 function renderProgressBar() {
   if (!_data || !_data.ads) return;
   const total = _data.ads.length;
+  let reviewed = 0;
   let approvedCount = 0;
+  let changesCount = 0;
+  let commentedCount = 0;
 
-  const statuses = _data.ads.map(ad => {
+  const statuses = _data.ads.map((ad, i) => {
     const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`);
+    if (verdict) reviewed++;
     if (verdict === 'approve') approvedCount++;
+    else if (verdict === 'request_changes') changesCount++;
+    else if (verdict === 'comment_only') commentedCount++;
     return verdict;
   });
 
   const el = document.getElementById('campaign-progress');
-  const allDone = approvedCount === total;
   el.innerHTML = `
-    <div class="progress-text"><strong>${approvedCount} of ${total}</strong> ads approved${allDone ? ' — All done!' : ''}</div>
+    <div class="progress-text"><strong>${approvedCount} of ${total}</strong> ads approved</div>
     <div class="progress-bar">
-      ${statuses.map(s => `<div class="progress-segment ${s === 'approve' ? 'approved' : 'unreviewed'}"></div>`).join('')}
+      ${statuses.map(s => {
+        let cls = 'unreviewed';
+        if (s === 'approve') cls = 'approved';
+        else if (s === 'request_changes') cls = 'changes';
+        else if (s === 'comment_only') cls = 'commented';
+        return `<div class="progress-segment ${cls}"></div>`;
+      }).join('')}
     </div>`;
 }
 
@@ -2253,6 +2226,7 @@ function selectTab(idx) {
   });
   closeActivePinPopup();
   renderAd(idx);
+  renderDrawer();
 }
 
 // ── Reviewer Mode ──────────────────────────────────────────────────────────
@@ -2325,10 +2299,25 @@ function setReviewerMode(mode) {
   _reviewerMode = mode;
   localStorage.setItem('adpreview_reviewer_mode', mode);
   applyReviewerMode(mode);
+  renderDrawer();
 }
 
 function applyReviewerMode(mode) {
+  document.getElementById('mode-mileage').classList.toggle('active', mode === 'mileage');
+  document.getElementById('mode-client').classList.toggle('active', mode === 'client');
   document.body.classList.toggle('client-mode', mode === 'client');
+
+  // Feature 2: Update lock icon and signed-in indicator
+  const lockIcon = document.getElementById('mileage-lock');
+  const signedIn = document.getElementById('mileage-signed-in');
+  const isUnlocked = localStorage.getItem('adpreview_mileage_unlocked') === 'true';
+
+  if (lockIcon) {
+    lockIcon.style.display = isUnlocked ? 'none' : 'inline';
+  }
+  if (signedIn) {
+    signedIn.style.display = (mode === 'mileage' && isUnlocked) ? 'inline' : 'none';
+  }
 }
 
 // ── Render ad detail ───────────────────────────────────────────────────────
@@ -2351,14 +2340,31 @@ function renderAd(idx) {
     </div>
   </div>`;
 
-  // Approve button
-  const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
-  html += `<div class="approve-bar">
-    <button class="approve-btn${isApproved ? ' approved' : ''}" id="approve-btn" onclick="approveAd(${ad.num}, this)" ${isApproved ? 'disabled' : ''}>
+  // Status bar — verdict selection at first glance
+  const savedVerdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) || '';
+  html += `<div class="ad-status-bar" id="ad-status-bar">
+    <button class="ad-status-btn${savedVerdict === 'approve' ? ' selected-approve' : ''}" onclick="setAdStatus(${ad.num}, 'approve', this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      ${isApproved ? 'Approved' : 'Approve'}
+      Approve
     </button>
-    <div class="approve-status-msg" id="approve-status-msg">${getApprovalSummary()}</div>
+    <button class="ad-status-btn${savedVerdict === 'request_changes' ? ' selected-changes' : ''}" onclick="setAdStatus(${ad.num}, 'request_changes', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Request Changes
+    </button>
+    <button class="ad-status-btn${savedVerdict === 'comment_only' ? ' selected-comment' : ''}" onclick="setAdStatus(${ad.num}, 'comment_only', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Comment
+    </button>
+    <span class="ad-status-saved" id="ad-status-saved">Saved</span>
+  </div>`;
+
+  // Comment Pin toggle — big and bright
+  html += `<div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:20px">
+    <button class="pin-mode-toggle${_pinModeActive ? ' active' : ''}" id="pin-mode-btn" onclick="togglePinMode()">
+      ${SVG_ICONS.pin}
+      <span>${_pinModeActive ? 'Comment Pin ON' : 'Comment Pin'}</span>
+      <div class="pin-mode-hint">Click anywhere on the mockup or copy to drop a comment pin</div>
+    </button>
   </div>`;
 
   // Two-column: mockups left, copy right
@@ -2379,78 +2385,55 @@ function renderAd(idx) {
 
   // Right: copy details — show only fields visible per placement
   html += `<div class="adprev-copy-panel">`;
-
-  // Lock bar for approved ads
-  const _adUnlocked = _unlockedAds.has(ad.num);
-  if (isApproved && !_adUnlocked) {
-    html += `<div class="lock-bar" id="lock-bar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span class="lock-bar-text">Approved — copy is locked</span>
-      <button class="unlock-btn" onclick="showUnlockPrompt(${ad.num})">Unlock Edits</button>
-    </div>`;
-  } else if (isApproved && _adUnlocked) {
-    html += `<div class="lock-bar" id="lock-bar" style="border-color:rgba(79,122,255,0.3);background:rgba(79,122,255,0.06)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span class="lock-bar-text" style="color:var(--accent)">Unlocked for editing (Mileage)</span>
-    </div>`;
-  }
-
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
   const _hasFeed = _pl.includes('feed');
   const _hasStories = _pl.includes('stories');
   const _hasReels = _pl.includes('reels');
 
-  const _canEdit = !isApproved || _adUnlocked;
-  const _ce = _canEdit ? 'true' : 'false';
-  const _lockCls = _canEdit ? '' : ' locked';
-
   // Primary Text — only visible in Feed
   if (_hasFeed && ad.primary_text) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-primary-text">
       <div class="adprev-section-label">Primary Text</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="primary_text">${esc(ad.primary_text)}</div>
+      <div class="adprev-section-body">${esc(ad.primary_text)}</div>
     </div>`;
   }
   // Hook — only relevant for Feed
   if (_hasFeed && ad.hook) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-hook">
       <div class="adprev-section-label">Hook Line</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="hook" style="font-style:italic">${esc(ad.hook)}</div>
+      <div class="adprev-section-body" style="font-style:italic">${esc(ad.hook)}</div>
     </div>`;
   }
-  // Headline / Description / CTA — each editable separately
+  // Headline/Description/CTA — Feed shows all; Stories shows headline+CTA; Reels-only shows CTA
   if (_hasFeed) {
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">Headline</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
-    </div>`;
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">Description</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="description">${esc(ad.description)}</div>
-    </div>`;
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">CTA</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+      <div class="adprev-section-label">Headline / Description / CTA</div>
+      <div class="adprev-section-body">
+        <strong>${esc(ad.headline)}</strong><br>
+        ${esc(ad.description)}<br>
+        CTA: <strong>${esc(ad.cta)}</strong>
+      </div>
     </div>`;
   } else if (_hasStories) {
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">Headline</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
-    </div>`;
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">CTA</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
+      <div class="adprev-section-label">Headline / CTA</div>
+      <div class="adprev-section-body">
+        <strong>${esc(ad.headline)}</strong><br>
+        CTA: <strong>${esc(ad.cta)}</strong>
+      </div>
     </div>`;
   } else if (_hasReels) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-headline-desc-cta">
       <div class="adprev-section-label">CTA</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+      <div class="adprev-section-body">
+        CTA: <strong>${esc(ad.cta)}</strong>
+      </div>
     </div>`;
   }
 
   // Alt Headlines — only relevant for Feed
   if (_hasFeed && ad.alt_headlines && ad.alt_headlines.length) {
-    html += `<div class="adprev-section">
+    html += `<div class="adprev-section" data-pin-target="copy-alt-headlines">
       <div class="adprev-section-label">Alt Headlines</div>
       <ul class="adprev-alt-list">
         ${ad.alt_headlines.map(h => `<li>${esc(h)}</li>`).join('')}
@@ -2459,7 +2442,7 @@ function renderAd(idx) {
   }
   // Card Captions — carousel is always Feed
   if (ad.cards && ad.cards.length) {
-    html += `<div class="adprev-section"><div class="adprev-section-label">Card Captions</div>`;
+    html += `<div class="adprev-section" data-pin-target="copy-cards"><div class="adprev-section-label">Card Captions</div>`;
     ad.cards.forEach(card => {
       html += `<div style="margin-bottom:8px">
         <div style="font-size:11px;font-weight:600;color:var(--text2)">Card ${card.num}: ${esc(card.label)}</div>
@@ -2470,7 +2453,7 @@ function renderAd(idx) {
   }
   // Stories Copy — only if Stories placement
   if (_hasStories && ad.stories) {
-    html += `<div class="adprev-section"><div class="adprev-section-label">Stories Copy</div>
+    html += `<div class="adprev-section" data-pin-target="copy-stories"><div class="adprev-section-label">Stories Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.stories)) {
       html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
@@ -2479,7 +2462,7 @@ function renderAd(idx) {
   }
   // Reels Copy — only if Reels placement
   if (_hasReels && ad.reels) {
-    html += `<div class="adprev-section"><div class="adprev-section-label">Reels Copy</div>
+    html += `<div class="adprev-section" data-pin-target="copy-reels"><div class="adprev-section-label">Reels Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
     for (const [k, v] of Object.entries(ad.reels)) {
       html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
@@ -2497,159 +2480,29 @@ function renderAd(idx) {
 
   // Video script, talking points, infographic direction removed — production notes, not client-facing
 
-  // Simple feedback section — always visible
-  html += `<div class="simple-feedback-section">
-    <div class="adprev-section-label">Feedback</div>
-    <div id="inline-feedback-thread"></div>
-    <div id="inline-feedback-form-wrap"></div>
-  </div>`;
+  // Feedback & Reviews accordion — in copy panel
+  html += `<details class="inline-feedback-accordion">
+    <summary>Feedback &amp; Reviews</summary>
+    <div class="inline-feedback-body">
+      <div id="inline-feedback-thread"></div>
+      <div id="inline-feedback-form-wrap"></div>
+    </div>
+  </details>`;
 
   html += `</div>`; // close copy-panel
   html += `</div>`; // close detail grid
 
   container.innerHTML = html;
 
-  // Click-to-zoom on mockups
-  container.querySelectorAll('[data-pin-target^="mockup-"]').forEach(el => {
-    el.style.cursor = 'zoom-in';
-    el.addEventListener('click', function(e) {
-      if (e.target.closest('.carousel-nav-arrow') || e.target.closest('.img-upload-btn') ||
-          e.target.closest('.img-revert-pill') || e.target.closest('.fb-engage-icon') ||
-          e.target.closest('.fb-header-menu')) return;
-      e.preventDefault();
-      openMockupZoom(el);
-    });
-  });
-
-  // Make copy sections editable
-  attachEditableHandlers(idx);
+  // After rendering, attach pin click handlers and load existing pins
+  attachPinClickHandlers(ad.num);
+  loadAndRenderPins(ad.num);
 
   // Initialize carousel navigation if present
   initCarouselNav();
 
   // Render inline feedback content
   renderInlineFeedback(ad.num);
-}
-
-// ── Unlock approved ads for editing ───────────────────────────────────────
-function showUnlockPrompt(adNum) {
-  const lockBar = document.getElementById('lock-bar');
-  if (!lockBar) return;
-
-  // Replace the unlock button with a password input
-  const btn = lockBar.querySelector('.unlock-btn');
-  if (!btn) return;
-
-  btn.outerHTML = `<div class="unlock-prompt" id="unlock-prompt">
-    <input type="password" id="unlock-pw" placeholder="Password" autofocus>
-    <button onclick="tryUnlock(${adNum})">Go</button>
-  </div>`;
-
-  const input = document.getElementById('unlock-pw');
-  if (input) {
-    input.focus();
-    input.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') tryUnlock(adNum);
-    });
-  }
-}
-
-function tryUnlock(adNum) {
-  const input = document.getElementById('unlock-pw');
-  if (!input) return;
-
-  if (input.value === MILEAGE_PASSWORD) {
-    _unlockedAds.add(adNum);
-    // Re-render the current ad to unlock fields
-    renderAd(_currentAd);
-    showUploadToast('Edits unlocked for Ad ' + adNum, 'success');
-  } else {
-    input.classList.add('error');
-    input.value = '';
-    input.placeholder = 'Wrong password';
-    setTimeout(() => {
-      input.classList.remove('error');
-      input.placeholder = 'Password';
-    }, 1500);
-  }
-}
-
-// ── Editable copy fields ──────────────────────────────────────────────────
-function attachEditableHandlers(adIdx) {
-  const ad = _data.ads[adIdx];
-  if (!ad) return;
-
-  document.querySelectorAll('.editable-field[data-field]').forEach(el => {
-    const field = el.getAttribute('data-field');
-
-    el.addEventListener('input', function() {
-      // Get plain text from the contenteditable
-      const newVal = el.innerText.trim();
-      // Update in-memory data
-      ad[field] = newVal;
-      // Live-update the mockup
-      refreshMockupField(ad, field, newVal);
-    });
-
-    el.addEventListener('blur', function() {
-      // Flash "saved" indicator on the section
-      const section = el.closest('.adprev-section');
-      if (section) {
-        let indicator = section.querySelector('.editable-field-saved');
-        if (!indicator) {
-          indicator = document.createElement('span');
-          indicator.className = 'editable-field-saved';
-          indicator.textContent = 'Updated';
-          section.appendChild(indicator);
-        }
-        indicator.classList.add('visible');
-        setTimeout(() => indicator.classList.remove('visible'), 1500);
-      }
-    });
-
-    // Prevent Enter from creating divs — insert newline for primary_text, prevent for single-line fields
-    el.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && field !== 'primary_text') {
-        e.preventDefault();
-        el.blur();
-      }
-    });
-  });
-}
-
-function refreshMockupField(ad, field, value) {
-  // Update the relevant parts of the mockup in real time
-  const container = document.getElementById('adprev-container');
-  if (!container) return;
-
-  if (field === 'primary_text') {
-    // Feed mockup body text
-    const feedText = container.querySelector('.fb-feed-text');
-    if (feedText) feedText.textContent = value;
-  }
-  if (field === 'headline') {
-    // Feed CTA headline
-    const ctaHeadline = container.querySelector('.fb-feed-cta-headline');
-    if (ctaHeadline) ctaHeadline.textContent = value;
-    // Story text overlay
-    const storyText = container.querySelector('.ig-story-text');
-    if (storyText) storyText.textContent = value;
-  }
-  if (field === 'description') {
-    const ctaDesc = container.querySelector('.fb-feed-cta-desc');
-    if (ctaDesc) ctaDesc.textContent = value;
-  }
-  if (field === 'cta') {
-    // Feed CTA button
-    const ctaBtn = container.querySelector('.fb-cta-btn');
-    if (ctaBtn) ctaBtn.textContent = value;
-    // Story CTA
-    const storyCta = container.querySelector('.ig-story-cta');
-    if (storyCta) storyCta.textContent = value;
-    // Reel CTA
-    const reelCta = container.querySelector('.ig-reel-cta');
-    if (reelCta) reelCta.textContent = value;
-  }
 }
 
 // ── Inline Feedback (replaces bottom drawer) ──────────────────────────────
@@ -2659,22 +2512,24 @@ async function renderInlineFeedback(adNum) {
   if (!threadEl || !formWrap) return;
 
   // Load and render feedback thread
-  {
-    let entries = [];
-    if (sb) {
-      try {
-        const { data, error } = await sb.from('feedback').select('*')
-          .eq('campaign_id', CAMPAIGN_ID)
-          .eq('ad_num', adNum)
-          .order('created_at');
-        if (!error && data) entries = data;
-      } catch(e) { console.warn('Supabase query error:', e); }
-    }
+  if (sb) {
+    try {
+      const { data, error } = await sb.from('feedback').select('*')
+        .eq('campaign_id', CAMPAIGN_ID)
+        .eq('ad_num', adNum)
+        .order('created_at');
 
-    if (entries.length > 0) {
+      if (!error && data && data.length > 0) {
         const myName = localStorage.getItem('adpreview_name') || '';
         const isMileage = _reviewerMode === 'mileage';
 
+        // In client mode, only show own feedback
+        let entries = data;
+        if (!isMileage) {
+          entries = data.filter(f => f.reviewer_name === myName);
+        }
+
+        if (entries.length > 0) {
           let html = '';
           entries.forEach(f => {
             const verdictLabel = f.verdict === 'approve' ? 'Approved' :
@@ -2683,7 +2538,15 @@ async function renderInlineFeedback(adNum) {
             const isOwn = f.reviewer_name === myName && myName !== '';
             const ownClass = isOwn ? ' own-comment' : '';
 
-            let actionsHtml = `<button class="feedback-delete-btn" data-ifb-delete="${f.id}" title="Delete"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>`;
+            const fbResolved = isResolved('fb-' + f.id);
+            let actionsHtml = '';
+            if (isMileage || isOwn) {
+              actionsHtml = '<div class="feedback-entry-actions">';
+              if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-ifb-edit="${f.id}">Edit</button>`;
+              if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-ifb-delete="${f.id}">Delete</button>`;
+              if (isMileage) actionsHtml += `<button class="mark-complete-btn${fbResolved ? ' resolved' : ''}" data-ifb-resolve="fb-${f.id}">${fbResolved ? '&#10003; Done' : 'Mark Complete'}</button>`;
+              actionsHtml += '</div>';
+            }
 
             html += `<div class="feedback-entry${ownClass}" data-feedback-id="${f.id}">
               <div class="feedback-entry-header">
@@ -2691,9 +2554,9 @@ async function renderInlineFeedback(adNum) {
                 <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
                 <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
                 <span class="feedback-entry-time">${esc(ts)}</span>
-                ${actionsHtml}
               </div>
               ${f.comment ? `<div class="feedback-entry-comment" data-comment-id="${f.id}">${esc(f.comment)}</div>` : ''}
+              ${actionsHtml}
             </div>`;
           });
           threadEl.innerHTML = html;
@@ -2752,33 +2615,43 @@ async function renderInlineFeedback(adNum) {
               renderInlineFeedback(adNum);
             });
           });
-    } else {
-      threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
+        } else {
+          threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
+        }
+      } else {
+        threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
+      }
+    } catch(e) {
+      threadEl.innerHTML = '';
     }
+  } else {
+    threadEl.innerHTML = '<div class="inline-feedback-empty">Feedback system not connected.</div>';
   }
 
   // Render inline feedback form
+  const savedName = localStorage.getItem('adpreview_name') || '';
   const savedRole = localStorage.getItem('adpreview_role') || 'Client';
   const roleOverride = _reviewerMode === 'client' ? 'Client' : savedRole;
+  const roleHidden = _reviewerMode === 'client' ? ' style="display:none"' : '';
 
   formWrap.innerHTML = `<div class="inline-fb-form">
-    <textarea id="inline-fb-comment" placeholder="Share your thoughts on this ad..." style="min-height:80px"></textarea>
+    <div style="display:flex;gap:10px;margin-bottom:8px">
+      <input type="text" class="feedback-input" id="inline-fb-name" value="${esc(savedName)}" placeholder="Your name" style="flex:1">
+      <select class="feedback-select" id="inline-fb-role" style="width:auto"${roleHidden}>
+        <option value="Client"${roleOverride==='Client' ? ' selected' : ''}>Client</option>
+        <option value="Mileage"${roleOverride==='Mileage' ? ' selected' : ''}>Mileage</option>
+      </select>
+    </div>
+    <textarea id="inline-fb-comment" placeholder="Add your feedback..."></textarea>
     <div class="inline-fb-form-actions">
-      <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit Feedback</button>
+      <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit</button>
       <span id="inline-fb-error" style="color:var(--danger);font-size:12px;display:none"></span>
     </div>
-    <input type="hidden" id="inline-fb-role" value="${roleOverride}">
   </div>`;
 }
 
 async function submitInlineFeedback(adNum) {
-  let name = localStorage.getItem('adpreview_name') || '';
-  if (!name) {
-    const entered = prompt('Please enter your name to submit feedback:');
-    if (!entered || !entered.trim()) return;
-    name = entered.trim();
-    localStorage.setItem('adpreview_name', name);
-  }
+  const name = document.getElementById('inline-fb-name').value.trim();
   const roleEl = document.getElementById('inline-fb-role');
   const role = _reviewerMode === 'client' ? 'Client' : roleEl.value;
   const comment = document.getElementById('inline-fb-comment').value.trim();
@@ -2786,12 +2659,20 @@ async function submitInlineFeedback(adNum) {
   const submitBtn = document.getElementById('inline-fb-submit');
   const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) || 'comment_only';
 
+  if (!name) {
+    errorEl.textContent = 'Enter your name.';
+    errorEl.style.display = 'inline';
+    return;
+  }
   if (!comment) {
     errorEl.textContent = 'Enter feedback.';
     errorEl.style.display = 'inline';
     return;
   }
   errorEl.style.display = 'none';
+
+  localStorage.setItem('adpreview_name', name);
+  localStorage.setItem('adpreview_role', role);
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';
@@ -2819,7 +2700,7 @@ async function submitInlineFeedback(adNum) {
     localStorage.removeItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`);
 
     // Re-render to show the new comment
-    await renderInlineFeedback(adNum);
+    renderInlineFeedback(adNum);
     updateTabBadges();
 
     // Update identity display
@@ -2840,7 +2721,8 @@ function _clientInitials() {
   return name.split('-').map(w => (w[0] || '')).join('').toUpperCase().slice(0, 2);
 }
 function _pageName(d) {
-  return 'Confluence Financial Partners';
+  const slug = d.client || '';
+  return slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 function _imgUrl(filename) {
   return `images/${filename}`;
@@ -2889,7 +2771,7 @@ function renderFeedMockup(ad) {
 
   return `<div class="fb-feed" data-pin-target="mockup-feed">
     <div class="fb-feed-header">
-      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
+      <div class="fb-avatar">${initials}</div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
         <div class="fb-sponsored">Sponsored &middot; 2h</div>
@@ -2947,7 +2829,7 @@ function renderCarouselMockup(ad) {
 
   return `<div class="fb-feed" data-pin-target="mockup-carousel">
     <div class="fb-feed-header">
-      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
+      <div class="fb-avatar">${initials}</div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
         <div class="fb-sponsored">Sponsored &middot; 2h</div>
@@ -2996,8 +2878,8 @@ function renderStoryMockup(ad) {
     ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
-      <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
-      <div class="ig-story-handle">confluencefp</div>
+      <div class="ig-story-avatar">${initials}</div>
+      <div class="ig-story-handle">@${esc(handle)}</div>
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
@@ -3027,11 +2909,11 @@ function renderReelMockup(ad) {
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.shareSm}<span class="ig-reel-sidebar-count">Share</span></div>
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.musicSm}</div>
     </div>
-    <div class="ig-reel-handle">confluencefp ${SVG_ICONS.verified}</div>
+    <div class="ig-reel-handle">@${esc(handle)} ${SVG_ICONS.verified}</div>
     <div class="ig-reel-caption">${esc(truncCaption)}${showMore ? ` <span class="ig-reel-more">... more</span>` : ''}</div>
     <div class="ig-reel-music-bar">
       ${SVG_ICONS.music}
-      <span class="ig-reel-music-text">&#9835; Original audio - confluencefp</span>
+      <span class="ig-reel-music-text">&#9835; Original audio - ${esc(handle)}</span>
       <div class="ig-reel-music-disc"></div>
     </div>
     <div class="ig-reel-cta">${esc(cta)}</div>
@@ -3393,7 +3275,9 @@ function showPinTooltip(container, marker, pinData) {
     deleteBtn.addEventListener('click', async function(e) {
       e.stopPropagation();
       if (!confirm('Are you sure you want to delete this pin?')) return;
-      // Pins are localStorage-only (no Supabase table)
+      if (sb && pinData.id) {
+        try { await sb.from('pins').delete().eq('id', pinData.id); } catch(err) { console.warn('Pin delete failed:', err); }
+      }
       // Remove from localStorage
       const adNum = pinData.ad_num;
       const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
@@ -3459,7 +3343,9 @@ function showPinTooltip(container, marker, pinData) {
         const newComment = textarea.value.trim();
         if (!newComment) return;
 
-        // Pins are localStorage-only (no Supabase table)
+        if (sb && pinData.id) {
+          try { await sb.from('pins').update({ comment: newComment }).eq('id', pinData.id); } catch(err) { console.warn('Pin edit failed:', err); }
+        }
         // Update localStorage
         const adNum = pinData.ad_num;
         const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
@@ -3484,15 +3370,50 @@ async function savePinData(pinData) {
   localPins.push(pinData);
   localStorage.setItem(lsKey, JSON.stringify(localPins));
 
-  // Pins are localStorage-only (no Supabase table)
+  // Try Supabase
+  if (sb) {
+    try {
+      const { error } = await sb.from('pins').insert({
+        campaign_id: pinData.campaign_id,
+        ad_num: pinData.ad_num,
+        pin_x: pinData.pin_x,
+        pin_y: pinData.pin_y,
+        target_type: pinData.target_type,
+        target_selector: pinData.target_selector,
+        reviewer_name: pinData.reviewer_name,
+        comment: pinData.comment,
+      });
+      if (error) console.warn('Supabase pin save failed:', error.message);
+    } catch(e) {
+      console.warn('Supabase pin save failed:', e.message);
+    }
+  }
   updateTabBadges();
 }
 
 async function loadAndRenderPins(adNum) {
   let pins = [];
 
-  // Load pins from localStorage
-  {
+  // Try Supabase first
+  if (sb) {
+    try {
+      const { data, error } = await sb.from('pins').select('*')
+        .eq('campaign_id', CAMPAIGN_ID)
+        .eq('ad_num', adNum)
+        .order('created_at');
+      if (!error && data && data.length) {
+        pins = data.map((p, i) => ({
+          ...p,
+          pin_number: i + 1,
+        }));
+      }
+    } catch(e) {
+      console.warn('Supabase pin load failed:', e.message);
+    }
+  }
+
+  // Fallback to localStorage if no Supabase pins
+  if (pins.length === 0) {
     const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
     try {
       const localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
@@ -3554,84 +3475,338 @@ function setAdStatus(adNum, verdict, btnEl) {
   renderProgressBar();
 }
 
-// ── Approve Ad ───────────────────────────────────────────────────────────
-function getApprovalSummary() {
-  if (!_data || !_data.ads) return '';
-  const total = _data.ads.length;
-  const approved = _data.ads.filter(ad =>
-    localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve'
-  ).length;
-  const remaining = total - approved;
-
-  if (approved === 0) return `${total} ads to review`;
-  if (remaining === 0) return `<strong>All ${total} ads approved!</strong>`;
-
-  const pendingAds = _data.ads
-    .filter(ad => localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) !== 'approve')
-    .map(ad => `Ad ${ad.num}`)
-    .join(', ');
-  return `<strong>${approved} of ${total}</strong> approved — still need: ${pendingAds}`;
+// ── Feedback Section ──────────────────────────────────────────────────────
+function toggleDrawer() {
+  // No-op — drawer is always visible now. Kept for keyboard shortcut compat.
 }
 
-function ensureReviewerName() {
-  const saved = localStorage.getItem('adpreview_name') || '';
-  if (saved.trim()) return saved.trim();
+function renderDrawer() {
+  if (!_data || !_data.ads || !_data.ads[_currentAd]) return;
+  const ad = _data.ads[_currentAd];
 
-  const name = prompt('Please enter your name to continue:');
-  if (!name || !name.trim()) return null;
-  localStorage.setItem('adpreview_name', name.trim());
-  return name.trim();
+  // Update drawer title
+  document.getElementById('drawer-title').textContent =
+    `Leave Feedback \u2014 Ad ${ad.num}: ${ad.title}`;
+
+  const body = document.getElementById('drawer-body');
+  let html = '';
+
+  // Enhancement 6: Feedback thread (Mileage mode or own feedback in Client mode)
+  html += `<div id="feedback-thread-container"></div>`;
+
+  // Already submitted notice — compact inline
+  html += `<div class="feedback-already" id="drawer-feedback-already">
+    <span>Feedback submitted for this ad.</span>
+    <button class="feedback-already-btn" onclick="enableDrawerResubmit()">Update</button>
+  </div>`;
+
+  // Feedback form
+  const savedName = localStorage.getItem('adpreview_name') || '';
+  const savedRole = localStorage.getItem('adpreview_role') || 'Client';
+
+  // Restore draft
+  const draftKey = `adpreview_draft_${CAMPAIGN_ID}_${ad.num}`;
+  let draft = null;
+  try { draft = JSON.parse(localStorage.getItem(draftKey)); } catch(e) {}
+
+  const nameVal = draft ? (draft.name || savedName) : savedName;
+  const roleVal = draft ? (draft.role || savedRole) : savedRole;
+  const verdictVal = draft ? (draft.verdict || 'comment_only') : 'comment_only';
+  const commentVal = draft ? (draft.comment || '') : '';
+  const savedVerdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) || '';
+
+  const roleHidden = _reviewerMode === 'client' ? ' style="display:none"' : '';
+  const roleOverride = _reviewerMode === 'client' ? 'Client' : roleVal;
+
+  html += `<div id="drawer-feedback-form">
+    <div class="feedback-row">
+      <div>
+        <div class="feedback-label">Name</div>
+        <input type="text" class="feedback-input" id="drawer-fb-name" value="${esc(nameVal)}" placeholder="Your name">
+      </div>
+      <div${roleHidden}>
+        <div class="feedback-label">Role</div>
+        <select class="feedback-select" id="drawer-fb-role">
+          <option value="Client"${roleOverride==='Client' ? ' selected' : ''}>Client</option>
+          <option value="Mileage"${roleOverride==='Mileage' ? ' selected' : ''}>Mileage</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Verdict synced from status bar above -->
+    <input type="hidden" name="drawer-verdict" value="${esc(savedVerdict || verdictVal)}">
+
+    <div class="feedback-label">Feedback <span class="draft-saved-indicator" id="draft-saved">Draft saved</span></div>
+    <textarea class="feedback-textarea" id="drawer-fb-comment" placeholder="Your feedback on this ad...">${esc(commentVal)}</textarea>
+
+    <div style="margin-top:12px;display:flex;align-items:center;gap:12px">
+      <button class="feedback-submit" id="drawer-fb-submit" onclick="submitDrawerFeedback()">Submit Feedback</button>
+      <span id="drawer-fb-error" style="color:var(--danger);font-size:12px;display:none"></span>
+    </div>
+  </div>
+
+  <div class="feedback-success" id="drawer-feedback-success">
+    Your feedback has been recorded.<br>
+    <span style="color:var(--text2);font-size:12px">Only the Mileage team can see all responses.</span>
+  </div>`;
+
+  body.innerHTML = html;
+
+  // Check existing submission
+  checkDrawerExistingFeedback(ad.num);
+
+  // Load feedback thread
+  loadFeedbackThread(ad.num);
+
+  // Attach auto-save listeners
+  attachDraftAutoSave(ad.num);
 }
 
-async function approveAd(adNum, btnEl) {
-  if (btnEl.classList.contains('approved')) return;
+function checkDrawerExistingFeedback(adNum) {
+  const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
+  if (submitted[`${CAMPAIGN_ID}-${adNum}`]) {
+    const formEl = document.getElementById('drawer-feedback-form');
+    const alreadyEl = document.getElementById('drawer-feedback-already');
+    if (formEl) formEl.style.display = 'none';
+    if (alreadyEl) alreadyEl.classList.add('visible');
+  }
+}
 
-  const reviewerName = localStorage.getItem('adpreview_name') || 'Anonymous';
+function enableDrawerResubmit() {
+  const formEl = document.getElementById('drawer-feedback-form');
+  const alreadyEl = document.getElementById('drawer-feedback-already');
+  const successEl = document.getElementById('drawer-feedback-success');
+  if (formEl) formEl.style.display = 'block';
+  if (alreadyEl) alreadyEl.classList.remove('visible');
+  if (successEl) successEl.classList.remove('visible');
+}
 
-  // Save approval locally
-  localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, 'approve');
+async function submitDrawerFeedback() {
+  if (!_data || !_data.ads[_currentAd]) return;
+  const ad = _data.ads[_currentAd];
+  const adNum = ad.num;
 
-  // Update button state
-  btnEl.classList.add('approved');
-  btnEl.disabled = true;
-  btnEl.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Approved`;
+  const name = document.getElementById('drawer-fb-name').value.trim();
+  const roleEl = document.getElementById('drawer-fb-role');
+  const role = _reviewerMode === 'client' ? 'Client' : roleEl.value;
+  const verdictInput = document.querySelector('input[name="drawer-verdict"]');
+  const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) || (verdictInput ? verdictInput.value : 'comment_only');
+  const comment = document.getElementById('drawer-fb-comment').value.trim();
+  const errorEl = document.getElementById('drawer-fb-error');
+  const submitBtn = document.getElementById('drawer-fb-submit');
 
-  // Update progress bar and tab badges
-  renderProgressBar();
-  updateTabBadges();
+  if (!name) {
+    errorEl.textContent = 'Please enter your name.';
+    errorEl.style.display = 'inline';
+    return;
+  }
+  errorEl.style.display = 'none';
 
-  // Update the status summary next to the button
-  const statusMsg = document.getElementById('approve-status-msg');
-  if (statusMsg) statusMsg.innerHTML = getApprovalSummary();
+  localStorage.setItem('adpreview_name', name);
+  localStorage.setItem('adpreview_role', role);
 
-  // Notify via Supabase (reviewerName already set above from ensureReviewerName)
-  if (sb) {
-    try {
-      await sb.from('feedback').insert({
-        campaign_id: CAMPAIGN_ID,
-        ad_num: adNum,
-        reviewer_name: reviewerName,
-        reviewer_role: 'Client',
-        verdict: 'approve',
-        comment: `Ad ${adNum} approved`,
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  try {
+    if (!sb) throw new Error('Supabase not configured');
+
+    const { error } = await sb.from('feedback').insert({
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      reviewer_name: name,
+      reviewer_role: role,
+      verdict: verdict,
+      comment: comment,
+    });
+
+    if (error) throw error;
+
+    // Mark as submitted
+    const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
+    submitted[`${CAMPAIGN_ID}-${adNum}`] = true;
+    localStorage.setItem('adpreview_submitted', JSON.stringify(submitted));
+
+    // Save verdict for tab dot + progress bar
+    localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, verdict);
+    updateTabDot(adNum, verdict);
+    renderProgressBar();
+
+    // Clear draft
+    localStorage.removeItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`);
+
+    // Show compact submitted notice
+    document.getElementById('drawer-feedback-form').style.display = 'none';
+    const alreadyEl = document.getElementById('drawer-feedback-already');
+    if (alreadyEl) alreadyEl.classList.add('visible');
+
+    // Reload thread
+    loadFeedbackThread(adNum);
+    updateTabBadges();
+
+  } catch (e) {
+    errorEl.textContent = `Error: ${e.message || 'Could not submit feedback.'}`;
+    errorEl.style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Feedback';
+  }
+}
+
+// ── Auto-Save Draft ────────────────────────────────────────────────────────
+function attachDraftAutoSave(adNum) {
+  const textarea = document.getElementById('drawer-fb-comment');
+  const nameInput = document.getElementById('drawer-fb-name');
+  const roleSelect = document.getElementById('drawer-fb-role');
+  const verdicts = document.querySelectorAll('input[name="drawer-verdict"]');
+
+  const saveDraft = () => {
+    clearTimeout(_draftSaveTimer);
+    _draftSaveTimer = setTimeout(() => {
+      const draft = {
+        name: nameInput ? nameInput.value : '',
+        role: roleSelect ? roleSelect.value : 'Client',
+        verdict: localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) || 'comment_only',
+        comment: textarea ? textarea.value : '',
+      };
+      localStorage.setItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`, JSON.stringify(draft));
+
+      // Show "Draft saved" indicator
+      const indicator = document.getElementById('draft-saved');
+      if (indicator) {
+        indicator.classList.add('visible');
+        setTimeout(() => indicator.classList.remove('visible'), 1500);
+      }
+    }, 1000);
+  };
+
+  if (textarea) textarea.addEventListener('input', saveDraft);
+  if (nameInput) nameInput.addEventListener('input', saveDraft);
+  if (roleSelect) roleSelect.addEventListener('change', saveDraft);
+  verdicts.forEach(v => v.addEventListener('change', saveDraft));
+}
+
+// ── Feedback Thread ────────────────────────────────────────────────────────
+async function loadFeedbackThread(adNum) {
+  const container = document.getElementById('feedback-thread-container');
+  if (!container) return;
+
+  // Only show in Mileage mode, or show own feedback in Client mode
+  if (!sb) { container.innerHTML = ''; return; }
+
+  try {
+    let query = sb.from('feedback').select('*')
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum)
+      .order('created_at');
+
+    const { data, error } = await query;
+    if (error) throw error;
+    if (!data || data.length === 0) { container.innerHTML = ''; return; }
+
+    // In Client mode, only show the reviewer's own feedback
+    const myName = localStorage.getItem('adpreview_name') || '';
+    let entries = data;
+    if (_reviewerMode === 'client') {
+      entries = data.filter(f => f.reviewer_name === myName);
+    }
+    if (entries.length === 0) { container.innerHTML = ''; return; }
+
+    const isMileage = _reviewerMode === 'mileage';
+
+    let html = `<div class="feedback-thread">
+      <div class="feedback-thread-title">Previous Feedback</div>`;
+
+    entries.forEach(f => {
+      const verdictLabel = f.verdict === 'approve' ? 'Approved' :
+                           f.verdict === 'request_changes' ? 'Changes Requested' : 'Comment';
+      const ts = f.created_at ? new Date(f.created_at).toLocaleString() : '';
+      const isOwn = f.reviewer_name === myName && myName !== '';
+      const ownClass = isOwn ? ' own-comment' : '';
+
+      // Feature 3: action buttons
+      let actionsHtml = '';
+      if (isMileage || isOwn) {
+        actionsHtml = '<div class="feedback-entry-actions">';
+        if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-fb-edit="${f.id}">Edit</button>`;
+        if (isMileage) actionsHtml += `<button class="feedback-action-btn delete-btn" data-fb-delete="${f.id}">Delete</button>`;
+        actionsHtml += '</div>';
+      }
+
+      html += `<div class="feedback-entry${ownClass}" data-feedback-id="${f.id}">
+        <div class="feedback-entry-header">
+          <span class="feedback-entry-name">${esc(f.reviewer_name)}</span>
+          <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
+          <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
+          <span class="feedback-entry-time">${esc(ts)}</span>
+        </div>
+        ${f.comment ? `<div class="feedback-entry-comment" data-comment-id="${f.id}">${esc(f.comment)}</div>` : ''}
+        ${actionsHtml}
+      </div>`;
+    });
+
+    html += `</div>`;
+    container.innerHTML = html;
+
+    // Attach event handlers for delete buttons
+    container.querySelectorAll('[data-fb-delete]').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const feedbackId = this.getAttribute('data-fb-delete');
+        if (!confirm('Are you sure you want to delete this comment?')) return;
+        if (sb) {
+          try {
+            const { error } = await sb.from('feedback').delete().eq('id', feedbackId);
+            if (error) { console.warn('Delete failed:', error); return; }
+            loadFeedbackThread(adNum);
+            updateTabBadges();
+          } catch(err) { console.warn('Delete failed:', err); }
+        }
       });
-    } catch(e) { console.warn('Approval notification failed:', e); }
-  }
+    });
 
-  // Check if all approved — show celebration
-  const total = _data.ads.length;
-  const approved = _data.ads.filter(ad =>
-    localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve'
-  ).length;
+    // Attach event handlers for edit buttons
+    container.querySelectorAll('[data-fb-edit]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const feedbackId = this.getAttribute('data-fb-edit');
+        const entry = container.querySelector(`[data-feedback-id="${feedbackId}"]`);
+        const commentDiv = entry.querySelector(`[data-comment-id="${feedbackId}"]`);
+        const actionsDiv = entry.querySelector('.feedback-entry-actions');
+        if (!commentDiv) return;
 
-  if (approved === total) {
-    showUploadToast('All ads approved! The Mileage team has been notified.', 'success');
-  } else {
-    showUploadToast(`Ad ${adNum} approved — ${total - approved} remaining`, 'success');
+        const oldComment = commentDiv.textContent;
+        commentDiv.innerHTML = `<div class="feedback-edit-area">
+          <textarea>${esc(oldComment)}</textarea>
+          <div class="feedback-edit-actions">
+            <button class="feedback-edit-cancel">Cancel</button>
+            <button class="feedback-edit-save">Save</button>
+          </div>
+        </div>`;
+        if (actionsDiv) actionsDiv.style.display = 'none';
+
+        const textarea = commentDiv.querySelector('textarea');
+        textarea.focus();
+
+        commentDiv.querySelector('.feedback-edit-cancel').addEventListener('click', function() {
+          commentDiv.innerHTML = esc(oldComment);
+          if (actionsDiv) actionsDiv.style.display = '';
+        });
+
+        commentDiv.querySelector('.feedback-edit-save').addEventListener('click', async function() {
+          const newComment = textarea.value.trim();
+          if (!newComment) return;
+          if (sb) {
+            try {
+              const { error } = await sb.from('feedback').update({ comment: newComment }).eq('id', feedbackId);
+              if (error) { console.warn('Edit failed:', error); return; }
+              loadFeedbackThread(adNum);
+            } catch(err) { console.warn('Edit failed:', err); }
+          }
+        });
+      });
+    });
+  } catch (e) {
+    container.innerHTML = '';
   }
 }
-
-// ── Legacy drawer removed — feedback is inline now ───────────────────────
 
 // ── Keyboard Navigation ────────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
@@ -3660,6 +3835,9 @@ document.addEventListener('keydown', function(e) {
   } else if (e.key >= '1' && e.key <= '9') {
     const idx = parseInt(e.key) - 1;
     if (idx < _data.ads.length) selectTab(idx);
+  } else if (e.key === 'f' || e.key === 'F') {
+    e.preventDefault();
+    toggleDrawer();
   } else if (e.key === 'p' || e.key === 'P') {
     e.preventDefault();
     togglePinMode();
@@ -3693,15 +3871,34 @@ function esc(s) {
 // ── Feature 4: Reviewer Identity ──────────────────────────────────────────
 function initReviewerIdentity() {
   const savedName = localStorage.getItem('adpreview_name') || '';
+  const banner = document.getElementById('welcome-banner');
   const identity = document.getElementById('reviewer-identity');
   const identityName = document.getElementById('reviewer-identity-name');
 
-  if (savedName) {
+  if (!savedName) {
+    // Show welcome banner
+    if (banner) banner.style.display = 'flex';
+    if (identity) identity.style.display = 'none';
+  } else {
+    // Hide banner, show identity
+    if (banner) banner.style.display = 'none';
     if (identity) identity.style.display = 'flex';
     if (identityName) identityName.textContent = savedName;
-  } else {
-    if (identity) identity.style.display = 'none';
   }
+}
+
+function submitWelcomeName() {
+  const input = document.getElementById('welcome-name-input');
+  if (!input) return;
+  const name = input.value.trim();
+  if (!name) {
+    input.style.borderColor = 'var(--danger)';
+    return;
+  }
+  localStorage.setItem('adpreview_name', name);
+  initReviewerIdentity();
+  // Re-render drawer to pick up new name
+  renderDrawer();
 }
 
 function showEditNamePrompt() {
@@ -3710,19 +3907,30 @@ function showEditNamePrompt() {
   if (newName !== null && newName.trim()) {
     localStorage.setItem('adpreview_name', newName.trim());
     initReviewerIdentity();
+    renderDrawer();
   }
 }
 
+// Allow Enter key in welcome banner input
+document.addEventListener('DOMContentLoaded', function() {
+  const welcomeInput = document.getElementById('welcome-name-input');
+  if (welcomeInput) {
+    welcomeInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitWelcomeName();
+      }
+    });
+  }
+});
+
 // ── Init ───────────────────────────────────────────────────────────────────
 function fullInit() {
-  _reviewerMode = 'client';
   initReviewerIdentity();
-  // Ask for name once at session start if not already saved
-  if (!localStorage.getItem('adpreview_name')) {
-    const name = prompt('Welcome! Please enter your name to get started:');
-    if (name && name.trim()) {
-      localStorage.setItem('adpreview_name', name.trim());
-    }
+  // If mileage mode was stored but not unlocked, fall back to client
+  if (_reviewerMode === 'mileage' && localStorage.getItem('adpreview_mileage_unlocked') !== 'true') {
+    _reviewerMode = 'client';
+    localStorage.setItem('adpreview_reviewer_mode', 'client');
   }
   init();
 }

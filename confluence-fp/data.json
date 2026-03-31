@@ -1,8 +1,8 @@
 {
-  "campaign": "Key Conversations to Help Protect Autonomy and Assets",
-  "event_date": "Wednesday, May 14, 2026 at 12:00 PM",
-  "venue": "The Capital Grille, 9005 Mercato Drive, Naples, FL 34108",
-  "co_presenters": "Brandon Beck, Wealth Manager (Confluence FP) + Ehren Frey, Associate Attorney (Zacharia Brown & Bratkovich)",
+  "campaign": "Conversations, Clarity, and Cocktails",
+  "event_date": "Tuesday, May 5, 2026 at 6:00 PM",
+  "venue": "Westmoreland Country Club, 7100 Mellon Rd, Export, PA 15632",
+  "co_presenters": "",
   "compliance_notes": [],
   "ads": [
     {
@@ -13,14 +13,14 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "Most people who come to our workshops already have a financial plan. They come to find out if it's coordinated.\n\nOn Wednesday, May 14, wealth manager Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch at The Capital Grille in Naples. The focus: the gaps that show up between your investment plan, your estate documents, and your tax strategy when nobody's looking at them together.\n\nBring your spouse. This one works better as a couple.\n\n24 seats. Complimentary lunch. Couples welcome.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "Is Your Plan Coordinated?",
-      "description": "Complimentary Lunch Workshop",
+      "primary_text": "Confluence Financial Partners — Proud Wealth Management Partner of the Pittsburgh Steelers — is hosting a complimentary evening at Westmoreland Country Club.\n\nOn Tuesday, May 5, our CEO, President, Chief Investment Officer, and Director of Wealth Planning are sitting down for an honest conversation about the financial decisions that matter most right now. Estate planning. The economy. Charitable giving. The pitfalls families don't see coming. Technology that actually helps.\n\nCocktails and hors d'oeuvres included. No follow-up calls. No obligation.\n\nSeating is limited. Reserve your seat.",
+      "headline": "An Evening of Clarity",
+      "description": "Complimentary | May 5",
       "cta": "Sign Up",
-      "hook": "Most people who come already have a plan. They come to find out if it's coordinated.",
+      "hook": "The Steelers' wealth management partner is hosting an evening for Pittsburgh families.",
       "alt_headlines": [
-        "The Gaps Between Your Plans",
-        "A Working Lunch Worth Having"
+        "Conversations Worth Having",
+        "Pittsburgh Families — Join Us"
       ],
       "cards": [],
       "stories": null,
@@ -43,40 +43,40 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "You've done the planning. But when was the last time your estate attorney, your tax advisor, and your wealth manager were in the same conversation?\n\nOn Wednesday, May 14 at The Capital Grille in Naples, Brandon Beck and estate planning attorney Ehren Frey are sitting down together to walk through the four areas where plans tend to fall out of sync. Complimentary lunch included.\n\n24 seats. Couples welcome.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "Where Plans Fall Out of Sync",
-      "description": "Wed May 14 | Naples",
+      "primary_text": "On Tuesday, May 5 at Westmoreland Country Club, four of our firm's leaders are sitting down together for a panel discussion — and you're invited.\n\nOur CEO, President, CIO, and Director of Wealth Planning will cover six topics families should be thinking about right now: your financial future, estate planning and family meetings, charitable giving, the common pitfalls families face, the global economy, and how technology can tie it all together.\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited.",
+      "headline": "What Our Leadership Panel Covers",
+      "description": "Tue May 5 | 6 PM",
       "cta": "Sign Up",
-      "hook": "You've done the planning. But when was the last time all your advisors were in the same conversation?",
+      "hook": "Four firm leaders. Six conversations. One evening at Westmoreland Country Club.",
       "alt_headlines": [
-        "4 Gaps Worth Checking",
-        "Your Plan's Blind Spots"
+        "6 Topics Worth Discussing",
+        "Meet Our Leadership Panel"
       ],
       "cards": [
         {
           "num": 1,
           "label": "Hook",
-          "caption": "You have an investment advisor. You have estate documents. You probably have a tax strategy. The question is whether they're working together — or just sitting in different folders."
+          "caption": "Your financial plan touches a lot of moving pieces — investments, estate documents, taxes, family goals. Most of the time, nobody's looking at all of them together. That's what this evening is about."
         },
         {
           "num": 2,
-          "label": "Control & Autonomy",
-          "caption": "If something happened tomorrow, does your family know who steps in? Do your documents reflect what you want them to say — or what you wanted five years ago?"
+          "label": "Economy & Portfolio",
+          "caption": "What does the current economy mean for your portfolio? Our Chief Investment Officer, Bill Winkeler, CFA, CFP, shares a forward-looking perspective on what families should be watching."
         },
         {
           "num": 3,
-          "label": "Roth Conversions",
-          "caption": "The window for Roth conversions isn't open forever — and the right timing depends on your full tax picture. It's one of the topics we'll walk through together."
+          "label": "Estate & Family Meetings",
+          "caption": "When was the last time your family sat down to talk about the plan? Estate documents get drafted and filed. Life changes. We'll discuss what a productive family meeting actually looks like."
         },
         {
           "num": 4,
-          "label": "Legacy",
-          "caption": "Your heirs shouldn't have to guess your intentions. We'll talk about putting wishes in writing and how charitable giving fits the bigger picture."
+          "label": "Charitable Giving & Pitfalls",
+          "caption": "Charitable giving can be one of the most rewarding — and most misunderstood — parts of a financial plan. We'll also cover the common pitfalls we see families make, and how to avoid them."
         },
         {
           "num": 5,
           "label": "CTA",
-          "caption": "Wednesday, May 14 at 12:00 PM\nThe Capital Grille, Naples\nComplimentary lunch. 24 seats. Couples welcome.\nReserve yours."
+          "caption": "Tuesday, May 5 at 6:00 PM\nWestmoreland Country Club, Export, PA\nComplimentary cocktails and hors d'oeuvres.\nSeating is limited. Reserve yours."
         }
       ],
       "stories": null,
@@ -102,20 +102,20 @@
       "placements": [
         "Feed"
       ],
-      "production": "Brandon Beck direct-to-camera, filmed in office. Lapel mic. Captions mandatory.",
-      "primary_text": "These workshops bring together people who've already done the work — the planning, the saving, the big decisions. What we explore together is whether all of those pieces are still working in sync.\n\nOn Wednesday, May 14, I'm joined by estate planning attorney Ehren Frey for a complimentary lunch at The Capital Grille in Naples. Together, we'll walk through Roth conversion timing, autonomy planning, estate coordination, and the legacy conversations that matter most to couples and families.\n\nWhen: Wednesday, May 14 at 12:00 PM\nWhere: The Capital Grille, Naples\n\nBring your spouse. I'd be glad to meet you there.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
+      "production": "CEO (Greg Weimer) or President (Gregory Weimer) direct-to-camera, filmed in office. Lapel mic. Captions mandatory.",
+      "primary_text": "We host events like this because the most valuable conversations happen when people feel comfortable — not in a conference room, not on a sales call. Over cocktails, at a nice venue, with the people who actually run the firm.\n\nOn Tuesday, May 5, our CEO, President, CIO, and Director of Wealth Planning are hosting an evening at Westmoreland Country Club. We'll cover the economy, estate planning, charitable giving, and the questions families should be asking right now.\n\nComplimentary. No follow-up afterward. We'd be glad to meet you.",
       "headline": "A Personal Invitation",
-      "description": "From Brandon Beck",
+      "description": "From Our Leadership Team",
       "cta": "Sign Up",
-      "hook": "The people who come have already done the work.",
+      "hook": "The most valuable conversations happen when people feel comfortable.",
       "alt_headlines": [
         "You're Invited to the Table",
-        "Join Us Wednesday, May 14"
+        "Join Us Tuesday, May 5"
       ],
       "cards": [],
       "stories": null,
       "reels": null,
-      "video_script": "1. Open with the audience, not yourself: \"The people who come to these workshops aren't starting from scratch. They've done the planning. What surprises most of them is how much has drifted.\"\n2. Middle: \"On May 14, I'm sitting down with estate planning attorney Ehren Frey at The Capital Grille. We'll cover Roth conversion timing, autonomy documents, and how families are thinking about legacy.\"\n3. Close: \"Bring your spouse. Complimentary lunch. I'd be glad to meet you there.\"",
+      "video_script": "1. Open with WHY this event exists: \"We host these events because the best conversations happen when people are comfortable — not in a conference room.\"\n2. Middle: \"On May 5, our entire leadership team — myself, our President, our CIO, and our Director of Wealth Planning — are hosting an evening at Westmoreland Country Club. Cocktails, good food, and an honest conversation about the financial topics that matter right now.\"\n3. Close: \"Complimentary, no follow-up. We'd be glad to meet you there.\"",
       "video_talking_points": "",
       "infographic_direction": "",
       "type": "video",
@@ -133,14 +133,14 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "Most people who move to Naples have already done the hard work — the career, the planning, the big decisions. This lunch is about making sure all of those pieces are still working together.\n\nYour estate plan, your tax strategy, your wishes for the people you care about most.\n\nOn Wednesday, May 14, wealth manager Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch to explore what coordinated planning looks like — and the questions worth asking together as a couple.\n\nWhen: Wednesday, May 14 at 12:00 PM\nWhere: The Capital Grille, Naples\n\n24 seats. Complimentary lunch. Couples welcome.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "Confidence in What You've Built",
-      "description": "Complimentary Lunch Workshop",
+      "primary_text": "You're in the years where the decisions compound the most. The moves you make now with your portfolio, your estate, your tax strategy — they shape the next 20 years.\n\nThe question most families don't ask until later: are all those pieces actually working together?\n\nOn Tuesday, May 5, our leadership team is hosting a complimentary evening at Westmoreland Country Club. Cocktails, conversation, and a panel on the six topics that matter most to families in the Pittsburgh area right now.\n\nNo follow-up calls. No obligation. Seating is limited.",
+      "headline": "Clarity Starts with Conversation",
+      "description": "Complimentary | May 5",
       "cta": "Sign Up",
-      "hook": "Most people who move to Naples have already done the hard work.",
+      "hook": "You're in the years where the decisions compound the most.",
       "alt_headlines": [
-        "Do the Pieces Still Fit?",
-        "For People Who've Already Planned"
+        "Are the Pieces Working Together?",
+        "The Questions Worth Asking Now"
       ],
       "cards": [],
       "stories": null,
@@ -163,25 +163,25 @@
         "Stories",
         "Reels"
       ],
-      "production": "Naples B-roll montage: Gulf, beaches, Mercato, Third Street, waterfront sunsets. Mix with brief Confluence FP office clips. Text overlays throughout. No voiceover needed. Warm background music. Captions mandatory.",
-      "primary_text": "You didn't move to Naples by chance. The retirement, the lifestyle, the years of decisions that got you here — all of it took intention.\n\nNow the question is: are all the pieces of your financial plan still reflecting that same care?\n\nOn Wednesday, May 14, wealth manager Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch where you'll explore Roth conversion timing, autonomy planning, estate coordination, and the conversations that matter most for couples.\n\nWhen: Wednesday, May 14 at 12:00 PM\nWhere: The Capital Grille, Naples\n\n24 seats. Complimentary lunch. Couples welcome.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "Built for Naples Families",
-      "description": "Wed May 14 | 24 Seats",
+      "production": "Pittsburgh B-roll montage: the Point, bridges, skyline at golden hour, Heinz Field/Acrisure Stadium, local neighborhoods. Steelers badge overlay. Text overlays throughout. No voiceover needed. Warm background music. Captions mandatory.",
+      "primary_text": "Pittsburgh is home. It's where you built your career, raised your family, and made the decisions that got you here.\n\nOn Tuesday, May 5, Confluence Financial Partners — Proud Wealth Management Partner of the Pittsburgh Steelers — is hosting a complimentary evening at Westmoreland Country Club. Our CEO, President, CIO, and Director of Wealth Planning. Cocktails. A real conversation about your financial future.\n\nSeating is limited. Reserve yours.",
+      "headline": "Built for Pittsburgh Families",
+      "description": "May 5 | Private Event",
       "cta": "Sign Up",
-      "hook": "You didn't build this life by accident.",
+      "hook": "Pittsburgh is home. Let's make sure your family's future is built to last.",
       "alt_headlines": [
-        "Right Here in Naples",
-        "For SW Florida Couples"
+        "Right Here in Pittsburgh",
+        "For Pittsburgh Families"
       ],
       "cards": [],
       "stories": {
-        "text_overlay": "\"You didn't build this life by accident.\"",
-        "secondary_text": "\"Complimentary lunch workshop | Wed, May 14 | Naples\"",
+        "text_overlay": "\"Pittsburgh is home.\"",
+        "secondary_text": "\"Complimentary evening | Tue, May 5 | Westmoreland Country Club\"",
         "cta_sticker": "Sign Up"
       },
       "reels": {
-        "caption": "You didn't build this life by accident. Complimentary lunch workshop Wednesday, May 14 at The Capital Grille. Roth conversions, autonomy planning, estate documents, legacy. Brandon Beck and Ehren Frey. 24 seats.",
-        "description": "Complimentary wealth planning workshop | Wed May 14 | Naples"
+        "caption": "Pittsburgh is home. Confluence Financial Partners — Proud Wealth Management Partner of the Pittsburgh Steelers — is hosting an evening at Westmoreland Country Club. Tuesday, May 5 at 6 PM. Cocktails, conversation, and our full leadership panel. Seating is limited.",
+        "description": "Complimentary evening | Tue May 5 | Pittsburgh"
       },
       "video_script": "",
       "video_talking_points": "",
@@ -201,21 +201,21 @@
         "Feed"
       ],
       "production": "",
-      "primary_text": "There's a real difference between having a financial plan and having a coordinated one.\n\nWith coordination: your estate documents name the people you trust, your Roth conversions are timed with your full tax picture in mind, and your heirs aren't left guessing.\n\nWithout it: a court may choose who manages your affairs. Tax timing works against you on distributions. Your family sorts it out under pressure.\n\nOn Wednesday, May 14, Brandon Beck and estate planning attorney Ehren Frey are hosting a complimentary lunch at The Capital Grille in Naples to explore what a coordinated plan looks like and the questions worth asking together.\n\nWhen: Wednesday, May 14 at 12:00 PM\nWhere: The Capital Grille, Naples\n\nCouples welcome.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "Planned vs. Uncoordinated",
+      "primary_text": "There's a real difference between having a financial plan and having all the pieces working together.\n\nWith coordination: your estate documents are current, your portfolio is aligned to the economy, your family has had the conversation, and your charitable giving is structured thoughtfully.\n\nWithout it: advisors in separate silos, estate documents gathering dust, family guessing at intentions, and market reactions instead of a strategy.\n\nOn Tuesday, May 5, our CEO, President, CIO, and Director of Wealth Planning are hosting a complimentary evening at Westmoreland Country Club. Six panel topics. Cocktails and hors d'oeuvres. Seating is limited.",
+      "headline": "Coordinated vs. Fragmented",
       "description": "See Where You Stand",
       "cta": "Sign Up",
-      "hook": "There's a real difference between having a plan and having a coordinated one.",
+      "hook": "There's a real difference between having a plan and having all the pieces working together.",
       "alt_headlines": [
-        "Coordinated vs. Piecemeal",
-        "Two Sides of Wealth Planning"
+        "Connected vs. Siloed",
+        "Two Sides of Planning"
       ],
       "cards": [],
       "stories": null,
       "reels": null,
       "video_script": "",
       "video_talking_points": "",
-      "infographic_direction": "Left column, \"Coordinated plan\":\n- Trusted decision-makers named in advance\n- Roth conversions timed with your tax picture\n- Estate documents up to date and working together\n- Heirs prepared and informed\n- Charitable giving structured for income and legacy\n\nRight column, \"Without coordination\":\n- Court-appointed decision-makers\n- Tax timing working against your distributions\n- Outdated or conflicting estate documents\n- Family left guessing\n- Charitable intentions unfulfilled",
+      "infographic_direction": "Left column, \"Coordinated\":\n- Forward-looking strategy reviewed regularly\n- Family meetings happening — everyone aligned\n- Estate documents current and working together\n- Charitable giving structured for impact and tax benefit\n- Portfolio positioned for the current economy\n- Technology connecting the financial planning pieces\n\nRight column, \"Fragmented\":\n- Reacting to markets without a forward view\n- Family conversations put off or avoided\n- Estate documents outdated or conflicting\n- Charitable intentions unfulfilled\n- Portfolio disconnected from the broader plan\n- Advisors and documents in separate silos",
       "type": "image",
       "week": 3,
       "images": [
@@ -231,24 +231,24 @@
         "Feed",
         "Stories"
       ],
-      "production": "Brandon at desk or conference room. Conversational, not scripted. Lapel mic. Captions mandatory.",
-      "primary_text": "Roth conversion timing is something people tend to set and forget. But the right year versus the wrong year can mean a significant difference in your tax bill — and for a lot of people in retirement, the window is narrowing.\n\nIt's one of several topics we'll explore together at our complimentary lunch on Wednesday, May 14 at The Capital Grille in Naples. Wealth manager Brandon Beck and estate planning attorney Ehren Frey.\n\nWhen: Wednesday, May 14 at 12:00 PM\nWhere: The Capital Grille, Naples\n\nCouples welcome.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "A Question of Timing",
-      "description": "Wed May 14 | Naples",
+      "production": "CIO Bill Winkeler at desk or conference room. Conversational, not scripted. Lapel mic. Captions mandatory.",
+      "primary_text": "The economy is giving families a lot to think about right now. Interest rates, market volatility, what it means for the portfolio you've been building for years.\n\nOur Chief Investment Officer, Bill Winkeler, CFA, CFP, is one of four panelists at our complimentary evening on Tuesday, May 5 at Westmoreland Country Club. He'll cover the current trends in the global economy and what families should be considering for their portfolios.\n\nCocktails and hors d'oeuvres included. Seating is limited.",
+      "headline": "What Most Families Miss",
+      "description": "From Our CIO",
       "cta": "Sign Up",
-      "hook": "Roth conversion timing is something people tend to set and forget.",
+      "hook": "The economy is giving families a lot to think about right now.",
       "alt_headlines": [
-        "A Costly Timing Question",
-        "The Window Is Narrowing"
+        "A CIO's Perspective",
+        "What Our CIO Sees Right Now"
       ],
       "cards": [],
       "stories": {
-        "text_overlay": "\"The Roth conversion timing question most people set and forget\"",
-        "secondary_text": "\"Complimentary lunch | Wed, May 14 | Naples\"",
+        "text_overlay": "\"What our Chief Investment Officer sees families missing right now\"",
+        "secondary_text": "\"Complimentary evening | Tue, May 5 | Westmoreland Country Club\"",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
-      "video_script": "1. Open with the topic, not yourself: \"Here's something people tend to set and forget: the timing on Roth conversions.\"\n2. Middle: \"The right year versus the wrong year can mean a significant difference in your tax bill. For a lot of people in retirement, the window is narrowing.\"\n3. Bridge: \"This is one of several things we'll cover at our complimentary lunch on May 14 at The Capital Grille. Couples welcome.\"\n4. Close: \"Details below. I think you'll be glad you came.\"",
+      "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
       "type": "video",
@@ -268,20 +268,20 @@
         "Stories"
       ],
       "production": "",
-      "primary_text": "Wednesday, May 14 is next week. We have 8 seats left.\n\nOur complimentary lunch at The Capital Grille with estate planning attorney Ehren Frey is a chance to explore Roth conversion timing, autonomy planning, and the estate questions that matter most for couples. Most people who attend already have a plan — they come to make sure the pieces are still working together.\n\nWhen: Wednesday, May 14 at 12:00 PM\nWhere: The Capital Grille, Naples\n\nComplimentary lunch. We'd like to meet you.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
-      "headline": "8 Seats Left — Wednesday",
-      "description": "May 14 | Naples",
+      "primary_text": "Tuesday, May 5 is next week. We have a few seats left at Westmoreland Country Club.\n\nOur CEO, President, CIO, and Director of Wealth Planning are hosting an evening of cocktails and conversation on the topics that matter most to Pittsburgh families right now — the economy, estate planning, charitable giving, and more.\n\nComplimentary. No follow-up calls. No obligation. We'd like to meet you.",
+      "headline": "This Tuesday — Last Seats",
+      "description": "May 5 | 6 PM",
       "cta": "Sign Up",
-      "hook": "Wednesday, May 14 is next week. We have 8 seats left.",
+      "hook": "Tuesday, May 5 is next week. A few seats left.",
       "alt_headlines": [
-        "Next Wednesday, May 14",
+        "Next Tuesday, May 5",
         "Almost Full — Reserve Now"
       ],
       "cards": [],
       "stories": {
-        "image": "High-contrast text on brand dark navy background",
-        "text_overlay": "\"8 seats left | Wednesday, May 14\"",
-        "secondary_text": "\"Complimentary lunch with Brandon Beck and Ehren Frey\"",
+        "image": "High-contrast text on brand dark navy background, gold accent dominant",
+        "text_overlay": "\"A few seats left | Tuesday, May 5\"",
+        "secondary_text": "\"Westmoreland Country Club | 6 PM | Complimentary\"",
         "cta_sticker": "Sign Up"
       },
       "reels": null,
@@ -304,27 +304,27 @@
         "Stories",
         "Reels"
       ],
-      "production": "iPhone selfie-style from Brandon. Raw, personal, authentic. No graphics, no music. Captions added in post. Should NOT look like an ad.",
-      "primary_text": "Quick note: our complimentary lunch at The Capital Grille is this Wednesday, May 14. A few seats left. Bring your spouse if you can. Would be glad to meet you there.\n\nRSVP here: [Landing Page Link]\n\n*This presentation is for educational purposes only and is not legal, tax, or investment advice. The guest attorney is not affiliated with Confluence Financial Partners. Please consult your own advisors regarding your individual situation.",
+      "production": "iPhone selfie-style from CEO (Greg Weimer). Raw, personal, authentic. No graphics, no music. Captions added in post. Should NOT look like an ad.",
+      "primary_text": "Quick note — our evening at Westmoreland Country Club is this Tuesday. A few seats left. Cocktails, hors d'oeuvres, and our whole leadership panel. Would be glad to meet you there.",
       "headline": "Last Few Seats",
-      "description": "This Wednesday",
+      "description": "This Tuesday",
       "cta": "Sign Up",
-      "hook": "Quick note from Brandon Beck.",
+      "hook": "Quick note from our CEO.",
       "alt_headlines": [
-        "This Wednesday, May 14",
+        "This Tuesday, May 5",
         "A Few Seats Left"
       ],
       "cards": [],
       "stories": {
-        "text_overlay": "\"This Wednesday | A few seats left\"",
+        "text_overlay": "\"This Tuesday | A few seats left\"",
         "cta_sticker": "Sign Up"
       },
       "reels": {
-        "caption": "Quick note. Complimentary lunch at The Capital Grille this Wednesday, May 14. A few seats left. Bring your spouse. Brandon Beck and Ehren Frey — Roth conversions, autonomy planning, legacy. Reserve below.",
-        "description": "A few seats left | This Wednesday | The Capital Grille, Naples"
+        "caption": "Quick note. Our evening at Westmoreland Country Club is this Tuesday, May 5. A few seats left. Cocktails, hors d'oeuvres, and our full leadership panel — CEO, President, CIO, Director of Wealth Planning. Reserve below.",
+        "description": "A few seats left | This Tuesday | Westmoreland Country Club"
       },
       "video_script": "",
-      "video_talking_points": "1. \"Hey, just a quick note. Our lunch at The Capital Grille this Wednesday is almost full.\"\n2. \"A few seats left. Complimentary lunch.\"\n3. \"Bring your spouse if you can. Would be glad to meet you. Link below.\"",
+      "video_talking_points": "1. \"Hey, just a quick note. Our evening at Westmoreland Country Club this Tuesday is almost full.\"\n2. \"A few seats left. Complimentary cocktails, great conversation, no strings.\"\n3. \"Bring your spouse if you can. Would be glad to meet you. Link below.\"",
       "infographic_direction": "",
       "type": "video",
       "week": 4,

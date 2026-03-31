@@ -22,6 +22,21 @@
     --gold: #c9a84c;
   }
 
+  body.light-mode {
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --surface2: #eef0f5;
+    --border: #d4d7e0;
+    --accent: #3b63d9;
+    --accent2: #6528d7;
+    --green: #16a34a;
+    --orange: #d97706;
+    --text: #1a1d27;
+    --text2: #5c6280;
+    --danger: #dc2626;
+    --gold: #a07b2e;
+  }
+
   body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
@@ -107,6 +122,24 @@
     color: var(--accent);
     border-color: var(--accent);
   }
+
+  /* Theme toggle */
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
 
   /* Keyboard shortcut help */
   .kb-help {
@@ -1809,6 +1842,7 @@
     </div>
   </div>
   <div class="header-right">
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">&#9790;</button>
     <div class="reviewer-identity" id="reviewer-identity" style="display:none">
       Reviewing as: <strong id="reviewer-identity-name"></strong>
       <button class="edit-name-btn" onclick="showEditNamePrompt()" title="Change name">&#9998;</button>
@@ -3723,8 +3757,23 @@ function showEditNamePrompt() {
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('adpreview_theme', isLight ? 'light' : 'dark');
+  document.getElementById('theme-toggle').innerHTML = isLight ? '&#9728;' : '&#9790;';
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('adpreview_theme');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+    document.getElementById('theme-toggle').innerHTML = '&#9728;';
+  }
+}
+
 function fullInit() {
   _reviewerMode = localStorage.getItem('adpreview_reviewer_mode') || 'internal';
+  initTheme();
   initReviewerIdentity();
   // Ask for name once at session start if not already saved
   if (!localStorage.getItem('adpreview_name')) {

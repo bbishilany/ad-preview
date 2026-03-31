@@ -249,6 +249,15 @@
     margin-top: 2px;
   }
   .adprev-tab.active .tab-week { color: var(--accent); opacity: 0.7; }
+  .adprev-tab .tab-due {
+    font-size: 8px;
+    font-weight: 600;
+    color: #e8a33c;
+    display: block;
+    margin-top: 1px;
+    letter-spacing: 0.3px;
+  }
+  .adprev-tab.active .tab-due { color: #e8a33c; }
 
   /* Tab notification badge — iPhone-style, top-right edge */
   .tab-badge {
@@ -2227,11 +2236,16 @@ function renderTabs(data) {
   const tabsEl = document.getElementById('adprev-tabs');
   if (!data.ads || !data.ads.length) return;
   const weekNames = {1:'Trust', 2:'Emotion', 3:'Authority', 4:'Urgency'};
+  const weekDates = {1:'Apr 7–13', 2:'Apr 14–20', 3:'Apr 21–27', 4:'Apr 28–May 4'};
+  const creativeDue = {1:'Creative due: Apr 6', 2:'Creative due: Apr 13', 3:'Creative due: Apr 20', 4:'Creative due: Apr 27'};
   tabsEl.innerHTML = data.ads.map((ad, i) => {
     const wk = weekNames[ad.week] || 'Wk' + ad.week;
+    const dates = weekDates[ad.week] || '';
+    const due = creativeDue[ad.week] || '';
     return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
       Ad ${ad.num}
-      <span class="tab-week">Wk ${ad.week} &middot; ${wk}</span>
+      <span class="tab-week">${dates}</span>
+      <span class="tab-due">${due}</span>
     </div>`;
   }).join('');
   // Load badge counts async

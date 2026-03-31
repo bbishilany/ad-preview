@@ -2235,7 +2235,7 @@ function renderTabs(data) {
   if (!data.ads || !data.ads.length) return;
   const weekNames = {1:'Trust', 2:'Emotion', 3:'Authority', 4:'Urgency'};
   const weekDates = {1:'Apr 7–13', 2:'Apr 14–20', 3:'Apr 21–27', 4:'Apr 28–May 4'};
-  const creativeDue = {1:'Creative due: Apr 6', 2:'Creative due: Apr 13', 3:'Creative due: Apr 20', 4:'Creative due: Apr 27'};
+  const creativeDue = {1:'Creative due: Apr 6', 2:'Creative due: Apr 13', 3:'Creative due: Apr 13', 4:'Creative due: Apr 13'};
   tabsEl.innerHTML = data.ads.map((ad, i) => {
     const wk = weekNames[ad.week] || 'Wk' + ad.week;
     const dates = weekDates[ad.week] || '';

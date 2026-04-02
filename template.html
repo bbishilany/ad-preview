@@ -3397,7 +3397,6 @@ function showPinTooltip(container, marker, pinData) {
     actionsHtml += `<button class="feedback-action-btn delete-btn" data-pin-delete>Delete</button>`;
     actionsHtml += `<button class="mark-complete-btn${pinIsResolved ? ' resolved' : ''}" data-pin-resolve="${pinItemId}">${pinIsResolved ? '&#10003; Done' : 'Mark Complete'}</button>`;
     actionsHtml += '</div>';
-  }
 
   tooltip.innerHTML = `
     <div class="pin-tooltip-header">

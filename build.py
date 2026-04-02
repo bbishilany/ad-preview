@@ -4,17 +4,20 @@ Bake script: parses ad-copy-draft.md -> campaign folder with index.html + images
 
 Output structure:
   ad-preview/<client>/
-    index.html      ← copy of template with campaign ID baked in
-    data.json       ← parsed ad data
-    images/         ← ad creative PNGs
+    index.html      <- copy of template with campaign ID baked in
+    data.json       <- parsed ad data
+    images/         <- ad creative PNGs
 
-Usage: python build.py confluence-fp
+Usage:
+    python build.py confluence-fp           # full build for one client
+    python build.py --rebuild-all           # re-bake all clients from template
 Shareable URL: bbishilany.github.io/ad-preview/confluence-fp/
 """
 
 import json
 import shutil
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Paths
@@ -26,6 +29,19 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(WORKBENCH / "preview"))
 from parser import parse_ad_copy_file  # noqa: E402
 
+
+# ── Client Discovery ───────────────────────────────────────────────────────
+
+def discover_clients() -> list[str]:
+    """Scan subdirectories for client campaigns (those with data.json)."""
+    clients = []
+    for subdir in sorted(HERE.iterdir()):
+        if subdir.is_dir() and (subdir / "data.json").exists():
+            clients.append(subdir.name)
+    return clients
+
+
+# ── Helpers ────────────────────────────────────────────────────────────────
 
 def find_draft(client: str) -> Path:
     """Locate the ad copy draft .md file for a client."""
@@ -77,9 +93,7 @@ def parse_creative_direction(client: str) -> dict[int, str]:
         if not header:
             continue
         ad_num = int(header.group(1))
-        # Get everything after the header until the next --- or end
         content = block[header.end():].strip()
-        # Trim at the next top-level section (---)
         end_marker = content.find("\n---")
         if end_marker > 0:
             content = content[:end_marker].strip()
@@ -88,11 +102,12 @@ def parse_creative_direction(client: str) -> dict[int, str]:
     return result
 
 
+# ── Build ──────────────────────────────────────────────────────────────────
+
 def build(client: str) -> None:
     """Run the full build for a client campaign folder."""
     print(f"Building ad preview for: {client}")
 
-    # Campaign output directory
     campaign_dir = HERE / client
     campaign_dir.mkdir(parents=True, exist_ok=True)
 
@@ -128,15 +143,10 @@ def build(client: str) -> None:
     print(f"  Written: {client}/data.json")
 
     # 6. Copy template index.html, bake in the campaign ID
-    template = HERE / "template.html"
-    if not template.exists():
-        print(f"  ERROR: template.html not found at {template}")
-        sys.exit(1)
+    rebake(client)
 
-    html = template.read_text(encoding="utf-8")
-    html = html.replace("__CAMPAIGN_ID__", client)
-    (campaign_dir / "index.html").write_text(html, encoding="utf-8")
-    print(f"  Written: {client}/index.html")
+    # 7. Rebuild root index.html
+    rebuild_index()
 
     # Summary
     ad_count = len(data["ads"])
@@ -145,10 +155,144 @@ def build(client: str) -> None:
     print(f"URL: bbishilany.github.io/ad-preview/{client}/")
 
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python build.py <client-slug>")
-        print("Example: python build.py confluence-fp")
+# ── Rebake ─────────────────────────────────────────────────────────────────
+
+def rebake(client: str) -> None:
+    """Re-bake template.html -> client index.html without re-parsing markdown."""
+    template = HERE / "template.html"
+    if not template.exists():
+        print(f"  ERROR: template.html not found at {template}")
         sys.exit(1)
 
-    build(sys.argv[1])
+    campaign_dir = HERE / client
+    if not campaign_dir.exists():
+        print(f"  ERROR: {client}/ directory does not exist")
+        return
+
+    html = template.read_text(encoding="utf-8")
+    html = html.replace("__CAMPAIGN_ID__", client)
+    (campaign_dir / "index.html").write_text(html, encoding="utf-8")
+    print(f"  Baked: {client}/index.html")
+
+
+# ── Root Index ─────────────────────────────────────────────────────────────
+
+def rebuild_index() -> None:
+    """Generate root index.html listing all campaigns."""
+    clients = discover_clients()
+    if not clients:
+        print("  No clients found for index.html")
+        return
+
+    # Gather metadata from each client's data.json
+    entries = []
+    for slug in clients:
+        data_path = HERE / slug / "data.json"
+        try:
+            data = json.loads(data_path.read_text(encoding="utf-8"))
+            campaign_name = data.get("campaign", slug)
+            ad_count = len(data.get("ads", []))
+            event_date = data.get("event_date", "")
+            entries.append({
+                "slug": slug,
+                "name": campaign_name,
+                "ads": ad_count,
+                "event_date": event_date,
+            })
+        except Exception:
+            entries.append({"slug": slug, "name": slug, "ads": 0, "event_date": ""})
+
+    # Build HTML
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    links_html = ""
+    for e in entries:
+        sub_parts = []
+        if e["ads"]:
+            sub_parts.append(f"{e['ads']} ads")
+        if e["event_date"]:
+            sub_parts.append(e["event_date"])
+        sub = " — ".join(sub_parts) if sub_parts else ""
+        links_html += f'  <a href="{e["slug"]}/">\n'
+        links_html += f'    {e["name"]}\n'
+        if sub:
+            links_html += f'    <span class="sub">{sub}</span>\n'
+        links_html += f'  </a>\n'
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Preview — Mileage Design</title>
+<style>
+  body {{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f1117;
+    color: #e8eaf6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }}
+  h1 {{
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4f7aff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }}
+  p {{ color: #8b92b8; font-size: 14px; margin-bottom: 32px; }}
+  a {{
+    display: block;
+    padding: 14px 28px;
+    background: #1a1d27;
+    border: 1px solid #2e3350;
+    border-radius: 10px;
+    color: #e8eaf6;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.15s;
+    margin-bottom: 10px;
+  }}
+  a:hover {{ border-color: #4f7aff; background: rgba(79,122,255,0.1); }}
+  .sub {{ font-size: 12px; color: #8b92b8; font-weight: 400; display: block; margin-top: 4px; }}
+  .footer {{ color: #5c6280; font-size: 11px; margin-top: 32px; }}
+</style>
+</head>
+<body>
+  <h1>Mileage Design — Ad Preview</h1>
+  <p>Select a campaign to review:</p>
+{links_html}  <div class="footer">Last built: {now}</div>
+</body>
+</html>
+"""
+
+    (HERE / "index.html").write_text(html, encoding="utf-8")
+    print(f"  Built root index.html ({len(entries)} campaigns)")
+
+
+# ── CLI ────────────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage:")
+        print("  python build.py <client-slug>    # full build")
+        print("  python build.py --rebuild-all     # re-bake all from template")
+        sys.exit(1)
+
+    if sys.argv[1] == "--rebuild-all":
+        clients = discover_clients()
+        if not clients:
+            print("No client directories found (looking for subdirs with data.json)")
+            sys.exit(1)
+        print(f"Rebuilding {len(clients)} client(s): {', '.join(clients)}")
+        for client in clients:
+            rebake(client)
+        rebuild_index()
+        print("\nDone.")
+    else:
+        build(sys.argv[1])

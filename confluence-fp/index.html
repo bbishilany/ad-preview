@@ -2128,10 +2128,8 @@ function isResolved(itemId) {
   return getResolvedSet().has(itemId);
 }
 
-async function updateTabBadges() {
+function updateTabBadges() {
   if (!_data || !_data.ads) return;
-
-  const resolved = getResolvedSet();
 
   for (let i = 0; i < _data.ads.length; i++) {
     const ad = _data.ads[i];
@@ -2139,41 +2137,9 @@ async function updateTabBadges() {
     const tab = document.getElementById(`tab-${i}`);
     if (!tab) continue;
 
-    // Remove old badge, create fresh
     const oldBadge = tab.querySelector('.tab-badge');
     if (oldBadge) oldBadge.remove();
 
-    let totalItems = 0;
-    let resolvedCount = 0;
-
-    // Count feedback from Supabase
-    if (sb) {
-      try {
-        const { data: fbData, error: fbErr } = await sb.from('feedback').select('id')
-          .eq('campaign_id', CAMPAIGN_ID)
-          .eq('ad_num', adNum);
-        if (!fbErr && fbData) {
-          totalItems += fbData.length;
-          fbData.forEach(f => { if (resolved.has('fb-' + f.id)) resolvedCount++; });
-        }
-      } catch(e) {}
-
-    }
-
-    // Also check localStorage pins if no Supabase pins found
-    if (totalItems === 0) {
-      const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
-      try {
-        const localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
-        totalItems += localPins.length;
-        localPins.forEach(p => {
-          const pinId = 'pin-' + (p.id || p.created_at);
-          if (resolved.has(pinId)) resolvedCount++;
-        });
-      } catch(e) {}
-    }
-
-    // Create and append badge — approved ads always get green check
     const badge = document.createElement('span');
     badge.className = 'tab-badge';
     const isAdApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) === 'approve';
@@ -2181,14 +2147,8 @@ async function updateTabBadges() {
     if (isAdApproved) {
       badge.classList.add('all-done');
       badge.innerHTML = '&#10003;';
-    } else if (totalItems === 0) {
-      badge.classList.add('not-started');
-    } else if (resolvedCount >= totalItems) {
-      badge.classList.add('all-done');
-      badge.innerHTML = '&#10003;';
     } else {
-      badge.classList.add('has-count');
-      badge.textContent = totalItems - resolvedCount;
+      badge.classList.add('not-started');
     }
 
     tab.appendChild(badge);
@@ -2682,13 +2642,16 @@ function renderAd(idx) {
     </details>`;
   }
 
-  html += `<div class="simple-feedback-section">
-    <div class="adprev-section-label">Feedback</div>
-    <div id="inline-feedback-thread"></div>
-    <div id="inline-feedback-form-wrap"></div>
-  </div>`;
-
   html += `</div></details>`; // close copy-panel + copy accordion
+
+  // ── Feedback accordion ──────────────────────────────────────────────
+  html += `<details class="variation-accordion">
+    <summary>Feedback</summary>
+    <div style="padding:16px">
+      <div id="inline-feedback-thread"></div>
+      <div id="inline-feedback-form-wrap"></div>
+    </div>
+  </details>`;
 
   container.innerHTML = html;
 

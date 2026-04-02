@@ -2583,7 +2583,7 @@ function renderAd(idx) {
     el.addEventListener('click', function(e) {
       if (e.target.closest('.carousel-nav-arrow') || e.target.closest('.img-upload-btn') ||
           e.target.closest('.img-revert-pill') || e.target.closest('.fb-engage-icon') ||
-          e.target.closest('.fb-header-menu')) return;
+          e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn')) return;
       e.preventDefault();
       openMockupZoom(el);
     });
@@ -3246,7 +3246,8 @@ function attachPinClickHandlers(adNum) {
       // Do not interact with existing pins, popups, or interactive elements
       if (e.target.closest('.pin-marker') || e.target.closest('.pin-popup') ||
           e.target.closest('.pin-tooltip') || e.target.closest('.carousel-nav-arrow') ||
-          e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu')) return;
+          e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu') ||
+          e.target.closest('a.fb-cta-btn')) return;
 
       const targetSelector = target.getAttribute('data-pin-target');
       const isMockup = targetSelector.startsWith('mockup-');

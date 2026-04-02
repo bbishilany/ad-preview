@@ -61,7 +61,13 @@ def find_images(client: str) -> list[Path]:
 
 
 def assign_images(data: dict, images: list[Path]) -> None:
-    """Assign image filenames to ads based on naming convention (ad1-*, ad2-*, etc.)."""
+    """Assign image filenames to ads based on naming convention (ad1-*, ad2-*, etc.).
+
+    Detects variation pattern: ad{N}-v{M}-{format}.png
+    Groups into a 'variations' array when multiple variations exist.
+    """
+    import re
+
     img_map: dict[int, list[str]] = {}
     for img in images:
         name = img.name
@@ -71,8 +77,36 @@ def assign_images(data: dict, images: list[Path]) -> None:
                 img_map.setdefault(ad["num"], []).append(name)
                 break
 
+    var_pattern = re.compile(r"-v(\d+)-")
+
     for ad in data["ads"]:
-        ad["images"] = sorted(img_map.get(ad["num"], []))
+        all_imgs = sorted(img_map.get(ad["num"], []))
+        ad["images"] = all_imgs
+
+        # Detect variations: group images by -v{M}- pattern
+        var_groups: dict[int, list[str]] = {}
+        for name in all_imgs:
+            m = var_pattern.search(name)
+            if m:
+                var_groups.setdefault(int(m.group(1)), []).append(name)
+
+        if len(var_groups) >= 2:
+            # Build variations array; preserve any manually-set labels in existing data
+            existing_vars = {v["num"]: v for v in ad.get("variations", [])}
+            variations = []
+            for vnum in sorted(var_groups.keys()):
+                existing = existing_vars.get(vnum, {})
+                variations.append({
+                    "num": vnum,
+                    "label": existing.get("label", f"Variation {vnum}"),
+                    "images": sorted(var_groups[vnum]),
+                })
+            ad["variations"] = variations
+            # Backward compat: flat images list = first variation
+            ad["images"] = variations[0]["images"]
+        else:
+            # No multi-variation pattern — remove stale variations if present
+            ad.pop("variations", None)
 
 
 def parse_creative_direction(client: str) -> dict[int, str]:

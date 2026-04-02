@@ -440,7 +440,58 @@
     align-items: flex-start;
     flex-wrap: wrap;
   }
-  .adprev-copy-panel { min-width: 0; }
+  /* Variation accordions */
+  .variation-accordion {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .variation-accordion summary {
+    padding: 10px 16px;
+    background: var(--surface2);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    user-select: none;
+  }
+  .variation-accordion summary::-webkit-details-marker { display: none; }
+  .variation-accordion summary::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-left: 5px solid var(--text2);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+  .variation-accordion[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .variation-accordion summary:hover {
+    background: var(--surface);
+  }
+  .variation-accordion .variation-badge {
+    font-size: 10px;
+    color: var(--text2);
+    font-weight: 400;
+    margin-left: auto;
+  }
+  .variation-accordion .variation-mockups {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+  .adprev-copy-panel { min-width: 280px; max-width: 400px; }
   .adprev-meta-bar {
     display: flex;
     gap: 8px;
@@ -866,13 +917,25 @@
     color: white; font-size: 15px; font-weight: 700; line-height: 1.4;
     margin-bottom: 8px; text-shadow: 0 1px 6px rgba(0,0,0,0.7);
     position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-text.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.2s forwards;
   }
   .ig-story-secondary {
     color: rgba(255,255,255,0.8); font-size: 11px; line-height: 1.3;
     margin-bottom: 16px; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     position: relative; z-index: 2;
+    opacity: 0;
   }
-  /* Swipe up chevron */
+  .ig-story-secondary.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  @keyframes storyFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* Swipe up chevron — initial rise handled by .ig-story-swipe-up animation rule above */
   .ig-story-swipe-up {
     position: absolute;
     bottom: 52px;
@@ -880,17 +943,39 @@
     transform: translateX(-50%);
     z-index: 3;
     color: rgba(255,255,255,0.7);
-    animation: swipeUpBounce 2s ease-in-out infinite;
   }
   @keyframes swipeUpBounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-4px); }
+  }
+  /* CTA rise-up animation (mimics real IG Stories/Reels timing) */
+  @keyframes ctaRiseUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes ctaRiseUpCentered {
+    from { transform: translateX(-50%) translateY(40px); opacity: 0; }
+    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+  .ig-story-swipe-up {
+    opacity: 0;
+  }
+  .ig-story-swipe-up.cta-animate {
+    animation: ctaRiseUpCentered 0.3s ease-out 2.2s forwards;
+  }
+  .ig-story-swipe-up.anim-bounce {
+    opacity: 1;
+    animation: swipeUpBounce 2s ease-in-out infinite;
   }
   .ig-story-cta {
     background: white; color: #1a1a2e;
     padding: 8px 20px; border-radius: 20px;
     font-size: 12px; font-weight: 700;
     position: absolute; bottom: 32px; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-cta.cta-animate {
+    animation: ctaRiseUp 0.4s ease-out 2.6s forwards;
   }
   /* Story message bar */
   .ig-story-message-bar {
@@ -938,6 +1023,7 @@
     color: white; font-size: 11px; line-height: 1.4; margin-bottom: 4px;
     position: relative; z-index: 2;
     padding-right: 40px; /* space for right sidebar */
+    opacity: 0;
   }
   .ig-reel-more {
     color: rgba(255,255,255,0.5);
@@ -950,16 +1036,33 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    opacity: 0;
   }
   .ig-reel-verified {
     display: inline-flex;
     align-items: center;
+  }
+  .ig-reel-sidebar.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.2s forwards;
+  }
+  .ig-reel-handle.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.2s forwards;
+  }
+  .ig-reel-caption.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  .ig-reel-music-bar.cta-animate {
+    animation: storyFadeIn 0.4s ease-out 2.2s forwards;
   }
   .ig-reel-cta {
     background: white; color: #0a0a0a;
     padding: 8px 20px; border-radius: 20px;
     font-size: 12px; font-weight: 700; text-align: center;
     width: 100%; position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-reel-cta.cta-animate {
+    animation: ctaRiseUp 0.4s ease-out 2.6s forwards;
   }
   /* Reel right sidebar */
   .ig-reel-sidebar {
@@ -971,6 +1074,7 @@
     align-items: center;
     gap: 16px;
     z-index: 3;
+    opacity: 0;
   }
   .ig-reel-sidebar-icon {
     display: flex;
@@ -994,6 +1098,7 @@
     padding: 6px 0 2px;
     position: relative;
     z-index: 2;
+    opacity: 0;
   }
   .ig-reel-music-text {
     font-size: 10px;
@@ -2443,50 +2548,69 @@ function renderAd(idx) {
     <div class="approve-status-msg" id="approve-status-msg">${getApprovalSummary()}</div>
   </div>`;
 
-  // Two-column: mockups left, copy right
-  html += `<div class="adprev-detail">`;
-
-  // Left: mockups
-  html += `<div class="adprev-mockups">`;
-  if ((ad.placements || []).some(p => p.toLowerCase().includes('feed'))) {
-    html += ad.type === 'carousel' ? renderCarouselMockup(ad) : renderFeedMockup(ad);
-  }
-  if ((ad.placements || []).some(p => p.toLowerCase().includes('stories') || p.toLowerCase().includes('story'))) {
-    html += renderStoryMockup(ad);
-  }
-  if ((ad.placements || []).some(p => p.toLowerCase().includes('reels') || p.toLowerCase().includes('reel'))) {
-    html += renderReelMockup(ad);
-  }
-  html += `</div>`;
-
-  // Right: copy details — show only fields visible per placement
-  html += `<div class="adprev-copy-panel">`;
-
-
+  // Placement detection
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
   const _hasFeed = _pl.some(p => p.includes('feed'));
   const _hasStories = _pl.some(p => p.includes('stories') || p.includes('story'));
   const _hasReels = _pl.some(p => p.includes('reels') || p.includes('reel'));
+  const _vars = ad.variations && ad.variations.length > 1 ? ad.variations : null;
 
   const _canEdit = !isApproved || _adUnlocked;
   const _ce = _canEdit ? 'true' : 'false';
   const _lockCls = _canEdit ? '' : ' locked';
 
-  // Primary Text — only visible in Feed
+  // ── Placement accordions ─────────────────────────────────────────────
+  // Each placement gets its own accordion; all variations shown side by side inside
+
+  function _renderPlacementAccordion(label, placementKey, renderFn, isFirst) {
+    const varCount = _vars ? _vars.length : 1;
+    const badge = _vars ? `${varCount} variation${varCount > 1 ? 's' : ''}` : '';
+    let inner = '<div class="variation-mockups">';
+    if (_vars) {
+      _vars.forEach(v => { inner += renderFn(v.num); });
+    } else {
+      inner += renderFn(null);
+    }
+    inner += '</div>';
+    return `<details class="variation-accordion" ${isFirst ? 'open' : ''}>
+      <summary>${esc(label)}${badge ? `<span class="variation-badge">${badge}</span>` : ''}</summary>
+      ${inner}
+    </details>`;
+  }
+
+  if (_hasFeed) {
+    html += _renderPlacementAccordion('Feed', 'feed', (vn) => {
+      return ad.type === 'carousel' ? renderCarouselMockup(ad, vn) : renderFeedMockup(ad, vn);
+    }, true);
+  }
+  if (_hasStories) {
+    html += _renderPlacementAccordion('Stories', 'story', (vn) => {
+      return renderStoryMockup(ad, vn);
+    }, !_hasFeed);
+  }
+  if (_hasReels) {
+    html += _renderPlacementAccordion('Reels', 'reel', (vn) => {
+      return renderReelMockup(ad, vn);
+    }, !_hasFeed && !_hasStories);
+  }
+
+  // ── Copy accordion ───────────────────────────────────────────────────
+  html += `<details class="variation-accordion" open>
+    <summary>Copy</summary>
+    <div class="adprev-copy-panel" style="padding:16px">`;
+
   if (_hasFeed && ad.primary_text) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Primary Text</div>
       <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="primary_text">${esc(ad.primary_text)}</div>
     </div>`;
   }
-  // Hook — only relevant for Feed
   if (_hasFeed && ad.hook) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Hook Line</div>
       <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="hook" style="font-style:italic">${esc(ad.hook)}</div>
     </div>`;
   }
-  // Headline / Description / CTA — each editable separately
   if (_hasFeed) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Headline</div>
@@ -2516,7 +2640,6 @@ function renderAd(idx) {
     </div>`;
   }
 
-  // Alt Headlines — only relevant for Feed
   if (_hasFeed && ad.alt_headlines && ad.alt_headlines.length) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Alt Headlines</div>
@@ -2525,7 +2648,6 @@ function renderAd(idx) {
       </ul>
     </div>`;
   }
-  // Card Captions — carousel is always Feed
   if (ad.cards && ad.cards.length) {
     html += `<div class="adprev-section"><div class="adprev-section-label">Card Captions</div>`;
     ad.cards.forEach(card => {
@@ -2536,7 +2658,6 @@ function renderAd(idx) {
     });
     html += `</div>`;
   }
-  // Stories Copy — only if Stories placement
   if (_hasStories && ad.stories) {
     html += `<div class="adprev-section"><div class="adprev-section-label">Stories Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
@@ -2545,7 +2666,6 @@ function renderAd(idx) {
     }
     html += `</div></div>`;
   }
-  // Reels Copy — only if Reels placement
   if (_hasReels && ad.reels) {
     html += `<div class="adprev-section"><div class="adprev-section-label">Reels Copy</div>
       <div class="adprev-section-body" style="font-size:12px">`;
@@ -2555,7 +2675,6 @@ function renderAd(idx) {
     html += `</div></div>`;
   }
 
-  // Enhancement 7: Inline creative direction inside copy panel
   if (ad.image_direction) {
     html += `<details class="inline-creative-direction" data-internal-only>
       <summary>Image Creative Direction</summary>
@@ -2563,17 +2682,13 @@ function renderAd(idx) {
     </details>`;
   }
 
-  // Video script, talking points, infographic direction removed — production notes, not client-facing
-
-  // Simple feedback section — always visible
   html += `<div class="simple-feedback-section">
     <div class="adprev-section-label">Feedback</div>
     <div id="inline-feedback-thread"></div>
     <div id="inline-feedback-form-wrap"></div>
   </div>`;
 
-  html += `</div>`; // close copy-panel
-  html += `</div>`; // close detail grid
+  html += `</div></details>`; // close copy-panel + copy accordion
 
   container.innerHTML = html;
 
@@ -2594,6 +2709,66 @@ function renderAd(idx) {
 
   // Initialize carousel navigation if present
   initCarouselNav();
+
+  // ── Story/Reel looping animation ──────────────────────────────────────
+  // Mimics real IG: image first → text fades in → chevron rises → CTA rises → pause → reset → loop
+  // Triggered by accordion open. Loops continuously.
+
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta, .ig-reel-sidebar, .ig-reel-handle, .ig-reel-caption, .ig-reel-music-bar, .ig-reel-cta';
+  const LOOP_HOLD = 3000;   // ms to hold the fully-revealed state before resetting
+  const LOOP_RESET = 600;   // ms blank pause before next loop cycle
+  const LOOP_CYCLE = 3200;  // ms for all animations to finish (longest: CTA at 2.6s + 0.4s duration)
+
+  function _startStoryLoop(accordionEl) {
+    // Clear any existing loop on this accordion
+    if (accordionEl._storyLoopId) clearTimeout(accordionEl._storyLoopId);
+
+    function runCycle() {
+      if (!accordionEl.open) return; // stop if accordion closed
+      const els = accordionEl.querySelectorAll(ANIM_ELEMENTS);
+      // Reset: remove classes, clone to restart CSS
+      els.forEach(el => {
+        el.classList.remove('cta-animate', 'anim-bounce');
+        const clone = el.cloneNode(true);
+        el.replaceWith(clone);
+      });
+      // Brief blank pause, then trigger animations
+      accordionEl._storyLoopId = setTimeout(() => {
+        if (!accordionEl.open) return;
+        accordionEl.querySelectorAll(ANIM_ELEMENTS).forEach(el => {
+          el.classList.add('cta-animate');
+        });
+        // After animations complete, add bounce to chevron
+        accordionEl._storyLoopId = setTimeout(() => {
+          if (!accordionEl.open) return;
+          accordionEl.querySelectorAll('.ig-story-swipe-up').forEach(el => {
+            el.classList.add('anim-bounce');
+          });
+          // Hold the revealed state, then loop
+          accordionEl._storyLoopId = setTimeout(() => {
+            runCycle();
+          }, LOOP_HOLD);
+        }, LOOP_CYCLE);
+      }, LOOP_RESET);
+    }
+
+    runCycle();
+  }
+
+  // Attach to all accordions containing stories/reels
+  container.querySelectorAll('.variation-accordion').forEach(details => {
+    // Start loop immediately if accordion is open and has story/reel mockups
+    if (details.open && details.querySelectorAll('.ig-story, .ig-reel').length) {
+      _startStoryLoop(details);
+    }
+    details.addEventListener('toggle', function() {
+      if (this.open && this.querySelectorAll('.ig-story, .ig-reel').length) {
+        _startStoryLoop(this);
+      } else if (this._storyLoopId) {
+        clearTimeout(this._storyLoopId);
+      }
+    });
+  });
 
   // Render inline feedback content
   renderInlineFeedback(ad.num);
@@ -2645,37 +2820,24 @@ function attachEditableHandlers(adIdx) {
 }
 
 function refreshMockupField(ad, field, value) {
-  // Update the relevant parts of the mockup in real time
+  // Update the relevant parts of ALL mockups (including variations) in real time
   const container = document.getElementById('adprev-container');
   if (!container) return;
 
   if (field === 'primary_text') {
-    // Feed mockup body text
-    const feedText = container.querySelector('.fb-feed-text');
-    if (feedText) feedText.textContent = value;
+    container.querySelectorAll('.fb-feed-text').forEach(el => el.textContent = value);
   }
   if (field === 'headline') {
-    // Feed CTA headline
-    const ctaHeadline = container.querySelector('.fb-feed-cta-headline');
-    if (ctaHeadline) ctaHeadline.textContent = value;
-    // Story text overlay
-    const storyText = container.querySelector('.ig-story-text');
-    if (storyText) storyText.textContent = value;
+    container.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = value);
+    container.querySelectorAll('.ig-story-text').forEach(el => el.textContent = value);
   }
   if (field === 'description') {
-    const ctaDesc = container.querySelector('.fb-feed-cta-desc');
-    if (ctaDesc) ctaDesc.textContent = value;
+    container.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = value);
   }
   if (field === 'cta') {
-    // Feed CTA button
-    const ctaBtn = container.querySelector('.fb-cta-btn');
-    if (ctaBtn) ctaBtn.textContent = value;
-    // Story CTA
-    const storyCta = container.querySelector('.ig-story-cta');
-    if (storyCta) storyCta.textContent = value;
-    // Reel CTA
-    const reelCta = container.querySelector('.ig-reel-cta');
-    if (reelCta) reelCta.textContent = value;
+    container.querySelectorAll('.fb-cta-btn').forEach(el => el.textContent = value);
+    container.querySelectorAll('.ig-story-cta').forEach(el => el.textContent = value);
+    container.querySelectorAll('.ig-reel-cta').forEach(el => el.textContent = value);
   }
 }
 
@@ -2870,38 +3032,54 @@ function _pageName(d) {
 function _imgUrl(filename) {
   return `images/${filename}`;
 }
-function _findFeedImage(ad) {
-  const override = _imageOverrides[`${ad.num}_feed`];
+function _findFeedImage(ad, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_feed` : `${ad.num}_feed`;
+  const override = _imageOverrides[slotKey];
   if (override) return override;
-  if (!ad.images || !ad.images.length) return null;
-  const img = ad.images.find(f => !f.includes('story'));
+  // If variation specified, use variation's images array
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const img = images.find(f => f.includes('feed') || (!f.includes('story') && !f.includes('card')));
   return img ? _imgUrl(img) : null;
 }
-function _findStoryImage(ad) {
-  const override = _imageOverrides[`${ad.num}_story`];
+function _findStoryImage(ad, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_story` : `${ad.num}_story`;
+  const override = _imageOverrides[slotKey];
   if (override) return override;
-  if (!ad.images || !ad.images.length) return null;
-  const storyImg = ad.images.find(f => f.includes('story'));
-  return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad);
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const storyImg = images.find(f => f.includes('story'));
+  return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad, varNum);
 }
-function _findCarouselCardImage(ad, cardNum) {
-  const override = _imageOverrides[`${ad.num}_card${cardNum}`];
+function _findCarouselCardImage(ad, cardNum, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_card${cardNum}` : `${ad.num}_card${cardNum}`;
+  const override = _imageOverrides[slotKey];
   if (override) return override;
-  if (!ad.images || !ad.images.length) return null;
-  const img = ad.images.find(f => f.includes(`card${cardNum}`));
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const img = images.find(f => f.includes(`card${cardNum}`));
   return img ? _imgUrl(img) : null;
 }
 
-function renderFeedMockup(ad) {
+function renderFeedMockup(ad, varNum) {
   const initials = _clientInitials();
   const pageName = _pageName(_data);
-  const imgUrl = _findFeedImage(ad);
+  const imgUrl = _findFeedImage(ad, varNum);
   const isVideo = ad.type === 'video';
   const playOverlay = isVideo ? '<div class="fb-play-btn"></div>' : '';
 
-  const hasFeedOverride = !!_imageOverrides[`${ad.num}_feed`];
-  const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'feed')" title="Upload image">&#8679;</button>`;
-  const revertPill = hasFeedOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'feed')">Revert</button>` : '';
+  const slotKey = varNum != null ? `v${varNum}_feed` : 'feed';
+  const hasFeedOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
+  const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const revertPill = hasFeedOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
+
+  const pinTarget = varNum != null ? `mockup-feed-v${varNum}` : 'mockup-feed';
 
   let mediaHtml;
   if (imgUrl) {
@@ -2912,7 +3090,7 @@ function renderFeedMockup(ad) {
     mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
   }
 
-  return `<div class="fb-feed" data-pin-target="mockup-feed">
+  return `<div class="fb-feed" data-pin-target="${pinTarget}">
     <div class="fb-feed-header">
       <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
       <div style="line-height:1.3">
@@ -2940,15 +3118,16 @@ function renderFeedMockup(ad) {
   </div>`;
 }
 
-function renderCarouselMockup(ad) {
+function renderCarouselMockup(ad, varNum) {
   const initials = _clientInitials();
   const pageName = _pageName(_data);
   const cardCount = (ad.cards && ad.cards.length) || 0;
   let cardsHtml = '';
   if (ad.cards && ad.cards.length) {
     ad.cards.forEach(card => {
-      const cardSlot = `card${card.num}`;
-      const cardImgUrl = _findCarouselCardImage(ad, card.num);
+      const cardSlotBase = `card${card.num}`;
+      const cardSlot = varNum != null ? `v${varNum}_${cardSlotBase}` : cardSlotBase;
+      const cardImgUrl = _findCarouselCardImage(ad, card.num, varNum);
       const hasCardOverride = !!_imageOverrides[`${ad.num}_${cardSlot}`];
       const cardUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${cardSlot}')" title="Upload image">&#8679;</button>`;
       const cardRevertPill = hasCardOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${cardSlot}')">Revert</button>` : '';
@@ -2970,7 +3149,9 @@ function renderCarouselMockup(ad) {
     dotsHtml += `</div>`;
   }
 
-  return `<div class="fb-feed" data-pin-target="mockup-carousel">
+  const pinTarget = varNum != null ? `mockup-carousel-v${varNum}` : 'mockup-carousel';
+
+  return `<div class="fb-feed" data-pin-target="${pinTarget}">
     <div class="fb-feed-header">
       <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
       <div style="line-height:1.3">
@@ -3003,21 +3184,24 @@ function renderCarouselMockup(ad) {
   </div>`;
 }
 
-function renderStoryMockup(ad) {
+function renderStoryMockup(ad, varNum) {
   const s = ad.stories || {};
   const overlay = s.text_overlay || ad.hook || '';
   const secondary = s.secondary_text || '';
   const cta = s.cta_sticker || ad.cta || 'Learn More';
-  const bgImg = _findStoryImage(ad);
+  const bgImg = _findStoryImage(ad, varNum);
   const hasImg = !!bgImg;
   const initials = _clientInitials();
   const handle = _data.client || '';
 
-  const hasStoryOverride = !!_imageOverrides[`${ad.num}_story`];
-  const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'story')" title="Upload image">&#8679;</button>`;
-  const storyRevertPill = hasStoryOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'story')">Revert</button>` : '';
+  const slotKey = varNum != null ? `v${varNum}_story` : 'story';
+  const hasStoryOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
+  const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const storyRevertPill = hasStoryOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
 
-  return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-pin-target="mockup-story">
+  const pinTarget = varNum != null ? `mockup-story-v${varNum}` : 'mockup-story';
+
+  return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-pin-target="${pinTarget}">
     ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
@@ -3027,7 +3211,7 @@ function renderStoryMockup(ad) {
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
     <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
-    <div class="ig-story-cta">${esc(cta)}</div>
+    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
     <div class="ig-story-message-bar">
       <div class="ig-story-message-input">Send message</div>
       <div class="ig-story-message-send">${SVG_ICONS.share}</div>
@@ -3035,7 +3219,7 @@ function renderStoryMockup(ad) {
   </div>`;
 }
 
-function renderReelMockup(ad) {
+function renderReelMockup(ad, varNum) {
   const r = ad.reels || {};
   const caption = r.caption || ad.primary_text || '';
   const cta = ad.cta || 'Learn More';
@@ -3045,15 +3229,18 @@ function renderReelMockup(ad) {
   const showMore = caption.length > maxLen;
 
   // Reels use the same image as Stories (9:16 vertical) — check for reel override first, then fall back to story image
-  const reelOverride = _imageOverrides[`${ad.num}_reel`];
-  const bgImg = reelOverride || _findStoryImage(ad);
+  const slotKey = varNum != null ? `v${varNum}_reel` : 'reel';
+  const reelOverride = _imageOverrides[`${ad.num}_${slotKey}`];
+  const bgImg = reelOverride || _findStoryImage(ad, varNum);
   const hasImg = !!bgImg;
 
-  const hasReelOverride = !!_imageOverrides[`${ad.num}_reel`];
-  const reelUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'reel')" title="Upload image">&#8679;</button>`;
-  const reelRevertPill = hasReelOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'reel')">Revert</button>` : '';
+  const hasReelOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
+  const reelUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const reelRevertPill = hasReelOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
 
-  return `<div class="ig-reel" data-pin-target="mockup-reel">
+  const pinTarget = varNum != null ? `mockup-reel-v${varNum}` : 'mockup-reel';
+
+  return `<div class="ig-reel" data-pin-target="${pinTarget}">
     ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0"><img style="width:100%;height:100%;object-fit:cover" src="${bgImg}" alt="" loading="lazy">${reelUploadBtn}${reelRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0">${reelUploadBtn}</div>`}
     <div class="ig-reel-sidebar">
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.heartSm}<span class="ig-reel-sidebar-count">1.2K</span></div>
@@ -3068,7 +3255,7 @@ function renderReelMockup(ad) {
       <span class="ig-reel-music-text">&#9835; Original audio - confluencefp</span>
       <div class="ig-reel-music-disc"></div>
     </div>
-    <div class="ig-reel-cta">${esc(cta)}</div>
+    ${_data.cta_url ? `<a class="ig-reel-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-reel-cta">${esc(cta)}</div>`}
   </div>`;
 }
 
@@ -3172,6 +3359,35 @@ function openMockupZoom(element) {
 
   overlay.classList.add('active');
   overlay.scrollTop = 0;
+
+  // Start animation loop on zoomed story/reel mockups
+  if (clone.classList.contains('ig-story') || clone.classList.contains('ig-reel')) {
+    _startZoomLoop(content);
+  }
+}
+
+let _zoomLoopId = null;
+function _startZoomLoop(container) {
+  if (_zoomLoopId) clearTimeout(_zoomLoopId);
+  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta, .ig-reel-sidebar, .ig-reel-handle, .ig-reel-caption, .ig-reel-music-bar, .ig-reel-cta';
+  function run() {
+    if (!_zoomActive) return;
+    const els = container.querySelectorAll(ANIM_ELS);
+    els.forEach(el => {
+      el.classList.remove('cta-animate', 'anim-bounce');
+      const c = el.cloneNode(true); el.replaceWith(c);
+    });
+    _zoomLoopId = setTimeout(() => {
+      if (!_zoomActive) return;
+      container.querySelectorAll(ANIM_ELS).forEach(el => el.classList.add('cta-animate'));
+      _zoomLoopId = setTimeout(() => {
+        if (!_zoomActive) return;
+        container.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
+        _zoomLoopId = setTimeout(run, 3000);
+      }, 3200);
+    }, 600);
+  }
+  run();
 }
 
 function closeMockupZoom() {
@@ -3179,6 +3395,7 @@ function closeMockupZoom() {
   if (!overlay) return;
   overlay.classList.remove('active');
   _zoomActive = false;
+  if (_zoomLoopId) { clearTimeout(_zoomLoopId); _zoomLoopId = null; }
   closeActivePinPopup();
 
   if (_zoomOriginalElement && _data && _data.ads[_currentAd]) {

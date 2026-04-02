@@ -45,7 +45,7 @@
       "variations": [
         {
           "num": 1,
-          "label": "C-Suite Panel",
+          "label": "Variation 1",
           "images": [
             "ad1-v1-feed.png",
             "ad1-v1-story.png"
@@ -53,7 +53,7 @@
         },
         {
           "num": 2,
-          "label": "Firm Brand",
+          "label": "Variation 2",
           "images": [
             "ad1-v2-feed.png",
             "ad1-v2-story.png"
@@ -174,7 +174,7 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "The next few years can be especially important. Your portfolio, estate plan, and tax strategy all interact with each other. Often, they're managed separately.\n\nTuesday, May 5 at Westmoreland Country Club.\n\nOur CEO, President, CIO, and Director of Wealth Planning will walk it together — economic trends, estate planning, giving strategies, and decisions that can have a meaningful impact over time.\n\nComplimentary cocktails and hors d'oeuvres. Limited seating.",
+      "primary_text": "The next few years can be especially important. Your portfolio, estate plan, and tax strategy all interact with each other. Often, they're managed separately.\n\nTuesday, May 5 at Westmoreland Country Club.\n\nOur CEO, President, CIO, and Director of Wealth Planning will walk through it together — economic trends, estate planning, giving strategies, and decisions that can have a meaningful impact over time.\n\nComplimentary cocktails and hors d'oeuvres. Limited seating.",
       "headline": "Are the Pieces Working Together?",
       "description": "Complimentary | May 5",
       "cta": "Sign Up",

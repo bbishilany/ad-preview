@@ -171,8 +171,18 @@ def build(client: str) -> None:
     if creative:
         print(f"  Attached creative direction for {len(creative)} ads")
 
-    # 5. Write data.json
+    # 5. Write data.json (with overwrite protection)
     json_dest = campaign_dir / "data.json"
+    if json_dest.exists() and "--force" not in sys.argv:
+        print(f"\n  ⚠️  WARNING: {client}/data.json already exists.")
+        print(f"  A full build re-parses from markdown and OVERWRITES data.json.")
+        print(f"  If compliance edits were made directly to data.json, they will be LOST.")
+        print(f"  Use --force to overwrite, or --images-only to just update images.")
+        confirm = input("  Type 'overwrite' to proceed: ")
+        if confirm.strip().lower() != "overwrite":
+            print("  Aborted. data.json was NOT overwritten.")
+            print("  Tip: use --images-only to copy images without touching data.json.")
+            return
     json_dest.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  Written: {client}/data.json")
 
@@ -186,6 +196,45 @@ def build(client: str) -> None:
     ad_count = len(data["ads"])
     img_count = len(images)
     print(f"\nDone: {ad_count} ads, {img_count} images")
+    print(f"URL: bbishilany.github.io/ad-preview/{client}/")
+
+
+# ── Images Only ───────────────────────────────────────────────────────────
+
+def images_only(client: str) -> None:
+    """Copy images and update data.json image assignments WITHOUT re-parsing markdown copy."""
+    print(f"Updating images for: {client} (copy untouched)")
+
+    campaign_dir = HERE / client
+    json_dest = campaign_dir / "data.json"
+    if not json_dest.exists():
+        print(f"  ERROR: {client}/data.json does not exist. Run a full build first.")
+        sys.exit(1)
+
+    # Load existing data.json (preserves compliance edits)
+    data = json.loads(json_dest.read_text(encoding="utf-8"))
+
+    # Copy images
+    images = find_images(client)
+    img_dest = campaign_dir / "images"
+    img_dest.mkdir(parents=True, exist_ok=True)
+    for img in images:
+        dest = img_dest / img.name
+        shutil.copy2(img, dest)
+        print(f"  Copied: {img.name}")
+
+    # Re-assign images to ads (updates image arrays + variations)
+    assign_images(data, images)
+
+    # Write updated data.json (only image fields changed)
+    json_dest.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  Updated image assignments in: {client}/data.json")
+
+    # Rebake template + root index
+    rebake(client)
+    rebuild_index()
+
+    print(f"\nDone: {len(images)} images updated. Copy was NOT touched.")
     print(f"URL: bbishilany.github.io/ad-preview/{client}/")
 
 
@@ -314,8 +363,9 @@ def rebuild_index() -> None:
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  python build.py <client-slug>    # full build")
-        print("  python build.py --rebuild-all     # re-bake all from template")
+        print("  python build.py <client-slug>              # full build (overwrites data.json)")
+        print("  python build.py --images-only <client>      # update images only (safe)")
+        print("  python build.py --rebuild-all               # re-bake all from template")
         sys.exit(1)
 
     if sys.argv[1] == "--rebuild-all":
@@ -328,5 +378,10 @@ if __name__ == "__main__":
             rebake(client)
         rebuild_index()
         print("\nDone.")
+    elif sys.argv[1] == "--images-only":
+        if len(sys.argv) < 3:
+            print("Usage: python build.py --images-only <client-slug>")
+            sys.exit(1)
+        images_only(sys.argv[2])
     else:
         build(sys.argv[1])

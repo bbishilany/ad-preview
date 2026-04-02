@@ -920,7 +920,7 @@
     opacity: 0;
   }
   .ig-story-text.cta-animate {
-    animation: storyFadeIn 0.5s ease-out 1.2s forwards;
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
   }
   .ig-story-secondary {
     color: rgba(255,255,255,0.8); font-size: 11px; line-height: 1.3;
@@ -929,7 +929,7 @@
     opacity: 0;
   }
   .ig-story-secondary.cta-animate {
-    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+    animation: storyFadeIn 0.5s ease-out 2.8s forwards;
   }
   @keyframes storyFadeIn {
     from { opacity: 0; transform: translateY(8px); }
@@ -961,7 +961,7 @@
     opacity: 0;
   }
   .ig-story-swipe-up.cta-animate {
-    animation: ctaRiseUpCentered 0.3s ease-out 2.2s forwards;
+    animation: ctaRiseUpCentered 0.3s ease-out 3.8s forwards;
   }
   .ig-story-swipe-up.anim-bounce {
     opacity: 1;
@@ -975,7 +975,7 @@
     opacity: 0;
   }
   .ig-story-cta.cta-animate {
-    animation: ctaRiseUp 0.4s ease-out 2.6s forwards;
+    animation: ctaRiseUp 0.4s ease-out 4.8s forwards;
   }
   /* Story message bar */
   .ig-story-message-bar {
@@ -1043,16 +1043,16 @@
     align-items: center;
   }
   .ig-reel-sidebar.cta-animate {
-    animation: storyFadeIn 0.5s ease-out 1.2s forwards;
-  }
-  .ig-reel-handle.cta-animate {
-    animation: storyFadeIn 0.5s ease-out 1.2s forwards;
-  }
-  .ig-reel-caption.cta-animate {
     animation: storyFadeIn 0.5s ease-out 1.8s forwards;
   }
+  .ig-reel-handle.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  .ig-reel-caption.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 2.8s forwards;
+  }
   .ig-reel-music-bar.cta-animate {
-    animation: storyFadeIn 0.4s ease-out 2.2s forwards;
+    animation: storyFadeIn 0.4s ease-out 3.8s forwards;
   }
   .ig-reel-cta {
     background: white; color: #0a0a0a;
@@ -1062,7 +1062,7 @@
     opacity: 0;
   }
   .ig-reel-cta.cta-animate {
-    animation: ctaRiseUp 0.4s ease-out 2.6s forwards;
+    animation: ctaRiseUp 0.4s ease-out 4.8s forwards;
   }
   /* Reel right sidebar */
   .ig-reel-sidebar {
@@ -2572,7 +2572,7 @@ function renderAd(idx) {
       inner += renderFn(null);
     }
     inner += '</div>';
-    return `<details class="variation-accordion" ${isFirst ? 'open' : ''}>
+    return `<details class="variation-accordion">
       <summary>${esc(label)}${badge ? `<span class="variation-badge">${badge}</span>` : ''}</summary>
       ${inner}
     </details>`;
@@ -2595,7 +2595,7 @@ function renderAd(idx) {
   }
 
   // ── Copy accordion ───────────────────────────────────────────────────
-  html += `<details class="variation-accordion" open>
+  html += `<details class="variation-accordion">
     <summary>Copy</summary>
     <div class="adprev-copy-panel" style="padding:16px">`;
 
@@ -2717,7 +2717,7 @@ function renderAd(idx) {
   const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta, .ig-reel-sidebar, .ig-reel-handle, .ig-reel-caption, .ig-reel-music-bar, .ig-reel-cta';
   const LOOP_HOLD = 3000;   // ms to hold the fully-revealed state before resetting
   const LOOP_RESET = 600;   // ms blank pause before next loop cycle
-  const LOOP_CYCLE = 3200;  // ms for all animations to finish (longest: CTA at 2.6s + 0.4s duration)
+  const LOOP_CYCLE = 5400;  // ms for all animations to finish (longest: CTA at 4.8s + 0.4s duration)
 
   function _startStoryLoop(accordionEl) {
     // Clear any existing loop on this accordion
@@ -3384,7 +3384,7 @@ function _startZoomLoop(container) {
         if (!_zoomActive) return;
         container.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
         _zoomLoopId = setTimeout(run, 3000);
-      }, 3200);
+      }, 5400);
     }, 600);
   }
   run();

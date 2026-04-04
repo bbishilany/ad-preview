@@ -1950,6 +1950,30 @@
   }
   .img-upload-btn:hover { transform: scale(1.1); background: #3a65e6; }
 
+  .img-download-btn {
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1a8a5c;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
+    text-decoration: none;
+  }
+  .img-download-btn:hover { transform: scale(1.1); background: #15704a; }
+
   .img-revert-pill {
     position: absolute;
     top: 8px;
@@ -2219,6 +2243,22 @@ function _patchImage(adNum, slot, newUrl, hasOverride) {
     }
     break;
   }
+}
+
+function downloadImage(imgUrl, filename) {
+  event.stopPropagation();
+  event.preventDefault();
+  fetch(imgUrl)
+    .then(r => r.blob())
+    .then(blob => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename || imgUrl.split('/').pop();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    });
 }
 
 function triggerUpload(adNum, slot) {
@@ -2660,7 +2700,7 @@ function renderAd(idx) {
     el.style.cursor = 'zoom-in';
     el.addEventListener('click', function(e) {
       if (e.target.closest('.carousel-nav-arrow') || e.target.closest('.img-upload-btn') ||
-          e.target.closest('.img-revert-pill') || e.target.closest('.fb-engage-icon') ||
+          e.target.closest('.img-download-btn') || e.target.closest('.img-revert-pill') || e.target.closest('.fb-engage-icon') ||
           e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn')) return;
       e.preventDefault();
       openMockupZoom(el);
@@ -3040,13 +3080,14 @@ function renderFeedMockup(ad, varNum) {
   const slotKey = varNum != null ? `v${varNum}_feed` : 'feed';
   const hasFeedOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
   const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const downloadBtn = imgUrl ? `<button class="img-download-btn" onclick="downloadImage('${imgUrl}','ad${ad.num}-feed.png')" title="Download image">&#8681;</button>` : '';
   const revertPill = hasFeedOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
 
   const pinTarget = varNum != null ? `mockup-feed-v${varNum}` : 'mockup-feed';
 
   let mediaHtml;
   if (imgUrl) {
-    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${playOverlay}${uploadBtn}${revertPill}</div></div>`;
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${playOverlay}${uploadBtn}${downloadBtn}${revertPill}</div></div>`;
   } else if (isVideo) {
     mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">VIDEO &middot; ${esc(ad.format || '1080x1080')}${playOverlay}${uploadBtn}</div></div>`;
   } else {
@@ -3093,9 +3134,10 @@ function renderCarouselMockup(ad, varNum) {
       const cardImgUrl = _findCarouselCardImage(ad, card.num, varNum);
       const hasCardOverride = !!_imageOverrides[`${ad.num}_${cardSlot}`];
       const cardUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${cardSlot}')" title="Upload image">&#8679;</button>`;
+      const cardDownloadBtn = cardImgUrl ? `<button class="img-download-btn" onclick="downloadImage('${cardImgUrl}','ad${ad.num}-card${card.num}.png')" title="Download image">&#8681;</button>` : '';
       const cardRevertPill = hasCardOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${cardSlot}')">Revert</button>` : '';
       const cardImgHtml = cardImgUrl
-        ? `<div class="img-upload-wrap"><img class="fb-carousel-card-img" src="${cardImgUrl}" alt="Card ${card.num}" loading="lazy">${cardUploadBtn}${cardRevertPill}</div>`
+        ? `<div class="img-upload-wrap"><img class="fb-carousel-card-img" src="${cardImgUrl}" alt="Card ${card.num}" loading="lazy">${cardUploadBtn}${cardDownloadBtn}${cardRevertPill}</div>`
         : `<div class="img-upload-wrap"><div class="fb-carousel-card-placeholder">Card ${card.num}: ${esc(card.label)}</div>${cardUploadBtn}</div>`;
       cardsHtml += `<div class="fb-carousel-card">${cardImgHtml}
         <div class="fb-carousel-card-caption">${esc(card.caption)}</div></div>`;
@@ -3160,12 +3202,13 @@ function renderStoryMockup(ad, varNum) {
   const slotKey = varNum != null ? `v${varNum}_story` : 'story';
   const hasStoryOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
   const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const storyDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="downloadImage('${bgImg}','ad${ad.num}-story.png')" title="Download image">&#8681;</button>` : '';
   const storyRevertPill = hasStoryOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
 
   const pinTarget = varNum != null ? `mockup-story-v${varNum}` : 'mockup-story';
 
   return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-pin-target="${pinTarget}">
-    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
       <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
@@ -3199,12 +3242,13 @@ function renderReelMockup(ad, varNum) {
 
   const hasReelOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
   const reelUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const reelDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="downloadImage('${bgImg}','ad${ad.num}-reel.png')" title="Download image">&#8681;</button>` : '';
   const reelRevertPill = hasReelOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
 
   const pinTarget = varNum != null ? `mockup-reel-v${varNum}` : 'mockup-reel';
 
   return `<div class="ig-reel" data-pin-target="${pinTarget}">
-    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0"><img style="width:100%;height:100%;object-fit:cover" src="${bgImg}" alt="" loading="lazy">${reelUploadBtn}${reelRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0">${reelUploadBtn}</div>`}
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0"><img style="width:100%;height:100%;object-fit:cover" src="${bgImg}" alt="" loading="lazy">${reelUploadBtn}${reelDownloadBtn}${reelRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0">${reelUploadBtn}</div>`}
     <div class="ig-reel-sidebar">
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.heartSm}<span class="ig-reel-sidebar-count">1.2K</span></div>
       <div class="ig-reel-sidebar-icon">${SVG_ICONS.commentSm}<span class="ig-reel-sidebar-count">48</span></div>

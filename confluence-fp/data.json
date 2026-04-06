@@ -71,13 +71,13 @@
         "Stories/Reels (static fallback)"
       ],
       "production": "",
-      "primary_text": "Four leaders. Six topics. One evening at Westmoreland Country Club. You're invited.\n\nTuesday, May 5 at 6:00 PM. Swipe to see what the panel covers.\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited.",
+      "primary_text": "Four leaders. Relevant topics. One evening at Westmoreland Country Club. You're invited.\n\nTuesday, May 5 at 6:00 PM. Swipe to see what the panel covers.\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited.",
       "headline": "What Our Leadership Panel Covers",
       "description": "Tue May 5 | 6 PM",
       "cta": "Sign Up",
-      "hook": "Four leaders. Six topics. One evening at Westmoreland Country Club. You're invited.",
+      "hook": "Four leaders. Relevant topics. One evening at Westmoreland Country Club. You're invited.",
       "alt_headlines": [
-        "6 Topics Worth Discussing",
+        "Relevant Topics Worth Discussing",
         "Meet Our Leadership Panel"
       ],
       "cards": [
@@ -112,7 +112,7 @@
       "video_script": "",
       "video_talking_points": "",
       "infographic_direction": "",
-      "arc": "Content preview — six topics from four leaders (reciprocity)",
+      "arc": "Content preview — relevant topics from four leaders (reciprocity)",
       "type": "carousel",
       "week": 1,
       "images": [

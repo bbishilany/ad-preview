@@ -1,0 +1,6 @@
+{
+  "room": "ad-preview",
+  "default_engagement_slug": "confluence-fp",
+  "default_project_slug": "retainer",
+  "require_active_project": false
+}

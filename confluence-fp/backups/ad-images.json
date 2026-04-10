@@ -9,6 +9,78 @@
     "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_feed_1774640095780.png",
     "uploaded_by": "mileage",
     "created_at": "2026-03-27T19:34:57.169499+00:00",
+    "is_active": false
+  },
+  {
+    "id": "abdf9fd2-7fac-425e-8c99-84a6c505bac1",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "slot": "feed",
+    "filename": "ad1-brand-intro.png",
+    "storage_path": "confluence-fp/ad1_feed_1775140925554.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_feed_1775140925554.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-02T14:42:08.765367+00:00",
+    "is_active": true
+  },
+  {
+    "id": "c5bf5a56-e0ae-4829-b033-6478a5c53bfb",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "slot": "story",
+    "filename": "ad1-brand-intro-story.png",
+    "storage_path": "confluence-fp/ad1_story_1775141121764.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_story_1775141121764.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-02T14:45:23.767741+00:00",
+    "is_active": true
+  },
+  {
+    "id": "806b6a87-561d-49ab-bbd1-c0ee57bd18ed",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "slot": "v2_feed",
+    "filename": "ad1-v1-feed.png",
+    "storage_path": "confluence-fp/ad1_v2_feed_1775310514017.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_v2_feed_1775310514017.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-04T13:48:34.962951+00:00",
+    "is_active": true
+  },
+  {
+    "id": "522d8bdb-4cdf-4ef1-a6f3-8be7922d9da9",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "slot": "v2_story",
+    "filename": "ad1-v1-feed.png",
+    "storage_path": "confluence-fp/ad1_v2_story_1775310808918.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_v2_story_1775310808918.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-04T13:53:30.632488+00:00",
+    "is_active": false
+  },
+  {
+    "id": "4240659a-b1b4-45e8-a7bd-737cfd9a4fcd",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "slot": "v2_story",
+    "filename": "ad1-v1-feed.png",
+    "storage_path": "confluence-fp/ad1_v2_story_1775485363543.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_v2_story_1775485363543.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-06T14:22:44.638017+00:00",
+    "is_active": true
+  },
+  {
+    "id": "2591eadc-db3c-470f-8325-c92cc8bfa668",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "slot": "v2_reel",
+    "filename": "ad1-v1-feed.png",
+    "storage_path": "confluence-fp/ad1_v2_reel_1775485370754.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad1_v2_reel_1775485370754.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-06T14:22:51.456338+00:00",
     "is_active": true
   },
   {
@@ -45,7 +117,7 @@
     "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad2_card3_1774640142410.png",
     "uploaded_by": "mileage",
     "created_at": "2026-03-27T19:35:43.350443+00:00",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "96778a4c-c647-4746-90af-18b47356e57d",
@@ -117,7 +189,7 @@
     "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad2_card1_1774646370222.png",
     "uploaded_by": "mileage",
     "created_at": "2026-03-27T21:19:31.015174+00:00",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "6c1d1e76-dcdf-4c92-a1bf-04e401ace43c",
@@ -129,7 +201,7 @@
     "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad2_card2_1774646386958.png",
     "uploaded_by": "mileage",
     "created_at": "2026-03-27T21:19:47.868483+00:00",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "4eb46ac6-bef6-41df-88f1-d65bcaeb151f",
@@ -141,7 +213,7 @@
     "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad2_card4_1774646415496.png",
     "uploaded_by": "mileage",
     "created_at": "2026-03-27T21:20:16.066642+00:00",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "ef40c7e3-8b20-4620-aaf4-1c6f20b9a40c",
@@ -153,6 +225,18 @@
     "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad2_card5_1774646451655.png",
     "uploaded_by": "mileage",
     "created_at": "2026-03-27T21:20:52.854209+00:00",
+    "is_active": false
+  },
+  {
+    "id": "a0466e5f-5be8-41b9-8b83-0d3a4bc1a848",
+    "campaign_id": "confluence-fp",
+    "ad_num": 2,
+    "slot": "card2",
+    "filename": "ad2-carousel-card2.png",
+    "storage_path": "confluence-fp/ad2_card2_1775311006026.png",
+    "public_url": "https://byuxmsohwsvnqfirgeit.supabase.co/storage/v1/object/public/ad-creatives/confluence-fp/ad2_card2_1775311006026.png",
+    "uploaded_by": "mileage",
+    "created_at": "2026-04-04T13:56:47.234029+00:00",
     "is_active": true
   },
   {

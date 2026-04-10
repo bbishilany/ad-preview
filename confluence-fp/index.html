@@ -2405,8 +2405,9 @@ async function init() {
     renderTabs(_data);
     renderAd(0);
   } catch (e) {
+    console.error('Ad preview init error:', e);
     document.getElementById('adprev-container').innerHTML =
-      `<p style="color:var(--danger)">Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.</p>`;
+      `<p style="color:var(--danger)">Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.</p><p style="color:var(--muted);font-size:12px;margin-top:8px">${esc(String(e))}</p>`;
   }
 }
 
@@ -2555,7 +2556,7 @@ function renderAd(idx) {
   const _hasReels = _pl.some(p => p.includes('reels') || p.includes('reel'));
   const _vars = ad.variations && ad.variations.length > 1 ? ad.variations : null;
 
-  const _canEdit = !isApproved || _adUnlocked;
+  const _canEdit = true; // Lock system removed in 9c9f816
   const _ce = _canEdit ? 'true' : 'false';
   const _lockCls = _canEdit ? '' : ' locked';
 

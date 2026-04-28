@@ -523,6 +523,20 @@
     letter-spacing: 0;
     color: var(--accent);
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+  .option-pills { display: inline-flex; gap: 4px; margin-left: 8px; }
+  .option-pill {
+    width: 24px; height: 24px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--surface2);
+    color: var(--text2); font-size: 11px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .option-pill:hover { border-color: var(--accent); color: var(--text); }
+  .option-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
   }
   .adprev-section-body {
     font-size: 13px;
@@ -2121,6 +2135,22 @@ const SVG_ICONS = {
   musicSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
 };
 
+// ── Multi-option helpers ───────────────────────────────────────────────────
+function _getField(ad, field, idx) {
+  const v = ad[field];
+  if (Array.isArray(v)) return v[idx || 0] || '';
+  return v || '';
+}
+function _fieldCount(ad, field) {
+  return Array.isArray(ad[field]) ? ad[field].length : 1;
+}
+let _optionIdx = {};
+
+function switchOption(adNum, optIdx) {
+  _optionIdx[adNum] = optIdx;
+  renderAd(_currentAd);
+}
+
 // ── State ──────────────────────────────────────────────────────────────────
 let _data = null;
 let _currentAd = 0;
@@ -2131,7 +2161,7 @@ let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 let _imageOverrides = {};   // cache: `${adNum}_${slot}` → public_url
-const CAMPAIGN_ID = '__CAMPAIGN_ID__';
+const CAMPAIGN_ID = 'confluence-fp-naples';
 
 // ── Resolved comment tracking ─────────────────────────────────────────────
 function getResolvedSet() {
@@ -2453,18 +2483,21 @@ function renderStrategy(data) {
   }
 
   const weekThemes = {1:'Trust-building', 2:'Emotional engagement', 3:'Expert authority', 4:'Urgency and final push'};
-  const weeks = {};
+  const waveThemes = {1:'Establish + Preview', 2:'Personal + Emotional', 3:'Identity + Close'};
+  const useWaves = data.ads.some(a => a.wave);
+  const groups = {};
   data.ads.forEach(ad => {
-    const w = ad.week || 0;
-    if (!weeks[w]) weeks[w] = [];
-    weeks[w].push(ad);
+    const g = useWaves ? (ad.wave || 0) : (ad.week || 0);
+    if (!groups[g]) groups[g] = [];
+    groups[g].push(ad);
   });
 
   let body = '';
-  Object.keys(weeks).sort((a,b) => a - b).forEach(w => {
-    const theme = weekThemes[w] || 'Week ' + w;
+  Object.keys(groups).sort((a,b) => a - b).forEach(g => {
+    const label = useWaves ? `Wave ${g}` : `Week ${g}`;
+    const theme = useWaves ? (waveThemes[g] || '') : (weekThemes[g] || '');
     body += `<div class="strategy-week">
-      <div class="strategy-week-header">Week ${w}: ${esc(theme)}<span class="week-line"></span></div>`;
+      <div class="strategy-week-header">${label}${theme ? ': ' + esc(theme) : ''}<span class="week-line"></span></div>`;
     weeks[w].forEach(ad => {
       body += `<div class="strategy-ad">
         <span class="strategy-ad-num">Ad ${ad.num}</span>
@@ -2489,8 +2522,16 @@ function renderTabs(data) {
   const weekNames = {1:'Trust', 2:'Emotion', 3:'Authority', 4:'Urgency'};
   const weekDates = {1:'Apr 7–13', 2:'Apr 14–20', 3:'Apr 21–27', 4:'Apr 28–May 4'};
   const creativeDue = {1:'Creative due: Apr 6', 2:'Creative due: Apr 13', 3:'Creative due: Apr 13', 4:'Creative due: Apr 13'};
+  const waveNames = {1:'Establish', 2:'Personal', 3:'Close'};
+  const useWaves = data.ads.some(a => a.wave);
   tabsEl.innerHTML = data.ads.map((ad, i) => {
-    const wk = weekNames[ad.week] || 'Wk' + ad.week;
+    if (useWaves) {
+      const waveName = waveNames[ad.wave] || '';
+      return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
+        Ad ${ad.num}
+        <span class="tab-week">Wave ${ad.wave}${waveName ? ' — ' + waveName : ''}</span>
+      </div>`;
+    }
     const dates = weekDates[ad.week] || '';
     const due = creativeDue[ad.week] || '';
     return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
@@ -2532,7 +2573,7 @@ function renderAd(idx) {
     <div class="adprev-meta-bar">
       <span class="adprev-chip">${esc(ad.type.charAt(0).toUpperCase() + ad.type.slice(1))}</span>
       ${(ad.placements || []).map(p => `<span class="adprev-chip adprev-chip-accent">${esc(p)}</span>`).join('')}
-      <span class="adprev-chip">Week ${ad.week}</span>
+      <span class="adprev-chip">${ad.wave ? 'Wave ' + ad.wave : 'Week ' + ad.week}</span>
       ${ad.format ? `<span class="adprev-chip">${esc(ad.format)}</span>` : ''}
     </div>
     ${ad.arc ? `<div style="font-size:13px;color:var(--muted);margin-top:6px;font-style:italic">${esc(ad.arc)}</div>` : ''}
@@ -2599,11 +2640,28 @@ function renderAd(idx) {
     <summary>Copy</summary>
     <div class="adprev-copy-panel" style="padding:16px">`;
 
-  if (_hasFeed && ad.primary_text) {
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">Primary Text</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="primary_text">${esc(ad.primary_text)}</div>
+  const _oi = _optionIdx[ad.num] || 0;
+
+  function _renderOptionField(label, field, opts) {
+    const isArr = Array.isArray(ad[field]);
+    const val = isArr ? (ad[field][_oi] || '') : (ad[field] || '');
+    const wrap = opts && opts.bold ? '<strong>' : '';
+    const wrapEnd = opts && opts.bold ? '</strong>' : '';
+    const style = opts && opts.style ? ` style="${opts.style}"` : '';
+    let pillsHtml = '';
+    if (isArr && ad[field].length > 1) {
+      pillsHtml = `<span class="option-pills">` +
+        ad[field].map((_, i) => `<span class="option-pill${i === _oi ? ' active' : ''}" onclick="switchOption(${ad.num}, ${i})">${i + 1}</span>`).join('') +
+        `</span>`;
+    }
+    return `<div class="adprev-section">
+      <div class="adprev-section-label">${label}${pillsHtml}</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="${field}"${style}>${wrap}${esc(val)}${wrapEnd}</div>
     </div>`;
+  }
+
+  if (_hasFeed && ad.primary_text) {
+    html += _renderOptionField('Primary Text', 'primary_text');
   }
   if (_hasFeed && ad.hook) {
     html += `<div class="adprev-section">
@@ -2612,14 +2670,8 @@ function renderAd(idx) {
     </div>`;
   }
   if (_hasFeed) {
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">Headline</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
-    </div>`;
-    html += `<div class="adprev-section">
-      <div class="adprev-section-label">Description</div>
-      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="description">${esc(ad.description)}</div>
-    </div>`;
+    html += _renderOptionField('Headline', 'headline', {bold: true});
+    html += _renderOptionField('Description', 'description');
     html += `<div class="adprev-section">
       <div class="adprev-section-label">CTA</div>
       <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
@@ -2640,7 +2692,7 @@ function renderAd(idx) {
     </div>`;
   }
 
-  if (_hasFeed && ad.alt_headlines && ad.alt_headlines.length) {
+  if (_hasFeed && !Array.isArray(ad.headline) && ad.alt_headlines && ad.alt_headlines.length) {
     html += `<div class="adprev-section">
       <div class="adprev-section-label">Alt Headlines</div>
       <ul class="adprev-alt-list">
@@ -2788,11 +2840,12 @@ function attachEditableHandlers(adIdx) {
     const field = el.getAttribute('data-field');
 
     el.addEventListener('input', function() {
-      // Get plain text from the contenteditable
       const newVal = el.innerText.trim();
-      // Update in-memory data
-      ad[field] = newVal;
-      // Live-update the mockup
+      if (Array.isArray(ad[field])) {
+        ad[field][_optionIdx[ad.num] || 0] = newVal;
+      } else {
+        ad[field] = newVal;
+      }
       refreshMockupField(ad, field, newVal);
     });
 
@@ -2823,19 +2876,20 @@ function attachEditableHandlers(adIdx) {
 }
 
 function refreshMockupField(ad, field, value) {
-  // Update the relevant parts of ALL mockups (including variations) in real time
   const container = document.getElementById('adprev-container');
   if (!container) return;
 
+  const v = _getField(ad, field, _optionIdx[ad.num]);
+
   if (field === 'primary_text') {
-    container.querySelectorAll('.fb-feed-text').forEach(el => el.textContent = value);
+    container.querySelectorAll('.fb-feed-text').forEach(el => el.textContent = v);
   }
   if (field === 'headline') {
-    container.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = value);
-    container.querySelectorAll('.ig-story-text').forEach(el => el.textContent = value);
+    container.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = v);
+    container.querySelectorAll('.ig-story-text').forEach(el => el.textContent = v);
   }
   if (field === 'description') {
-    container.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = value);
+    container.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = v);
   }
   if (field === 'cta') {
     container.querySelectorAll('.fb-cta-btn').forEach(el => el.textContent = value);
@@ -3103,7 +3157,7 @@ function renderFeedMockup(ad, varNum) {
       </div>
       <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
     </div>
-    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(ad.primary_text)}</div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_getField(ad, 'primary_text', _optionIdx[ad.num]))}</div>
     ${mediaHtml}
     <div class="fb-engagement-icons">
       <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
@@ -3114,8 +3168,8 @@ function renderFeedMockup(ad, varNum) {
     <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
     <div class="fb-feed-cta">
       <div class="fb-feed-cta-text">
-        <div class="fb-feed-cta-headline">${esc(ad.headline)}</div>
-        <div class="fb-feed-cta-desc">${esc(ad.description)}</div>
+        <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _optionIdx[ad.num]))}</div>
+        <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _optionIdx[ad.num]))}</div>
       </div>
       ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
     </div>
@@ -3165,7 +3219,7 @@ function renderCarouselMockup(ad, varNum) {
       </div>
       <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
     </div>
-    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(ad.primary_text)}</div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_getField(ad, 'primary_text', _optionIdx[ad.num]))}</div>
     <div class="fb-carousel-wrap">
       ${cardCount > 1 ? `<button class="carousel-nav-arrow left" onclick="scrollCarousel(this, -1)" aria-label="Previous card">${SVG_ICONS.chevronLeft}</button>` : ''}
       <div class="fb-carousel-track" data-carousel-track>${cardsHtml}</div>
@@ -3181,8 +3235,8 @@ function renderCarouselMockup(ad, varNum) {
     <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
     <div class="fb-feed-cta">
       <div class="fb-feed-cta-text">
-        <div class="fb-feed-cta-headline">${esc(ad.headline)}</div>
-        <div class="fb-feed-cta-desc">${esc(ad.description)}</div>
+        <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _optionIdx[ad.num]))}</div>
+        <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _optionIdx[ad.num]))}</div>
       </div>
       ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
     </div>
@@ -3227,7 +3281,7 @@ function renderStoryMockup(ad, varNum) {
 
 function renderReelMockup(ad, varNum) {
   const r = ad.reels || {};
-  const caption = r.caption || ad.primary_text || '';
+  const caption = r.caption || _getField(ad, 'primary_text', _optionIdx[ad.num]) || '';
   const cta = ad.cta || 'Learn More';
   const handle = _data.client || '';
   const maxLen = 100;

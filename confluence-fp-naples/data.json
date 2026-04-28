@@ -1,0 +1,351 @@
+{
+  "campaign": "Confluence Naples Event",
+  "event_date": "TBD",
+  "venue": "TBD — Naples, FL",
+  "co_presenters": "",
+  "compliance_notes": [],
+  "ads": [
+    {
+      "num": 1,
+      "title": "Brand introduction image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "[AWAITING EVENT DETAILS FROM CONFLUENCE TEAM]\n\nConfluence Financial Partners is hosting an exclusive evening in Naples, Florida.\n\n[Event date TBD] at [Venue TBD].\n\n[Presenters TBD]\n\nAn evening of clarity focused on your financial future.\n\n[Topics TBD — likely retiree-focused: withdrawal strategies, legacy planning, estate coordination]\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited.",
+      "headline": "An Evening of Clarity",
+      "description": "Complimentary | Naples, FL",
+      "cta": "Sign Up",
+      "hook": "Confluence Financial Partners is hosting an exclusive evening in Naples.",
+      "alt_headlines": [
+        "An Exclusive Evening in Naples",
+        "You're Invited — Naples"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "TBD — presenter credential stack or venue photo on deep green (#12493C) background",
+        "text_overlay": "An Evening of Clarity",
+        "secondary_text": "Complimentary | [Date TBD] | Naples, FL",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Institutional credibility — firm brand + exclusivity (authority)",
+      "type": "image",
+      "week": 1,
+      "images": [],
+      "variations": [],
+      "image_direction": "TBD — awaiting event details, venue photos, and presenter confirmation."
+    },
+    {
+      "num": 2,
+      "title": "Educational carousel (5 cards)",
+      "format": "Carousel, 5 cards at 1080x1080 (Feed) + static image 1080x1920 (Stories/Reels fallback)",
+      "placements": [
+        "Feed (carousel)",
+        "Stories/Reels (static fallback)"
+      ],
+      "production": "",
+      "primary_text": "[AWAITING TOPICS FROM CONFLUENCE TEAM]\n\n[Presenters TBD]. Relevant topics. One evening in Naples. You're invited.\n\n[Event date TBD]. Swipe to see what the evening covers.\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited.",
+      "headline": "What the Evening Covers",
+      "description": "[Date TBD] | Naples",
+      "cta": "Sign Up",
+      "hook": "[Presenters TBD]. Relevant topics. One evening in Naples. You're invited.",
+      "alt_headlines": [
+        "Relevant Topics Worth Discussing",
+        "An Evening Worth Your Time"
+      ],
+      "cards": [
+        {
+          "num": 1,
+          "label": "Hook",
+          "caption": "[TBD — opening hook card]"
+        },
+        {
+          "num": 2,
+          "label": "Topic 1",
+          "caption": "[TBD — awaiting topic confirmation from Confluence team]"
+        },
+        {
+          "num": 3,
+          "label": "Topic 2",
+          "caption": "[TBD — awaiting topic confirmation from Confluence team]"
+        },
+        {
+          "num": 4,
+          "label": "Topic 3",
+          "caption": "[TBD — awaiting topic confirmation from Confluence team]"
+        },
+        {
+          "num": 5,
+          "label": "CTA",
+          "caption": "[Date TBD]\n[Venue TBD], Naples, FL\n\nComplimentary cocktails and hors d'oeuvres. Seating is limited. Reserve yours."
+        }
+      ],
+      "stories": null,
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Content preview — relevant topics (reciprocity)",
+      "type": "carousel",
+      "week": 1,
+      "images": [],
+      "image_direction": "TBD — same visual system as Pittsburgh (navy/green/gold, Ivypresto + Rival Sans, diagonal line textures on content cards) adapted for Naples imagery."
+    },
+    {
+      "num": 3,
+      "title": "Personal invite image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "We'd like to invite you to an exclusive evening in Naples.\n\n[Date TBD]. Cocktails at [Time TBD]. [Format TBD].\n\n[Topics TBD]\n\nComplimentary. Seating is limited.",
+      "headline": "A Personal Invitation",
+      "description": "From Confluence Financial Partners",
+      "cta": "Sign Up",
+      "hook": "We'd like to invite you to an exclusive evening in Naples.",
+      "alt_headlines": [
+        "Join Us in Naples",
+        "An Invitation from Our Team"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "TBD — presenter or team photo on deep green (#12493C) background",
+        "text_overlay": "A Personal Invitation",
+        "secondary_text": "Complimentary | [Date TBD] | Naples, FL",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Personal warmth — exclusive invitation (liking + permission)",
+      "type": "image",
+      "week": 1,
+      "images": [],
+      "image_direction": "TBD — awaiting presenter confirmation and Naples venue/lifestyle photos."
+    },
+    {
+      "num": 4,
+      "title": "Peace of mind image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "[TBD — emotional anchor ad. Likely focused on retirement coordination: income strategy, estate plan, and tax efficiency working together.]\n\n[Date and venue TBD]\n\nSeating is limited.",
+      "headline": "Are the Pieces Working Together?",
+      "description": "Exclusive Event | Naples",
+      "cta": "Sign Up",
+      "hook": "[TBD — emotional hook for Naples audience]",
+      "alt_headlines": [
+        "Relevant Topics Worth Your Evening",
+        "The Questions Worth Asking Now"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "TBD — emotional lifestyle visual",
+        "text_overlay": "Are the Pieces Working Together?",
+        "secondary_text": "[Date TBD] | Naples, FL",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Emotional weight of retirement decisions — coordination matters (loss aversion)",
+      "type": "image",
+      "week": 2,
+      "images": [],
+      "image_direction": "TBD — same photo-dominant layout as Pittsburgh Ad 4 but with Naples/Southwest FL lifestyle imagery (warm climate, coastal or resort setting)."
+    },
+    {
+      "num": 5,
+      "title": "Local connection image",
+      "format": "Static image, 1080x1920 (vertical for Stories/Reels) + 1080x1080 (square)",
+      "placements": [
+        "Stories",
+        "Reels",
+        "Feed"
+      ],
+      "production": "",
+      "primary_text": "[TBD — local Naples connection. No Steelers branding. Likely: Confluence serving families who have chosen Southwest Florida as home.]\n\n[Date and venue TBD]\n\nSeating is limited.",
+      "headline": "For Naples Families",
+      "description": "[Date TBD] | Exclusive Event",
+      "cta": "Sign Up",
+      "hook": "[TBD — Naples community identity hook]",
+      "alt_headlines": [
+        "Right Here in Naples",
+        "For Southwest Florida Families"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "TBD — Naples landmark or lifestyle photo (no Steelers branding)",
+        "text_overlay": "TBD",
+        "secondary_text": "[Date TBD] | Naples, FL",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Naples community identity — local imagery + lifestyle (in-group bias)",
+      "type": "image",
+      "week": 2,
+      "images": [],
+      "image_direction": "TBD — Naples landmark or lifestyle photo. No Steelers badge, no city skyline. Naples identity = coastal lifestyle, warm evening atmosphere, country club or waterfront setting."
+    },
+    {
+      "num": 6,
+      "title": "Infographic / visual concept",
+      "format": "Static image/infographic, 1080x1080 (square) + 1080x1920 (vertical)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "[TBD — topic overview ad. Awaiting confirmed topics from Confluence team.]\n\n[Date and venue TBD]\n\nSeating is limited.",
+      "headline": "Relevant Topics. One Evening.",
+      "description": "Exclusive Event | Naples",
+      "cta": "Sign Up",
+      "hook": "[TBD]. Relevant topics. One evening.",
+      "alt_headlines": [
+        "What the Evening Covers",
+        "An Evening Worth Your Time"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "TBD — vertical topic-tile infographic",
+        "text_overlay": "Relevant Topics. One Evening.",
+        "secondary_text": "[Date TBD] | Naples, FL",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "TBD — awaiting confirmed topics. Same six-tile visual treatment as Pittsburgh (navy background, diagonal line texture, gold accents, Ivypresto headlines).",
+      "arc": "Topic overview infographic (breadth of expertise)",
+      "type": "image",
+      "week": 3,
+      "images": [],
+      "image_direction": "TBD — same six-tile layout structure as Pittsburgh Ad 6 with updated topics for Naples audience."
+    },
+    {
+      "num": 7,
+      "title": "Expert insight image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
+      "placements": [
+        "Feed",
+        "Stories"
+      ],
+      "production": "",
+      "primary_text": "[TBD — expert authority ad. Presenter and topic TBD.]\n\n[Date and venue TBD]\n\nSeating is limited.",
+      "headline": "[TBD — Expert Insight Headline]",
+      "description": "[TBD]",
+      "cta": "Sign Up",
+      "hook": "[TBD — expert authority hook]",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "TBD — presenter headshot with expertise-focused headline",
+        "text_overlay": "[TBD]",
+        "secondary_text": "[Date TBD] | Naples, FL",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Expert perspective (authority)",
+      "type": "image",
+      "week": 3,
+      "images": [],
+      "image_direction": "TBD — same photo-under layout as Pittsburgh Ad 7, adapted for confirmed presenter."
+    },
+    {
+      "num": 8,
+      "title": "Last call image",
+      "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical for Stories)",
+      "placements": [
+        "Feed",
+        "Stories"
+      ],
+      "production": "",
+      "primary_text": "[Date TBD] is approaching, and a limited number of seats remain.\n\nJoin us for an exclusive evening in Naples focused on what matters most right now. [Topics TBD].\n\nComplimentary cocktails and hors d'oeuvres will be served.\n\nWe would value the opportunity to meet you.",
+      "headline": "[Day TBD] — Last Seats",
+      "description": "[Date TBD] | Naples",
+      "cta": "Sign Up",
+      "hook": "[Date TBD] is approaching. A few seats left.",
+      "alt_headlines": [
+        "Almost Full — Reserve Now"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "High-contrast text on brand deep green (#12493C) background, mint (#7EFBC8) accent",
+        "text_overlay": "A few seats left | [Date TBD]",
+        "secondary_text": "[Venue TBD] | Naples, FL | Complimentary",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": null,
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Specific seat scarcity — exclusivity reinforced (scarcity)",
+      "type": "image",
+      "week": 4,
+      "images": [],
+      "image_direction": "Same text-forward layout as Pittsburgh Ad 8 — navy background, diagonal line texture, gold accent CTA. No photo. Urgency through typography."
+    },
+    {
+      "num": 9,
+      "title": "Final reminder image",
+      "format": "Static image, 1080x1920 (vertical) + 1080x1080 (square)",
+      "placements": [
+        "Stories",
+        "Reels",
+        "Feed"
+      ],
+      "production": "",
+      "primary_text": "[Day TBD] in Naples. A few seats remain.\n\nCocktails at [Time TBD]. Hors d'oeuvres to follow.\n\n[Presenters TBD] will cover [topics TBD] in a setting designed for thoughtful conversation.\n\nWe would value the opportunity to meet you.",
+      "headline": "Last Few Seats",
+      "description": "[Day TBD]",
+      "cta": "Sign Up",
+      "hook": "[Day TBD]. A few seats left.",
+      "alt_headlines": [
+        "[Day TBD] — A Few Seats Left"
+      ],
+      "cards": [],
+      "stories": {
+        "image": "Text-forward urgency — stripped back, bold typography, minimal elements",
+        "text_overlay": "[Day TBD] | A few seats left",
+        "cta_sticker": "Sign Up"
+      },
+      "reels": {
+        "image": "Same stripped-back design for Reels format",
+        "caption": "[Day TBD]. A few seats left. Naples, FL. Reserve below.",
+        "description": "A few seats left | Naples"
+      },
+      "video_script": "",
+      "video_talking_points": "",
+      "infographic_direction": "",
+      "arc": "Quiet final reminder — stripped urgency (authenticity + final push)",
+      "type": "image",
+      "week": 4,
+      "images": [],
+      "image_direction": "Same stripped-back text-forward layout as Pittsburgh Ad 9 — white on navy, minimal elements, quiet urgency."
+    }
+  ],
+  "client": "confluence-fp-naples"
+}

@@ -1,0 +1,4001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Preview — Mileage Design</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3350;
+    --accent: #4f7aff;
+    --accent2: #7c3aed;
+    --green: #22c55e;
+    --orange: #f59e0b;
+    --text: #e8eaf6;
+    --text2: #8b92b8;
+    --danger: #ef4444;
+    --gold: #c9a84c;
+  }
+
+  body.light-mode {
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --surface2: #eef0f5;
+    --border: #d4d7e0;
+    --accent: #3b63d9;
+    --accent2: #6528d7;
+    --green: #16a34a;
+    --orange: #d97706;
+    --text: #1a1d27;
+    --text2: #5c6280;
+    --danger: #dc2626;
+    --gold: #a07b2e;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    justify-content: space-between;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-logo img { height: 24px; width: auto; }
+  .header-logo span {
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4f7aff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.3px;
+  }
+  .header-badge {
+    font-size: 10px;
+    background: var(--accent2);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Reviewer Mode Toggle */
+  .reviewer-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .reviewer-toggle-label {
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+  .reviewer-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .reviewer-pill:hover { border-color: var(--accent); color: var(--text); }
+  .reviewer-pill.active {
+    background: rgba(79,122,255,0.15);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
+
+  /* Keyboard shortcut help */
+  .kb-help {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: help;
+    flex-shrink: 0;
+  }
+  .kb-help:hover .kb-tooltip { display: block; }
+  .kb-tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text2);
+    white-space: nowrap;
+    z-index: 200;
+    line-height: 2;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .kb-tooltip kbd {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 10px;
+    font-family: monospace;
+    margin-right: 4px;
+  }
+
+  /* CAMPAIGN BANNER */
+  .campaign-banner {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+  }
+  .campaign-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .campaign-meta {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+  .campaign-meta strong { color: var(--text); font-weight: 600; }
+
+  /* PROGRESS BAR */
+  .campaign-progress {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+  }
+  .progress-text {
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 6px;
+  }
+  .progress-text strong { color: var(--text); font-weight: 600; }
+  .progress-bar {
+    display: flex;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    gap: 2px;
+    background: var(--surface2);
+  }
+  .progress-segment {
+    flex: 1;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+  .progress-segment.approved { background: var(--green); }
+  .progress-segment.changes { background: var(--orange); }
+  .progress-segment.commented { background: var(--accent); }
+  .progress-segment.unreviewed { background: var(--surface2); }
+
+  /* STRATEGY OVERVIEW */
+  .campaign-strategy {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .strategy-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .strategy-toggle:hover { background: var(--surface2); }
+  .strategy-toggle h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+  .strategy-toggle .arrow {
+    font-size: 12px;
+    color: var(--text2);
+    transition: transform 0.2s;
+  }
+  .campaign-strategy.open .strategy-toggle .arrow { transform: rotate(180deg); }
+  .strategy-body {
+    display: none;
+    padding: 0 24px 18px;
+  }
+  .campaign-strategy.open .strategy-body { display: block; }
+  .strategy-week {
+    margin-bottom: 14px;
+  }
+  .strategy-week:last-child { margin-bottom: 0; }
+  .strategy-week-header {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .strategy-week-header .week-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .strategy-ad {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .strategy-ad-num {
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    min-width: 42px;
+  }
+  .strategy-ad-arc {
+    color: var(--text2);
+    font-style: italic;
+  }
+
+  /* MAIN CONTAINER */
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+    flex: 1;
+  }
+
+  /* AD TABS */
+  .adprev-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+    padding: 12px 4px 4px;
+  }
+  .adprev-tab {
+    padding: 14px 10px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.15s;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+  }
+  .adprev-tab:hover { border-color: var(--accent); color: #fff; }
+  .adprev-tab.active { background: rgba(79,122,255,0.15); color: var(--accent); border-color: var(--accent); }
+  .adprev-tab .tab-week {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: var(--text);
+    display: block;
+    margin-top: 5px;
+  }
+  .adprev-tab.active .tab-week { color: var(--accent); opacity: 0.7; }
+  .adprev-tab .tab-due {
+    font-size: 11px;
+    font-weight: 600;
+    color: #e8a33c;
+    display: block;
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+  }
+  .adprev-tab.active .tab-due { color: #e8a33c; }
+
+  /* Tab notification badge — iPhone-style, top-right edge */
+  .tab-badge {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .tab-badge.not-started {
+    background: transparent;
+    border: 2px solid var(--border);
+  }
+  .tab-badge.has-count {
+    background: var(--danger);
+    color: #fff;
+    border: 2px solid var(--bg);
+  }
+  .tab-badge.all-done {
+    background: var(--green);
+    color: #fff;
+    border: 2px solid var(--bg);
+  }
+
+  /* Mark complete toggle */
+  .mark-complete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .mark-complete-btn:hover {
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .mark-complete-btn.resolved {
+    background: rgba(34,197,94,0.15);
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  /* Two-column layout */
+  .adprev-detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .adprev-detail {
+      grid-template-columns: 1fr;
+    }
+  }
+  .adprev-mockups {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  /* Variation accordions */
+  .variation-accordion {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .variation-accordion summary {
+    padding: 10px 16px;
+    background: var(--surface2);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    user-select: none;
+  }
+  .variation-accordion summary::-webkit-details-marker { display: none; }
+  .variation-accordion summary::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-left: 5px solid var(--text2);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+  .variation-accordion[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .variation-accordion summary:hover {
+    background: var(--surface);
+  }
+  .variation-accordion .variation-badge {
+    font-size: 10px;
+    color: var(--text2);
+    font-weight: 400;
+    margin-left: auto;
+  }
+  .variation-accordion .variation-mockups {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+  .adprev-copy-panel { min-width: 280px; max-width: 400px; }
+  .adprev-meta-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .adprev-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--surface2);
+    color: var(--text2);
+    border: 1px solid var(--border);
+  }
+  .adprev-chip-accent {
+    background: rgba(79,122,255,0.12);
+    color: var(--accent);
+    border-color: rgba(79,122,255,0.3);
+  }
+  .adprev-section {
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .adprev-section-label {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .adprev-section-body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+  .adprev-alt-list { list-style: none; padding: 0; }
+  .adprev-alt-list li { font-size: 13px; color: var(--text); padding: 3px 0; }
+  .adprev-alt-list li::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Inline creative direction (details element) */
+  .inline-creative-direction {
+    margin-top: 14px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .inline-creative-direction summary {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  .inline-creative-direction summary::-webkit-details-marker { display: none; }
+  .inline-creative-direction summary::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent var(--gold);
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+  .inline-creative-direction[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .inline-creative-direction .direction-body {
+    padding: 0 16px 14px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+    font-family: monospace, monospace;
+  }
+
+  /* Feedback & Reviews accordion */
+  .inline-feedback-accordion {
+    margin-top: 14px;
+    background: rgba(79,122,255,0.06);
+    border: 1px solid rgba(79,122,255,0.25);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .inline-feedback-accordion summary {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  .inline-feedback-accordion summary::-webkit-details-marker { display: none; }
+  .inline-feedback-accordion summary::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent var(--accent);
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+  .inline-feedback-accordion[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .inline-feedback-body {
+    padding: 0 16px 14px;
+  }
+  .inline-feedback-empty {
+    font-size: 12px;
+    color: var(--text2);
+    padding: 8px 0;
+    font-style: italic;
+  }
+  .inline-fb-form { margin-top: 12px; }
+  .inline-fb-form textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 70px;
+    transition: border-color 0.15s;
+  }
+  .inline-fb-form textarea:focus { border-color: var(--accent); }
+  .inline-fb-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .inline-fb-submit {
+    background: var(--accent); color: white; border: none;
+    padding: 8px 18px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .inline-fb-submit:hover { opacity: 0.9; }
+  .inline-fb-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Feed mockup */
+  .fb-feed {
+    width: 380px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+  }
+  @media (max-width: 600px) { .fb-feed { width: 100%; } }
+  .fb-feed-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    position: relative;
+  }
+  .fb-header-menu {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .fb-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .fb-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .fb-page-name { font-weight: 600; font-size: 13px; color: var(--text); }
+  .fb-sponsored { font-size: 11px; color: var(--text2); }
+  .fb-feed-text {
+    padding: 0 14px 10px;
+    font-size: 13px; line-height: 1.5; color: var(--text);
+  }
+  .fb-feed-img { width: 100%; display: block; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .fb-media-wrap {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .fb-media-wrap img { display: block; width: 100%; }
+  .fb-play-btn {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    background: rgba(0,0,0,0.55); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+  }
+  .fb-play-btn::after {
+    content: ''; display: block;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 22px;
+    border-color: transparent transparent transparent white;
+    margin-left: 4px;
+  }
+  .fb-image-placeholder {
+    width: 100%; aspect-ratio: 1/1;
+    background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text2); font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  /* Feed engagement bar */
+  .fb-engagement-icons {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px 2px;
+    gap: 14px;
+  }
+  .fb-engagement-icons .fb-engage-icon {
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .fb-engagement-icons .fb-engage-icon:hover { color: var(--text); }
+  .fb-engagement-icons .fb-engage-icon.fb-engage-bookmark {
+    margin-left: auto;
+  }
+
+  .fb-feed-cta {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+  }
+  .fb-feed-cta-text { flex: 1; min-width: 0; }
+  .fb-feed-cta-headline {
+    font-size: 13px; font-weight: 600; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .fb-feed-cta-desc { font-size: 11px; color: var(--text2); }
+  .fb-cta-btn {
+    background: #e4e6eb; border: none;
+    color: #1c1e21; padding: 7px 16px; border-radius: 6px;
+    font-size: 12px; font-weight: 600; white-space: nowrap;
+    flex-shrink: 0; margin-left: 12px;
+  }
+  /* Dark theme CTA adaptation */
+  @media (prefers-color-scheme: dark) {
+    .fb-cta-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+  }
+  /* Force dark CTA since we're always dark */
+  .fb-cta-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+  }
+  a.fb-cta-btn { text-decoration: none; display: inline-block; }
+  .fb-reactions {
+    display: flex; align-items: center; gap: 20px;
+    padding: 6px 14px 10px; color: var(--text2); font-size: 12px; font-weight: 600;
+  }
+
+  /* Carousel */
+  .fb-carousel-wrap {
+    position: relative;
+  }
+  .fb-carousel-track {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    scroll-behavior: smooth;
+  }
+  .fb-carousel-track::-webkit-scrollbar { display: none; }
+  .fb-carousel-card {
+    min-width: 260px; max-width: 260px; scroll-snap-align: start;
+    border-right: 1px solid var(--border); flex-shrink: 0;
+  }
+  .fb-carousel-card-img {
+    width: 100%; aspect-ratio: 1/1; background: var(--surface2);
+    display: block; object-fit: cover;
+  }
+  .fb-carousel-card-placeholder {
+    width: 100%; aspect-ratio: 1/1; background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text2); font-size: 11px; font-weight: 600;
+  }
+  .fb-carousel-card-caption {
+    padding: 10px 12px; font-size: 12px; line-height: 1.4; color: var(--text);
+  }
+  /* Carousel navigation arrows */
+  .carousel-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.15s;
+  }
+  .carousel-nav-arrow:hover { background: rgba(0,0,0,0.8); }
+  .carousel-nav-arrow.left { left: 8px; }
+  .carousel-nav-arrow.right { right: 8px; }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 0 4px;
+  }
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.2s;
+  }
+  .carousel-dot.active { background: var(--accent); }
+
+  /* Stories mockup */
+  .ig-story {
+    width: 220px; aspect-ratio: 9/16;
+    border-radius: 14px; overflow: hidden;
+    position: relative; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 24px 18px 60px; text-align: center;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, #1a1a2e, #16213e);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+  }
+  .ig-story-has-img { justify-content: flex-end; padding-bottom: 70px; }
+  .ig-story-bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.7;
+  }
+  .ig-story-progress {
+    position: absolute; top: 8px; left: 8px; right: 8px;
+    height: 2px; background: rgba(255,255,255,0.3); border-radius: 2px; z-index: 2;
+  }
+  .ig-story-progress-fill { width: 40%; height: 100%; background: white; border-radius: 2px; }
+  /* Story account info */
+  .ig-story-account {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 3;
+  }
+  .ig-story-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    border: 2px solid rgba(255,255,255,0.5);
+    flex-shrink: 0;
+  }
+  .ig-story-handle {
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .ig-story-text {
+    color: white; font-size: 15px; font-weight: 700; line-height: 1.4;
+    margin-bottom: 8px; text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-text.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  .ig-story-secondary {
+    color: rgba(255,255,255,0.8); font-size: 11px; line-height: 1.3;
+    margin-bottom: 16px; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-secondary.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 2.8s forwards;
+  }
+  @keyframes storyFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* Swipe up chevron — initial rise handled by .ig-story-swipe-up animation rule above */
+  .ig-story-swipe-up {
+    position: absolute;
+    bottom: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255,255,255,0.7);
+  }
+  @keyframes swipeUpBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-4px); }
+  }
+  /* CTA rise-up animation (mimics real IG Stories/Reels timing) */
+  @keyframes ctaRiseUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes ctaRiseUpCentered {
+    from { transform: translateX(-50%) translateY(40px); opacity: 0; }
+    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+  .ig-story-swipe-up {
+    opacity: 0;
+  }
+  .ig-story-swipe-up.cta-animate {
+    animation: ctaRiseUpCentered 0.3s ease-out 3.8s forwards;
+  }
+  .ig-story-swipe-up.anim-bounce {
+    opacity: 1;
+    animation: swipeUpBounce 2s ease-in-out infinite;
+  }
+  .ig-story-cta {
+    background: white; color: #1a1a2e;
+    padding: 8px 20px; border-radius: 20px;
+    font-size: 12px; font-weight: 700;
+    position: absolute; bottom: 32px; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-cta.cta-animate {
+    animation: ctaRiseUp 0.4s ease-out 4.8s forwards;
+  }
+  /* Story message bar */
+  .ig-story-message-bar {
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+    right: 12px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ig-story-message-input {
+    flex: 1;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+  }
+  .ig-story-message-send {
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+  }
+
+  /* Reels mockup */
+  .ig-reel {
+    width: 220px; aspect-ratio: 9/16;
+    border-radius: 14px; overflow: hidden;
+    position: relative; display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 16px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, #0a0a0a, #1a1a1a);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+  }
+  .ig-reel-video-label {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255,255,255,0.3); font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .ig-reel-caption {
+    color: white; font-size: 11px; line-height: 1.4; margin-bottom: 4px;
+    position: relative; z-index: 2;
+    padding-right: 40px; /* space for right sidebar */
+    opacity: 0;
+  }
+  .ig-reel-more {
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .ig-reel-handle {
+    color: white; font-size: 11px; font-weight: 600;
+    margin-bottom: 8px; position: relative; z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+  }
+  .ig-reel-verified {
+    display: inline-flex;
+    align-items: center;
+  }
+  .ig-reel-sidebar.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  .ig-reel-handle.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  .ig-reel-caption.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 2.8s forwards;
+  }
+  .ig-reel-music-bar.cta-animate {
+    animation: storyFadeIn 0.4s ease-out 3.8s forwards;
+  }
+  .ig-reel-cta {
+    background: white; color: #0a0a0a;
+    padding: 8px 20px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; text-align: center;
+    width: 100%; position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-reel-cta.cta-animate {
+    animation: ctaRiseUp 0.4s ease-out 4.8s forwards;
+  }
+  /* Reel right sidebar */
+  .ig-reel-sidebar {
+    position: absolute;
+    right: 10px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 3;
+    opacity: 0;
+  }
+  .ig-reel-sidebar-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: white;
+  }
+  .ig-reel-sidebar-icon svg {
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+  }
+  .ig-reel-sidebar-count {
+    font-size: 9px;
+    color: rgba(255,255,255,0.8);
+  }
+  /* Reel music ticker */
+  .ig-reel-music-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 0 2px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+  }
+  .ig-reel-music-text {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1;
+  }
+  .ig-reel-music-disc {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #333, #666);
+    border: 2px solid rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    animation: spinDisc 3s linear infinite;
+  }
+  @keyframes spinDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── PIN DROP SYSTEM ─────────────────────────────────────────────── */
+  .pin-mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+    background: rgba(79,122,255,0.1);
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    position: relative;
+  }
+  .pin-mode-toggle:hover {
+    background: rgba(79,122,255,0.2);
+    box-shadow: 0 0 16px rgba(79,122,255,0.3);
+  }
+  .pin-mode-toggle:hover .pin-mode-hint {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .pin-mode-toggle.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(79,122,255,0.4);
+  }
+  .pin-mode-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+  .pin-mode-hint {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text2);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.15s;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* Approve button */
+  .approve-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .approve-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 2px solid var(--green);
+    background: rgba(34,197,94,0.08);
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .approve-btn:hover {
+    background: rgba(34,197,94,0.18);
+    transform: translateY(-1px);
+  }
+  .approve-btn svg { width: 18px; height: 18px; }
+  .approve-btn.approved {
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+    cursor: default;
+  }
+  .approve-btn.approved:hover { transform: none; }
+  .approve-status-msg {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.4;
+  }
+  .approve-status-msg strong { color: var(--green); font-weight: 600; }
+  .ad-status-saved {
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .ad-status-saved.visible { opacity: 1; }
+
+  /* Pin marker */
+  .pin-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+    line-height: 1;
+  }
+  .pin-marker:hover { transform: translate(-50%, -50%) scale(1.15); }
+  .pin-marker.existing {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    opacity: 0.85;
+  }
+  .pin-marker.existing:hover { opacity: 1; }
+
+  /* New pin: slightly larger pulsing animation */
+  .pin-marker.new-pin {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    animation: pinPulse 0.3s ease-out;
+  }
+  @keyframes pinPulse {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    70% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+
+  /* Pin popup (for creating a new pin comment) */
+  .pin-popup {
+    position: absolute;
+    z-index: 20;
+    width: 220px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  .pin-popup textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 60px;
+    margin-bottom: 8px;
+  }
+  .pin-popup textarea:focus { border-color: var(--accent); }
+  .pin-popup-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .pin-popup-save {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pin-popup-save:hover { opacity: 0.9; }
+  .pin-popup-cancel {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pin-popup-cancel:hover { color: var(--text); border-color: var(--text2); }
+
+  /* Pin tooltip (for viewing existing pin comment) */
+  .pin-tooltip {
+    position: absolute;
+    z-index: 20;
+    width: 200px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .pin-tooltip-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .pin-tooltip-name { font-weight: 600; color: var(--text); }
+  .pin-tooltip-close {
+    margin-left: auto;
+    cursor: pointer;
+    color: var(--text2);
+    font-size: 14px;
+    line-height: 1;
+  }
+  .pin-tooltip-close:hover { color: var(--text); }
+
+  /* Pinnable containers: scope cursor in pin mode */
+  body.pin-mode-active .fb-feed,
+  body.pin-mode-active .ig-story,
+  body.pin-mode-active .ig-reel,
+  body.pin-mode-active .adprev-section {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%234f7aff' stroke-width='2' opacity='0.35'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%234f7aff' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='16' y1='4' x2='16' y2='12' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='20' x2='16' y2='28' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='4' y1='16' x2='12' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='16' x2='28' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234f7aff'/%3E%3C/svg%3E") 16 16, crosshair;
+  }
+
+  /* FEEDBACK SECTION — always visible inline below ad content */
+  .feedback-drawer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px auto 40px;
+    max-width: 900px;
+    padding: 0;
+    overflow: visible;
+  }
+  .drawer-collapsed-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .drawer-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .drawer-expand-btn { display: none; }
+  .drawer-body {
+    padding: 20px 24px 24px;
+  }
+
+  /* Feedback form inside drawer */
+  .feedback-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+  .feedback-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 600px) { .feedback-row { grid-template-columns: 1fr; } }
+  .feedback-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text2);
+    margin-bottom: 4px;
+  }
+  .feedback-input, .feedback-select, .feedback-textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .feedback-input:focus, .feedback-select:focus, .feedback-textarea:focus {
+    border-color: var(--accent);
+  }
+  .feedback-select { cursor: pointer; }
+  .feedback-textarea { min-height: 100px; resize: vertical; }
+  .feedback-verdicts {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .verdict-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text2);
+    transition: color 0.15s;
+  }
+  .verdict-option:hover { color: var(--text); }
+  .verdict-option input[type="radio"] {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+  }
+  .feedback-submit {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .feedback-submit:hover { opacity: 0.9; }
+  .feedback-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .feedback-success {
+    display: none;
+  }
+  .feedback-already {
+    display: none;
+    padding: 10px 16px;
+    background: rgba(34,197,94,0.08);
+    border: 1px solid rgba(34,197,94,0.25);
+    border-radius: 8px;
+    color: var(--green);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .feedback-already.visible { display: flex; align-items: center; gap: 12px; }
+  .feedback-already-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .feedback-already-btn:hover { background: rgba(79,122,255,0.1); }
+
+  /* Draft saved indicator */
+  .draft-saved-indicator {
+    font-size: 11px;
+    color: var(--green);
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-left: 8px;
+  }
+  .draft-saved-indicator.visible { opacity: 1; }
+
+  /* Feedback thread */
+  .feedback-thread {
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  .feedback-thread-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text2);
+    margin-bottom: 10px;
+  }
+  .feedback-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    background: var(--surface2);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .feedback-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .feedback-entry-name { font-weight: 600; color: var(--text); }
+  .feedback-entry-role {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-weight: 600;
+  }
+  .verdict-badge {
+    font-size: 10px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .verdict-badge.approve { background: rgba(34,197,94,0.15); color: var(--green); }
+  .verdict-badge.request_changes { background: rgba(245,158,11,0.15); color: var(--orange); }
+  .verdict-badge.comment_only { background: var(--surface); color: var(--text2); }
+  .feedback-entry-time {
+    font-size: 10px;
+    color: var(--text2);
+    margin-left: auto;
+  }
+  .feedback-entry-comment {
+    color: var(--text);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  /* Editable copy fields */
+  .editable-field {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin: -6px -8px;
+    transition: border-color 0.15s, background 0.15s;
+    outline: none;
+    cursor: text;
+  }
+  .editable-field:hover {
+    border-color: var(--border);
+    background: rgba(79,122,255,0.04);
+  }
+  .editable-field:focus {
+    border-color: var(--accent);
+    background: rgba(79,122,255,0.06);
+  }
+  .editable-field.locked {
+    cursor: default;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .editable-field-saved {
+    position: absolute;
+    top: 0; right: 0;
+    font-size: 10px;
+    color: var(--green);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .editable-field-saved.visible { opacity: 1; }
+
+  /* Lock bar for approved ads */
+  .lock-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(34,197,94,0.06);
+    border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: var(--text2);
+  }
+  .lock-bar svg { width: 14px; height: 14px; color: var(--green); flex-shrink: 0; }
+  .lock-bar-text { flex: 1; }
+  .unlock-btn {
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .unlock-btn:hover { border-color: var(--accent); color: var(--text); }
+  .unlock-prompt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .unlock-prompt input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--text);
+    outline: none;
+    width: 120px;
+  }
+  .unlock-prompt input:focus { border-color: var(--accent); }
+  .unlock-prompt input.error { border-color: var(--danger); }
+  .unlock-prompt button {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Simple feedback section */
+  .simple-feedback-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Client mode: hide internal-only elements */
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text2);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) {
+    .header { flex-wrap: wrap; gap: 8px; }
+    .reviewer-toggle-label { display: none; }
+    .drawer-body { padding: 0 16px 16px; }
+    .feedback-drawer { margin: 16px 8px 24px; }
+  }
+
+  /* ── FEATURE 1: Mockup Zoom Overlay ────────────────────────────────── */
+  .mockup-zoom-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 50;
+    display: flex; align-items: flex-start; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+    overflow-y: auto;
+    padding: 40px 20px;
+  }
+  .mockup-zoom-overlay.active {
+    opacity: 1; pointer-events: auto;
+  }
+  .mockup-zoom-content {
+    width: 500px;
+    max-width: 95vw;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .mockup-zoom-content .fb-feed {
+    width: 100% !important;
+  }
+  .mockup-zoom-content .ig-story {
+    width: 320px;
+    margin: 0 auto;
+  }
+  .mockup-zoom-content .ig-reel {
+    width: 320px;
+    height: auto;
+    aspect-ratio: 9/16;
+    margin: 0 auto;
+  }
+  .mockup-zoom-close {
+    position: fixed; top: 20px; right: 20px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: none;
+    color: white; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 51;
+  }
+  .mockup-zoom-close:hover { background: rgba(255,255,255,0.25); }
+  .mockup-zoom-pin-toggle {
+    position: fixed; top: 20px; left: 20px;
+    z-index: 51;
+  }
+  .mockup-zoom-pin-toggle button {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    color: white; font-size: 12px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .mockup-zoom-pin-toggle button:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  .mockup-zoom-pin-toggle button.active {
+    background: rgba(79,122,255,0.3);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .mockup-zoom-pin-toggle button svg { width: 14px; height: 14px; }
+
+  /* Zoom hint on mockup hover (only when NOT in pin mode) */
+  body:not(.pin-mode-active) [data-pin-target^="mockup-"] {
+    cursor: zoom-in;
+  }
+  body:not(.pin-mode-active) [data-pin-target^="mockup-"]:hover::after {
+    content: 'Click to zoom';
+    position: absolute; bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7); color: white;
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 10px; font-weight: 600;
+    pointer-events: none; white-space: nowrap;
+    z-index: 5;
+  }
+  /* Override zoom-in cursor when in pin mode */
+  body.pin-mode-active [data-pin-target^="mockup-"] {
+    cursor: crosshair;
+  }
+
+  /* ── FEATURE 2: Mileage Password Prompt ────────────────────────────── */
+  .mileage-password-prompt {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .mileage-password-prompt input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: var(--text);
+    outline: none;
+    width: 130px;
+  }
+  .mileage-password-prompt input:focus { border-color: var(--accent); }
+  .mileage-password-prompt input.error { border-color: var(--danger); }
+  .mileage-password-prompt button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .mileage-password-prompt button:hover { opacity: 0.9; }
+  .mileage-lock-icon {
+    font-size: 12px;
+    margin-right: 2px;
+  }
+  .mileage-signed-in {
+    font-size: 10px;
+    color: var(--green);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .reviewer-toggle {
+    position: relative;
+  }
+
+  /* ── FEATURE 3: Comment Management (Delete/Edit) ───────────────────── */
+  .feedback-entry-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    padding-top: 4px;
+  }
+  .feedback-action-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 3px 10px;
+    border-radius: 4px;
+    transition: all 0.15s;
+  }
+  .feedback-action-btn:hover {
+    color: var(--text);
+    border-color: var(--text2);
+  }
+  .feedback-action-btn.delete-btn {
+    color: var(--danger);
+    border-color: rgba(239,68,68,0.3);
+    background: rgba(239,68,68,0.08);
+  }
+  .feedback-action-btn.delete-btn:hover {
+    background: rgba(239,68,68,0.15);
+    border-color: var(--danger);
+  }
+  .feedback-delete-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--text2); opacity: 0.4; padding: 2px;
+    margin-left: auto; line-height: 1; transition: all 0.15s;
+  }
+  .feedback-delete-btn:hover { opacity: 1; color: var(--danger); }
+  .feedback-edit-area {
+    margin-top: 6px;
+  }
+  .feedback-edit-area textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+    min-height: 60px;
+    margin-bottom: 6px;
+  }
+  .feedback-edit-area textarea:focus { border-color: var(--accent); }
+  .feedback-edit-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .feedback-edit-save {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .feedback-edit-cancel {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .pin-tooltip-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+    border-top: 1px solid var(--border);
+    padding-top: 6px;
+  }
+
+  /* ── FEATURE 4: Reviewer Identity ──────────────────────────────────── */
+  .reviewer-identity {
+    font-size: 11px; color: var(--text2);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .reviewer-identity strong { color: var(--text); }
+  .reviewer-identity .edit-name-btn {
+    background: none; border: none; color: var(--text2);
+    cursor: pointer; font-size: 12px; padding: 2px;
+  }
+  .reviewer-identity .edit-name-btn:hover { color: var(--text); }
+  .feedback-entry.own-comment {
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+  }
+
+  /* ── IMAGE UPLOAD (Mileage mode only) ──────────────────────────────── */
+  .img-upload-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .img-upload-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .img-upload-btn:hover { transform: scale(1.1); background: #3a65e6; }
+
+  .img-download-btn {
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #1a8a5c;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
+    text-decoration: none;
+  }
+  .img-download-btn:hover { transform: scale(1.1); background: #15704a; }
+
+  .img-revert-pill {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--danger);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s;
+    letter-spacing: 0.3px;
+  }
+  .img-revert-pill:hover { transform: scale(1.05); }
+
+  .upload-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    animation: toastIn 0.2s ease-out;
+  }
+  .upload-toast.success { border-color: var(--green); }
+  .upload-toast.error { border-color: var(--danger); }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Expert Review Board Button ──────────────────────────────────── */
+  .review-board-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--accent2);
+    background: rgba(124,58,237,0.12);
+    color: var(--accent2);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-top: 12px;
+  }
+  .review-board-btn:hover { background: rgba(124,58,237,0.25); border-color: #9b5de5; }
+  .review-board-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .review-board-btn svg { width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">
+      <img src="images/mileage-icon.jpg" alt="Mileage" style="height:28px;width:28px;border-radius:50%;object-fit:cover">
+      <span class="header-badge">Ad Preview</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">&#9790;</button>
+    <div class="reviewer-identity" id="reviewer-identity" style="display:none">
+      Reviewing as: <strong id="reviewer-identity-name"></strong>
+      <button class="edit-name-btn" onclick="showEditNamePrompt()" title="Change name">&#9998;</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- CAMPAIGN BANNER -->
+<div class="campaign-banner" id="campaign-banner"></div>
+
+<!-- PROGRESS BAR -->
+<div class="campaign-progress" id="campaign-progress"></div>
+
+<!-- STRATEGY OVERVIEW -->
+<div class="campaign-strategy" id="campaign-strategy"></div>
+
+<!-- MAIN -->
+<div class="container">
+  <div class="adprev-tabs" id="adprev-tabs"></div>
+  <div id="adprev-container"></div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="site-footer">
+  Confidential &mdash; Powered by Mileage Intelligence &mdash; For internal and client review only.
+</div>
+
+<!-- MOCKUP ZOOM OVERLAY (Feature 1) -->
+<div class="mockup-zoom-overlay" id="mockup-zoom-overlay" onclick="handleZoomOverlayClick(event)">
+  <!-- Pin mode removed -->
+  <button class="mockup-zoom-close" onclick="closeMockupZoom()">&times;</button>
+  <div class="mockup-zoom-content" id="mockup-zoom-content"></div>
+</div>
+
+<!-- Supabase SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// ── Configuration ──────────────────────────────────────────────────────────
+// These are safe to expose — Supabase anon keys only grant RLS-allowed access.
+// Replace these with your actual Supabase project values after setup.
+const SUPABASE_URL = 'https://byuxmsohwsvnqfirgeit.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5dXhtc29od3N2bnFmaXJnZWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0MDE3NzYsImV4cCI6MjA4OTk3Nzc3Nn0.YctPyGRzwgdz9-HaHDnWO0KhrVhElRhYKg7feIWPd1c';
+
+let sb = null;
+try {
+  if (SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+} catch (e) {
+  console.warn('Supabase not configured yet:', e.message);
+}
+
+// ── SVG Icon Library ──────────────────────────────────────────────────────
+const SVG_ICONS = {
+  heart: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  comment: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  share: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
+  bookmark: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
+  threeDots: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>`,
+  music: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  chevronUp: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`,
+  chevronLeft: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>`,
+  chevronRight: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`,
+  pin: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  verified: `<svg width="12" height="12" viewBox="0 0 24 24" fill="#4f7aff"><path d="M12 2L9.19 4.47 5.5 4.04 4.64 7.64 1.64 9.81 3.04 13.31 1.64 16.81 4.64 19 5.5 22.59 9.19 22.16 12 24.63 14.81 22.16 18.5 22.59 19.36 19 22.36 16.81 20.96 13.31 22.36 9.81 19.36 7.64 18.5 4.04 14.81 4.47 12 2z"/><path d="M9.5 12.5l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  // Smaller versions for reels sidebar
+  heartSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  commentSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  shareSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
+  musicSm: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+};
+
+// ── State ──────────────────────────────────────────────────────────────────
+let _data = null;
+let _currentAd = 0;
+let _drawerExpanded = false;
+// Mode system removed — single mode, all features always visible
+let _draftSaveTimer = null;
+let _pinModeActive = false;
+let _activePinPopup = null; // track open popup/tooltip
+let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
+let _imageOverrides = {};   // cache: `${adNum}_${slot}` → public_url
+const CAMPAIGN_ID = '__CAMPAIGN_ID__';
+
+// ── Resolved comment tracking ─────────────────────────────────────────────
+function getResolvedSet() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(`adpreview_resolved_${CAMPAIGN_ID}`)) || []);
+  } catch(e) { return new Set(); }
+}
+function saveResolvedSet(s) {
+  localStorage.setItem(`adpreview_resolved_${CAMPAIGN_ID}`, JSON.stringify([...s]));
+}
+function toggleResolved(itemId) {
+  const s = getResolvedSet();
+  if (s.has(itemId)) s.delete(itemId); else s.add(itemId);
+  saveResolvedSet(s);
+  updateTabBadges();
+}
+function isResolved(itemId) {
+  return getResolvedSet().has(itemId);
+}
+
+function updateTabBadges() {
+  if (!_data || !_data.ads) return;
+
+  for (let i = 0; i < _data.ads.length; i++) {
+    const ad = _data.ads[i];
+    const adNum = ad.num;
+    const tab = document.getElementById(`tab-${i}`);
+    if (!tab) continue;
+
+    const oldBadge = tab.querySelector('.tab-badge');
+    if (oldBadge) oldBadge.remove();
+
+    const badge = document.createElement('span');
+    badge.className = 'tab-badge';
+    const isAdApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) === 'approve';
+
+    if (isAdApproved) {
+      badge.classList.add('all-done');
+      badge.innerHTML = '&#10003;';
+    } else {
+      badge.classList.add('not-started');
+    }
+
+    tab.appendChild(badge);
+  }
+}
+
+const SCOPE_CURSOR = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%234f7aff' stroke-width='2' opacity='0.35'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%234f7aff' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='16' y1='4' x2='16' y2='12' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='20' x2='16' y2='28' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='4' y1='16' x2='12' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='20' y1='16' x2='28' y2='16' stroke='%234f7aff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%234f7aff'/%3E%3C/svg%3E") 16 16, crosshair`;
+
+// ── Image Upload / Override System ─────────────────────────────────────────
+async function loadImageOverrides() {
+  if (!sb) return;
+  try {
+    const { data, error } = await sb.from('ad_images')
+      .select('ad_num, slot, public_url')
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('is_active', true);
+    if (error) throw error;
+    _imageOverrides = {};
+    (data || []).forEach(row => {
+      _imageOverrides[`${row.ad_num}_${row.slot}`] = row.public_url;
+    });
+  } catch (e) {
+    console.warn('Could not load image overrides:', e.message);
+  }
+}
+
+function _detectSlot(filename) {
+  if (!filename) return 'feed';
+  if (filename.includes('story')) return 'story';
+  const cardMatch = filename.match(/card(\d+)/);
+  if (cardMatch) return `card${cardMatch[1]}`;
+  return 'feed';
+}
+
+function showUploadToast(msg, type) {
+  const existing = document.querySelector('.upload-toast');
+  if (existing) existing.remove();
+  const el = document.createElement('div');
+  el.className = `upload-toast ${type || ''}`;
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+
+function _patchImage(adNum, slot, newUrl, hasOverride) {
+  // Find all upload wraps and match by the onclick slot value
+  const wraps = document.querySelectorAll('.img-upload-wrap');
+  for (const wrap of wraps) {
+    const btn = wrap.querySelector('.img-upload-btn');
+    if (!btn) continue;
+    const onclick = btn.getAttribute('onclick') || '';
+    if (!onclick.includes(`(${adNum},'${slot}')`) && !onclick.includes(`(${adNum},"${slot}")`)) continue;
+
+    // Swap image src
+    const img = wrap.querySelector('img');
+    if (img && newUrl) img.src = newUrl;
+
+    // Toggle revert pill
+    let pill = wrap.querySelector('.img-revert-pill');
+    if (hasOverride && !pill) {
+      pill = document.createElement('button');
+      pill.className = 'img-revert-pill';
+      pill.textContent = 'Revert';
+      pill.onclick = (e) => { e.stopPropagation(); revertImage(adNum, slot); };
+      wrap.appendChild(pill);
+    } else if (!hasOverride && pill) {
+      pill.remove();
+    }
+    break;
+  }
+}
+
+function downloadImage(imgUrl, filename) {
+  event.stopPropagation();
+  event.preventDefault();
+  fetch(imgUrl)
+    .then(r => r.blob())
+    .then(blob => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename || imgUrl.split('/').pop();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    });
+}
+
+function triggerUpload(adNum, slot) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png,image/jpeg,image/webp';
+  input.onchange = () => {
+    if (input.files && input.files[0]) handleFileSelected(input.files[0], adNum, slot);
+  };
+  input.click();
+}
+
+async function handleFileSelected(file, adNum, slot) {
+  if (!sb) { showUploadToast('Supabase not configured', 'error'); return; }
+  if (file.size > 5 * 1024 * 1024) { showUploadToast('File too large (max 5MB)', 'error'); return; }
+
+  showUploadToast('Uploading...', '');
+
+  const ext = file.name.split('.').pop() || 'png';
+  const storagePath = `${CAMPAIGN_ID}/ad${adNum}_${slot}_${Date.now()}.${ext}`;
+
+  try {
+    // Upload to Supabase Storage
+    const { error: uploadError } = await sb.storage
+      .from('ad-creatives')
+      .upload(storagePath, file, { upsert: true });
+    if (uploadError) throw uploadError;
+
+    // Get public URL
+    const { data: urlData } = sb.storage.from('ad-creatives').getPublicUrl(storagePath);
+    const publicUrl = urlData.publicUrl;
+
+    // Deactivate any existing override for this slot
+    await sb.from('ad_images')
+      .update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum)
+      .eq('slot', slot)
+      .eq('is_active', true);
+
+    // Find original filename from data.json
+    const ad = _data.ads.find(a => a.num === adNum);
+    let origFilename = '';
+    if (ad && ad.images) {
+      if (slot === 'story' || slot === 'reel') origFilename = ad.images.find(f => f.includes('story')) || ad.images[0] || '';
+      else if (slot.startsWith('card')) origFilename = ad.images.find(f => f.includes(slot)) || '';
+      else origFilename = ad.images.find(f => !f.includes('story') && !f.includes('card')) || ad.images[0] || '';
+    }
+
+    // Insert new record
+    const { error: insertError } = await sb.from('ad_images').insert({
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      slot: slot,
+      filename: origFilename,
+      storage_path: storagePath,
+      public_url: publicUrl,
+      uploaded_by: 'mileage'
+    });
+    if (insertError) throw insertError;
+
+    // Update local cache
+    _imageOverrides[`${adNum}_${slot}`] = publicUrl;
+
+    // In-place update — no full re-render
+    _patchImage(adNum, slot, publicUrl, true);
+
+    showUploadToast('Image uploaded', 'success');
+  } catch (e) {
+    console.error('Upload failed:', e);
+    showUploadToast('Upload failed: ' + e.message, 'error');
+  }
+}
+
+async function revertImage(adNum, slot) {
+  if (!sb) return;
+  try {
+    await sb.from('ad_images')
+      .update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum)
+      .eq('slot', slot)
+      .eq('is_active', true);
+
+    delete _imageOverrides[`${adNum}_${slot}`];
+
+    // Find original local URL
+    const ad = _data.ads.find(a => a.num === adNum);
+    let origUrl = null;
+    if (ad) {
+      if (slot === 'story' || slot === 'reel') origUrl = _findStoryImage(ad);
+      else if (slot.startsWith('card')) origUrl = _findCarouselCardImage(ad, parseInt(slot.replace('card', '')));
+      else origUrl = _findFeedImage(ad);
+    }
+    _patchImage(adNum, slot, origUrl, false);
+    showUploadToast('Reverted to original', 'success');
+  } catch (e) {
+    showUploadToast('Revert failed: ' + e.message, 'error');
+  }
+}
+
+// ── Expert Review Board ────────────────────────────────────────────────────
+async function requestExpertReview() {
+  const btn = document.getElementById('review-board-btn');
+  if (!sb || !_data) { showUploadToast('Not ready — data or Supabase not loaded', 'error'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  try {
+    // Compile full campaign payload
+    const payload = {
+      campaign_id: CAMPAIGN_ID,
+      campaign_name: _data.campaign || CAMPAIGN_ID,
+      client: _data.client || CAMPAIGN_ID,
+      submitted_at: new Date().toISOString(),
+      status: 'pending',
+      ad_count: _data.ads.length,
+      campaign_data: JSON.stringify(_data)
+    };
+
+    const { error } = await sb.from('review_requests').insert(payload);
+    if (error) throw error;
+
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg> Review Requested`;
+    showUploadToast('Expert Review Board request submitted. Run: python3 review-board.py ' + CAMPAIGN_ID, 'success');
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Send to Expert Review Board';
+    showUploadToast('Failed: ' + e.message, 'error');
+  }
+}
+
+// ── Load ad data ───────────────────────────────────────────────────────────
+async function init() {
+  try {
+    const res = await fetch('data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    _data = await res.json();
+    await loadImageOverrides();
+    renderBanner(_data);
+    renderProgressBar();
+    renderStrategy(_data);
+    renderTabs(_data);
+    renderAd(0);
+  } catch (e) {
+    document.getElementById('adprev-container').innerHTML =
+      `<p style="color:var(--danger)">Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.</p>`;
+  }
+}
+
+// ── Campaign banner ────────────────────────────────────────────────────────
+function renderBanner(data) {
+  const el = document.getElementById('campaign-banner');
+  el.innerHTML = `
+    <div class="campaign-title">${esc(data.campaign || CAMPAIGN_ID)}</div>
+    <div class="campaign-meta">
+      ${data.event_date ? `<strong>Date:</strong> ${esc(data.event_date)}<br>` : ''}
+      ${data.venue ? `<strong>Venue:</strong> ${esc(data.venue)}<br>` : ''}
+      ${data.co_presenters ? `<strong>Presenters:</strong> ${esc(data.co_presenters)}` : ''}
+    </div>
+    `;
+}
+
+// ── Progress Bar ───────────────────────────────────────────────────────────
+function renderProgressBar() {
+  if (!_data || !_data.ads) return;
+  const total = _data.ads.length;
+  let approvedCount = 0;
+
+  const statuses = _data.ads.map(ad => {
+    const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`);
+    if (verdict === 'approve') approvedCount++;
+    return verdict;
+  });
+
+  const el = document.getElementById('campaign-progress');
+  const allDone = approvedCount === total;
+  el.innerHTML = `
+    <div class="progress-text"><strong>${approvedCount} of ${total}</strong> ads approved${allDone ? ' — All done!' : ''}</div>
+    <div class="progress-bar">
+      ${statuses.map(s => `<div class="progress-segment ${s === 'approve' ? 'approved' : 'unreviewed'}"></div>`).join('')}
+    </div>`;
+}
+
+// ── Strategy Overview ──────────────────────────────────────────────────────
+function renderStrategy(data) {
+  const el = document.getElementById('campaign-strategy');
+  if (!data.ads || !data.ads.length || !data.ads.some(a => a.arc)) {
+    el.style.display = 'none';
+    return;
+  }
+
+  const weekThemes = {1:'Trust-building', 2:'Emotional engagement', 3:'Expert authority', 4:'Urgency and final push'};
+  const weeks = {};
+  data.ads.forEach(ad => {
+    const w = ad.week || 0;
+    if (!weeks[w]) weeks[w] = [];
+    weeks[w].push(ad);
+  });
+
+  let body = '';
+  Object.keys(weeks).sort((a,b) => a - b).forEach(w => {
+    const theme = weekThemes[w] || 'Week ' + w;
+    body += `<div class="strategy-week">
+      <div class="strategy-week-header">Week ${w}: ${esc(theme)}<span class="week-line"></span></div>`;
+    weeks[w].forEach(ad => {
+      body += `<div class="strategy-ad">
+        <span class="strategy-ad-num">Ad ${ad.num}</span>
+        <span class="strategy-ad-arc">${esc(ad.arc || ad.title)}</span>
+      </div>`;
+    });
+    body += `</div>`;
+  });
+
+  el.innerHTML = `
+    <div class="strategy-toggle" onclick="this.parentElement.classList.toggle('open')">
+      <h3>Campaign Strategy: Emotional Arc</h3>
+      <span class="arrow">&#9660;</span>
+    </div>
+    <div class="strategy-body">${body}</div>`;
+}
+
+// ── Tabs ───────────────────────────────────────────────────────────────────
+function renderTabs(data) {
+  const tabsEl = document.getElementById('adprev-tabs');
+  if (!data.ads || !data.ads.length) return;
+  const weekNames = {1:'Trust', 2:'Emotion', 3:'Authority', 4:'Urgency'};
+  const weekDates = {1:'Apr 7–13', 2:'Apr 14–20', 3:'Apr 21–27', 4:'Apr 28–May 4'};
+  const creativeDue = {1:'Creative due: Apr 6', 2:'Creative due: Apr 13', 3:'Creative due: Apr 13', 4:'Creative due: Apr 13'};
+  tabsEl.innerHTML = data.ads.map((ad, i) => {
+    const wk = weekNames[ad.week] || 'Wk' + ad.week;
+    const dates = weekDates[ad.week] || '';
+    const due = creativeDue[ad.week] || '';
+    return `<div class="adprev-tab${i===0?' active':''}" onclick="selectTab(${i})" id="tab-${i}">
+      Ad ${ad.num}
+      <span class="tab-week">${dates}</span>
+      <span class="tab-due">${due}</span>
+    </div>`;
+  }).join('');
+  // Load badge counts async
+  updateTabBadges();
+}
+
+function updateTabDot(adNum, verdict) {
+  // Badge system now handles tab indicators
+  updateTabBadges();
+}
+
+function selectTab(idx) {
+  _currentAd = idx;
+  document.querySelectorAll('.adprev-tab').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+  });
+  closeActivePinPopup();
+  renderAd(idx);
+}
+
+// ── Render ad detail ───────────────────────────────────────────────────────
+function renderAd(idx) {
+  const container = document.getElementById('adprev-container');
+  const ad = _data.ads[idx];
+  if (!ad) { container.innerHTML = ''; return; }
+
+  const pageName = _pageName(_data);
+  let html = '';
+
+  // Title bar
+  html += `<div style="margin-bottom:16px">
+    <div style="font-size:18px;font-weight:700;margin-bottom:4px">${esc(ad.title)}</div>
+    <div class="adprev-meta-bar">
+      <span class="adprev-chip">${esc(ad.type.charAt(0).toUpperCase() + ad.type.slice(1))}</span>
+      ${(ad.placements || []).map(p => `<span class="adprev-chip adprev-chip-accent">${esc(p)}</span>`).join('')}
+      <span class="adprev-chip">Week ${ad.week}</span>
+      ${ad.format ? `<span class="adprev-chip">${esc(ad.format)}</span>` : ''}
+    </div>
+    ${ad.arc ? `<div style="font-size:13px;color:var(--muted);margin-top:6px;font-style:italic">${esc(ad.arc)}</div>` : ''}
+  </div>`;
+
+  // Approve button
+  const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
+  html += `<div class="approve-bar">
+    <button class="approve-btn${isApproved ? ' approved' : ''}" id="approve-btn" onclick="approveAd(${ad.num}, this)" ${isApproved ? 'disabled' : ''}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      ${isApproved ? 'Approved' : 'Approve'}
+    </button>
+    <div class="approve-status-msg" id="approve-status-msg">${getApprovalSummary()}</div>
+  </div>`;
+
+  // Placement detection
+  const _pl = (ad.placements || []).map(p => p.toLowerCase());
+  const _hasFeed = _pl.some(p => p.includes('feed'));
+  const _hasStories = _pl.some(p => p.includes('stories') || p.includes('story'));
+  const _hasReels = _pl.some(p => p.includes('reels') || p.includes('reel'));
+  const _vars = ad.variations && ad.variations.length > 1 ? ad.variations : null;
+
+  const _canEdit = !isApproved || _adUnlocked;
+  const _ce = _canEdit ? 'true' : 'false';
+  const _lockCls = _canEdit ? '' : ' locked';
+
+  // ── Placement accordions ─────────────────────────────────────────────
+  // Each placement gets its own accordion; all variations shown side by side inside
+
+  function _renderPlacementAccordion(label, placementKey, renderFn, isFirst) {
+    const varCount = _vars ? _vars.length : 1;
+    const badge = _vars ? `${varCount} variation${varCount > 1 ? 's' : ''}` : '';
+    let inner = '<div class="variation-mockups">';
+    if (_vars) {
+      _vars.forEach(v => { inner += renderFn(v.num); });
+    } else {
+      inner += renderFn(null);
+    }
+    inner += '</div>';
+    return `<details class="variation-accordion">
+      <summary>${esc(label)}${badge ? `<span class="variation-badge">${badge}</span>` : ''}</summary>
+      ${inner}
+    </details>`;
+  }
+
+  if (_hasFeed) {
+    html += _renderPlacementAccordion('Feed', 'feed', (vn) => {
+      return ad.type === 'carousel' ? renderCarouselMockup(ad, vn) : renderFeedMockup(ad, vn);
+    }, true);
+  }
+  if (_hasStories) {
+    html += _renderPlacementAccordion('Stories', 'story', (vn) => {
+      return renderStoryMockup(ad, vn);
+    }, !_hasFeed);
+  }
+  if (_hasReels) {
+    html += _renderPlacementAccordion('Reels', 'reel', (vn) => {
+      return renderReelMockup(ad, vn);
+    }, !_hasFeed && !_hasStories);
+  }
+
+  // ── Copy accordion ───────────────────────────────────────────────────
+  html += `<details class="variation-accordion">
+    <summary>Copy</summary>
+    <div class="adprev-copy-panel" style="padding:16px">`;
+
+  if (_hasFeed && ad.primary_text) {
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">Primary Text</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="primary_text">${esc(ad.primary_text)}</div>
+    </div>`;
+  }
+  if (_hasFeed && ad.hook) {
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">Hook Line</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="hook" style="font-style:italic">${esc(ad.hook)}</div>
+    </div>`;
+  }
+  if (_hasFeed) {
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">Headline</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
+    </div>`;
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">Description</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="description">${esc(ad.description)}</div>
+    </div>`;
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">CTA</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+    </div>`;
+  } else if (_hasStories) {
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">Headline</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="headline"><strong>${esc(ad.headline)}</strong></div>
+    </div>`;
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">CTA</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+    </div>`;
+  } else if (_hasReels) {
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">CTA</div>
+      <div class="adprev-section-body editable-field${_lockCls}" contenteditable="${_ce}" data-field="cta"><strong>${esc(ad.cta)}</strong></div>
+    </div>`;
+  }
+
+  if (_hasFeed && ad.alt_headlines && ad.alt_headlines.length) {
+    html += `<div class="adprev-section">
+      <div class="adprev-section-label">Alt Headlines</div>
+      <ul class="adprev-alt-list">
+        ${ad.alt_headlines.map(h => `<li>${esc(h)}</li>`).join('')}
+      </ul>
+    </div>`;
+  }
+  if (ad.cards && ad.cards.length) {
+    html += `<div class="adprev-section"><div class="adprev-section-label">Card Captions</div>`;
+    ad.cards.forEach(card => {
+      html += `<div style="margin-bottom:8px">
+        <div style="font-size:11px;font-weight:600;color:var(--text2)">Card ${card.num}: ${esc(card.label)}</div>
+        <div class="adprev-section-body" style="font-size:12px">${esc(card.caption)}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+  if (_hasStories && ad.stories) {
+    html += `<div class="adprev-section"><div class="adprev-section-label">Stories Copy</div>
+      <div class="adprev-section-body" style="font-size:12px">`;
+    for (const [k, v] of Object.entries(ad.stories)) {
+      html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
+    }
+    html += `</div></div>`;
+  }
+  if (_hasReels && ad.reels) {
+    html += `<div class="adprev-section"><div class="adprev-section-label">Reels Copy</div>
+      <div class="adprev-section-body" style="font-size:12px">`;
+    for (const [k, v] of Object.entries(ad.reels)) {
+      html += `<strong>${k.replace(/_/g, ' ')}:</strong> ${esc(v)}<br>`;
+    }
+    html += `</div></div>`;
+  }
+
+  if (ad.image_direction) {
+    html += `<details class="inline-creative-direction" data-internal-only>
+      <summary>Image Creative Direction</summary>
+      <div class="direction-body">${esc(ad.image_direction)}</div>
+    </details>`;
+  }
+
+  html += `</div></details>`; // close copy-panel + copy accordion
+
+  // ── Feedback accordion ──────────────────────────────────────────────
+  html += `<details class="variation-accordion">
+    <summary>Feedback</summary>
+    <div style="padding:16px">
+      <div id="inline-feedback-thread"></div>
+      <div id="inline-feedback-form-wrap"></div>
+    </div>
+  </details>`;
+
+  container.innerHTML = html;
+
+  // Click-to-zoom on mockups
+  container.querySelectorAll('[data-pin-target^="mockup-"]').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', function(e) {
+      if (e.target.closest('.carousel-nav-arrow') || e.target.closest('.img-upload-btn') ||
+          e.target.closest('.img-download-btn') || e.target.closest('.img-revert-pill') || e.target.closest('.fb-engage-icon') ||
+          e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn')) return;
+      e.preventDefault();
+      openMockupZoom(el);
+    });
+  });
+
+  // Make copy sections editable
+  attachEditableHandlers(idx);
+
+  // Initialize carousel navigation if present
+  initCarouselNav();
+
+  // ── Story/Reel looping animation ──────────────────────────────────────
+  // Mimics real IG: image first → text fades in → chevron rises → CTA rises → pause → reset → loop
+  // Triggered by accordion open. Loops continuously.
+
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta, .ig-reel-sidebar, .ig-reel-handle, .ig-reel-caption, .ig-reel-music-bar, .ig-reel-cta';
+  const LOOP_HOLD = 3000;   // ms to hold the fully-revealed state before resetting
+  const LOOP_RESET = 600;   // ms blank pause before next loop cycle
+  const LOOP_CYCLE = 5400;  // ms for all animations to finish (longest: CTA at 4.8s + 0.4s duration)
+
+  function _startStoryLoop(accordionEl) {
+    // Clear any existing loop on this accordion
+    if (accordionEl._storyLoopId) clearTimeout(accordionEl._storyLoopId);
+
+    function runCycle() {
+      if (!accordionEl.open) return; // stop if accordion closed
+      const els = accordionEl.querySelectorAll(ANIM_ELEMENTS);
+      // Reset: remove classes, clone to restart CSS
+      els.forEach(el => {
+        el.classList.remove('cta-animate', 'anim-bounce');
+        const clone = el.cloneNode(true);
+        el.replaceWith(clone);
+      });
+      // Brief blank pause, then trigger animations
+      accordionEl._storyLoopId = setTimeout(() => {
+        if (!accordionEl.open) return;
+        accordionEl.querySelectorAll(ANIM_ELEMENTS).forEach(el => {
+          el.classList.add('cta-animate');
+        });
+        // After animations complete, add bounce to chevron
+        accordionEl._storyLoopId = setTimeout(() => {
+          if (!accordionEl.open) return;
+          accordionEl.querySelectorAll('.ig-story-swipe-up').forEach(el => {
+            el.classList.add('anim-bounce');
+          });
+          // Hold the revealed state, then loop
+          accordionEl._storyLoopId = setTimeout(() => {
+            runCycle();
+          }, LOOP_HOLD);
+        }, LOOP_CYCLE);
+      }, LOOP_RESET);
+    }
+
+    runCycle();
+  }
+
+  // Attach to all accordions containing stories/reels
+  container.querySelectorAll('.variation-accordion').forEach(details => {
+    // Start loop immediately if accordion is open and has story/reel mockups
+    if (details.open && details.querySelectorAll('.ig-story, .ig-reel').length) {
+      _startStoryLoop(details);
+    }
+    details.addEventListener('toggle', function() {
+      if (this.open && this.querySelectorAll('.ig-story, .ig-reel').length) {
+        _startStoryLoop(this);
+      } else if (this._storyLoopId) {
+        clearTimeout(this._storyLoopId);
+      }
+    });
+  });
+
+  // Render inline feedback content
+  renderInlineFeedback(ad.num);
+}
+
+// ── Unlock approved ads for editing ───────────────────────────────────────
+
+// ── Editable copy fields ──────────────────────────────────────────────────
+function attachEditableHandlers(adIdx) {
+  const ad = _data.ads[adIdx];
+  if (!ad) return;
+
+  document.querySelectorAll('.editable-field[data-field]').forEach(el => {
+    const field = el.getAttribute('data-field');
+
+    el.addEventListener('input', function() {
+      // Get plain text from the contenteditable
+      const newVal = el.innerText.trim();
+      // Update in-memory data
+      ad[field] = newVal;
+      // Live-update the mockup
+      refreshMockupField(ad, field, newVal);
+    });
+
+    el.addEventListener('blur', function() {
+      // Flash "saved" indicator on the section
+      const section = el.closest('.adprev-section');
+      if (section) {
+        let indicator = section.querySelector('.editable-field-saved');
+        if (!indicator) {
+          indicator = document.createElement('span');
+          indicator.className = 'editable-field-saved';
+          indicator.textContent = 'Updated';
+          section.appendChild(indicator);
+        }
+        indicator.classList.add('visible');
+        setTimeout(() => indicator.classList.remove('visible'), 1500);
+      }
+    });
+
+    // Prevent Enter from creating divs — insert newline for primary_text, prevent for single-line fields
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && field !== 'primary_text') {
+        e.preventDefault();
+        el.blur();
+      }
+    });
+  });
+}
+
+function refreshMockupField(ad, field, value) {
+  // Update the relevant parts of ALL mockups (including variations) in real time
+  const container = document.getElementById('adprev-container');
+  if (!container) return;
+
+  if (field === 'primary_text') {
+    container.querySelectorAll('.fb-feed-text').forEach(el => el.textContent = value);
+  }
+  if (field === 'headline') {
+    container.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = value);
+    container.querySelectorAll('.ig-story-text').forEach(el => el.textContent = value);
+  }
+  if (field === 'description') {
+    container.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = value);
+  }
+  if (field === 'cta') {
+    container.querySelectorAll('.fb-cta-btn').forEach(el => el.textContent = value);
+    container.querySelectorAll('.ig-story-cta').forEach(el => el.textContent = value);
+    container.querySelectorAll('.ig-reel-cta').forEach(el => el.textContent = value);
+  }
+}
+
+// ── Inline Feedback (replaces bottom drawer) ──────────────────────────────
+async function renderInlineFeedback(adNum) {
+  const threadEl = document.getElementById('inline-feedback-thread');
+  const formWrap = document.getElementById('inline-feedback-form-wrap');
+  if (!threadEl || !formWrap) return;
+
+  // Load and render feedback thread
+  {
+    let entries = [];
+    if (sb) {
+      try {
+        const { data, error } = await sb.from('feedback').select('*')
+          .eq('campaign_id', CAMPAIGN_ID)
+          .eq('ad_num', adNum)
+          .order('created_at');
+        if (!error && data) entries = data;
+      } catch(e) { console.warn('Supabase query error:', e); }
+    }
+
+    if (entries.length > 0) {
+        const myName = localStorage.getItem('adpreview_name') || '';
+          let html = '';
+          entries.forEach(f => {
+            const verdictLabel = f.verdict === 'approve' ? 'Approved' :
+                                 f.verdict === 'request_changes' ? 'Changes Requested' : 'Comment';
+            const ts = f.created_at ? new Date(f.created_at).toLocaleString() : '';
+            const isOwn = f.reviewer_name === myName && myName !== '';
+            const ownClass = isOwn ? ' own-comment' : '';
+
+            let actionsHtml = `<button class="feedback-delete-btn" data-ifb-delete="${f.id}" title="Delete"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>`;
+
+            html += `<div class="feedback-entry${ownClass}" data-feedback-id="${f.id}">
+              <div class="feedback-entry-header">
+                <span class="feedback-entry-name">${esc(f.reviewer_name)}</span>
+                <span class="feedback-entry-role">${esc(f.reviewer_role)}</span>
+                <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
+                <span class="feedback-entry-time">${esc(ts)}</span>
+                ${actionsHtml}
+              </div>
+              ${f.comment ? `<div class="feedback-entry-comment" data-comment-id="${f.id}">${esc(f.comment)}</div>` : ''}
+            </div>`;
+          });
+          threadEl.innerHTML = html;
+
+          // Attach delete handlers
+          threadEl.querySelectorAll('[data-ifb-delete]').forEach(btn => {
+            btn.addEventListener('click', async function() {
+              const fid = this.getAttribute('data-ifb-delete');
+              if (!confirm('Delete this feedback?')) return;
+              try {
+                await sb.from('feedback').delete().eq('id', fid);
+                renderInlineFeedback(adNum);
+                updateTabBadges();
+              } catch(err) { console.warn('Delete failed:', err); }
+            });
+          });
+
+          // Attach edit handlers
+          threadEl.querySelectorAll('[data-ifb-edit]').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const fid = this.getAttribute('data-ifb-edit');
+              const entry = threadEl.querySelector(`[data-feedback-id="${fid}"]`);
+              const commentDiv = entry ? entry.querySelector(`[data-comment-id="${fid}"]`) : null;
+              const actionsDiv = entry ? entry.querySelector('.feedback-entry-actions') : null;
+              if (!commentDiv) return;
+
+              const oldText = commentDiv.textContent;
+              commentDiv.innerHTML = `<div class="feedback-edit-area">
+                <textarea>${esc(oldText)}</textarea>
+                <div style="display:flex;gap:6px;margin-top:6px">
+                  <button class="feedback-edit-cancel">Cancel</button>
+                  <button class="feedback-edit-save">Save</button>
+                </div>
+              </div>`;
+              if (actionsDiv) actionsDiv.style.display = 'none';
+
+              commentDiv.querySelector('.feedback-edit-cancel').addEventListener('click', () => {
+                renderInlineFeedback(adNum);
+              });
+              commentDiv.querySelector('.feedback-edit-save').addEventListener('click', async () => {
+                const newText = commentDiv.querySelector('textarea').value.trim();
+                if (!newText) return;
+                try {
+                  await sb.from('feedback').update({ comment: newText }).eq('id', fid);
+                  renderInlineFeedback(adNum);
+                } catch(err) { console.warn('Edit failed:', err); }
+              });
+            });
+          });
+
+          // Attach mark-complete handlers
+          threadEl.querySelectorAll('[data-ifb-resolve]').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const itemId = this.getAttribute('data-ifb-resolve');
+              toggleResolved(itemId);
+              renderInlineFeedback(adNum);
+            });
+          });
+    } else {
+      threadEl.innerHTML = '<div class="inline-feedback-empty">No feedback yet for this ad.</div>';
+    }
+  }
+
+  // Render inline feedback form
+  const savedRole = localStorage.getItem('adpreview_role') || 'Client';
+  const roleOverride = savedRole;
+
+  formWrap.innerHTML = `<div class="inline-fb-form">
+    <textarea id="inline-fb-comment" placeholder="Share your thoughts on this ad..." style="min-height:80px"></textarea>
+    <div class="inline-fb-form-actions">
+      <button class="inline-fb-submit" id="inline-fb-submit" onclick="submitInlineFeedback(${adNum})">Submit Feedback</button>
+      <span id="inline-fb-error" style="color:var(--danger);font-size:12px;display:none"></span>
+    </div>
+    <input type="hidden" id="inline-fb-role" value="${roleOverride}">
+  </div>`;
+}
+
+async function submitInlineFeedback(adNum) {
+  let name = localStorage.getItem('adpreview_name') || '';
+  if (!name) {
+    const entered = prompt('Please enter your name to submit feedback:');
+    if (!entered || !entered.trim()) return;
+    name = entered.trim();
+    localStorage.setItem('adpreview_name', name);
+  }
+  const roleEl = document.getElementById('inline-fb-role');
+  const role = roleEl.value;
+  const comment = document.getElementById('inline-fb-comment').value.trim();
+  const errorEl = document.getElementById('inline-fb-error');
+  const submitBtn = document.getElementById('inline-fb-submit');
+  const verdict = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`) || 'comment_only';
+
+  if (!comment) {
+    errorEl.textContent = 'Enter feedback.';
+    errorEl.style.display = 'inline';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  try {
+    if (!sb) throw new Error('Not connected');
+    const { error } = await sb.from('feedback').insert({
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      reviewer_name: name,
+      reviewer_role: role,
+      verdict: verdict,
+      comment: comment,
+    });
+    if (error) throw error;
+
+    // Mark submitted
+    const submitted = JSON.parse(localStorage.getItem('adpreview_submitted') || '{}');
+    submitted[`${CAMPAIGN_ID}-${adNum}`] = true;
+    localStorage.setItem('adpreview_submitted', JSON.stringify(submitted));
+    localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, verdict);
+
+    updateTabDot(adNum, verdict);
+    renderProgressBar();
+    localStorage.removeItem(`adpreview_draft_${CAMPAIGN_ID}_${adNum}`);
+
+    // Re-render to show the new comment
+    await renderInlineFeedback(adNum);
+    updateTabBadges();
+
+    // Update identity display
+    const identityName = document.getElementById('reviewer-identity-name');
+    if (identityName) identityName.textContent = name;
+
+  } catch(e) {
+    errorEl.textContent = `Error: ${e.message}`;
+    errorEl.style.display = 'inline';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+  }
+}
+
+// ── Mockup renderers ───────────────────────────────────────────────────────
+function _clientInitials() {
+  const name = _data.client || '';
+  return name.split('-').map(w => (w[0] || '')).join('').toUpperCase().slice(0, 2);
+}
+function _pageName(d) {
+  return 'Confluence Financial Partners';
+}
+function _imgUrl(filename) {
+  return `images/${filename}`;
+}
+function _findFeedImage(ad, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_feed` : `${ad.num}_feed`;
+  const override = _imageOverrides[slotKey];
+  if (override) return override;
+  // If variation specified, use variation's images array
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const img = images.find(f => f.includes('feed') || (!f.includes('story') && !f.includes('card')));
+  return img ? _imgUrl(img) : null;
+}
+function _findStoryImage(ad, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_story` : `${ad.num}_story`;
+  const override = _imageOverrides[slotKey];
+  if (override) return override;
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const storyImg = images.find(f => f.includes('story'));
+  return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad, varNum);
+}
+function _findCarouselCardImage(ad, cardNum, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_card${cardNum}` : `${ad.num}_card${cardNum}`;
+  const override = _imageOverrides[slotKey];
+  if (override) return override;
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const img = images.find(f => f.includes(`card${cardNum}`));
+  return img ? _imgUrl(img) : null;
+}
+
+function renderFeedMockup(ad, varNum) {
+  const initials = _clientInitials();
+  const pageName = _pageName(_data);
+  const imgUrl = _findFeedImage(ad, varNum);
+  const isVideo = ad.type === 'video';
+  const playOverlay = isVideo ? '<div class="fb-play-btn"></div>' : '';
+
+  const slotKey = varNum != null ? `v${varNum}_feed` : 'feed';
+  const hasFeedOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
+  const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const downloadBtn = imgUrl ? `<button class="img-download-btn" onclick="downloadImage('${imgUrl}','ad${ad.num}-feed.png')" title="Download image">&#8681;</button>` : '';
+  const revertPill = hasFeedOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
+
+  const pinTarget = varNum != null ? `mockup-feed-v${varNum}` : 'mockup-feed';
+
+  let mediaHtml;
+  if (imgUrl) {
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${playOverlay}${uploadBtn}${downloadBtn}${revertPill}</div></div>`;
+  } else if (isVideo) {
+    mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">VIDEO &middot; ${esc(ad.format || '1080x1080')}${playOverlay}${uploadBtn}</div></div>`;
+  } else {
+    mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
+  }
+
+  return `<div class="fb-feed" data-pin-target="${pinTarget}">
+    <div class="fb-feed-header">
+      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
+      <div style="line-height:1.3">
+        <div class="fb-page-name">${esc(pageName)}</div>
+        <div class="fb-sponsored">Sponsored &middot; 2h</div>
+      </div>
+      <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
+    </div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(ad.primary_text)}</div>
+    ${mediaHtml}
+    <div class="fb-engagement-icons">
+      <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.comment}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.share}</span>
+      <span class="fb-engage-icon fb-engage-bookmark">${SVG_ICONS.bookmark}</span>
+    </div>
+    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
+    <div class="fb-feed-cta">
+      <div class="fb-feed-cta-text">
+        <div class="fb-feed-cta-headline">${esc(ad.headline)}</div>
+        <div class="fb-feed-cta-desc">${esc(ad.description)}</div>
+      </div>
+      ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+    </div>
+  </div>`;
+}
+
+function renderCarouselMockup(ad, varNum) {
+  const initials = _clientInitials();
+  const pageName = _pageName(_data);
+  const cardCount = (ad.cards && ad.cards.length) || 0;
+  let cardsHtml = '';
+  if (ad.cards && ad.cards.length) {
+    ad.cards.forEach(card => {
+      const cardSlotBase = `card${card.num}`;
+      const cardSlot = varNum != null ? `v${varNum}_${cardSlotBase}` : cardSlotBase;
+      const cardImgUrl = _findCarouselCardImage(ad, card.num, varNum);
+      const hasCardOverride = !!_imageOverrides[`${ad.num}_${cardSlot}`];
+      const cardUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${cardSlot}')" title="Upload image">&#8679;</button>`;
+      const cardDownloadBtn = cardImgUrl ? `<button class="img-download-btn" onclick="downloadImage('${cardImgUrl}','ad${ad.num}-card${card.num}.png')" title="Download image">&#8681;</button>` : '';
+      const cardRevertPill = hasCardOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${cardSlot}')">Revert</button>` : '';
+      const cardImgHtml = cardImgUrl
+        ? `<div class="img-upload-wrap"><img class="fb-carousel-card-img" src="${cardImgUrl}" alt="Card ${card.num}" loading="lazy">${cardUploadBtn}${cardDownloadBtn}${cardRevertPill}</div>`
+        : `<div class="img-upload-wrap"><div class="fb-carousel-card-placeholder">Card ${card.num}: ${esc(card.label)}</div>${cardUploadBtn}</div>`;
+      cardsHtml += `<div class="fb-carousel-card">${cardImgHtml}
+        <div class="fb-carousel-card-caption">${esc(card.caption)}</div></div>`;
+    });
+  }
+
+  // Carousel dots
+  let dotsHtml = '';
+  if (cardCount > 1) {
+    dotsHtml = `<div class="carousel-dots" data-carousel-dots>`;
+    for (let i = 0; i < cardCount; i++) {
+      dotsHtml += `<div class="carousel-dot${i === 0 ? ' active' : ''}"></div>`;
+    }
+    dotsHtml += `</div>`;
+  }
+
+  const pinTarget = varNum != null ? `mockup-carousel-v${varNum}` : 'mockup-carousel';
+
+  return `<div class="fb-feed" data-pin-target="${pinTarget}">
+    <div class="fb-feed-header">
+      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
+      <div style="line-height:1.3">
+        <div class="fb-page-name">${esc(pageName)}</div>
+        <div class="fb-sponsored">Sponsored &middot; 2h</div>
+      </div>
+      <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
+    </div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(ad.primary_text)}</div>
+    <div class="fb-carousel-wrap">
+      ${cardCount > 1 ? `<button class="carousel-nav-arrow left" onclick="scrollCarousel(this, -1)" aria-label="Previous card">${SVG_ICONS.chevronLeft}</button>` : ''}
+      <div class="fb-carousel-track" data-carousel-track>${cardsHtml}</div>
+      ${cardCount > 1 ? `<button class="carousel-nav-arrow right" onclick="scrollCarousel(this, 1)" aria-label="Next card">${SVG_ICONS.chevronRight}</button>` : ''}
+    </div>
+    ${dotsHtml}
+    <div class="fb-engagement-icons">
+      <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.comment}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.share}</span>
+      <span class="fb-engage-icon fb-engage-bookmark">${SVG_ICONS.bookmark}</span>
+    </div>
+    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
+    <div class="fb-feed-cta">
+      <div class="fb-feed-cta-text">
+        <div class="fb-feed-cta-headline">${esc(ad.headline)}</div>
+        <div class="fb-feed-cta-desc">${esc(ad.description)}</div>
+      </div>
+      ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+    </div>
+  </div>`;
+}
+
+function renderStoryMockup(ad, varNum) {
+  const s = ad.stories || {};
+  const overlay = s.text_overlay || ad.hook || '';
+  const secondary = s.secondary_text || '';
+  const cta = s.cta_sticker || ad.cta || 'Learn More';
+  const bgImg = _findStoryImage(ad, varNum);
+  const hasImg = !!bgImg;
+  const initials = _clientInitials();
+  const handle = _data.client || '';
+
+  const slotKey = varNum != null ? `v${varNum}_story` : 'story';
+  const hasStoryOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
+  const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const storyDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="downloadImage('${bgImg}','ad${ad.num}-story.png')" title="Download image">&#8681;</button>` : '';
+  const storyRevertPill = hasStoryOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
+
+  const pinTarget = varNum != null ? `mockup-story-v${varNum}` : 'mockup-story';
+
+  return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-pin-target="${pinTarget}">
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
+    <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
+    <div class="ig-story-account">
+      <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
+      <div class="ig-story-handle">confluencefp</div>
+    </div>
+    <div class="ig-story-text">${esc(overlay)}</div>
+    ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
+    <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
+    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
+    <div class="ig-story-message-bar">
+      <div class="ig-story-message-input">Send message</div>
+      <div class="ig-story-message-send">${SVG_ICONS.share}</div>
+    </div>
+  </div>`;
+}
+
+function renderReelMockup(ad, varNum) {
+  const r = ad.reels || {};
+  const caption = r.caption || ad.primary_text || '';
+  const cta = ad.cta || 'Learn More';
+  const handle = _data.client || '';
+  const maxLen = 100;
+  const truncCaption = caption.length > maxLen ? caption.slice(0, maxLen) : caption;
+  const showMore = caption.length > maxLen;
+
+  // Reels use the same image as Stories (9:16 vertical) — check for reel override first, then fall back to story image
+  const slotKey = varNum != null ? `v${varNum}_reel` : 'reel';
+  const reelOverride = _imageOverrides[`${ad.num}_${slotKey}`];
+  const bgImg = reelOverride || _findStoryImage(ad, varNum);
+  const hasImg = !!bgImg;
+
+  const hasReelOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
+  const reelUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const reelDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="downloadImage('${bgImg}','ad${ad.num}-reel.png')" title="Download image">&#8681;</button>` : '';
+  const reelRevertPill = hasReelOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
+
+  const pinTarget = varNum != null ? `mockup-reel-v${varNum}` : 'mockup-reel';
+
+  return `<div class="ig-reel" data-pin-target="${pinTarget}">
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0"><img style="width:100%;height:100%;object-fit:cover" src="${bgImg}" alt="" loading="lazy">${reelUploadBtn}${reelDownloadBtn}${reelRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0;z-index:0">${reelUploadBtn}</div>`}
+    <div class="ig-reel-sidebar">
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.heartSm}<span class="ig-reel-sidebar-count">1.2K</span></div>
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.commentSm}<span class="ig-reel-sidebar-count">48</span></div>
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.shareSm}<span class="ig-reel-sidebar-count">Share</span></div>
+      <div class="ig-reel-sidebar-icon">${SVG_ICONS.musicSm}</div>
+    </div>
+    <div class="ig-reel-handle">confluencefp ${SVG_ICONS.verified}</div>
+    <div class="ig-reel-caption">${esc(truncCaption)}${showMore ? ` <span class="ig-reel-more">... more</span>` : ''}</div>
+    <div class="ig-reel-music-bar">
+      ${SVG_ICONS.music}
+      <span class="ig-reel-music-text">&#9835; Original audio - confluencefp</span>
+      <div class="ig-reel-music-disc"></div>
+    </div>
+    ${_data.cta_url ? `<a class="ig-reel-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-reel-cta">${esc(cta)}</div>`}
+  </div>`;
+}
+
+// ── Carousel Navigation ────────────────────────────────────────────────────
+function scrollCarousel(btn, direction) {
+  // Prevent pin drop when clicking carousel arrows
+  event.stopPropagation();
+  const wrap = btn.closest('.fb-carousel-wrap');
+  const track = wrap.querySelector('[data-carousel-track]');
+  if (!track) return;
+  const cardWidth = 260;
+  track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+}
+
+function initCarouselNav() {
+  const tracks = document.querySelectorAll('[data-carousel-track]');
+  tracks.forEach(track => {
+    track.addEventListener('scroll', () => {
+      const dotsContainer = track.closest('.fb-feed').querySelector('[data-carousel-dots]');
+      if (!dotsContainer) return;
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      const cardWidth = 260;
+      const activeIdx = Math.round(track.scrollLeft / cardWidth);
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
+    });
+  });
+}
+
+// ── MOCKUP ZOOM (Feature 1) ───────────────────────────────────────────────
+let _zoomOriginalElement = null;
+let _zoomActive = false;
+
+function openMockupZoom(element) {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  const content = document.getElementById('mockup-zoom-content');
+  if (!overlay || !content) return;
+
+  const clone = element.cloneNode(true);
+  content.innerHTML = '';
+  content.appendChild(clone);
+
+  _zoomOriginalElement = element;
+  _zoomActive = true;
+
+  // Sync pin mode button state in zoom overlay
+  updateZoomPinButton();
+
+  // Load existing pins onto the zoomed clone
+  if (_data && _data.ads[_currentAd]) {
+    const adNum = _data.ads[_currentAd].num;
+    const pins = _pinsCache[adNum] || [];
+    const targetSelector = clone.getAttribute('data-pin-target');
+    pins.forEach(p => {
+      if (p.target_selector === targetSelector) {
+        const m = document.createElement('div');
+        m.className = 'pin-marker existing';
+        m.style.left = p.pin_x + '%';
+        m.style.top = p.pin_y + '%';
+        m.textContent = p.pin_number || '';
+        m.addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          showPinTooltip(clone, m, p, _data.ads[_currentAd].num);
+        });
+        clone.appendChild(m);
+      }
+    });
+  }
+
+  // Pin click handler on the zoomed clone
+  clone.addEventListener('click', function(e) {
+    if (!_pinModeActive) return;
+    if (e.target.closest('.pin-marker') || e.target.closest('.pin-popup') ||
+        e.target.closest('.pin-tooltip') || e.target.closest('.carousel-nav-arrow') ||
+        e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu')) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    closeActivePinPopup();
+
+    const adNum = _data.ads[_currentAd].num;
+    const rect = clone.getBoundingClientRect();
+    const pinX = ((e.clientX - rect.left) / rect.width * 100);
+    const pinY = ((e.clientY - rect.top) / rect.height * 100);
+    const targetSelector = clone.getAttribute('data-pin-target');
+    const targetType = 'mockup';
+    const existingPins = _pinsCache[adNum] || [];
+    const pinNumber = existingPins.length + 1;
+
+    const marker = document.createElement('div');
+    marker.className = 'pin-marker new-pin';
+    marker.style.left = pinX + '%';
+    marker.style.top = pinY + '%';
+    marker.textContent = pinNumber;
+    clone.appendChild(marker);
+
+    showPinCreationPopup(clone, marker, pinX, pinY, pinNumber, adNum, targetType, targetSelector);
+  });
+
+  // Set cursor based on pin mode
+  if (_pinModeActive) clone.style.cursor = SCOPE_CURSOR;
+
+  overlay.classList.add('active');
+  overlay.scrollTop = 0;
+
+  // Start animation loop on zoomed story/reel mockups
+  if (clone.classList.contains('ig-story') || clone.classList.contains('ig-reel')) {
+    _startZoomLoop(content);
+  }
+}
+
+let _zoomLoopId = null;
+function _startZoomLoop(container) {
+  if (_zoomLoopId) clearTimeout(_zoomLoopId);
+  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta, .ig-reel-sidebar, .ig-reel-handle, .ig-reel-caption, .ig-reel-music-bar, .ig-reel-cta';
+  function run() {
+    if (!_zoomActive) return;
+    const els = container.querySelectorAll(ANIM_ELS);
+    els.forEach(el => {
+      el.classList.remove('cta-animate', 'anim-bounce');
+      const c = el.cloneNode(true); el.replaceWith(c);
+    });
+    _zoomLoopId = setTimeout(() => {
+      if (!_zoomActive) return;
+      container.querySelectorAll(ANIM_ELS).forEach(el => el.classList.add('cta-animate'));
+      _zoomLoopId = setTimeout(() => {
+        if (!_zoomActive) return;
+        container.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
+        _zoomLoopId = setTimeout(run, 3000);
+      }, 5400);
+    }, 600);
+  }
+  run();
+}
+
+function closeMockupZoom() {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('active');
+  _zoomActive = false;
+  if (_zoomLoopId) { clearTimeout(_zoomLoopId); _zoomLoopId = null; }
+  closeActivePinPopup();
+
+  if (_zoomOriginalElement && _data && _data.ads[_currentAd]) {
+    renderAd(_currentAd);
+  }
+  _zoomOriginalElement = null;
+
+  setTimeout(() => {
+    const content = document.getElementById('mockup-zoom-content');
+    if (content) content.innerHTML = '';
+  }, 250);
+}
+
+function handleZoomOverlayClick(e) {
+  // Close zoom if clicking the dark backdrop (not the content or controls)
+  if (e.target.id === 'mockup-zoom-overlay') {
+    closeMockupZoom();
+  }
+}
+
+function togglePinModeFromZoom(e) {
+  e.stopPropagation();
+  togglePinMode();
+  updateZoomPinButton();
+  // Update cursor on zoomed clone
+  const content = document.getElementById('mockup-zoom-content');
+  if (content) {
+    const clone = content.firstElementChild;
+    if (clone) clone.style.cursor = _pinModeActive ? SCOPE_CURSOR : 'zoom-out';
+  }
+}
+
+function updateZoomPinButton() {
+  const btn = document.getElementById('zoom-pin-btn');
+  if (!btn) return;
+  btn.classList.toggle('active', _pinModeActive);
+  btn.querySelector('span').textContent = _pinModeActive ? 'Comment Pin ON' : 'Comment Pin';
+}
+
+// ── PIN DROP SYSTEM ────────────────────────────────────────────────────────
+function togglePinMode() {
+  _pinModeActive = !_pinModeActive;
+  document.body.classList.toggle('pin-mode-active', _pinModeActive);
+  const btn = document.getElementById('pin-mode-btn');
+  if (btn) {
+    btn.classList.toggle('active', _pinModeActive);
+    const span = btn.querySelector('span:not(.pin-mode-hint)');
+    if (span) span.textContent = _pinModeActive ? 'Comment Pin ON' : 'Comment Pin';
+  }
+  closeActivePinPopup();
+}
+
+function closeActivePinPopup() {
+  if (_activePinPopup) {
+    _activePinPopup.remove();
+    _activePinPopup = null;
+  }
+}
+
+function attachPinClickHandlers(adNum) {
+  // Pinnable targets: mockup containers + copy sections
+  const targets = document.querySelectorAll('[data-pin-target]');
+  targets.forEach(target => {
+    target.addEventListener('click', function(e) {
+      // Do not interact with existing pins, popups, or interactive elements
+      if (e.target.closest('.pin-marker') || e.target.closest('.pin-popup') ||
+          e.target.closest('.pin-tooltip') || e.target.closest('.carousel-nav-arrow') ||
+          e.target.closest('.fb-engage-icon') || e.target.closest('.fb-header-menu') ||
+          e.target.closest('a.fb-cta-btn')) return;
+
+      const targetSelector = target.getAttribute('data-pin-target');
+      const isMockup = targetSelector.startsWith('mockup-');
+
+      // Feature 1: If NOT in pin mode and it's a mockup, zoom in
+      if (!_pinModeActive && isMockup) {
+        e.preventDefault();
+        e.stopPropagation();
+        openMockupZoom(target);
+        return;
+      }
+
+      if (!_pinModeActive) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+      closeActivePinPopup();
+
+      const rect = target.getBoundingClientRect();
+      const pinX = ((e.clientX - rect.left) / rect.width * 100);
+      const pinY = ((e.clientY - rect.top) / rect.height * 100);
+      const targetType = isMockup ? 'mockup' : 'copy';
+
+      // Determine next pin number
+      const existingPins = _pinsCache[adNum] || [];
+      const pinNumber = existingPins.length + 1;
+
+      // Create the pin marker
+      const marker = document.createElement('div');
+      marker.className = 'pin-marker new-pin';
+      marker.style.left = pinX + '%';
+      marker.style.top = pinY + '%';
+      marker.textContent = pinNumber;
+      target.appendChild(marker);
+
+      // Create the popup
+      showPinCreationPopup(target, marker, pinX, pinY, pinNumber, adNum, targetType, targetSelector);
+    });
+  });
+}
+
+function showPinCreationPopup(container, marker, pinX, pinY, pinNumber, adNum, targetType, targetSelector) {
+  const popup = document.createElement('div');
+  popup.className = 'pin-popup';
+
+  // Position popup adjacent to pin. Offset so it doesn't cover the pin.
+  let popupLeft = pinX;
+  let popupTop = pinY;
+  // If pin is on the right half, put popup to the left
+  if (pinX > 60) {
+    popup.style.right = (100 - pinX + 2) + '%';
+  } else {
+    popup.style.left = (pinX + 2) + '%';
+  }
+  popup.style.top = pinY + '%';
+
+  const savedName = localStorage.getItem('adpreview_name') || '';
+
+  popup.innerHTML = `
+    <div style="font-size:11px;font-weight:600;color:var(--accent);margin-bottom:6px">Pin #${pinNumber}</div>
+    <textarea placeholder="Leave your comment here..." autofocus></textarea>
+    <div class="pin-popup-actions">
+      <button class="pin-popup-cancel" data-pin-cancel>Cancel</button>
+      <button class="pin-popup-save" data-pin-save>Save</button>
+    </div>
+  `;
+
+  container.appendChild(popup);
+  _activePinPopup = popup;
+
+  // Focus the textarea
+  const textarea = popup.querySelector('textarea');
+  setTimeout(() => textarea.focus(), 50);
+
+  // Cancel
+  popup.querySelector('[data-pin-cancel]').addEventListener('click', function(e) {
+    e.stopPropagation();
+    marker.remove();
+    popup.remove();
+    _activePinPopup = null;
+  });
+
+  // Save
+  popup.querySelector('[data-pin-save]').addEventListener('click', function(e) {
+    e.stopPropagation();
+    const comment = textarea.value.trim();
+    if (!comment) {
+      textarea.style.borderColor = 'var(--danger)';
+      return;
+    }
+
+    const reviewerName = localStorage.getItem('adpreview_name') || 'Anonymous';
+
+    const pinData = {
+      campaign_id: CAMPAIGN_ID,
+      ad_num: adNum,
+      pin_x: pinX,
+      pin_y: pinY,
+      target_type: targetType,
+      target_selector: targetSelector,
+      reviewer_name: reviewerName,
+      comment: comment,
+      created_at: new Date().toISOString(),
+      pin_number: pinNumber,
+    };
+
+    // Save pin
+    savePinData(pinData);
+
+    // Update cache
+    if (!_pinsCache[adNum]) _pinsCache[adNum] = [];
+    _pinsCache[adNum].push(pinData);
+
+    // Convert marker to existing style
+    marker.className = 'pin-marker existing';
+    marker.addEventListener('click', function(ev) {
+      ev.stopPropagation();
+      showPinTooltip(container, marker, pinData);
+    });
+
+    popup.remove();
+    _activePinPopup = null;
+  });
+}
+
+function showPinTooltip(container, marker, pinData) {
+  closeActivePinPopup();
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'pin-tooltip';
+
+  const pinX = parseFloat(marker.style.left);
+  if (pinX > 60) {
+    tooltip.style.right = (100 - pinX + 2) + '%';
+  } else {
+    tooltip.style.left = (pinX + 2) + '%';
+  }
+  tooltip.style.top = marker.style.top;
+
+  // Feature 3: Action buttons for pins
+  const myName = localStorage.getItem('adpreview_name') || '';
+  const isOwn = pinData.reviewer_name === myName && myName !== '';
+
+  const pinItemId = 'pin-' + (pinData.id || pinData.created_at);
+  const pinIsResolved = isResolved(pinItemId);
+  let actionsHtml = '<div class="pin-tooltip-actions">';
+    if (isOwn) actionsHtml += `<button class="feedback-action-btn" data-pin-edit>Edit</button>`;
+    actionsHtml += `<button class="feedback-action-btn delete-btn" data-pin-delete>Delete</button>`;
+    actionsHtml += `<button class="mark-complete-btn${pinIsResolved ? ' resolved' : ''}" data-pin-resolve="${pinItemId}">${pinIsResolved ? '&#10003; Done' : 'Mark Complete'}</button>`;
+    actionsHtml += '</div>';
+
+  tooltip.innerHTML = `
+    <div class="pin-tooltip-header">
+      <span class="pin-tooltip-name">${esc(pinData.reviewer_name)}</span>
+      <span>${new Date(pinData.created_at).toLocaleString()}</span>
+      <span class="pin-tooltip-close" data-tooltip-close>&times;</span>
+    </div>
+    <div class="pin-tooltip-comment">${esc(pinData.comment)}</div>
+    ${actionsHtml}
+  `;
+
+  container.appendChild(tooltip);
+  _activePinPopup = tooltip;
+
+  tooltip.querySelector('[data-tooltip-close]').addEventListener('click', function(e) {
+    e.stopPropagation();
+    tooltip.remove();
+    _activePinPopup = null;
+  });
+
+  // Delete pin
+  const deleteBtn = tooltip.querySelector('[data-pin-delete]');
+  if (deleteBtn) {
+    deleteBtn.addEventListener('click', async function(e) {
+      e.stopPropagation();
+      if (!confirm('Are you sure you want to delete this pin?')) return;
+      // Pins are localStorage-only (no Supabase table)
+      // Remove from localStorage
+      const adNum = pinData.ad_num;
+      const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+      try {
+        let localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+        localPins = localPins.filter(p => p.created_at !== pinData.created_at || p.comment !== pinData.comment);
+        localStorage.setItem(lsKey, JSON.stringify(localPins));
+      } catch(err) {}
+      // Remove from cache
+      if (_pinsCache[adNum]) {
+        _pinsCache[adNum] = _pinsCache[adNum].filter(p => p !== pinData);
+      }
+      marker.remove();
+      tooltip.remove();
+      _activePinPopup = null;
+      updateTabBadges();
+    });
+  }
+
+  // Mark complete handler for pin
+  const resolveBtn = tooltip.querySelector('[data-pin-resolve]');
+  if (resolveBtn) {
+    resolveBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const itemId = this.getAttribute('data-pin-resolve');
+      toggleResolved(itemId);
+      // Update button state
+      const isNowResolved = isResolved(itemId);
+      this.classList.toggle('resolved', isNowResolved);
+      this.innerHTML = isNowResolved ? '&#10003; Done' : 'Mark Complete';
+    });
+  }
+
+  // Edit pin
+  const editBtn = tooltip.querySelector('[data-pin-edit]');
+  if (editBtn) {
+    editBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const commentDiv = tooltip.querySelector('.pin-tooltip-comment');
+      const actionsDiv = tooltip.querySelector('.pin-tooltip-actions');
+      const oldComment = pinData.comment;
+
+      commentDiv.innerHTML = `<div class="feedback-edit-area">
+        <textarea>${esc(oldComment)}</textarea>
+        <div class="feedback-edit-actions">
+          <button class="feedback-edit-cancel" data-edit-cancel>Cancel</button>
+          <button class="feedback-edit-save" data-edit-save>Save</button>
+        </div>
+      </div>`;
+      if (actionsDiv) actionsDiv.style.display = 'none';
+
+      const textarea = commentDiv.querySelector('textarea');
+      textarea.focus();
+
+      commentDiv.querySelector('[data-edit-cancel]').addEventListener('click', function(ev) {
+        ev.stopPropagation();
+        commentDiv.innerHTML = esc(oldComment);
+        if (actionsDiv) actionsDiv.style.display = '';
+      });
+
+      commentDiv.querySelector('[data-edit-save]').addEventListener('click', async function(ev) {
+        ev.stopPropagation();
+        const newComment = textarea.value.trim();
+        if (!newComment) return;
+
+        // Pins are localStorage-only (no Supabase table)
+        // Update localStorage
+        const adNum = pinData.ad_num;
+        const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+        try {
+          let localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+          const idx = localPins.findIndex(p => p.created_at === pinData.created_at && p.comment === oldComment);
+          if (idx >= 0) { localPins[idx].comment = newComment; localStorage.setItem(lsKey, JSON.stringify(localPins)); }
+        } catch(err) {}
+        pinData.comment = newComment;
+        commentDiv.innerHTML = esc(newComment);
+        if (actionsDiv) actionsDiv.style.display = '';
+      });
+    });
+  }
+}
+
+async function savePinData(pinData) {
+  // Save to localStorage as fallback (always)
+  const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${pinData.ad_num}`;
+  let localPins = [];
+  try { localPins = JSON.parse(localStorage.getItem(lsKey)) || []; } catch(e) {}
+  localPins.push(pinData);
+  localStorage.setItem(lsKey, JSON.stringify(localPins));
+
+  // Pins are localStorage-only (no Supabase table)
+  updateTabBadges();
+}
+
+async function loadAndRenderPins(adNum) {
+  let pins = [];
+
+  // Load pins from localStorage
+  {
+    const lsKey = `adpreview_pins_${CAMPAIGN_ID}_${adNum}`;
+    try {
+      const localPins = JSON.parse(localStorage.getItem(lsKey)) || [];
+      pins = localPins.map((p, i) => ({ ...p, pin_number: i + 1 }));
+    } catch(e) {}
+  }
+
+  // Cache
+  _pinsCache[adNum] = pins;
+
+  // Render each pin
+  pins.forEach(pin => {
+    const container = document.querySelector(`[data-pin-target="${pin.target_selector}"]`);
+    if (!container) return;
+
+    const marker = document.createElement('div');
+    marker.className = 'pin-marker existing';
+    marker.style.left = pin.pin_x + '%';
+    marker.style.top = pin.pin_y + '%';
+    marker.textContent = pin.pin_number;
+    container.appendChild(marker);
+
+    marker.addEventListener('click', function(ev) {
+      ev.stopPropagation();
+      showPinTooltip(container, marker, pin);
+    });
+  });
+}
+
+// ── Ad Status (inline verdict) ────────────────────────────────────────────
+function setAdStatus(adNum, verdict, btnEl) {
+  // Save locally
+  localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, verdict);
+
+  // Update button styles
+  const bar = document.getElementById('ad-status-bar');
+  if (bar) {
+    bar.querySelectorAll('.ad-status-btn').forEach(b => {
+      b.className = 'ad-status-btn';
+    });
+    if (verdict === 'approve') btnEl.classList.add('selected-approve');
+    else if (verdict === 'request_changes') btnEl.classList.add('selected-changes');
+    else btnEl.classList.add('selected-comment');
+  }
+
+  // Flash "Saved"
+  const saved = document.getElementById('ad-status-saved');
+  if (saved) {
+    saved.classList.add('visible');
+    setTimeout(() => saved.classList.remove('visible'), 1500);
+  }
+
+  // Sync with the feedback form verdict radios
+  const radio = document.querySelector(`input[name="drawer-verdict"][value="${verdict}"]`);
+  if (radio) radio.checked = true;
+
+  // Update tab dot and progress bar
+  updateTabDot(adNum, verdict);
+  renderProgressBar();
+}
+
+// ── Approve Ad ───────────────────────────────────────────────────────────
+function getApprovalSummary() {
+  if (!_data || !_data.ads) return '';
+  const total = _data.ads.length;
+  const approved = _data.ads.filter(ad =>
+    localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve'
+  ).length;
+  const remaining = total - approved;
+
+  if (approved === 0) return `${total} ads to review`;
+  if (remaining === 0) return `<strong>All ${total} ads approved!</strong>`;
+
+  const pendingAds = _data.ads
+    .filter(ad => localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) !== 'approve')
+    .map(ad => `Ad ${ad.num}`)
+    .join(', ');
+  return `<strong>${approved} of ${total}</strong> approved — still need: ${pendingAds}`;
+}
+
+function ensureReviewerName() {
+  const saved = localStorage.getItem('adpreview_name') || '';
+  if (saved.trim()) return saved.trim();
+
+  const name = prompt('Please enter your name to continue:');
+  if (!name || !name.trim()) return null;
+  localStorage.setItem('adpreview_name', name.trim());
+  return name.trim();
+}
+
+async function approveAd(adNum, btnEl) {
+  if (btnEl.classList.contains('approved')) return;
+
+  const reviewerName = localStorage.getItem('adpreview_name') || 'Anonymous';
+
+  // Save approval locally
+  localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, 'approve');
+
+  // Update button state
+  btnEl.classList.add('approved');
+  btnEl.disabled = true;
+  btnEl.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Approved`;
+
+  // Update progress bar and tab badges
+  renderProgressBar();
+  updateTabBadges();
+
+  // Update the status summary next to the button
+  const statusMsg = document.getElementById('approve-status-msg');
+  if (statusMsg) statusMsg.innerHTML = getApprovalSummary();
+
+  // Notify via Supabase (reviewerName already set above from ensureReviewerName)
+  if (sb) {
+    try {
+      await sb.from('feedback').insert({
+        campaign_id: CAMPAIGN_ID,
+        ad_num: adNum,
+        reviewer_name: reviewerName,
+        reviewer_role: 'Client',
+        verdict: 'approve',
+        comment: `Ad ${adNum} approved`,
+      });
+    } catch(e) { console.warn('Approval notification failed:', e); }
+  }
+
+  // Check if all approved — show celebration
+  const total = _data.ads.length;
+  const approved = _data.ads.filter(ad =>
+    localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve'
+  ).length;
+
+  if (approved === total) {
+    showUploadToast('&#x1f512; All ads approved! The Mileage team has been notified.', 'success');
+  } else {
+    showUploadToast(`&#x1f512; Ad ${adNum} approved — ${total - approved} remaining`, 'success');
+  }
+}
+
+// ── Legacy drawer removed — feedback is inline now ───────────────────────
+
+// ── Keyboard Navigation ────────────────────────────────────────────────────
+document.addEventListener('keydown', function(e) {
+  // Feature 1: Escape closes zoom overlay (works even from inputs)
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('mockup-zoom-overlay');
+    if (overlay && overlay.classList.contains('active')) {
+      e.preventDefault();
+      closeMockupZoom();
+      return;
+    }
+  }
+
+  // Skip if user is typing in an input or textarea
+  const tag = e.target.tagName.toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+
+  if (!_data || !_data.ads) return;
+
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    if (_currentAd > 0) selectTab(_currentAd - 1);
+  } else if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    if (_currentAd < _data.ads.length - 1) selectTab(_currentAd + 1);
+  } else if (e.key >= '1' && e.key <= '9') {
+    const idx = parseInt(e.key) - 1;
+    if (idx < _data.ads.length) selectTab(idx);
+  } else if (e.key === 'p' || e.key === 'P') {
+    e.preventDefault();
+    togglePinMode();
+  }
+});
+
+// Close pin popups/tooltips when clicking outside
+document.addEventListener('click', function(e) {
+  if (_activePinPopup && !e.target.closest('.pin-popup') &&
+      !e.target.closest('.pin-tooltip') && !e.target.closest('.pin-marker')) {
+    closeActivePinPopup();
+  }
+});
+
+// Feature 1: Close zoom overlay when clicking the overlay background (not the content)
+document.addEventListener('click', function(e) {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  if (overlay && overlay.classList.contains('active') && e.target === overlay) {
+    closeMockupZoom();
+  }
+});
+
+// ── Utility ────────────────────────────────────────────────────────────────
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// ── Feature 4: Reviewer Identity ──────────────────────────────────────────
+function initReviewerIdentity() {
+  const savedName = localStorage.getItem('adpreview_name') || '';
+  const identity = document.getElementById('reviewer-identity');
+  const identityName = document.getElementById('reviewer-identity-name');
+
+  if (savedName) {
+    if (identity) identity.style.display = 'flex';
+    if (identityName) identityName.textContent = savedName;
+  } else {
+    if (identity) identity.style.display = 'none';
+  }
+}
+
+function showEditNamePrompt() {
+  const currentName = localStorage.getItem('adpreview_name') || '';
+  const newName = prompt('Change your reviewer name:', currentName);
+  if (newName !== null && newName.trim()) {
+    localStorage.setItem('adpreview_name', newName.trim());
+    initReviewerIdentity();
+  }
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('adpreview_theme', isLight ? 'light' : 'dark');
+  document.getElementById('theme-toggle').innerHTML = isLight ? '&#9728;' : '&#9790;';
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('adpreview_theme');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+    document.getElementById('theme-toggle').innerHTML = '&#9728;';
+  }
+}
+
+function fullInit() {
+  initTheme();
+  initReviewerIdentity();
+  // Ask for name once at session start if not already saved
+  if (!localStorage.getItem('adpreview_name')) {
+    const name = prompt('Welcome! Please enter your name to get started:');
+    if (name && name.trim()) {
+      localStorage.setItem('adpreview_name', name.trim());
+    }
+  }
+  init();
+}
+fullInit();
+</script>
+</body>
+</html>

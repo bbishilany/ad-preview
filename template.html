@@ -2498,7 +2498,7 @@ function renderStrategy(data) {
     const theme = useWaves ? (waveThemes[g] || '') : (weekThemes[g] || '');
     body += `<div class="strategy-week">
       <div class="strategy-week-header">${label}${theme ? ': ' + esc(theme) : ''}<span class="week-line"></span></div>`;
-    weeks[w].forEach(ad => {
+    groups[g].forEach(ad => {
       body += `<div class="strategy-ad">
         <span class="strategy-ad-num">Ad ${ad.num}</span>
         <span class="strategy-ad-arc">${esc(ad.arc || ad.title)}</span>

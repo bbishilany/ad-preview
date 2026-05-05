@@ -2161,6 +2161,7 @@ let _pinModeActive = false;
 let _activePinPopup = null; // track open popup/tooltip
 let _pinsCache = {};        // cache loaded pins per ad: { adNum: [...] }
 let _imageOverrides = {};   // cache: `${adNum}_${slot}` → public_url
+let _adUnlocked = false;    // allows editing an already-approved ad
 const CAMPAIGN_ID = 'confluence-fp';
 
 // ── Resolved comment tracking ─────────────────────────────────────────────

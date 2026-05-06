@@ -15,14 +15,17 @@
     --surface: #1a1d27;
     --surface2: #22263a;
     --border: #2e3350;
-    --accent: #4f7aff;
-    --accent2: #7c3aed;
+    --accent: #7EFBC8;
+    --accent2: #12493C;
     --green: #22c55e;
     --orange: #f59e0b;
     --text: #e8eaf6;
     --text2: #8b92b8;
     --danger: #ef4444;
-    --gold: #c9a84c;
+    --gold: #7EFBC8;
+    --brand-deep-green: #12493C;
+    --brand-mint: #7EFBC8;
+    --brand-charcoal: #27333C;
   }
 
   body.light-mode {
@@ -30,14 +33,17 @@
     --surface: #ffffff;
     --surface2: #eef0f5;
     --border: #d4d7e0;
-    --accent: #3b63d9;
-    --accent2: #6528d7;
+    --accent: #12493C;
+    --accent2: #0d3a2f;
     --green: #16a34a;
     --orange: #d97706;
     --text: #1a1d27;
     --text2: #5c6280;
     --danger: #dc2626;
-    --gold: #a07b2e;
+    --gold: #12493C;
+    --brand-deep-green: #12493C;
+    --brand-mint: #7EFBC8;
+    --brand-charcoal: #27333C;
   }
 
   body {
@@ -133,6 +139,74 @@
   }
   .reviewer-identity .edit-name-btn:hover { color: var(--text); }
 
+  /* ── AD NAV BAR (anchored below sticky header) ────────────────── */
+  .ad-nav {
+    position: sticky;
+    top: 53px;
+    z-index: 39;
+    background: var(--brand-deep-green);
+    border-bottom: 1px solid rgba(126,251,200,0.15);
+    padding: 0 24px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .ad-nav::-webkit-scrollbar { display: none; }
+  .ad-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .ad-nav-item:hover {
+    color: rgba(255,255,255,0.85);
+    background: rgba(126,251,200,0.06);
+  }
+  .ad-nav-item.active {
+    color: var(--brand-mint);
+    border-bottom-color: var(--brand-mint);
+  }
+  .ad-nav-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .ad-nav-item.active .ad-nav-num {
+    background: var(--brand-mint);
+    color: var(--brand-deep-green);
+  }
+  .ad-nav-item.approved-dot .ad-nav-num {
+    background: var(--green);
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .ad-nav { padding: 0 8px; top: 49px; }
+    .ad-nav-item { padding: 8px 12px; font-size: 11px; }
+    .ad-nav-label { display: none; }
+  }
+
   /* ── HERO SECTION ──────────────────────────────────────────────── */
   .hero {
     max-width: 960px;
@@ -164,7 +238,7 @@
     padding: 0 24px;
   }
   .wave-header-inner {
-    border-top: 2px solid var(--gold);
+    border-top: 2px solid var(--brand-mint);
     padding: 20px 0 12px;
     text-align: center;
   }
@@ -173,7 +247,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--brand-mint);
     margin-bottom: 4px;
   }
   .wave-header-title {
@@ -342,7 +416,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--accent);
+    color: var(--brand-mint);
     margin-bottom: 6px;
   }
   .copy-field-body {
@@ -905,6 +979,9 @@
   </div>
 </div>
 
+<!-- AD NAV BAR -->
+<nav class="ad-nav" id="ad-nav"></nav>
+
 <!-- HERO SECTION -->
 <div class="hero" id="hero-section"></div>
 
@@ -1232,7 +1309,7 @@ function renderAdCard(ad) {
   const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
 
-  return `<div class="ad-card" id="ad-card-${ad.num}">
+  return `<div class="ad-card" id="ad-card-${ad.num}" data-ad-num="${ad.num}">
     <div class="ad-card-inner">
       <div class="ad-card-header">
         <div class="ad-card-header-left">
@@ -1615,6 +1692,45 @@ function renderProgressDots() {
   }).join('');
 }
 
+// ── Ad Nav Bar ──────────────────────────────────────────────────────────
+function renderAdNav() {
+  if (!_data || !_data.ads) return;
+  const navEl = document.getElementById('ad-nav');
+  navEl.innerHTML = _data.ads.map(ad => {
+    const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
+    const shortTitle = (ad.title || '').replace(/\s*—.*$/, '').replace(/\s*image$/, '');
+    return `<a class="ad-nav-item${isApproved ? ' approved-dot' : ''}" data-ad-num="${ad.num}" onclick="scrollToAd(${ad.num})">
+      <span class="ad-nav-num">${ad.num}</span>
+      <span class="ad-nav-label">${esc(shortTitle)}</span>
+    </a>`;
+  }).join('');
+  initAdNavObserver();
+}
+
+function scrollToAd(adNum) {
+  const card = document.getElementById('ad-card-' + adNum);
+  if (!card) return;
+  const navHeight = 53 + 44; // sticky header + ad nav bar
+  const top = card.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+function initAdNavObserver() {
+  const navItems = document.querySelectorAll('.ad-nav-item');
+  if (!navItems.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const adNum = entry.target.dataset.adNum;
+        navItems.forEach(n => n.classList.remove('active'));
+        const activeNav = document.querySelector(`.ad-nav-item[data-ad-num="${adNum}"]`);
+        if (activeNav) activeNav.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -60% 0px', threshold: 0 });
+  document.querySelectorAll('.ad-card[data-ad-num]').forEach(card => observer.observe(card));
+}
+
 // ── Approve Ad ───────────────────────────────────────────────────────────
 async function approveAd(adNum, btnEl) {
   if (btnEl.classList.contains('approved')) return;
@@ -1859,6 +1975,9 @@ async function init() {
 
     // Render all ad cards
     renderDeck();
+
+    // Build ad nav bar
+    renderAdNav();
 
     // Observe for sticky header label
     initHeaderObserver();

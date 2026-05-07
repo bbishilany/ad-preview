@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": "819aff28-8ac1-4638-abce-2882a4e08c03",
+    "campaign_id": "confluence-fp",
+    "ad_num": 1,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 1 approved",
+    "created_at": "2026-04-08T17:03:20.909958+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "c044230c-2d0f-4cf4-b2ee-b562a423bdcc",
+    "campaign_id": "confluence-fp",
+    "ad_num": 2,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 2 approved",
+    "created_at": "2026-04-08T17:03:24.887846+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "4dbdb420-8dde-4a56-a132-d87ae4df4615",
+    "campaign_id": "confluence-fp",
+    "ad_num": 3,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 3 approved",
+    "created_at": "2026-04-08T17:03:26.544111+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "a8cb15c9-49a0-4331-b797-e98110385e61",
+    "campaign_id": "confluence-fp",
+    "ad_num": 4,
+    "reviewer_name": "Marissa Dinello",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "Ad 4 - Copy\n-\t….they all interact with each other, but are often managed separately.\n-\tJoin our, CEO, President, CIO and Director of Wealth Planning, and together we will cover economic trends, estate planning, giving strategies, and decision that can have meaningful impact overtime.",
+    "created_at": "2026-04-10T15:34:01.651292+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "2496d4c2-bc99-47c3-9a69-70045b714631",
+    "campaign_id": "confluence-fp",
+    "ad_num": 5,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 5 approved",
+    "created_at": "2026-04-10T11:51:16.516599+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "d8cb1e87-de0a-4491-aedf-e6e1107cfb94",
+    "campaign_id": "confluence-fp",
+    "ad_num": 5,
+    "reviewer_name": "Marissa Dinello",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "Ad 5 - Copy\n-\tOur firm really isn’t that old, so let’s adjust that first sentence. \n-\tOur senior leaders actually do not sit across the table from the families, it is the wealth managers that do that. We will need to adjust that slightly. It is probably helpful insight to know that we view ourselves as a regional firm. We are large enough to have access to resources like big firms, but small enough that people can have direct access to our leadership team. The leadership team focuses on high level strategy to free up our advisors to focus on building relationships. \n-\tWe could try something like this. Feel free to edit. \no\t\"Confluence is honored to continue to serve families in the Pittsburgh area that we also call home.\"  And \"Meet the senior leaders who shape the group of wealth managers that sit across the table from these families every day.\"",
+    "created_at": "2026-04-10T15:39:33.379495+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "59b66a5b-88c5-452b-a679-cc1f280a4d7e",
+    "campaign_id": "confluence-fp",
+    "ad_num": 6,
+    "reviewer_name": "Marissa Dinello",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "In the second line of the copy, can we change it to \"Join our leadership team as they cover a range of topics\"",
+    "created_at": "2026-04-10T15:42:29.346317+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "1350eb17-5e6f-4355-bd41-b50e81efadda",
+    "campaign_id": "confluence-fp",
+    "ad_num": 7,
+    "reviewer_name": "Marissa Dinello",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "Ad 7 – Copy\n-\tRephrase the first line as a question. Is the current economy keeping you up at night?\n-\tThird bullet change to: Factors that may influence the portfolio you're building\n-\tThird and fourth paragraph: Join our Chief Investment Officer, Bill Winkeler, CFA, CFP®, alongside our CEO, President, and Director of Wealth Planning ,as he walks through what he's watching in the markets and what it could mean for the years ahead.\n-\twill be on stage alongside.",
+    "created_at": "2026-04-10T15:56:16.164526+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "5a7c52b5-5465-4a7c-a4e0-60cf9477d673",
+    "campaign_id": "confluence-fp",
+    "ad_num": 8,
+    "reviewer_name": "Marissa Dinello",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "Let's try something more like this with the copy\n\nTuesday, May 5 is just around the corner, and a limited number of seats remain at Westmoreland Country Club.\n\nJoin us for an evening focused on what matters most right now. Economic trends, estate planning, forward-looking strategies, and the evolving role of technology in financial planning. You will hear directly from our leadership team in a setting designed for thoughtful conversation.\n\nComplimentary cocktails and hors d’oeuvres will be served.\n\nWe would value the opportunity to meet you.",
+    "created_at": "2026-04-10T15:59:46.183335+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "919449f2-c734-4091-ac21-2ab7671632f6",
+    "campaign_id": "confluence-fp",
+    "ad_num": 9,
+    "reviewer_name": "Marissa Dinello",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "This copy feels a little too short and choppy. I know we need to keep it short and to the point, can we add a little more though. Also, let's not say full team. Our full team will not be there.",
+    "created_at": "2026-04-10T16:00:59.524024+00:00",
+    "pulled_at": null
+  }
+]

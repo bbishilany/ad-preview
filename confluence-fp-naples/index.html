@@ -425,6 +425,74 @@
     color: var(--text);
     white-space: pre-wrap;
   }
+  /* Design direction panel */
+  .design-direction-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    margin-top: 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-mint);
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+  }
+  .design-direction-toggle:hover {
+    background: rgba(126,251,200,0.06);
+    border-color: var(--brand-mint);
+  }
+  .design-direction-toggle .dd-chevron {
+    transition: transform 0.2s;
+    font-size: 11px;
+  }
+  .design-direction-toggle.open .dd-chevron {
+    transform: rotate(90deg);
+  }
+  .design-direction-body {
+    display: none;
+    margin-top: 8px;
+    padding: 14px 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+  .design-direction-body.open {
+    display: block;
+  }
+  .design-direction-body code,
+  .design-direction-body pre {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.25);
+    border-radius: 4px;
+    padding: 2px 5px;
+  }
+  .design-direction-body pre {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .design-direction-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  body.light-mode .design-direction-body code,
+  body.light-mode .design-direction-body pre {
+    background: rgba(0,0,0,0.06);
+  }
   .editable-field {
     border: 1px solid transparent;
     border-radius: 6px;
@@ -1379,8 +1447,41 @@ function renderAdCardBodyInner(ad) {
     html += renderCopyField('Hook', 'hook', ad.hook, ad.num, false, 'font-style:italic');
   }
 
+  // Design direction panel (collapsible)
+  if (ad.image_direction) {
+    html += renderDesignDirection(ad);
+  }
+
   html += `</div>`;
   return html;
+}
+
+function renderDesignDirection(ad) {
+  // Convert markdown-ish image_direction to styled HTML
+  let raw = ad.image_direction || '';
+  // Escape HTML
+  raw = raw.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  // Code blocks: ```...```
+  raw = raw.replace(/```\n?([\s\S]*?)```/g, '<pre>$1</pre>');
+  // Bold: **text**
+  raw = raw.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Inline code
+  raw = raw.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  return `<div class="design-direction-section" id="dd-section-${ad.num}">
+    <div class="design-direction-toggle" onclick="toggleDesignDirection(${ad.num})">
+      <span class="dd-chevron">&#9654;</span>
+      Design Direction for Mayo
+    </div>
+    <div class="design-direction-body" id="dd-body-${ad.num}">${raw}</div>
+  </div>`;
+}
+
+function toggleDesignDirection(adNum) {
+  const toggle = document.querySelector(`#dd-section-${adNum} .design-direction-toggle`);
+  const body = document.getElementById(`dd-body-${adNum}`);
+  toggle.classList.toggle('open');
+  body.classList.toggle('open');
 }
 
 function renderCopyField(label, field, value, adNum, bold, extraStyle) {

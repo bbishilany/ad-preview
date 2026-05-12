@@ -372,30 +372,18 @@
   }
 
   /* Copy version toggle */
-  .copy-version-bar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .copy-version-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text2);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
   .copy-version-pills {
     display: flex;
     gap: 4px;
+    margin-left: 6px;
   }
   .copy-version-pill {
-    width: 36px; height: 28px;
+    width: 30px; height: 24px;
     border-radius: 6px;
     border: 1px solid var(--border);
     background: var(--surface2);
     color: var(--text2);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
@@ -1555,6 +1543,17 @@ function renderAdCard(ad) {
           <div class="ad-card-chips">
             ${_pl.map(p => `<span class="ad-chip ad-chip-accent">${esc(p.charAt(0).toUpperCase() + p.slice(1))}</span>`).join('')}
           </div>
+          ${(() => {
+            const optCount = Array.isArray(ad.primary_text) ? ad.primary_text.length : 1;
+            if (optCount <= 1) return '';
+            const letters = ['A','B','C','D','E'];
+            const _oi = _optionIdx[ad.num] || 0;
+            return `<div class="copy-version-pills">
+              ${Array.from({length: optCount}, (_, i) =>
+                `<button class="copy-version-pill${i === _oi ? ' active' : ''}" onclick="switchOption(${ad.num}, ${i})">${letters[i] || i+1}</button>`
+              ).join('')}
+            </div>`;
+          })()}
         </div>
         <div class="ad-card-status${isApproved ? ' is-approved' : ''}" id="ad-status-${ad.num}">
           ${isApproved ? SVG_ICONS.check + ' Approved' : '&#9675; Not reviewed'}
@@ -1590,20 +1589,6 @@ function renderAdCardBodyInner(ad) {
 
   // Copy column
   html += `<div class="ad-card-copy">`;
-
-  // Copy version toggle
-  const optCount = Array.isArray(ad.primary_text) ? ad.primary_text.length : 1;
-  if (optCount > 1) {
-    const letters = ['A','B','C','D','E'];
-    html += `<div class="copy-version-bar">
-      <span class="copy-version-label">Copy Version</span>
-      <div class="copy-version-pills">
-        ${Array.from({length: optCount}, (_, i) =>
-          `<button class="copy-version-pill${i === _oi ? ' active' : ''}" onclick="switchOption(${ad.num}, ${i})">${letters[i] || i+1}</button>`
-        ).join('')}
-      </div>
-    </div>`;
-  }
 
   // Copy fields
   if (ad.primary_text) {

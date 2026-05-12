@@ -209,7 +209,7 @@
 
   /* ── HERO SECTION ──────────────────────────────────────────────── */
   .hero {
-    max-width: 960px;
+    max-width: 1060px;
     margin: 0 auto;
     padding: 56px 24px 40px;
     text-align: center;
@@ -233,7 +233,7 @@
 
   /* ── WAVE SECTION HEADERS ──────────────────────────────────────── */
   .wave-header {
-    max-width: 960px;
+    max-width: 1060px;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -263,7 +263,7 @@
 
   /* ── AD CARD ───────────────────────────────────────────────────── */
   .ad-card {
-    max-width: 960px;
+    max-width: 1060px;
     margin: 0 auto 48px;
     padding: 0 24px;
   }
@@ -330,45 +330,58 @@
 
   /* ── AD CARD BODY: MOCKUPS + COPY GRID ─────────────────────────── */
   .ad-card-body {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 0;
-    padding: 24px;
   }
   .ad-card-mockups {
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    flex-shrink: 0;
-    padding-right: 28px;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 24px 16px;
   }
   .ad-card-copy {
     min-width: 0;
-    padding-left: 28px;
-    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
   }
+  .copy-field-wide { grid-column: 1 / -1; }
 
-  @media (max-width: 1024px) {
-    .ad-card-body {
+  /* Placement tabs */
+  .placement-tabs {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .placement-tab {
+    padding: 7px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .placement-tab:hover { border-color: var(--accent); color: var(--text); }
+  .placement-tab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .placement-panel { display: flex; flex-direction: column; align-items: center; }
+  .placement-panel.hidden { display: none; }
+
+  @media (max-width: 768px) {
+    .ad-card-copy {
       grid-template-columns: 1fr;
     }
-    .ad-card-mockups {
-      padding-right: 0;
-      padding-bottom: 24px;
-      justify-content: center;
-    }
-    .ad-card-copy {
-      padding-left: 0;
-      border-left: none;
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
-    }
-  }
-  @media (max-width: 768px) {
-    .ad-card-mockups {
-      flex-direction: column;
-      align-items: center;
-    }
+    .ig-story { width: 220px; }
   }
 
   /* Copy version toggle */
@@ -594,7 +607,7 @@
 
   /* ── FEEDBACK THREAD (collapsible below card) ──────────────────── */
   .feedback-thread-wrap {
-    max-width: 960px;
+    max-width: 1060px;
     margin: -32px auto 48px;
     padding: 0 24px;
     display: none;
@@ -655,7 +668,7 @@
 
   /* ── FEED MOCKUP ───────────────────────────────────────────────── */
   .fb-feed {
-    width: 360px;
+    width: 420px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -666,7 +679,7 @@
     box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
     cursor: zoom-in;
   }
-  @media (max-width: 768px) { .fb-feed { width: 100%; max-width: 400px; } }
+  @media (max-width: 768px) { .fb-feed { width: 100%; max-width: 420px; } }
   .fb-feed-header {
     display: flex;
     align-items: center;
@@ -757,7 +770,7 @@
 
   /* ── STORIES MOCKUP ────────────────────────────────────────────── */
   .ig-story {
-    width: 200px; aspect-ratio: 9/16;
+    width: 280px; aspect-ratio: 9/16;
     border-radius: 14px; overflow: hidden;
     position: relative; display: flex; flex-direction: column;
     justify-content: center; align-items: center;
@@ -1039,7 +1052,7 @@
   @media (max-width: 480px) {
     .sticky-header-center { display: none; }
     .fb-feed { width: 100%; }
-    .ig-story { width: 160px; }
+    .ig-story { width: 180px; }
     .ad-card-chips { display: none; }
   }
 </style>
@@ -1116,6 +1129,7 @@ let _optionIdx = {};
 let _imageOverrides = {};
 let _imageVersions = {};
 let _activeImageVersion = {};
+let _placementIdx = {};
 let _feedbackCache = {};
 const CAMPAIGN_ID = 'confluence-fp';
 
@@ -1207,21 +1221,33 @@ function _patchImageWithVersions(adNum, slot, newUrl) {
     if (oldPill) oldPill.remove();
     break;
   }
-  // Re-render the version bars under each mockup for this ad card
+  // Re-render the version bars inside each placement panel for this ad card
   const card = document.querySelector(`[data-ad-num="${adNum}"]`)?.closest('.ad-card');
   if (!card) return;
-  // Remove all existing version bars
-  card.querySelectorAll('.img-version-bar').forEach(el => el.remove());
-  // Insert fresh version bars after each mockup
-  const feedMockup = card.querySelector('[data-mockup-type="feed"]');
-  if (feedMockup) {
-    const feedBar = renderImageVersionBar(adNum, 'feed');
-    if (feedBar) feedMockup.insertAdjacentHTML('afterend', feedBar);
-  }
-  const storyMockup = card.querySelector('[data-mockup-type="story"]');
-  if (storyMockup) {
-    const storyBar = renderImageVersionBar(adNum, 'story');
-    if (storyBar) storyMockup.insertAdjacentHTML('afterend', storyBar);
+  // Update version bars inside placement panels
+  card.querySelectorAll('.placement-panel').forEach(panel => {
+    const panelSlot = panel.dataset.placement === 'reel' ? 'story' : panel.dataset.placement;
+    const oldBar = panel.querySelector('.img-version-bar');
+    if (oldBar) oldBar.remove();
+    const newBar = renderImageVersionBar(adNum, panelSlot);
+    if (newBar) {
+      const mockup = panel.querySelector('[data-mockup-type]');
+      if (mockup) mockup.insertAdjacentHTML('afterend', newBar);
+    }
+  });
+  // Fallback: if no placement panels (single placement), update directly
+  if (!card.querySelector('.placement-panel')) {
+    card.querySelectorAll('.img-version-bar').forEach(el => el.remove());
+    const feedMockup = card.querySelector('[data-mockup-type="feed"]');
+    if (feedMockup) {
+      const feedBar = renderImageVersionBar(adNum, 'feed');
+      if (feedBar) feedMockup.insertAdjacentHTML('afterend', feedBar);
+    }
+    const storyMockup = card.querySelector('[data-mockup-type="story"]');
+    if (storyMockup) {
+      const storyBar = renderImageVersionBar(adNum, 'story');
+      if (storyBar) storyMockup.insertAdjacentHTML('afterend', storyBar);
+    }
   }
 }
 
@@ -1434,6 +1460,19 @@ function _findStoryImage(ad, varNum) {
 
 function _pageName(d) { return 'Confluence Financial Partners'; }
 
+// ── Switch placement tab ──────────────────────────────────────────────────
+function switchPlacement(adNum, placement) {
+  _placementIdx[adNum] = placement;
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (!card) return;
+  card.querySelectorAll('.placement-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.placement === placement);
+  });
+  card.querySelectorAll('.placement-panel').forEach(panel => {
+    panel.classList.toggle('hidden', panel.dataset.placement !== placement);
+  });
+}
+
 // ── Switch copy version (A/B/C) ───────────────────────────────────────────
 function switchOption(adNum, optIdx) {
   _optionIdx[adNum] = optIdx;
@@ -1474,10 +1513,16 @@ function rerenderAdCard(adNum) {
   const ad = _data.ads.find(a => a.num === adNum);
   if (!ad) return;
 
+  // Preserve active placement tab
+  const savedPlacement = _placementIdx[adNum];
+
   const bodyEl = cardEl.querySelector('.ad-card-body');
   const footerEl = cardEl.querySelector('.ad-card-footer');
   if (bodyEl) bodyEl.innerHTML = renderAdCardBodyInner(ad);
   if (footerEl) footerEl.outerHTML = renderAdCardFooter(ad);
+
+  // Restore placement tab if it was set
+  if (savedPlacement) switchPlacement(adNum, savedPlacement);
 
   attachCardHandlers(adNum);
   startStoryAnimations(cardEl);
@@ -1571,28 +1616,64 @@ function renderAdCardBodyInner(ad) {
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
   const _hasFeed = _pl.some(p => p.includes('feed'));
   const _hasStories = _pl.some(p => p.includes('stories') || p.includes('story'));
+  const _hasReels = _pl.some(p => p.includes('reel'));
   const _oi = _optionIdx[ad.num] || 0;
+  const activePlacement = _placementIdx[ad.num] || 'feed';
+
+  // Build list of available placements
+  const placements = [];
+  if (_hasFeed) placements.push({ key: 'feed', label: 'Feed' });
+  if (_hasStories) placements.push({ key: 'story', label: 'Stories' });
+  if (_hasReels) placements.push({ key: 'reel', label: 'Reels' });
 
   let html = '';
 
-  // Mockups column
+  // Mockups section
   html += `<div class="ad-card-mockups">`;
+
+  // Placement tabs (only if 2+ placements)
+  if (placements.length >= 2) {
+    html += `<div class="placement-tabs">`;
+    placements.forEach(p => {
+      html += `<button class="placement-tab${p.key === activePlacement ? ' active' : ''}" data-placement="${p.key}" onclick="switchPlacement(${ad.num},'${p.key}')">${p.label}</button>`;
+    });
+    html += `</div>`;
+  }
+
+  // Feed panel
   if (_hasFeed) {
+    const isActive = activePlacement === 'feed';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="feed">`;
     html += renderFeedMockup(ad);
     html += renderImageVersionBar(ad.num, 'feed');
+    html += `</div>`;
   }
+
+  // Story panel
   if (_hasStories) {
+    const isActive = activePlacement === 'story';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="story">`;
     html += renderStoryMockup(ad);
     html += renderImageVersionBar(ad.num, 'story');
+    html += `</div>`;
   }
+
+  // Reels panel (reuses story mockup)
+  if (_hasReels) {
+    const isActive = activePlacement === 'reel';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="reel">`;
+    html += renderStoryMockup(ad);
+    html += renderImageVersionBar(ad.num, 'story');
+    html += `</div>`;
+  }
+
   html += `</div>`;
 
-  // Copy column
+  // Copy section (below mockup)
   html += `<div class="ad-card-copy">`;
 
-  // Copy fields
   if (ad.primary_text) {
-    html += renderCopyField('Primary Text', 'primary_text', _getField(ad, 'primary_text', _oi), ad.num);
+    html += renderCopyField('Primary Text', 'primary_text', _getField(ad, 'primary_text', _oi), ad.num, false, '', true);
   }
   if (ad.headline) {
     html += renderCopyField('Headline', 'headline', _getField(ad, 'headline', _oi), ad.num, true);
@@ -1609,7 +1690,9 @@ function renderAdCardBodyInner(ad) {
 
   // Design direction panel (collapsible)
   if (ad.image_direction) {
+    html += `<div class="copy-field-wide">`;
     html += renderDesignDirection(ad);
+    html += `</div>`;
   }
 
   html += `</div>`;
@@ -1644,11 +1727,12 @@ function toggleDesignDirection(adNum) {
   body.classList.toggle('open');
 }
 
-function renderCopyField(label, field, value, adNum, bold, extraStyle) {
+function renderCopyField(label, field, value, adNum, bold, extraStyle, wide) {
   const wrap = bold ? '<strong>' : '';
   const wrapEnd = bold ? '</strong>' : '';
   const style = extraStyle ? ` style="${extraStyle}"` : '';
-  return `<div class="copy-field">
+  const wideClass = wide ? ' copy-field-wide' : '';
+  return `<div class="copy-field${wideClass}">
     <div class="copy-field-label">${label}</div>
     <div class="copy-field-body editable-field" contenteditable="true" data-field="${field}" data-ad="${adNum}"${style}>${wrap}${esc(value)}${wrapEnd}</div>
   </div>`;
@@ -1870,7 +1954,7 @@ function attachCardHandlers(adNum) {
           e.target.closest('.img-revert-pill') || e.target.closest('.img-version-bar') ||
           e.target.closest('.img-version-pill') || e.target.closest('.fb-engage-icon') ||
           e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn') ||
-          e.target.closest('a.ig-story-cta')) return;
+          e.target.closest('a.ig-story-cta') || e.target.closest('.placement-tab')) return;
       e.preventDefault();
       openMockupZoom(el);
     });
@@ -2236,6 +2320,18 @@ async function init() {
 
     // Progress dots
     renderProgressDots();
+
+    // Initialize placement defaults
+    _data.ads.forEach(ad => {
+      const pl = (ad.placements || []).map(p => p.toLowerCase());
+      if (pl.some(p => p.includes('feed'))) {
+        _placementIdx[ad.num] = 'feed';
+      } else if (pl.some(p => p.includes('stories') || p.includes('story'))) {
+        _placementIdx[ad.num] = 'story';
+      } else if (pl.some(p => p.includes('reel'))) {
+        _placementIdx[ad.num] = 'reel';
+      }
+    });
 
     // Render all ad cards
     renderDeck();

@@ -949,41 +949,36 @@
 
   /* ── IMAGE VERSION BAR ───────────────────────────────────────── */
   .img-version-bar {
-    position: absolute;
-    bottom: 8px; left: 8px;
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 3px 6px;
-    border-radius: 8px;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 10;
+    gap: 6px;
+    padding: 6px 0 2px;
+  }
+  .img-version-bar-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 2px;
   }
   .img-version-pill {
-    min-width: 28px; height: 22px;
-    padding: 0 7px;
-    border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.10);
-    color: rgba(255,255,255,0.85);
-    font-size: 10px; font-weight: 700;
+    min-width: 32px; height: 26px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px; font-weight: 700;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.15s;
     letter-spacing: 0.3px;
     white-space: nowrap;
   }
-  .img-version-pill:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+  .img-version-pill:hover { border-color: var(--accent); color: var(--text); }
   .img-version-pill.active {
     background: var(--accent); color: #fff; border-color: var(--accent);
-  }
-  .img-version-pill-orig {
-    border-style: dashed;
-  }
-  .img-version-label {
-    display: none;
   }
 
   /* ── MOCKUP ZOOM OVERLAY ───────────────────────────────────────── */
@@ -1174,7 +1169,7 @@ async function loadImageVersions() {
     if (error && error.code === '42703') {
       // version_num column doesn't exist yet — fall back
       ({ data, error } = await sb.from('ad_images')
-        .select('id, ad_num, slot, public_url, is_active, created_at')
+        .select('id, ad_num, slot, public_url, is_active, storage_path, created_at')
         .eq('campaign_id', CAMPAIGN_ID)
         .order('created_at', { ascending: true }));
       if (error) throw error;
@@ -1217,6 +1212,7 @@ function showUploadToast(msg, type) {
 }
 
 function _patchImageWithVersions(adNum, slot, newUrl) {
+  // Update the image src
   const wraps = document.querySelectorAll('.img-upload-wrap');
   for (const wrap of wraps) {
     const btn = wrap.querySelector('.img-upload-btn');
@@ -1228,13 +1224,22 @@ function _patchImageWithVersions(adNum, slot, newUrl) {
     // Remove old revert pill if present
     const oldPill = wrap.querySelector('.img-revert-pill');
     if (oldPill) oldPill.remove();
-    // Remove old version bar if present
-    const oldBar = wrap.querySelector('.img-version-bar');
-    if (oldBar) oldBar.remove();
-    // Insert new version bar
-    const barHtml = renderImageVersionBar(adNum, slot);
-    if (barHtml) wrap.insertAdjacentHTML('beforeend', barHtml);
     break;
+  }
+  // Re-render the version bars section for this ad card
+  const card = document.querySelector(`[data-ad-num="${adNum}"]`)?.closest('.ad-card');
+  if (!card) return;
+  const mockups = card.querySelector('.ad-card-mockups');
+  if (!mockups) return;
+  const oldBars = mockups.querySelector('.img-version-bars');
+  if (oldBars) oldBars.remove();
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (!ad) return;
+  const _pl = (ad.placements || []).map(p => p.toLowerCase());
+  const feedVBar = _pl.some(p => p.includes('feed')) ? renderImageVersionBar(adNum, 'feed') : '';
+  const storyVBar = _pl.some(p => p.includes('stor')) ? renderImageVersionBar(adNum, 'story') : '';
+  if (feedVBar || storyVBar) {
+    mockups.insertAdjacentHTML('beforeend', `<div class="img-version-bars">${feedVBar}${storyVBar}</div>`);
   }
 }
 
@@ -1382,18 +1387,41 @@ async function switchImageVersion(adNum, slot, versionNum) {
   }
 }
 
-function renderImageVersionBar(adNum, slot) {
+function _getLatestBatch(adNum, slot) {
   const key = `${adNum}_${slot}`;
-  const versions = _imageVersions[key];
-  if (!versions || versions.length === 0) return '';
+  const all = _imageVersions[key];
+  if (!all || all.length === 0) return [];
+  // Sort by created_at descending
+  const sorted = [...all].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  // Group into latest batch: all uploads within 10 minutes of the most recent
+  const latest = new Date(sorted[0].created_at);
+  const BATCH_WINDOW = 10 * 60 * 1000; // 10 minutes
+  const batch = sorted.filter(r => (latest - new Date(r.created_at)) < BATCH_WINDOW);
+  // Sort batch by version_num ascending for display
+  batch.sort((a, b) => (a.version_num || 0) - (b.version_num || 0));
+  return batch;
+}
+
+function renderImageVersionBar(adNum, slot) {
+  const batch = _getLatestBatch(adNum, slot);
+  // Only show the bar when there are 2+ versions in the latest batch
+  if (batch.length < 2) return '';
+  const key = `${adNum}_${slot}`;
   const activeVer = _activeImageVersion[key] || null;
-  let pills = `<button class="img-version-pill img-version-pill-orig${activeVer == null ? ' active' : ''}" onclick="event.stopPropagation();revertImage(${adNum},'${slot}')">Orig</button>`;
-  versions.forEach(v => {
-    const label = v.label || ('v' + v.version_num);
+  let pills = '';
+  batch.forEach((v, i) => {
+    // Label: parse from storage_path (_v1_, _v2_) or fall back to "v1", "v2"
+    let label = v.label;
+    if (!label && v.storage_path) {
+      const m = v.storage_path.match(/_v(\d+)_/);
+      if (m) label = 'v' + m[1];
+    }
+    if (!label) label = 'v' + (i + 1);
     const isActive = v.version_num === activeVer;
-    pills += `<button class="img-version-pill${isActive ? ' active' : ''}" onclick="event.stopPropagation();switchImageVersion(${adNum},'${slot}',${v.version_num})">${esc(label)}</button>`;
+    pills += `<button class="img-version-pill${isActive ? ' active' : ''}" onclick="switchImageVersion(${adNum},'${slot}',${v.version_num})">${esc(label)}</button>`;
   });
-  return `<div class="img-version-bar" onclick="event.stopPropagation()">${pills}</div>`;
+  const slotLabel = slot === 'story' ? 'Story' : 'Feed';
+  return `<div class="img-version-bar"><span class="img-version-bar-label">${slotLabel}</span>${pills}</div>`;
 }
 
 // ── Image URL helpers ──────────────────────────────────────────────────────
@@ -1559,6 +1587,12 @@ function renderAdCardBodyInner(ad) {
   html += `<div class="ad-card-mockups">`;
   if (_hasFeed) html += renderFeedMockup(ad);
   if (_hasStories) html += renderStoryMockup(ad);
+  // Version bars below mockups (only shown when multiple versions exist)
+  const feedVBar = _hasFeed ? renderImageVersionBar(ad.num, 'feed') : '';
+  const storyVBar = _hasStories ? renderImageVersionBar(ad.num, 'story') : '';
+  if (feedVBar || storyVBar) {
+    html += `<div class="img-version-bars">${feedVBar}${storyVBar}</div>`;
+  }
   html += `</div>`;
 
   // Copy column
@@ -1670,11 +1704,10 @@ function renderFeedMockup(ad) {
   const slotKey = 'feed';
   const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
   const downloadBtn = imgUrl ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${imgUrl}','ad${ad.num}-feed.png')" title="Download image">&#8681;</button>` : '';
-  const versionBar = renderImageVersionBar(ad.num, slotKey);
 
   let mediaHtml;
   if (imgUrl) {
-    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${uploadBtn}${downloadBtn}${versionBar}</div></div>`;
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${uploadBtn}${downloadBtn}</div></div>`;
   } else {
     mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
   }
@@ -1719,10 +1752,9 @@ function renderStoryMockup(ad) {
   const slotKey = 'story';
   const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
   const storyDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${bgImg}','ad${ad.num}-story.png')" title="Download image">&#8681;</button>` : '';
-  const storyVersionBar = renderImageVersionBar(ad.num, slotKey);
 
   return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-mockup-type="story" data-ad-num="${ad.num}">
-    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}${storyVersionBar}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
       <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>

@@ -947,6 +947,45 @@
   }
   .img-revert-pill:hover { transform: scale(1.05); }
 
+  /* ── IMAGE VERSION BAR ───────────────────────────────────────── */
+  .img-version-bar {
+    position: absolute;
+    bottom: 8px; left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 6px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+  .img-version-pill {
+    min-width: 28px; height: 22px;
+    padding: 0 7px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.10);
+    color: rgba(255,255,255,0.85);
+    font-size: 10px; font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .img-version-pill:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+  .img-version-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  .img-version-pill-orig {
+    border-style: dashed;
+  }
+  .img-version-label {
+    display: none;
+  }
+
   /* ── MOCKUP ZOOM OVERLAY ───────────────────────────────────────── */
   .mockup-zoom-overlay {
     position: fixed; inset: 0;
@@ -1099,6 +1138,8 @@ const SVG_ICONS = {
 let _data = null;
 let _optionIdx = {};
 let _imageOverrides = {};
+let _imageVersions = {};
+let _activeImageVersion = {};
 let _feedbackCache = {};
 const CAMPAIGN_ID = 'confluence-fp-naples';
 
@@ -1121,20 +1162,47 @@ function _fieldCount(ad, field) {
 }
 
 // ── Image Override System ──────────────────────────────────────────────────
-async function loadImageOverrides() {
+async function loadImageVersions() {
   if (!sb) return;
   try {
-    const { data, error } = await sb.from('ad_images')
-      .select('ad_num, slot, public_url')
+    // Try with version_num first; fall back to basic query if column doesn't exist
+    let data, error;
+    ({ data, error } = await sb.from('ad_images')
+      .select('id, ad_num, slot, public_url, is_active, version_num, label, created_at')
       .eq('campaign_id', CAMPAIGN_ID)
-      .eq('is_active', true);
-    if (error) throw error;
+      .order('version_num', { ascending: true }));
+    if (error && error.code === '42703') {
+      // version_num column doesn't exist yet — fall back
+      ({ data, error } = await sb.from('ad_images')
+        .select('id, ad_num, slot, public_url, is_active, created_at')
+        .eq('campaign_id', CAMPAIGN_ID)
+        .order('created_at', { ascending: true }));
+      if (error) throw error;
+      // Assign synthetic version numbers by upload order per slot
+      const counters = {};
+      (data || []).forEach(row => {
+        const key = `${row.ad_num}_${row.slot}`;
+        counters[key] = (counters[key] || 0) + 1;
+        row.version_num = counters[key];
+        row.label = null;
+      });
+    } else if (error) {
+      throw error;
+    }
     _imageOverrides = {};
+    _imageVersions = {};
+    _activeImageVersion = {};
     (data || []).forEach(row => {
-      _imageOverrides[`${row.ad_num}_${row.slot}`] = row.public_url;
+      const key = `${row.ad_num}_${row.slot}`;
+      if (!_imageVersions[key]) _imageVersions[key] = [];
+      _imageVersions[key].push(row);
+      if (row.is_active) {
+        _imageOverrides[key] = row.public_url;
+        _activeImageVersion[key] = row.version_num;
+      }
     });
   } catch (e) {
-    console.warn('Could not load image overrides:', e.message);
+    console.warn('Could not load image versions:', e.message);
   }
 }
 
@@ -1148,7 +1216,7 @@ function showUploadToast(msg, type) {
   setTimeout(() => el.remove(), 3000);
 }
 
-function _patchImage(adNum, slot, newUrl, hasOverride) {
+function _patchImageWithVersions(adNum, slot, newUrl) {
   const wraps = document.querySelectorAll('.img-upload-wrap');
   for (const wrap of wraps) {
     const btn = wrap.querySelector('.img-upload-btn');
@@ -1157,16 +1225,15 @@ function _patchImage(adNum, slot, newUrl, hasOverride) {
     if (!onclick.includes(`(${adNum},'${slot}')`) && !onclick.includes(`(${adNum},"${slot}")`)) continue;
     const img = wrap.querySelector('img');
     if (img && newUrl) img.src = newUrl;
-    let pill = wrap.querySelector('.img-revert-pill');
-    if (hasOverride && !pill) {
-      pill = document.createElement('button');
-      pill.className = 'img-revert-pill';
-      pill.textContent = 'Revert';
-      pill.onclick = (e) => { e.stopPropagation(); revertImage(adNum, slot); };
-      wrap.appendChild(pill);
-    } else if (!hasOverride && pill) {
-      pill.remove();
-    }
+    // Remove old revert pill if present
+    const oldPill = wrap.querySelector('.img-revert-pill');
+    if (oldPill) oldPill.remove();
+    // Remove old version bar if present
+    const oldBar = wrap.querySelector('.img-version-bar');
+    if (oldBar) oldBar.remove();
+    // Insert new version bar
+    const barHtml = renderImageVersionBar(adNum, slot);
+    if (barHtml) wrap.insertAdjacentHTML('beforeend', barHtml);
     break;
   }
 }
@@ -1203,26 +1270,53 @@ async function handleFileSelected(file, adNum, slot) {
   showUploadToast('Uploading...', '');
   const ext = file.name.split('.').pop() || 'png';
   const storagePath = `${CAMPAIGN_ID}/ad${adNum}_${slot}_${Date.now()}.${ext}`;
+  const key = `${adNum}_${slot}`;
   try {
     const { error: uploadError } = await sb.storage.from('ad-creatives').upload(storagePath, file, { upsert: true });
     if (uploadError) throw uploadError;
     const { data: urlData } = sb.storage.from('ad-creatives').getPublicUrl(storagePath);
     const publicUrl = urlData.publicUrl;
     await sb.from('ad_images').update({ is_active: false }).eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('is_active', true);
+    // Compute next version number
+    const existing = _imageVersions[key] || [];
+    const maxVer = existing.reduce((m, r) => Math.max(m, r.version_num || 0), 0);
+    const nextVer = maxVer + 1;
     const ad = _data.ads.find(a => a.num === adNum);
     let origFilename = '';
     if (ad && ad.images) {
       if (slot === 'story' || slot === 'reel') origFilename = ad.images.find(f => f.includes('story')) || ad.images[0] || '';
       else origFilename = ad.images.find(f => !f.includes('story') && !f.includes('card')) || ad.images[0] || '';
     }
-    const { error: insertError } = await sb.from('ad_images').insert({
+    let inserted, insertError;
+    ({ data: inserted, error: insertError } = await sb.from('ad_images').insert({
       campaign_id: CAMPAIGN_ID, ad_num: adNum, slot: slot,
       filename: origFilename, storage_path: storagePath,
-      public_url: publicUrl, uploaded_by: 'mileage'
-    });
+      public_url: publicUrl, uploaded_by: 'mileage',
+      version_num: nextVer
+    }).select());
+    if (insertError && insertError.code === '42703') {
+      // version_num column doesn't exist yet — insert without it
+      ({ data: inserted, error: insertError } = await sb.from('ad_images').insert({
+        campaign_id: CAMPAIGN_ID, ad_num: adNum, slot: slot,
+        filename: origFilename, storage_path: storagePath,
+        public_url: publicUrl, uploaded_by: 'mileage'
+      }).select());
+    }
     if (insertError) throw insertError;
-    _imageOverrides[`${adNum}_${slot}`] = publicUrl;
-    _patchImage(adNum, slot, publicUrl, true);
+    // Update local state
+    if (_imageVersions[key]) {
+      _imageVersions[key].forEach(r => r.is_active = false);
+    }
+    const newRow = (inserted && inserted[0]) || {
+      ad_num: adNum, slot, public_url: publicUrl, is_active: true,
+      version_num: nextVer, label: null, created_at: new Date().toISOString()
+    };
+    newRow.is_active = true;
+    if (!_imageVersions[key]) _imageVersions[key] = [];
+    _imageVersions[key].push(newRow);
+    _imageOverrides[key] = publicUrl;
+    _activeImageVersion[key] = nextVer;
+    _patchImageWithVersions(adNum, slot, publicUrl);
     showUploadToast('Image uploaded', 'success');
   } catch (e) {
     console.error('Upload failed:', e);
@@ -1232,20 +1326,74 @@ async function handleFileSelected(file, adNum, slot) {
 
 async function revertImage(adNum, slot) {
   if (!sb) return;
+  const key = `${adNum}_${slot}`;
   try {
-    await sb.from('ad_images').update({ is_active: false }).eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('is_active', true);
-    delete _imageOverrides[`${adNum}_${slot}`];
+    // Deactivate ALL versions for this slot
+    await sb.from('ad_images').update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot);
+    delete _imageOverrides[key];
+    delete _activeImageVersion[key];
+    if (_imageVersions[key]) {
+      _imageVersions[key].forEach(r => r.is_active = false);
+    }
     const ad = _data.ads.find(a => a.num === adNum);
     let origUrl = null;
     if (ad) {
+      // Temporarily delete override so helpers return the static file
       if (slot === 'story' || slot === 'reel') origUrl = _findStoryImage(ad);
       else origUrl = _findFeedImage(ad);
     }
-    _patchImage(adNum, slot, origUrl, false);
+    _patchImageWithVersions(adNum, slot, origUrl);
     showUploadToast('Reverted to original', 'success');
   } catch (e) {
     showUploadToast('Revert failed: ' + e.message, 'error');
   }
+}
+
+async function switchImageVersion(adNum, slot, versionNum) {
+  if (!sb) return;
+  const key = `${adNum}_${slot}`;
+  try {
+    // Deactivate current
+    await sb.from('ad_images').update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('is_active', true);
+    // Activate selected — find the row by version_num from local state (handles missing column)
+    const targetRow = (_imageVersions[key] || []).find(r => r.version_num === versionNum);
+    if (targetRow && targetRow.id) {
+      await sb.from('ad_images').update({ is_active: true }).eq('id', targetRow.id);
+    } else {
+      // Fallback: try version_num column directly
+      await sb.from('ad_images').update({ is_active: true })
+        .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('version_num', versionNum);
+    }
+    // Update local state
+    let newUrl = null;
+    if (_imageVersions[key]) {
+      _imageVersions[key].forEach(r => {
+        r.is_active = (r.version_num === versionNum);
+        if (r.is_active) newUrl = r.public_url;
+      });
+    }
+    _imageOverrides[key] = newUrl;
+    _activeImageVersion[key] = versionNum;
+    _patchImageWithVersions(adNum, slot, newUrl);
+  } catch (e) {
+    showUploadToast('Switch failed: ' + e.message, 'error');
+  }
+}
+
+function renderImageVersionBar(adNum, slot) {
+  const key = `${adNum}_${slot}`;
+  const versions = _imageVersions[key];
+  if (!versions || versions.length === 0) return '';
+  const activeVer = _activeImageVersion[key] || null;
+  let pills = `<button class="img-version-pill img-version-pill-orig${activeVer == null ? ' active' : ''}" onclick="event.stopPropagation();revertImage(${adNum},'${slot}')">Orig</button>`;
+  versions.forEach(v => {
+    const label = v.label || ('v' + v.version_num);
+    const isActive = v.version_num === activeVer;
+    pills += `<button class="img-version-pill${isActive ? ' active' : ''}" onclick="event.stopPropagation();switchImageVersion(${adNum},'${slot}',${v.version_num})">${esc(label)}</button>`;
+  });
+  return `<div class="img-version-bar" onclick="event.stopPropagation()">${pills}</div>`;
 }
 
 // ── Image URL helpers ──────────────────────────────────────────────────────
@@ -1520,14 +1668,13 @@ function renderFeedMockup(ad) {
   const _oi = _optionIdx[ad.num] || 0;
 
   const slotKey = 'feed';
-  const hasFeedOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
   const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
   const downloadBtn = imgUrl ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${imgUrl}','ad${ad.num}-feed.png')" title="Download image">&#8681;</button>` : '';
-  const revertPill = hasFeedOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
+  const versionBar = renderImageVersionBar(ad.num, slotKey);
 
   let mediaHtml;
   if (imgUrl) {
-    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${uploadBtn}${downloadBtn}${revertPill}</div></div>`;
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${uploadBtn}${downloadBtn}${versionBar}</div></div>`;
   } else {
     mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
   }
@@ -1570,13 +1717,12 @@ function renderStoryMockup(ad) {
   const hasImg = !!bgImg;
 
   const slotKey = 'story';
-  const hasStoryOverride = !!_imageOverrides[`${ad.num}_${slotKey}`];
   const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
   const storyDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${bgImg}','ad${ad.num}-story.png')" title="Download image">&#8681;</button>` : '';
-  const storyRevertPill = hasStoryOverride ? `<button class="img-revert-pill" onclick="event.stopPropagation();revertImage(${ad.num},'${slotKey}')">Revert</button>` : '';
+  const storyVersionBar = renderImageVersionBar(ad.num, slotKey);
 
   return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-mockup-type="story" data-ad-num="${ad.num}">
-    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}${storyRevertPill}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}${storyVersionBar}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
       <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
@@ -1711,7 +1857,8 @@ function attachCardHandlers(adNum) {
   card.querySelectorAll('.fb-feed, .ig-story').forEach(el => {
     el.addEventListener('click', function(e) {
       if (e.target.closest('.img-upload-btn') || e.target.closest('.img-download-btn') ||
-          e.target.closest('.img-revert-pill') || e.target.closest('.fb-engage-icon') ||
+          e.target.closest('.img-revert-pill') || e.target.closest('.img-version-bar') ||
+          e.target.closest('.img-version-pill') || e.target.closest('.fb-engage-icon') ||
           e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn') ||
           e.target.closest('a.ig-story-cta')) return;
       e.preventDefault();
@@ -2055,7 +2202,13 @@ async function init() {
     const res = await fetch('data.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     _data = await res.json();
-    await loadImageOverrides();
+    await loadImageVersions();
+    console.log('[ad-preview] Image versions loaded:', {
+      overrides: Object.keys(_imageOverrides).length,
+      versions: Object.keys(_imageVersions).length,
+      activeVersions: Object.keys(_activeImageVersion).length,
+      detail: Object.entries(_imageVersions).map(([k,v]) => `${k}: ${v.length} versions`)
+    });
 
     // Hero
     const heroEl = document.getElementById('hero-section');

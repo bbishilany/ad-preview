@@ -953,14 +953,7 @@
     align-items: center;
     gap: 6px;
     padding: 6px 0 2px;
-  }
-  .img-version-bar-label {
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--text2);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-right: 2px;
+    justify-content: center;
   }
   .img-version-pill {
     min-width: 32px; height: 26px;
@@ -1226,20 +1219,21 @@ function _patchImageWithVersions(adNum, slot, newUrl) {
     if (oldPill) oldPill.remove();
     break;
   }
-  // Re-render the version bars section for this ad card
+  // Re-render the version bars under each mockup for this ad card
   const card = document.querySelector(`[data-ad-num="${adNum}"]`)?.closest('.ad-card');
   if (!card) return;
-  const mockups = card.querySelector('.ad-card-mockups');
-  if (!mockups) return;
-  const oldBars = mockups.querySelector('.img-version-bars');
-  if (oldBars) oldBars.remove();
-  const ad = _data.ads.find(a => a.num === adNum);
-  if (!ad) return;
-  const _pl = (ad.placements || []).map(p => p.toLowerCase());
-  const feedVBar = _pl.some(p => p.includes('feed')) ? renderImageVersionBar(adNum, 'feed') : '';
-  const storyVBar = _pl.some(p => p.includes('stor')) ? renderImageVersionBar(adNum, 'story') : '';
-  if (feedVBar || storyVBar) {
-    mockups.insertAdjacentHTML('beforeend', `<div class="img-version-bars">${feedVBar}${storyVBar}</div>`);
+  // Remove all existing version bars
+  card.querySelectorAll('.img-version-bar').forEach(el => el.remove());
+  // Insert fresh version bars after each mockup
+  const feedMockup = card.querySelector('[data-mockup-type="feed"]');
+  if (feedMockup) {
+    const feedBar = renderImageVersionBar(adNum, 'feed');
+    if (feedBar) feedMockup.insertAdjacentHTML('afterend', feedBar);
+  }
+  const storyMockup = card.querySelector('[data-mockup-type="story"]');
+  if (storyMockup) {
+    const storyBar = renderImageVersionBar(adNum, 'story');
+    if (storyBar) storyMockup.insertAdjacentHTML('afterend', storyBar);
   }
 }
 
@@ -1420,8 +1414,7 @@ function renderImageVersionBar(adNum, slot) {
     const isActive = v.version_num === activeVer;
     pills += `<button class="img-version-pill${isActive ? ' active' : ''}" onclick="switchImageVersion(${adNum},'${slot}',${v.version_num})">${esc(label)}</button>`;
   });
-  const slotLabel = slot === 'story' ? 'Story' : 'Feed';
-  return `<div class="img-version-bar"><span class="img-version-bar-label">${slotLabel}</span>${pills}</div>`;
+  return `<div class="img-version-bar">${pills}</div>`;
 }
 
 // ── Image URL helpers ──────────────────────────────────────────────────────
@@ -1585,13 +1578,13 @@ function renderAdCardBodyInner(ad) {
 
   // Mockups column
   html += `<div class="ad-card-mockups">`;
-  if (_hasFeed) html += renderFeedMockup(ad);
-  if (_hasStories) html += renderStoryMockup(ad);
-  // Version bars below mockups (only shown when multiple versions exist)
-  const feedVBar = _hasFeed ? renderImageVersionBar(ad.num, 'feed') : '';
-  const storyVBar = _hasStories ? renderImageVersionBar(ad.num, 'story') : '';
-  if (feedVBar || storyVBar) {
-    html += `<div class="img-version-bars">${feedVBar}${storyVBar}</div>`;
+  if (_hasFeed) {
+    html += renderFeedMockup(ad);
+    html += renderImageVersionBar(ad.num, 'feed');
+  }
+  if (_hasStories) {
+    html += renderStoryMockup(ad);
+    html += renderImageVersionBar(ad.num, 'story');
   }
   html += `</div>`;
 

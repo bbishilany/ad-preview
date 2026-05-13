@@ -1522,9 +1522,7 @@ function _pageName(d) { return 'Confluence Financial Partners'; }
 // ── Scroll mockup into view after variant switch ──────────────────────────
 function _scrollToMockup(adNum) {
   const card = document.getElementById(`ad-card-${adNum}`);
-  if (!card) return;
-  const mockup = card.querySelector('.ad-card-mockups');
-  if (mockup) mockup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ── Switch placement tab ──────────────────────────────────────────────────

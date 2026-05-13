@@ -2280,10 +2280,18 @@ async function renderFeedbackThread(adNum) {
 async function deleteFeedback(id, adNum) {
   if (!confirm('Delete this feedback?')) return;
   try {
-    await sb.from('feedback').delete().eq('id', id);
+    if (!sb) throw new Error('Not connected');
+    const { data, error } = await sb.from('feedback').delete().eq('id', id).select();
+    if (error) throw error;
+    if (!data || data.length === 0) {
+      showUploadToast('Could not delete — permission denied.', 'error');
+      return;
+    }
     renderFeedbackThread(adNum);
     loadFeedbackCount(adNum);
-  } catch(e) { console.warn('Delete failed:', e); }
+  } catch(e) {
+    showUploadToast('Delete failed: ' + e.message, 'error');
+  }
 }
 
 // ── Intersection Observer for sticky header "viewing" indicator ───────────

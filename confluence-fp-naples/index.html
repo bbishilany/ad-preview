@@ -76,10 +76,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
+    min-width: 0;
   }
   .sticky-header-left img {
-    height: 24px; width: 24px; border-radius: 50%; object-fit: cover;
+    height: 24px; width: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
   }
   .sticky-header-left .campaign-label {
     font-size: 13px;
@@ -88,7 +88,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
   }
   .sticky-header-center {
     flex: 1;
@@ -1088,7 +1087,7 @@
     .ad-card-footer { flex-wrap: wrap; padding: 12px 16px; }
     .feedback-inline-input { flex-basis: 100%; }
     .sticky-header { padding: 8px 12px; gap: 8px; }
-    .sticky-header-left .campaign-label { max-width: 120px; font-size: 12px; }
+    .sticky-header-left .campaign-label { font-size: 12px; }
     .wave-header { padding: 0 12px; }
   }
   @media (max-width: 480px) {
@@ -1750,7 +1749,7 @@ function renderAdCardBodyInner(ad) {
   }
 
   // Design direction panel (collapsible)
-  if (ad.image_direction) {
+  if (ad.image_direction && !_data.hide_design_direction) {
     html += `<div class="copy-field-wide">`;
     html += renderDesignDirection(ad);
     html += `</div>`;

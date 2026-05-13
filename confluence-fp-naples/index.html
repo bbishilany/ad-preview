@@ -1410,6 +1410,7 @@ async function switchImageVersion(adNum, slot, versionNum) {
     _imageOverrides[key] = newUrl;
     _activeImageVersion[key] = versionNum;
     _patchImageWithVersions(adNum, slot, newUrl);
+    _scrollToMockup(adNum);
   } catch (e) {
     showUploadToast('Switch failed: ' + e.message, 'error');
   }
@@ -1518,6 +1519,14 @@ function _findStoryImage(ad, varNum) {
 
 function _pageName(d) { return 'Confluence Financial Partners'; }
 
+// ── Scroll mockup into view after variant switch ──────────────────────────
+function _scrollToMockup(adNum) {
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (!card) return;
+  const mockup = card.querySelector('.ad-card-mockups');
+  if (mockup) mockup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 // ── Switch placement tab ──────────────────────────────────────────────────
 function switchPlacement(adNum, placement) {
   _placementIdx[adNum] = placement;
@@ -1541,6 +1550,7 @@ function switchPlacement(adNum, placement) {
 function switchOption(adNum, optIdx) {
   _optionIdx[adNum] = optIdx;
   updateCopyInPlace(adNum);
+  _scrollToMockup(adNum);
 }
 
 function updateCopyInPlace(adNum) {

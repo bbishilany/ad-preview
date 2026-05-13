@@ -2101,10 +2101,11 @@ function renderAdNav() {
   const navEl = document.getElementById('ad-nav');
   navEl.innerHTML = _data.ads.map(ad => {
     const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
-    const shortTitle = (ad.title || '').replace(/\s*—.*$/, '').replace(/\s*image$/, '');
+    const arcLabel = (ad.arc || '').split('—')[0].trim();
+    const label = arcLabel || (ad.title || '').replace(/\s*—.*$/, '').replace(/\s*image$/, '');
     return `<a class="ad-nav-item${isApproved ? ' approved-dot' : ''}" data-ad-num="${ad.num}" onclick="scrollToAd(${ad.num})">
       <span class="ad-nav-num">${ad.num}</span>
-      <span class="ad-nav-label">${esc(shortTitle)}</span>
+      <span class="ad-nav-label">${esc(label)}</span>
     </a>`;
   }).join('');
   initAdNavObserver();

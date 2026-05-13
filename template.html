@@ -377,6 +377,48 @@
   .placement-panel { display: flex; flex-direction: column; align-items: center; }
   .placement-panel.hidden { display: none; }
 
+  /* Variant bar (copy + image variant pills) */
+  .variant-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 24px;
+  }
+  .variant-bar:empty { display: none; }
+  .variant-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .variant-row-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 110px;
+  }
+  .variant-row-pills {
+    display: flex;
+    gap: 4px;
+  }
+  .variant-pill {
+    min-width: 30px; height: 26px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px; font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .variant-pill:hover { border-color: var(--accent); color: var(--text); }
+  .variant-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+
   @media (max-width: 768px) {
     .ad-card-copy {
       grid-template-columns: 1fr;
@@ -1221,33 +1263,11 @@ function _patchImageWithVersions(adNum, slot, newUrl) {
     if (oldPill) oldPill.remove();
     break;
   }
-  // Re-render the version bars inside each placement panel for this ad card
-  const card = document.querySelector(`[data-ad-num="${adNum}"]`)?.closest('.ad-card');
-  if (!card) return;
-  // Update version bars inside placement panels
-  card.querySelectorAll('.placement-panel').forEach(panel => {
-    const panelSlot = panel.dataset.placement === 'reel' ? 'story' : panel.dataset.placement;
-    const oldBar = panel.querySelector('.img-version-bar');
-    if (oldBar) oldBar.remove();
-    const newBar = renderImageVersionBar(adNum, panelSlot);
-    if (newBar) {
-      const mockup = panel.querySelector('[data-mockup-type]');
-      if (mockup) mockup.insertAdjacentHTML('afterend', newBar);
-    }
-  });
-  // Fallback: if no placement panels (single placement), update directly
-  if (!card.querySelector('.placement-panel')) {
-    card.querySelectorAll('.img-version-bar').forEach(el => el.remove());
-    const feedMockup = card.querySelector('[data-mockup-type="feed"]');
-    if (feedMockup) {
-      const feedBar = renderImageVersionBar(adNum, 'feed');
-      if (feedBar) feedMockup.insertAdjacentHTML('afterend', feedBar);
-    }
-    const storyMockup = card.querySelector('[data-mockup-type="story"]');
-    if (storyMockup) {
-      const storyBar = renderImageVersionBar(adNum, 'story');
-      if (storyBar) storyMockup.insertAdjacentHTML('afterend', storyBar);
-    }
+  // Re-render the variant bar for this ad card
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (ad) {
+    const barEl = document.getElementById(`variant-bar-${adNum}`);
+    if (barEl) barEl.outerHTML = renderVariantBar(ad);
   }
 }
 
@@ -1431,6 +1451,44 @@ function renderImageVersionBar(adNum, slot) {
   return `<div class="img-version-bar">${pills}</div>`;
 }
 
+// ── Variant bar (consolidated copy + image variant pills) ─────────────────
+function renderVariantBar(ad) {
+  const adNum = ad.num;
+  const letters = ['A','B','C','D','E'];
+  let rows = '';
+
+  // Copy variant row
+  const optCount = Array.isArray(ad.primary_text) ? ad.primary_text.length : 1;
+  if (optCount >= 2) {
+    const _oi = _optionIdx[adNum] || 0;
+    let pills = '';
+    for (let i = 0; i < optCount; i++) {
+      pills += `<button class="variant-pill copy-version-pill${i === _oi ? ' active' : ''}" onclick="switchOption(${adNum}, ${i})">${letters[i] || i+1}</button>`;
+    }
+    rows += `<div class="variant-row"><span class="variant-row-label">Copy Variant</span><div class="variant-row-pills">${pills}</div></div>`;
+  }
+
+  // Image variant row (based on active placement)
+  const activePlacement = _placementIdx[adNum] || 'feed';
+  const slot = activePlacement === 'reel' ? 'story' : activePlacement;
+  const batch = _getLatestBatch(adNum, slot);
+  if (batch.length >= 2) {
+    const key = `${adNum}_${slot}`;
+    const activeVer = _activeImageVersion[key] || null;
+    let pills = '';
+    batch.forEach((v, i) => {
+      const isActive = v.version_num === activeVer;
+      pills += `<button class="variant-pill img-version-pill${isActive ? ' active' : ''}" onclick="switchImageVersion(${adNum},'${slot}',${v.version_num})">${letters[i] || i+1}</button>`;
+    });
+    rows += `<div class="variant-row"><span class="variant-row-label">Image Variant</span><div class="variant-row-pills">${pills}</div></div>`;
+  }
+
+  if (rows) {
+    return `<div class="variant-bar" id="variant-bar-${adNum}">${rows}</div>`;
+  }
+  return `<div id="variant-bar-${adNum}"></div>`;
+}
+
 // ── Image URL helpers ──────────────────────────────────────────────────────
 function _imgUrl(filename) { return `images/${filename}`; }
 
@@ -1471,6 +1529,12 @@ function switchPlacement(adNum, placement) {
   card.querySelectorAll('.placement-panel').forEach(panel => {
     panel.classList.toggle('hidden', panel.dataset.placement !== placement);
   });
+  // Re-render variant bar (image variants differ per placement)
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (ad) {
+    const barEl = document.getElementById(`variant-bar-${adNum}`);
+    if (barEl) barEl.outerHTML = renderVariantBar(ad);
+  }
 }
 
 // ── Switch copy version (A/B/C) ───────────────────────────────────────────
@@ -1588,17 +1652,6 @@ function renderAdCard(ad) {
           <div class="ad-card-chips">
             ${_pl.map(p => `<span class="ad-chip ad-chip-accent">${esc(p.charAt(0).toUpperCase() + p.slice(1))}</span>`).join('')}
           </div>
-          ${(() => {
-            const optCount = Array.isArray(ad.primary_text) ? ad.primary_text.length : 1;
-            if (optCount <= 1) return '';
-            const letters = ['A','B','C','D','E'];
-            const _oi = _optionIdx[ad.num] || 0;
-            return `<div class="copy-version-pills">
-              ${Array.from({length: optCount}, (_, i) =>
-                `<button class="copy-version-pill${i === _oi ? ' active' : ''}" onclick="switchOption(${ad.num}, ${i})">${letters[i] || i+1}</button>`
-              ).join('')}
-            </div>`;
-          })()}
         </div>
         <div class="ad-card-status${isApproved ? ' is-approved' : ''}" id="ad-status-${ad.num}">
           ${isApproved ? SVG_ICONS.check + ' Approved' : '&#9675; Not reviewed'}
@@ -1645,7 +1698,6 @@ function renderAdCardBodyInner(ad) {
     const isActive = activePlacement === 'feed';
     html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="feed">`;
     html += renderFeedMockup(ad);
-    html += renderImageVersionBar(ad.num, 'feed');
     html += `</div>`;
   }
 
@@ -1654,7 +1706,6 @@ function renderAdCardBodyInner(ad) {
     const isActive = activePlacement === 'story';
     html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="story">`;
     html += renderStoryMockup(ad);
-    html += renderImageVersionBar(ad.num, 'story');
     html += `</div>`;
   }
 
@@ -1663,11 +1714,13 @@ function renderAdCardBodyInner(ad) {
     const isActive = activePlacement === 'reel';
     html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="reel">`;
     html += renderStoryMockup(ad);
-    html += renderImageVersionBar(ad.num, 'story');
     html += `</div>`;
   }
 
   html += `</div>`;
+
+  // Variant bar (copy + image variant pills)
+  html += renderVariantBar(ad);
 
   // Copy section (below mockup)
   html += `<div class="ad-card-copy">`;
@@ -1952,7 +2005,8 @@ function attachCardHandlers(adNum) {
     el.addEventListener('click', function(e) {
       if (e.target.closest('.img-upload-btn') || e.target.closest('.img-download-btn') ||
           e.target.closest('.img-revert-pill') || e.target.closest('.img-version-bar') ||
-          e.target.closest('.img-version-pill') || e.target.closest('.fb-engage-icon') ||
+          e.target.closest('.img-version-pill') || e.target.closest('.variant-pill') ||
+          e.target.closest('.fb-engage-icon') ||
           e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn') ||
           e.target.closest('a.ig-story-cta') || e.target.closest('.placement-tab')) return;
       e.preventDefault();

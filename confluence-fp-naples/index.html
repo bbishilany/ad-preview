@@ -1203,6 +1203,7 @@ let _imageOverrides = {};
 let _imageVersions = {};
 let _activeImageVersion = {};
 let _placementIdx = {};
+let _staticImageVariant = {};  // tracks active static variant per ad+slot, e.g. "1_feed" → 0
 let _feedbackCache = {};
 const CAMPAIGN_ID = 'confluence-fp-naples';
 
@@ -1513,12 +1514,64 @@ function renderVariantBar(ad) {
       pills += `<button class="variant-pill img-version-pill${isActive ? ' active' : ''}" onclick="switchImageVersion(${adNum},'${slot}',${v.version_num})">${letters[i] || i+1}</button>`;
     });
     rows += `<div class="variant-row"><span class="variant-row-label">Image Variant</span><div class="variant-row-pills">${pills}</div></div>`;
+  } else {
+    // Static image variants from data.json
+    const staticVars = _getStaticVariants(ad, slot);
+    if (staticVars.length >= 2) {
+      const sKey = `${adNum}_${slot}`;
+      const activeIdx = _staticImageVariant[sKey] || 0;
+      let pills = '';
+      staticVars.forEach((filename, i) => {
+        const label = _getStaticVariantLabel(filename) || letters[i] || (i + 1);
+        const isActive = i === activeIdx;
+        pills += `<button class="variant-pill img-version-pill${isActive ? ' active' : ''}" onclick="switchStaticVariant(${adNum},'${slot}',${i})">${esc(label)}</button>`;
+      });
+      rows += `<div class="variant-row"><span class="variant-row-label">Image Variant</span><div class="variant-row-pills">${pills}</div></div>`;
+    }
   }
 
   if (rows) {
     return `<div class="variant-bar" id="variant-bar-${adNum}">${rows}</div>`;
   }
   return `<div id="variant-bar-${adNum}"></div>`;
+}
+
+// ── Static image variant helpers ──────────────────────────────────────────
+function _getStaticVariants(ad, slot) {
+  // Returns array of filenames from ad.images matching the slot (feed/story)
+  const images = ad.images || [];
+  if (slot === 'story') return images.filter(f => f.includes('story'));
+  return images.filter(f => f.includes('feed') || (!f.includes('story') && !f.includes('card')));
+}
+
+function _getStaticVariantLabel(filename) {
+  const m = filename.match(/-v(\d+)-/);
+  return m ? 'v' + m[1] : null;
+}
+
+function switchStaticVariant(adNum, slot, idx) {
+  const key = `${adNum}_${slot}`;
+  _staticImageVariant[key] = idx;
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (!ad) return;
+  const variants = _getStaticVariants(ad, slot);
+  const newFile = variants[idx];
+  if (!newFile) return;
+  const newUrl = _imgUrl(newFile);
+  // Update image src in the mockup
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (!card) return;
+  const panelSlots = slot === 'story' ? ['story', 'reel'] : ['feed'];
+  panelSlots.forEach(ps => {
+    const panel = card.querySelector(`.placement-panel[data-placement="${ps}"]`);
+    if (!panel) return;
+    // Story/reel uses img.ig-story-bg; feed uses img inside .img-upload-wrap
+    const img = panel.querySelector('img.ig-story-bg') || panel.querySelector('.img-upload-wrap img');
+    if (img) img.src = newUrl;
+  });
+  // Re-render variant bar
+  const barEl = document.getElementById(`variant-bar-${adNum}`);
+  if (barEl) barEl.outerHTML = renderVariantBar(ad);
 }
 
 // ── Image URL helpers ──────────────────────────────────────────────────────
@@ -1528,6 +1581,13 @@ function _findFeedImage(ad, varNum) {
   const slotKey = varNum != null ? `${ad.num}_v${varNum}_feed` : `${ad.num}_feed`;
   const override = _imageOverrides[slotKey];
   if (override) return override;
+  // Static variant selection
+  const staticKey = `${ad.num}_feed`;
+  const staticIdx = _staticImageVariant[staticKey];
+  if (staticIdx != null) {
+    const variants = _getStaticVariants(ad, 'feed');
+    if (variants[staticIdx]) return _imgUrl(variants[staticIdx]);
+  }
   const images = varNum != null && ad.variations
     ? (ad.variations.find(v => v.num === varNum) || {}).images || []
     : ad.images || [];
@@ -1540,6 +1600,13 @@ function _findStoryImage(ad, varNum) {
   const slotKey = varNum != null ? `${ad.num}_v${varNum}_story` : `${ad.num}_story`;
   const override = _imageOverrides[slotKey];
   if (override) return override;
+  // Static variant selection
+  const staticKey = `${ad.num}_story`;
+  const staticIdx = _staticImageVariant[staticKey];
+  if (staticIdx != null) {
+    const variants = _getStaticVariants(ad, 'story');
+    if (variants[staticIdx]) return _imgUrl(variants[staticIdx]);
+  }
   const images = varNum != null && ad.variations
     ? (ad.variations.find(v => v.num === varNum) || {}).images || []
     : ad.images || [];

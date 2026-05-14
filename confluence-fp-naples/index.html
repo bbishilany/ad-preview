@@ -890,8 +890,8 @@
   .ig-story-progress-fill { width: 40%; height: 100%; background: white; border-radius: 2px; }
   .ig-story-account {
     position: absolute;
-    top: 18px; left: 12px;
-    display: flex; align-items: center; gap: 8px;
+    top: 18px; left: 38px;
+    display: flex; align-items: center; gap: 6px;
     z-index: 3;
   }
   .ig-story-avatar {
@@ -911,11 +911,18 @@
     color: white; font-size: 10px; font-weight: 600;
     text-shadow: 0 1px 4px rgba(0,0,0,0.6);
   }
-  .ig-story-sponsored {
-    color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 400;
+  .ig-story-ad-label {
+    color: rgba(255,255,255,0.7); font-size: 9px; font-weight: 400;
     text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-    margin-left: -4px;
   }
+  .ig-story-mute-icon {
+    position: absolute; top: 20px; left: 12px;
+    z-index: 3; color: white;
+    width: 22px; height: 22px;
+    background: rgba(0,0,0,0.3); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ig-story-mute-icon svg { width: 12px; height: 12px; }
   .ig-story-chrome-right {
     position: absolute; top: 16px; right: 10px;
     display: flex; align-items: center; gap: 12px;
@@ -1006,10 +1013,10 @@
     animation: storyFadeIn 0.4s ease-out 1.4s forwards;
   }
 
-  /* ── Meta CTA block (chevron + full-width pill) ──────────── */
+  /* ── Meta CTA block (chevron + compact centered pill) ──────────── */
   .ig-story-cta-block {
     position: absolute;
-    bottom: 1.5%; left: 8px; right: 8px;
+    bottom: 1.5%; left: 0; right: 0;
     z-index: 4;
     display: flex; flex-direction: column; align-items: center;
     gap: 4px;
@@ -1031,17 +1038,23 @@
     50% { transform: translateY(-3px); }
   }
   .ig-story-cta-pill {
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     background: white; color: #262626;
-    padding: 8px 0; border-radius: 8px;
+    padding: 10px 20px; border-radius: 20px;
     font-size: 11px; font-weight: 600;
     text-align: center;
     letter-spacing: 0.01em;
     text-decoration: none;
-    display: block;
     cursor: pointer;
+    white-space: nowrap;
   }
   .ig-story-cta-pill:hover { background: rgba(255,255,255,0.92); }
+  .ig-story-cta-link-icon {
+    display: inline-flex; align-items: center;
+  }
+  .ig-story-cta-link-icon svg { width: 12px; height: 12px; }
   @keyframes ctaRiseUp {
     from { transform: translateY(30px); opacity: 0; }
     to   { transform: translateY(0); opacity: 1; }
@@ -1275,6 +1288,9 @@ const SVG_ICONS = {
   bookmark: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
   threeDots: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>`,
   chevronUp: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`,
+  chevronDown: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`,
+  linkIcon: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+  muteIcon: `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>`,
   check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>`,
 };
 
@@ -2061,12 +2077,14 @@ function renderStoryMockup(ad) {
     <div class="safe-zone-overlay safe-zone-top"><span class="safe-zone-label">Top 320px</span></div>
     <div class="safe-zone-overlay safe-zone-bottom"><span class="safe-zone-label">Bottom 400px</span></div>
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
+    <div class="ig-story-mute-icon">${SVG_ICONS.muteIcon}</div>
     <div class="ig-story-account">
       <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
       <div class="ig-story-handle">confluencefp</div>
-      <div class="ig-story-sponsored">Sponsored</div>
+      <div class="ig-story-ad-label">Ad</div>
     </div>
     <div class="ig-story-chrome-right">
+      ${SVG_ICONS.chevronDown}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </div>
@@ -2074,7 +2092,7 @@ function renderStoryMockup(ad) {
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
     <div class="ig-story-cta-block">
       <div class="ig-story-cta-chevron">${SVG_ICONS.chevronUp}</div>
-      ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta-pill">${esc(cta)}</div>`}
+      ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><span class="ig-story-cta-link-icon">${SVG_ICONS.linkIcon}</span>${esc(cta)}</a>` : `<div class="ig-story-cta-pill"><span class="ig-story-cta-link-icon">${SVG_ICONS.linkIcon}</span>${esc(cta)}</div>`}
     </div>
   </div>`;
 }
@@ -2112,7 +2130,7 @@ function renderReelMockup(ad) {
     </div>
     <div class="ig-story-cta-block">
       <div class="ig-story-cta-chevron">${SVG_ICONS.chevronUp}</div>
-      ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta-pill">${esc(cta)}</div>`}
+      ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><span class="ig-story-cta-link-icon">${SVG_ICONS.linkIcon}</span>${esc(cta)}</a>` : `<div class="ig-story-cta-pill"><span class="ig-story-cta-link-icon">${SVG_ICONS.linkIcon}</span>${esc(cta)}</div>`}
     </div>
   </div>`;
 }

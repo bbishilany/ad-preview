@@ -133,14 +133,16 @@
   }
 
   /* ── SAFE ZONE OVERLAY ──────────────────────────────────────── */
-  .ig-story .safe-zone-overlay {
+  .ig-story .safe-zone-overlay,
+  .ig-reel .safe-zone-overlay {
     display: none;
     position: absolute;
     left: 0; right: 0;
     z-index: 10;
     pointer-events: none;
   }
-  body.show-safe-zones .ig-story .safe-zone-overlay { display: block; }
+  body.show-safe-zones .ig-story .safe-zone-overlay,
+  body.show-safe-zones .ig-reel .safe-zone-overlay { display: block; }
   .safe-zone-top {
     top: 0;
     height: 16.67%; /* 320 / 1920 */
@@ -467,7 +469,7 @@
     .ad-card-copy {
       grid-template-columns: 1fr;
     }
-    .ig-story { width: 220px; }
+    .ig-story, .ig-reel { width: 220px; }
   }
 
   /* Copy version toggle */
@@ -854,26 +856,33 @@
     padding: 6px 14px 10px; color: var(--text2); font-size: 12px; font-weight: 600;
   }
 
-  /* ── STORIES MOCKUP ────────────────────────────────────────────── */
-  .ig-story {
+  /* ── SHARED STORY/REEL BASE ───────────────────────────────────── */
+  .ig-story, .ig-reel {
     width: 280px; aspect-ratio: 9/16;
     border-radius: 14px; overflow: hidden;
     position: relative; display: flex; flex-direction: column;
     justify-content: center; align-items: center;
-    padding: 24px 18px 60px; text-align: center;
+    text-align: center;
     border: 1px solid var(--border);
     background: linear-gradient(180deg, #1a1a2e, #16213e);
     box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
     cursor: zoom-in;
     flex-shrink: 0;
   }
+  .ig-story { padding: 24px 18px 60px; }
+  .ig-reel { padding: 24px 18px 80px; }
   .ig-story-has-img { justify-content: flex-end; padding-bottom: 70px; }
+  .ig-reel-has-img { justify-content: flex-end; }
   .ig-story-has-img .ig-story-text,
   .ig-story-has-img .ig-story-secondary { display: none; }
-  .ig-story-bg {
+  .ig-story-bg, .ig-reel-bg {
     position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.7;
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
   }
+  .ig-story-bg { opacity: 0.7; }
+  .ig-reel-bg { opacity: 1; }
+
+  /* ── STORY-SPECIFIC CHROME ──────────────────────────────────── */
   .ig-story-progress {
     position: absolute; top: 8px; left: 8px; right: 8px;
     height: 2px; background: rgba(255,255,255,0.3); border-radius: 2px; z-index: 2;
@@ -902,6 +911,17 @@
     color: white; font-size: 10px; font-weight: 600;
     text-shadow: 0 1px 4px rgba(0,0,0,0.6);
   }
+  .ig-story-sponsored {
+    color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 400;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    margin-left: -4px;
+  }
+  .ig-story-chrome-right {
+    position: absolute; top: 16px; right: 10px;
+    display: flex; align-items: center; gap: 12px;
+    z-index: 3; color: white;
+  }
+  .ig-story-chrome-right svg { width: 18px; height: 18px; }
   .ig-story-text {
     color: white; font-size: 14px; font-weight: 700; line-height: 1.4;
     margin-bottom: 6px; text-shadow: 0 1px 6px rgba(0,0,0,0.7);
@@ -924,6 +944,68 @@
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
+  /* ── REEL-SPECIFIC CHROME ───────────────────────────────────── */
+  .ig-reel-side-icons {
+    position: absolute; right: 10px; bottom: 22%;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    z-index: 3; color: white;
+  }
+  .ig-reel-side-icon {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  .ig-reel-side-icon svg { width: 20px; height: 20px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5)); }
+  .ig-reel-side-count { font-size: 8px; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+  .ig-reel-music-disc {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #333; border: 2px solid #555;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    animation: discSpin 3s linear infinite;
+  }
+  .ig-reel-music-disc img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+  @keyframes discSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .ig-reel-caption {
+    position: absolute; bottom: 14%; left: 10px; right: 44px;
+    z-index: 3; text-align: left;
+  }
+  .ig-reel-caption-handle {
+    font-size: 10px; font-weight: 700; color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    margin-bottom: 1px;
+  }
+  .ig-reel-caption-sponsored {
+    font-size: 8px; color: rgba(255,255,255,0.7);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 4px;
+    display: flex; align-items: center; gap: 3px;
+  }
+  .ig-reel-caption-sponsored::before {
+    content: ''; display: inline-block; width: 3px; height: 3px;
+    border-radius: 50%; background: rgba(255,255,255,0.5);
+  }
+  .ig-reel-caption-text {
+    font-size: 9px; color: rgba(255,255,255,0.9); line-height: 1.35;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .ig-reel-caption-more {
+    font-size: 9px; color: rgba(255,255,255,0.6); font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    opacity: 0;
+  }
+  .ig-reel-caption-text.cta-animate {
+    animation: storyFadeIn 0.4s ease-out 1.2s forwards;
+  }
+  .ig-reel-caption-more.cta-animate {
+    animation: storyFadeIn 0.4s ease-out 1.4s forwards;
+  }
+
   /* ── Meta CTA block (chevron + full-width pill) ──────────── */
   .ig-story-cta-block {
     position: absolute;
@@ -1124,7 +1206,7 @@
   @media (max-width: 480px) {
     .sticky-header-center { display: none; }
     .fb-feed { width: 100%; }
-    .ig-story { width: 180px; }
+    .ig-story, .ig-reel { width: 180px; }
     .ad-card-chips { display: none; }
   }
 </style>
@@ -1815,11 +1897,11 @@ function renderAdCardBodyInner(ad) {
     html += `</div>`;
   }
 
-  // Reels panel (reuses story mockup)
+  // Reels panel
   if (_hasReels) {
     const isActive = activePlacement === 'reel';
     html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="reel">`;
-    html += renderStoryMockup(ad);
+    html += renderReelMockup(ad);
     html += `</div>`;
   }
 
@@ -1982,9 +2064,52 @@ function renderStoryMockup(ad) {
     <div class="ig-story-account">
       <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
       <div class="ig-story-handle">confluencefp</div>
+      <div class="ig-story-sponsored">Sponsored</div>
+    </div>
+    <div class="ig-story-chrome-right">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
+    <div class="ig-story-cta-block">
+      <div class="ig-story-cta-chevron">${SVG_ICONS.chevronUp}</div>
+      ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta-pill">${esc(cta)}</div>`}
+    </div>
+  </div>`;
+}
+
+// ── Reels Mockup ──────────────────────────────────────────────────────────
+function renderReelMockup(ad) {
+  const cta = (ad.stories || {}).cta_sticker || ad.cta || 'Learn More';
+  const bgImg = _findStoryImage(ad);
+  const hasImg = !!bgImg;
+  const _oi = _optionIdx[ad.num] || 0;
+  const primaryText = _getField(ad, 'primary_text', _oi);
+
+  const slotKey = 'story';
+  const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const downloadBtn = bgImg ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${bgImg}','ad${ad.num}-reel.png')" title="Download image">&#8681;</button>` : '';
+
+  return `<div class="ig-reel${hasImg ? ' ig-reel-has-img' : ''}" data-mockup-type="story" data-ad-num="${ad.num}">
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-reel-bg" src="${bgImg}" alt="" loading="lazy">${uploadBtn}${downloadBtn}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${uploadBtn}</div>`}
+    <div class="safe-zone-overlay safe-zone-top"><span class="safe-zone-label">Top 320px</span></div>
+    <div class="safe-zone-overlay safe-zone-bottom"><span class="safe-zone-label">Bottom 400px</span></div>
+    <div class="ig-reel-side-icons">
+      <div class="ig-reel-side-icon">${SVG_ICONS.heart}<span class="ig-reel-side-count">Like</span></div>
+      <div class="ig-reel-side-icon">${SVG_ICONS.comment}<span class="ig-reel-side-count"></span></div>
+      <div class="ig-reel-side-icon">${SVG_ICONS.share}<span class="ig-reel-side-count"></span></div>
+      <div class="ig-reel-side-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+      <div class="ig-reel-side-icon">
+        <div class="ig-reel-music-disc"><img src="images/confluence-brandmark.jpg" alt=""></div>
+      </div>
+    </div>
+    <div class="ig-reel-caption">
+      <div class="ig-reel-caption-handle">confluencefp</div>
+      <div class="ig-reel-caption-sponsored">Sponsored</div>
+      <div class="ig-reel-caption-text">${esc(primaryText)}</div>
+      <div class="ig-reel-caption-more">... more</div>
+    </div>
     <div class="ig-story-cta-block">
       <div class="ig-story-cta-chevron">${SVG_ICONS.chevronUp}</div>
       ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta-pill">${esc(cta)}</div>`}
@@ -2006,14 +2131,14 @@ function openMockupZoom(element) {
   _zoomActive = true;
   overlay.classList.add('active');
   overlay.scrollTop = 0;
-  if (clone.classList.contains('ig-story')) {
+  if (clone.classList.contains('ig-story') || clone.classList.contains('ig-reel')) {
     _startZoomLoop(content);
   }
 }
 
 function _startZoomLoop(container) {
   if (_zoomLoopId) clearTimeout(_zoomLoopId);
-  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block';
+  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block, .ig-reel-caption-text, .ig-reel-caption-more';
   function run() {
     if (!_zoomActive) return;
     const els = container.querySelectorAll(ANIM_ELS);
@@ -2073,14 +2198,14 @@ function initStoryObserver() {
   }, { threshold: 0.3 });
 
   document.querySelectorAll('.ad-card').forEach(card => {
-    if (card.querySelector('.ig-story')) {
+    if (card.querySelector('.ig-story') || card.querySelector('.ig-reel')) {
       observer.observe(card);
     }
   });
 }
 
 function startStoryAnimations(card) {
-  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block';
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block, .ig-reel-caption-text, .ig-reel-caption-more';
   function runCycle() {
     if (!card._storyLoopRunning) return;
     const els = card.querySelectorAll(ANIM_ELEMENTS);
@@ -2110,7 +2235,7 @@ function attachCardHandlers(adNum) {
   if (!card) return;
 
   // Click-to-zoom on mockups
-  card.querySelectorAll('.fb-feed, .ig-story').forEach(el => {
+  card.querySelectorAll('.fb-feed, .ig-story, .ig-reel').forEach(el => {
     el.addEventListener('click', function(e) {
       if (e.target.closest('.img-upload-btn') || e.target.closest('.img-download-btn') ||
           e.target.closest('.img-revert-pill') || e.target.closest('.img-version-bar') ||

@@ -924,61 +924,45 @@
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .ig-story-swipe-up {
+  /* ── Meta CTA block (chevron + full-width pill) ──────────── */
+  .ig-story-cta-block {
     position: absolute;
-    bottom: 10%; left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    color: rgba(255,255,255,0.7);
+    bottom: 1.5%; left: 8px; right: 8px;
+    z-index: 4;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4px;
     opacity: 0;
   }
-  @keyframes swipeUpBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-4px); }
+  .ig-story-cta-block.cta-animate {
+    animation: ctaRiseUp 0.35s ease-out 1.6s forwards;
   }
+  .ig-story-cta-chevron {
+    color: rgba(255,255,255,0.85);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ig-story-cta-chevron svg { width: 14px; height: 14px; }
+  .ig-story-cta-chevron.anim-bounce {
+    animation: chevronBounce 1.8s ease-in-out infinite;
+  }
+  @keyframes chevronBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .ig-story-cta-pill {
+    width: 100%;
+    background: white; color: #262626;
+    padding: 8px 0; border-radius: 8px;
+    font-size: 11px; font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  .ig-story-cta-pill:hover { background: rgba(255,255,255,0.92); }
   @keyframes ctaRiseUp {
-    from { transform: translateY(40px); opacity: 0; }
+    from { transform: translateY(30px); opacity: 0; }
     to   { transform: translateY(0); opacity: 1; }
-  }
-  @keyframes ctaRiseUpCentered {
-    from { transform: translateX(-50%) translateY(40px); opacity: 0; }
-    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
-  }
-  .ig-story-swipe-up.cta-animate {
-    animation: ctaRiseUpCentered 0.3s ease-out 3.8s forwards;
-  }
-  .ig-story-swipe-up.anim-bounce {
-    opacity: 1;
-    animation: swipeUpBounce 2s ease-in-out infinite;
-  }
-  .ig-story-cta {
-    background: white; color: #1a1a2e;
-    padding: 7px 18px; border-radius: 20px;
-    font-size: 11px; font-weight: 700;
-    position: absolute; bottom: 6%; z-index: 2;
-    opacity: 0;
-  }
-  .ig-story-cta.cta-animate {
-    animation: ctaRiseUp 0.4s ease-out 4.8s forwards;
-  }
-  .ig-story-message-bar {
-    position: absolute;
-    bottom: 1.5%; left: 10px; right: 10px;
-    z-index: 3;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .ig-story-message-input {
-    flex: 1;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 20px;
-    padding: 5px 12px;
-    font-size: 10px;
-    color: rgba(255,255,255,0.5);
-    background: transparent;
-  }
-  .ig-story-message-send {
-    color: rgba(255,255,255,0.5);
-    display: flex; align-items: center;
   }
 
   /* ── IMAGE UPLOAD/DOWNLOAD/REVERT ──────────────────────────────── */
@@ -1934,11 +1918,9 @@ function renderStoryMockup(ad) {
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
-    <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
-    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
-    <div class="ig-story-message-bar">
-      <div class="ig-story-message-input">Send message</div>
-      <div class="ig-story-message-send">${SVG_ICONS.share}</div>
+    <div class="ig-story-cta-block">
+      <div class="ig-story-cta-chevron">${SVG_ICONS.chevronUp}</div>
+      ${_data.cta_url ? `<a class="ig-story-cta-pill" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta-pill">${esc(cta)}</div>`}
     </div>
   </div>`;
 }
@@ -1964,7 +1946,7 @@ function openMockupZoom(element) {
 
 function _startZoomLoop(container) {
   if (_zoomLoopId) clearTimeout(_zoomLoopId);
-  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta';
+  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block';
   function run() {
     if (!_zoomActive) return;
     const els = container.querySelectorAll(ANIM_ELS);
@@ -1972,14 +1954,16 @@ function _startZoomLoop(container) {
       el.classList.remove('cta-animate', 'anim-bounce');
       const c = el.cloneNode(true); el.replaceWith(c);
     });
+    // Also reset chevron bounce
+    container.querySelectorAll('.ig-story-cta-chevron').forEach(el => el.classList.remove('anim-bounce'));
     _zoomLoopId = setTimeout(() => {
       if (!_zoomActive) return;
       container.querySelectorAll(ANIM_ELS).forEach(el => el.classList.add('cta-animate'));
       _zoomLoopId = setTimeout(() => {
         if (!_zoomActive) return;
-        container.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
+        container.querySelectorAll('.ig-story-cta-chevron').forEach(el => el.classList.add('anim-bounce'));
         _zoomLoopId = setTimeout(run, 3000);
-      }, 5400);
+      }, 2400);
     }, 600);
   }
   run();
@@ -2003,8 +1987,8 @@ function handleZoomOverlayClick(e) {
 
 // ── Story Animation via Intersection Observer ─────────────────────────────
 function initStoryObserver() {
-  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta';
-  const LOOP_CYCLE = 5400;
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block';
+  const LOOP_CYCLE = 2400;
   const LOOP_HOLD = 3000;
   const LOOP_RESET = 600;
 
@@ -2029,7 +2013,7 @@ function initStoryObserver() {
 }
 
 function startStoryAnimations(card) {
-  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta';
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-cta-block';
   function runCycle() {
     if (!card._storyLoopRunning) return;
     const els = card.querySelectorAll(ANIM_ELEMENTS);
@@ -2038,14 +2022,15 @@ function startStoryAnimations(card) {
       const clone = el.cloneNode(true);
       el.replaceWith(clone);
     });
+    card.querySelectorAll('.ig-story-cta-chevron').forEach(el => el.classList.remove('anim-bounce'));
     card._storyLoopId = setTimeout(() => {
       if (!card._storyLoopRunning) return;
       card.querySelectorAll(ANIM_ELEMENTS).forEach(el => el.classList.add('cta-animate'));
       card._storyLoopId = setTimeout(() => {
         if (!card._storyLoopRunning) return;
-        card.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
+        card.querySelectorAll('.ig-story-cta-chevron').forEach(el => el.classList.add('anim-bounce'));
         card._storyLoopId = setTimeout(runCycle, 3000);
-      }, 5400);
+      }, 2400);
     }, 600);
   }
   card._storyLoopRunning = true;
@@ -2065,7 +2050,7 @@ function attachCardHandlers(adNum) {
           e.target.closest('.img-version-pill') || e.target.closest('.variant-pill') ||
           e.target.closest('.fb-engage-icon') ||
           e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn') ||
-          e.target.closest('a.ig-story-cta') || e.target.closest('.placement-tab')) return;
+          e.target.closest('a.ig-story-cta-pill') || e.target.closest('.placement-tab')) return;
       e.preventDefault();
       openMockupZoom(el);
     });
@@ -2131,7 +2116,7 @@ function refreshMockupField(adNum, field, value) {
   }
   if (field === 'cta') {
     card.querySelectorAll('.fb-cta-btn').forEach(el => el.textContent = value);
-    card.querySelectorAll('.ig-story-cta').forEach(el => el.textContent = value);
+    card.querySelectorAll('.ig-story-cta-pill').forEach(el => el.textContent = value);
   }
 }
 

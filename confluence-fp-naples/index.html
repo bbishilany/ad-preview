@@ -1226,7 +1226,7 @@ function _fieldCount(ad, field) {
 
 // ── Image Override System ──────────────────────────────────────────────────
 async function loadImageVersions() {
-  if (!sb) return;
+  if (!sb || (_data && _data.use_static_images)) return;
   try {
     // Try with version_num first; fall back to basic query if column doesn't exist
     let data, error;

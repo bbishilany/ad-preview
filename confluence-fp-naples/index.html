@@ -1679,6 +1679,12 @@ function switchStaticVariant(adNum, slot, idx) {
     // Story/reel uses img.ig-story-bg; feed uses img inside .img-upload-wrap
     const img = panel.querySelector('img.ig-story-bg') || panel.querySelector('.img-upload-wrap img');
     if (img) img.src = newUrl;
+    // Update the download button so it fetches the correct variant
+    const dlBtn = panel.querySelector('.img-download-btn');
+    if (dlBtn) {
+      const dlFilename = `ad${adNum}-${ps === 'feed' ? 'feed' : ps}.png`;
+      dlBtn.setAttribute('onclick', `event.stopPropagation();downloadImage(event,'${newUrl}','${dlFilename}')`);
+    }
   });
   // Re-render variant bar
   const barEl = document.getElementById(`variant-bar-${adNum}`);

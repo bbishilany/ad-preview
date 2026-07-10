@@ -1516,7 +1516,9 @@ function _findStoryImage(ad, varNum) {
   return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad, varNum);
 }
 
-function _pageName(d) { return 'Confluence Financial Partners'; }
+function _pageName(d) { return (d && d.page_name) || (_data && _data.page_name) || 'Confluence Financial Partners'; }
+function _brandmark() { return (_data && _data.brandmark) || 'images/confluence-brandmark.jpg'; }
+function _igHandle() { return (_data && _data.ig_handle) || 'confluencefp'; }
 
 // ── Scroll mockup into view after variant switch ──────────────────────────
 function _scrollToMockup(adNum) {
@@ -1836,7 +1838,7 @@ function renderFeedMockup(ad) {
 
   return `<div class="fb-feed" data-mockup-type="feed" data-ad-num="${ad.num}">
     <div class="fb-feed-header">
-      <div class="fb-avatar"><img src="images/confluence-brandmark.jpg" alt="Confluence FP"></div>
+      <div class="fb-avatar"><img src="${_brandmark()}" alt="${esc(pageName)}"></div>
       <div style="line-height:1.3">
         <div class="fb-page-name">${esc(pageName)}</div>
         <div class="fb-sponsored">Sponsored &middot; 2h</div>
@@ -1879,8 +1881,8 @@ function renderStoryMockup(ad) {
     ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
-      <div class="ig-story-avatar"><img src="images/confluence-brandmark.jpg" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
-      <div class="ig-story-handle">confluencefp</div>
+      <div class="ig-story-avatar"><img src="${_brandmark()}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
+      <div class="ig-story-handle">${esc(_igHandle())}</div>
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}

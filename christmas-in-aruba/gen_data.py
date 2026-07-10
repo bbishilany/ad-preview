@@ -498,41 +498,38 @@ STORIES (1080x1920):
 
 # ── Per-ad TEXT & TYPE direction for Mayo (Figma). Type system from brand site:
 #    Headlines = Playfair Display (serif); body/CTA = Assistant (sans). ──────────
+_SAFE = ("SAFE ZONE (all placements): keep every text element and the CTA inside the central "
+         "safe area. Feed 1080x1080/1080x1350 - stay off the outer ~5% margin and clear of the tree/product. "
+         "Stories/Reels 1080x1920 - keep text below the top 250px and above the bottom 340px (Meta hides "
+         "those behind profile + CTA UI). Type: Playfair Display headline + Assistant CTA. Less is more: "
+         "headline + CTA only unless noted.")
+
 TEXT_SPECS = {
     1: """**TEXT & TYPE — Mayo → Figma**
-Type: Playfair Display (headline) + Assistant (support/CTA). Place in the clean upper-left wall space.
 - Headline (Playfair 700, warm white): "Christmas Comes Home to Aruba"
-- Support (Assistant 400, white 85%): "Pre-lit. Ready in minutes."
-- CTA: **Shop Now** (coral #FF5A4F pill, white text) · Logo top-center, white.""",
+- CTA: **Shop Now** (coral #FF5A4F pill) · small white logo top-center
+- Placement: clean upper-left wall. %s""" % _SAFE,
     2: """**TEXT & TYPE — Mayo → Figma**
-Type: Playfair (headline) + Assistant. Text in the clear left third; product stays right.
 - Headline (Playfair 700): "Lit in Minutes, Not Hours"
-- Support (Assistant 600): "Color-changing LEDs + remote, included"
-- CTA: **Shop Now** (coral pill).""",
-    3: """**TEXT & TYPE — Mayo → Figma** (THE offer — biggest layout)
-NOTE: background being re-rendered for a cleaner right-side panel; build to the reserved cream space.
-- Hero number (Playfair 700, coral #FF5A4F, oversized): "UP TO 40% OFF"
-- Offer stack (Assistant 600): "Pay in full -> 40% · Pay half -> 30% · Layaway (4 payments)"
-- Value (Assistant 400): "Free island delivery before Nov 1"
-- Fine print (Assistant 400, small): "Free Color-Changing LED Light Set per Afl 250, while supplies last"
-- CTA: **Order Now** (coral pill).""",
+- CTA: **Shop Now** (coral pill)
+- Placement: clear left third; product stays right. %s""" % _SAFE,
+    3: """**TEXT & TYPE — Mayo → Figma** (the offer — keep it clean, not crowded)
+- Headline (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off"
+- One micro line only (Assistant 400): "Free LED set per Afl 250" (full offer terms live in the caption, not on the image)
+- CTA: **Order Now** (coral pill)
+- Placement: text over the sky/upper band with a soft scrim; keep the tree clear. %s""" % _SAFE,
     4: """**TEXT & TYPE — Mayo → Figma**
-Type: Playfair (headline) + Assistant. Headline in the clean sky space up top.
 - Headline (Playfair 700, top): "A Tree for Every Home"
-- Size labels (Assistant 700, coral, under each tree): "3ft · 6ft · 9.5ft"
-- Support (Assistant 400): "Free delivery before November"
-- CTA: **Shop Now** (coral pill).""",
+- CTA: **Shop Now** (coral pill)
+- Placement: clean sky band up top. %s""" % _SAFE,
     5: """**TEXT & TYPE — Mayo → Figma**
-Type: Playfair (headline) + Assistant. Use the open warm sky upper-left.
-- Headline (Playfair 700, warm white): "A Tropical Christmas, Done Right"
-- Support (Assistant 400, white 85%): "Aruba's own Christmas store"
-- CTA: **Shop Now** (coral pill, lower-left) · Logo top-center, white.""",
+- Headline (Playfair 700, warm white): "A Tropical Christmas"
+- CTA: **Shop Now** (coral pill, lower-left) · small white logo top-center
+- Placement: open warm sky upper-left. %s""" % _SAFE,
     6: """**TEXT & TYPE — Mayo → Figma**
-Type: Playfair (headline) + Assistant. Use the darker clean area at top.
 - Headline (Playfair 700, warm white): "Pre-Orders Close Soon"
-- Support (Assistant 400, white 80%): "We import only what's reserved"
-- Micro line (Assistant 400): "Up to 40% off · Free delivery before Nov 1"
-- CTA: **Order Now** (coral pill).""",
+- CTA: **Order Now** (coral pill)
+- Placement: dark clean band at top. %s""" % _SAFE,
 }
 
 

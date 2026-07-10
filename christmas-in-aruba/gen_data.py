@@ -496,6 +496,46 @@ STORIES (1080x1920):
 """ + "\n" + BRAND
 
 
+# ── Per-ad TEXT & TYPE direction for Mayo (Figma). Type system from brand site:
+#    Headlines = Playfair Display (serif); body/CTA = Assistant (sans). ──────────
+TEXT_SPECS = {
+    1: """**TEXT & TYPE — Mayo → Figma**
+Type: Playfair Display (headline) + Assistant (support/CTA). Place in the clean upper-left wall space.
+- Headline (Playfair 700, warm white): "Christmas Comes Home to Aruba"
+- Support (Assistant 400, white 85%): "Pre-lit. Ready in minutes."
+- CTA: **Shop Now** (coral #FF5A4F pill, white text) · Logo top-center, white.""",
+    2: """**TEXT & TYPE — Mayo → Figma**
+Type: Playfair (headline) + Assistant. Text in the clear left third; product stays right.
+- Headline (Playfair 700): "Lit in Minutes, Not Hours"
+- Support (Assistant 600): "Color-changing LEDs + remote, included"
+- CTA: **Shop Now** (coral pill).""",
+    3: """**TEXT & TYPE — Mayo → Figma** (THE offer — biggest layout)
+NOTE: background being re-rendered for a cleaner right-side panel; build to the reserved cream space.
+- Hero number (Playfair 700, coral #FF5A4F, oversized): "UP TO 40% OFF"
+- Offer stack (Assistant 600): "Pay in full -> 40% · Pay half -> 30% · Layaway (4 payments)"
+- Value (Assistant 400): "Free island delivery before Nov 1"
+- Fine print (Assistant 400, small): "Free Color-Changing LED Light Set per Afl 250, while supplies last"
+- CTA: **Order Now** (coral pill).""",
+    4: """**TEXT & TYPE — Mayo → Figma**
+Type: Playfair (headline) + Assistant. Headline in the clean sky space up top.
+- Headline (Playfair 700, top): "A Tree for Every Home"
+- Size labels (Assistant 700, coral, under each tree): "3ft · 6ft · 9.5ft"
+- Support (Assistant 400): "Free delivery before November"
+- CTA: **Shop Now** (coral pill).""",
+    5: """**TEXT & TYPE — Mayo → Figma**
+Type: Playfair (headline) + Assistant. Use the open warm sky upper-left.
+- Headline (Playfair 700, warm white): "A Tropical Christmas, Done Right"
+- Support (Assistant 400, white 85%): "Aruba's own Christmas store"
+- CTA: **Shop Now** (coral pill, lower-left) · Logo top-center, white.""",
+    6: """**TEXT & TYPE — Mayo → Figma**
+Type: Playfair (headline) + Assistant. Use the darker clean area at top.
+- Headline (Playfair 700, warm white): "Pre-Orders Close Soon"
+- Support (Assistant 400, white 80%): "We import only what's reserved"
+- Micro line (Assistant 400): "Up to 40% off · Free delivery before Nov 1"
+- CTA: **Order Now** (coral pill).""",
+}
+
+
 def main():
     data = {
         "campaign": "Christmas in Aruba — Pre-Order 2026 (B2C)",
@@ -517,9 +557,13 @@ def main():
         "ads": [ad1(), ad2(), ad3(), ad4(), ad5(), ad6()],
         "client": "christmas-in-aruba",
     }
-    # Wire in the Nano Banana Pro feed creative rendered into the preview images/ dir
+    # Wire in the Nano Banana Pro feed creative rendered into the preview images/ dir,
+    # and append the Figma text/type direction for Mayo to each ad's design panel.
     for ad in data["ads"]:
         ad["images"] = [f"ad{ad['num']}-feed.png"]
+        spec = TEXT_SPECS.get(ad["num"])
+        if spec:
+            ad["image_direction"] = f"{spec}\n\n---\n\n{ad['image_direction']}"
     out = HERE / "data.json"
     out.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {out} — {len(data['ads'])} ads")

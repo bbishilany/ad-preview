@@ -508,28 +508,28 @@ TEXT_SPECS = {
     1: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, warm white): "Christmas Comes Home to Aruba"
 - CTA: **Shop Now** (coral #FF5A4F pill) · small white logo top-center
-- Placement: clean upper-left wall. %s""" % _SAFE,
+- Placement: clean upper-left wall. """ + _SAFE,
     2: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700): "Lit in Minutes, Not Hours"
 - CTA: **Shop Now** (coral pill)
-- Placement: clear left third; product stays right. %s""" % _SAFE,
+- Placement: clear left third; product stays right. """ + _SAFE,
     3: """**TEXT & TYPE — Mayo → Figma** (the offer — keep it clean, not crowded)
 - Headline (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off"
 - One micro line only (Assistant 400): "Free LED set per Afl 250" (full offer terms live in the caption, not on the image)
 - CTA: **Order Now** (coral pill)
-- Placement: text over the sky/upper band with a soft scrim; keep the tree clear. %s""" % _SAFE,
+- Placement: text over the sky/upper band with a soft scrim; keep the tree clear. """ + _SAFE,
     4: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, top): "A Tree for Every Home"
 - CTA: **Shop Now** (coral pill)
-- Placement: clean sky band up top. %s""" % _SAFE,
+- Placement: clean sky band up top. """ + _SAFE,
     5: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, warm white): "A Tropical Christmas"
 - CTA: **Shop Now** (coral pill, lower-left) · small white logo top-center
-- Placement: open warm sky upper-left. %s""" % _SAFE,
+- Placement: open warm sky upper-left. """ + _SAFE,
     6: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, warm white): "Pre-Orders Close Soon"
 - CTA: **Order Now** (coral pill)
-- Placement: dark clean band at top. %s""" % _SAFE,
+- Placement: dark clean band at top. """ + _SAFE,
 }
 
 

@@ -19,6 +19,9 @@ const isBackend = (u) => /supabase|\/api\/|feedback|\/rest\/|localhost:4242/i.te
 
 const browser = await chromium.launch();
 const page = await (await browser.newContext({ viewport: { width: 1280, height: 2200 } })).newPage();
+// Never write to the shared Supabase during QA — block all backend calls so the
+// approve/comment clicks exercise UI state (localStorage) without polluting prod.
+await page.route('**/*supabase.co/**', (r) => r.abort());
 page.on('pageerror', (e) => bugs.push(`UNCAUGHT JS: ${e.message}`));
 page.on('console', (m) => { if (m.type() === 'error') {
   const t = m.text();

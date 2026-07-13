@@ -32,7 +32,7 @@ def ad1():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "There's a certain magic to a Christmas tree glowing in the window — and this year, it belongs in your home in Aruba. \U0001F334✨\n\nClassic Christmas warmth, with a subtle island touch. Pre-lit, ready in minutes, and made to make the whole family stop and stare.\n\nReserve yours now for delivery before November — and start the season the moment you're ready.\n\nFree island-wide delivery on every pre-order.",
+            "There's a certain magic to a Christmas tree glowing in the window — and this year, it belongs in your home in Aruba.\n\nClassic Christmas warmth, with a subtle island touch. Pre-lit, ready in minutes, and made to make the whole family stop and stare.\n\nReserve yours now for delivery before November — and start the season the moment you're ready.\n\nFree island-wide delivery on every pre-order.",
             "Picture it: the lights are on, the music's playing, and the tree is glowing in the corner — no boxes of tangled lights, no hassle. Just Christmas, at home in Aruba.\n\nOur pre-lit trees arrive ready to shine, with color-changing LEDs and a remote in the box.\n\nReserve now for guaranteed delivery before November. Free delivery across the island.",
             "The best part of Christmas isn't the day — it's the weeks leading up to it. The glow in the living room. The kids' faces when the lights come on.\n\nBring that home to Aruba this year with a pre-lit tree that's ready in minutes.\n\nPre-order now, pay less, and we'll deliver before November — free, anywhere on the island.",
         ],
@@ -67,8 +67,8 @@ def ad2():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "Aruba's only dedicated Christmas store — and it shows. \U0001F384\n\nEvery tree arrives pre-lit with color-changing LED lights and a remote, shaped and ready in minutes. No lugging home a real tree, no untangling a single strand.\n\nFrom compact 3-footers to statement 9.5-foot pines — reserve yours now for delivery before November.\n\nFree island-wide delivery on every pre-order.",
-            "What makes it easy: the lights are already on. \U0001F4A1\n\nOur pre-lit trees come with color-changing LEDs and a remote right in the box — warm white for dinner, full color for the party, all from the couch.\n\nAs the island's Christmas specialist, we bring in the trees, the wreaths and the garland so you don't have to hunt for them.\n\nPre-order now. Delivered free before November.",
+            "Aruba's only dedicated Christmas store — and it shows.\n\nEvery tree arrives pre-lit with color-changing LED lights and a remote, shaped and ready in minutes. No lugging home a real tree, no untangling a single strand.\n\nFrom compact 3-footers to statement 9.5-foot pines — reserve yours now for delivery before November.\n\nFree island-wide delivery on every pre-order.",
+            "What makes it easy: the lights are already on.\n\nOur pre-lit trees come with color-changing LEDs and a remote right in the box — warm white for dinner, full color for the party, all from the couch.\n\nAs the island's Christmas specialist, we bring in the trees, the wreaths and the garland so you don't have to hunt for them.\n\nPre-order now. Delivered free before November.",
             "One remote. Every color. Zero hassle.\n\nOur trees arrive pre-strung with color-changing LED lights — no boxes of bulbs, no ladders, no frustration. Fluff the branches, plug it in, and you're done in minutes.\n\nAruba's Christmas specialists, with trees, wreaths and garland for every home.\n\nReserve now for free delivery before November.",
         ],
         "headline": [
@@ -102,8 +102,8 @@ def ad3():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "The earlier you commit, the more you save. \U0001F381\n\nChoose the pre-order plan that fits you:\n→ Pay in full today — save 40%\n→ Pay half now — save 30%\n→ Layaway: split it into 4 easy monthly payments\n\nEvery pre-order ships free across Aruba and is delivered before November. And for every Afl 250 you spend, we'll add a free Color-Changing LED Light Set — while supplies last.\n\nLock in this year's price and let the countdown begin.",
-            "Our Christmas in July event is on — up to 40% off when you plan ahead. ✨\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nEvery pre-order includes free island-wide delivery before November — plus a free Color-Changing LED Light Set for every Afl 250 you spend, while supplies last.\n\nThe best trees go early. Reserve yours today.",
+            "The earlier you commit, the more you save.\n\nChoose the pre-order plan that fits you:\n→ Pay in full today — save 40%\n→ Pay half now — save 30%\n→ Layaway: split it into 4 easy monthly payments\n\nEvery pre-order ships free across Aruba and is delivered before November. And for every Afl 250 you spend, we'll add a free Color-Changing LED Light Set — while supplies last.\n\nLock in this year's price and let the countdown begin.",
+            "Our Christmas in July event is on — up to 40% off when you plan ahead.\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nEvery pre-order includes free island-wide delivery before November — plus a free Color-Changing LED Light Set for every Afl 250 you spend, while supplies last.\n\nThe best trees go early. Reserve yours today.",
             "Here's how pre-order works, and why it pays to be early:\n\n1. Pay 100% now → save 40%\n2. Pay 50% now → save 30%\n3. Prefer to spread it out? Layaway — 4 monthly payments\n\nEvery order ships free before November, and every Afl 250 you spend earns a free Color-Changing LED Light Set (while supplies last).\n\nNo stress, no last-minute scramble — just your tree, ready when you are.",
         ],
         "headline": [
@@ -137,9 +137,9 @@ def ad4():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "Christmas in July isn't a gimmick here — it's just how the island plans ahead. ☀️\U0001F384\n\nWhile everyone else waits, you can reserve your pre-lit tree now, save up to 40%, and have it delivered before November. No December scramble, no sold-out shelves.\n\nCelebrate Christmas in July with us and let the countdown begin. Free island-wide delivery on every pre-order.",
-            "Sunshine, blue skies, and a Christmas tree? That's Christmas in July, Aruba style. \U0001F334\U0001F384\n\nOur pre-order event is on now: reserve today, save up to 40%, and we'll deliver before November. Because the best time to think about December is right now.\n\nFree delivery across the island.",
-            "Here's the secret to a stress-free December: handle it in July. \U0001F381\n\nReserve your pre-lit tree during our Christmas in July event — save up to 40%, lock in this year's price, and we'll deliver before November. Then you get to enjoy the season instead of scrambling for it.\n\nFree island-wide delivery on every pre-order.",
+            "Christmas in July isn't a gimmick here — it's just how the island plans ahead.\n\nWhile everyone else waits, you can reserve your pre-lit tree now, save up to 40%, and have it delivered before November. No December scramble, no sold-out shelves.\n\nCelebrate Christmas in July with us and let the countdown begin. Free island-wide delivery on every pre-order.",
+            "Sunshine, blue skies, and a Christmas tree? That's Christmas in July, Aruba style.\n\nOur pre-order event is on now: reserve today, save up to 40%, and we'll deliver before November. Because the best time to think about December is right now.\n\nFree delivery across the island.",
+            "Here's the secret to a stress-free December: handle it in July.\n\nReserve your pre-lit tree during our Christmas in July event — save up to 40%, lock in this year's price, and we'll deliver before November. Then you get to enjoy the season instead of scrambling for it.\n\nFree island-wide delivery on every pre-order.",
         ],
         "headline": [
             "Christmas in July",
@@ -172,9 +172,9 @@ def ad5():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories"],
         "primary_text": [
-            "Christmas in Aruba doesn't need snow — it needs warmth, family, and a tree that glows against the trade winds. \U0001F334\U0001F384\n\nWe're the island's own Christmas store, bringing classic holiday magic home with a subtle island touch.\n\nJoin the families across Aruba making the season shine. Reserve your tree now for free delivery before November.",
-            "Palm trees outside. A glowing pine inside. That's Christmas, island-style. \U0001F30A✨\n\nAs Aruba's dedicated Christmas specialists, we know what a holiday here looks like — warm evenings, open doors, and a tree that brings everyone together.\n\nReserve yours now and celebrate the season the way only Aruba can. Free delivery before November.",
-            "Here, the holidays come with sunshine — and there's nothing wrong with that. \U0001F334\n\nBring home a pre-lit tree made for island living: effortless, glowing, and ready in minutes. Aruba's own Christmas store, for Aruba's homes.\n\nReserve now for guaranteed free delivery before November.",
+            "Christmas in Aruba doesn't need snow — it needs warmth, family, and a tree that glows against the trade winds.\n\nWe're the island's own Christmas store, bringing classic holiday magic home with a subtle island touch.\n\nJoin the families across Aruba making the season shine. Reserve your tree now for free delivery before November.",
+            "Palm trees outside. A glowing pine inside. That's Christmas, island-style.\n\nAs Aruba's dedicated Christmas specialists, we know what a holiday here looks like — warm evenings, open doors, and a tree that brings everyone together.\n\nReserve yours now and celebrate the season the way only Aruba can. Free delivery before November.",
+            "Here, the holidays come with sunshine — and there's nothing wrong with that.\n\nBring home a pre-lit tree made for island living: effortless, glowing, and ready in minutes. Aruba's own Christmas store, for Aruba's homes.\n\nReserve now for guaranteed free delivery before November.",
         ],
         "headline": [
             "A Tropical Christmas, Done Right",
@@ -207,9 +207,9 @@ def ad6():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories"],
         "primary_text": [
-            "Here's the honest truth about how we work: we don't keep a warehouse full of trees. We import exactly what's reserved — and once pre-orders close, that's it for the season. ⏳\n\nIf you want your tree delivered before November, now is the time to reserve it.\n\nPre-order today, save up to 40%, and get free island-wide delivery.",
-            "The pre-order window is closing. \U0001F384\n\nEvery tree we deliver is one that was reserved in advance — so when the window closes, so does the chance to have yours this year.\n\nReserve now to lock in delivery before November, free across the island, and save up to 40% while you're at it.",
-            "Don't wait until the shelves are bare — because there are no shelves. \U0001F334\n\nWe bring in only the trees our customers reserve. Once pre-orders close for the season, we can't add more.\n\nReserve yours now for guaranteed free delivery before November, and save up to 40%.",
+            "Here's the honest truth about how we work: we don't keep a warehouse full of trees. We import exactly what's reserved — and once pre-orders close, that's it for the season.\n\nIf you want your tree delivered before November, now is the time to reserve it.\n\nPre-order today, save up to 40%, and get free island-wide delivery.",
+            "The pre-order window is closing.\n\nEvery tree we deliver is one that was reserved in advance — so when the window closes, so does the chance to have yours this year.\n\nReserve now to lock in delivery before November, free across the island, and save up to 40% while you're at it.",
+            "Don't wait until the shelves are bare — because there are no shelves.\n\nWe bring in only the trees our customers reserve. Once pre-orders close for the season, we can't add more.\n\nReserve yours now for guaranteed free delivery before November, and save up to 40%.",
         ],
         "headline": [
             "Pre-Orders Close Soon",
@@ -299,8 +299,8 @@ FEED (1080x1080):
 |  LOGO (coral, left)                   |
 |  "Lit in Minutes, Not Hours"          |
 |  (serif, deep slate #1F2A30)          |
-|  ✓ Pre-lit  ✓ Color-changing LEDs     |
-|  ✓ Remote included  (sans, slate)     |
+|   Pre-lit   Color-changing LEDs     |
+|   Remote included  (sans, slate)     |
 |  [SHOP NOW] (coral fill, white text)  |
 +--------------------------------------+
 
@@ -548,13 +548,24 @@ def main():
         "ads": [ad1(), ad2(), ad3(), ad4(), ad5(), ad6()],
         "client": "christmas-in-aruba",
     }
-    # Wire in the Nano Banana Pro feed creative rendered into the preview images/ dir,
-    # and append the Figma text/type direction for Mayo to each ad's design panel.
+    # Stories animated text — bring the % offer home on every vertical.
+    story_offer = {
+        1: "Up to 40% Off · Delivered before Nov",
+        2: "Up to 40% Off · Free island delivery",
+        3: "40% / 30% / Layaway · Free LED per Afl 250",
+        4: "Up to 40% Off · Reserve now",
+        5: "Up to 40% Off · Delivered before Nov",
+        6: "Up to 40% Off · Free delivery before Nov",
+    }
+    # Wire feed + story creative into the preview images/ dir, append Mayo direction,
+    # and surface the offer in the animated Stories text.
     for ad in data["ads"]:
-        ad["images"] = [f"ad{ad['num']}-feed.png"]
+        ad["images"] = [f"ad{ad['num']}-feed.png", f"ad{ad['num']}-story.png"]
         spec = TEXT_SPECS.get(ad["num"])
         if spec:
             ad["image_direction"] = f"{spec}\n\n---\n\n{ad['image_direction']}"
+        if ad["num"] in story_offer and isinstance(ad.get("stories"), dict):
+            ad["stories"]["secondary_text"] = story_offer[ad["num"]]
     out = HERE / "data.json"
     out.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {out} — {len(data['ads'])} ads")

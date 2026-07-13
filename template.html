@@ -1196,30 +1196,22 @@ function _fieldCount(ad, field) {
 async function loadImageVersions() {
   if (!sb) return;
   try {
-    // Try with version_num first; fall back to basic query if column doesn't exist
-    let data, error;
-    ({ data, error } = await sb.from('ad_images')
-      .select('id, ad_num, slot, public_url, is_active, version_num, label, created_at')
+    // The ad_images table has no version_num/label columns, so query the base
+    // schema directly (avoids a 400) and synthesize version numbers by per-slot
+    // upload order. If those columns are added later, this still works.
+    const { data, error } = await sb.from('ad_images')
+      .select('id, ad_num, slot, public_url, is_active, storage_path, created_at')
       .eq('campaign_id', CAMPAIGN_ID)
-      .order('version_num', { ascending: true }));
-    if (error && error.code === '42703') {
-      // version_num column doesn't exist yet — fall back
-      ({ data, error } = await sb.from('ad_images')
-        .select('id, ad_num, slot, public_url, is_active, storage_path, created_at')
-        .eq('campaign_id', CAMPAIGN_ID)
-        .order('created_at', { ascending: true }));
-      if (error) throw error;
-      // Assign synthetic version numbers by upload order per slot
-      const counters = {};
-      (data || []).forEach(row => {
-        const key = `${row.ad_num}_${row.slot}`;
-        counters[key] = (counters[key] || 0) + 1;
-        row.version_num = counters[key];
-        row.label = null;
-      });
-    } else if (error) {
-      throw error;
-    }
+      .order('created_at', { ascending: true });
+    if (error) throw error;
+    // Assign synthetic version numbers by upload order per slot
+    const counters = {};
+    (data || []).forEach(row => {
+      const key = `${row.ad_num}_${row.slot}`;
+      counters[key] = (counters[key] || 0) + 1;
+      row.version_num = counters[key];
+      row.label = null;
+    });
     _imageOverrides = {};
     _imageVersions = {};
     _activeImageVersion = {};

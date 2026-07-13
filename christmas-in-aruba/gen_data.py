@@ -502,26 +502,31 @@ TEXT_SPECS = {
     1: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, warm white): "Christmas Comes Home to Aruba"
 - CTA: **Shop Now** (coral #FF5A4F pill) · small white logo top-center
+- NO price/offer on the image — top-funnel, keep it clean.
 - Placement: clean upper-left wall. """ + _SAFE,
     2: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700): "Lit in Minutes, Not Hours"
 - CTA: **Shop Now** (coral pill)
+- NO price/offer on the image — product-led; offer lives in the caption.
 - Placement: clear left third; product stays right. """ + _SAFE,
-    3: """**TEXT & TYPE — Mayo → Figma** (the offer — keep it clean, not crowded)
-- Headline (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off"
-- One micro line only (Assistant 400): "Free LED set per Afl 250" (full offer terms live in the caption, not on the image)
+    3: """**TEXT & TYPE — Mayo → Figma** (OFFER AD — carries the on-image badge)
+- On-image offer badge (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off" (must read "Up to" — tiered 40/30/Layaway)
+- One micro line only (Assistant 400): "Free LED set per Afl 250" (full terms in the caption)
 - CTA: **Order Now** (coral pill)
-- Placement: text over the sky/upper band with a soft scrim; keep the tree clear. """ + _SAFE,
+- Placement: badge over the sky/upper band with a soft scrim; keep the tree clear. """ + _SAFE,
     4: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, top): "Christmas in July"
 - CTA: **Shop Now** (coral pill)
+- NO price/offer on the image — the Christmas-in-July novelty is the hook.
 - Placement: clean sky band up top. """ + _SAFE,
     5: """**TEXT & TYPE — Mayo → Figma**
 - Headline (Playfair 700, warm white): "A Tropical Christmas"
 - CTA: **Shop Now** (coral pill, lower-left) · small white logo top-center
+- NO price/offer on the image — brand/identity flagship, keep it clean.
 - Placement: open warm sky upper-left. """ + _SAFE,
-    6: """**TEXT & TYPE — Mayo → Figma**
+    6: """**TEXT & TYPE — Mayo → Figma** (SCARCITY/RETARGETING — carries the on-image badge)
 - Headline (Playfair 700, warm white): "Pre-Orders Close Soon"
+- On-image offer badge (Playfair 700, coral #FF5A4F): "Up to 40% Off" — pair with the scarcity, one clean element
 - CTA: **Order Now** (coral pill)
 - Placement: dark clean band at top. """ + _SAFE,
 }

@@ -103,11 +103,11 @@ def ad3():
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
             "The earlier you commit, the more you save. \U0001F381\n\nChoose the pre-order plan that fits you:\n→ Pay in full today — save 40%\n→ Pay half now — save 30%\n→ Layaway: split it into 4 easy monthly payments\n\nEvery pre-order ships free across Aruba and is delivered before November. And for every Afl 250 you spend, we'll add a free Color-Changing LED Light Set — while supplies last.\n\nLock in this year's price and let the countdown begin.",
-            "Same island magic — up to 40% off when you plan ahead. ✨\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nEvery pre-order includes free island-wide delivery before November — plus a free Color-Changing LED Light Set for every Afl 250 you spend, while supplies last.\n\nThe best trees go early. Reserve yours today.",
+            "Our Christmas in July event is on — up to 40% off when you plan ahead. ✨\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nEvery pre-order includes free island-wide delivery before November — plus a free Color-Changing LED Light Set for every Afl 250 you spend, while supplies last.\n\nThe best trees go early. Reserve yours today.",
             "Here's how pre-order works, and why it pays to be early:\n\n1. Pay 100% now → save 40%\n2. Pay 50% now → save 30%\n3. Prefer to spread it out? Layaway — 4 monthly payments\n\nEvery order ships free before November, and every Afl 250 you spend earns a free Color-Changing LED Light Set (while supplies last).\n\nNo stress, no last-minute scramble — just your tree, ready when you are.",
         ],
         "headline": [
-            "Save Up to 40% on Pre-Orders",
+            "Christmas in July — Up to 40% Off",
             "Pay Ahead, Save More",
             "Up to 40% Off — Reserve Now",
         ],
@@ -133,32 +133,32 @@ def ad3():
 def ad4():
     return {
         "num": 4,
-        "title": "A tree for every home",
+        "title": "Christmas in July",
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "Whatever your space, there's a tree for it. \U0001F332\n\n→ Compact 3–5ft sets for apartments and tabletops\n→ Classic 6–7.5ft pines for the living room\n→ Statement 9.5ft trees for the grand entrance\n\nPlus wreaths, garland, and color-changing lights to finish the look. All pre-lit, all delivered free before November.\n\nReserve yours now and save up to 40%.",
-            "Big or small, there's a perfect fit. \U0001F384\n\nFrom frosted alpine sets to full Fraser firs, our trees come in every size — with wreaths and garland to match. Each one arrives pre-lit and ready in minutes.\n\nFind the one that fits your home, reserve it now, and we'll deliver it free before November.",
-            "Not sure what size? Start with your space.\n\nApartment or tabletop → 3–5ft sets\nFamily living room → 6–7.5ft pines\nHigh ceilings, big statement → 9.5ft trees\n\nEvery tree pre-lit, every pre-order delivered free before November. Reserve now and save up to 40%.",
+            "Christmas in July isn't a gimmick here — it's just how the island plans ahead. ☀️\U0001F384\n\nWhile everyone else waits, you can reserve your pre-lit tree now, save up to 40%, and have it delivered before November. No December scramble, no sold-out shelves.\n\nCelebrate Christmas in July with us and let the countdown begin. Free island-wide delivery on every pre-order.",
+            "Sunshine, blue skies, and a Christmas tree? That's Christmas in July, Aruba style. \U0001F334\U0001F384\n\nOur pre-order event is on now: reserve today, save up to 40%, and we'll deliver before November. Because the best time to think about December is right now.\n\nFree delivery across the island.",
+            "Here's the secret to a stress-free December: handle it in July. \U0001F381\n\nReserve your pre-lit tree during our Christmas in July event — save up to 40%, lock in this year's price, and we'll deliver before November. Then you get to enjoy the season instead of scrambling for it.\n\nFree island-wide delivery on every pre-order.",
         ],
         "headline": [
-            "A Tree for Every Home",
-            "From Tabletop to Grand Entrance",
-            "Find Your Perfect Fit",
+            "Christmas in July",
+            "Christmas in July, Aruba Style",
+            "Get a Head Start on December",
         ],
         "description": [
-            "3ft to 9.5ft · Pre-Lit",
-            "Trees, Wreaths & Garland",
-            "Free Delivery Before November",
+            "Christmas in July · Up to 40% Off",
+            "Reserve Now · Delivered by Nov",
+            "Pre-Order Event On Now",
         ],
         "cta": "Shop Now",
-        "hook": "From cozy apartments to grand entrances — there's a tree for every home in Aruba.",
-        "arc": "Range & self-selection — a size and style for every space and budget (commitment)",
+        "hook": "Christmas in July? On an island with no winter, that's just good timing.",
+        "arc": "Seasonal hook — Christmas in July, the delightful reason to reserve now (timing + urgency)",
         "wave": 2,
         "stories": {
-            "image": "Three trees in ascending size, evenly spaced against a warm cream backdrop, each softly lit; small coral size labels (3ft · 6ft · 9.5ft).",
-            "text_overlay": "A Tree for Every Home",
-            "secondary_text": "3ft to 9.5ft, all pre-lit",
+            "image": "Bright, sunny Aruba poolside: a glowing multicolor pre-lit tree beside a turquoise pool under a blue summer sky, green tree skirt at the base — the delightful contrast of Christmas in July.",
+            "text_overlay": "Christmas in July",
+            "secondary_text": "Reserve now · Up to 40% off",
             "cta_sticker": "Shop Now",
         },
         "image_direction": IMG_AD4,
@@ -365,45 +365,39 @@ STORIES (1080x1920):
 """ + "\n" + BRAND
 
 IMG_AD4 = """**Format:** 1080x1080 (feed) + 1080x1920 (stories) | **Placement:** Feed, Stories, Reels
-**Layout:** Comparison / range. Three trees, ascending size, so the viewer self-selects.
-**Emotional job:** Wave 2 commitment. Moves them from "nice idea" to "which one is mine?"
+**Layout:** Single-tree hero in a bright, sunny, summery Aruba setting — the delightful contrast IS the concept.
+**Emotional job:** Wave 2 "Christmas in July" hook. Turns "why buy a tree in July?" into "of course — reserve now."
+**Rescope note:** replaces the old three-tree range ad (the small alpine product couldn't sell a 3ft->9.5ft scale ladder). If a true range/scale visual is still wanted, do it as a Figma composite of the real 3ft/6ft/9.5ft trees.
 
 ```
 FEED (1080x1080):
 +--------------------------------------+
-|  [Cream #F6F3EC backdrop]             |
-|  LOGO (top-center, coral)             |
-|  "A Tree for Every Home"              |
-|  (serif, deep slate)                  |
+|  [Bright sunny Aruba poolside:        |
+|   glowing multicolor pre-lit tree     |
+|   beside a turquoise pool, blue        |
+|   summer sky, white villa, rattan     |
+|   loungers, cactus + aloe. GREEN       |
+|   tree skirt at the base.]            |
 |                                       |
-|   \U0001F384      \U0001F384\U0001F384     \U0001F384\U0001F384\U0001F384                     |
-|  [small]  [medium]  [tall]           |
-|  three real trees, softly lit,        |
-|  evenly spaced, ascending             |
-|                                       |
-|  3ft · 5ft      6–7.5ft      9.5ft     |
-|  (sans, slate, coral size labels)     |
-|  Free delivery before November        |
+|  clean sky space upper-left           |
+|  "Christmas in July" (serif, white)   |
 |  [SHOP NOW] (coral fill)              |
 +--------------------------------------+
 
 STORIES (1080x1920):
 +--------------------+
-| [TOP SAFE ~320px]  |
-| LOGO (coral)       |
-| "A Tree for Every  |
-|  Home"             |
-| [three trees       |
-|  stacked / row,    |
-|  ascending]        |
-| 3ft → 9.5ft        |
-| Free delivery      |
-|  before November   |
-| [BTM SAFE ~400px]  |
+| [TOP SAFE 250px]   |
+| [sunny poolside,   |
+|  tree + pool,      |
+|  blue sky]         |
+| "Christmas         |
+|  in July"          |
+| (serif, white)     |
+| [BTM SAFE 340px]   |
 | [SHOP NOW sticker] |
 +--------------------+
 ```
-**Photo direction:** Real product trees on a clean cream field (studio or composited), all lit at the same warm level so the only variable is size. This is the most "catalog" ad in the set and that's correct for the consideration stage — but keep it warm, not sterile. Coral for the size labels ties it to the system.
+**Photo direction:** Bright, cheerful, sun-drenched — warm late-afternoon so the tree lights still read against a blue summer sky. Turquoise pool, white-stucco villa, tropical loungers. The joke/hook is a fully-lit Christmas tree in obvious summer sunshine. Keep it believable and premium, not kitschy.
 """ + "\n" + BRAND
 
 IMG_AD5 = """**Format:** 1080x1080 (feed) + 1080x1920 (stories) | **Placement:** Feed, Stories
@@ -519,7 +513,7 @@ TEXT_SPECS = {
 - CTA: **Order Now** (coral pill)
 - Placement: text over the sky/upper band with a soft scrim; keep the tree clear. """ + _SAFE,
     4: """**TEXT & TYPE — Mayo → Figma**
-- Headline (Playfair 700, top): "A Tree for Every Home"
+- Headline (Playfair 700, top): "Christmas in July"
 - CTA: **Shop Now** (coral pill)
 - Placement: clean sky band up top. """ + _SAFE,
     5: """**TEXT & TYPE — Mayo → Figma**
@@ -536,7 +530,7 @@ TEXT_SPECS = {
 def main():
     data = {
         "campaign": "Christmas in Aruba — Pre-Order 2026 (B2C)",
-        "event_date": "Pre-Order Season · Up to 40% off · Free LED set per Afl 250 · Delivered before Nov 1",
+        "event_date": "Christmas in July Pre-Order Event · Up to 40% off · Free LED set per Afl 250 · Delivered before Nov 1",
         "venue": "",
         "co_presenters": "",
         "page_name": "Christmas in Aruba",

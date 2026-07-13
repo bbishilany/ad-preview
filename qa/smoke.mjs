@@ -63,8 +63,10 @@ for (const card of cards) {
   else bugs.push(`${tag}: no approve button`);
 }
 
-// mockup zoom (click a non-excluded area)
-const safe = await page.$('.fb-feed .fb-feed-text');
+// mockup zoom (ensure a feed panel is visible, then click a non-excluded area)
+const feedTab = await page.$('.placement-tab[data-placement="feed"]');
+if (feedTab) { await feedTab.click().catch(()=>{}); await page.waitForTimeout(150); }
+const safe = await page.$('.fb-feed:visible .fb-feed-text, .placement-panel[data-placement="feed"]:not(.hidden) .fb-feed-text');
 if (safe) { await safe.click().catch(()=>{}); await page.waitForTimeout(400);
   const active = await page.$eval('#mockup-zoom-overlay',(e)=>e.classList.contains('active')).catch(()=>false);
   if (active) { notes.push('zoom: opens'); await page.click('.mockup-zoom-close').catch(()=>{});

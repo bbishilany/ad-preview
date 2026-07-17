@@ -102,9 +102,9 @@ def ad3():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "The earlier you commit, the more you save.\n\nChoose the pre-order plan that fits you:\n→ Pay in full today — save 40%\n→ Pay half now — save 30%\n→ Layaway: split it into 4 easy monthly payments\n\nEvery pre-order ships free across Aruba and is delivered before November. And for every Afl 250 you spend, we'll add a free Color-Changing LED Light Set — while supplies last.\n\nLock in this year's price and let the countdown begin.",
-            "Our Christmas in July event is on — up to 40% off when you plan ahead.\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nEvery pre-order includes free island-wide delivery before November — plus a free Color-Changing LED Light Set for every Afl 250 you spend, while supplies last.\n\nThe best trees go early. Reserve yours today.",
-            "Here's how pre-order works, and why it pays to be early:\n\n1. Pay 100% now → save 40%\n2. Pay 50% now → save 30%\n3. Prefer to spread it out? Layaway — 4 monthly payments\n\nEvery order ships free before November, and every Afl 250 you spend earns a free Color-Changing LED Light Set (while supplies last).\n\nNo stress, no last-minute scramble — just your tree, ready when you are.",
+            "The earlier you commit, the more you save.\n\nChoose the pre-order plan that fits you:\n→ Pay in full today — save 40%\n→ Pay half now — save 30%\n→ Layaway: split it into 4 easy monthly payments\n\nEvery pre-order ships free across Aruba and is delivered before November. And with any purchase over Afl 250, we'll add a free 500-count Color-Changing LED Light Set with remote — a $50 value, while supplies last.\n\nLock in this year's price and let the countdown begin.",
+            "Our Christmas in July event is on — up to 40% off when you plan ahead.\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nEvery pre-order includes free island-wide delivery before November — plus a free 500-count Color-Changing LED Light Set with remote on any purchase over Afl 250 — a $50 value, while supplies last.\n\nThe best trees go early. Reserve yours today.",
+            "Here's how pre-order works, and why it pays to be early:\n\n1. Pay 100% now → save 40%\n2. Pay 50% now → save 30%\n3. Prefer to spread it out? Layaway — 4 monthly payments\n\nEvery order ships free before November, and any order over Afl 250 comes with a free 500-count Color-Changing LED Light Set with remote (a $50 value, while supplies last).\n\nNo stress, no last-minute scramble — just your tree, ready when you are.",
         ],
         "headline": [
             "Christmas in July — Up to 40% Off",
@@ -114,7 +114,7 @@ def ad3():
         "description": [
             "Free Delivery · Before November",
             "40% / 30% / Layaway",
-            "Free LED Set per Afl 250",
+            "Free LED Set Over Afl 250",
         ],
         "cta": "Order Now",
         "hook": "Pay in full and save 40%, pay half and save 30%, or split it with Layaway — free delivery before November.",
@@ -123,7 +123,7 @@ def ad3():
         "stories": {
             "image": "Softly lit tree, lower third gives way to a clean cream panel with a coral '40% OFF' typographic treatment and a small gift-tag motif.",
             "text_overlay": "Save Up to 40%",
-            "secondary_text": "40% off + free LED set per Afl 250",
+            "secondary_text": "40% off + free LED set over Afl 250",
             "cta_sticker": "Order Now",
         },
         "image_direction": IMG_AD3,
@@ -361,7 +361,7 @@ STORIES (1080x1920):
 | [ORDER NOW sticker]|
 +--------------------+
 ```
-**Design note:** Coral #FF5A4F carries the "40%" — it is the brand's signal color and reads as festive without going full Christmas-red. Keep the payment options small and secondary; the hook is the discount + free delivery + the free LED light set. Offer ladder for reference: 100% upfront = 40% off, 50% upfront = 30% off, Layaway = 4 monthly payments (no discount). GWP: free Color-Changing LED Light Set per Afl 250 spent, while supplies last. A subtle gift-tag or ribbon motif in coral is welcome.
+**Design note:** Coral #FF5A4F carries the "40%" — it is the brand's signal color and reads as festive without going full Christmas-red. Keep the payment options small and secondary; the hook is the discount + free delivery + the free LED light set. Offer ladder for reference: 100% upfront = 40% off, 50% upfront = 30% off, Layaway = 4 monthly payments (no discount). GWP: free 500-count Color-Changing LED Light Set with remote ($50 retail value) with any purchase over Afl 250, while supplies last. A subtle gift-tag or ribbon motif in coral is welcome.
 """ + "\n" + BRAND
 
 IMG_AD4 = """**Format:** 1080x1080 (feed) + 1080x1920 (stories) | **Placement:** Feed, Stories, Reels
@@ -511,7 +511,7 @@ TEXT_SPECS = {
 - Placement: clear left third; product stays right. """ + _SAFE,
     3: """**TEXT & TYPE — Mayo → Figma** (OFFER AD — carries the on-image badge)
 - On-image offer badge (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off" (must read "Up to" — tiered 40/30/Layaway)
-- One micro line only (Assistant 400): "Free LED set per Afl 250" (full terms in the caption)
+- One micro line only (Assistant 400): "Free LED set over Afl 250" (full terms in the caption)
 - CTA: **Order Now** (coral pill)
 - Placement: badge over the sky/upper band with a soft scrim; keep the tree clear. """ + _SAFE,
     4: """**TEXT & TYPE — Mayo → Figma**
@@ -535,7 +535,7 @@ TEXT_SPECS = {
 def main():
     data = {
         "campaign": "Christmas in Aruba — Pre-Order 2026 (B2C)",
-        "event_date": "Christmas in July Pre-Order Event · Up to 40% off · Free LED set per Afl 250 · Delivered before Nov 1",
+        "event_date": "Christmas in July Pre-Order Event · Up to 40% off · Free LED set over Afl 250 · Delivered before Nov 1",
         "venue": "",
         "co_presenters": "",
         "page_name": "Christmas in Aruba",
@@ -544,7 +544,7 @@ def main():
         "cta_url": "https://christmasinaruba.com",
         "compliance_notes": [
             "Offer ladder: 100% upfront = 40% off; 50% upfront = 30% off; Layaway = 4 equal monthly payments, no discount.",
-            "GWP: free Color-Changing LED Light Set for every Afl 250 spent, while supplies last.",
+            "GWP: free 500-count Color-Changing LED Light Set with remote control ($50 retail value) with any purchase over Afl 250, while supplies last.",
             "Free island-wide (Aruba) delivery on all pre-orders; delivered before November 1.",
             "Prices/availability to confirm against live Shopify before launch (site currently shows Sold Out placeholders).",
         ],
@@ -557,7 +557,7 @@ def main():
     story_offer = {
         1: "Up to 40% Off · Delivered before Nov",
         2: "Up to 40% Off · Free island delivery",
-        3: "40% / 30% / Layaway · Free LED per Afl 250",
+        3: "40% / 30% / Layaway · Free LED set over Afl 250",
         4: "Up to 40% Off · Reserve now",
         5: "Up to 40% Off · Delivered before Nov",
         6: "Up to 40% Off · Free delivery before Nov",

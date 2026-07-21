@@ -1,0 +1,101 @@
+[
+  {
+    "id": "6c83d2bd-697d-4d9d-98f9-d712b5bef2f6",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 1,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "Is it possible to make the tree a little bigger?  It looks like it's a little out of proportion.  Otherwise, I love it",
+    "created_at": "2026-07-17T22:17:44.879989+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "d114c788-f19d-4aac-9bf7-a4c470152318",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 1,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "I also would like to make it clear that free delivery is for a limited time, for pre-orders only",
+    "created_at": "2026-07-17T22:18:43.694023+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "d7d45aab-d88b-4f1a-aa24-35458711a961",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 1,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "A Little Island Magic, Every December... Can we change \"December\" to \"Christmas Season\"?",
+    "created_at": "2026-07-17T22:19:30.747995+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "0164fa4f-bcb9-40e2-ac99-25ed3d55f286",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 2,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "Is it possible to change the tree skirt to something a little nicer, with some kind of design or multiple colors like red, white, green?",
+    "created_at": "2026-07-17T22:24:39.583599+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "0a741642-0bdc-4c59-9137-590e62151a94",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 3,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "can we use the Blizzard Pine image here?  We are showing this tree in another ad and flocked/white trees are a big draw that sell out first.  Flocked/white trees will get attention because they are more rare and sought after.  They should drive people to the site.",
+    "created_at": "2026-07-17T22:41:05.751312+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "ffbb9a16-cb20-456d-a375-81297d5ebb0d",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 4,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "This setting would be one of the nicer homes on the island, but we are showing the most promo-priced tree.  can we use the Grand spruce image?",
+    "created_at": "2026-07-17T22:37:16.230568+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "64bb4c9d-6cc6-42c7-a077-2e4e37c6385b",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 5,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "can we change \"Tropical\" to \"Caribbean\"?",
+    "created_at": "2026-07-17T22:29:19.770437+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "3abb3805-b9ae-4e7c-a2dd-6a1991dbff7b",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 6,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "I'm a little concerned about how this is worded.  There will still be plenty of trees available for sale if people don't pre-order.  I understand we want them to order now, but I don't want customers to think that we won't have anything for sale during the season.  Because we definitely will.  I like what you're trying to say about not having a big warehouse and inventory, but can we say it something like supplies limited, once we are sold out that's it",
+    "created_at": "2026-07-17T22:34:30.520121+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "ece2a10a-4ba1-4216-91af-7feaba7391e8",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 6,
+    "reviewer_name": "Mark",
+    "reviewer_role": "Client",
+    "verdict": "comment_only",
+    "comment": "can we change \"shop\" to \"store\" or something that doesn't sound like we have a retail location.  Can we change \"We'll have trees available all season long\" Deluxe models sell out early",
+    "created_at": "2026-07-21T01:52:41.957717+00:00",
+    "pulled_at": null
+  }
+]

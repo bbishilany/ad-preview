@@ -12,6 +12,7 @@
     "GWP: free 500-count Color-Changing LED Light Set with remote control ($50 retail value) with any purchase over Afl 250, while supplies last.",
     "Free island-wide (Aruba) delivery on all pre-orders — limited time, pre-orders only; delivered before November 1. Copy must never present free delivery as a standing policy.",
     "Scarcity framing (client 2026-07-17): supplies are limited and sell-outs are final PER STYLE — but trees remain for sale in-season. Never imply the store will have nothing available outside the pre-order window.",
+    "Wording (client 2026-07-21): don't state 'we'll have trees available all season long' — use the 'deluxe models sell out early' angle instead. Avoid calling the business a 'shop' (sounds like a physical retail location); 'store' or 'small island business' is fine.",
     "Prices/availability to confirm against live Shopify before launch (site currently shows Sold Out placeholders)."
   ],
   "hide_design_direction": false,
@@ -225,9 +226,9 @@
         "Stories"
       ],
       "primary_text": [
-        "Here's the honest truth about how we work: we're an island shop, not a big-box warehouse. Supplies are limited — and once a tree sells out, it's gone for the season.\n\nWe'll have trees available all season long, but pre-ordering is how you guarantee the exact one you want, at up to 40% off.\n\nReserve today — for a limited time, every pre-order includes free island-wide delivery before November.",
+        "Here's the honest truth about how we work: we're a small island business, not a big-box warehouse. Supplies are limited — and once a tree sells out, it's gone for the season.\n\nDeluxe models sell out early — pre-ordering is how you guarantee the exact one you want, at up to 40% off.\n\nReserve today — for a limited time, every pre-order includes free island-wide delivery before November.",
         "The pre-order window is closing.\n\nPre-ordering is how you lock in the tree you want at the best price of the year — because supplies are limited, and the most-loved styles always sell out first.\n\nReserve now for up to 40% off and free island-wide delivery before November — free delivery is a limited-time pre-order perk.",
-        "Fair warning from the island's Christmas store: supplies are limited.\n\nWe'll have trees available all season — but once a style sells out, that's it until next year. Pre-ordering guarantees yours now, at up to 40% off.\n\nReserve today for free island-wide delivery before November, for a limited time."
+        "Fair warning from the island's Christmas store: supplies are limited.\n\nDeluxe models sell out early — and once a style sells out, that's it until next year. Pre-ordering guarantees yours now, at up to 40% off.\n\nReserve today for free island-wide delivery before November, for a limited time."
       ],
       "headline": [
         "Pre-Orders Close Soon",

@@ -97,5 +97,16 @@
     "comment": "can we change \"shop\" to \"store\" or something that doesn't sound like we have a retail location.  Can we change \"We'll have trees available all season long\" Deluxe models sell out early",
     "created_at": "2026-07-21T01:52:41.957717+00:00",
     "pulled_at": null
+  },
+  {
+    "id": "d8ba6bcd-3dbf-48b9-a1a7-9413ec17b1b5",
+    "campaign_id": "christmas-in-aruba",
+    "ad_num": 6,
+    "reviewer_name": "Bill",
+    "reviewer_role": "Mileage",
+    "verdict": "comment_only",
+    "comment": "Both changes are in and live, Mark. Swapped \"island shop\" for \"small island business\" — keeps the contrast with the big-box warehouses without sounding like we have a storefront. And the \"trees available all season long\" line is gone from both captions — they now lead with \"Deluxe models sell out early,\" which is a stronger reason to pre-order anyway. Give it a look when you have a minute.",
+    "created_at": "2026-07-21T14:40:30.479816+00:00",
+    "pulled_at": null
   }
 ]

@@ -102,9 +102,9 @@ def ad3():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories", "Reels"],
         "primary_text": [
-            "The earlier you commit, the more you save.\n\nChoose the pre-order plan that fits you:\n→ Pay in full today — save 40%\n→ Pay half now — save 30%\n→ Layaway: split it into 4 easy monthly payments\n\nFor a limited time, every pre-order ships free across Aruba and is delivered before November. And with any purchase over Afl 250, we'll add a free 500-count Color-Changing LED Light Set with remote — a $50 value, while supplies last.\n\nLock in this year's price and let the countdown begin.",
-            "Our Christmas in July event is on — up to 40% off when you plan ahead.\n\nReserve now and pick your plan: pay in full and save 40%, pay half and save 30%, or spread it across 4 monthly payments with Layaway.\n\nFor a limited time, every pre-order includes free island-wide delivery before November — plus a free 500-count Color-Changing LED Light Set with remote on any purchase over Afl 250 — a $50 value, while supplies last.\n\nThe best trees go early. Reserve yours today.",
-            "Here's how pre-order works, and why it pays to be early:\n\n1. Pay 100% now → save 40%\n2. Pay 50% now → save 30%\n3. Prefer to spread it out? Layaway — 4 monthly payments\n\nFor a limited time, every pre-order ships free before November, and any order over Afl 250 comes with a free 500-count Color-Changing LED Light Set with remote (a $50 value, while supplies last).\n\nNo stress, no last-minute scramble — just your tree, ready when you are.",
+            "Reserve now and save 40% on your pre-order — pay in full or pay half, the discount's the same either way.\n\nPrefer to spread it out? Layaway splits it into 4 easy monthly payments.\n\nFor a limited time, every pre-order ships free across Aruba and is delivered before November. And with any purchase over Afl 250, we'll add a free 500-count Color-Changing LED Light Set with remote — a $50 value, while supplies last.\n\nLock in this year's price and let the countdown begin.",
+            "Our Christmas in July event is on — 40% off every pre-order when you plan ahead.\n\nPay in full or pay half, you still save 40%. Prefer to spread it out? Layaway splits it into 4 monthly payments.\n\nFor a limited time, every pre-order includes free island-wide delivery before November — plus a free 500-count Color-Changing LED Light Set with remote on any purchase over Afl 250 — a $50 value, while supplies last.\n\nThe best trees go early. Reserve yours today.",
+            "Here's how pre-order works, and why it pays to be early:\n\nReserve now and save 40% — pay in full or pay half, your choice. Want to spread it out? Layaway splits it into 4 monthly payments.\n\nFor a limited time, every pre-order ships free before November, and any order over Afl 250 comes with a free 500-count Color-Changing LED Light Set with remote (a $50 value, while supplies last).\n\nNo stress, no last-minute scramble — just your tree, ready when you are.",
         ],
         "headline": [
             "Christmas in July — Up to 40% Off",
@@ -113,11 +113,11 @@ def ad3():
         ],
         "description": [
             "Free Delivery on Pre-Orders",
-            "40% / 30% / Layaway",
+            "40% Off · Full or Half",
             "Free LED Set Over Afl 250",
         ],
         "cta": "Order Now",
-        "hook": "Pay in full and save 40%, pay half and save 30%, or split it with Layaway — free delivery before November.",
+        "hook": "Save 40% on any pre-order — pay in full or half, or spread it with Layaway. Free delivery before November.",
         "arc": "The pre-order offer — value stack + flexible payment (reciprocity)",
         "wave": 2,
         "stories": {
@@ -207,9 +207,9 @@ def ad6():
         "format": "Static image, 1080x1080 (square) + 1080x1920 (vertical)",
         "placements": ["Feed", "Stories"],
         "primary_text": [
-            "Here's the honest truth about how we work: we're an island shop, not a big-box warehouse. Supplies are limited — and once a tree sells out, it's gone for the season.\n\nWe'll have trees available all season long, but pre-ordering is how you guarantee the exact one you want, at up to 40% off.\n\nReserve today — for a limited time, every pre-order includes free island-wide delivery before November.",
+            "Here's the honest truth about how we work: we're a small island business, not a big-box warehouse. Supplies are limited — and once a tree sells out, it's gone for the season.\n\nDeluxe models sell out early — pre-ordering is how you guarantee the exact one you want, at up to 40% off.\n\nReserve today — for a limited time, every pre-order includes free island-wide delivery before November.",
             "The pre-order window is closing.\n\nPre-ordering is how you lock in the tree you want at the best price of the year — because supplies are limited, and the most-loved styles always sell out first.\n\nReserve now for up to 40% off and free island-wide delivery before November — free delivery is a limited-time pre-order perk.",
-            "Fair warning from the island's Christmas store: supplies are limited.\n\nWe'll have trees available all season — but once a style sells out, that's it until next year. Pre-ordering guarantees yours now, at up to 40% off.\n\nReserve today for free island-wide delivery before November, for a limited time.",
+            "Fair warning from the island's Christmas store: supplies are limited.\n\nDeluxe models sell out early — and once a style sells out, that's it until next year. Pre-ordering guarantees yours now, at up to 40% off.\n\nReserve today for free island-wide delivery before November, for a limited time.",
         ],
         "headline": [
             "Pre-Orders Close Soon",
@@ -544,10 +544,11 @@ def main():
         "brandmark": "images/cia-brandmark.png",
         "cta_url": "https://christmasinaruba.com",
         "compliance_notes": [
-            "Offer ladder: 100% upfront = 40% off; 50% upfront = 30% off; Layaway = 4 equal monthly payments, no discount.",
+            "Offer: full or half pre-order = 40% off; Layaway = 4 equal monthly payments, no discount.",
             "GWP: free 500-count Color-Changing LED Light Set with remote control ($50 retail value) with any purchase over Afl 250, while supplies last.",
             "Free island-wide (Aruba) delivery on all pre-orders — limited time, pre-orders only; delivered before November 1. Copy must never present free delivery as a standing policy.",
             "Scarcity framing (client 2026-07-17): supplies are limited and sell-outs are final PER STYLE — but trees remain for sale in-season. Never imply the store will have nothing available outside the pre-order window.",
+            "Wording (client 2026-07-21): don't state 'we'll have trees available all season long' — use the 'deluxe models sell out early' angle instead. Avoid calling the business a 'shop' (sounds like a physical retail location); 'store' or 'small island business' is fine.",
             "Prices/availability to confirm against live Shopify before launch (site currently shows Sold Out placeholders).",
         ],
         "hide_design_direction": False,
@@ -559,7 +560,7 @@ def main():
     story_offer = {
         1: "Up to 40% Off · Delivered before Nov",
         2: "Up to 40% Off · Free island delivery",
-        3: "40% / 30% / Layaway · Free LED set over Afl 250",
+        3: "Save 40% · Pay Full or Half · Free LED set over Afl 250",
         4: "Up to 40% Off · Reserve now",
         5: "Up to 40% Off · Delivered before Nov",
         6: "Up to 40% Off · Free delivery before Nov",

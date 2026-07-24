@@ -1,0 +1,258 @@
+{
+  "campaign": "Request a Consultation — Always-On",
+  "page_name": "Confluence Financial Partners",
+  "ig_handle": "confluencefp",
+  "brandmark": "images/confluence-brandmark.jpg",
+  "event_date": "",
+  "venue": "",
+  "co_presenters": "",
+  "compliance_notes": [
+    "SEC-registered RIA. In-ad SEC identifier appended to every primary text (verbatim). Full RIA disclaimer lives on the landing page footer.",
+    "CFP always carries the registered mark (CFP®); CFA never does. No CFA reference appears in this launch set.",
+    "No urgency/scarcity, no guarantees, no performance claims. Evergreen invitation posture.",
+    "CTA button: Learn More (prospecting). Retargeting switches only the Meta button preset to Request Time — copy unchanged."
+  ],
+  "ads": [
+    {
+      "num": 1,
+      "title": "T1 Coordination · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed by a fiduciary team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Is Every Piece Working Together?",
+      "description": "One coordinated strategy.",
+      "cta": "Learn More",
+      "hook": "You have spent years building each piece of your financial life. Is every piece working together?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Mature couple reviewing together over a deep-green scrim; centered Ivypresto headline",
+        "text_overlay": "Is Every Piece Working Together?",
+        "secondary_text": "One coordinated strategy.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Coordination — gentle gap frame, self-assessment (primary territory / strongest differentiator)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-a",
+      "images": [
+        "ad1-t1-coordination-a-feed.png",
+        "ad1-t1-coordination-a-story.png"
+      ],
+      "image_direction": "Light treatment. Photo: mature couple reviewing together at a kitchen laptop (iStock-1427687198) — 'the pieces of your life, reviewed together.' Cream scrim top, deep-green Ivypresto headline, deep-green outlined pill CTA. Photo-dominant, faces visible. Reflects the Naples-winning light editorial pattern (soft cream fade, serif headline, outlined pill)."
+    },
+    {
+      "num": 2,
+      "title": "T1 Coordination · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?\n\nMost families assemble the right pieces over the years without a single strategy connecting them. Our fiduciary team of Wealth Managers and Certified Financial Planners® works to bring each decision into alignment with the others, because each one affects the rest.\n\nRequest a consultation. The first conversation carries no obligation and no strings attached.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Coordinated, or Just Coexisting?",
+      "description": "One aligned strategy.",
+      "cta": "Learn More",
+      "hook": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Couple in a bright, warm home moment; centered Ivypresto headline over deep-green scrim",
+        "text_overlay": "Coordinated, or Just Coexisting?",
+        "secondary_text": "One aligned strategy.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Coordination — the harmony frame (the pieces in tune, not merely present)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-b",
+      "images": [
+        "ad2-t1-coordination-b-feed.png",
+        "ad2-t1-coordination-b-story.png"
+      ],
+      "image_direction": "Light treatment. Photo: couple in a joyful, harmonious home moment (home-3) — warmth and alignment. Cream scrim top, deep-green Ivypresto headline, deep-green outlined pill CTA."
+    },
+    {
+      "num": 3,
+      "title": "T2 Second Opinion · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "When was the last time someone reviewed your full financial picture, with no agenda but your own?\n\nA fiduciary is obligated to act in your interest alone. Our team of Wealth Managers and Certified Financial Planners® offers an outside perspective on how your investments, taxes, and estate plan work together, coordinated as one picture rather than reviewed in pieces.\n\nRequest a consultation for an initial conversation. There is no cost to begin, and no obligation to continue.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "A Fiduciary, Outside Perspective",
+      "description": "No agenda but your own.",
+      "cta": "Learn More",
+      "hook": "When was the last time someone reviewed your full financial picture, with no agenda but your own?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "A candid advisory conversation; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "A Fiduciary, Outside Perspective",
+        "secondary_text": "No agenda but your own.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Second opinion — low-risk reappraisal; disarms 'I already have an advisor'",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t2-second-opinion-a",
+      "images": [
+        "ad3-t2-second-opinion-a-feed.png",
+        "ad3-t2-second-opinion-a-story.png"
+      ],
+      "image_direction": "Dark treatment. Photo: a genuine advisory conversation (iStock-1686011737) — an outside perspective at the table. Deep-green scrim bottom, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+    },
+    {
+      "num": 4,
+      "title": "T2 Second Opinion · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.\n\nA change of advisor is rarely the reason. More often, a financial life has grown complex enough that a coordinated review, across investments, taxes, and estate planning, brings a welcome clarity. Our fiduciary team offers that outside view.\n\nWe would value the opportunity to meet you. Request a consultation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "A Second Perspective on Your Plan",
+      "description": "Often, all it takes.",
+      "cta": "Learn More",
+      "hook": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Engaged advisory discussion; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "A Second Perspective on Your Plan",
+        "secondary_text": "Often, all it takes.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Second opinion — social proof ('many came to us for a second perspective')",
+      "type": "image",
+      "week": 2,
+      "utm_content": "t2-second-opinion-b",
+      "images": [
+        "ad4-t2-second-opinion-b-feed.png",
+        "ad4-t2-second-opinion-b-story.png"
+      ],
+      "image_direction": "Dark treatment. Photo: an engaged, confident advisory moment (iStock-1347652268). Deep-green scrim bottom, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+    },
+    {
+      "num": 5,
+      "title": "T3 Legacy · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "Clarity may be one of the greatest gifts you can leave your family.\n\nEstate planning is less about the documents than about the people who will one day rely on them. Our fiduciary team of Wealth Managers and Certified Financial Planners® works to coordinate your estate plan with your investments and tax strategy, so that what you have built passes on the way you intend.\n\nRequest a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "The Clarity You Leave Behind",
+      "description": "A gift to your family.",
+      "cta": "Learn More",
+      "hook": "Clarity may be one of the greatest gifts you can leave your family.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Grandparents and grandchild at golden hour; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "The Clarity You Leave Behind",
+        "secondary_text": "A gift to your family.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & family — meaning + stewardship (warmth ceiling per voice spec)",
+      "type": "image",
+      "week": 2,
+      "utm_content": "t3-legacy-a",
+      "images": [
+        "ad5-t3-legacy-a-feed.png",
+        "ad5-t3-legacy-a-story.png"
+      ],
+      "image_direction": "Light treatment. Photo: grandparents and grandson looking to the horizon in a golden field (iStock-1315439286) — generations, what passes on. Cream scrim top, deep-green Ivypresto headline, deep-green outlined pill CTA."
+    },
+    {
+      "num": 6,
+      "title": "T3 Legacy · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "The plans you make today will one day be carried by the people you love most.\n\nA coordinated estate strategy considers more than documents. It considers how your wealth transfers across generations, how your giving reflects your values, and how each decision fits the whole. Our fiduciary team of Wealth Managers and Certified Financial Planners® helps bring that picture into focus.\n\nWe would value the opportunity to meet you. Request a consultation, with no strings attached.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Wealth That Passes On With Purpose",
+      "description": "Legacy, coordinated.",
+      "cta": "Learn More",
+      "hook": "The plans you make today will one day be carried by the people you love most.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Three-generation family together; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "Wealth That Passes On With Purpose",
+        "secondary_text": "Legacy, coordinated.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & family — wealth transfer across generations, values-led giving",
+      "type": "image",
+      "week": 3,
+      "utm_content": "t3-legacy-b",
+      "images": [
+        "ad6-t3-legacy-b-feed.png",
+        "ad6-t3-legacy-b-story.png"
+      ],
+      "image_direction": "Light treatment. Photo: three generations together (Homepage-Image) — the people who will one day carry the plan. Cream scrim top, deep-green Ivypresto headline, deep-green outlined pill CTA."
+    },
+    {
+      "num": 7,
+      "title": "T5 Life-Stage · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "Life rarely changes one piece at a time.\n\nWhether you are approaching retirement, planning a move, or navigating a change in your family, these are the moments when the pieces of a financial life most need to move together. Our fiduciary team of Wealth Managers and Certified Financial Planners® works to coordinate your investments, taxes, and estate plan around the road ahead.\n\nRequest a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "When Life Changes, So Should the Plan",
+      "description": "Guidance through transition.",
+      "cta": "Learn More",
+      "hook": "Life rarely changes one piece at a time.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Warm family moment at golden hour; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "When Life Changes, So Should the Plan",
+        "secondary_text": "Guidance through transition.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Life-stage transitions — recognition and empathy at an inflection point",
+      "type": "image",
+      "week": 3,
+      "utm_content": "t5-life-stage-a",
+      "images": [
+        "ad7-t5-life-stage-a-feed.png",
+        "ad7-t5-life-stage-a-story.png"
+      ],
+      "image_direction": "Light treatment. Photo: a warm family moment at golden hour (Confluence-Individuals-Planning) — the moments when the pieces most need to move together. Cream scrim top, deep-green Ivypresto headline, deep-green outlined pill CTA."
+    },
+    {
+      "num": 8,
+      "title": "T5 Life-Stage · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories", "Reels"],
+      "production": "",
+      "primary_text": "The years surrounding a major transition often shape the decades that follow.\n\nAs retirement, a relocation, or a change in the family draws closer, the questions multiply, and the answers rarely sit in one place. Our fiduciary team of Wealth Managers and Certified Financial Planners® helps coordinate each piece into a single plan built around where you are headed.\n\nWe would value the opportunity to meet you. Request a consultation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "A Plan for What Comes Next",
+      "description": "Ready for the next chapter.",
+      "cta": "Learn More",
+      "hook": "The years surrounding a major transition often shape the decades that follow.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Freedom/next-chapter lifestyle image in brand green; centered white Ivypresto headline",
+        "text_overlay": "A Plan for What Comes Next",
+        "secondary_text": "Ready for the next chapter.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Life-stage transitions — forward-looking, the next chapter",
+      "type": "image",
+      "week": 4,
+      "utm_content": "t5-life-stage-b",
+      "images": [
+        "ad8-t5-life-stage-b-feed.png",
+        "ad8-t5-life-stage-b-story.png"
+      ],
+      "image_direction": "Dark treatment. Photo: a freedom / next-chapter lifestyle image already toned in brand green (Confluence-Individuals-Journey). Deep-green scrim, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+    }
+  ],
+  "client": "confluence-fp-consultation"
+}

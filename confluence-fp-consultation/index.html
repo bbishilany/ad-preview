@@ -811,6 +811,30 @@
     padding: 6px 14px 10px; color: var(--text2); font-size: 12px; font-weight: 600;
   }
 
+  /* ── CAROUSEL MOCKUP ───────────────────────────────────────────── */
+  .fb-carousel { position: relative; width: 100%; background: #000; overflow: hidden; }
+  .fb-carousel-viewport { overflow: hidden; width: 100%; }
+  .fb-carousel-track { display: flex; transition: transform 0.35s ease; }
+  .fb-carousel-slide { min-width: 100%; position: relative; cursor: zoom-in; }
+  .fb-carousel-slide img { width: 100%; display: block; }
+  .fb-carousel-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+    width: 34px; height: 34px; border-radius: 50%; border: none; cursor: pointer;
+    background: rgba(255,255,255,0.92); color: #1a1d27; font-size: 18px; line-height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  }
+  .fb-carousel-prev { left: 8px; }
+  .fb-carousel-next { right: 8px; }
+  .fb-carousel-arrow:hover { background: #fff; }
+  .fb-carousel-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 4px; background: var(--surface); }
+  .fb-carousel-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; padding: 0; transition: background 0.15s; }
+  .fb-carousel-dot.active { background: var(--accent); }
+  .fb-carousel-caption {
+    padding: 8px 14px 12px; font-size: 12.5px; line-height: 1.45; color: var(--text2);
+    background: var(--surface); border-bottom: 1px solid var(--border); white-space: pre-wrap;
+  }
+
   /* ── STORIES MOCKUP ────────────────────────────────────────────── */
   .ig-story {
     width: 280px; aspect-ratio: 9/16;
@@ -1670,17 +1694,20 @@ function renderAdCard(ad) {
 
 function renderAdCardBodyInner(ad) {
   const _pl = (ad.placements || []).map(p => p.toLowerCase());
-  const _hasFeed = _pl.some(p => p.includes('feed'));
+  const _hasCarousel = ad.type === 'carousel' || _pl.some(p => p.includes('carousel'));
+  const _hasFeed = _pl.some(p => p.includes('feed')) && !_hasCarousel;
   const _hasStories = _pl.some(p => p.includes('stories') || p.includes('story'));
   const _hasReels = _pl.some(p => p.includes('reel'));
   const _oi = _optionIdx[ad.num] || 0;
-  const activePlacement = _placementIdx[ad.num] || 'feed';
 
   // Build list of available placements
   const placements = [];
+  if (_hasCarousel) placements.push({ key: 'carousel', label: 'Carousel' });
   if (_hasFeed) placements.push({ key: 'feed', label: 'Feed' });
   if (_hasStories) placements.push({ key: 'story', label: 'Stories' });
   if (_hasReels) placements.push({ key: 'reel', label: 'Reels' });
+
+  const activePlacement = _placementIdx[ad.num] || (placements[0] && placements[0].key) || 'feed';
 
   let html = '';
 
@@ -1693,6 +1720,14 @@ function renderAdCardBodyInner(ad) {
     placements.forEach(p => {
       html += `<button class="placement-tab${p.key === activePlacement ? ' active' : ''}" data-placement="${p.key}" onclick="switchPlacement(${ad.num},'${p.key}')">${p.label}</button>`;
     });
+    html += `</div>`;
+  }
+
+  // Carousel panel
+  if (_hasCarousel) {
+    const isActive = activePlacement === 'carousel';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="carousel">`;
+    html += renderCarouselMockup(ad);
     html += `</div>`;
   }
 
@@ -1856,6 +1891,101 @@ function renderFeedMockup(ad) {
       ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
     </div>
   </div>`;
+}
+
+// ── Carousel Mockup ──────────────────────────────────────────────────────
+function _findCarouselCards(ad) {
+  // Pull card images (filenames containing 'card'), sorted by cardN, paired to ad.cards[] by order.
+  const imgs = (ad.images || [])
+    .filter(f => /card/i.test(f))
+    .sort((a, b) => {
+      const na = parseInt((a.match(/card(\d+)/i) || [])[1] || '0', 10);
+      const nb = parseInt((b.match(/card(\d+)/i) || [])[1] || '0', 10);
+      return na - nb;
+    });
+  return imgs.map((f, i) => {
+    const c = (ad.cards || [])[i] || {};
+    return { img: _imgUrl(f), caption: c.caption || '', label: c.label || '' };
+  });
+}
+
+function renderCarouselMockup(ad) {
+  const pageName = _pageName(_data);
+  const _oi = _optionIdx[ad.num] || 0;
+  const cards = _findCarouselCards(ad);
+
+  let mediaHtml;
+  if (cards.length) {
+    const slides = cards.map((c) =>
+      `<div class="fb-carousel-slide" data-caption="${esc(c.caption)}" onclick="openMockupZoom(this)">
+        <img src="${c.img}" alt="${esc(c.label)}" loading="lazy">
+      </div>`).join('');
+    const dots = cards.map((c, i) =>
+      `<button class="fb-carousel-dot${i === 0 ? ' active' : ''}" onclick="event.stopPropagation();carouselTo(${ad.num},${i})" aria-label="Card ${i + 1}"></button>`).join('');
+    mediaHtml = `
+      <div class="fb-carousel" data-ad-num="${ad.num}" data-idx="0">
+        <div class="fb-carousel-viewport">
+          <div class="fb-carousel-track">${slides}</div>
+        </div>
+        <button class="fb-carousel-arrow fb-carousel-prev" style="visibility:hidden" onclick="event.stopPropagation();carouselGo(${ad.num},-1)">&#8249;</button>
+        <button class="fb-carousel-arrow fb-carousel-next"${cards.length > 1 ? '' : ' style="visibility:hidden"'} onclick="event.stopPropagation();carouselGo(${ad.num},1)">&#8250;</button>
+      </div>
+      <div class="fb-carousel-dots">${dots}</div>
+      <div class="fb-carousel-caption" data-ad-num="${ad.num}">${esc(cards[0].caption)}</div>`;
+  } else {
+    mediaHtml = `<div class="fb-image-placeholder">CAROUSEL &middot; add card images (ad${ad.num}-carousel-card1.png &hellip;)</div>`;
+  }
+
+  return `<div class="fb-feed" data-mockup-type="carousel" data-ad-num="${ad.num}">
+    <div class="fb-feed-header">
+      <div class="fb-avatar"><img src="${_brandmark()}" alt="${esc(pageName)}"></div>
+      <div style="line-height:1.3">
+        <div class="fb-page-name">${esc(pageName)}</div>
+        <div class="fb-sponsored">Sponsored &middot; 2h</div>
+      </div>
+      <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
+    </div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_getField(ad, 'primary_text', _oi))}</div>
+    ${mediaHtml}
+    <div class="fb-engagement-icons">
+      <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.comment}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.share}</span>
+      <span class="fb-engage-icon fb-engage-bookmark">${SVG_ICONS.bookmark}</span>
+    </div>
+    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
+    <div class="fb-feed-cta">
+      <div class="fb-feed-cta-text">
+        <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _oi))}</div>
+        <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _oi))}</div>
+      </div>
+      ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+    </div>
+  </div>`;
+}
+
+function carouselTo(adNum, idx) {
+  const root = document.querySelector(`.fb-carousel[data-ad-num="${adNum}"]`);
+  if (!root) return;
+  const track = root.querySelector('.fb-carousel-track');
+  const slides = root.querySelectorAll('.fb-carousel-slide');
+  if (!slides.length) return;
+  idx = Math.max(0, Math.min(idx, slides.length - 1));
+  root.dataset.idx = idx;
+  track.style.transform = `translateX(-${idx * 100}%)`;
+  root.querySelectorAll('.fb-carousel-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  const cap = document.querySelector(`.fb-carousel-caption[data-ad-num="${adNum}"]`);
+  if (cap) cap.textContent = slides[idx].getAttribute('data-caption') || '';
+  const prev = root.querySelector('.fb-carousel-prev');
+  const next = root.querySelector('.fb-carousel-next');
+  if (prev) prev.style.visibility = idx === 0 ? 'hidden' : 'visible';
+  if (next) next.style.visibility = idx === slides.length - 1 ? 'hidden' : 'visible';
+}
+
+function carouselGo(adNum, dir) {
+  const root = document.querySelector(`.fb-carousel[data-ad-num="${adNum}"]`);
+  if (!root) return;
+  carouselTo(adNum, parseInt(root.dataset.idx || '0', 10) + dir);
 }
 
 // ── Stories Mockup ─────────────────────────────────────────────────────────
@@ -2390,7 +2520,9 @@ async function init() {
     // Initialize placement defaults
     _data.ads.forEach(ad => {
       const pl = (ad.placements || []).map(p => p.toLowerCase());
-      if (pl.some(p => p.includes('feed'))) {
+      if (ad.type === 'carousel' || pl.some(p => p.includes('carousel'))) {
+        _placementIdx[ad.num] = 'carousel';
+      } else if (pl.some(p => p.includes('feed'))) {
         _placementIdx[ad.num] = 'feed';
       } else if (pl.some(p => p.includes('stories') || p.includes('story'))) {
         _placementIdx[ad.num] = 'story';

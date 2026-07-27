@@ -252,6 +252,54 @@
         "ad8-t5-life-stage-b-story.png"
       ],
       "image_direction": "Dark treatment. Photo: a freedom / next-chapter lifestyle image already toned in brand green (Confluence-Individuals-Journey). Deep-green scrim, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+    },
+    {
+      "num": 9,
+      "title": "T1 Coordination · Carousel",
+      "format": "Carousel, 4 cards at 1080x1350 (Feed 4:5)",
+      "placements": ["Carousel"],
+      "production": "",
+      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed by a fiduciary team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Is Every Piece Working Together?",
+      "description": "One coordinated strategy.",
+      "cta": "Learn More",
+      "hook": "The swipe illustrates the pieces coming together into one coordinated strategy.",
+      "alt_headlines": [],
+      "cards": [
+        {
+          "num": 1,
+          "label": "The life you have built",
+          "caption": "You have spent years building each piece of your financial life."
+        },
+        {
+          "num": 2,
+          "label": "The pieces",
+          "caption": "Investments, taxes, estate planning, and the timing of your retirement. Often managed apart."
+        },
+        {
+          "num": 3,
+          "label": "Coordinated into one strategy",
+          "caption": "Confluence coordinates them into a single strategy, reviewed by a fiduciary team of Wealth Managers and Certified Financial Planners®."
+        },
+        {
+          "num": 4,
+          "label": "The invitation",
+          "caption": "Request a consultation for an initial conversation, with no obligation."
+        }
+      ],
+      "stories": null,
+      "reels": null,
+      "arc": "Coordination — the swipe illustrates the pieces working together (T1 carousel format test within the primary territory)",
+      "type": "carousel",
+      "week": 1,
+      "utm_content": "t1-coordination-a-carousel",
+      "images": [
+        "ad9-carousel-card1.png",
+        "ad9-carousel-card2.png",
+        "ad9-carousel-card3.png",
+        "ad9-carousel-card4.png"
+      ],
+      "image_direction": "4-card carousel, all dark deep-green treatment for maximum swipe cohesion. Card arc: 1) the life you have built (couple at home) -> 2) the pieces, often managed apart (four pieces listed in white over a dimmed planning photo) -> 3) coordinated into one strategy, reviewed by a fiduciary team (advisory conversation) -> 4) the invitation with pill CTA (family at the horizon). Confluence white logo top-left, mint 'COORDINATED WEALTH PLANNING' eyebrow + card counter, Ivypresto white headlines. CFP® mark on card 3. Feed 1080x1350 cards."
     }
   ],
   "client": "confluence-fp-consultation"

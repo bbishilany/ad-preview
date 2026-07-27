@@ -45,7 +45,7 @@
         "ad1-t1-coordination-a-feed.png",
         "ad1-t1-coordination-a-story.png"
       ],
-      "image_direction": "Light treatment. Photo: mature couple reviewing together at a kitchen laptop (iStock-1427687198) — 'the pieces of your life, reviewed together.' Cream scrim top, deep-green Ivypresto headline, deep-green outlined pill CTA. Photo-dominant, faces visible. Reflects the Naples-winning light editorial pattern (soft cream fade, serif headline, outlined pill)."
+      "image_direction": "Photo-dominant dark. BRANDED team shot CONFLUENCE_2025-620 — four advisors at the conference table, city window (depth of the team; 'our team coordinates'). Green-weighted bottom scrim (Soft feed / Standard story) + text-shadow, faces-first, compact block, 10-12% padding, top logo-scrim. White Ivypresto headline, outlined white pill CTA."
     },
     {
       "num": 3,
@@ -79,7 +79,7 @@
         "ad3-t2-second-opinion-a-feed.png",
         "ad3-t2-second-opinion-a-story.png"
       ],
-      "image_direction": "Dark treatment. Photo: a genuine advisory conversation (iStock-1686011737) — an outside perspective at the table. Deep-green scrim bottom, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+      "image_direction": "Photo-dominant dark. BRANDED team shot CONFLUENCE_2025-8388 — three advisors at PPG Place / Pittsburgh skyline (the fiduciary team, in its city). Soft scrim + text-shadow, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
     },
     {
       "num": 4,
@@ -113,7 +113,7 @@
         "ad4-t2-second-opinion-b-feed.png",
         "ad4-t2-second-opinion-b-story.png"
       ],
-      "image_direction": "Dark treatment. Photo: an engaged, confident advisory moment (iStock-1347652268). Deep-green scrim bottom, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+      "image_direction": "Photo-dominant dark. BRANDED team shot CONFLUENCE_2025-8393 — three advisors at PPG Place, candid (T2-B, a second perspective). Soft scrim + text-shadow, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
     },
     {
       "num": 8,
@@ -197,7 +197,7 @@
         "ad9-carousel-card3.png",
         "ad9-carousel-card4.png"
       ],
-      "image_direction": "4-card carousel, PHOTO-FORWARD (green-weighted bottom gradient + text-shadow, faces-first), animation-ready clean layered cards (Photo/Scrim/Logo/Counter/Eyebrow/Headline/Subline) for Tendai to animate. Arc (card 2 gray-couple photo now OPENS): 1) the life you have built (gray-haired couple, faces) -> 2) the pieces, often managed apart (couple, faces) -> 3) coordinated into one strategy, reviewed by a fiduciary team (advisory conversation) -> 4) the invitation (grandparents+grandchild, recropped tight to close dead space). Scrim strength per luminance: cards 2+3 Max (bright), 1+4 Standard. Top logo-scrim keeps the white lockup legible. CFP® on card 3. All 4 clear 4.5:1 on the text band (<2% below). Feed 1080x1350 cards."
+      "image_direction": "4-card carousel, PHOTO-FORWARD (green-weighted bottom gradient + text-shadow, faces-first), animation-ready clean layered cards (Photo/Scrim/Logo/Counter/Eyebrow/Headline/Subline) for Tendai to animate. Arc (card 2 gray-couple photo now OPENS): 1) the life you have built (gray-haired couple, faces) -> 2) the pieces, often managed apart (couple, faces) -> 3) coordinated into one strategy, reviewed by a fiduciary team (BRANDED team-reviewing shot CONFLUENCE_2025-302, Standard scrim) -> 4) the invitation (grandparents+grandchild, recropped tight to close dead space). Scrim strength per luminance: cards 2+3 Max (bright), 1+4 Standard. Top logo-scrim keeps the white lockup legible. CFP® on card 3. All 4 clear 4.5:1 on the text band (<2% below). Feed 1080x1350 cards."
     },
     {
       "num": 10,
@@ -230,7 +230,7 @@
         "ad10-t1-often-managed-apart-feed.png",
         "ad10-t1-often-managed-apart-story.png"
       ],
-      "image_direction": "Photo-dominant dark. Full-bleed three-generation family (Homepage-Image), faces-first, green-weighted bottom gradient (Max strength) + text-shadow. White Ivypresto 'Often Managed Apart.' with the four pieces as the subline. The gap-frame is the pieces (managed apart), not the family."
+      "image_direction": "Photo-dominant dark. Full-bleed three-generation family (stock lifestyle — intentionally kept; the library has no branded couple/family-at-home shot). Green-weighted bottom scrim (Max) + text-shadow, faces-first, compact block. Feed content block lifted +30px (CTA off the 150px floor). White Ivypresto 'Managed Apart, or Managed as One?' (2-line)."
     },
     {
       "num": 11,
@@ -256,7 +256,7 @@
       "images": [
         "ad11-t2-second-opinion-a-solidcta-feed.png"
       ],
-      "image_direction": "A/B challenger for the CTA test. Same photo-forward champion (ad3) with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant. Run against ad3 (outlined) to read pill style on CTR."
+      "image_direction": "A/B challenger for the CTA test on T2-A. Same BRANDED team photo as Ad 3 (CONFLUENCE_2025-8388) with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant."
     },
     {
       "num": 12,
@@ -282,7 +282,7 @@
       "images": [
         "ad12-t1-coordination-a-solidcta-feed.png"
       ],
-      "image_direction": "A/B challenger for the CTA test. Same photo-forward ad1 with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant."
+      "image_direction": "A/B challenger for the CTA test on T1-A. Same BRANDED team photo as Ad 1 (CONFLUENCE_2025-620) with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant."
     }
   ],
   "client": "confluence-fp-consultation"

@@ -361,7 +361,7 @@ STORIES (1080x1920):
 | [ORDER NOW sticker]|
 +--------------------+
 ```
-**Design note:** Coral #FF5A4F carries the "40%" — it is the brand's signal color and reads as festive without going full Christmas-red. Keep the payment options small and secondary; the hook is the discount + free delivery + the free LED light set. Offer ladder for reference: 100% upfront = 40% off, 50% upfront = 30% off, Layaway = 4 monthly payments (no discount). GWP: free 500-count Color-Changing LED Light Set with remote ($50 retail value) with any purchase over Afl 250, while supplies last. A subtle gift-tag or ribbon motif in coral is welcome.
+**Design note:** Coral #FF5A4F carries the "40%" — it is the brand's signal color and reads as festive without going full Christmas-red. Keep the payment options small and secondary; the hook is the discount + free delivery + the free LED light set. Offer for reference: full or half pre-order = 40% off, Layaway = 4 monthly payments (no discount). GWP: free 500-count Color-Changing LED Light Set with remote ($50 retail value) with any purchase over Afl 250, while supplies last. A subtle gift-tag or ribbon motif in coral is welcome.
 """ + "\n" + BRAND
 
 IMG_AD4 = """**Format:** 1080x1080 (feed) + 1080x1920 (stories) | **Placement:** Feed, Stories, Reels
@@ -511,7 +511,7 @@ TEXT_SPECS = {
 - NO price/offer on the image — product-led; offer lives in the caption.
 - Placement: clear left third; product stays right. """ + _SAFE,
     3: """**TEXT & TYPE — Mayo → Figma** (OFFER AD — carries the on-image badge)
-- On-image offer badge (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off" (must read "Up to" — tiered 40/30/Layaway)
+- On-image offer badge (Playfair 700, coral #FF5A4F, oversized): "Up to 40% Off" (accurate: full and half both = 40%, layaway no discount)
 - One micro line only (Assistant 400): "Free LED set over Afl 250" (full terms in the caption)
 - CTA: **Order Now** (coral pill)
 - Placement: badge over the sky/upper band with a soft scrim; keep the tree clear. """ + _SAFE,

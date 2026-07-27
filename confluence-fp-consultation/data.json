@@ -330,6 +330,54 @@
         "ad10-t1-often-managed-apart-story.png"
       ],
       "image_direction": "Photo-dominant dark. Full-bleed three-generation family (Homepage-Image), faces-first, green-weighted bottom gradient (Max strength) + text-shadow. White Ivypresto 'Often Managed Apart.' with the four pieces as the subline. The gap-frame is the pieces (managed apart), not the family."
+    },
+    {
+      "num": 11,
+      "title": "CTA TEST · T2-A champion · SOLID-fill pill",
+      "format": "Static image, 1080x1350 (Feed 4:5)",
+      "placements": ["Feed"],
+      "production": "",
+      "primary_text": "When was the last time someone reviewed your full financial picture, with no agenda but your own?\n\nA fiduciary is obligated to act in your interest alone. Our team of Wealth Managers and Certified Financial Planners® offers an outside perspective on how your investments, taxes, and estate plan work together, coordinated as one picture rather than reviewed in pieces.\n\nRequest a consultation for an initial conversation. There is no cost to begin, and no obligation to continue.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "A Fiduciary, Outside Perspective",
+      "description": "No agenda but your own.",
+      "cta": "Learn More",
+      "hook": "CTA A/B: identical to Ad 3 (champion) except the in-image pill is SOLID mint-fill with deep-green text instead of the outlined white pill. Test solid vs outlined.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": null,
+      "reels": null,
+      "arc": "CTA test — solid-fill pill vs outlined (Ad 3 is the outlined control)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t2-second-opinion-a-solidcta",
+      "images": [
+        "ad11-t2-second-opinion-a-solidcta-feed.png"
+      ],
+      "image_direction": "A/B challenger for the CTA test. Same photo-forward champion (ad3) with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant. Run against ad3 (outlined) to read pill style on CTR."
+    },
+    {
+      "num": 12,
+      "title": "CTA TEST · T1-A · SOLID-fill pill",
+      "format": "Static image, 1080x1350 (Feed 4:5)",
+      "placements": ["Feed"],
+      "production": "",
+      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed by a fiduciary team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Is Every Piece Working Together?",
+      "description": "One coordinated strategy.",
+      "cta": "Learn More",
+      "hook": "CTA A/B: identical to Ad 1 except the in-image pill is SOLID mint-fill with deep-green text instead of the outlined white pill.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": null,
+      "reels": null,
+      "arc": "CTA test — solid-fill pill vs outlined (Ad 1 is the outlined control)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-a-solidcta",
+      "images": [
+        "ad12-t1-coordination-a-solidcta-feed.png"
+      ],
+      "image_direction": "A/B challenger for the CTA test. Same photo-forward ad1 with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant."
     }
   ],
   "client": "confluence-fp-consultation"

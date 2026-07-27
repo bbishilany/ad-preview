@@ -1199,6 +1199,7 @@ let _activeImageVersion = {};
 let _placementIdx = {};
 let _feedbackCache = {};
 const CAMPAIGN_ID = 'confluence-fp-consultation';
+const ASSET_V = '1785171477';  // cache-bust token, stamped at bake time
 
 // ── Utility ────────────────────────────────────────────────────────────────
 function esc(s) {
@@ -1508,7 +1509,7 @@ function renderVariantBar(ad) {
 }
 
 // ── Image URL helpers ──────────────────────────────────────────────────────
-function _imgUrl(filename) { return `images/${filename}`; }
+function _imgUrl(filename) { return `images/${filename}?v=${ASSET_V}`; }
 
 function _findFeedImage(ad, varNum) {
   const slotKey = varNum != null ? `${ad.num}_v${varNum}_feed` : `${ad.num}_feed`;
@@ -1535,7 +1536,7 @@ function _findStoryImage(ad, varNum) {
 }
 
 function _pageName(d) { return (d && d.page_name) || (_data && _data.page_name) || 'Confluence Financial Partners'; }
-function _brandmark() { return (_data && _data.brandmark) || 'images/confluence-brandmark.jpg'; }
+function _brandmark() { return ((_data && _data.brandmark) || 'images/confluence-brandmark.jpg') + `?v=${ASSET_V}`; }
 function _igHandle() { return (_data && _data.ig_handle) || 'confluencefp'; }
 
 // ── Scroll mockup into view after variant switch ──────────────────────────
@@ -2489,7 +2490,7 @@ document.addEventListener('keydown', function(e) {
 // ── Init ──────────────────────────────────────────────────────────────────
 async function init() {
   try {
-    const res = await fetch('data.json');
+    const res = await fetch(`data.json?v=${ASSET_V}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     _data = await res.json();
     await loadImageVersions();

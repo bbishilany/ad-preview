@@ -304,8 +304,8 @@
     {
       "num": 10,
       "title": "T1 Coordination · Often Managed Apart (gap-frame)",
-      "format": "Static image, 1080x1350 (Feed 4:5)",
-      "placements": ["Feed"],
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": ["Feed", "Stories"],
       "production": "",
       "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed by a fiduciary team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
       "headline": "Often Managed Apart.",
@@ -314,14 +314,20 @@
       "hook": "Investments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart.",
       "alt_headlines": [],
       "cards": [],
-      "stories": null,
+      "stories": {
+        "image": "Three-generation family, photo-forward dark, centered headline",
+        "text_overlay": "Often Managed Apart.",
+        "secondary_text": "Investments. Taxes. Estate planning. Retirement timing.",
+        "cta_sticker": "Request a Consultation"
+      },
       "reels": null,
       "arc": "Coordination — gap-frame stopper (the strongest pattern-interrupt from the carousel hook), photo-forward dark",
       "type": "image",
       "week": 1,
       "utm_content": "t1-coordination-gap-frame",
       "images": [
-        "ad10-t1-often-managed-apart-feed.png"
+        "ad10-t1-often-managed-apart-feed.png",
+        "ad10-t1-often-managed-apart-story.png"
       ],
       "image_direction": "Photo-dominant dark. Full-bleed three-generation family (Homepage-Image), faces-first, green-weighted bottom gradient (Max strength) + text-shadow. White Ivypresto 'Often Managed Apart.' with the four pieces as the subline. The gap-frame is the pieces (managed apart), not the family."
     }

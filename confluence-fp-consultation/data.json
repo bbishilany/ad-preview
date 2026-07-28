@@ -48,6 +48,40 @@
       "image_direction": "Photo-dominant. BRANDED team shot CONFLUENCE_2025-623 (Bill-selected) — three advisors at the table, lead smiling to camera (eye-line), city window. Coordination = the team working a plan together. Standard scrim feed / Soft story, faces-first, compact block, 10-12% padding, logo scrim. White Ivypresto headline, outlined white pill CTA."
     },
     {
+      "num": 2,
+      "title": "T1 Coordination · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?\n\nA concentrated stock position, the sale of a business, or years of equity compensation can leave a financial life powerful in its parts and unaligned as a whole. Certified Financial Planners® and Wealth Managers at Confluence work to bring each decision into alignment with the others, because each one affects the rest.\n\nRequest a consultation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Coordinated, or Just Coexisting?",
+      "description": "One aligned strategy.",
+      "cta": "Learn More",
+      "hook": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Affluent 55+ individual reviewing documents in a considered, private setting; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "Coordinated, or Just Coexisting?",
+        "secondary_text": "One aligned strategy.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Coordination — UHNW complexity gap frame (concentrated position, business sale, equity compensation)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-b",
+      "images": [
+        "ad2-t1-coordination-b-feed.png",
+        "ad2-t1-coordination-b-story.png"
+      ],
+      "image_direction": "Photo-dominant, branded. UHNW register — a single considered decision-maker (or a couple) 55+, private/office setting, faces-first. Standard scrim feed / soft story, 10-12% padding, logo scrim. White Ivypresto headline, outlined white pill CTA. Sofia to select from the branded library."
+    },
+    {
       "num": 3,
       "title": "T2 Second Opinion · Variation A",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
@@ -114,6 +148,40 @@
         "ad4-t2-second-opinion-b-story.png"
       ],
       "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-748 (Bill-selected) — a mature woman advisor + team with a client (featured-advisor diversity). Soft scrim, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+    },
+    {
+      "num": 7,
+      "title": "T5 Life-Stage · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Few transitions in life arrive in isolation.\n\nWhether you are approaching retirement, planning a move, or navigating a change in your family, these are the moments when the pieces of a financial life most need to move together. Our advisers work to coordinate your investments, taxes, and estate plan for the road ahead.\n\nRequest a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "When Life Changes, So Should the Plan",
+      "description": "Guidance through transition.",
+      "cta": "Learn More",
+      "hook": "Few transitions in life arrive in isolation.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Warm next-chapter lifestyle moment (retirement / relocation / family change) in brand green; centered white Ivypresto headline",
+        "text_overlay": "When Life Changes, So Should the Plan",
+        "secondary_text": "Guidance through transition.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Life-stage transitions — recognition/empathy (accessible on-ramp)",
+      "type": "image",
+      "week": 4,
+      "utm_content": "t5-life-stage-a",
+      "images": [
+        "ad7-t5-life-stage-a-feed.png",
+        "ad7-t5-life-stage-a-story.png"
+      ],
+      "image_direction": "Photo-dominant, branded/site imagery. A mature 50+ couple or individual at a transition moment (retirement / move / family change), warm, faces-first. Standard scrim, compact block. White Ivypresto headline. Sofia to select."
     },
     {
       "num": 8,

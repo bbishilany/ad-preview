@@ -45,7 +45,7 @@
         "ad1-t1-coordination-a-feed.png",
         "ad1-t1-coordination-a-story.png"
       ],
-      "image_direction": "Photo-dominant dark. BRANDED team shot CONFLUENCE_2025-620 — four advisors at the conference table, city window (depth of the team; 'our team coordinates'). Green-weighted bottom scrim (Soft feed / Standard story) + text-shadow, faces-first, compact block, 10-12% padding, top logo-scrim. White Ivypresto headline, outlined white pill CTA."
+      "image_direction": "Photo-dominant. BRANDED team shot CONFLUENCE_2025-623 (Bill-selected) — three advisors at the table, lead smiling to camera (eye-line), city window. Coordination = the team working a plan together. Standard scrim feed / Soft story, faces-first, compact block, 10-12% padding, logo scrim. White Ivypresto headline, outlined white pill CTA."
     },
     {
       "num": 3,
@@ -79,7 +79,7 @@
         "ad3-t2-second-opinion-a-feed.png",
         "ad3-t2-second-opinion-a-story.png"
       ],
-      "image_direction": "Photo-dominant dark. BRANDED team shot CONFLUENCE_2025-8388 — three advisors at PPG Place / Pittsburgh skyline (the fiduciary team, in its city). Soft scrim + text-shadow, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+      "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-204 (Bill-selected) — mature advisor + mature (50+) client across the table = a second perspective, on-audience HNW. Soft scrim feed / Standard story, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
     },
     {
       "num": 4,
@@ -113,7 +113,7 @@
         "ad4-t2-second-opinion-b-feed.png",
         "ad4-t2-second-opinion-b-story.png"
       ],
-      "image_direction": "Photo-dominant dark. BRANDED team shot CONFLUENCE_2025-8393 — three advisors at PPG Place, candid (T2-B, a second perspective). Soft scrim + text-shadow, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+      "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-748 (Bill-selected) — a mature woman advisor + team with a client (featured-advisor diversity). Soft scrim, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
     },
     {
       "num": 8,
@@ -147,7 +147,7 @@
         "ad8-t5-life-stage-b-feed.png",
         "ad8-t5-life-stage-b-story.png"
       ],
-      "image_direction": "Dark treatment. Photo: a freedom / next-chapter lifestyle image already toned in brand green (Confluence-Individuals-Journey). Deep-green scrim, white Ivypresto headline, mint eyebrow, white outlined pill CTA."
+      "image_direction": "Photo-dominant. SITE image Confluence-About-Hero — a mature 50+ couple, warm, a next-chapter transition moment (T5 life-stage; the branded shoot has no couple/lifestyle shot). Standard scrim, faces-first, compact block. White Ivypresto headline."
     },
     {
       "num": 9,
@@ -197,7 +197,7 @@
         "ad9-carousel-card3.png",
         "ad9-carousel-card4.png"
       ],
-      "image_direction": "4-card carousel, PHOTO-FORWARD (green-weighted bottom gradient + text-shadow, faces-first), animation-ready clean layered cards (Photo/Scrim/Logo/Counter/Eyebrow/Headline/Subline) for Tendai to animate. Arc (card 2 gray-couple photo now OPENS): 1) the life you have built (gray-haired couple, faces) -> 2) the pieces, often managed apart (couple, faces) -> 3) coordinated into one strategy, reviewed by a fiduciary team (BRANDED team-reviewing shot CONFLUENCE_2025-302, Standard scrim) -> 4) the invitation (grandparents+grandchild, recropped tight to close dead space). Scrim strength per luminance: cards 2+3 Max (bright), 1+4 Standard. Top logo-scrim keeps the white lockup legible. CFP® on card 3. All 4 clear 4.5:1 on the text band (<2% below). Feed 1080x1350 cards."
+      "image_direction": "4-card carousel, photo-forward. Arc: 1) the life you have built -> 2) the pieces, often managed apart -> 3) coordinated into one strategy, reviewed by a fiduciary team (BRANDED team CONFLUENCE_2025-305, Pittsburgh skyline, Standard scrim) -> 4) the invitation / generations (grandparents+grandchild iStock-1315439286, Standard scrim). Card 2 opens (animation-ready for Tendai). Green-weighted bottom scrim + text-shadow, faces-first, CFP® on card 3. All clear 4.5:1 on the text band."
     },
     {
       "num": 10,
@@ -256,7 +256,7 @@
       "images": [
         "ad11-t2-second-opinion-a-solidcta-feed.png"
       ],
-      "image_direction": "A/B challenger for the CTA test on T2-A. Same BRANDED team photo as Ad 3 (CONFLUENCE_2025-8388) with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant."
+      "image_direction": "A/B challenger for the CTA test on T2-A. Same BRANDED photo as Ad 3 (CONFLUENCE_2025-204) with the pill swapped to SOLID mint-fill / deep-green text."
     },
     {
       "num": 12,
@@ -282,7 +282,7 @@
       "images": [
         "ad12-t1-coordination-a-solidcta-feed.png"
       ],
-      "image_direction": "A/B challenger for the CTA test on T1-A. Same BRANDED team photo as Ad 1 (CONFLUENCE_2025-620) with the in-image pill swapped to the SOLID mint-fill / deep-green-text variant."
+      "image_direction": "A/B challenger for the CTA test on T1-A. Same BRANDED photo as Ad 1 (CONFLUENCE_2025-623) with the pill swapped to SOLID mint-fill / deep-green text."
     }
   ],
   "client": "confluence-fp-consultation"

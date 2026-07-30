@@ -1,5 +1,5 @@
 {
-  "campaign": "Advisor Event Marketing \u2014 FA Events Wave 1 (immersive primary)",
+  "campaign": "Advisor Event Marketing \u2014 FA Events Wave 1 (3 arms)",
   "client": "mileage-design",
   "page_name": "Mileage Design",
   "ig_handle": "mileagedesign",
@@ -10,14 +10,125 @@
   "compliance_notes": [
     "LOCAL PREVIEW ONLY \u2014 carries Mileage's own pricing. Branch claude/md-fa-events-preview is never pushed.",
     "Copy is Patrick O'Sullivan's v2 draft. Stylometry PASS; copy-QA and the 5-agent ad review board have NOT run.",
-    "Ads 1-3 IMMERSIVE (primary, Bill's direction 2026-07-30). Ads 4-6 type-dominant challenger. Ads 7-9 founder-led. Ads 10-14 carousel.",
-    "Imagery is Nano Banana Pro. Rooms only \u2014 no people, no faces, no synthetic advisors, no generated text.",
-    "No client named, described or located. No city names. No signage or landmarks in any frame.",
+    "Ads 1-4 DOCUMENTARY (real podcast frames). Ads 5-7 IMMERSIVE (generated rooms). Ads 8-10 type-dominant. Ads 11-13 founder tile. Ads 14-18 carousel.",
+    "Documentary frames are Bill-solo only \u2014 host permission outstanding, so all two-shots (incl. IMG_3436/3437/3454/3480) are excluded.",
+    "Documentary is feed-only. Solo frames are 2016x1512; a 1080x1920 story needs 851px native width = 1.27x upscale. Not shipped soft.",
+    "Immersive imagery is Nano Banana Pro. Rooms only \u2014 no people, no faces, no synthetic advisors, no generated text.",
+    "No client named, described or located. No city names, signage or landmarks in any frame.",
     "Every figure on a frame traces to the assignment brief or the approved deck."
   ],
   "ads": [
     {
       "num": 1,
+      "title": "C1 Seat Count \u2014 DOCUMENTARY",
+      "format": "Static image, 1080x1350 (feed)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "Figma Ad/Master \u2014 treatment=Documentary. Real podcast frames, wash=Standard, plate=Max.",
+      "primary_text": "Forty seats, six weeks out, and the room isn't full yet.\n\nWe build and run the Meta campaign that fills it. Two advisor events this spring: the first came in at $69.25 per registered seat, the second at $37.08. Both times the client shut the ads off before the end date because the room hit capacity.\n\n$1,400/month, three-month minimum. Ad spend is separate and goes straight to Meta.\n\nFifteen minutes is enough to tell you whether the math works for your event.",
+      "headline": "Both Events Hit Capacity Early",
+      "description": "$1,400/mo, 3-month minimum",
+      "cta": "Learn More",
+      "hook": "Forty seats, six weeks out, and the room isn't full yet.",
+      "alt_headlines": [
+        "Seats, Not Clicks",
+        "Room Filled. Ads Off."
+      ],
+      "cards": [],
+      "stories": {},
+      "arc": "Cold prospecting",
+      "type": "image",
+      "week": 1,
+      "images": [
+        "D-C1-seat-count-feed.png"
+      ],
+      "variations": [],
+      "image_direction": "IMG_3458 \u2014 both hands mid-gesture, 3/4 to camera, no eye contact. Best energy in the set."
+    },
+    {
+      "num": 2,
+      "title": "C2 Cost Per Seat \u2014 DOCUMENTARY",
+      "format": "Static image, 1080x1350 (feed)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "Figma Ad/Master \u2014 treatment=Documentary. Real podcast frames, wash=Standard, plate=Max.",
+      "primary_text": "$37.08 per registered seat at the last advisor event we filled.\n\nThat's ad spend. Add our fee across the three months and it comes to $134.77 all in. The campaign before it ran $69.25 per seat, $192.76 loaded.\n\n$1,400/month, three-month minimum. Ad spend is separate and goes straight to Meta.\n\nFifteen minutes and you'll know what your event would cost to fill.",
+      "headline": "$37.08 Per Registered Seat",
+      "description": "Spring 2026, two campaigns",
+      "cta": "Learn More",
+      "hook": "$37.08 per registered seat at the last advisor event we filled.",
+      "alt_headlines": [
+        "Seats at $37.08 Each"
+      ],
+      "cards": [],
+      "stories": {},
+      "arc": "Cold prospecting",
+      "type": "image",
+      "week": 1,
+      "images": [
+        "D-C2-cost-per-seat-feed.png"
+      ],
+      "variations": [],
+      "image_direction": "IMG_3459 \u2014 single hand raised mid-speech."
+    },
+    {
+      "num": 3,
+      "title": "C3 Capacity \u2014 DOCUMENTARY",
+      "format": "Static image, 1080x1350 (feed)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "Figma Ad/Master \u2014 treatment=Documentary. Real podcast frames, wash=Standard, plate=Max.",
+      "primary_text": "The client called and asked us to turn the ads off. The event was full.\n\nThat happened on both advisor event campaigns we ran this spring. The first filled at $69.25 per registered seat, the second at $37.08. Neither one got to spend its whole budget.\n\nOur goal is always to be paused for capacity, never for performance.\n\n$1,400/month, three-month minimum. Ad spend is separate and goes straight to Meta.",
+      "headline": "They Asked Us to Stop the Ads",
+      "description": "Two campaigns, spring 2026",
+      "cta": "Learn More",
+      "hook": "The client called and asked us to turn the ads off. The event was full.",
+      "alt_headlines": [
+        "The Event Was Full."
+      ],
+      "cards": [],
+      "stories": {},
+      "arc": "Cold prospecting",
+      "type": "image",
+      "week": 1,
+      "images": [
+        "D-C3-capacity-feed.png"
+      ],
+      "variations": [],
+      "image_direction": "IMG_3462 \u2014 open hand, mic prominent."
+    },
+    {
+      "num": 4,
+      "title": "C1 Seat Count \u2014 DOCUMENTARY (calm alt)",
+      "format": "Static image, 1080x1350 (feed)",
+      "placements": [
+        "Feed"
+      ],
+      "production": "Figma Ad/Master \u2014 treatment=Documentary. Real podcast frames, wash=Standard, plate=Max.",
+      "primary_text": "Forty seats, six weeks out, and the room isn't full yet.\n\nWe build and run the Meta campaign that fills it. Two advisor events this spring: the first came in at $69.25 per registered seat, the second at $37.08. Both times the client shut the ads off before the end date because the room hit capacity.\n\n$1,400/month, three-month minimum. Ad spend is separate and goes straight to Meta.\n\nFifteen minutes is enough to tell you whether the math works for your event.",
+      "headline": "Both Events Hit Capacity Early",
+      "description": "$1,400/mo, 3-month minimum",
+      "cta": "Learn More",
+      "hook": "Forty seats, six weeks out, and the room isn't full yet.",
+      "alt_headlines": [
+        "Seats, Not Clicks"
+      ],
+      "cards": [],
+      "stories": {},
+      "arc": "Cold prospecting",
+      "type": "image",
+      "week": 1,
+      "images": [
+        "D-C1-alt-calm-feed.png"
+      ],
+      "variations": [],
+      "image_direction": "IMG_3428 \u2014 hands clasped, calmer register. Within-arm energy test against ad 1."
+    },
+    {
+      "num": 5,
       "title": "C1 Seat Count \u2014 IMMERSIVE (primary)",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -48,7 +159,7 @@
       "image_direction": "The room set and waiting. Plate Standard (band mean 0.0052, logo band drove escalation)."
     },
     {
-      "num": 2,
+      "num": 6,
       "title": "C2 Cost Per Seat \u2014 IMMERSIVE (primary)",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -78,7 +189,7 @@
       "image_direction": "One empty chair at a set table. Feed plate Soft, story plate Max (bright table intrusion)."
     },
     {
-      "num": 3,
+      "num": 7,
       "title": "C3 Capacity \u2014 IMMERSIVE (primary)",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -108,7 +219,7 @@
       "image_direction": "Banquet table at capacity, every seat set. Plate Standard both formats."
     },
     {
-      "num": 4,
+      "num": 8,
       "title": "C1 Seat Count \u2014 A: type-dominant",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -139,7 +250,7 @@
       "image_direction": "Matched pair with its Founder (ad 4) sibling \u2014 same headline, same offer, same audience. Treatment is the only variable."
     },
     {
-      "num": 5,
+      "num": 9,
       "title": "C2 Cost Per Seat \u2014 A: type-dominant",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [
@@ -166,7 +277,7 @@
       "image_direction": "Matched pair with its Founder (ad 5) sibling \u2014 same headline, same offer, same audience. Treatment is the only variable."
     },
     {
-      "num": 6,
+      "num": 10,
       "title": "C3 Capacity \u2014 A: type-dominant",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -196,7 +307,7 @@
       "image_direction": "Matched pair with its Founder (ad 6) sibling \u2014 same headline, same offer, same audience. Treatment is the only variable."
     },
     {
-      "num": 7,
+      "num": 11,
       "title": "C1 Seat Count \u2014 B: founder-led",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -227,7 +338,7 @@
       "image_direction": "Matched pair with its type-dominant (ad 1) sibling \u2014 same headline, same offer, same audience. Treatment is the only variable."
     },
     {
-      "num": 8,
+      "num": 12,
       "title": "C2 Cost Per Seat \u2014 B: founder-led",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [
@@ -254,7 +365,7 @@
       "image_direction": "Matched pair with its type-dominant (ad 2) sibling \u2014 same headline, same offer, same audience. Treatment is the only variable."
     },
     {
-      "num": 9,
+      "num": 13,
       "title": "C3 Capacity \u2014 B: founder-led",
       "format": "Static image, 1080x1350 (feed) + 1080x1920 (story)",
       "placements": [
@@ -284,7 +395,7 @@
       "image_direction": "Matched pair with its type-dominant (ad 3) sibling \u2014 same headline, same offer, same audience. Treatment is the only variable."
     },
     {
-      "num": 10,
+      "num": 14,
       "title": "C6 Carousel card 1 of 5 \u2014 Campaign One",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [
@@ -309,7 +420,7 @@
       "image_direction": "Carousel card \u2014 each card stands alone. Sequence: ads 7-11."
     },
     {
-      "num": 11,
+      "num": 15,
       "title": "C6 Carousel card 2 of 5 \u2014 Campaign Two",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [
@@ -334,7 +445,7 @@
       "image_direction": "Carousel card \u2014 each card stands alone. Sequence: ads 7-11."
     },
     {
-      "num": 12,
+      "num": 16,
       "title": "C6 Carousel card 3 of 5 \u2014 The Anchor",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [
@@ -359,7 +470,7 @@
       "image_direction": "Carousel card \u2014 each card stands alone. Sequence: ads 7-11."
     },
     {
-      "num": 13,
+      "num": 17,
       "title": "C6 Carousel card 4 of 5 \u2014 Refresh",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [
@@ -384,7 +495,7 @@
       "image_direction": "Carousel card \u2014 each card stands alone. Sequence: ads 7-11."
     },
     {
-      "num": 14,
+      "num": 18,
       "title": "C6 Carousel card 5 of 5 \u2014 CTA",
       "format": "Static image, 1080x1350 (feed)",
       "placements": [

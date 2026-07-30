@@ -150,6 +150,74 @@
       "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-748 (Bill-selected) — a mature woman advisor + team with a client (featured-advisor diversity). Soft scrim, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
     },
     {
+      "num": 5,
+      "title": "T3 Legacy · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Clarity may be one of the greatest gifts you can leave your family.\n\nEstate planning is less about the documents than about the people who will one day rely on them. Our team of Wealth Managers and Certified Financial Planners® works to coordinate your estate plan with your investments and tax strategy, so that what you have built passes on the way you intend.\n\nRequest a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "The Clarity You Leave Behind",
+      "description": "A gift to your family.",
+      "cta": "Learn More",
+      "hook": "Clarity may be one of the greatest gifts you can leave your family.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Grandparents and grandchild at golden hour looking to the horizon; green bottom scrim, centered white Ivypresto headline",
+        "text_overlay": "The Clarity You Leave Behind",
+        "secondary_text": "A gift to your family.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & family — meaning + stewardship (warmth ceiling per voice spec)",
+      "type": "image",
+      "week": 2,
+      "utm_content": "t3-legacy-a",
+      "images": [
+        "ad5-t3-legacy-a-feed.png",
+        "ad5-t3-legacy-a-story.png"
+      ],
+      "image_direction": "Photo-forward rebuild to match the launch set. Image iStock-1315439286 — grandparents and grandchild in a golden field, faces-first upper, horizon eye-line = legacy, what you leave behind. Green-weighted bottom scrim (Standard) + adaptive top ramp for the logo, compact block, 10-12% padding. White Ivypresto headline (single line), mint 'PLANNING YOUR LEGACY' eyebrow, outlined white pill CTA. Jumping-off frame for Mayo."
+    },
+    {
+      "num": 6,
+      "title": "T3 Legacy · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "The plans you make today will one day be carried by the people you love most.\n\nA coordinated estate strategy considers more than documents. It considers how your wealth transfers across generations, how your giving reflects your values, and how each decision fits the whole. Our team of Wealth Managers and Certified Financial Planners® helps bring that picture into focus.\n\nWe would value the opportunity to meet you. Request a consultation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser.",
+      "headline": "Wealth That Passes On With Purpose",
+      "description": "Legacy, coordinated.",
+      "cta": "Learn More",
+      "hook": "The plans you make today will one day be carried by the people you love most.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Three generations together (grandmother and granddaughter); green bottom scrim, centered white Ivypresto headline",
+        "text_overlay": "Wealth That Passes On With Purpose",
+        "secondary_text": "Legacy, coordinated.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & family — wealth transfer across generations, values-led giving",
+      "type": "image",
+      "week": 3,
+      "utm_content": "t3-legacy-b",
+      "images": [
+        "ad6-t3-legacy-b-feed.png",
+        "ad6-t3-legacy-b-story.png"
+      ],
+      "image_direction": "Photo-forward rebuild to match the launch set. SITE image Homepage-Image — three generations on the sofa, centered on grandmother + granddaughter (the people who carry the plan forward), faces-first upper. Green-weighted bottom scrim (Standard) covers the bright lower band + adaptive top ramp for the logo, compact block. White Ivypresto headline (2-line), mint 'PLANNING YOUR LEGACY' eyebrow, outlined white pill CTA. Jumping-off frame for Mayo."
+    },
+    {
       "num": 7,
       "title": "T5 Life-Stage · Variation A",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",

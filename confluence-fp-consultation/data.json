@@ -367,58 +367,6 @@
         "ad10-t1-often-managed-apart-story.png"
       ],
       "image_direction": "Photo-dominant dark. Full-bleed three-generation family (stock lifestyle — intentionally kept; the library has no branded couple/family-at-home shot). Green-weighted bottom scrim (Max) + text-shadow, faces-first, compact block. Feed content block lifted +30px (CTA off the 150px floor). White Ivypresto 'Managed Apart, or Managed as One?' (2-line)."
-    },
-    {
-      "num": 11,
-      "title": "CTA TEST · T2-A champion · SOLID-fill pill",
-      "format": "Static image, 1080x1350 (Feed 4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "production": "",
-      "primary_text": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?\n\nFor families whose wealth spans multiple generations, entities, and advisors, even a well-built plan can drift out of alignment. Working alongside your attorney and accountant, our team offers a coordinated, independent perspective, with no agenda but your own.\n\nRequest a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser. Registration of an investment adviser does not imply any level of skill or training. Please refer to our Form ADV Part 2A, Form CRS and the Investment Adviser Public Disclosure (IAPD) website at: www.adviserinfo.sec.gov for further information regarding our investment services and their corresponding risks.",
-      "headline": "An Independent, Outside Perspective",
-      "description": "No agenda but your own.",
-      "cta": "Learn More",
-      "hook": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": null,
-      "reels": null,
-      "arc": "CTA test — solid-fill pill vs outlined (Ad 3 is the outlined control)",
-      "type": "image",
-      "week": 1,
-      "utm_content": "t2-second-opinion-a-solidcta",
-      "images": [
-        "ad11-t2-second-opinion-a-solidcta-feed.png"
-      ],
-      "image_direction": "A/B challenger for the CTA test on T2-A. Same BRANDED photo as Ad 3 (CONFLUENCE_2025-204) with the pill swapped to SOLID mint-fill / deep-green text."
-    },
-    {
-      "num": 12,
-      "title": "CTA TEST · T1-A · SOLID-fill pill",
-      "format": "Static image, 1080x1350 (Feed 4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "production": "",
-      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.\n\nConfluence Wealth Services, Inc. d/b/a Confluence Financial Partners is an SEC-registered investment adviser. Registration of an investment adviser does not imply any level of skill or training. Please refer to our Form ADV Part 2A, Form CRS and the Investment Adviser Public Disclosure (IAPD) website at: www.adviserinfo.sec.gov for further information regarding our investment services and their corresponding risks.",
-      "headline": "Is Every Piece Working Together?",
-      "description": "One coordinated strategy.",
-      "cta": "Learn More",
-      "hook": "CTA A/B: identical to Ad 1 except the in-image pill is SOLID mint-fill with deep-green text instead of the outlined white pill.",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": null,
-      "reels": null,
-      "arc": "CTA test — solid-fill pill vs outlined (Ad 1 is the outlined control)",
-      "type": "image",
-      "week": 1,
-      "utm_content": "t1-coordination-a-solidcta",
-      "images": [
-        "ad12-t1-coordination-a-solidcta-feed.png"
-      ],
-      "image_direction": "A/B challenger for the CTA test on T1-A. Same BRANDED photo as Ad 1 (CONFLUENCE_2025-623) with the pill swapped to SOLID mint-fill / deep-green text."
     }
   ],
   "client": "confluence-fp-consultation"

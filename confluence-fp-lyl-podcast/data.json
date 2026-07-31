@@ -1,0 +1,325 @@
+{
+  "campaign": "Living Your Legacy \u2014 Meta Podcast Growth",
+  "client": "Confluence Financial Partners",
+  "page_name": "Living Your Legacy",
+  "ig_handle": "LivingYourLegacyCFP",
+  "brandmark": "images/lyl-brandmark.png",
+  "cta_url": "https://www.youtube.com/@LivingYourLegacyCFP",
+  "hide_design_direction": true,
+  "use_static_images": true,
+  "compliance_notes": "Real podcast footage + branded end card. No advice/performance claims. Steelers branding NOT used. SEC disclaimer in footer.",
+  "ads": [
+    {
+      "num": 1,
+      "title": "Leadership Gaps in the Next Generation",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Who are we once the titles fall away? On Living Your Legacy, Greg Weimer sits down with people who have lived that question and kept building anyway. Honest conversations about the life beneath the work.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad1-story.mp4"
+      ]
+    },
+    {
+      "num": 2,
+      "title": "What My Son Taught Me",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Who are we once the titles fall away? On Living Your Legacy, Greg Weimer sits down with people who have lived that question and kept building anyway. Honest conversations about the life beneath the work.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad2-story.mp4"
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Build a Life that Starts with Happiness",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "Watch the full conversations on YouTube.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness-first",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad3-story.mp4"
+      ]
+    },
+    {
+      "num": 4,
+      "title": "What Truly Fills Her Cup",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "Watch the full conversations on YouTube.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness-first",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad4-story.mp4"
+      ]
+    },
+    {
+      "num": 5,
+      "title": "The Mosaic",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New episodes every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad5-story.mp4"
+      ]
+    },
+    {
+      "num": 6,
+      "title": "The Power of Collective Experience",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New episodes every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad6-story.mp4"
+      ]
+    },
+    {
+      "num": 7,
+      "title": "It Takes a Team (Sarris Candies)",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New episodes every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad7-story.mp4"
+      ]
+    },
+    {
+      "num": 8,
+      "title": "Sarris Candies Story",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New episodes every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective / bench",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad8-story.mp4"
+      ]
+    },
+    {
+      "num": 9,
+      "title": "A Career of Continuous Learning",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Who are we once the titles fall away? On Living Your Legacy, Greg Weimer sits down with people who have lived that question and kept building anyway. Honest conversations about the life beneath the work.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity / bench",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad9-story.mp4"
+      ]
+    },
+    {
+      "num": 10,
+      "title": "Learning Through Reading",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "Watch the full conversations on YouTube.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness-first / bench",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad10-story.mp4"
+      ]
+    },
+    {
+      "num": 11,
+      "title": "Not Just Dinner, a Curated Experience",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New episodes every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective / bench",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad11-story.mp4"
+      ]
+    },
+    {
+      "num": 12,
+      "title": "The Margin of Excellence",
+      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "Watch the full conversations on YouTube.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness-first / bench",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad12-story.mp4"
+      ]
+    }
+  ]
+}

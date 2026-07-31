@@ -1890,6 +1890,10 @@ function renderStoryMockup(ad) {
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
+    ${ad.guest_name ? `<div class="ig-guest-chip" style="position:absolute;left:14px;top:92px;max-width:80%;z-index:3;padding:9px 13px;border-radius:11px;background:linear-gradient(90deg,rgba(18,73,60,.94),rgba(18,73,60,.55))">
+      <div style="color:#fff;font-weight:600;font-size:15px;line-height:1.15">${esc(ad.guest_name)}</div>
+      ${ad.guest_title ? `<div style="color:#7EFBC8;font-size:12px;margin-top:2px;line-height:1.2">${esc(ad.guest_title)}</div>` : ''}
+    </div>` : ''}
     <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
     ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
     <div class="ig-story-message-bar">

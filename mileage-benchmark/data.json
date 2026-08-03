@@ -1,0 +1,119 @@
+{
+  "campaign": "Online Visibility Benchmark — $500M+ RIAs",
+  "client": "Mileage Design",
+  "page_name": "Mileage Design",
+  "ig_handle": "mileage_design",
+  "brandmark": "images/mileage-icon.jpg",
+  "cta_url": "https://benchmark.mileagedesign.com",
+  "event_date": "",
+  "venue": "",
+  "co_presenters": "",
+  "hide_design_direction": true,
+  "use_static_images": true,
+  "compliance_notes": [
+    "Round 1 draft frames. Single photographic treatment, one frame per territory. Not the Figma component system.",
+    "Feed only this round. Stories and Reels variants do not exist yet and are not represented.",
+    "One headline and one description per ad, as fixed pairings. Not dynamic creative — do not enable Advantage+ creative text variations.",
+    "Territory 3 ships the no-stat plate. The 96% card frame may only run paired with the headline 'They look you up before they call'; the two travel together and neither is valid alone.",
+    "Territory 4 is stat-free throughout, plate included, and is the only territory permitted 'approaching' language. It does not carry the AUM floor line.",
+    "Never ship: '96% of referred prospects', 'never using referrals', the Wealthtender 25% (ages 35-64, plan to use ChatGPT), or the 31% and the 96% in the same ad."
+  ],
+  "ads": [
+    {
+      "num": 1,
+      "title": "T1 — What the practice is worth without you",
+      "format": "Static image, 1080x1350 (4:5)",
+      "placements": ["Feed"],
+      "type": "static",
+      "arc": "Enterprise value — the third leg is the one you can't see, and the only one that is yours",
+      "wave": 1,
+      "week": 1,
+      "primary_text": [
+        "What is this practice worth to someone who isn't you?\n\nReferrals and centers of influence built the book, and they still carry it. Something else runs alongside them now. 50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026). Introductions still happen. They are not the only way clients arrive.\n\nSome of those other ways a firm cannot do anything about. The third leg is the one it can build, and the one that stays in the building when you step back. The benchmark measures where yours stands: what the market can see of your firm, next to the four firms covering the most ground in your metro. Ten minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+        "The introduction from a client. The referral from an accountant who trusts you. The first two legs your practice grows on live inside people, and neither one transfers when you step back.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026). Introductions did not stop; something else started running alongside them.\n\nNot every one of those routes is something a firm can build. The third leg is, and it is the part that builds value inside the practice itself.\n\nThe benchmark shows where yours stands. Your firm and the four firms with the widest coverage in your metro, scored on the same keyword set and the same technical checks. Ten minutes. Yours to keep.\n\nBuilt for RIAs at and beyond $500M in AUM."
+      ],
+      "headline": "What the practice is worth without you",
+      "description": "Ten minutes. Yours to keep.",
+      "cta": "Learn More",
+      "hook": "",
+      "stories": null,
+      "reels": null,
+      "image_direction": "",
+      "on_image_text": "No referral\n50%\nof investors with $5M+ found their current advisor without one.\nFicomm Partners + Absolute Engagement, 2026",
+      "production": "Hero stat: the 50%. Plate runs the landing page's own stat card, word for word (§02, card two of three). The label 'No referral' is a hard element — it carries the referent for 'without one' and is held to the same legibility gate as the subject line, never cropped, never reduced to decorative micro-type. The source line is a hard element on the same terms. 4:5 and 1:1 only, from purpose-built crops; Meta auto-crop and image expansion OFF. Any placement that cannot guarantee both the label and the source line at full legibility takes the territory 3 no-stat plate instead. Copy variant A is question-led (133 words), B is declarative (133 words). Week-one watch: comment sentiment for a 'referrals are dying' misread.",
+      "images": ["draft-t1.png"]
+    },
+    {
+      "num": 2,
+      "title": "T2 — An independent read of your metro",
+      "format": "Static image, 1080x1350 (4:5)",
+      "placements": ["Feed"],
+      "type": "static",
+      "arc": "Digital investment — what is your current digital investment buying you",
+      "wave": 1,
+      "week": 1,
+      "primary_text": [
+        "The site and the search work have reporting behind them. What would a second read of the same market say?\n\nThe practice grew on relationships, and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026). That puts a new question on the site: whether an answer engine can read it.\n\nThe benchmark is that second read, scored the same way for your firm and the four firms covering the most ground in your metro. It reads organic visibility and the condition of the site underneath. If it lines up with what you're already seeing, that's worth knowing. If something reads differently, it's a useful conversation to have with whoever runs the work.\n\nEither way you end up with an independently measured view of the market you're growing in.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+        "Somewhere in the budget there is a line for being found. A site rebuilt two years ago, or search work running every month, or both.\n\nThe relationships still bring people in, and the introduction is still where most of this starts. What happens after it is the part nobody sends you a report on.\n\nThe market keeps adding routes that do not run through a person. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026). The benchmark reads organic visibility on a fixed keyword set for your metro, and whether the site people land on is built the way search engines and answer engines can read it. Two fields. Yours whether we ever speak.\n\nBuilt for RIAs at and beyond $500M in AUM."
+      ],
+      "headline": "An independent read of your metro",
+      "description": "Organic and site health.",
+      "cta": "Learn More",
+      "hook": "",
+      "stories": null,
+      "reels": null,
+      "image_direction": "",
+      "on_image_text": "Asking AI\n25%\nof investors under 45 used an AI tool while choosing an advisor.\nFicomm Partners + Absolute Engagement, 2026",
+      "production": "Hero stat: the 25% (Ficomm Partners and Absolute Engagement, 2026 — under 45, USED an AI tool). Plate runs the landing page's own stat card, word for word (§02, card three of three). Do not substitute the Wealthtender 25%, which is a different study, a different age band (35-64) and a different tense (PLAN to use ChatGPT). Both variants scope the report to organic visibility and site condition, because the report does not grade paid. Copy variant A is question-led and runs 152 words against the deck's 110-124 band, deliberately: the restored balance line and the closing growth beat are Gate B requirements and they outrank the band. B is declarative (133 words).",
+      "images": ["draft-t2.png"]
+    },
+    {
+      "num": 3,
+      "title": "T3 — See what your referrals see",
+      "format": "Static image, 1080x1350 (4:5)",
+      "placements": ["Feed"],
+      "type": "static",
+      "arc": "Message match — a referral earns the introduction, the digital presence earns the meeting",
+      "wave": 1,
+      "week": 1,
+      "primary_text": [
+        "When your name gets passed along tonight, where does that person go next?\n\nThe introduction still happens. The CPA still makes the call, the client still passes your name along, and that is how most of the book got built.\n\nOne 2025 Wealthtender study asked two questions and got two answers. 62% start with a recommendation from friends or family. And, separately, 96% of prospects research advisors online before they decide who to hire. How a search starts and what settles it are not the same question.\n\nThe benchmark shows you the list they see: where your firm lands next to the four firms covering the most ground in your metro. Ten minutes tells you where you stand.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+        "A referral earns the introduction. Your digital presence earns the meeting.\n\nClients and centers of influence hand your name to people who trust them, and that is how most of the book got built.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family. And, separately, 96% of prospects research advisors online before they decide who to hire. Both are true at once, and only one of them is visible from inside the firm.\n\nThe benchmark measures the other one. Where your firm lands on the terms people in your metro search, and what the site looks like when they arrive. Two fields. Yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+      ],
+      "headline": "See what your referrals see",
+      "description": "See what they see.",
+      "cta": "Learn More",
+      "hook": "",
+      "stories": null,
+      "reels": null,
+      "image_direction": "",
+      "on_image_text": "A referral earns the introduction.\nYour digital presence earns the meeting.",
+      "production": "Hero stat: the 62 and 96 chain — one study answering two questions, so one hero stat under the density rule. Headline is the landing page H1 verbatim, which is the cheapest message match available. Plate is the no-stat default: the landing page subhead word for word, paired with that headline. The alternative 96% card frame is NOT in this round; if it ever runs, the headline swaps to 'They look you up before they call' and the two travel together — neither is valid alone. This is the highest-risk copy in the deck: a referral figure and a research figure in one paragraph is the adjacency that manufactures '96% of referred prospects'. The de-nesting devices ('And, separately'; 'How a search starts and what settles it are not the same question'; 'Both are true at once') are load-bearing, not stylistic. Copy variant A is question-led (127 words), B is declarative (121 words).",
+      "images": ["draft-t3-default.png"]
+    },
+    {
+      "num": 4,
+      "title": "T4 — The size you're growing into",
+      "format": "Static image, 1080x1350 (4:5)",
+      "placements": ["Feed"],
+      "type": "static",
+      "arc": "Inflection — the inflection point on the approach to $500M",
+      "wave": 1,
+      "week": 1,
+      "primary_text": [
+        "What does the next stretch of this practice need that the last one did not?\n\nReferrals and centers of influence got the firm here, and they are still the engine. Somewhere approaching $500M in AUM the arithmetic changes, because the same number of introductions has to cover a larger base. The same dollar inflow that felt like growth a few years ago reads flat against a bigger one.\n\nThat is where a second way to be found starts to matter. Building it is its own discipline now, and it has more moving parts than it used to.\n\nThe benchmark shows where your firm stands today, next to the four firms covering the most ground in your metro. Ten minutes, and it's yours either way.",
+        "Somewhere on the approach to $500M in AUM, the arithmetic of growth changes.\n\nReferrals and centers of influence got the firm here, and they are still the engine. What shifts is how much that engine has to carry. The same dollar inflow that used to read as a strong year reads flat against a larger base.\n\nThe work of being found has more moving parts than it used to. It is its own discipline now, and it runs on a different clock than a referral does.\n\nThe benchmark shows where your firm stands in your metro today, next to the four firms covering the most ground in it. Two fields. Yours either way."
+      ],
+      "headline": "The size you're growing into",
+      "description": "Where the firm stands today.",
+      "cta": "Learn More",
+      "hook": "",
+      "stories": null,
+      "reels": null,
+      "image_direction": "",
+      "on_image_text": "What built this practice still works.\nThe next phase asks for something more.",
+      "production": "No stat, deliberately — the slate should not read as four stat cards, and the 31% needed two bridge sentences to sit here honestly. Narrative territory: the reader is a principal at $350M to $500M who already feels the inflection. This is the only territory permitted 'approaching' language and the only one that does not carry the AUM floor line; merging it with territory 1's rendering would hand the filter back on every ad. Plate is the two-beat statement build — no figure, no source line, no label, no eyebrow. It validates and cracks in the same two beats, because with no stat behind 'See more' the plate is the entire visual message. Presses the complexity of the work, never the adequacy of a person: no headcount comparison, and 'marketing engineering' is warm downstream vocabulary only. Known gap: territory 4 has no ad-to-page loop — its click lands on a hero addressed to a firm already past the line. Judge it with that known. Copy variant A is question-led (124 words), B is declarative (113 words). Week-one watch: comment sentiment for a 'they are telling me I am not good enough' reading.",
+      "images": ["draft-t4.png"]
+    }
+  ]
+}

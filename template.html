@@ -259,6 +259,40 @@
     font-size: 13px;
     color: var(--text2);
   }
+  .wave-header-gate {
+    max-width: 720px;
+    margin: 12px auto 0;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text2);
+    text-align: left;
+  }
+  .wave-gate-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 3px;
+  }
+  .arc-banner {
+    max-width: 720px;
+    margin: 18px auto 0;
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text2);
+    text-align: left;
+  }
 
   /* ── AD CARD ───────────────────────────────────────────────────── */
   .ad-card {
@@ -1508,6 +1542,12 @@ function _findStoryImage(ad, varNum) {
   return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad, varNum);
 }
 
+// An ad may override the campaign destination. An empty cta_url on the ad means
+// its button is deliberately unlinked, not that it falls back to the campaign URL.
+function _ctaDest(ad) {
+  return Object.prototype.hasOwnProperty.call(ad, 'cta_url') ? ad.cta_url : (_data && _data.cta_url);
+}
+
 function _pageName(d) { return (d && d.page_name) || (_data && _data.page_name) || 'Confluence Financial Partners'; }
 function _brandmark() { return (_data && _data.brandmark) || 'images/confluence-brandmark.jpg'; }
 function _igHandle() { return (_data && _data.ig_handle) || 'confluencefp'; }
@@ -1607,16 +1647,28 @@ function renderDeck() {
     groups[w].push(ad);
   });
 
+  // A campaign may declare its own wave order, labels and entry gates in data.json.
+  // Without it, waves are numeric and take the default themes above.
+  const declared = Array.isArray(_data.waves) ? _data.waves : null;
+  const order = declared
+    ? declared.map(w => String(w.key))
+    : Object.keys(groups).sort((a,b) => a - b);
+
   let html = '';
-  Object.keys(groups).sort((a,b) => a - b).forEach(wave => {
-    const theme = waveThemes[wave] || '';
-    const subtitle = waveSubtitles[wave] || '';
+  order.forEach(wave => {
+    if (!groups[wave] || !groups[wave].length) return;
+    const meta = declared ? (declared.find(w => String(w.key) === String(wave)) || {}) : {};
+    const label = meta.label || ('Wave ' + wave);
+    const theme = meta.title || waveThemes[wave] || '';
+    const subtitle = meta.subtitle || waveSubtitles[wave] || '';
+    const gate = meta.gate || '';
 
     html += `<div class="wave-header">
       <div class="wave-header-inner">
-        <div class="wave-header-label">Wave ${wave}</div>
+        <div class="wave-header-label">${esc(label)}</div>
         <div class="wave-header-title">${esc(theme)}</div>
         ${subtitle ? `<div class="wave-header-subtitle">${esc(subtitle)}</div>` : ''}
+        ${gate ? `<div class="wave-header-gate"><span class="wave-gate-label">Entry gate</span>${esc(gate)}</div>` : ''}
       </div>
     </div>`;
 
@@ -1851,7 +1903,7 @@ function renderFeedMockup(ad) {
         <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _oi))}</div>
         <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _oi))}</div>
       </div>
-      ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+      ${_ctaDest(ad) ? `<a class="fb-cta-btn" href="${esc(_ctaDest(ad))}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
     </div>
   </div>`;
 }
@@ -2377,6 +2429,7 @@ async function init() {
         ${_data.venue ? ' &middot; ' + esc(_data.venue) : ''}
         ${_data.co_presenters ? '<br><strong>' + esc(_data.co_presenters) + '</strong>' : ''}
       </div>
+      ${_data.banner ? `<div class="arc-banner">${esc(_data.banner)}</div>` : ''}
     `;
 
     // Header label

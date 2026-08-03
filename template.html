@@ -348,6 +348,13 @@
     color: var(--accent);
     border-color: rgba(79,122,255,0.3);
   }
+  .ad-chip-variation {
+    background: rgba(245,158,11,0.14);
+    color: var(--orange);
+    border-color: rgba(245,158,11,0.35);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
   .ad-card-status {
     font-size: 12px;
     color: var(--text2);
@@ -1703,6 +1710,7 @@ function renderAdCard(ad) {
           <span class="ad-card-num">Ad ${ad.num}</span>
           <span class="ad-card-title">${esc(ad.title)}</span>
           <div class="ad-card-chips">
+            ${ad.variation ? `<span class="ad-chip ad-chip-variation">${esc(ad.variation)}</span>` : ''}
             ${_pl.map(p => `<span class="ad-chip ad-chip-accent">${esc(p.charAt(0).toUpperCase() + p.slice(1))}</span>`).join('')}
           </div>
         </div>
@@ -2429,7 +2437,7 @@ async function init() {
         ${_data.venue ? ' &middot; ' + esc(_data.venue) : ''}
         ${_data.co_presenters ? '<br><strong>' + esc(_data.co_presenters) + '</strong>' : ''}
       </div>
-      ${_data.banner ? `<div class="arc-banner">${esc(_data.banner)}</div>` : ''}
+      ${_data.banner ? (Array.isArray(_data.banner) ? _data.banner : [_data.banner]).map(line => `<div class="arc-banner">${esc(line)}</div>`).join('') : ''}
     `;
 
     // Header label

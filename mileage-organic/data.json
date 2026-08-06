@@ -1,22 +1,1438 @@
 {
   "headline": "New top text, above the card",
-  "lede": "Smoke test",
-  "note": "Smoke test",
-  "themes": [{"id":"SPD","name":"Speed","claim":"It takes 30 seconds of your time."}],
+  "lede": "Forty-five LinkedIn organic posts from Bill's profile. The photograph, the white card and the card's position are untouched. What varies is the text above it and the caption, across nine message themes with five variants each.",
+  "note": "The top text here is composited over the exported image so all 45 can be read without building 45 frames. Character counts are live against the 24-per-line headline and 58-character CTA limits. Nothing is scheduled and nothing is gated.",
+  "themes": [
+    {
+      "id": "ARR",
+      "name": "How clients arrive",
+      "claim": "A large share of investors at your best clients' asset tier arrived with no referral involved. The campaign's leading argument, and the theme Rania added when free was cut."
+    },
+    {
+      "id": "SEE",
+      "name": "What prospects see",
+      "claim": "They look you up before they call. All five sit above the 96% card, because that is the behavior the figure describes."
+    },
+    {
+      "id": "MSR",
+      "name": "Measure what you already spend",
+      "claim": "If the firm already pays for search work, the benchmark is a second read on a line item it already funds. Bill's required arc beat."
+    },
+    {
+      "id": "SPC",
+      "name": "Specific to you",
+      "claim": "Your firm, your metro, your competitors, discovered from the market rather than curated. Ownership rather than rigor."
+    },
+    {
+      "id": "LEG",
+      "name": "The third leg",
+      "claim": "Referrals and centers of influence are the first two legs and they still carry the book. The third is the one a firm can build. Never above the 25% card."
+    },
+    {
+      "id": "SPD",
+      "name": "Speed",
+      "claim": "Thirty seconds of the reader's time. Two fields. The report arrives about ten minutes later, and those ten minutes are never the reader's."
+    },
+    {
+      "id": "AUT",
+      "name": "Autonomous",
+      "claim": "Nothing is scheduled and no call gets booked. Absorbs the no-catch reassurance that the cut free theme used to carry. It never promises we will not reach out."
+    },
+    {
+      "id": "ENG",
+      "name": "Marketing engineering",
+      "claim": "The work is a practice with several disciplines in it, not one person's job. Presses the complexity of the practice, never the competence of the reader's current person."
+    },
+    {
+      "id": "DPT",
+      "name": "Depth of the analysis",
+      "claim": "What is in the report: keyword by keyword, five firms scored the same way, the site read the way a crawler reads it, and a short priority list."
+    },
+    {
+      "id": "CND",
+      "name": "If you're \u2014 conditional address",
+      "claim": "Bill's direction off a live Hormozi ad: an \"If you're...\" conditional that lets the reader self-select on a specific pain and lands on an invitation, rather than telling him what he has wrong. Its own treatment at 62px replacing both the headline and the CTA, since the conditional carries its own invitation. Five state the $500M floor inside the sentence; eight take the provenance line beneath instead, and that split is the A/B."
+    }
+  ],
   "images": [
-    {"id":"card50-3459","card":"50","photo":"3459","cardTop":503,"file":"card50-3459.jpg"},
-    {"id":"card25-3458","card":"25","photo":"3458","cardTop":576,"file":"card25-3458.jpg"}
+    {
+      "id": "card50-3459",
+      "card": "50",
+      "photo": "3459",
+      "node": "103:12",
+      "cardTop": 503,
+      "file": "card50-3459.jpg"
+    },
+    {
+      "id": "card50-3458",
+      "card": "50",
+      "photo": "3458",
+      "node": "103:435",
+      "cardTop": 543,
+      "file": "card50-3458.jpg"
+    },
+    {
+      "id": "card50-3454",
+      "card": "50",
+      "photo": "3454",
+      "node": "103:437",
+      "cardTop": 527,
+      "file": "card50-3454.jpg"
+    },
+    {
+      "id": "card50-3429",
+      "card": "50",
+      "photo": "3429",
+      "node": "103:442",
+      "cardTop": 519,
+      "file": "card50-3429.jpg"
+    },
+    {
+      "id": "card50-3442",
+      "card": "50",
+      "photo": "3442",
+      "node": "103:443",
+      "cardTop": 519,
+      "file": "card50-3442.jpg"
+    },
+    {
+      "id": "card96-3460",
+      "card": "96",
+      "photo": "3460",
+      "node": "115:6529",
+      "cardTop": 515,
+      "file": "card96-3460.jpg"
+    },
+    {
+      "id": "card96-3427",
+      "card": "96",
+      "photo": "3427",
+      "node": "115:6634",
+      "cardTop": 515,
+      "file": "card96-3427.jpg"
+    },
+    {
+      "id": "card96-3428",
+      "card": "96",
+      "photo": "3428",
+      "node": "115:6739",
+      "cardTop": 515,
+      "file": "card96-3428.jpg"
+    },
+    {
+      "id": "card96-3444",
+      "card": "96",
+      "photo": "3444",
+      "node": "115:7054",
+      "cardTop": 515,
+      "file": "card96-3444.jpg"
+    },
+    {
+      "id": "card96-3447",
+      "card": "96",
+      "photo": "3447",
+      "node": "115:7264",
+      "cardTop": 515,
+      "file": "card96-3447.jpg"
+    },
+    {
+      "id": "card25-3458",
+      "card": "25",
+      "photo": "3458",
+      "node": "116:11575",
+      "cardTop": 576,
+      "file": "card25-3458.jpg"
+    },
+    {
+      "id": "card25-3454",
+      "card": "25",
+      "photo": "3454",
+      "node": "116:11679",
+      "cardTop": 576,
+      "file": "card25-3454.jpg"
+    },
+    {
+      "id": "card25-3456",
+      "card": "25",
+      "photo": "3456",
+      "node": "116:11783",
+      "cardTop": 576,
+      "file": "card25-3456.jpg"
+    },
+    {
+      "id": "card25-3460",
+      "card": "25",
+      "photo": "3460",
+      "node": "116:11887",
+      "cardTop": 576,
+      "file": "card25-3460.jpg"
+    },
+    {
+      "id": "card25-3427",
+      "card": "25",
+      "photo": "3427",
+      "node": "116:11991",
+      "cardTop": 576,
+      "file": "card25-3427.jpg"
+    }
   ],
   "posts": [
-    {"n":1,"slot":"SPD-1","theme":"SPD","card":"50","image":"card50-3459",
-     "headline":["Two fields.","Ten minutes."],"cta":"See where your firm stands in your metro.",
-     "hook":"Half the investors with five million or more found their advisor without a referral in the mix.",
-     "caption":"Half the investors with five million or more found their advisor without a referral in the mix.\n\nThat number reframes a lot of pipeline math.\n\nThe benchmark takes about thirty seconds to start. Report lands in about ten minutes.",
-     "firstComment":"benchmark.mileagedesign.com","words":48,"argument":"Speed of the ask"},
-    {"n":2,"slot":"SPD-2","theme":"SPD","card":"25","image":"card25-3458",
-     "headline":["Thirty seconds","of your time."],"cta":"Two fields. The report does the rest.",
-     "hook":"A prospect asked an AI which advisor to call. That happened this year, in this market.",
-     "caption":"A prospect asked an AI which advisor to call. That happened this year, in this market.\n\nWorth knowing what it says about you.",
-     "firstComment":"benchmark.mileagedesign.com","words":30,"argument":"Effort is trivial"}
-  ]
+    {
+      "n": 1,
+      "slot": "ARR-1",
+      "theme": "ARR",
+      "card": "50",
+      "image": "card50-3459",
+      "headline": [
+        "How did the last",
+        "five find you?"
+      ],
+      "cta": "Some routes you cannot control. One you can build.",
+      "argument": "make him check his own book, then offer the one route he owns",
+      "caption": "How did your last five clients find you?\n\nIf the answer is an introduction every time, that is how this business has always worked and it is still working. Referrals and centers of influence built the book and they carry it.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive, and the routes vary.\n\nSome of those routes a firm can do nothing about. One it can build is what the market shows when somebody looks the firm up, and that one can be measured.\n\nTwo fields to start, then where to send it. The report comes back in about ten minutes.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "Your own market, in about ten minutes: benchmark.mileagedesign.com",
+      "hook": "How did your last five clients find you? If the answer is an introduction every time, that is how this business has always worked and it is",
+      "words": 132,
+      "altHeadline": [
+        "Count your last",
+        "five clients"
+      ],
+      "altCta": "Then look at how many arrived some other way"
+    },
+    {
+      "n": 2,
+      "slot": "ARR-2",
+      "theme": "ARR",
+      "card": "50",
+      "image": "card50-3458",
+      "headline": [
+        "One arrival route",
+        "you can build."
+      ],
+      "cta": "The benchmark measures that one in your own metro.",
+      "argument": "of the ways in, exactly one is constructible",
+      "caption": "Of all the ways a client can arrive at your firm, exactly one can be built on purpose.\n\nReferrals and centers of influence built the book and they still carry it. Nobody can schedule an introduction, though. The client mentions you when the client mentions you.\n\nWhat a firm can build is what the market shows when somebody looks it up. Because it can be built, it can also be measured.\n\nThe benchmark measures that one in your metro. Your firm next to the four firms covering the most ground there, keyword by keyword, plus the technical condition of the site underneath.\n\nStep one is two fields and about thirty seconds. The report arrives about ten minutes later.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Of all the ways a client can arrive at your firm, exactly one can be built on purpose. Referrals and centers of influence built the book an",
+      "words": 118,
+      "altHeadline": [
+        "Build the one route",
+        "you control"
+      ],
+      "altCta": "Two fields to start. Your metro. One number to move"
+    },
+    {
+      "n": 3,
+      "slot": "ARR-3",
+      "theme": "ARR",
+      "card": "50",
+      "image": "card50-3454",
+      "headline": [
+        "Referrals built it.",
+        "They are still working."
+      ],
+      "cta": "See the route a firm can build, measured in your metro.",
+      "argument": "validate the engine first, then add rather than replace",
+      "caption": "Referrals built this firm and they are still working. Nothing in what follows says otherwise.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nRead that as addition rather than replacement. The relationship engine kept running and the market added routes alongside it, and the study says nothing about how that half did arrive.\n\nOne of those routes a firm can build, which is what the market shows when somebody looks it up. The benchmark measures where yours stands in your metro, next to the four firms covering the most ground there.\n\nTwo fields to start it, then where the report should go. About ten minutes later it is in your inbox.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Referrals built this firm and they are still working. Nothing in what follows says otherwise. 50% of investors with $5M+ found their curren",
+      "words": 131,
+      "altHeadline": [
+        "Keep the referrals",
+        "Add the second route"
+      ],
+      "altCta": "Nothing gets replaced. One route gets measured"
+    },
+    {
+      "n": 4,
+      "slot": "ARR-4",
+      "theme": "ARR",
+      "card": "96",
+      "image": "card96-3460",
+      "headline": [
+        "Nobody knows",
+        "every route in."
+      ],
+      "cta": "One of them is measurable. That is the one this reads.",
+      "argument": "the honest limit: arrival is unmapped, one leg is not",
+      "caption": "Nobody can map every route into a firm. Not you, not me, and not a benchmark.\n\nSomebody heard your name at a dinner two years ago. Somebody else was handed a list by their accountant. Most of that is unrecoverable.\n\nOne route can be measured, which is what the market returns when a person looks your firm up. That one is visible, comparable and dated.\n\nSo that is the one the report reads. Your firm next to the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath.\n\nReferrals and centers of influence still bring most people in, and the report says nothing about them. It reads the one route that leaves a trace.\n\nTwo fields to start, then where to send it. About ten minutes later it is yours.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Nobody can map every route into a firm. Not you, not me, and not a benchmark. Somebody heard your name at a dinner two years ago. Somebody",
+      "words": 139,
+      "altHeadline": [
+        "Map the routes",
+        "you cannot see"
+      ],
+      "altCta": "One of them is measurable. Start with that one"
+    },
+    {
+      "n": 5,
+      "slot": "ARR-5",
+      "theme": "ARR",
+      "card": "50",
+      "image": "card50-3429",
+      "headline": [
+        "Where the next",
+        "twenty come from."
+      ],
+      "cta": "Two fields to start, and one route in your own market.",
+      "argument": "forward-looking, so nothing about the past is being judged",
+      "caption": "The last hundred clients arrived however they arrived. Where the next twenty come from is a different question.\n\nReferrals and centers of influence will bring a good share of them, the way they always have.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive.\n\nThe route a firm can build is what the market shows when somebody looks it up, and you can see where yours stands today. Your firm next to the four firms covering the most ground in your metro, keyword by keyword.\n\nTwo fields to start, then where the report should go. It arrives in about ten minutes.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The last hundred clients arrived however they arrived. Where the next twenty come from is a different question. Referrals and centers of in",
+      "words": 122,
+      "altHeadline": [
+        "Plan the next",
+        "twenty clients"
+      ],
+      "altCta": "Two fields to start, one read on your own market"
+    },
+    {
+      "n": 6,
+      "slot": "SEE-1",
+      "theme": "SEE",
+      "card": "96",
+      "image": "card96-3427",
+      "headline": [
+        "Your website is",
+        "meeting them first."
+      ],
+      "cta": "The benchmark shows you that meeting from their side.",
+      "argument": "the site is a first meeting, held without you",
+      "caption": "Somebody looked your firm up at eleven at night this week. You'll never know who, and you'll never see what they saw.\n\nThat search is the one part of your growth you can't observe from inside the firm. The introduction, you hear about. The meeting that never got requested, you don't.\n\nReferrals and centers of influence still start most of this business. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThe benchmark runs that search and reports what comes back. Your firm next to the four firms the market ranks around you, keyword by keyword.\n\nTwo fields to start, then where to send it. The report follows in about ten minutes.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Somebody looked your firm up at eleven at night this week. You'll never know who, and you'll never see what they saw. That search is the on",
+      "words": 133,
+      "altHeadline": [
+        "Watch your website",
+        "take the meeting"
+      ],
+      "altCta": "You are not in the room. The benchmark puts you there"
+    },
+    {
+      "n": 7,
+      "slot": "SEE-2",
+      "theme": "SEE",
+      "card": "96",
+      "image": "card96-3428",
+      "headline": [
+        "Whose name comes up",
+        "when yours should."
+      ],
+      "cta": "The shortlist in your metro, and where you sit on it.",
+      "argument": "the question is who else is in the frame",
+      "caption": "A referral hands over your name. Then the person goes and looks.\n\nOnly the first half of that happens where you can see it. Your client makes the introduction and tells you they did. What happens in the few minutes after is invisible from inside the firm.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family.\n\nAnd, separately, 96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nHow a search starts and what settles it are two different questions.\n\nThe benchmark answers the second one for your own market. Your firm and the four firms covering the most ground in your metro, keyword by keyword.\n\nAbout thirty seconds to start it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "A referral hands over your name. Then the person goes and looks. Only the first half of that happens where you can see it. Your client make",
+      "words": 123,
+      "altHeadline": [
+        "See who comes up",
+        "beside your name"
+      ],
+      "altCta": "Four firms in your metro, scored on the same terms"
+    },
+    {
+      "n": 8,
+      "slot": "SEE-3",
+      "theme": "SEE",
+      "card": "96",
+      "image": "card96-3444",
+      "headline": [
+        "What happens after",
+        "the introduction."
+      ],
+      "cta": "The part of the decision that happens without you.",
+      "argument": "the window between the handoff and the call",
+      "caption": "Searching your own firm name tells you almost nothing. Your history is in the result, and so is the fact that you already know the answer.\n\nThe benchmark runs the search from outside your own history, on the keyword set your market uses rather than the one you'd think to type.\n\nReferrals and centers of influence still bring most people in. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nWhat comes back is your firm next to the four firms with the widest coverage in your metro, keyword by keyword, plus how your site reads to a machine.\n\nAbout thirty seconds to start. The report follows in about ten minutes.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Searching your own firm name tells you almost nothing. Your history is in the result, and so is the fact that you already know the answer. \u00b6",
+      "words": 132,
+      "altHeadline": [
+        "Follow the referral",
+        "after the handoff"
+      ],
+      "altCta": "The part you never see is the part that decides"
+    },
+    {
+      "n": 9,
+      "slot": "SEE-4",
+      "theme": "SEE",
+      "card": "96",
+      "image": "card96-3447",
+      "headline": [
+        "They never look",
+        "at you alone."
+      ],
+      "cta": "The benchmark shows you the four firms beside you.",
+      "argument": "you are read comparatively, never in isolation",
+      "caption": "The phone call is confirmation. The deciding started earlier, somewhere you weren't.\n\nBy then a shortlist exists, and the firms on it are the ones that came back when somebody went looking.\n\nReferrals and centers of influence still make the introduction, and they always will. A 2025 Wealthtender survey asked prospects a separate question about the step in between.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThe benchmark shows you that list in your own market. Your firm, the four firms covering the most ground in your metro, keyword by keyword, plus what your site looks like technically when someone lands on it.\n\nTwo fields to start, then where to send it. It comes back in about ten minutes and costs nothing.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The phone call is confirmation. The deciding started earlier, somewhere you weren't. By then a shortlist exists, and the firms on it are th",
+      "words": 129,
+      "altHeadline": [
+        "See the four firms",
+        "they see"
+      ],
+      "altCta": "Nobody evaluates one firm. The report shows all five"
+    },
+    {
+      "n": 10,
+      "slot": "SEE-5",
+      "theme": "SEE",
+      "card": "96",
+      "image": "card96-3460",
+      "headline": [
+        "Search your own name",
+        "in your own metro."
+      ],
+      "cta": "The benchmark runs that search and scores what it finds.",
+      "argument": "do the thing yourself, then let it be done properly",
+      "caption": "I can't answer this one for my own business either. What does the market say about us when nobody from the firm is in the room?\n\nEvery firm has a version of itself it would describe out loud. The market has its own version, assembled out of whatever it can find, and the two are not always close.\n\nThat gap is hard to see from inside, because everybody in the building already knows the answers a prospect is out looking for.\n\nThe benchmark is a read on the second version. Your firm next to the four firms covering the most ground in your metro, on the keyword set that market searches, plus how cleanly your site can be read.\n\nReferrals and centers of influence still bring most people to the table. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nAbout thirty seconds to start, and it's yours either way.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "I can't answer this one for my own business either. What does the market say about us when nobody from the firm is in the room? Every firm",
+      "words": 171,
+      "altHeadline": [
+        "Search your own firm",
+        "right now"
+      ],
+      "altCta": "Then run it properly. Thirty seconds to start"
+    },
+    {
+      "n": 11,
+      "slot": "MSR-1",
+      "theme": "MSR",
+      "card": "25",
+      "image": "card25-3458",
+      "headline": [
+        "A second read on",
+        "what you already buy."
+      ],
+      "cta": "Independent, and it costs nothing to set beside yours.",
+      "argument": "a second read on a line item you already fund",
+      "caption": "There's a line in most budgets for being found. A site rebuilt a couple of years ago, search work running monthly, or both.\n\nThe benchmark is a second read on what that line is producing. Your firm scored against the four firms covering the most ground in your metro on the same keyword set, plus whether the site underneath is built the way search engines and answer engines can read it.\n\nIf it lines up with what you're already seeing, that's worth knowing. If something reads differently, it's a useful conversation to have with whoever runs the work.\n\nNone of that is a comment on anybody's work. It's the ordinary reason a person gets a second measurement on a number that matters.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nTwo fields to start, then where to send it. The read comes back in about ten minutes.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "There's a line in most budgets for being found. A site rebuilt a couple of years ago, search work running monthly, or both. The benchmark i",
+      "words": 169,
+      "altHeadline": [
+        "Measure the line",
+        "you already pay for"
+      ],
+      "altCta": "One outside read, taken the same way for all five firms"
+    },
+    {
+      "n": 12,
+      "slot": "MSR-2",
+      "theme": "MSR",
+      "card": "25",
+      "image": "card25-3454",
+      "headline": [
+        "If it matches your",
+        "reporting, good."
+      ],
+      "cta": "Confirmation is a result too. Run it and find out.",
+      "argument": "agreement is a real outcome, so the ask is not loaded",
+      "caption": "Reporting from the people doing the work is one read on it. Starting a second read takes about thirty seconds.\n\nThat's the whole case for running the benchmark. It's the ordinary value of a measurement taken by something with no stake in the answer, on the same market, in the same week.\n\nIf it lines up with what you're already seeing, good. That's the outcome I'd expect for a firm with real work going into this, and it's worth having on paper.\n\nIf something reads differently, that's a conversation to have with whoever runs it, with a dated report in front of both of you.\n\nYour firm, the four firms with the widest coverage in your metro, keyword by keyword, plus the condition of the site underneath.\n\nIt costs nothing and arrives about ten minutes after you start it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Reporting from the people doing the work is one read on it. Starting a second read takes about thirty seconds. That's the whole case for ru",
+      "words": 139,
+      "altHeadline": [
+        "Check it against",
+        "your own reporting"
+      ],
+      "altCta": "A match is a result. So is a number you did not expect"
+    },
+    {
+      "n": 13,
+      "slot": "MSR-3",
+      "theme": "MSR",
+      "card": "50",
+      "image": "card50-3442",
+      "headline": [
+        "Bring it to whoever",
+        "runs your search work."
+      ],
+      "cta": "A shared starting number is easier than a debate.",
+      "argument": "it is ammunition for a conversation, not a verdict on anyone",
+      "caption": "What this measures, and what it doesn't, because that matters more than the headline number.\n\nIt measures organic visibility. Where your firm ranks against the four firms covering the most ground in your metro, keyword by keyword, on the keyword set your market searches. It measures the technical condition of your site, including whether the markup and schema let a search engine or an answer engine read it.\n\nIt doesn't grade paid spend. It doesn't project revenue, and it doesn't audit whoever runs your marketing.\n\nIf money has been going into being found for a couple of years, this tells you what that produced on the organic side, with dates and sources attached.\n\nTwo fields to start, about ten minutes to arrive, and it costs nothing.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "What this measures, and what it doesn't, because that matters more than the headline number. It measures organic visibility. Where your fir",
+      "words": 135,
+      "altHeadline": [
+        "Hand it to whoever",
+        "runs the work"
+      ],
+      "altCta": "One shared number beats a debate about impressions"
+    },
+    {
+      "n": 14,
+      "slot": "MSR-4",
+      "theme": "MSR",
+      "card": "25",
+      "image": "card25-3456",
+      "headline": [
+        "Before the next",
+        "renewal, get a number."
+      ],
+      "cta": "Two fields now, a baseline before the budget talk.",
+      "argument": "time it to the budget cycle, where measurement has teeth",
+      "caption": "Run this before your next marketing meeting and bring it with you.\n\nA dated report with the keyword set, the four firms covering the most ground in your metro, and the technical condition of your site gives that meeting something to work from. Everyone in the room is looking at one measurement, taken by something with no stake in the answer.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026), which puts a new question on the site.\n\nTwo fields to start, then where the report should go. It arrives about ten minutes later.\n\nI don't need to be in the room for it to be useful.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Run this before your next marketing meeting and bring it with you. A dated report with the keyword set, the four firms covering the most gr",
+      "words": 128,
+      "altHeadline": [
+        "Get a number before",
+        "the renewal"
+      ],
+      "altCta": "Two fields now. A baseline before the budget talk"
+    },
+    {
+      "n": 15,
+      "slot": "MSR-5",
+      "theme": "MSR",
+      "card": "50",
+      "image": "card50-3459",
+      "headline": [
+        "Measure it against",
+        "the four next door."
+      ],
+      "cta": "Your own numbers plus the market they sit in.",
+      "argument": "relative measurement, which internal reporting cannot give",
+      "caption": "Measuring is the cheap part of this, which is the argument for doing it before you decide anything else.\n\nAbout thirty seconds to start, and it costs nothing. Whatever comes back, you're deciding against a number. Where your firm ranks next to the four firms covering the most ground in your metro, keyword by keyword, and what condition the site is in underneath.\n\nReferrals and centers of influence built the book and they still carry it. 50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They aren't the only way clients arrive.\n\nIf the report says the work you're paying for is landing, that's a good morning. If it says something else, you found that out in ten minutes for nothing.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Measuring is the cheap part of this, which is the argument for doing it before you decide anything else. About thirty seconds to start, and",
+      "words": 134,
+      "altHeadline": [
+        "Measure yours against",
+        "four next door"
+      ],
+      "altCta": "Your numbers plus the market they sit in"
+    },
+    {
+      "n": 16,
+      "slot": "SPC-1",
+      "theme": "SPC",
+      "card": "50",
+      "image": "card50-3458",
+      "headline": [
+        "It is about your",
+        "firm, by name."
+      ],
+      "cta": "Your firm in your metro, measured against four others.",
+      "argument": "the subject of the report is his firm, not a category",
+      "caption": "Your metro. Your firm. The four firms the market put next to you.\n\nNone of that comes from a template. The competitor set is discovered at the moment you run it, so those four are the firms covering the most ground where you're trying to be found. I don't choose them.\n\nAll five get scored on the same keyword set, and your own site gets checked underneath.\n\nReferrals and centers of influence built the book, and they still carry it. 50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They aren't the only way clients arrive, and the routes vary.\n\nTwo fields to start, then where to send it. About ten minutes later it's in your inbox.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Your metro. Your firm. The four firms the market put next to you. None of that comes from a template. The competitor set is discovered at t",
+      "words": 130,
+      "altHeadline": [
+        "Read your own firm",
+        "by name"
+      ],
+      "altCta": "Your firm, your metro, four competitors, one list"
+    },
+    {
+      "n": 17,
+      "slot": "SPC-2",
+      "theme": "SPC",
+      "card": "96",
+      "image": "card96-3427",
+      "headline": [
+        "The market it reads",
+        "is the one you sell in."
+      ],
+      "cta": "Scored on the terms people search where your firm is.",
+      "argument": "his metro, not a national average",
+      "caption": "I don't choose who your firm gets compared to. The market does.\n\nWhen you run the benchmark, the system reads the keyword set your market searches, sees which firms are ranking on it in your metro, and takes the four with the widest coverage. Sometimes those are the names you'd expect. Sometimes one of them is a firm nobody in your office has mentioned.\n\nReferrals and centers of influence still bring most people to the table. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nWhoever those four firms are, they're who a prospect sees alongside you.\n\nTwo fields to start, then where to send it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "I don't choose who your firm gets compared to. The market does. When you run the benchmark, the system reads the keyword set your market se",
+      "words": 127,
+      "altHeadline": [
+        "Measure the metro",
+        "you sell in"
+      ],
+      "altCta": "Scored on the terms people search where you are"
+    },
+    {
+      "n": 18,
+      "slot": "SPC-3",
+      "theme": "SPC",
+      "card": "25",
+      "image": "card25-3460",
+      "headline": [
+        "We do not pick",
+        "the four firms."
+      ],
+      "cta": "The market picks them. Sometimes it picks a surprise.",
+      "argument": "the competitors are discovered, so the set is not curated",
+      "caption": "An industry average tells you nothing about your own market.\n\nSearch results are local and they're specific. The firms competing for attention in Cleveland are not the firms competing in Charlotte, and a keyword set that matters to one book of business doesn't transfer to another.\n\nSo the benchmark runs on your metro only. Your firm, the four firms covering the most ground around you, the keyword set your market searches, scored the same way and dated.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026). That puts a new question on the site.\n\nThe market you want read is one of the two fields you start with.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "An industry average tells you nothing about your own market. Search results are local and they're specific. The firms competing for attenti",
+      "words": 129,
+      "altHeadline": [
+        "Meet the four firms",
+        "the market picked"
+      ],
+      "altCta": "We do not choose them. Sometimes it picks a surprise"
+    },
+    {
+      "n": 19,
+      "slot": "SPC-4",
+      "theme": "SPC",
+      "card": "50",
+      "image": "card50-3454",
+      "headline": [
+        "No two of these",
+        "come out the same."
+      ],
+      "cta": "Built from your own market and nobody else's.",
+      "argument": "there is no template underneath it",
+      "caption": "You may not recognize all four firms in your report. That tends to be the useful part.\n\nThe four are whoever covers the most ground in your metro on the keyword set your market searches. Ranking and reputation are two different things, so the list sometimes includes a firm nobody in your office has brought up, and sometimes leaves out the one you think of as your closest competitor.\n\nThe distance between who you compete with for clients and who you compete with for attention is worth knowing about.\n\nAll five firms scored the same way, plus the condition of your own site underneath.\n\nTwo fields to start it, and no cost.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "You may not recognize all four firms in your report. That tends to be the useful part. The four are whoever covers the most ground in your",
+      "words": 112,
+      "altHeadline": [
+        "Build it from your",
+        "own market"
+      ],
+      "altCta": "No two of these come out the same. Yours is yours"
+    },
+    {
+      "n": 20,
+      "slot": "SPC-5",
+      "theme": "SPC",
+      "card": "25",
+      "image": "card25-3427",
+      "headline": [
+        "One metro.",
+        "Five firms. One list."
+      ],
+      "cta": "Where your firm lands on the terms your market searches.",
+      "argument": "the comparison set stated as one concrete object",
+      "caption": "One metro. Not a national picture, and I'd rather be straight about that up front.\n\nThe report measures organic visibility where your firm is trying to be found, against the four firms covering the most ground there, on the keyword set that market searches. It also reads the technical condition of your site, which travels with you everywhere.\n\nWhat it doesn't do is grade paid spend or project revenue. It measures what it can measure and tells you the date it did it.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nYou name the market when you start it. About thirty seconds.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "One metro. Not a national picture, and I'd rather be straight about that up front. The report measures organic visibility where your firm i",
+      "words": 124,
+      "altHeadline": [
+        "One metro",
+        "Five firms, one list"
+      ],
+      "altCta": "Where your firm lands on the terms your market uses"
+    },
+    {
+      "n": 21,
+      "slot": "LEG-1",
+      "theme": "LEG",
+      "card": "50",
+      "image": "card50-3429",
+      "headline": [
+        "The first two legs",
+        "built the book."
+      ],
+      "cta": "The third one is the leg a report can measure.",
+      "argument": "validate the first two, then name what is measurable",
+      "caption": "The first two legs of this business live inside people. The third one stays in the building.\n\nReferrals and centers of influence built most books in this industry, and they still carry them. Both of those legs sit inside relationships that belong to whoever holds them, and they walk out when that person does.\n\nThe third leg works differently. It sits inside the practice, it keeps working on a Tuesday when nobody is making an introduction, and it's the part a buyer can be shown.\n\nThe benchmark measures where yours stands right now. Your firm next to the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath.\n\nTwo fields to start, then where to send it. The report comes back in about ten minutes.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The first two legs of this business live inside people. The third one stays in the building. Referrals and centers of influence built most",
+      "words": 143,
+      "altHeadline": [
+        "Keep the first two legs",
+        "Measure the third"
+      ],
+      "altCta": "One report, one number, on the leg nobody scores"
+    },
+    {
+      "n": 22,
+      "slot": "LEG-2",
+      "theme": "LEG",
+      "card": "50",
+      "image": "card50-3442",
+      "headline": [
+        "The third leg works",
+        "on a Tuesday."
+      ],
+      "cta": "It keeps going when nobody is making an introduction.",
+      "argument": "it runs when no person is running it",
+      "caption": "Some days nobody makes an introduction for your firm. Something still has to be working on those days.\n\nThat's the case for the third leg. Referrals and centers of influence are the first two, they built the book, and they still carry it. What they can't do is run on a schedule, because an introduction happens when it happens.\n\nThe third leg holds the days in between. It's the version of your firm that answers a search at eleven at night with nobody from the office involved.\n\nThe benchmark measures where yours stands. Your firm against the four firms with the widest coverage in your metro, keyword by keyword, plus how the site underneath reads to a machine.\n\nTwo fields to start. Ten minutes to arrive. No cost.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Some days nobody makes an introduction for your firm. Something still has to be working on those days. That's the case for the third leg. R",
+      "words": 128,
+      "altHeadline": [
+        "Build the leg that",
+        "works on a Tuesday"
+      ],
+      "altCta": "It runs when nobody is making an introduction"
+    },
+    {
+      "n": 23,
+      "slot": "LEG-3",
+      "theme": "LEG",
+      "card": "96",
+      "image": "card96-3428",
+      "headline": [
+        "The third leg is",
+        "the one you build."
+      ],
+      "cta": "See what your third leg looks like from the outside.",
+      "argument": "it is constructed on purpose rather than earned socially",
+      "caption": "Your name gets passed along on a Thursday. By Friday morning somebody has read your website, and nobody in your office knows it happened.\n\nThe first two legs made the introduction. Referrals and centers of influence built this business and they still carry it. The third leg handled Friday morning.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family.\n\nAnd, separately, 96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nBoth are true at once, and only one of them is visible from inside the firm.\n\nThe benchmark measures the second. Your firm next to the four firms covering the most ground in your metro, keyword by keyword.\n\nTwo fields to start, about ten minutes to arrive, and it's yours either way.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Your name gets passed along on a Thursday. By Friday morning somebody has read your website, and nobody in your office knows it happened. T",
+      "words": 134,
+      "altHeadline": [
+        "Build the third leg",
+        "on purpose"
+      ],
+      "altCta": "The first two are earned. This one is constructed"
+    },
+    {
+      "n": 24,
+      "slot": "LEG-4",
+      "theme": "LEG",
+      "card": "50",
+      "image": "card50-3459",
+      "headline": [
+        "The leg that does",
+        "not walk out with you."
+      ],
+      "cta": "It sits inside the practice. See where yours stands.",
+      "argument": "enterprise value: the leg that survives the founder",
+      "caption": "What is this practice worth to somebody who isn't you?\n\nThe first two legs are relationships, and relationships don't transfer at closing. A buyer can hear about them. A buyer can't be shown them.\n\nThe third leg is different. It sits in the practice rather than in a person, it keeps producing when nobody is making an introduction, and it's the piece of the growth engine you can hand over on paper.\n\nWhether it's worth anything yet is a measurable question. The benchmark answers it for your market. Your firm next to the four firms the market ranks alongside you, keyword by keyword, plus the condition of the site underneath.\n\nTwo fields to start, then where to send it, and the report arrives about ten minutes later.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "What is this practice worth to somebody who isn't you? The first two legs are relationships, and relationships don't transfer at closing. A",
+      "words": 136,
+      "altHeadline": [
+        "Own the leg that",
+        "stays behind"
+      ],
+      "altCta": "It sits in the practice, not in a relationship"
+    },
+    {
+      "n": 25,
+      "slot": "LEG-5",
+      "theme": "LEG",
+      "card": "96",
+      "image": "card96-3444",
+      "headline": [
+        "You know what the",
+        "first two produce."
+      ],
+      "cta": "The third one gets a number in about ten minutes.",
+      "argument": "two legs have numbers, the third has never had one",
+      "caption": "You can't manufacture the first two legs. Referrals and centers of influence arrive when somebody decides you're worth mentioning, and every book in this business was built that way.\n\nThe third leg is the one you can build on purpose. It's also the one that can be measured, which is why it's the one I can put a number on for you in about ten minutes.\n\nA 2025 Wealthtender survey asked prospects a separate question about what they do before they decide. 96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThe report shows what that returns in your market. Your firm, the four firms covering the most ground in your metro, keyword by keyword, plus the condition of your site.\n\nAbout thirty seconds to start it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "You can't manufacture the first two legs. Referrals and centers of influence arrive when somebody decides you're worth mentioning, and every",
+      "words": 132,
+      "altHeadline": [
+        "Score the leg that",
+        "has no number"
+      ],
+      "altCta": "You know what the first two produce. Now the third"
+    },
+    {
+      "n": 26,
+      "slot": "SPD-1",
+      "theme": "SPD",
+      "card": "50",
+      "image": "card50-3458",
+      "headline": [
+        "It starts with",
+        "two fields."
+      ],
+      "cta": "Your report lands in about ten minutes, yours either way.",
+      "argument": "the size of the opening ask, stated as a fact",
+      "caption": "Thirty seconds to start it. Everything after that runs without you.\n\nTwo fields, your website and the market you want read, then your name and where the report should go.\n\nAbout ten minutes later it's in your inbox. Your firm scored next to the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath.\n\nReferrals and centers of influence built the book. They still carry it. This measures the part of how clients arrive that you can't watch happen.\n\nNo call gets booked, and the report is yours either way.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "Two steps, no call: benchmark.mileagedesign.com",
+      "hook": "Thirty seconds to start it. Everything after that runs without you. Two fields, your website and the market you want read, then your name a",
+      "words": 108,
+      "altHeadline": [
+        "Two fields to start",
+        "Thirty seconds"
+      ],
+      "altCta": "The report comes back in about ten minutes, yours to keep"
+    },
+    {
+      "n": 27,
+      "slot": "SPD-2",
+      "theme": "SPD",
+      "card": "25",
+      "image": "card25-3458",
+      "headline": [
+        "Thirty seconds to start.",
+        "A full read back."
+      ],
+      "cta": "Your firm scored against four competitors in your metro.",
+      "argument": "the asymmetry between what goes in and what comes back",
+      "caption": "Nobody has to get on a call to find out where their firm ranks. That part is arithmetic, and a machine is better at it than I am.\n\nSo we moved it. About thirty seconds to start, and the report comes back in about ten minutes.\n\nWhat comes back is your firm next to the four firms with the widest coverage in your metro, scored on the same keyword set, plus whether your site is built the way search engines and answer engines can read it.\n\nThe relationships still bring most of the work in. This is a read on everything happening around them.\n\nIt costs nothing, and it's yours whether we ever speak.",
+      "firstComment": "Run your own here: benchmark.mileagedesign.com",
+      "hook": "Nobody has to get on a call to find out where their firm ranks. That part is arithmetic, and a machine is better at it than I am. So we mov",
+      "words": 114,
+      "altHeadline": [
+        "Trade two fields",
+        "for a full read"
+      ],
+      "altCta": "Your firm scored against four competitors in your metro"
+    },
+    {
+      "n": 28,
+      "slot": "SPD-3",
+      "theme": "SPD",
+      "card": "96",
+      "image": "card96-3447",
+      "headline": [
+        "Start it between",
+        "two calls."
+      ],
+      "cta": "Thirty seconds to start. The report finds you later.",
+      "argument": "it fits a gap in the day and he never waits on it",
+      "caption": "Thirty seconds to start. Ten minutes of ours.\n\nYou type your website and the market you want read, add where to send the report, and close the tab. The pipeline finds the four firms with the widest coverage in your metro, scores all five of you on the same keyword set, checks the technical condition of your site, and emails the whole thing over.\n\nReferrals and centers of influence built the book, and they still carry it. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThat search is the part nobody inside the firm ever sees. Ten minutes after you close the tab, you're looking at it.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com if you want yours.",
+      "hook": "Thirty seconds to start. Ten minutes of ours. You type your website and the market you want read, add where to send the report, and close t",
+      "words": 138,
+      "altHeadline": [
+        "Run it between",
+        "two calls"
+      ],
+      "altCta": "Thirty seconds to start. The report finds you later"
+    },
+    {
+      "n": 29,
+      "slot": "SPD-4",
+      "theme": "SPD",
+      "card": "25",
+      "image": "card25-3454",
+      "headline": [
+        "Your site and",
+        "your market."
+      ],
+      "cta": "Then who you are, where to send it, and your AUM range.",
+      "argument": "step one is two things he already knows",
+      "caption": "The measuring was always the slow part.\n\nPull a keyword set for one metro. Find who ranks on it. Score five firms the same way. Then check whether the sites underneath can be read properly by a machine. Done by hand that's two days of somebody's week, which is why a firm tends to get this done once, during an onboarding, and then never again.\n\nSo we built it to run on its own. About thirty seconds to start, and the report arrives about ten minutes later at the depth we'd have spent those two days on.\n\nWhat that buys you is a number you can pull again next quarter, rather than one sitting in a folder dated 2023.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nNothing gets scheduled at the end of it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The measuring was always the slow part. Pull a keyword set for one metro. Find who ranks on it. Score five firms the same way. Then check w",
+      "words": 157,
+      "altHeadline": [
+        "Bring your site",
+        "and your market"
+      ],
+      "altCta": "That starts it. Then who you are and your AUM range"
+    },
+    {
+      "n": 30,
+      "slot": "SPD-5",
+      "theme": "SPD",
+      "card": "50",
+      "image": "card50-3454",
+      "headline": [
+        "Do it before",
+        "you close this tab."
+      ],
+      "cta": "Starting now beats a note to get to it later.",
+      "argument": "blunt urgency, the only imperative in the set",
+      "caption": "The first question is always how long it takes.\n\nAbout thirty seconds to start it. Two fields, your website and the market you want read, then your name and where the report should go. That is your side of it.\n\nThe report takes around ten minutes to build, and that happens after you've closed the tab. It arrives by email. Your firm next to the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath.\n\nThe second question is usually what it costs. Nothing, and nothing gets booked at the end of it.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "Link: benchmark.mileagedesign.com",
+      "hook": "The first question is always how long it takes. About thirty seconds to start it. Two fields, your website and the market you want read, th",
+      "words": 111,
+      "altHeadline": [
+        "Do it before you",
+        "close this tab"
+      ],
+      "altCta": "Starting now beats a note to get to it later"
+    },
+    {
+      "n": 31,
+      "slot": "AUT-1",
+      "theme": "AUT",
+      "card": "25",
+      "image": "card25-3456",
+      "headline": [
+        "No call booked.",
+        "Nothing scheduled."
+      ],
+      "cta": "It runs on its own and emails you the report.",
+      "argument": "the mechanical claim, in Rania's exact permitted wording",
+      "caption": "Nothing schedules a meeting at the end of this.\n\nYou start with two fields, your website and the market you want read, then where the report should go. About thirty seconds.\n\nThe pipeline finds the four firms with the widest coverage in your metro, scores all five of you on the same keyword set, checks whether your site is built the way search engines and answer engines can read it, and emails you the report about ten minutes later.\n\nThere's no sales step in that sequence. No call to unlock the results, and no second half of the report waiting behind another form.\n\nIf you read it and want to talk, you know where I am. If you read it and file it, that's a fine outcome too.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Nothing schedules a meeting at the end of this. You start with two fields, your website and the market you want read, then where the report",
+      "words": 137,
+      "altHeadline": [
+        "Skip the call",
+        "Read the report"
+      ],
+      "altCta": "Nothing is scheduled and no call gets booked"
+    },
+    {
+      "n": 32,
+      "slot": "AUT-2",
+      "theme": "AUT",
+      "card": "25",
+      "image": "card25-3460",
+      "headline": [
+        "Nobody has to",
+        "walk you through it."
+      ],
+      "cta": "The report explains itself. Read it on your own time.",
+      "argument": "no human is required for it to be useful",
+      "caption": "I didn't want to trade a report for your calendar.\n\nSo the report explains itself. Every number in it says which keyword it came from, which firms it was measured against, and the date. Nothing in it needs a walkthrough, and nothing in it is held back for one.\n\nRead it on your own time, at whatever depth you want. Hand it to whoever runs your marketing.\n\nNothing is scheduled and no call gets booked.\n\nYour firm next to the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath. Two fields to start, then where to send it.",
+      "firstComment": "It's here: benchmark.mileagedesign.com",
+      "hook": "I didn't want to trade a report for your calendar. So the report explains itself. Every number in it says which keyword it came from, which",
+      "words": 108,
+      "altHeadline": [
+        "Read it without",
+        "a walkthrough"
+      ],
+      "altCta": "It explains itself. Read it on your own time"
+    },
+    {
+      "n": 33,
+      "slot": "AUT-3",
+      "theme": "AUT",
+      "card": "50",
+      "image": "card50-3429",
+      "headline": [
+        "Ten minutes of work,",
+        "none of it yours."
+      ],
+      "cta": "Two fields to start, then it runs without you.",
+      "argument": "the ten minutes belongs to the machine, stated outright",
+      "caption": "About ten minutes of work goes into your report and none of it is yours.\n\nHere's what runs once you submit. The system reads your site. It pulls the keyword set your market searches, finds which firms rank on it in your metro, and takes the four covering the most ground. Those four are discovered, not handed to it by me.\n\nAll five firms then get scored the same way, and your site gets checked for the technical conditions that decide whether any of it can be read cleanly.\n\nThen it emails you the report.\n\nYour side of it is two fields to start plus where to send it, about thirty seconds.\n\nNothing is scheduled at the end, and nobody has to walk you through what comes back.",
+      "firstComment": "Two steps, no call: benchmark.mileagedesign.com",
+      "hook": "About ten minutes of work goes into your report and none of it is yours. Here's what runs once you submit. The system reads your site. It p",
+      "words": 128,
+      "altHeadline": [
+        "Let it do the",
+        "ten minutes"
+      ],
+      "altCta": "Your part is the form. The machine does the rest"
+    },
+    {
+      "n": 34,
+      "slot": "AUT-4",
+      "theme": "AUT",
+      "card": "25",
+      "image": "card25-3427",
+      "headline": [
+        "The report arrives",
+        "with no pitch on it."
+      ],
+      "cta": "Nothing is scheduled and no call gets booked.",
+      "argument": "the deliverable has nothing attached to it",
+      "caption": "The report arrives with nothing attached to it.\n\nNo pitch inside it, and no call booked at the end. It's a measurement of your firm against the four firms with the widest coverage in your metro, keyword by keyword, with the technical condition of the site underneath.\n\nRead it once and put it down, or take it into your next marketing meeting. Both are fine uses of it.\n\nTwo fields to start, then where to send it. About ten minutes later it's in your inbox.\n\nIf I write to you at some point, it'll be me writing rather than software, and it'll be about something your report said.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The report arrives with nothing attached to it. No pitch inside it, and no call booked at the end. It's a measurement of your firm against",
+      "words": 108,
+      "altHeadline": [
+        "Take the report",
+        "with no pitch on it"
+      ],
+      "altCta": "Nothing scheduled and no call booked"
+    },
+    {
+      "n": 35,
+      "slot": "AUT-5",
+      "theme": "AUT",
+      "card": "96",
+      "image": "card96-3460",
+      "headline": [
+        "Nothing sits in",
+        "anyone's queue."
+      ],
+      "cta": "The measurement starts the second you hit submit.",
+      "argument": "no analyst, no backlog, no waiting on a person",
+      "caption": "Nothing sits in a queue waiting for a person to get to it.\n\nThe measurement starts the second you submit. There's no analyst picking your firm up in the morning, no backlog, and no version of this where your report waits behind somebody else's.\n\nReferrals and centers of influence still start most of this business, and that engine keeps running. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThat search is the half you can't watch. The report shows what it returns in your market, and it comes back about ten minutes after you start.\n\nTwo fields to start it, then where it should go.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Nothing sits in a queue waiting for a person to get to it. The measurement starts the second you submit. There's no analyst picking your fi",
+      "words": 127,
+      "altHeadline": [
+        "Skip the analyst",
+        "Skip the queue"
+      ],
+      "altCta": "The measurement starts the second you hit submit"
+    },
+    {
+      "n": 36,
+      "slot": "ENG-1",
+      "theme": "ENG",
+      "card": "96",
+      "image": "card96-3427",
+      "headline": [
+        "Being found takes",
+        "four disciplines."
+      ],
+      "cta": "Structure, substance, site condition, and measurement.",
+      "argument": "the work is plural, and here are the four",
+      "caption": "For a firm to come back on the search that matters, a lot of separate things have to be true at the same time.\n\nThe pages have to exist and answer the question someone typed. The site has to be readable by a machine, which is a structural problem rather than a design one. The firm needs enough signal around it that a search engine trusts the answer. And all of it has to hold while four other firms in the same metro work on the same problem.\n\nThat's a practice, and it's why an agency like mine exists at all. It also compounds. A page that answers the right question keeps answering it, and the firms four quarters ahead of you started four quarters ago.\n\nMeasuring where you stand is a separate job from doing the work, so we gave the measuring away. Your firm, the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath.\n\nTwo fields to start. About ten minutes to arrive.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "For a firm to come back on the search that matters, a lot of separate things have to be true at the same time. The pages have to exist and",
+      "words": 175,
+      "altHeadline": [
+        "Count the four",
+        "disciplines in it"
+      ],
+      "altCta": "Structure, substance, site condition, measurement"
+    },
+    {
+      "n": 37,
+      "slot": "ENG-2",
+      "theme": "ENG",
+      "card": "50",
+      "image": "card50-3442",
+      "headline": [
+        "Four skills. They",
+        "only work together."
+      ],
+      "cta": "The benchmark measures what all four add up to today.",
+      "argument": "they interlock, so partial execution produces nothing",
+      "caption": "The people who build a site, the people who write for search, and the people who make sure a machine can read the result do not have the same skill set.\n\nWe built the agency around that. Different specialists on different parts of one problem, aimed at a single outcome, which is a firm that shows up when somebody with money to place goes looking.\n\nThe benchmark is the measurement layer of that work, pulled out and handed over at no cost. Your firm scored next to the four firms with the widest coverage in your metro, keyword by keyword, plus the technical condition of your site.\n\nReferrals and centers of influence built the book and they still carry it. This is a read on what runs alongside them.\n\nTwo fields to start, then where to send it, and it's yours either way.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The people who build a site, the people who write for search, and the people who make sure a machine can read the result do not have the sam",
+      "words": 143,
+      "altHeadline": [
+        "Four skills",
+        "One system"
+      ],
+      "altCta": "The benchmark measures what all four add up to"
+    },
+    {
+      "n": 38,
+      "slot": "ENG-3",
+      "theme": "ENG",
+      "card": "25",
+      "image": "card25-3458",
+      "headline": [
+        "Closer to engineering",
+        "than to advertising."
+      ],
+      "cta": "That is the shape of the work now. Start with a baseline.",
+      "argument": "the practice changed category",
+      "caption": "Being found runs on a different clock than a referral does.\n\nA referral can arrive tomorrow. The work that makes a firm the answer to a search takes quarters, and then it keeps returning long after the month you paid for it. Two rhythms, two kinds of planning, and most firms run the first one well because it's the one that built the practice.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nThe benchmark puts a number on where the slower one stands today. About thirty seconds to start, and it's free.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Being found runs on a different clock than a referral does. A referral can arrive tomorrow. The work that makes a firm the answer to a sear",
+      "words": 114,
+      "altHeadline": [
+        "Call it engineering",
+        "not advertising"
+      ],
+      "altCta": "That is the shape of the work now. Start with a baseline"
+    },
+    {
+      "n": 39,
+      "slot": "ENG-4",
+      "theme": "ENG",
+      "card": "96",
+      "image": "card96-3428",
+      "headline": [
+        "Measurement is",
+        "part of the build."
+      ],
+      "cta": "It starts with knowing where the firm stands right now.",
+      "argument": "measurement sits inside the practice, not after it",
+      "caption": "The site, the writing, and the markup underneath work as one system, and a search result grades all three at once.\n\nThat's the part that's hard to buy in pieces. A rebuilt site with nothing written for it returns what the old one did. Writing with no structural support underneath doesn't get read by the machines now doing a lot of the answering.\n\nReferrals and centers of influence still bring most people in. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThe benchmark measures the system as one thing. Your firm, the four firms with the widest coverage in your metro, keyword by keyword, plus the condition of the site.\n\nTwo fields to start it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "The site, the writing, and the markup underneath work as one system, and a search result grades all three at once. That's the part that's h",
+      "words": 137,
+      "altHeadline": [
+        "Build it with the",
+        "measurement inside"
+      ],
+      "altCta": "It starts with where the firm stands right now"
+    },
+    {
+      "n": 40,
+      "slot": "ENG-5",
+      "theme": "ENG",
+      "card": "50",
+      "image": "card50-3459",
+      "headline": [
+        "It never finishes.",
+        "It gets maintained."
+      ],
+      "cta": "The benchmark is the reading you take at the start.",
+      "argument": "continuous practice rather than a finished project",
+      "caption": "A benchmark is not a strategy, and I'd rather say so than let the report oversell itself.\n\nWhat it gives you is a measurement. Your firm against the four firms covering the most ground in your metro, keyword by keyword, plus the technical condition of the site underneath. Dated, sourced, yours to keep.\n\nWhat it doesn't give you is the sequence of work that closes a gap, because that depends on your market, your book, and what you're willing to spend a year on.\n\nThe measurement is free and takes about thirty seconds to start. The rest is a conversation, and only if you want one.\n\nReferrals and centers of influence built the book. They still carry it. This is the other route, measured.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "A benchmark is not a strategy, and I'd rather say so than let the report oversell itself. What it gives you is a measurement. Your firm aga",
+      "words": 124,
+      "altHeadline": [
+        "Run it like a",
+        "practice"
+      ],
+      "altCta": "The benchmark is the reading you take at the start"
+    },
+    {
+      "n": 41,
+      "slot": "DPT-1",
+      "theme": "DPT",
+      "card": "96",
+      "image": "card96-3444",
+      "headline": [
+        "Keyword by keyword.",
+        "Firm by firm."
+      ],
+      "cta": "Every term scored the same way for all five firms.",
+      "argument": "the granularity of the comparison is the rigor",
+      "caption": "Four competitors, one keyword set, and a technical read on your site.\n\nThat's the shape of the report. The four firms are the ones covering the most ground in your metro, discovered from the market rather than pulled off a list I keep. All five firms get scored the same way, keyword by keyword, so the comparison holds up.\n\nThen it looks under your own site. Whether the structure, the markup and the schema let a search engine or an answer engine read what's there.\n\nIt's a read on organic visibility and site condition. It doesn't grade your paid, and it won't tell you what any of it is worth in revenue. It tells you where you stand and the date it measured.\n\nTwo fields to start. About ten minutes to arrive.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Four competitors, one keyword set, and a technical read on your site. That's the shape of the report. The four firms are the ones covering",
+      "words": 132,
+      "altHeadline": [
+        "Keyword by keyword",
+        "Firm by firm"
+      ],
+      "altCta": "Every term scored the same way for all five firms"
+    },
+    {
+      "n": 42,
+      "slot": "DPT-2",
+      "theme": "DPT",
+      "card": "25",
+      "image": "card25-3454",
+      "headline": [
+        "It reads the site",
+        "under the design."
+      ],
+      "cta": "Structure, schema, and whether AI can read the pages.",
+      "argument": "there is a technical layer and it gets read",
+      "caption": "Half of this report is about whether a machine can read your website.\n\nThat means the structure underneath the design. How the pages are marked up, what the schema says about your firm, whether the conditions are there for a search engine or an answer engine to pull an answer out of your site and use it.\n\nThe practice grew on relationships and that engine is still running. What sits alongside it keeps changing. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nThe other half of the report is where you rank against the four firms covering the most ground in your metro, keyword by keyword.\n\nAbout thirty seconds to start. About ten minutes to arrive.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Half of this report is about whether a machine can read your website. That means the structure underneath the design. How the pages are mar",
+      "words": 127,
+      "altHeadline": [
+        "Read the site under",
+        "the design"
+      ],
+      "altCta": "Structure, schema, and whether AI can read the pages"
+    },
+    {
+      "n": 43,
+      "slot": "DPT-3",
+      "theme": "DPT",
+      "card": "50",
+      "image": "card50-3458",
+      "headline": [
+        "Specific enough",
+        "to argue with."
+      ],
+      "cta": "Named terms, named findings, and a short priority list.",
+      "argument": "it is concrete enough to disagree with, which is the test",
+      "caption": "Five firms, one method, one metro.\n\nThat's what makes the number mean anything. Your firm and the four firms covering the most ground in your market get scored against the same keyword set, on the same checks, in the same week. Change any one of those and you're comparing two different measurements and calling the difference a gap.\n\nThe four firms are discovered from the market. I don't curate the list, which is the only way the comparison stays honest.\n\nYou get where you stand, where they stand, and which keywords are carrying the difference.\n\nTwo fields to start, ten minutes to build, no cost.\n\nBuilt for RIAs at $500M in AUM and up.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Five firms, one method, one metro. That's what makes the number mean anything. Your firm and the four firms covering the most ground in you",
+      "words": 114,
+      "altHeadline": [
+        "Get something",
+        "you can argue with"
+      ],
+      "altCta": "Named terms, named findings, a short priority list"
+    },
+    {
+      "n": 44,
+      "slot": "DPT-4",
+      "theme": "DPT",
+      "card": "25",
+      "image": "card25-3456",
+      "headline": [
+        "Every line of it",
+        "is a measurement."
+      ],
+      "cta": "Run against live search results the day you ask.",
+      "argument": "every claim in it has a measurement behind it",
+      "caption": "Every number in this report comes with the keyword it came from, the firms it was measured against, and the date it was measured.\n\nThat's deliberate. A visibility number you can't trace is impossible to check and impossible to argue with, so it never changes what anybody does on Monday.\n\nYou can hand this one to whoever runs your marketing and they can verify it, disagree with it, or work from it. All three are useful to you.\n\nInside it, your firm sits next to the four firms with the widest coverage in your metro, keyword by keyword, with the technical condition of the site underneath.\n\nTwo fields to start, then where to send it. The report arrives about ten minutes later, and it's yours either way.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Every number in this report comes with the keyword it came from, the firms it was measured against, and the date it was measured. That's de",
+      "words": 127,
+      "altHeadline": [
+        "Measure every line",
+        "of it"
+      ],
+      "altCta": "Run against live search results the day you ask"
+    },
+    {
+      "n": 45,
+      "slot": "DPT-5",
+      "theme": "DPT",
+      "card": "96",
+      "image": "card96-3447",
+      "headline": [
+        "It goes past",
+        "your homepage."
+      ],
+      "cta": "The whole site gets read the way a crawler reads it.",
+      "argument": "the scope is the site, not the front door",
+      "caption": "You can rank well and still lose the person who clicked.\n\nThe report covers both halves of that. Where your firm sits against the four firms covering the most ground in your metro, keyword by keyword. And the condition of the site they land on when they get there, including how cleanly the pages can be read by a search engine or an answer engine.\n\nReferrals and centers of influence bring most people to the door, and they still do. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nAbout thirty seconds to start it. Ten minutes and it's in your inbox.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "You can rank well and still lose the person who clicked. The report covers both halves of that. Where your firm sits against the four firms",
+      "words": 123,
+      "altHeadline": [
+        "Read past the",
+        "homepage"
+      ],
+      "altCta": "The whole site gets read the way a crawler reads it"
+    },
+    {
+      "n": 46,
+      "slot": "CND-1",
+      "theme": "CND",
+      "family": "cond",
+      "card": "50",
+      "image": "card50-3459",
+      "headline": [
+        "If you're **an RIA principal at**",
+        "**$500M and up**, I'll send you",
+        "**a benchmark of your own metro**."
+      ],
+      "cta": "",
+      "argument": "ARR \u00b7 self-selects on being at the floor, nothing else",
+      "caption": "I built this for one kind of reader, and it is worth saying why.\n\nWhat it means in practice is a firm with enough behind it to be measured. A site that has been up for years, search work that has been running a while, and four other firms in the metro competing for the same attention. There is something real to compare.\n\nHere is what arrives. Your firm scored next to the four firms covering the most ground in your metro, keyword by keyword, plus the technical condition of the site underneath.\n\nReferrals and centers of influence built the book and they still carry it. 50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive, and one of those routes can be built on purpose.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "I built this for one kind of reader, and it is worth saying why. What it means in practice is a firm with enough behind it to be measured.",
+      "words": 146,
+      "noCaption": false
+    },
+    {
+      "n": 47,
+      "slot": "CND-2",
+      "theme": "CND",
+      "family": "cond",
+      "card": "50",
+      "image": "card50-3458",
+      "headline": [
+        "If **your last five clients all**",
+        "**came from referrals**, I'd like",
+        "to show you **the other route**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "ARR \u00b7 self-selects on his own recent book",
+      "caption": "If that is the honest answer, nothing is wrong. Five out of five through introductions means the relationship engine is working the way it was built to.\n\nMost of this industry runs that way.\n\nThe reason I would still show you the other route is that it keeps a different schedule. An introduction arrives when somebody decides to make it. What the market returns when a person looks you up is there every day of the week, and it can be built deliberately.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive.\n\nWhat I would send you is where your firm stands on that second route, next to the four firms covering the most ground in your metro.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "If that is the honest answer, nothing is wrong. Five out of five through introductions means the relationship engine is working the way it w",
+      "words": 139,
+      "noCaption": false
+    },
+    {
+      "n": 48,
+      "slot": "CND-3",
+      "theme": "CND",
+      "family": "cond",
+      "card": "50",
+      "image": "card50-3454",
+      "headline": [
+        "If **every new client this year**",
+        "**arrived through someone you**",
+        "**know**, here is **a measurement**",
+        "**of the route that does not**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "ARR \u00b7 self-selects on a full year of arrivals, not five",
+      "caption": "A full year of arrivals all coming through people you know means the relationship engine is doing its job.\n\nIt also means there is a second population you have no information about. Everyone who looked you up this year and did not call left no trace, and there is no line in any report for the meeting that was never requested.\n\nThat is the route this measures. Where your firm stands against the four firms covering the most ground in your metro, keyword by keyword, plus whether the site underneath can be read by a search engine or an answer engine.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive, and the routes vary.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "A full year of arrivals all coming through people you know means the relationship engine is doing its job. It also means there is a second",
+      "words": 135,
+      "noCaption": false
+    },
+    {
+      "n": 49,
+      "slot": "CND-4",
+      "theme": "CND",
+      "family": "cond",
+      "card": "96",
+      "image": "card96-3460",
+      "headline": [
+        "If you're **an RIA principal at**",
+        "**$500M and up**, see **what a**",
+        "**prospect finds** before they",
+        "ever call your office."
+      ],
+      "cta": "",
+      "argument": "SEE \u00b7 self-selects on the floor, then the behavior",
+      "caption": "What a prospect finds is the one thing about your firm you cannot check honestly yourself. Search your own name and your own history is sitting in the result.\n\nSo the report runs it from outside that. The keyword set your market uses rather than the one you would think to type, and what comes back for your firm next to the four firms covering the most ground in your metro.\n\nReferrals and centers of influence still start most of this business. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThe introduction you hear about. This part happens with nobody from your office in the room.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "What a prospect finds is the one thing about your firm you cannot check honestly yourself. Search your own name and your own history is sitt",
+      "words": 128,
+      "noCaption": false
+    },
+    {
+      "n": 50,
+      "slot": "CND-5",
+      "theme": "CND",
+      "family": "cond",
+      "card": "96",
+      "image": "card96-3427",
+      "headline": [
+        "If **a referral looks you up**",
+        "**before the meeting**, this is",
+        "**what they find**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "SEE \u00b7 self-selects on the moment between handoff and call",
+      "caption": "They do. That search is the part of the handoff nobody in your office ever sees.\n\nSomebody trusts you enough to pass your name along. The person who received it does what anyone does now, which is look you up before agreeing to sit down. What comes back either turns the introduction into a calendar entry or quietly does not.\n\nReferrals and centers of influence still start most of this business and nothing about that has changed. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nWhat they find is your firm next to the four firms covering the most ground in your metro, and whatever condition your site is in when they land on it.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "They do. That search is the part of the handoff nobody in your office ever sees. Somebody trusts you enough to pass your name along. The pe",
+      "words": 137,
+      "noCaption": false
+    },
+    {
+      "n": 51,
+      "slot": "CND-6",
+      "theme": "CND",
+      "family": "cond",
+      "card": "96",
+      "image": "card96-3428",
+      "headline": [
+        "If **someone passed your name**",
+        "**along last week**, here is **the**",
+        "**list your market returns**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "SEE \u00b7 self-selects on a specific recent event",
+      "caption": "Somebody probably did, and there is a good chance you never heard about it.\n\nThat is the ordinary shape of this business. A client mentions you over dinner. An accountant gives your name to somebody who asked. The next move belongs to a person you have never met, and the first thing they do is look.\n\nReferrals and centers of influence still start most of it. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nThe list your market returned last week is a fact whether anybody measured it or not. Your firm, the four firms covering the most ground in your metro, keyword by keyword, and the state of the site they would have landed on.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Somebody probably did, and there is a good chance you never heard about it. That is the ordinary shape of this business. A client mentions",
+      "words": 138,
+      "noCaption": false
+    },
+    {
+      "n": 52,
+      "slot": "CND-7",
+      "theme": "CND",
+      "family": "cond",
+      "card": "25",
+      "image": "card25-3458",
+      "headline": [
+        "If you're **at $500M and up** and",
+        "**already paying for SEO**, I'll",
+        "send you **a second read**."
+      ],
+      "cta": "",
+      "argument": "MSR \u00b7 self-selects on the floor plus an existing invoice",
+      "caption": "A second read is the ordinary thing a person does with a number that matters, and it is not a comment on anybody's work.\n\nIf the work is landing, the report says so, and you have it on paper from something with no stake in the answer. If something reads differently, you have a dated measurement to bring to the next conversation instead of a feeling.\n\nEither way it is the same market, measured in the same week, against the four firms covering the most ground in your metro.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026). That puts a new question on the site.\n\nWhat I would send you is the answer to it for your own firm.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "A second read is the ordinary thing a person does with a number that matters, and it is not a comment on anybody's work. If the work is lan",
+      "words": 141,
+      "noCaption": false
+    },
+    {
+      "n": 53,
+      "slot": "CND-8",
+      "theme": "CND",
+      "family": "cond",
+      "card": "50",
+      "image": "card50-3429",
+      "headline": [
+        "If there is **a line in your**",
+        "**budget for being found**, this",
+        "puts **a number next to it**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "MSR \u00b7 self-selects on a budget line, no judgment on it",
+      "caption": "There is, in most budgets. A site rebuilt a couple of years ago, search work running monthly, or both, and no independent number sitting next to any of it.\n\nThat is all this puts there. One measurement of where the firm stands in its own metro, against the four firms covering the most ground there, keyword by keyword, plus the condition of the site underneath. Dated, sourced, and yours whether we ever speak.\n\nReferrals and centers of influence built the book and they still carry it. 50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive, and the line in your budget is aimed at one of the others.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "There is, in most budgets. A site rebuilt a couple of years ago, search work running monthly, or both, and no independent number sitting nex",
+      "words": 129,
+      "noCaption": false
+    },
+    {
+      "n": 54,
+      "slot": "CND-9",
+      "theme": "CND",
+      "family": "cond",
+      "card": "25",
+      "image": "card25-3454",
+      "headline": [
+        "If **your search reporting looks**",
+        "**fine**, run this and see",
+        "**whether it agrees**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "MSR \u00b7 self-selects on his own confidence in his reporting",
+      "caption": "Then this will probably agree with it, and that is the outcome I would expect.\n\nWorth saying first, because a second measurement is only useful if the good result counts too. If your reporting says the work is landing and an independent read of the same market says the same thing, you have that on paper from something with no stake in the answer.\n\nThe case worth running it for is the narrow one where the two disagree, because then you have a specific keyword set and a date to look at rather than an argument about impressions.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026). That puts a new question on the site.\n\nNone of this is a comment on whoever runs your work.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Then this will probably agree with it, and that is the outcome I would expect. Worth saying first, because a second measurement is only use",
+      "words": 147,
+      "noCaption": false
+    },
+    {
+      "n": 55,
+      "slot": "CND-10",
+      "theme": "CND",
+      "family": "cond",
+      "card": "50",
+      "image": "card50-3442",
+      "headline": [
+        "If you're **an RIA principal at**",
+        "**$500M and up**, the first two",
+        "legs are working. Here is",
+        "**the third one, measured**."
+      ],
+      "cta": "",
+      "argument": "LEG \u00b7 self-selects on the floor, with the validation built in",
+      "caption": "They are, or the firm would not have reached this size. That is the part worth saying first.\n\nReferrals and centers of influence are the first two legs and they built this business. Nothing about the third leg replaces them.\n\nWhat the third leg does is hold the days when nobody makes an introduction. It sits inside the practice rather than inside a person, it works on a Tuesday morning with nobody from the office involved, and it is the piece a buyer can be shown.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive.\n\nWhere yours stands is measurable, and that is what I would send you. Your firm next to the four firms covering the most ground in your metro, keyword by keyword.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "They are, or the firm would not have reached this size. That is the part worth saying first. Referrals and centers of influence are the fir",
+      "words": 146,
+      "noCaption": false
+    },
+    {
+      "n": 56,
+      "slot": "CND-11",
+      "theme": "CND",
+      "family": "cond",
+      "card": "96",
+      "image": "card96-3444",
+      "headline": [
+        "If the practice runs on",
+        "**referrals and centers of**",
+        "**influence**, here is **what the**",
+        "**third leg is doing**."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "LEG \u00b7 self-selects on how the practice grows, described neutrally",
+      "caption": "Most practices do, and that is not a weakness to correct.\n\nReferrals and centers of influence are the first two legs. They are also the two nobody can manufacture, because they arrive when somebody decides you are worth mentioning.\n\nThe third leg is the one that can be built deliberately, and the one nobody inside the building can see. A prospect searches, a list comes back, and the firm is on it or it is not.\n\nReferrals still start most of it. A 2025 Wealthtender survey asked prospects a separate question about what they do before they decide.\n\n96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nWhat the third leg is doing right now is a measurable fact. Your firm next to the four firms covering the most ground in your metro, keyword by keyword, plus the condition of the site underneath.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Most practices do, and that is not a weakness to correct. Referrals and centers of influence are the first two legs. They are also the two",
+      "words": 148,
+      "noCaption": false
+    },
+    {
+      "n": 57,
+      "slot": "CND-12",
+      "theme": "CND",
+      "family": "cond",
+      "card": "25",
+      "image": "card25-3456",
+      "headline": [
+        "If you're **at $500M and up** and",
+        "being found now takes **four**",
+        "**disciplines**, start with",
+        "**where your firm stands**."
+      ],
+      "cta": "",
+      "argument": "ENG \u00b7 self-selects on the floor plus the shape of the work",
+      "caption": "Four, and they fail independently. What the pages say and rank for. How quickly the site loads. How it is built underneath. And what the markup declares about the firm to a machine.\n\nA firm can be strong at one of those and invisible anyway. Writing with no structural support does not get read by the machines now doing a lot of the answering, and a clean rebuild with nothing written for it returns what the old site returned.\n\nThe report reads all four. Where you rank against the four firms covering the most ground in your metro, and your own site measured on the other three.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026). That is the newest of the four questions.",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "Four, and they fail independently. What the pages say and rank for. How quickly the site loads. How it is built underneath. And what the mar",
+      "words": 145,
+      "noCaption": false
+    },
+    {
+      "n": 58,
+      "slot": "CND-13",
+      "theme": "CND",
+      "family": "cond",
+      "card": "25",
+      "image": "card25-3460",
+      "headline": [
+        "If being found **stopped being**",
+        "**one job**, here is **the baseline**",
+        "**for all four parts** of it."
+      ],
+      "cta": "Built for RIAs at $500M in AUM and up.",
+      "argument": "ENG \u00b7 self-selects on whether the work has changed under him",
+      "caption": "It did, and the change arrived without an announcement.\n\nBeing found used to be one job. Now the pages have to answer a real question, the site has to load quickly, it has to be built the way a crawler expects, and the markup has to tell a machine what the firm is. Four kinds of work, and a firm can be doing three of them well.\n\nThe baseline puts all four in one place. Where you rank against the four firms covering the most ground in your metro, plus your own site measured on the other three.\n\nThe practice grew on relationships and that engine is still running. 25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).",
+      "firstComment": "benchmark.mileagedesign.com",
+      "hook": "It did, and the change arrived without an announcement. Being found used to be one job. Now the pages have to answer a real question, the s",
+      "words": 128,
+      "noCaption": false
+    }
+  ],
+  "hasAlt": true,
+  "hasCond": true
 }

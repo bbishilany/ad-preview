@@ -163,6 +163,19 @@
     font-size:7.78cqw; line-height:1.13; letter-spacing:-.015em;
     text-shadow:0 2px 18px rgba(6,10,22,.42);
   }
+  /* The conditional family is its own treatment, not a smaller headline: it
+     replaces both the 84px headline and the 30px CTA, because the conditional
+     already contains its own invitation. Spec is Patrick's, derived from Bill's
+     locked treatment rather than estimated (0.471em average advance measured off
+     24 characters at 84px in the 950px column): 62px, 32 chars max, 4 lines max,
+     weight 500 with the qualifier and offer at 600. 62/1080 = 5.741cqw. */
+  .toptext.cond .hl{
+    font-size:5.741cqw; line-height:1.18; letter-spacing:-.008em; font-weight:500;
+  }
+  .toptext.cond .hl b{font-weight:600}
+  /* the permitted analog to Hormozi's gate, on the 8 lines that do not carry
+     the floor inside the sentence — same 30px Inter treatment as the locked CTA */
+  .toptext.cond .sub{margin-top:2.8cqw}
   .toptext .sub{
     font-family:'Inter',sans-serif; font-weight:600;
     font-size:2.78cqw; line-height:1.35; margin-top:2.2cqw;
@@ -286,6 +299,7 @@
     </div>
     <div class="spacer"></div>
     <div class="counter" id="counter"></div>
+    <button class="icon-btn" id="btn-cadence" onclick="toggleCadence()" style="display:none">Control</button>
     <button class="icon-btn" id="btn-scrim" onclick="toggleScrim()">Scrim</button>
     <button class="icon-btn" id="btn-guides" onclick="toggleGuides()">Guides</button>
     <button class="icon-btn" onclick="toggleTheme()" id="btn-theme">Light</button>
@@ -331,6 +345,15 @@ try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); }
 catch(e){ console.warn('feedback offline:', e.message); }
 
 let DATA = null, IMG = {}, THEME = {}, filterTheme = 'ALL', filterCard = 'ALL', show = 'all';
+// Two cadences of the same 45: 'control' (Patrick's lines) and 'alt' (his
+// Hormozi-cadence challengers). The CND family is NOT a cadence — those are 13
+// distinct posts in their own section, always at the conditional treatment, so
+// the toggle leaves them alone.
+let cadence = 'control';
+const CADENCE = { control: 'Control', alt: 'Hormozi' };
+const hasFam = (p, f) => f === 'control' || !!p.altHeadline;
+const lineFor = p => (cadence === 'alt' && p.altHeadline) ? p.altHeadline : p.headline;
+const ctaFor  = p => (cadence === 'alt' && p.altHeadline) ? (p.altCta || '') : p.cta;
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -343,6 +366,7 @@ fetch('data.json?v=' + Date.now()).then(r => r.json()).then(d => {
   document.getElementById('lede').innerHTML = d.lede || '';
   document.getElementById('note').innerHTML = d.note || '';
   buildChips();
+  if (d.hasAlt) document.getElementById('btn-cadence').style.display = '';
   render();
   if (localStorage.getItem('organic_scrim') === '1') toggleScrim();
 });
@@ -428,16 +452,26 @@ function card(p){
   // card never moves and the text never collides with it
   const bottomPct = ((1350 - (cardTop - 40)) / 1350 * 100).toFixed(2);
   const cardPct = (cardTop / 1350 * 100).toFixed(2);
-  const hl = (p.headline || []).map(esc).join('<br>');
+  const lines = lineFor(p), cta = ctaFor(p);
+  // the conditional family marks its bold spans with **double asterisks**,
+  // the way the reference ad bolds the qualifier and the offer
+  // the conditional family runs more lines of smaller type, so its width cap differs
+  const isCond = p.family === 'cond';
+  const lineCap = isCond ? 32 : 24;
+  const hl = lines.map(l => esc(l).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')).join('<br>');
   const hookLen = (p.hook || '').length;
   const body = captionHTML(p);
   const ok = isApproved(p.slot);
+  const onFam = cadence === 'alt' && !!p.altHeadline && !isCond;
+  const offFam = cadence === 'alt' && !p.altHeadline && !isCond;
 
   return `<article class="post ${ok ? 'approved' : ''}" id="post-${p.slot}">
     <div class="post-top">
       <span class="slot-id">${esc(p.slot)}</span>
       <span class="tag card">${esc(p.card)}% card</span>
       <span class="tag">${esc(im.photo || '')}</span>
+      ${onFam ? `<span class="tag" style="color:var(--amber);border-color:var(--amber)">${CADENCE[cadence]}</span>` : ''}
+      ${offFam ? '<span class="tag" style="color:var(--danger);border-color:var(--danger)">control only</span>' : ''}
       <span class="spacer"></span>
       <span class="tag">${p.words || 0} words</span>
     </div>
@@ -455,9 +489,9 @@ function card(p){
       <div class="shot" style="--cardpct:${cardPct}%">
         <img src="images/${esc(im.file || '')}" alt="${esc(p.slot)}" loading="lazy">
         <div class="scrim"></div>
-        <div class="toptext" style="bottom:${bottomPct}%">
+        <div class="toptext${isCond ? ' cond' : ''}" style="bottom:${bottomPct}%">
           <div class="hl">${hl}</div>
-          ${p.cta ? `<div class="sub">${esc(p.cta)}</div>` : ''}
+          ${cta ? `<div class="sub">${esc(cta)}</div>` : ''}
         </div>
       </div>
       <div class="li-react">
@@ -472,9 +506,20 @@ function card(p){
 
     <div class="strip">
       <div class="kv"><span class="k">Headline</span>
-        <span class="v mono">${(p.headline || []).map(l => esc(l) + ' <span class="' + (l.length > 24 ? 'over' : 'fits') + '">(' + l.length + ')</span>').join('<br>')}</span></div>
+        <span class="v mono">${lines.map(l => esc(l.replace(/\*\*/g, '')) +
+          ' <span class="' + (l.replace(/\*\*/g, '').length > lineCap ? 'over' : 'fits') + '">(' +
+          l.replace(/\*\*/g, '').length + ')</span>').join('<br>')}</span></div>
       <div class="kv"><span class="k">CTA line</span>
-        <span class="v mono">${esc(p.cta || '')} <span class="${(p.cta || '').length > 58 ? 'over' : 'fits'}">(${(p.cta || '').length})</span></span></div>
+        <span class="v mono">${esc(cta)} <span class="${cta.length > 58 ? 'over' : 'fits'}">(${cta.length})</span></span></div>
+      ${(!isCond && p.altHeadline) ? (() => {
+        const f = cadence === 'alt' ? 'control' : 'alt';
+        const lns = f === 'control' ? p.headline : p.altHeadline;
+        const ct  = f === 'control' ? p.cta : p.altCta;
+        return `<div class="kv"><span class="k">${CADENCE[f]}</span>
+          <span class="v mono" style="color:var(--text-dim)">${esc(lns.join(' / '))}<br>${esc(ct || '')}</span></div>`;
+      })() : ''}
+      ${isCond ? `<div class="kv"><span class="k">Treatment</span>
+        <span class="v mono">62px Outfit, ${lines.length} lines, cap 32${p.cta ? ', + 30px provenance line' : ', floor inside the sentence'}</span></div>` : ''}
       <div class="kv"><span class="k">Hook</span>
         <span class="v mono">${hookLen} chars before "see more"</span></div>
       <div class="kv"><span class="k">Argument</span><span class="v">${esc(p.argument || '')}</span></div>
@@ -518,6 +563,13 @@ function approve(slot){
   const key = `organic_ok_${CAMPAIGN_ID}_${slot}`;
   if (localStorage.getItem(key) === '1') localStorage.removeItem(key);
   else localStorage.setItem(key, '1');
+  render();
+}
+function toggleCadence(){
+  cadence = cadence === 'control' ? 'alt' : 'control';
+  const b = document.getElementById('btn-cadence');
+  b.textContent = CADENCE[cadence];
+  b.classList.toggle('on', cadence === 'alt');
   render();
 }
 function copyCaption(slot){

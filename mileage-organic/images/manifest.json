@@ -1,0 +1,122 @@
+[
+  {
+    "id": "card50-3459",
+    "card": "50",
+    "photo": "3459",
+    "node": "103:12",
+    "cardTop": 503,
+    "file": "card50-3459.jpg"
+  },
+  {
+    "id": "card50-3458",
+    "card": "50",
+    "photo": "3458",
+    "node": "103:435",
+    "cardTop": 543,
+    "file": "card50-3458.jpg"
+  },
+  {
+    "id": "card50-3454",
+    "card": "50",
+    "photo": "3454",
+    "node": "103:437",
+    "cardTop": 527,
+    "file": "card50-3454.jpg"
+  },
+  {
+    "id": "card50-3429",
+    "card": "50",
+    "photo": "3429",
+    "node": "103:442",
+    "cardTop": 519,
+    "file": "card50-3429.jpg"
+  },
+  {
+    "id": "card50-3442",
+    "card": "50",
+    "photo": "3442",
+    "node": "103:443",
+    "cardTop": 519,
+    "file": "card50-3442.jpg"
+  },
+  {
+    "id": "card96-3460",
+    "card": "96",
+    "photo": "3460",
+    "node": "115:6529",
+    "cardTop": 515,
+    "file": "card96-3460.jpg"
+  },
+  {
+    "id": "card96-3427",
+    "card": "96",
+    "photo": "3427",
+    "node": "115:6634",
+    "cardTop": 515,
+    "file": "card96-3427.jpg"
+  },
+  {
+    "id": "card96-3428",
+    "card": "96",
+    "photo": "3428",
+    "node": "115:6739",
+    "cardTop": 515,
+    "file": "card96-3428.jpg"
+  },
+  {
+    "id": "card96-3444",
+    "card": "96",
+    "photo": "3444",
+    "node": "115:7054",
+    "cardTop": 515,
+    "file": "card96-3444.jpg"
+  },
+  {
+    "id": "card96-3447",
+    "card": "96",
+    "photo": "3447",
+    "node": "115:7264",
+    "cardTop": 515,
+    "file": "card96-3447.jpg"
+  },
+  {
+    "id": "card25-3458",
+    "card": "25",
+    "photo": "3458",
+    "node": "116:11575",
+    "cardTop": 576,
+    "file": "card25-3458.jpg"
+  },
+  {
+    "id": "card25-3454",
+    "card": "25",
+    "photo": "3454",
+    "node": "116:11679",
+    "cardTop": 576,
+    "file": "card25-3454.jpg"
+  },
+  {
+    "id": "card25-3456",
+    "card": "25",
+    "photo": "3456",
+    "node": "116:11783",
+    "cardTop": 576,
+    "file": "card25-3456.jpg"
+  },
+  {
+    "id": "card25-3460",
+    "card": "25",
+    "photo": "3460",
+    "node": "116:11887",
+    "cardTop": 576,
+    "file": "card25-3460.jpg"
+  },
+  {
+    "id": "card25-3427",
+    "card": "25",
+    "photo": "3427",
+    "node": "116:11991",
+    "cardTop": 576,
+    "file": "card25-3427.jpg"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "headline": "New top text, above the card",
+  "lede": "Smoke test",
+  "note": "Smoke test",
+  "themes": [{"id":"SPD","name":"Speed","claim":"It takes 30 seconds of your time."}],
+  "images": [
+    {"id":"card50-3459","card":"50","photo":"3459","cardTop":503,"file":"card50-3459.jpg"},
+    {"id":"card25-3458","card":"25","photo":"3458","cardTop":576,"file":"card25-3458.jpg"}
+  ],
+  "posts": [
+    {"n":1,"slot":"SPD-1","theme":"SPD","card":"50","image":"card50-3459",
+     "headline":["Two fields.","Ten minutes."],"cta":"See where your firm stands in your metro.",
+     "hook":"Half the investors with five million or more found their advisor without a referral in the mix.",
+     "caption":"Half the investors with five million or more found their advisor without a referral in the mix.\n\nThat number reframes a lot of pipeline math.\n\nThe benchmark takes about thirty seconds to start. Report lands in about ten minutes.",
+     "firstComment":"benchmark.mileagedesign.com","words":48,"argument":"Speed of the ask"},
+    {"n":2,"slot":"SPD-2","theme":"SPD","card":"25","image":"card25-3458",
+     "headline":["Thirty seconds","of your time."],"cta":"Two fields. The report does the rest.",
+     "hook":"A prospect asked an AI which advisor to call. That happened this year, in this market.",
+     "caption":"A prospect asked an AI which advisor to call. That happened this year, in this market.\n\nWorth knowing what it says about you.",
+     "firstComment":"benchmark.mileagedesign.com","words":30,"argument":"Effort is trivial"}
+  ]
+}

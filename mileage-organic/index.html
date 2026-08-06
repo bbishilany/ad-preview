@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LinkedIn Organic — Online Visibility Benchmark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#131C2B; --ink-2:#0A1128; --cream:#F2F0EA; --amber:#F5A83C;
+    --slate:#6B7A93; --line:rgba(255,255,255,.10);
+    --bg:#0B1220; --surface:#131C2B; --surface-2:#18233A;
+    --text:#EEF1F6; --text-dim:#9AA7BD; --ok:#3FBF7F; --danger:#E5645E;
+    --li-bg:#FFFFFF; --li-text:#1B1F23; --li-dim:#666B70; --li-line:#E4E6EA;
+  }
+  html[data-theme="light"]{
+    --bg:#EFEDE7; --surface:#FFFFFF; --surface-2:#F6F5F1;
+    --text:#131C2B; --text-dim:#5C6779; --line:rgba(19,28,43,.12);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--amber)}
+
+  /* ── header ─────────────────────────────────────────────── */
+  .topbar{
+    position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  }
+  .topbar-in{
+    max-width:1180px; margin:0 auto; padding:12px 20px;
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-.01em}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--amber)}
+  .brand small{
+    display:block; font-weight:500; font-size:11.5px; color:var(--text-dim);
+    letter-spacing:.10em; text-transform:uppercase;
+  }
+  .spacer{flex:1}
+  .counter{font-size:13px; color:var(--text-dim); font-variant-numeric:tabular-nums}
+  .counter b{color:var(--text)}
+  .icon-btn{
+    background:transparent; border:1px solid var(--line); color:var(--text);
+    border-radius:999px; padding:7px 14px; font:inherit; font-size:13px; cursor:pointer;
+  }
+  .icon-btn:hover{border-color:var(--amber); color:var(--amber)}
+  .icon-btn.on{background:var(--amber); border-color:var(--amber); color:var(--ink)}
+
+  /* ── intro ──────────────────────────────────────────────── */
+  .wrap{max-width:1180px; margin:0 auto; padding:0 20px 96px}
+  .intro{padding:36px 0 8px; max-width:760px}
+  .eyebrow{
+    font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--amber); font-weight:600; margin-bottom:14px;
+  }
+  h1{
+    font-family:'Outfit',sans-serif; font-weight:600; letter-spacing:-.02em;
+    font-size:clamp(30px,4.4vw,46px); line-height:1.08; margin:0 0 16px;
+  }
+  h1 .q{color:var(--text-dim)}
+  .lede{font-size:16.5px; line-height:1.62; color:var(--text-dim); margin:0 0 14px}
+  .lede b{color:var(--text); font-weight:600}
+  .note{
+    font-size:14px; line-height:1.6; color:var(--text-dim);
+    border-left:2px solid var(--amber); padding:2px 0 2px 14px; margin:22px 0 0;
+  }
+
+  /* ── filters ────────────────────────────────────────────── */
+  .filters{
+    position:sticky; top:57px; z-index:40; margin:26px 0 0;
+    background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(8px);
+    padding:14px 0; border-bottom:1px solid var(--line);
+  }
+  .filter-row{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+  .filter-row + .filter-row{margin-top:10px}
+  .filter-label{
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--text-dim); font-weight:600; min-width:52px;
+  }
+  .chip{
+    border:1px solid var(--line); background:var(--surface); color:var(--text-dim);
+    border-radius:999px; padding:6px 13px; font:inherit; font-size:13px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:7px; white-space:nowrap;
+  }
+  .chip:hover{color:var(--text); border-color:var(--slate)}
+  .chip.active{background:var(--amber); border-color:var(--amber); color:var(--ink); font-weight:600}
+  .chip .n{font-size:11px; opacity:.7; font-variant-numeric:tabular-nums}
+
+  /* ── theme block ────────────────────────────────────────── */
+  .theme-head{padding:44px 0 18px; border-bottom:1px solid var(--line); margin-bottom:26px}
+  .theme-head h2{
+    font-family:'Outfit',sans-serif; font-weight:600; font-size:25px;
+    letter-spacing:-.01em; margin:0 0 8px; display:flex; align-items:baseline; gap:12px;
+  }
+  .theme-id{
+    font-family:'SF Mono',ui-monospace,monospace; font-size:12px; color:var(--amber);
+    letter-spacing:.08em; border:1px solid var(--amber); border-radius:5px; padding:2px 7px;
+  }
+  .theme-claim{font-size:15px; color:var(--text-dim); line-height:1.6; max-width:660px; margin:0}
+
+  /* ── grid + post card ───────────────────────────────────── */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(392px,1fr)); gap:28px}
+  .post{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  .post.approved{border-color:var(--ok); box-shadow:0 0 0 1px var(--ok) inset}
+  .post-top{
+    display:flex; align-items:center; gap:10px; padding:12px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  .slot-id{
+    font-family:'SF Mono',ui-monospace,monospace; font-size:12px; font-weight:600;
+    color:var(--amber); letter-spacing:.04em;
+  }
+  .tag{
+    font-size:11px; color:var(--text-dim); border:1px solid var(--line);
+    border-radius:999px; padding:2px 9px; white-space:nowrap;
+  }
+  .tag.card{color:var(--text)}
+
+  /* the LinkedIn feed post */
+  .li{background:var(--li-bg); color:var(--li-text); font-size:14px}
+  .li-head{display:flex; gap:9px; padding:12px 14px 4px}
+  .li-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}
+  .li-who{min-width:0}
+  .li-name{font-weight:600; font-size:14px; line-height:1.3}
+  .li-name span{font-weight:400; color:var(--li-dim); font-size:12px}
+  .li-sub{color:var(--li-dim); font-size:12px; line-height:1.4;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .li-time{color:var(--li-dim); font-size:12px; line-height:1.4}
+  .li-body{padding:8px 14px 12px; font-size:14px; line-height:1.45; white-space:pre-wrap}
+  .li-body .hidden-tail{display:none}
+  .li-body.open .hidden-tail{display:inline}
+  .li-more{
+    color:var(--li-dim); cursor:pointer; font-size:14px; background:none; border:none;
+    padding:0; font-family:inherit;
+  }
+  .li-more:hover{color:#0A66C2; text-decoration:underline}
+
+  /* image + on-image top text overlay */
+  .shot{position:relative; container-type:inline-size; background:#0A1128; line-height:0}
+  .shot img{width:100%; display:block}
+  .shot .scrim{
+    position:absolute; inset:0 0 auto 0; height:34%; pointer-events:none;
+    background:linear-gradient(180deg, rgba(10,17,40,.55), rgba(10,17,40,0));
+    opacity:0; transition:opacity .18s;
+  }
+  body.scrim-on .shot .scrim{opacity:1}
+  .toptext{
+    position:absolute; left:6%; right:6%; text-align:center; color:#fff;
+    line-height:0; pointer-events:none;
+  }
+  .toptext .hl{
+    font-family:'Outfit',sans-serif; font-weight:500;
+    font-size:7.78cqw; line-height:1.13; letter-spacing:-.015em;
+    text-shadow:0 2px 18px rgba(6,10,22,.42);
+  }
+  .toptext .sub{
+    font-family:'Inter',sans-serif; font-weight:600;
+    font-size:2.78cqw; line-height:1.35; margin-top:2.2cqw;
+    text-shadow:0 1px 12px rgba(6,10,22,.5);
+  }
+  body.guides-on .toptext{outline:1px dashed rgba(245,168,60,.85); outline-offset:6px}
+  body.guides-on .shot::after{
+    content:''; position:absolute; left:0; right:0; pointer-events:none;
+    top:0; height:var(--cardpct); border-bottom:1px dashed rgba(63,191,127,.9);
+  }
+
+  /* reaction bar */
+  .li-react{
+    display:flex; gap:4px; padding:6px 10px; border-top:1px solid var(--li-line);
+    margin-top:6px;
+  }
+  .li-btn{
+    flex:1; text-align:center; padding:8px 4px; font-size:12.5px; font-weight:600;
+    color:var(--li-dim); border-radius:4px;
+  }
+  .li-comment{
+    display:flex; gap:8px; padding:10px 14px 14px; border-top:1px solid var(--li-line);
+    align-items:flex-start;
+  }
+  .li-comment img{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none}
+  .li-comment-body{
+    background:#F2F3F5; border-radius:0 10px 10px 10px; padding:8px 11px;
+    font-size:13px; line-height:1.45; min-width:0; word-break:break-word;
+  }
+  .li-comment-body strong{display:block; font-size:12.5px; margin-bottom:2px}
+  .li-comment-body a{color:#0A66C2; text-decoration:none}
+
+  /* copy strip */
+  .strip{padding:12px 14px; border-top:1px solid var(--line); display:grid; gap:9px}
+  .kv{display:flex; gap:10px; font-size:12.5px; line-height:1.5}
+  .kv .k{
+    color:var(--text-dim); min-width:78px; flex:none; font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; padding-top:2px;
+  }
+  .kv .v{color:var(--text)}
+  .kv .v.mono{font-family:'SF Mono',ui-monospace,monospace; font-size:11.5px; color:var(--text-dim)}
+  .fits{color:var(--ok)} .over{color:var(--danger); font-weight:600}
+
+  /* actions */
+  .actions{
+    display:flex; gap:8px; align-items:center; padding:10px 14px 14px;
+    border-top:1px solid var(--line); flex-wrap:wrap;
+  }
+  .act{
+    border:1px solid var(--line); background:transparent; color:var(--text-dim);
+    border-radius:999px; padding:7px 14px; font:inherit; font-size:12.5px; cursor:pointer;
+  }
+  .act:hover{color:var(--text); border-color:var(--slate)}
+  .act.approve.on{background:var(--ok); border-color:var(--ok); color:#06210F; font-weight:600}
+  .cbox{
+    flex:1 1 190px; min-width:170px; display:flex; gap:6px;
+  }
+  .cbox input{
+    flex:1; min-width:0; background:var(--surface-2); border:1px solid var(--line);
+    color:var(--text); border-radius:999px; padding:7px 13px; font:inherit; font-size:12.5px;
+  }
+  .cbox input:focus{outline:none; border-color:var(--amber)}
+  .cbox button{
+    border:none; background:var(--amber); color:var(--ink); border-radius:999px;
+    padding:7px 13px; font:inherit; font-size:12.5px; font-weight:600; cursor:pointer;
+  }
+  .thread{padding:0 14px 12px; display:none}
+  .thread.open{display:block}
+  .th-entry{
+    border-left:2px solid var(--line); padding:6px 0 6px 11px; margin-bottom:8px;
+    font-size:12.5px; line-height:1.5;
+  }
+  .th-entry b{color:var(--text)} .th-entry .t{color:var(--text-dim); font-size:11px}
+  .th-empty{color:var(--text-dim); font-size:12.5px; padding:4px 0}
+
+  .toast{
+    position:fixed; bottom:22px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--surface); border:1px solid var(--line); color:var(--text);
+    padding:11px 20px; border-radius:999px; font-size:13.5px; z-index:200;
+    opacity:0; transition:.2s; pointer-events:none;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+  .toast.err{border-color:var(--danger); color:var(--danger)}
+
+  footer.site{
+    border-top:1px solid var(--line); margin-top:60px; padding:26px 0;
+    text-align:center; font-size:12.5px; color:var(--text-dim);
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .filters{top:0; position:relative}
+  }
+</style>
+</head>
+<body>
+
+<!-- ── access gate ─────────────────────────────────────────── -->
+<div id="md-gate" style="position:fixed;inset:0;z-index:99999;background:#0A1128;display:flex;align-items:center;justify-content:center;font-family:'Inter',system-ui,sans-serif;">
+  <div style="text-align:center;max-width:420px;padding:0 28px;color:#fff;">
+    <img src="images/bill-avatar.jpg" alt="Mileage Design" style="width:88px;border-radius:22px;margin-bottom:24px;">
+    <div style="font-size:17px;line-height:1.5;color:#F5A83C;margin-bottom:18px;">This preview is private. Enter the access code to view.</div>
+    <input id="md-gate-input" type="password" placeholder="Access code" autofocus style="width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;font-size:17px;text-align:center;letter-spacing:2px;">
+    <div id="md-gate-err" style="height:20px;color:#ffb4b4;font-size:14px;margin-top:10px;"></div>
+    <button id="md-gate-btn" style="margin-top:6px;background:#F5A83C;color:#0A1128;border:none;border-radius:999px;padding:13px 40px;font-size:16px;font-weight:700;font-family:'Inter',system-ui,sans-serif;cursor:pointer;">View the posts</button>
+  </div>
+</div>
+<script>
+(function(){var HASH="e9763a480aa73c68e560adf9fb2a285d14ed26d25c31f42853671149a93730df";
+ var g=document.getElementById('md-gate'),i=document.getElementById('md-gate-input'),e=document.getElementById('md-gate-err'),b=document.getElementById('md-gate-btn');
+ function op(){g.style.display='none';document.body.style.overflow='';}
+ if(sessionStorage.getItem('md_organic_gate_ok')==='1'){op();return;} document.body.style.overflow='hidden';
+ async function sha(s){var x=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(x)).map(y=>y.toString(16).padStart(2,'0')).join('');}
+ async function c(){var h=await sha(i.value.trim());if(h===HASH){sessionStorage.setItem('md_organic_gate_ok','1');op();}else{e.textContent='Incorrect code. Please try again.';i.value='';i.focus();}}
+ b.addEventListener('click',c);i.addEventListener('keydown',function(ev){if(ev.key==='Enter')c();});})();
+</script>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><span class="dot"></span>
+      <div>Online Visibility Benchmark<small>LinkedIn organic message test</small></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="counter" id="counter"></div>
+    <button class="icon-btn" id="btn-scrim" onclick="toggleScrim()">Scrim</button>
+    <button class="icon-btn" id="btn-guides" onclick="toggleGuides()">Guides</button>
+    <button class="icon-btn" onclick="toggleTheme()" id="btn-theme">Light</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="intro">
+    <div class="eyebrow">Message test &middot; 45 posts</div>
+    <h1 id="h1">New top text, above the card<span class="q">.</span></h1>
+    <p class="lede" id="lede"></p>
+    <p class="note" id="note"></p>
+  </div>
+
+  <div class="filters">
+    <div class="filter-row">
+      <span class="filter-label">Theme</span>
+      <span id="theme-chips"></span>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Card</span>
+      <span id="card-chips"></span>
+      <span class="spacer"></span>
+      <button class="chip" onclick="setShow('all')" id="chip-all">All</button>
+      <button class="chip" onclick="setShow('open')" id="chip-open">Not yet approved</button>
+      <button class="chip" onclick="setShow('approved')" id="chip-approved">Approved</button>
+    </div>
+  </div>
+
+  <div id="deck"></div>
+</div>
+
+<footer class="site">Confidential &middot; Powered by Mileage Intelligence &middot; For internal review only.</footer>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = 'https://byuxmsohwsvnqfirgeit.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5dXhtc29od3N2bnFmaXJnZWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0MDE3NzYsImV4cCI6MjA4OTk3Nzc3Nn0.YctPyGRzwgdz9-HaHDnWO0KhrVhElRhYKg7feIWPd1c';
+const CAMPAIGN_ID = 'mileage-organic';
+let sb = null;
+try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); }
+catch(e){ console.warn('feedback offline:', e.message); }
+
+let DATA = null, IMG = {}, THEME = {}, filterTheme = 'ALL', filterCard = 'ALL', show = 'all';
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// ── boot ──────────────────────────────────────────────────
+fetch('data.json?v=' + Date.now()).then(r => r.json()).then(d => {
+  DATA = d;
+  d.images.forEach(i => IMG[i.id] = i);
+  d.themes.forEach(t => THEME[t.id] = t);
+  document.getElementById('h1').innerHTML = esc(d.headline || 'New top text, above the card') + '<span class="q">.</span>';
+  document.getElementById('lede').innerHTML = d.lede || '';
+  document.getElementById('note').innerHTML = d.note || '';
+  buildChips();
+  render();
+  if (localStorage.getItem('organic_scrim') === '1') toggleScrim();
+});
+
+function buildChips(){
+  const counts = {};
+  DATA.posts.forEach(p => counts[p.theme] = (counts[p.theme] || 0) + 1);
+  let h = `<button class="chip active" data-theme="ALL" onclick="setTheme('ALL')">All themes <span class="n">${DATA.posts.length}</span></button>`;
+  DATA.themes.forEach(t => {
+    h += `<button class="chip" data-theme="${t.id}" onclick="setTheme('${t.id}')">${esc(t.name)} <span class="n">${counts[t.id] || 0}</span></button>`;
+  });
+  document.getElementById('theme-chips').innerHTML = h;
+
+  const cc = {};
+  DATA.posts.forEach(p => cc[p.card] = (cc[p.card] || 0) + 1);
+  let c = `<button class="chip active" data-card="ALL" onclick="setCard('ALL')">All cards <span class="n">${DATA.posts.length}</span></button>`;
+  ['50','96','25'].forEach(k => {
+    c += `<button class="chip" data-card="${k}" onclick="setCard('${k}')">${k}% card <span class="n">${cc[k] || 0}</span></button>`;
+  });
+  document.getElementById('card-chips').innerHTML = c;
+  markShow();
+}
+
+function setTheme(t){
+  filterTheme = t;
+  document.querySelectorAll('#theme-chips .chip').forEach(el =>
+    el.classList.toggle('active', el.dataset.theme === t));
+  render();
+}
+function setCard(c){
+  filterCard = c;
+  document.querySelectorAll('#card-chips .chip').forEach(el =>
+    el.classList.toggle('active', el.dataset.card === c));
+  render();
+}
+function setShow(s){ show = s; markShow(); render(); }
+function markShow(){
+  ['all','open','approved'].forEach(k => {
+    const el = document.getElementById('chip-' + k);
+    if (el) el.classList.toggle('active', show === k);
+  });
+}
+
+const isApproved = slot => localStorage.getItem(`organic_ok_${CAMPAIGN_ID}_${slot}`) === '1';
+
+function visible(){
+  return DATA.posts.filter(p => {
+    if (filterTheme !== 'ALL' && p.theme !== filterTheme) return false;
+    if (filterCard !== 'ALL' && p.card !== filterCard) return false;
+    if (show === 'open' && isApproved(p.slot)) return false;
+    if (show === 'approved' && !isApproved(p.slot)) return false;
+    return true;
+  });
+}
+
+// ── render ────────────────────────────────────────────────
+function render(){
+  const posts = visible();
+  const groups = [];
+  DATA.themes.forEach(t => {
+    const inTheme = posts.filter(p => p.theme === t.id);
+    if (inTheme.length) groups.push([t, inTheme]);
+  });
+  document.getElementById('deck').innerHTML = groups.map(([t, list]) => `
+    <section class="theme-head-wrap">
+      <div class="theme-head">
+        <h2><span class="theme-id">${t.id}</span>${esc(t.name)}</h2>
+        <p class="theme-claim">${esc(t.claim)}</p>
+      </div>
+      <div class="grid">${list.map(card).join('')}</div>
+    </section>`).join('') || `<p class="lede" style="padding:60px 0">Nothing matches that filter.</p>`;
+
+  const total = DATA.posts.length, ok = DATA.posts.filter(p => isApproved(p.slot)).length;
+  document.getElementById('counter').innerHTML =
+    `<b>${ok}</b> of ${total} approved &middot; showing ${posts.length}`;
+  posts.forEach(p => loadThreadCount(p.slot));
+}
+
+function card(p){
+  const im = IMG[p.image] || {};
+  const cardTop = im.cardTop || 515;
+  // the top-text block is bottom-anchored just above the white card, so the
+  // card never moves and the text never collides with it
+  const bottomPct = ((1350 - (cardTop - 40)) / 1350 * 100).toFixed(2);
+  const cardPct = (cardTop / 1350 * 100).toFixed(2);
+  const hl = (p.headline || []).map(esc).join('<br>');
+  const hookLen = (p.hook || '').length;
+  const body = captionHTML(p);
+  const ok = isApproved(p.slot);
+
+  return `<article class="post ${ok ? 'approved' : ''}" id="post-${p.slot}">
+    <div class="post-top">
+      <span class="slot-id">${esc(p.slot)}</span>
+      <span class="tag card">${esc(p.card)}% card</span>
+      <span class="tag">${esc(im.photo || '')}</span>
+      <span class="spacer"></span>
+      <span class="tag">${p.words || 0} words</span>
+    </div>
+
+    <div class="li">
+      <div class="li-head">
+        <img class="li-avatar" src="images/bill-avatar.jpg" alt="Bill Bishilany">
+        <div class="li-who">
+          <div class="li-name">Bill Bishilany</div>
+          <div class="li-sub">Founder, Mileage Design</div>
+          <div class="li-time">20h</div>
+        </div>
+      </div>
+      <div class="li-body" id="cap-${p.slot}">${body}</div>
+      <div class="shot" style="--cardpct:${cardPct}%">
+        <img src="images/${esc(im.file || '')}" alt="${esc(p.slot)}" loading="lazy">
+        <div class="scrim"></div>
+        <div class="toptext" style="bottom:${bottomPct}%">
+          <div class="hl">${hl}</div>
+          ${p.cta ? `<div class="sub">${esc(p.cta)}</div>` : ''}
+        </div>
+      </div>
+      <div class="li-react">
+        <div class="li-btn">Like</div><div class="li-btn">Comment</div>
+        <div class="li-btn">Repost</div><div class="li-btn">Send</div>
+      </div>
+      ${p.firstComment ? `<div class="li-comment">
+        <img src="images/bill-avatar.jpg" alt="">
+        <div class="li-comment-body"><strong>Bill Bishilany <span style="font-weight:400;color:#666B70">&middot; first comment</span></strong>${linkify(p.firstComment)}</div>
+      </div>` : ''}
+    </div>
+
+    <div class="strip">
+      <div class="kv"><span class="k">Headline</span>
+        <span class="v mono">${(p.headline || []).map(l => esc(l) + ' <span class="' + (l.length > 24 ? 'over' : 'fits') + '">(' + l.length + ')</span>').join('<br>')}</span></div>
+      <div class="kv"><span class="k">CTA line</span>
+        <span class="v mono">${esc(p.cta || '')} <span class="${(p.cta || '').length > 58 ? 'over' : 'fits'}">(${(p.cta || '').length})</span></span></div>
+      <div class="kv"><span class="k">Hook</span>
+        <span class="v mono">${hookLen} chars before "see more"</span></div>
+      <div class="kv"><span class="k">Argument</span><span class="v">${esc(p.argument || '')}</span></div>
+    </div>
+
+    <div class="actions">
+      <button class="act approve ${ok ? 'on' : ''}" onclick="approve('${p.slot}')">${ok ? 'Approved' : 'Approve'}</button>
+      <button class="act" onclick="copyCaption('${p.slot}')">Copy caption</button>
+      <button class="act" onclick="toggleThread('${p.slot}')">Comments <span id="cnt-${p.slot}"></span></button>
+      <span class="cbox">
+        <input id="in-${p.slot}" placeholder="Add a note" onkeydown="if(event.key==='Enter')sendNote('${p.slot}')">
+        <button onclick="sendNote('${p.slot}')">Send</button>
+      </span>
+    </div>
+    <div class="thread" id="th-${p.slot}"></div>
+  </article>`;
+}
+
+function captionHTML(p){
+  const cap = p.caption || '';
+  const cut = p.hook ? p.hook.length : 140;
+  if (cap.length <= cut + 10) return esc(cap);
+  let at = cut;
+  const sp = cap.lastIndexOf(' ', cut);
+  if (sp > cut - 22) at = sp;
+  return esc(cap.slice(0, at)) +
+    `<span class="hidden-tail">${esc(cap.slice(at))}</span>` +
+    `<button class="li-more" onclick="expand(this)">&nbsp;&hellip;see more</button>`;
+}
+function expand(btn){
+  btn.closest('.li-body').classList.add('open');
+  btn.remove();
+}
+function linkify(s){
+  return esc(s).replace(/((?:https?:\/\/)?[a-z0-9.-]+\.[a-z]{2,}(?:\/[^\s]*)?)/gi,
+    m => `<a href="#" onclick="return false">${m}</a>`);
+}
+
+// ── actions ───────────────────────────────────────────────
+function approve(slot){
+  const key = `organic_ok_${CAMPAIGN_ID}_${slot}`;
+  if (localStorage.getItem(key) === '1') localStorage.removeItem(key);
+  else localStorage.setItem(key, '1');
+  render();
+}
+function copyCaption(slot){
+  const p = DATA.posts.find(x => x.slot === slot);
+  const text = p.caption + '\n\n[first comment] ' + (p.firstComment || '');
+  navigator.clipboard.writeText(text)
+    .then(() => toast('Caption copied, first comment included'))
+    .catch(() => toast('Could not copy', true));
+}
+function toggleThread(slot){
+  const el = document.getElementById('th-' + slot);
+  el.classList.toggle('open');
+  if (el.classList.contains('open')) renderThread(slot);
+}
+async function sendNote(slot){
+  let name = localStorage.getItem('organic_name') || '';
+  if (!name) {
+    const v = prompt('Your name, so the note is attributed:');
+    if (!v || !v.trim()) return;
+    name = v.trim(); localStorage.setItem('organic_name', name);
+  }
+  const input = document.getElementById('in-' + slot);
+  const comment = input.value.trim();
+  if (!comment) return;
+  if (!sb) { toast('Feedback is offline', true); return; }
+  const n = slotNum(slot);
+  const { error } = await sb.from('feedback')
+    .insert({ campaign_id: CAMPAIGN_ID, ad_num: n, name, comment });
+  if (error) { toast('Error: ' + error.message, true); return; }
+  input.value = '';
+  toast('Note saved on ' + slot);
+  loadThreadCount(slot);
+  const el = document.getElementById('th-' + slot);
+  if (el.classList.contains('open')) renderThread(slot);
+}
+const slotNum = slot => (DATA.posts.findIndex(p => p.slot === slot) + 1);
+
+async function loadThreadCount(slot){
+  if (!sb) return;
+  const { count } = await sb.from('feedback')
+    .select('*', { count: 'exact', head: true })
+    .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', slotNum(slot));
+  const el = document.getElementById('cnt-' + slot);
+  if (el) el.textContent = count ? '(' + count + ')' : '';
+}
+async function renderThread(slot){
+  const el = document.getElementById('th-' + slot);
+  if (!sb) { el.innerHTML = '<div class="th-empty">Feedback is offline.</div>'; return; }
+  const { data } = await sb.from('feedback').select('*')
+    .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', slotNum(slot))
+    .order('created_at', { ascending: true });
+  el.innerHTML = (data && data.length)
+    ? data.map(r => `<div class="th-entry"><b>${esc(r.name)}</b>
+        <span class="t">${new Date(r.created_at).toLocaleString()}</span><br>${esc(r.comment)}</div>`).join('')
+    : '<div class="th-empty">No notes yet.</div>';
+}
+
+// ── chrome ────────────────────────────────────────────────
+function toggleTheme(){
+  const h = document.documentElement;
+  const next = h.dataset.theme === 'dark' ? 'light' : 'dark';
+  h.dataset.theme = next;
+  document.getElementById('btn-theme').textContent = next === 'dark' ? 'Light' : 'Dark';
+}
+function toggleScrim(){
+  document.body.classList.toggle('scrim-on');
+  const on = document.body.classList.contains('scrim-on');
+  document.getElementById('btn-scrim').classList.toggle('on', on);
+  localStorage.setItem('organic_scrim', on ? '1' : '0');
+}
+function toggleGuides(){
+  document.body.classList.toggle('guides-on');
+  document.getElementById('btn-guides').classList
+    .toggle('on', document.body.classList.contains('guides-on'));
+}
+let _tt;
+function toast(msg, err){
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = 'toast show' + (err ? ' err' : '');
+  clearTimeout(_tt); _tt = setTimeout(() => el.className = 'toast', 2600);
+}
+</script>
+</body>
+</html>

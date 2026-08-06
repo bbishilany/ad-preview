@@ -308,7 +308,7 @@
 
 <div class="wrap">
   <div class="intro">
-    <div class="eyebrow">Message test &middot; 45 posts</div>
+    <div class="eyebrow" id="eyebrow">Message test</div>
     <h1 id="h1">New top text, above the card<span class="q">.</span></h1>
     <p class="lede" id="lede"></p>
     <p class="note" id="note"></p>
@@ -363,6 +363,9 @@ fetch('data.json?v=' + Date.now()).then(r => r.json()).then(d => {
   d.images.forEach(i => IMG[i.id] = i);
   d.themes.forEach(t => THEME[t.id] = t);
   document.getElementById('h1').innerHTML = esc(d.headline || 'New top text, above the card') + '<span class="q">.</span>';
+  const c = d.counts || {};
+  document.getElementById('eyebrow').textContent =
+    `Message test · ${c.posts || d.posts.length} posts · ${c.themes || DATA.themes.length} blocks`;
   document.getElementById('lede').innerHTML = d.lede || '';
   document.getElementById('note').innerHTML = d.note || '';
   buildChips();

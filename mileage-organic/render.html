@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>render</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Burns the approved top text into the pixels at exactly 1080x1350, using the
+     same measurements the review preview renders. The container is exactly 1080
+     wide, so 7.78cqw resolves to 84.02px and 5.741cqw to 62.0px — the figures in
+     the locked spec — rather than to whatever a review viewport happened to be. */
+  html,body{margin:0;padding:0;background:#0A1128}
+  .shot{
+    position:relative; width:1080px; height:1350px; overflow:hidden;
+    container-type:inline-size; line-height:0;
+  }
+  .shot img{width:1080px; height:1350px; display:block}
+  .scrim{
+    position:absolute; inset:0 0 auto 0; height:34%; pointer-events:none;
+    background:linear-gradient(180deg, rgba(10,17,40,.55), rgba(10,17,40,0));
+    display:none;
+  }
+  .shot.scrim .scrim{display:block}
+  .toptext{
+    position:absolute; left:6%; right:6%; text-align:center; color:#fff; line-height:0;
+  }
+  .toptext .hl{
+    font-family:'Outfit',sans-serif; font-weight:500;
+    font-size:7.78cqw; line-height:1.13; letter-spacing:-.015em;
+    text-shadow:0 2px 18px rgba(6,10,22,.42);
+  }
+  .toptext .sub{
+    font-family:'Inter',sans-serif; font-weight:600;
+    font-size:2.78cqw; line-height:1.35; margin-top:2.2cqw;
+    text-shadow:0 1px 12px rgba(6,10,22,.5);
+  }
+  .toptext.cond .hl{
+    font-size:5.741cqw; line-height:1.18; letter-spacing:-.008em; font-weight:500;
+  }
+  .toptext.cond .hl b{font-weight:600}
+  .toptext.cond .sub{margin-top:2.8cqw}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ?slot=SEE-3 renders that slot; ?cadence=alt renders the challenger line
+const qs = new URLSearchParams(location.search);
+
+window.ready = false;
+fetch('data.json').then(r => r.json()).then(async d => {
+  const p = d.posts.find(x => x.slot === qs.get('slot'));
+  if (!p) { document.title = 'MISSING'; window.ready = 'missing'; return; }
+  const im = d.images.find(i => i.id === p.image);
+  const isCond = p.family === 'cond';
+  const alt = qs.get('cadence') === 'alt' && p.altHeadline;
+  const lines = alt ? p.altHeadline : p.headline;
+  const cta = alt ? (p.altCta || '') : p.cta;
+  // bottom-anchor the block above the white card, exactly as the review does
+  const bottomPct = ((1350 - (im.cardTop - 40)) / 1350 * 100).toFixed(3);
+  const hl = lines.map(l => esc(l).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')).join('<br>');
+
+  document.getElementById('stage').innerHTML = `
+    <div class="shot${qs.get('scrim') === '1' ? ' scrim' : ''}">
+      <img id="base" src="images/${esc(im.file)}">
+      <div class="scrim"></div>
+      <div class="toptext${isCond ? ' cond' : ''}" style="bottom:${bottomPct}%">
+        <div class="hl">${hl}</div>
+        ${cta ? `<div class="sub">${esc(cta)}</div>` : ''}
+      </div>
+    </div>`;
+
+  // the renderer must not fire before the bytes are decoded and the webfonts are
+  // swapped in, or the first frame resamples or falls back to a system face
+  await document.fonts.ready;
+  const img = document.getElementById('base');
+  if (!img.complete) await new Promise(r => img.onload = r);
+  await img.decode().catch(() => {});
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  window.ready = true;
+});
+</script>
+</body>
+</html>

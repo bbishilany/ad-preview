@@ -1,7 +1,12 @@
 {
   "headline": "New top text, above the card",
-  "lede": "Forty-five LinkedIn organic posts from Bill's profile. The photograph, the white card and the card's position are untouched. What varies is the text above it and the caption, across nine message themes with five variants each.",
-  "note": "The top text here is composited over the exported image so all 45 can be read without building 45 frames. Character counts are live against the 24-per-line headline and 58-character CTA limits. Nothing is scheduled and nothing is gated.",
+  "lede": "56 LinkedIn organic posts from Bill's profile. The photograph, the white card and the card's position are untouched. What varies is the text above it and the caption, across nine message themes with five variants each, plus 11 \"If you're\" conditionals in their own block.",
+  "note": "The top text is composited over the exported image so all 56 can be read without building a frame for each. Character counts are live against the limits: 24 per line and 58 for the CTA on the nine themes, 32 per line on the conditionals. The Control button switches the nine themes between the written lines and their Hormozi-cadence challengers. Every line here has passed the copy gate. Nothing is scheduled.",
+  "counts": {
+    "posts": 56,
+    "themes": 10,
+    "conditionals": 11
+  },
   "themes": [
     {
       "id": "ARR",

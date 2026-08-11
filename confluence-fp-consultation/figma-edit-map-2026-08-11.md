@@ -35,3 +35,19 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 **After edits:** re-export the 17 changed frames (feed + story) at native size; hand back to me and I'll swap them into the ad preview, apply the finalized captions (with the skimmable line breaks), fix the stale compliance note, and ship the one full update for review.
 
 **Reminder — do NOT touch:** any photo, the logos, the CTA button, or Ads 1 & 7 (no change). Estate-fix priority if you want a first pass: Ads 5 and 6.
+
+
+## Current → New, per layer (confirm current text before overwriting)
+
+**Ad 1 — no change:** Eyebrow `COORDINATED WEALTH PLANNING` · Headline `Is Every Piece Working Together?`
+**Ad 2:** Eyebrow `COORDINATED WEALTH PLANNING` → **WEALTH, COORDINATED** · Headline `Coordinated, or Just Coexisting?` → keep
+**Ad 3:** Eyebrow `AN INDEPENDENT PERSPECTIVE` → keep · Headline `An Independent, Outside Perspective` → **Who Sees the Whole Picture?**
+**Ad 4:** Eyebrow `AN INDEPENDENT PERSPECTIVE` → **A SECOND PERSPECTIVE** · Headline `A Second Perspective on Your Plan` → **When Was Your Plan Last Reviewed?**
+**Ad 5:** Eyebrow `LEGACY & FAMILY` → **ADVISOR-LED COORDINATION** · Headline `The Clarity You Leave Behind` → **Who's Coordinating It All?**
+**Ad 6:** Eyebrow `LEGACY & FAMILY` → **WEALTH ACROSS GENERATIONS** · Headline `Wealth That Passes On With Purpose` → **Who Keeps Wealth Aligned?**
+**Ad 7 — no change:** Eyebrow `PLANNING THROUGH CHANGE` · Headline `When Life Changes, So Should the Plan`
+**Ad 8:** Eyebrow `PLANNING THROUGH CHANGE` → **PLANNING FOR TRANSITIONS** · Headline `A Plan for What Comes Next` → **The Years That Shape the Decades**
+**Ad 9 (carousel card 1):** Eyebrow `COORDINATED WEALTH PLANNING` → **COORDINATED WEALTH MANAGEMENT** · Headline `You Have Built Each Piece` → **Powerful Parts, One Plan**
+**Ad 10:** Eyebrow `COORDINATED WEALTH PLANNING` → **MANAGED AS ONE** · Headline `Managed Apart, or Managed as One?` → **Managed Apart, or as One?**
+
+*Current text is read from the live exported creatives; confirm against the live layer before overwriting.*

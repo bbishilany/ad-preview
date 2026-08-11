@@ -1,0 +1,373 @@
+{
+  "campaign": "Request a Consultation — Always-On",
+  "page_name": "Confluence Financial Partners",
+  "ig_handle": "confluencefp",
+  "brandmark": "images/confluence-brandmark.jpg",
+  "event_date": "",
+  "venue": "",
+  "co_presenters": "",
+  "compliance_notes": [
+    "SEC-registered RIA. In-ad SEC identifier appended to every primary text (verbatim). Full RIA disclaimer lives on the landing page footer.",
+    "CFP always carries the registered mark (CFP®); CFA never does. No CFA reference appears in this launch set.",
+    "No urgency/scarcity, no guarantees, no performance claims. Evergreen invitation posture.",
+    "CTA button: Learn More (prospecting). Retargeting switches only the Meta button preset to Request Time — copy unchanged."
+  ],
+  "ads": [
+    {
+      "num": 1,
+      "title": "T1 Coordination · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.",
+      "headline": "Is Every Piece Working Together?",
+      "description": "One coordinated strategy.",
+      "cta": "Learn More",
+      "hook": "You have spent years building each piece of your financial life. Is every piece working together?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Mature couple reviewing together over a deep-green scrim; centered Ivypresto headline",
+        "text_overlay": "Is Every Piece Working Together?",
+        "secondary_text": "One coordinated strategy.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Coordination — gentle gap frame, self-assessment (primary territory / strongest differentiator)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-a",
+      "images": [
+        "ad1-t1-coordination-a-feed.png",
+        "ad1-t1-coordination-a-story.png"
+      ],
+      "image_direction": "Photo-dominant. BRANDED team shot CONFLUENCE_2025-623 (Bill-selected) — three advisors at the table, lead smiling to camera (eye-line), city window. Coordination = the team working a plan together. Standard scrim feed / Soft story, faces-first, compact block, 10-12% padding, logo scrim. White Ivypresto headline, outlined white pill CTA."
+    },
+    {
+      "num": 2,
+      "title": "T1 Coordination · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?\n\nA concentrated stock position, the sale of a business, or years of equity compensation can leave a financial life powerful in its parts and unaligned as a whole. Certified Financial Planners® and Wealth Managers at Confluence work to bring each decision into alignment with the others, because each one affects the rest.\n\nRequest a consultation, with no obligation.",
+      "headline": "Coordinated, or Just Coexisting?",
+      "description": "One aligned strategy.",
+      "cta": "Learn More",
+      "hook": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Advisors coordinating a plan together over a deep-green scrim; centered Ivypresto headline",
+        "text_overlay": "Coordinated, or Just Coexisting?",
+        "secondary_text": "One aligned strategy.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Coordination — powerful in its parts, aligned as a whole (UHNW complexity: concentrated position, business sale, equity comp)",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-b",
+      "images": [
+        "ad2-t1-coordination-b-feed.png",
+        "ad2-t1-coordination-b-story.png"
+      ],
+      "image_direction": "Photo-dominant. BRANDED team CONFLUENCE_2025-578 (Bill-approved) — advisors working a plan together, warm mature lead. Standard scrim, faces-first, compact block, 10-12% padding, logo scrim. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+    },
+    {
+      "num": 3,
+      "title": "T2 Second Opinion · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?\n\nFor families whose wealth spans multiple generations, entities, and advisors, even a well-built plan can drift out of alignment. Working alongside your attorney and accountant, our team offers a coordinated, independent perspective, with no agenda but your own.\n\nRequest a consultation for an initial conversation, with no obligation.",
+      "headline": "An Independent, Outside Perspective",
+      "description": "No agenda but your own.",
+      "cta": "Learn More",
+      "hook": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "A candid advisory conversation; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "An Independent, Outside Perspective",
+        "secondary_text": "No agenda but your own.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Second opinion — low-risk reappraisal; disarms 'I already have an advisor'",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t2-second-opinion-a",
+      "images": [
+        "ad3-t2-second-opinion-a-feed.png",
+        "ad3-t2-second-opinion-a-story.png"
+      ],
+      "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-204 (Bill-selected) — mature advisor + mature (50+) client across the table = a second perspective, on-audience HNW. Soft scrim feed / Standard story, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+    },
+    {
+      "num": 4,
+      "title": "T2 Second Opinion · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.\n\nA change of advisor is rarely the reason. More often, a financial life has grown complex enough, across multiple advisors and holdings, that a coordinated review brings a welcome sense of clarity. Our team offers that independent outside view.\n\nIf that is a conversation worth having, request a consultation, with no obligation.",
+      "headline": "A Second Perspective on Your Plan",
+      "description": "Often, all it takes.",
+      "cta": "Learn More",
+      "hook": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Engaged advisory discussion; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "A Second Perspective on Your Plan",
+        "secondary_text": "Often, all it takes.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Second opinion — social proof ('many came to us for a second perspective')",
+      "type": "image",
+      "week": 2,
+      "utm_content": "t2-second-opinion-b",
+      "images": [
+        "ad4-t2-second-opinion-b-feed.png",
+        "ad4-t2-second-opinion-b-story.png"
+      ],
+      "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-748 (Bill-selected) — a mature woman advisor + team with a client (featured-advisor diversity). Soft scrim, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+    },
+    {
+      "num": 5,
+      "title": "T3 Legacy · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Clarity may be one of the greatest gifts you can leave your family.\n\nEstate planning is less about the documents than about the people who will one day rely on them. Our team of Wealth Managers and Certified Financial Planners® works to coordinate your estate plan with your investments and tax strategy, so that what you have built passes on the way you intend.\n\nRequest a consultation for an initial conversation, with no obligation.",
+      "headline": "The Clarity You Leave Behind",
+      "description": "A gift to your family.",
+      "cta": "Learn More",
+      "hook": "Clarity may be one of the greatest gifts you can leave your family.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Grandparents and grandchild at golden hour looking to the horizon; green bottom scrim, centered white Ivypresto headline",
+        "text_overlay": "The Clarity You Leave Behind",
+        "secondary_text": "A gift to your family.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & family — meaning + stewardship (warmth ceiling per voice spec)",
+      "type": "image",
+      "week": 2,
+      "utm_content": "t3-legacy-a",
+      "images": [
+        "ad5-t3-legacy-a-feed.png",
+        "ad5-t3-legacy-a-story.png"
+      ],
+      "image_direction": "Photo-forward rebuild to match the launch set. Image iStock-1315439286 — grandparents and grandchild in a golden field, faces-first upper, horizon eye-line = legacy, what you leave behind. Green-weighted bottom scrim (Standard) + adaptive top ramp for the logo, compact block, 10-12% padding. White Ivypresto headline (single line), mint 'PLANNING YOUR LEGACY' eyebrow, outlined white pill CTA. Jumping-off frame for Mayo."
+    },
+    {
+      "num": 6,
+      "title": "T3 Legacy · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "The plans you make today will one day be carried by the people you love most.\n\nA coordinated estate strategy looks beyond the documents. It considers how your wealth transfers across generations, how a donor-advised fund or family foundation carries your giving, and how each decision fits the whole. Our team of Wealth Managers and Certified Financial Planners® helps bring that picture into focus.\n\nWe would value the opportunity to meet you. Request a consultation, with no obligation.",
+      "headline": "Wealth That Passes On With Purpose",
+      "description": "Legacy, coordinated.",
+      "cta": "Learn More",
+      "hook": "The plans you make today will one day be carried by the people you love most.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Three generations together (grandmother and granddaughter); green bottom scrim, centered white Ivypresto headline",
+        "text_overlay": "Wealth That Passes On With Purpose",
+        "secondary_text": "Legacy, coordinated.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & family — wealth transfer across generations, values-led giving",
+      "type": "image",
+      "week": 3,
+      "utm_content": "t3-legacy-b",
+      "images": [
+        "ad6-t3-legacy-b-feed.png",
+        "ad6-t3-legacy-b-story.png"
+      ],
+      "image_direction": "Photo-forward rebuild to match the launch set. SITE image Homepage-Image — three generations on the sofa, centered on grandmother + granddaughter (the people who carry the plan forward), faces-first upper. Green-weighted bottom scrim (Standard) covers the bright lower band + adaptive top ramp for the logo, compact block. White Ivypresto headline (2-line), mint 'PLANNING YOUR LEGACY' eyebrow, outlined white pill CTA. Jumping-off frame for Mayo."
+    },
+    {
+      "num": 7,
+      "title": "T5 Life-Stage · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Few transitions in life arrive in isolation.\n\nWhether you are approaching retirement, planning a move, or navigating a change in your family, these are the moments when the pieces of a financial life most need to move together. Our advisers work to coordinate your investments, taxes, and estate plan for the road ahead.\n\nRequest a consultation for an initial conversation, with no obligation.",
+      "headline": "When Life Changes, So Should the Plan",
+      "description": "Guidance through transition.",
+      "cta": "Learn More",
+      "hook": "Few transitions in life arrive in isolation.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Warm next-chapter lifestyle moment (retirement / relocation / family change) in brand green; centered white Ivypresto headline",
+        "text_overlay": "When Life Changes, So Should the Plan",
+        "secondary_text": "Guidance through transition.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Life-stage transitions — recognition/empathy (accessible on-ramp)",
+      "type": "image",
+      "week": 4,
+      "utm_content": "t5-life-stage-a",
+      "images": [
+        "ad7-t5-life-stage-a-feed.png",
+        "ad7-t5-life-stage-a-story.png"
+      ],
+      "image_direction": "Photo-dominant, branded/site imagery. A mature 50+ couple or individual at a transition moment (retirement / move / family change), warm, faces-first. Standard scrim, compact block. White Ivypresto headline. Sofia to select."
+    },
+    {
+      "num": 8,
+      "title": "T5 Life-Stage · Variation B",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "The years surrounding a major transition often shape the decades that follow.\n\nAs retirement, a relocation, or a change in the family draws closer, the questions multiply, and the answers rarely sit in one place. Our team of Wealth Managers and Certified Financial Planners® helps coordinate each piece into a single plan built around where you are headed.\n\nWhen the time feels right, request a consultation, with no obligation.",
+      "headline": "A Plan for What Comes Next",
+      "description": "Ready for the next chapter.",
+      "cta": "Learn More",
+      "hook": "The years surrounding a major transition often shape the decades that follow.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Freedom/next-chapter lifestyle image in brand green; centered white Ivypresto headline",
+        "text_overlay": "A Plan for What Comes Next",
+        "secondary_text": "Ready for the next chapter.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Life-stage transitions — forward-looking, the next chapter",
+      "type": "image",
+      "week": 4,
+      "utm_content": "t5-life-stage-b",
+      "images": [
+        "ad8-t5-life-stage-b-feed.png",
+        "ad8-t5-life-stage-b-story.png"
+      ],
+      "image_direction": "Photo-dominant. SITE image Confluence-About-Hero — a mature 50+ couple, warm, a next-chapter transition moment (T5 life-stage; the branded shoot has no couple/lifestyle shot). Standard scrim, faces-first, compact block. White Ivypresto headline."
+    },
+    {
+      "num": 9,
+      "title": "T1 Coordination · Carousel",
+      "format": "Carousel, 4 cards at 1080x1350 (Feed 4:5)",
+      "placements": [
+        "Carousel"
+      ],
+      "production": "",
+      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.",
+      "headline": "Is Every Piece Working Together?",
+      "description": "One coordinated strategy.",
+      "cta": "Learn More",
+      "hook": "The swipe illustrates the pieces coming together into one coordinated strategy.",
+      "alt_headlines": [],
+      "cards": [
+        {
+          "num": 1,
+          "label": "The life you have built",
+          "caption": "You have spent years building each piece of your financial life."
+        },
+        {
+          "num": 2,
+          "label": "The pieces",
+          "caption": "Investments, taxes, estate planning, and the timing of your retirement. Often managed apart."
+        },
+        {
+          "num": 3,
+          "label": "Coordinated into one strategy",
+          "caption": "Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®."
+        },
+        {
+          "num": 4,
+          "label": "The invitation",
+          "caption": "Request a consultation for an initial conversation, with no obligation."
+        }
+      ],
+      "stories": null,
+      "reels": null,
+      "arc": "Coordination — the swipe illustrates the pieces working together (T1 carousel format test within the primary territory)",
+      "type": "carousel",
+      "week": 1,
+      "utm_content": "t1-coordination-a-carousel",
+      "images": [
+        "ad9-carousel-card1.png",
+        "ad9-carousel-card2.png",
+        "ad9-carousel-card3.png",
+        "ad9-carousel-card4.png"
+      ],
+      "image_direction": "4-card carousel, photo-forward. Arc: 1) the life you have built -> 2) the pieces, often managed apart -> 3) coordinated into one strategy, reviewed together by the team (BRANDED team CONFLUENCE_2025-305, Pittsburgh skyline, Standard scrim) -> 4) the invitation / generations (grandparents+grandchild iStock-1315439286, Standard scrim). Card 2 opens (animation-ready for Tendai). Green-weighted bottom scrim + text-shadow, faces-first, CFP® on card 3. All clear 4.5:1 on the text band."
+    },
+    {
+      "num": 10,
+      "title": "T1 Coordination · Often Managed Apart (gap-frame)",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories"
+      ],
+      "production": "",
+      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.",
+      "headline": "Managed Apart, or Managed as One?",
+      "description": "Coordinated as one plan.",
+      "cta": "Learn More",
+      "hook": "Investments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Three-generation family, photo-forward dark, centered headline",
+        "text_overlay": "Managed Apart, or Managed as One?",
+        "secondary_text": "Coordinated as one plan.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Coordination — gap-frame stopper (the strongest pattern-interrupt from the carousel hook), photo-forward dark",
+      "type": "image",
+      "week": 1,
+      "utm_content": "t1-coordination-gap-frame",
+      "images": [
+        "ad10-t1-often-managed-apart-feed.png",
+        "ad10-t1-often-managed-apart-story.png"
+      ],
+      "image_direction": "Photo-dominant dark. Full-bleed three-generation family (stock lifestyle — intentionally kept; the library has no branded couple/family-at-home shot). Green-weighted bottom scrim (Max) + text-shadow, faces-first, compact block. Feed content block lifted +30px (CTA off the 150px floor). White Ivypresto 'Managed Apart, or Managed as One?' (2-line)."
+    }
+  ],
+  "client": "confluence-fp-consultation"
+}

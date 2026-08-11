@@ -1,5 +1,5 @@
 {
-  "campaign": "Request a Consultation — Always-On",
+  "campaign": "Request a Consultation — Always-On (rebalanced 2026-08-11)",
   "page_name": "Confluence Financial Partners",
   "ig_handle": "confluencefp",
   "brandmark": "images/confluence-brandmark.jpg",
@@ -7,10 +7,10 @@
   "venue": "",
   "co_presenters": "",
   "compliance_notes": [
-    "SEC-registered RIA. In-ad SEC identifier appended to every primary text (verbatim). Full RIA disclaimer lives on the landing page footer.",
-    "CFP always carries the registered mark (CFP®); CFA never does. No CFA reference appears in this launch set.",
-    "No urgency/scarcity, no guarantees, no performance claims. Evergreen invitation posture.",
-    "CTA button: Learn More (prospecting). Retargeting switches only the Meta button preset to Request Time — copy unchanged."
+    "Static consultation ads. SEC disclaimer REMOVED from ad copy per client (2026-08-11) — it lives on the destination website; do NOT re-append to primary_text on rebuild.",
+    "CFP always carries the registered mark (CFP®); CFA never does. No CFA reference in this set.",
+    "No urgency/scarcity, guarantees, or performance claims. HNW/UHNW signaled by situation (concentrated stock, business sale, equity comp, multi-generational wealth), never a dollar minimum.",
+    "Estate demoted to one capability inside coordination (rebalanced 2026-08-11). CTA: Request a Consultation."
   ],
   "ads": [
     {
@@ -23,7 +23,7 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.",
+      "primary_text": "You have built investments, a business, taxes, and an estate.\n\nToo often, they are managed apart.\n\nOur Wealth Managers and Certified Financial Planners® work to coordinate them into one strategy.\n\nRequest a consultation, with no obligation.",
       "headline": "Is Every Piece Working Together?",
       "description": "One coordinated strategy.",
       "cta": "Learn More",
@@ -57,7 +57,7 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?\n\nA concentrated stock position, the sale of a business, or years of equity compensation can leave a financial life powerful in its parts and unaligned as a whole. Certified Financial Planners® and Wealth Managers at Confluence work to bring each decision into alignment with the others, because each one affects the rest.\n\nRequest a consultation, with no obligation.",
+      "primary_text": "A concentrated stock position, the sale of a business, or years of equity compensation can leave a financial life powerful in its parts yet unaligned as a whole.\n\nOur advisors work to bring each decision into alignment.\n\nRequest a consultation, with no obligation.",
       "headline": "Coordinated, or Just Coexisting?",
       "description": "One aligned strategy.",
       "cta": "Learn More",
@@ -91,8 +91,8 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?\n\nFor families whose wealth spans multiple generations, entities, and advisors, even a well-built plan can drift out of alignment. Working alongside your attorney and accountant, our team offers a coordinated, independent perspective, with no agenda but your own.\n\nRequest a consultation for an initial conversation, with no obligation.",
-      "headline": "An Independent, Outside Perspective",
+      "primary_text": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy and what passes to the next generation?\n\nFor families whose wealth spans multiple advisors and entities, our team offers a coordinated, independent perspective.\n\nRequest a consultation, with no obligation.",
+      "headline": "Who Sees the Whole Picture?",
       "description": "No agenda but your own.",
       "cta": "Learn More",
       "hook": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?",
@@ -125,8 +125,8 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.\n\nA change of advisor is rarely the reason. More often, a financial life has grown complex enough, across multiple advisors and holdings, that a coordinated review brings a welcome sense of clarity. Our team offers that independent outside view.\n\nIf that is a conversation worth having, request a consultation, with no obligation.",
-      "headline": "A Second Perspective on Your Plan",
+      "primary_text": "Many of the families we serve came to us after years with another advisor.\n\nTheir wealth had grown complex enough, across multiple holdings and entities, that a coordinated, independent review brought welcome clarity.\n\nRequest a consultation, with no obligation.",
+      "headline": "When Was Your Plan Last Reviewed?",
       "description": "Often, all it takes.",
       "cta": "Learn More",
       "hook": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.",
@@ -159,8 +159,8 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Clarity may be one of the greatest gifts you can leave your family.\n\nEstate planning is less about the documents than about the people who will one day rely on them. Our team of Wealth Managers and Certified Financial Planners® works to coordinate your estate plan with your investments and tax strategy, so that what you have built passes on the way you intend.\n\nRequest a consultation for an initial conversation, with no obligation.",
-      "headline": "The Clarity You Leave Behind",
+      "primary_text": "The wealth you have built touches investments, taxes, and one day your estate.\n\nOur Wealth Managers and Certified Financial Planners® work to coordinate all of it, so what you have created supports your family the way you intend.\n\nRequest a consultation, with no obligation.",
+      "headline": "Who's Coordinating It All?",
       "description": "A gift to your family.",
       "cta": "Learn More",
       "hook": "Clarity may be one of the greatest gifts you can leave your family.",
@@ -193,8 +193,8 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "The plans you make today will one day be carried by the people you love most.\n\nA coordinated estate strategy looks beyond the documents. It considers how your wealth transfers across generations, how a donor-advised fund or family foundation carries your giving, and how each decision fits the whole. Our team of Wealth Managers and Certified Financial Planners® helps bring that picture into focus.\n\nWe would value the opportunity to meet you. Request a consultation, with no obligation.",
-      "headline": "Wealth That Passes On With Purpose",
+      "primary_text": "When wealth spans generations, entities, and a family foundation, the pieces rarely stay aligned on their own.\n\nOur Wealth Managers and Certified Financial Planners® work to coordinate investments, tax, and wealth transfer into one plan.\n\nRequest a consultation, with no obligation.",
+      "headline": "Coordinated Across Generations",
       "description": "Legacy, coordinated.",
       "cta": "Learn More",
       "hook": "The plans you make today will one day be carried by the people you love most.",
@@ -227,7 +227,7 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Few transitions in life arrive in isolation.\n\nWhether you are approaching retirement, planning a move, or navigating a change in your family, these are the moments when the pieces of a financial life most need to move together. Our advisers work to coordinate your investments, taxes, and estate plan for the road ahead.\n\nRequest a consultation for an initial conversation, with no obligation.",
+      "primary_text": "Few transitions arrive in isolation.\n\nApproaching retirement, selling a business, or a change in the family: these are the moments your financial life most needs to move together.\n\nOur advisors work to coordinate the pieces as one.\n\nRequest a consultation, with no obligation.",
       "headline": "When Life Changes, So Should the Plan",
       "description": "Guidance through transition.",
       "cta": "Learn More",
@@ -261,8 +261,8 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "The years surrounding a major transition often shape the decades that follow.\n\nAs retirement, a relocation, or a change in the family draws closer, the questions multiply, and the answers rarely sit in one place. Our team of Wealth Managers and Certified Financial Planners® helps coordinate each piece into a single plan built around where you are headed.\n\nWhen the time feels right, request a consultation, with no obligation.",
-      "headline": "A Plan for What Comes Next",
+      "primary_text": "The years surrounding a major transition often shape the decades that follow.\n\nAs retirement, a relocation, or the sale of a business draws closer, the answers rarely sit in one place.\n\nOur advisors work to coordinate them.\n\nRequest a consultation, with no obligation.",
+      "headline": "Is Your Plan Ready for What's Next?",
       "description": "Ready for the next chapter.",
       "cta": "Learn More",
       "hook": "The years surrounding a major transition often shape the decades that follow.",
@@ -293,8 +293,8 @@
         "Carousel"
       ],
       "production": "",
-      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.",
-      "headline": "Is Every Piece Working Together?",
+      "primary_text": "You have built investments, a business, taxes, and an estate.\n\nToo often, they are managed apart.\n\nOur Wealth Managers and Certified Financial Planners® work to coordinate them into one strategy.\n\nRequest a consultation, with no obligation.",
+      "headline": "Everything You've Built",
       "description": "One coordinated strategy.",
       "cta": "Learn More",
       "hook": "The swipe illustrates the pieces coming together into one coordinated strategy.",
@@ -344,8 +344,8 @@
         "Stories"
       ],
       "production": "",
-      "primary_text": "You have spent years building each piece of your financial life. Is every piece working together?\n\nInvestments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart. Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®.\n\nWe would value the opportunity to understand your situation. Request a consultation for an initial conversation, with no obligation.",
-      "headline": "Managed Apart, or Managed as One?",
+      "primary_text": "Investments, taxes, estate, and retirement each affect the others, yet they are often managed apart.\n\nConfluence works to coordinate them into one strategy, reviewed together by our Wealth Managers and Certified Financial Planners®.\n\nRequest a consultation, with no obligation.",
+      "headline": "Managed Apart, or as One?",
       "description": "Coordinated as one plan.",
       "cta": "Learn More",
       "hook": "Investments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart.",

@@ -8,22 +8,22 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 | Ad | Frame | Jump link (node-id) | Layer | Change: current → NEW |
 |----|-------|--------------------|-------|-----------------------|
 | **1** | Feed / Story | — | — | **No change** |
-| **2** | Feed | `?node-id=1954-2843` | Eyebrow | COORDINATED WEALTH PLANNING → **WEALTH, COORDINATED** |
-| **2** | Story | `?node-id=1954-2854` | Eyebrow | COORDINATED WEALTH PLANNING → **WEALTH, COORDINATED** |
-| **3** | Feed | `?node-id=1864-38` | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
-| **3** | Story | `?node-id=1865-141` | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
-| **4** | Feed | `?node-id=1864-53` | Eyebrow + Headline | AN INDEPENDENT PERSPECTIVE → **A SECOND PERSPECTIVE**  ·  A Second Perspective on Your Plan → **When Was Your Plan Last Reviewed?** |
-| **4** | Story | `?node-id=1865-153` | Eyebrow + Headline | same as Ad 4 Feed |
-| **5** | Feed | `?node-id=1864-65` | Eyebrow + Headline | LEGACY & FAMILY → **ADVISOR-LED COORDINATION**  ·  The Clarity You Leave Behind → **Who's Coordinating It All?** |
-| **5** | Story | `?node-id=1865-165` | Eyebrow + Headline | same as Ad 5 Feed |
-| **6** | Feed | `?node-id=1864-80` | Eyebrow + Headline | LEGACY & FAMILY → **WEALTH ACROSS GENERATIONS**  ·  Wealth That Passes On With Purpose → **Who Keeps Wealth Aligned?** |
-| **6** | Story | `?node-id=1865-177` | Eyebrow + Headline | same as Ad 6 Feed |
+| **2** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1954-2843 | Eyebrow | COORDINATED WEALTH PLANNING → **WEALTH, COORDINATED** |
+| **2** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1954-2854 | Eyebrow | COORDINATED WEALTH PLANNING → **WEALTH, COORDINATED** |
+| **3** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-38 | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
+| **3** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-141 | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
+| **4** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-53 | Eyebrow + Headline | AN INDEPENDENT PERSPECTIVE → **A SECOND PERSPECTIVE**  ·  A Second Perspective on Your Plan → **When Was Your Plan Last Reviewed?** |
+| **4** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-153 | Eyebrow + Headline | same as Ad 4 Feed |
+| **5** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-65 | Eyebrow + Headline | LEGACY & FAMILY → **ADVISOR-LED COORDINATION**  ·  The Clarity You Leave Behind → **Who's Coordinating It All?** |
+| **5** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-165 | Eyebrow + Headline | same as Ad 5 Feed |
+| **6** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-80 | Eyebrow + Headline | LEGACY & FAMILY → **WEALTH ACROSS GENERATIONS**  ·  Wealth That Passes On With Purpose → **Who Keeps Wealth Aligned?** |
+| **6** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-177 | Eyebrow + Headline | same as Ad 6 Feed |
 | **7** | Feed / Story | — | — | **No change** |
-| **8** | Feed | `?node-id=1864-110` | Eyebrow + Headline | PLANNING THROUGH CHANGE → **PLANNING FOR TRANSITIONS**  ·  A Plan for What Comes Next → **The Years That Shape the Decades** |
-| **8** | Story | `?node-id=1865-201` | Eyebrow + Headline | same as Ad 8 Feed |
-| **9** | Carousel Card 1 | `?node-id=1865-2799` | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **COORDINATED WEALTH MANAGEMENT**  ·  You Have Built Each Piece → **Powerful Parts, One Plan** |
-| **10** | Feed | `?node-id=1877-253` | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **MANAGED AS ONE**  ·  Managed Apart, or Managed as One? → **Managed Apart, or as One?** |
-| **10** | Story | `?node-id=1888-260` | Eyebrow + Headline | same as Ad 10 Feed |
+| **8** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-110 | Eyebrow + Headline | PLANNING THROUGH CHANGE → **PLANNING FOR TRANSITIONS**  ·  A Plan for What Comes Next → **The Years That Shape the Decades** |
+| **8** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-201 | Eyebrow + Headline | same as Ad 8 Feed |
+| **9** | Carousel Card 1 | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-2799 | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **COORDINATED WEALTH MANAGEMENT**  ·  You Have Built Each Piece → **Powerful Parts, One Plan** |
+| **10** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1877-253 | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **MANAGED AS ONE**  ·  Managed Apart, or Managed as One? → **Managed Apart, or as One?** |
+| **10** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1888-260 | Eyebrow + Headline | same as Ad 10 Feed |
 
 **Exact layer node-ids (verified) — for right-click → "Copy link to selection" precision:**
 - Ad 4 Feed: Eyebrow `I1864:53;1858:8`, Headline `I1864:53;1858:9`

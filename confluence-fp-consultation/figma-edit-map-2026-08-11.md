@@ -18,7 +18,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 | **6** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-80 | Headline only | Eyebrow LEGACY & FAMILY → **keep**  ·  Wealth That Passes On With Purpose → **Coordinated Across Generations** |
 | **6** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-177 | Headline only | same as Ad 6 Feed (eyebrow kept) |
 | **7** | Feed / Story | — | — | **No change** |
-| **8** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-110 | Eyebrow + Headline | PLANNING THROUGH CHANGE → **PLANNING FOR TRANSITIONS**  ·  A Plan for What Comes Next → **The Years That Shape the Decades** |
+| **8** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-110 | Eyebrow + Headline | PLANNING THROUGH CHANGE → **PLANNING FOR TRANSITIONS**  ·  A Plan for What Comes Next → **Is Your Plan Ready for What's Next?** |
 | **8** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-201 | Eyebrow + Headline | same as Ad 8 Feed |
 | **9** | Carousel Card 1 | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-2799 | Headline only | Eyebrow COORDINATED WEALTH PLANNING → **keep** (uniform across all 4 cards)  ·  You Have Built Each Piece → **Everything You've Built** |
 | **10** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1877-253 | Headline only | Eyebrow COORDINATED WEALTH PLANNING → **keep**  ·  Managed Apart, or Managed as One? → **Managed Apart, or as One?** |
@@ -45,7 +45,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 **Ad 5:** Eyebrow `LEGACY & FAMILY` → **keep (Bill)** · Headline `The Clarity You Leave Behind` → **Who's Coordinating It All?**
 **Ad 6:** Eyebrow `LEGACY & FAMILY` → **keep (Bill)** · Headline `Wealth That Passes On With Purpose` → **Coordinated Across Generations**
 **Ad 7 — no change:** Eyebrow `PLANNING THROUGH CHANGE` · Headline `When Life Changes, So Should the Plan`
-**Ad 8:** Eyebrow `PLANNING THROUGH CHANGE` → **PLANNING FOR TRANSITIONS** · Headline `A Plan for What Comes Next` → **The Years That Shape the Decades**
+**Ad 8:** Eyebrow `PLANNING THROUGH CHANGE` → **PLANNING FOR TRANSITIONS** · Headline `A Plan for What Comes Next` → **Is Your Plan Ready for What's Next?**
 **Ad 9 (carousel card 1):** Eyebrow `COORDINATED WEALTH PLANNING` → **keep (uniform across all 4 cards)** · Headline `You Have Built Each Piece` → **Everything You've Built**  ·  Cards 2/3/4: **no change** (Often Managed Apart. → Coordinated Into One Strategy → Let the Pieces Work Together)
 **Ad 10:** Eyebrow `COORDINATED WEALTH PLANNING` → **keep (Bill)** · Headline `Managed Apart, or Managed as One?` → **Managed Apart, or as One?**
 

@@ -14,8 +14,8 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 | **3** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-141 | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
 | **4** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-53 | Eyebrow + Headline | AN INDEPENDENT PERSPECTIVE → **A SECOND PERSPECTIVE**  ·  A Second Perspective on Your Plan → **When Was Your Plan Last Reviewed?** |
 | **4** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-153 | Eyebrow + Headline | same as Ad 4 Feed |
-| **5** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-65 | Eyebrow + Headline | LEGACY & FAMILY → **ADVISOR-LED COORDINATION**  ·  The Clarity You Leave Behind → **Who's Coordinating It All?** |
-| **5** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-165 | Eyebrow + Headline | same as Ad 5 Feed |
+| **5** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-65 | Headline only | Eyebrow LEGACY & FAMILY → **keep**  ·  The Clarity You Leave Behind → **Who's Coordinating It All?** |
+| **5** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-165 | Headline only | same as Ad 5 Feed (eyebrow kept) |
 | **6** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-80 | Eyebrow + Headline | LEGACY & FAMILY → **WEALTH ACROSS GENERATIONS**  ·  Wealth That Passes On With Purpose → **Who Keeps Wealth Aligned?** |
 | **6** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-177 | Eyebrow + Headline | same as Ad 6 Feed |
 | **7** | Feed / Story | — | — | **No change** |
@@ -43,7 +43,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 **Ad 2:** Eyebrow `COORDINATED WEALTH PLANNING` → **WEALTH, COORDINATED** · Headline `Coordinated, or Just Coexisting?` → keep
 **Ad 3:** Eyebrow `AN INDEPENDENT PERSPECTIVE` → keep · Headline `An Independent, Outside Perspective` → **Who Sees the Whole Picture?**
 **Ad 4:** Eyebrow `AN INDEPENDENT PERSPECTIVE` → **A SECOND PERSPECTIVE** · Headline `A Second Perspective on Your Plan` → **When Was Your Plan Last Reviewed?**
-**Ad 5:** Eyebrow `LEGACY & FAMILY` → **ADVISOR-LED COORDINATION** · Headline `The Clarity You Leave Behind` → **Who's Coordinating It All?**
+**Ad 5:** Eyebrow `LEGACY & FAMILY` → **keep (Bill)** · Headline `The Clarity You Leave Behind` → **Who's Coordinating It All?**
 **Ad 6:** Eyebrow `LEGACY & FAMILY` → **WEALTH ACROSS GENERATIONS** · Headline `Wealth That Passes On With Purpose` → **Who Keeps Wealth Aligned?**
 **Ad 7 — no change:** Eyebrow `PLANNING THROUGH CHANGE` · Headline `When Life Changes, So Should the Plan`
 **Ad 8:** Eyebrow `PLANNING THROUGH CHANGE` → **PLANNING FOR TRANSITIONS** · Headline `A Plan for What Comes Next` → **The Years That Shape the Decades**

@@ -50,3 +50,5 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 **Ad 10:** Eyebrow `COORDINATED WEALTH PLANNING` → **keep (Bill)** · Headline `Managed Apart, or Managed as One?` → **Managed Apart, or as One?**
 
 *Current text is read from the live exported creatives; confirm against the live layer before overwriting.*
+
+> **STATUS 2026-08-11: on-image pass COMPLETE in Figma.** All edits applied or intentionally unchanged. Eyebrow calls: Ads 5 & 6 kept LEGACY & FAMILY; Ads 1/2/9/10 kept COORDINATED WEALTH PLANNING; Ad 4 = A SECOND PERSPECTIVE, Ad 8 = PLANNING FOR TRANSITIONS (applied). Ads 3 & 4 intentionally differentiated. Next: re-export changed frames → integrate captions + line breaks → redeploy → review.

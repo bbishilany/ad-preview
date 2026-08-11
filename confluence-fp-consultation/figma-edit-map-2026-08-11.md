@@ -21,7 +21,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 | **7** | Feed / Story | — | — | **No change** |
 | **8** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-110 | Eyebrow + Headline | PLANNING THROUGH CHANGE → **PLANNING FOR TRANSITIONS**  ·  A Plan for What Comes Next → **The Years That Shape the Decades** |
 | **8** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-201 | Eyebrow + Headline | same as Ad 8 Feed |
-| **9** | Carousel Card 1 | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-2799 | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **COORDINATED WEALTH MANAGEMENT**  ·  You Have Built Each Piece → **Your Wealth Has Many Moving Parts** |
+| **9** | Carousel Card 1 | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-2799 | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **COORDINATED WEALTH MANAGEMENT**  ·  You Have Built Each Piece → **Everything You've Built** |
 | **10** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1877-253 | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **MANAGED AS ONE**  ·  Managed Apart, or Managed as One? → **Managed Apart, or as One?** |
 | **10** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1888-260 | Eyebrow + Headline | same as Ad 10 Feed |
 
@@ -47,7 +47,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 **Ad 6:** Eyebrow `LEGACY & FAMILY` → **keep (Bill)** · Headline `Wealth That Passes On With Purpose` → **Coordinated Across Generations**
 **Ad 7 — no change:** Eyebrow `PLANNING THROUGH CHANGE` · Headline `When Life Changes, So Should the Plan`
 **Ad 8:** Eyebrow `PLANNING THROUGH CHANGE` → **PLANNING FOR TRANSITIONS** · Headline `A Plan for What Comes Next` → **The Years That Shape the Decades**
-**Ad 9 (carousel card 1):** Eyebrow `COORDINATED WEALTH PLANNING` → **COORDINATED WEALTH MANAGEMENT** · Headline `You Have Built Each Piece` → **Your Wealth Has Many Moving Parts**
+**Ad 9 (carousel card 1):** Eyebrow `COORDINATED WEALTH PLANNING` → **COORDINATED WEALTH MANAGEMENT** · Headline `You Have Built Each Piece` → **Everything You've Built**
 **Ad 10:** Eyebrow `COORDINATED WEALTH PLANNING` → **MANAGED AS ONE** · Headline `Managed Apart, or Managed as One?` → **Managed Apart, or as One?**
 
 *Current text is read from the live exported creatives; confirm against the live layer before overwriting.*

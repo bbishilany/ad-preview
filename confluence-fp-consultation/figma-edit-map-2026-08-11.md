@@ -8,8 +8,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 | Ad | Frame | Jump link (node-id) | Layer | Change: current → NEW |
 |----|-------|--------------------|-------|-----------------------|
 | **1** | Feed / Story | — | — | **No change** |
-| **2** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1954-2843 | Eyebrow | COORDINATED WEALTH PLANNING → **WEALTH, COORDINATED** |
-| **2** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1954-2854 | Eyebrow | COORDINATED WEALTH PLANNING → **WEALTH, COORDINATED** |
+| **2** | Feed / Story | — | — | **No change** (eyebrow COORDINATED WEALTH PLANNING kept; headline kept) |
 | **3** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-38 | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
 | **3** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-141 | Headline | An Independent, Outside Perspective → **Who Sees the Whole Picture?** |
 | **4** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-53 | Eyebrow + Headline | AN INDEPENDENT PERSPECTIVE → **A SECOND PERSPECTIVE**  ·  A Second Perspective on Your Plan → **When Was Your Plan Last Reviewed?** |
@@ -22,8 +21,8 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 | **8** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1864-110 | Eyebrow + Headline | PLANNING THROUGH CHANGE → **PLANNING FOR TRANSITIONS**  ·  A Plan for What Comes Next → **The Years That Shape the Decades** |
 | **8** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-201 | Eyebrow + Headline | same as Ad 8 Feed |
 | **9** | Carousel Card 1 | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1865-2799 | Headline only | Eyebrow COORDINATED WEALTH PLANNING → **keep** (uniform across all 4 cards)  ·  You Have Built Each Piece → **Everything You've Built** |
-| **10** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1877-253 | Eyebrow + Headline | COORDINATED WEALTH PLANNING → **MANAGED AS ONE**  ·  Managed Apart, or Managed as One? → **Managed Apart, or as One?** |
-| **10** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1888-260 | Eyebrow + Headline | same as Ad 10 Feed |
+| **10** | Feed | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1877-253 | Headline only | Eyebrow COORDINATED WEALTH PLANNING → **keep**  ·  Managed Apart, or Managed as One? → **Managed Apart, or as One?** |
+| **10** | Story | https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Design-Space?node-id=1888-260 | Headline only | same as Ad 10 Feed (eyebrow kept) |
 
 **Exact layer node-ids (verified) — for right-click → "Copy link to selection" precision:**
 - Ad 4 Feed: Eyebrow `I1864:53;1858:8`, Headline `I1864:53;1858:9`
@@ -40,7 +39,7 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 ## Current → New, per layer (confirm current text before overwriting)
 
 **Ad 1 — no change:** Eyebrow `COORDINATED WEALTH PLANNING` · Headline `Is Every Piece Working Together?`
-**Ad 2:** Eyebrow `COORDINATED WEALTH PLANNING` → **WEALTH, COORDINATED** · Headline `Coordinated, or Just Coexisting?` → keep
+**Ad 2:** **No change** — Eyebrow `COORDINATED WEALTH PLANNING` kept · Headline `Coordinated, or Just Coexisting?` kept
 **Ad 3:** Eyebrow `AN INDEPENDENT PERSPECTIVE` → keep · Headline `An Independent, Outside Perspective` → **Who Sees the Whole Picture?**
 **Ad 4:** Eyebrow `AN INDEPENDENT PERSPECTIVE` → **A SECOND PERSPECTIVE** · Headline `A Second Perspective on Your Plan` → **When Was Your Plan Last Reviewed?**
 **Ad 5:** Eyebrow `LEGACY & FAMILY` → **keep (Bill)** · Headline `The Clarity You Leave Behind` → **Who's Coordinating It All?**
@@ -48,6 +47,6 @@ Base URL: `https://www.figma.com/design/bTDDRf6J3DYBuNsRTFFnFm/Confluence-FP-Des
 **Ad 7 — no change:** Eyebrow `PLANNING THROUGH CHANGE` · Headline `When Life Changes, So Should the Plan`
 **Ad 8:** Eyebrow `PLANNING THROUGH CHANGE` → **PLANNING FOR TRANSITIONS** · Headline `A Plan for What Comes Next` → **The Years That Shape the Decades**
 **Ad 9 (carousel card 1):** Eyebrow `COORDINATED WEALTH PLANNING` → **keep (uniform across all 4 cards)** · Headline `You Have Built Each Piece` → **Everything You've Built**  ·  Cards 2/3/4: **no change** (Often Managed Apart. → Coordinated Into One Strategy → Let the Pieces Work Together)
-**Ad 10:** Eyebrow `COORDINATED WEALTH PLANNING` → **MANAGED AS ONE** · Headline `Managed Apart, or Managed as One?` → **Managed Apart, or as One?**
+**Ad 10:** Eyebrow `COORDINATED WEALTH PLANNING` → **keep (Bill)** · Headline `Managed Apart, or Managed as One?` → **Managed Apart, or as One?**
 
 *Current text is read from the live exported creatives; confirm against the live layer before overwriting.*

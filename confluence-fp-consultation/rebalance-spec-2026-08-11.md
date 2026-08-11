@@ -5,6 +5,8 @@
 
 Three layers per ad: **CAPTION** (Meta primary text), **ON-IMAGE** (burned-in eyebrow + headline), **IMAGE** (photo). Every headline decided once = same on image and in caption intent. Zero em dashes, no dollar figures, estate demoted, CFP® preserved.
 
+> **OVERRIDE — PHOTOS LOCKED (Bill, 2026-08-11):** no photo swaps this round. **Every image below is KEEP.** All "reframe" directions are shelved (kept as record for a future round). The repositioning is now carried by **copy + on-image text only** → the manual Figma pass is **text-only** (eyebrow + headline edits, no photo work). Verified: each kept photo coheres with its new copy. Accepted tradeoff: imagery still leans family/lifestyle on Ads 5/6/7/9-card1/10, so the set lands advisor-first in copy but warmer in pictures. Ad 1 correction stands: KEEP (its real image is advisor+client; the vineyard/grandchild shot is Ad 9 card 1).
+
 ---
 
 ## Per-ad spec

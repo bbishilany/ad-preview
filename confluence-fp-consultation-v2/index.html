@@ -1154,6 +1154,7 @@
   </div>
   <div class="sticky-header-center" id="progress-dots"></div>
   <div class="sticky-header-right">
+    <button class="theme-toggle" id="cap-toggle" onclick="toggleCaptionMode()" title="Toggle caption spacing (Airy vs Compact)" style="width:auto;padding:0 12px;font-size:12px;white-space:nowrap;">Captions: Airy</button>
     <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">&#9790;</button>
     <div class="reviewer-identity" id="reviewer-identity" style="display:none">
       <strong id="reviewer-identity-name"></strong>
@@ -1212,6 +1213,10 @@ const SVG_ICONS = {
 
 // ── State ──────────────────────────────────────────────────────────────────
 let _data = null;
+let _captionMode = 'airy';
+function _capFmt(t){ if(_captionMode!=='compact'||!t) return t; var b=t.split('\n\n'); if(b.length<=1) return t; var c=b.pop(); return b.join(' ')+'\n\n'+c; }
+function toggleCaptionMode(){ _captionMode=(_captionMode==='airy')?'compact':'airy'; var btn=document.getElementById('cap-toggle'); if(btn) btn.textContent=(_captionMode==='airy')?'Captions: Airy':'Captions: Compact'; if(_data&&_data.ads){ document.querySelectorAll('.ad-card').forEach(function(card){ var num=+card.getAttribute('data-ad-num'); var ad=_data.ads.find(function(a){return a.num===num}); if(!ad) return; card.querySelectorAll('.fb-feed-text').forEach(function(el){ el.textContent=_capFmt(_getField(ad,'primary_text',0)); }); }); } }
+
 let _optionIdx = {};
 let _imageOverrides = {};
 let _imageVersions = {};
@@ -1614,7 +1619,7 @@ function updateCopyInPlace(adNum) {
 
   // Update mockup text to match new version
   const feedText = cardEl.querySelector('.fb-feed-text');
-  if (feedText) feedText.textContent = _getField(ad, 'primary_text', _oi);
+  if (feedText) feedText.textContent = _capFmt(_getField(ad, 'primary_text', _oi));
   cardEl.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = _getField(ad, 'headline', _oi));
   cardEl.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = _getField(ad, 'description', _oi));
 }
@@ -1895,7 +1900,7 @@ function renderFeedMockup(ad) {
       </div>
       <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
     </div>
-    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_getField(ad, 'primary_text', _oi))}</div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_capFmt(_getField(ad, 'primary_text', _oi)))}</div>
     ${mediaHtml}
     <div class="fb-engagement-icons">
       <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
@@ -1966,7 +1971,7 @@ function renderCarouselMockup(ad) {
       </div>
       <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
     </div>
-    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_getField(ad, 'primary_text', _oi))}</div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_capFmt(_getField(ad, 'primary_text', _oi)))}</div>
     ${mediaHtml}
     <div class="fb-engagement-icons">
       <span class="fb-engage-icon">${SVG_ICONS.heart}</span>

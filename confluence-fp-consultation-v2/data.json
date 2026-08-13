@@ -10,7 +10,8 @@
     "v2 fresh baseline. GREEN PLACEHOLDER creative — solid brand green + on-image headline only. Photography + fonts finetuned later (Figma, under v1).",
     "One concept per ad (concern-led). Coordination retired from all surfaces; lives as the plain-language payoff in body copy.",
     "No urgency/scarcity, guarantees, performance claims, or dollar minimums. HNW signaled by situation. CFP® in body only; no CFA.",
-    "CTA = Request a Consultation on all except Ad 6 (Learn More = the single soft-CTA A/B test)."
+    "CTA = Request a Consultation on all except Ad 6 (Learn More = the single soft-CTA A/B test).",
+    "Ads 1-8 = HNW core (concern/situation-led). Ads 9-11 = MASS-AFFLUENT block, added so the client can react to the broader lane vs. the HNW weighting. Judge these on qualified-booking rate, not CTR."
   ],
   "ads": [
     {
@@ -282,6 +283,108 @@
       "images": [
         "ad8-feed.png",
         "ad8-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 9,
+      "title": "Mass-Affluent · Retirement Income Longevity",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "You spent your career saving for this. Will it actually last as long as you do?\n\nA long retirement turns steady saving into a harder question: making the money last through decades you can't fully predict. A CFP® professional looks at the whole picture and builds an income plan for the long haul, not around a single number on the day you retire.\n\nRequest a consultation, with no obligation.",
+      "headline": "Will It Last as Long as You Do?",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-ma-income-longevity",
+      "images": [
+        "ad9-feed.png",
+        "ad9-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 10,
+      "title": "Mass-Affluent · Investment Fees",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "You know what your investments earned last year. Do you know what they cost you?\n\nThe fees you never see can quietly work against you, year after year. A CFP® professional looks at the whole picture and shows you plainly what you are paying, and whether all of it is working for you.\n\nRequest a consultation, with no obligation.",
+      "headline": "The Fees You Never See.",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-ma-fees",
+      "images": [
+        "ad10-feed.png",
+        "ad10-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 11,
+      "title": "Mass-Affluent · On Track / Peace of Mind",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "You've done the responsible things with your money. Are you actually on track, or just hoping you are?\n\nHoping is not a plan, and most people have never seen theirs laid out in one place. A CFP® professional looks at the whole picture and shows you where you really stand, so your confidence comes from knowing instead of guessing.\n\nRequest a consultation, with no obligation.",
+      "headline": "On Track, or Just Hoping?",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-ma-on-track",
+      "images": [
+        "ad11-feed.png",
+        "ad11-story.png"
       ],
       "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
     }

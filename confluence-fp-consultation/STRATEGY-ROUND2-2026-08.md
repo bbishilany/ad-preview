@@ -15,6 +15,18 @@ Client's marketing lead pushed back on the current 10-ad set: simplify, add edge
 ## The one guardrail we hold against the client
 Her sample concepts (retirement "enough," "unplanned") are **mass-affluent**, not HNW. Sharper hooks cut both ways: a hook any 62-year-old relates to books cheaper, *wronger* leads. Fix = **concept selection is the positioning** — lead-weight concerns that are HNW-by-situation (business sale, concentrated stock, equity comp) or whose honest answer requires the whole picture. Edge here = **precision, not volume** (compliance bans urgency/scarcity/claims anyway).
 
+## Why we lead-weight HNW — and the mass-affluent option (per Bill, 2026-08-13)
+**Why HNW-weighted is the default recommendation:**
+- The campaign's job is to book **consultations that become clients**, and CFP's service model + economics are built for complex, higher-asset households. An unqualified booking costs the same to generate but can't convert — so the real metric is **cost-per-*qualified*-consultation**, not cost-per-lead.
+- Meta optimizes toward whoever clicks. A hook any 62-year-old relates to ("how do I know when I can retire?") wins cheap clicks and CTR — and fills the calendar with mass-affluent, single-issue prospects. Sharper **situational** hooks (business sale, concentrated stock, equity comp) are nearly invisible to a salaried retiree and land hard with the exact prospect CFP wants. **The concept itself pre-qualifies.**
+- It protects positioning. A single-concern ad with no differentiator is commoditized — the prospect can get that answer anywhere. Situational concerns are ones only a coordinated, independent firm can credibly answer, which is what justifies the consultation.
+
+**The mass-affluent option (offered, not the default):**
+- If the goal for this campaign is **volume / broad awareness**, or the client wants to grow a mass-affluent book, we **flip the weighting** — lead with the universal on-ramps (retirement timing, plan-for-the-unplanned), which pull the most volume at the lowest CPL.
+- **Trade-off:** more leads, lower average fit, more advisor time spent qualifying, softer differentiation.
+- **Recommended either way:** keep 1–2 mass-affluent on-ramps as the widest net, weight budget to the situational concepts, and let the **qualified-booking rate** reset the ratio after the first read. This is a dial, not a door — we can move it with data.
+- **For the client:** "Here's why we're leaning HNW; if you'd rather prioritize volume / mass-affluent reach, here's the flip and exactly what it trades away."
+
 ## Recommended portfolio (~6 core + 2 rounding — one felt concern each)
 Budget-weighted to the situation concepts. All compliant (no urgency/scarcity/guarantees/performance/dollar minimums); CFP® in body only; HNW by situation.
 
@@ -42,6 +54,30 @@ Budget-weighted to the situation concepts. All compliant (no urgency/scarcity/gu
 4. **CTA button** — "Learn More" → "Request a Consultation" on P1/P2 concepts? *(Rec: YES.)*
 5. **Settle pure-hook vs. hook→reframe with an A/B** rather than in the room? *(Rec: YES.)*
 6. **Client reply framing (Hugo):** concede the edge visibly, protect the position quietly — "You're right; we're leading with the concern and dropping the jargon. We're keeping the coordinated-plan reveal as the payoff because it's why a consultation beats a one-off answer — here's the concern-led set + an A/B to prove the ratio."
+
+## Copy drafted + gated → written to the sheet's PROPOSED columns (2026-08-13)
+Bill greenlit decisions 1–6. Aaliyah drafted full copy for all 8 concepts; Serena gated **6 PASS + 2 headline-only REVISE** (applied):
+- Ad concept "Concentrated Stock" headline → **"One Bad Year Shouldn't Undo Decades."** (was restating the hook)
+- Ad concept "Legacy" headline → **"Leave a Plan They Can Follow."** (overlay already carries the question)
+- Concept 6 (Plan for the Unplanned) keeps **"Learn More"** on both button and story sticker — it is the single soft-CTA A/B test; matching sticker→button→invite keeps the test honest.
+
+Clean on all hard gates: no urgency/scarcity/guarantees/performance/dollar figures; CFP® body-only ("a CFP® professional"), no CFA; "coordinate/coordinating" retired from every surface (reads as "the whole picture / as one plan / how the pieces fit"); natural verbs fixed; no em/en dashes or exclamations.
+
+**Current-ad → new-concept mapping (as written into the sheet):**
+| Current ad | Becomes |
+|---|---|
+| 1 · T1 Coordination A | **The Whole Picture** (the one KEPT differentiator ad) |
+| 2 · T1 Coordination B | **Concentrated Stock** |
+| 3 · T2 Second Opinion A | **Second Opinion** |
+| 4 · T2 Second Opinion B | **Business Sale / Liquidity Event** |
+| 5 · T3 Legacy A | **Legacy / What You Leave** |
+| 6 · T3 Legacy B | **Equity Compensation** |
+| 7 · T5 Life-Stage A | **Retirement Timing** |
+| 8 · T5 Life-Stage B | **Plan for the Unplanned** (Learn More test) |
+| 9 · T1 Carousel | CONSOLIDATE — retell Whole Picture as a swipe; hold for a later format test |
+| 10 · T1 gap-frame | RETIRE — duplicate of Ad 1's concept; keep one differentiator |
+
+10 territory ads → 8 distinct single-concern concepts. Status: **sheet-level before/after ready for Bill's review, then client**. NOT yet applied to `data.json` / the live preview — that waits for sheet approval (Bill's flow: sheet first, ad preview after) and client-side compliance (Marissa).
 
 ## Next step on greenlight
 Aaliyah drafts full `primary_text` for the chosen portfolio → Serena voice/compliance gate → Marissa compliance sign-off → Sofia reworks image direction to single-concern → fill the PROPOSED columns in the sheet → redeploy the preview. (RULE #38: this memo is saved to the branch; not published to the client until Bill approves.)

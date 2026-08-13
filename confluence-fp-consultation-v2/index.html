@@ -1154,7 +1154,7 @@
   </div>
   <div class="sticky-header-center" id="progress-dots"></div>
   <div class="sticky-header-right">
-    <button class="theme-toggle" id="cap-toggle" onclick="toggleCaptionMode()" title="Toggle caption spacing (Airy vs Compact)" style="width:auto;padding:0 12px;font-size:12px;white-space:nowrap;">Captions: Airy</button>
+    <button class="theme-toggle" id="cap-toggle" onclick="toggleCaptionMode()" title="Toggle the solution line (3rd beat) on/off" style="width:auto;padding:0 12px;font-size:12px;white-space:nowrap;">3rd beat: On</button>
     <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">&#9790;</button>
     <div class="reviewer-identity" id="reviewer-identity" style="display:none">
       <strong id="reviewer-identity-name"></strong>
@@ -1213,9 +1213,9 @@ const SVG_ICONS = {
 
 // ── State ──────────────────────────────────────────────────────────────────
 let _data = null;
-let _captionMode = 'airy';
-function _capFmt(t){ if(_captionMode!=='compact'||!t) return t; var b=t.split('\n\n'); if(b.length<=1) return t; var c=b.pop(); return b.join(' ')+'\n\n'+c; }
-function toggleCaptionMode(){ _captionMode=(_captionMode==='airy')?'compact':'airy'; var btn=document.getElementById('cap-toggle'); if(btn) btn.textContent=(_captionMode==='airy')?'Captions: Airy':'Captions: Compact'; if(_data&&_data.ads){ document.querySelectorAll('.ad-card').forEach(function(card){ var num=+card.getAttribute('data-ad-num'); var ad=_data.ads.find(function(a){return a.num===num}); if(!ad) return; card.querySelectorAll('.fb-feed-text').forEach(function(el){ el.textContent=_capFmt(_getField(ad,'primary_text',0)); }); }); } }
+let _captionMode = 'full';
+function _capFmt(t){ if(_captionMode!=='short'||!t) return t; var b=t.split('\n\n'); if(b.length<3) return t; b.splice(b.length-2,1); return b.join('\n\n'); }
+function toggleCaptionMode(){ _captionMode=(_captionMode==='full')?'short':'full'; var btn=document.getElementById('cap-toggle'); if(btn) btn.textContent=(_captionMode==='full')?'3rd beat: On':'3rd beat: Off'; if(_data&&_data.ads){ document.querySelectorAll('.ad-card').forEach(function(card){ var num=+card.getAttribute('data-ad-num'); var ad=_data.ads.find(function(a){return a.num===num}); if(!ad) return; card.querySelectorAll('.fb-feed-text').forEach(function(el){ el.textContent=_capFmt(_getField(ad,'primary_text',0)); }); }); } }
 
 let _optionIdx = {};
 let _imageOverrides = {};

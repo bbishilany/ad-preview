@@ -16,7 +16,7 @@
   "ads": [
     {
       "num": 1,
-      "title": "Business Sale / Liquidity Event",
+      "title": "Exit Planning (Before the Sale)",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -24,8 +24,8 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "You built the business over decades. Do you know what the day after you sell it looks like?\n\nA sale touches your taxes, your investments, and your estate plan all at once. A CFP® professional looks at the whole picture as one plan, so what comes after the sale is something you're ready for.\n\nRequest a consultation, with no obligation.",
-      "headline": "The Sale Is the Easy Part.",
+      "primary_text": "You will step away from the business one day. Is the plan for that day already taking shape?\n\nThe decisions that shape a good exit, from tax structure to timing to what comes next, are made in the years before the sale, not after. A CFP® professional helps you plan the exit while every option is still open.\n\nRequest a consultation, with no obligation.",
+      "headline": "Plan the Exit Before You Sell.",
       "description": "",
       "cta": "Request a Consultation",
       "hook": "",
@@ -41,7 +41,7 @@
       "arc": "",
       "type": "image",
       "week": 1,
-      "utm_content": "v2-business-sale",
+      "utm_content": "v2-exit-planning",
       "images": [
         "ad1-feed.png",
         "ad1-story.png"

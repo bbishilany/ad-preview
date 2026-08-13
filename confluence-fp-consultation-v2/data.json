@@ -1,0 +1,290 @@
+{
+  "campaign": "Request a Consultation — v2 GREEN BASELINE (concern-led, 2026-08-13)",
+  "page_name": "Confluence Financial Partners",
+  "ig_handle": "confluencefp",
+  "brandmark": "images/confluence-brandmark.jpg",
+  "event_date": "",
+  "venue": "",
+  "co_presenters": "",
+  "compliance_notes": [
+    "v2 fresh baseline. GREEN PLACEHOLDER creative — solid brand green + on-image headline only. Photography + fonts finetuned later (Figma, under v1).",
+    "One concept per ad (concern-led). Coordination retired from all surfaces; lives as the plain-language payoff in body copy.",
+    "No urgency/scarcity, guarantees, performance claims, or dollar minimums. HNW signaled by situation. CFP® in body only; no CFA.",
+    "CTA = Request a Consultation on all except Ad 6 (Learn More = the single soft-CTA A/B test)."
+  ],
+  "ads": [
+    {
+      "num": 1,
+      "title": "Business Sale / Liquidity Event",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "You built the business over decades. Do you know what the day after you sell it looks like?\n\nA sale touches your taxes, your investments, and your estate plan all at once. A CFP® professional looks at the whole picture as one plan, so the decision you make once is one you can live with.\n\nRequest a consultation, with no obligation.",
+      "headline": "You Only Sell the Business Once.",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-business-sale",
+      "images": [
+        "ad1-feed.png",
+        "ad1-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 2,
+      "title": "Concentrated Stock Position",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Most of your wealth sits in one company's stock. What happens to your plan if that stock has a bad year?\n\nConcentration built your wealth, and it can undo it just as fast. A CFP® professional looks at the whole picture and builds a plan to lower the risk without ignoring the tax bill that comes with selling.\n\nRequest a consultation, with no obligation.",
+      "headline": "One Bad Year Shouldn't Undo Decades.",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-concentrated-stock",
+      "images": [
+        "ad2-feed.png",
+        "ad2-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 3,
+      "title": "Retirement Timing",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "You've saved for thirty years. How do you actually know when it's enough?\n\nThe answer isn't a number in an account. It's how your income, your savings, and your taxes work together once the paychecks stop, and a CFP® professional helps you find the answer that fits your life instead of a rule of thumb.\n\nRequest a consultation, with no obligation.",
+      "headline": "The Hardest Part of Retirement? Knowing When.",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-retirement-timing",
+      "images": [
+        "ad3-feed.png",
+        "ad3-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 4,
+      "title": "Second Opinion",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your advisor manages your investments. When did anyone last look at everything else?\n\nYour taxes, your estate plan, and your income strategy all move with your investments. A CFP® professional looks at how the pieces fit together and tells you plainly what a second set of eyes finds.\n\nRequest a consultation, with no obligation.",
+      "headline": "Who's Looking at the Whole Picture?",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-second-opinion",
+      "images": [
+        "ad4-feed.png",
+        "ad4-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 5,
+      "title": "Equity Compensation",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your equity finally vested into real money. Do you have a plan for it, or just a login?\n\nEquity comp comes with tax timing and concentration risk that are easy to get wrong. A CFP® professional looks at it alongside the rest of your finances and turns a pile of shares into a plan.\n\nRequest a consultation, with no obligation.",
+      "headline": "Your Equity Grew. Has the Plan Kept Up?",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-equity-comp",
+      "images": [
+        "ad5-feed.png",
+        "ad5-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 6,
+      "title": "Plan for the Unplanned",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "A plan that only works if nothing goes wrong isn't much of a plan. What happens to yours if something does?\n\nMost plans look fine until life surprises them. A CFP® professional pressure-tests yours against the things you can't schedule, so the whole picture still holds when one part shifts.\n\nSee what a plan built for the unexpected looks like.",
+      "headline": "What's Your Plan for the Unplanned?",
+      "description": "",
+      "cta": "Learn More",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Learn More"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-unplanned",
+      "images": [
+        "ad6-feed.png",
+        "ad6-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 7,
+      "title": "Legacy / What You Leave",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "One day everything you built passes to the people you love. Will they inherit a plan, or a puzzle?\n\nMost families leave behind accounts in a dozen places and no map. A CFP® professional helps you leave a plan your family can actually follow, so what you built becomes clarity for them instead of a project.\n\nRequest a consultation, with no obligation.",
+      "headline": "Leave a Plan They Can Follow.",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-legacy",
+      "images": [
+        "ad7-feed.png",
+        "ad7-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    },
+    {
+      "num": 8,
+      "title": "The Whole Picture",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your investments, your taxes, and your estate plan are each handled well. But is anyone making sure they add up?\n\nHandled apart, good decisions can quietly work against each other. A CFP® professional looks at all of it as one plan, so your money pulls in the same direction instead of three.\n\nRequest a consultation, with no obligation.",
+      "headline": "Managed in Pieces, or as One?",
+      "description": "",
+      "cta": "Request a Consultation",
+      "hook": "",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "v2 green placeholder",
+        "text_overlay": "",
+        "secondary_text": "",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "",
+      "type": "image",
+      "week": 1,
+      "utm_content": "v2-whole-picture",
+      "images": [
+        "ad8-feed.png",
+        "ad8-story.png"
+      ],
+      "image_direction": "v2 GREEN PLACEHOLDER — solid #12493C, on-image headline only. Photography + font finetune pending tone/copy approval (built in Figma under v1)."
+    }
+  ],
+  "client": "confluence-fp-consultation-v2"
+}

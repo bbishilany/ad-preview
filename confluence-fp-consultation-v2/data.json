@@ -322,7 +322,7 @@
     },
     {
       "num": 10,
-      "title": "Mass-Affluent · Investment Fees",
+      "title": "Mass-Affluent · Value of Advice",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -330,7 +330,7 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Do you know what your investments cost you?\n\nThe fees you never see add up, year after year.\n\nA CFP® professional can help you see what you're paying, and whether it's working for you.\n\nRequest a consultation, with no obligation.",
+      "primary_text": "You know what you pay. Do you know what you're getting for it?\n\nThe real measure isn't the fee, it's the value behind it.\n\nA CFP® professional brings holistic planning and a partnership built around your goals.\n\nRequest a consultation, with no obligation.",
       "headline": "What Are You Really Paying?",
       "description": "",
       "cta": "Request a Consultation",
@@ -347,7 +347,7 @@
       "arc": "",
       "type": "image",
       "week": 1,
-      "utm_content": "v2-ma-fees",
+      "utm_content": "v2-ma-value",
       "images": [
         "ad10-feed.png",
         "ad10-story.png"

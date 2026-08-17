@@ -169,7 +169,7 @@ def write_feedback_markdown(slug: str, feedback_rows: list[dict]) -> None:
     if not feedback_rows:
         return
 
-    copy_dir = MILEAGE_OS / "clients" / slug / "copy"
+    copy_dir = MILEAGE_OS / "data-clients" / slug / "copy"
     copy_dir.mkdir(parents=True, exist_ok=True)
     output_path = copy_dir / "feedback-meta-ads-external.md"
 
@@ -295,14 +295,10 @@ def sync_client(sb: Client, slug: str) -> dict:
 def git_commit_and_push():
     """Add backup files, commit, and push."""
     try:
-        # Stage backup files
+        # Stage backup files, tracked and new. The pathspec needs the
+        # trailing /* — "*/backups/" matches no files and git add exits 128.
         subprocess.run(
-            ["git", "add", "*/backups/"],
-            cwd=HERE, capture_output=True, text=True,
-        )
-        # Also stage any new backup dirs
-        subprocess.run(
-            ["git", "add", "-A", "*/backups/"],
+            ["git", "add", "-A", "--", "*/backups/*"],
             cwd=HERE, capture_output=True, text=True,
         )
 

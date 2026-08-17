@@ -44,6 +44,17 @@
     "pulled_at": null
   },
   {
+    "id": "bed2dbb0-d000-4548-a29f-73730af300d6",
+    "campaign_id": "confluence-fp",
+    "ad_num": 4,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 4 approved",
+    "created_at": "2026-04-16T15:15:16.873484+00:00",
+    "pulled_at": null
+  },
+  {
     "id": "2496d4c2-bc99-47c3-9a69-70045b714631",
     "campaign_id": "confluence-fp",
     "ad_num": 5,
@@ -66,6 +77,17 @@
     "pulled_at": null
   },
   {
+    "id": "490b77f5-1071-4e3d-830d-e3e91a8f4617",
+    "campaign_id": "confluence-fp",
+    "ad_num": 5,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 5 approved",
+    "created_at": "2026-04-16T15:16:02.750979+00:00",
+    "pulled_at": null
+  },
+  {
     "id": "59b66a5b-88c5-452b-a679-cc1f280a4d7e",
     "campaign_id": "confluence-fp",
     "ad_num": 6,
@@ -74,6 +96,17 @@
     "verdict": "comment_only",
     "comment": "In the second line of the copy, can we change it to \"Join our leadership team as they cover a range of topics\"",
     "created_at": "2026-04-10T15:42:29.346317+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "c0646421-d140-4ffa-b241-438718ada249",
+    "campaign_id": "confluence-fp",
+    "ad_num": 6,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 6 approved",
+    "created_at": "2026-04-16T15:16:24.300063+00:00",
     "pulled_at": null
   },
   {
@@ -88,6 +121,17 @@
     "pulled_at": null
   },
   {
+    "id": "801a93c5-84a6-4533-a5ca-7aa985df56b5",
+    "campaign_id": "confluence-fp",
+    "ad_num": 7,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 7 approved",
+    "created_at": "2026-04-16T15:16:26.586399+00:00",
+    "pulled_at": null
+  },
+  {
     "id": "5a7c52b5-5465-4a7c-a4e0-60cf9477d673",
     "campaign_id": "confluence-fp",
     "ad_num": 8,
@@ -99,6 +143,17 @@
     "pulled_at": null
   },
   {
+    "id": "48a5769b-3006-4a6b-aec6-b068142bf0c8",
+    "campaign_id": "confluence-fp",
+    "ad_num": 8,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 8 approved",
+    "created_at": "2026-04-16T15:17:37.406873+00:00",
+    "pulled_at": null
+  },
+  {
     "id": "919449f2-c734-4091-ac21-2ab7671632f6",
     "campaign_id": "confluence-fp",
     "ad_num": 9,
@@ -107,6 +162,17 @@
     "verdict": "comment_only",
     "comment": "This copy feels a little too short and choppy. I know we need to keep it short and to the point, can we add a little more though. Also, let's not say full team. Our full team will not be there.",
     "created_at": "2026-04-10T16:00:59.524024+00:00",
+    "pulled_at": null
+  },
+  {
+    "id": "24f87c76-ad17-41ac-adf3-6f07f6b0e523",
+    "campaign_id": "confluence-fp",
+    "ad_num": 9,
+    "reviewer_name": "Bill Bishilany",
+    "reviewer_role": "Client",
+    "verdict": "approve",
+    "comment": "Ad 9 approved",
+    "created_at": "2026-04-16T15:17:39.302345+00:00",
     "pulled_at": null
   }
 ]

@@ -15,7 +15,7 @@
   "ads": [
     {
       "num": 1,
-      "title": "T1 Coordination · Variation A",
+      "title": "WM Clarity · Whole Picture",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -23,29 +23,29 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "You have built investments, a business, taxes, and an estate.\n\nToo often, they are managed apart.\n\nOur Wealth Managers and Certified Financial Planners® work to coordinate them into one strategy.\n\nRequest a consultation, with no obligation.",
-      "headline": "Is Every Piece Working Together?",
-      "description": "One coordinated strategy.",
+      "primary_text": "When did you last feel completely clear about your whole financial picture?\n\nAs your wealth grows, the full picture gets harder to see on your own.\n\nOur Wealth Planning Team works to bring it into focus, so you can move forward with confidence.\n\nRequest a consultation, with no obligation.",
+      "headline": "Clarity on the Whole Picture",
+      "description": "See it all clearly.",
       "cta": "Learn More",
-      "hook": "You have spent years building each piece of your financial life. Is every piece working together?",
+      "hook": "When did you last feel completely clear about your whole financial picture?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
-        "image": "Mature couple reviewing together over a deep-green scrim; centered Ivypresto headline",
-        "text_overlay": "Is Every Piece Working Together?",
-        "secondary_text": "One coordinated strategy.",
+        "image": "Advisor and client reviewing a plan together over a deep-green scrim; calm, clear; centered IvyPresto headline",
+        "text_overlay": "See the Whole Picture Clearly.",
+        "secondary_text": "Move forward with confidence.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Coordination — gentle gap frame, self-assessment (primary territory / strongest differentiator)",
+      "arc": "Wealth management — clarity of the whole financial picture (replaces T1 Coordination A). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "t1-coordination-a",
+      "utm_content": "wm-clarity-whole-picture",
       "images": [
         "ad1-t1-coordination-a-feed.png",
         "ad1-t1-coordination-a-story.png"
       ],
-      "image_direction": "Photo-dominant. BRANDED team shot CONFLUENCE_2025-623 (Bill-selected) — three advisors at the table, lead smiling to camera (eye-line), city window. Coordination = the team working a plan together. Standard scrim feed / Soft story, faces-first, compact block, 10-12% padding, logo scrim. White Ivypresto headline, outlined white pill CTA."
+      "image_direction": "Photo-dominant, WEALTH MANAGEMENT / clarity concept (REPLACES coordination). Advisor + client (or the planning team with a client) reviewing a single plan together at the table, calm and unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow 'COORDINATED WEALTH PLANNING' -> 'WEALTH PLANNING'; on-image headline 'Is Every Piece Working Together?' -> 'See the Whole Picture Clearly.' Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
     {
       "num": 2,

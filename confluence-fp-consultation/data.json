@@ -467,6 +467,37 @@
       "utm_content": "exit-planning-proactive",
       "images": [],
       "image_direction": "NEW CREATIVE NEEDED. Exit Planning (proactive): confident business owner in control, forward-looking. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'EXIT PLANNING'); on-image headline 'Exit on Your Terms.' Deep-green scrim, white IvyPresto, outlined white pill CTA. Add CEPA (Certified Exit Planning Advisor) to copy ONLY after verifying a named advisor holds it."
+    },
+    {
+      "num": 13,
+      "title": "Philanthropic Planning · Give With Intention",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Your generosity has a purpose. Does it have a plan?\n\nIntentional giving does more than good intentions ever could.\n\nOur Wealth Planning Team helps you turn generosity into a strategy, tax-aware and built around your values.\n\nRequest a consultation, with no obligation.",
+      "headline": "Give With Intention",
+      "description": "Generosity, with a plan.",
+      "cta": "Request Time",
+      "hook": "Your generosity has a purpose. Does it have a plan?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Warm, dignified giving/values scene over a deep-green scrim; centered IvyPresto headline",
+        "text_overlay": "Give With Intention.",
+        "secondary_text": "Generosity, with a plan.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Philanthropic Planning — turn generosity into an intentional, tax-aware strategy woven into the wealth plan (grounds in the new service page, Figma node 1680-348). HNW; clear over clever.",
+      "type": "image",
+      "week": 1,
+      "utm_content": "philanthropic-planning-intention",
+      "images": [],
+      "image_direction": "NEW CREATIVE NEEDED. Philanthropic Planning: warm but dignified (a cause, a family giving together) — not saccharine. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'PHILANTHROPIC PLANNING'); on-image headline 'Give With Intention.' Deep-green scrim, white IvyPresto, outlined white pill CTA. 'tax-aware' framed as planning only, never tax advice."
     }
   ],
   "client": "confluence-fp-consultation"

@@ -57,3 +57,9 @@ Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
 - On-image headline: `Exit on Your Terms.`
 - Photo: business owner at a forward-looking, pivotal moment.
 - Copy: add "Certified Exit Planning Advisor" (CEPA) only after verifying a named advisor holds it.
+
+### Ad 13 — Philanthropic Planning — NEW CREATIVE (no frame yet)
+Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
+- Eyebrow: `WEALTH PLANNING` (or `PHILANTHROPIC PLANNING`)
+- On-image headline: `Give With Intention.`
+- Photo: warm but dignified giving/values scene (a cause, a family giving together).

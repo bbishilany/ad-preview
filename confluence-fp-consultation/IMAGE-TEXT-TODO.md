@@ -1,3 +1,6 @@
+### Ad 4 — PIVOTED: carousel -> single image ('One Team, One Plan')
+New single-image creative needed (comprehensive team shot). Eyebrow `YOUR WHOLE FINANCIAL LIFE`, on-image `One Team, One Plan.` Full service suite now lives in the caption. Old `ad9-carousel-card1..10.png` orphaned (left in place).
+
 > **Ad 1 — DONE.** Finished Figma creative (feed + story) pulled into the preview; `stories.finished=true` so the story mockup shows it as-is. Remaining items below.
 
 # On-Image Text — Figma Re-Export Queue (do all at once)

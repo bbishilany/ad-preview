@@ -122,91 +122,33 @@
     },
     {
       "num": 4,
-      "title": "WM Breadth · Carousel",
-      "format": "Carousel, 10 cards at 1080x1350 (Feed 4:5)",
+      "title": "WM Breadth · One Team, One Plan",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Carousel"
       ],
       "production": "",
-      "primary_text": "Your financial life is bigger than your investments alone.\n\nThe more of it that moves together, the clearer the path forward.\n\nOur Wealth Planning Team brings every part into one plan built around you.\n\nRequest a consultation, with no obligation.",
+      "primary_text": "Your financial life is bigger than your portfolio.\n\nRetirement and income. Taxes. Estate. Insurance. Education. Giving.\n\nOur Wealth Planning Team brings every part into one plan, built around you.\n\nRequest a consultation, with no obligation.",
       "headline": "One Team, One Plan",
       "description": "Your whole financial life.",
       "cta": "Request Time",
-      "hook": "Your financial life is bigger than your investments alone.",
+      "hook": "Your financial life is bigger than your portfolio.",
       "alt_headlines": [],
-      "cards": [
-        {
-          "num": 1,
-          "label": "One team for every part of your financial life.",
-          "caption": ""
-        },
-        {
-          "num": 2,
-          "label": "Retirement Planning",
-          "caption": "Turn a lifetime of saving into income that lasts."
-        },
-        {
-          "num": 3,
-          "label": "Estate Planning",
-          "caption": "Plan for how what you've built passes on."
-        },
-        {
-          "num": 4,
-          "label": "Social Security Analysis",
-          "caption": "Time your benefits to get the most from them."
-        },
-        {
-          "num": 5,
-          "label": "Tax Planning",
-          "caption": "Plan with taxes in mind, all year."
-        },
-        {
-          "num": 6,
-          "label": "Employee Benefit Review",
-          "caption": "Make the most of the benefits you're offered."
-        },
-        {
-          "num": 7,
-          "label": "Insurance Planning",
-          "caption": "Protect the plan against the unexpected."
-        },
-        {
-          "num": 8,
-          "label": "Cash Flow Analysis",
-          "caption": "See what comes in, goes out, and what's left to build on."
-        },
-        {
-          "num": 9,
-          "label": "Philanthropic Planning",
-          "caption": "Give in a way that reflects your values."
-        },
-        {
-          "num": 10,
-          "label": "Education Planning",
-          "caption": "Fund education without derailing your plan."
-        }
-      ],
+      "cards": [],
       "stories": {
-        "cta_sticker": "Request a Consultation"
+        "cta_sticker": "Request a Consultation",
+        "image": "The Wealth Planning Team together / comprehensive planning over a deep-green scrim; centered IvyPresto headline",
+        "eyebrow": "YOUR WHOLE FINANCIAL LIFE",
+        "text_overlay": "One Team, One Plan.",
+        "secondary_text": "Every part, one plan."
       },
       "reels": null,
-      "arc": "Wealth Management (Service Carousel) — full-service breadth via the Wealth Planning Team (replaces T1 Coordination carousel). Services shown on the swipe per Marissa. Clear over clever.",
-      "type": "carousel",
+      "arc": "Wealth Management — the full suite in one plan (pivoted from the service carousel to a single image; caption touches the whole suite). HNW; clear over clever.",
+      "type": "image",
       "week": 1,
-      "utm_content": "wm-breadth-carousel",
-      "images": [
-        "ad9-carousel-card1.png",
-        "ad9-carousel-card2.png",
-        "ad9-carousel-card3.png",
-        "ad9-carousel-card4.png",
-        "ad9-carousel-card5.png",
-        "ad9-carousel-card6.png",
-        "ad9-carousel-card7.png",
-        "ad9-carousel-card8.png",
-        "ad9-carousel-card9.png",
-        "ad9-carousel-card10.png"
-      ],
-      "image_direction": "Service carousel (cover + 9 services, minus Business Consulting & RJ Banking per Marissa). Cards are BRANDED PLACEHOLDERS (green #12493C, mint accents) — design to polish typography (IvyPresto), add icons, and finalize. Each service card = eyebrow + service name + one-line description + the client concern it answers. Files ad9-carousel-card1..10.png."
+      "utm_content": "wm-breadth-one-plan",
+      "images": [],
+      "image_direction": "NEW SINGLE-IMAGE creative (pivoted from the 10-card carousel). One comprehensive shot: the Wealth Planning Team together, or an advisor+client with a whole-picture feel. Eyebrow 'YOUR WHOLE FINANCIAL LIFE'; on-image headline 'One Team, One Plan.' Deep-green scrim, white IvyPresto, outlined white pill CTA. The caption carries the service suite; the image stays clean (no service list baked in). Old ad9-carousel-card*.png now orphaned (left in place)."
     },
     {
       "num": 5,

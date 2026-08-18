@@ -49,3 +49,8 @@ Text-only edits (keep photos; Ad 6 optional swap to a business-owner + successor
 |----|-----------|------------------------------|
 | **5** — Legacy | `WEALTH PLANNING` | `The Clarity You Leave Behind` → `A Legacy By Design.` |
 | **6** — Succession | `WEALTH PLANNING` | `Wealth That Passes On With Purpose` → `Who Carries It Forward?` |
+
+### Ad 8 — Retirement Planning — text-only edit
+Keep/refresh photo (confident near-retirement couple or individual).
+- Eyebrow → `WEALTH PLANNING`
+- On-image headline FROM `Is Your Plan Ready for What's Next?` → `Income That Lasts.`

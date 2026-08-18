@@ -83,7 +83,7 @@
     },
     {
       "num": 3,
-      "title": "T2 Second Opinion · Variation A",
+      "title": "Your Advisor · The Standard",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -91,33 +91,33 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy and what passes to the next generation?\n\nFor families whose wealth spans multiple advisors and entities, our team offers a coordinated, independent perspective.\n\nRequest a consultation, with no obligation.",
-      "headline": "Who Sees the Whole Picture?",
-      "description": "No agenda but your own.",
+      "primary_text": "What should your financial advisor be doing for you?\n\nGreat advice is about your whole financial life, not just your investments.\n\nThat's what our Wealth Planning Team is built to do, honestly and objectively, around your goals.\n\nRequest a consultation, with no obligation.",
+      "headline": "The Standard You Deserve",
+      "description": "What great advice does.",
       "cta": "Request Time",
-      "hook": "Your advisor manages your portfolio. Who is coordinating it with your tax strategy, your estate plan, and what passes to the next generation?",
+      "hook": "What should your financial advisor be doing for you?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "A candid advisory conversation; centered white Ivypresto headline over deep-green scrim",
-        "text_overlay": "An Independent, Outside Perspective",
-        "secondary_text": "No agenda but your own.",
+        "text_overlay": "The Standard You Should Expect.",
+        "secondary_text": "What great advice does.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Second opinion — low-risk reappraisal; disarms 'I already have an advisor'",
+      "arc": "Your Advisor — the standard great advice should meet (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "t2-second-opinion-a",
+      "utm_content": "advisor-the-standard",
       "images": [
         "ad3-t2-second-opinion-a-feed.png",
         "ad3-t2-second-opinion-a-story.png"
       ],
-      "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-204 (Bill-selected) — mature advisor + mature (50+) client across the table = a second perspective, on-audience HNW. Soft scrim feed / Standard story, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+      "image_direction": "Your-advisor / the-standard concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'An Independent, Outside Perspective' -> 'The Standard You Should Expect.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
       "num": 4,
-      "title": "T2 Second Opinion · Variation B",
+      "title": "Your Advisor · Proactive",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -125,29 +125,29 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Many of the families we serve came to us after years with another advisor.\n\nTheir wealth had grown complex enough, across multiple holdings and entities, that a coordinated, independent review brought welcome clarity.\n\nRequest a consultation, with no obligation.",
-      "headline": "When Was Your Plan Last Reviewed?",
-      "description": "Often, all it takes.",
+      "primary_text": "When did your advisor last bring you something you didn't ask for?\n\nGood advice doesn't wait to be asked.\n\nOur Wealth Planning Team works to stay a step ahead, bringing ideas before you need them.\n\nRequest a consultation, with no obligation.",
+      "headline": "Advice That Comes to You",
+      "description": "A step ahead.",
       "cta": "Request Time",
-      "hook": "Many of the individuals and families we serve came to us after years with another advisor. Often, they simply wanted a second perspective.",
+      "hook": "When did your advisor last bring you something you didn't ask for?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "Engaged advisory discussion; centered white Ivypresto headline over deep-green scrim",
-        "text_overlay": "A Second Perspective on Your Plan",
-        "secondary_text": "Often, all it takes.",
+        "text_overlay": "Advice That Comes to You.",
+        "secondary_text": "A step ahead.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Second opinion — social proof ('many came to us for a second perspective')",
+      "arc": "Your Advisor — proactive advice, brings you ideas before you ask (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 2,
-      "utm_content": "t2-second-opinion-b",
+      "utm_content": "advisor-proactive",
       "images": [
         "ad4-t2-second-opinion-b-feed.png",
         "ad4-t2-second-opinion-b-story.png"
       ],
-      "image_direction": "Photo-dominant. BRANDED shot CONFLUENCE_2025-748 (Bill-selected) — a mature woman advisor + team with a client (featured-advisor diversity). Soft scrim, faces-first, compact block. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+      "image_direction": "Your-advisor / proactive concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'A Second Perspective on Your Plan' -> 'Advice That Comes to You.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
       "num": 5,

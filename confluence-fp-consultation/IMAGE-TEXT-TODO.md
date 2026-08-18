@@ -33,3 +33,11 @@ Build from scratch (feed 1080x1350 + story 1080x1920), same deep-green scrim + w
 - On-image headline: `What Is Your Fee Buying?`
 - Photo: advisor + client in a trusting conversation, city window, faces-first.
 - Files: `ad11-...-feed.png`, `ad11-...-story.png`.
+
+### Ads 3 & 4 — Your Advisor (repositioned from second opinion) — text-only edits
+
+Keep existing advisor+client photos; edit eyebrow + headline in Figma.
+| Ad | Eyebrow FROM → TO | On-image headline FROM → TO |
+|----|-------------------|------------------------------|
+| **3** — The Standard | *(verify)* → `WEALTH PLANNING` | `An Independent, Outside Perspective` → `The Standard You Should Expect.` |
+| **4** — Proactive | *(verify)* → `WEALTH PLANNING` | `A Second Perspective on Your Plan` → `Advice That Comes to You.` |

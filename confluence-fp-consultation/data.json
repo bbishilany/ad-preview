@@ -121,7 +121,7 @@
       "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
     {
-      "num": 5,
+      "num": 4,
       "title": "Your Advisor · The Standard",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
@@ -157,7 +157,7 @@
       "image_direction": "Your-advisor / the-standard concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'An Independent, Outside Perspective' -> 'The Standard You Should Expect.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
-      "num": 6,
+      "num": 5,
       "title": "Your Advisor · Proactive",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
@@ -193,7 +193,7 @@
       "image_direction": "Your-advisor / proactive concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'A Second Perspective on Your Plan' -> 'Advice That Comes to You.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
-      "num": 7,
+      "num": 6,
       "title": "WM Value of Advice",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
@@ -227,6 +227,42 @@
         "ad7-value-story.png"
       ],
       "image_direction": "NEW CREATIVE NEEDED (no v1 frame yet). WEALTH MANAGEMENT / value-of-advice. Advisor + client in a trusting conversation, city window, faces-first. Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'What Are You Paying For?'. Deep-green scrim, white IvyPresto headline, outlined white pill CTA. Feed 1080x1350 + Story 1080x1920."
+    },
+    {
+      "num": 7,
+      "title": "2nd Opinion · Communication",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "Figma finished creative v2 (2x) placed by filename.",
+      "primary_text": "When did you last hear from your advisor?\n\nGood advice is an ongoing conversation, not an annual update.\n\nOur Wealth Planning Team stays in regular touch, so you know where you stand.\n\nRequest a consultation, with no obligation.",
+      "headline": "Know Where You Stand",
+      "description": "Never left wondering.",
+      "cta": "Request Time",
+      "hook": "When did you last hear from your advisor?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Advisor and client in easy, regular conversation over a deep-green scrim; centered IvyPresto headline",
+        "text_overlay": "Know Where You Stand.",
+        "secondary_text": "Never left wondering.",
+        "cta_sticker": "Request a Consultation",
+        "eyebrow": "ADVICE SHOULDN'T GO QUIET",
+        "finished": true
+      },
+      "reels": null,
+      "arc": "2nd Opinion — advisor communication/access ('when did you last hear from your advisor?'). Framed as the standard you deserve, no disparagement. HNW; clear over clever.",
+      "type": "image",
+      "week": 1,
+      "utm_content": "2nd-opinion-communication",
+      "images": [
+        "ad14-communication-feed.png",
+        "ad14-communication-story.png"
+      ],
+      "image_direction": "NEW CREATIVE NEEDED. 2nd Opinion / communication: advisor + client in easy, regular conversation (accessible, attentive). Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'Know Where You Stand.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
       "num": 8,
@@ -443,42 +479,6 @@
         "ad13-philanthropic-story.png"
       ],
       "image_direction": "NEW CREATIVE NEEDED. Philanthropic Planning: warm but dignified (a cause, a family giving together) — not saccharine. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'PHILANTHROPIC PLANNING'); on-image headline 'Give With Intention.' Deep-green scrim, white IvyPresto, outlined white pill CTA. 'tax-aware' framed as planning only, never tax advice."
-    },
-    {
-      "num": 14,
-      "title": "2nd Opinion · Communication",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "Figma finished creative v2 (2x) placed by filename.",
-      "primary_text": "When did you last hear from your advisor?\n\nGood advice is an ongoing conversation, not an annual update.\n\nOur Wealth Planning Team stays in regular touch, so you know where you stand.\n\nRequest a consultation, with no obligation.",
-      "headline": "Know Where You Stand",
-      "description": "Never left wondering.",
-      "cta": "Request Time",
-      "hook": "When did you last hear from your advisor?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Advisor and client in easy, regular conversation over a deep-green scrim; centered IvyPresto headline",
-        "text_overlay": "Know Where You Stand.",
-        "secondary_text": "Never left wondering.",
-        "cta_sticker": "Request a Consultation",
-        "eyebrow": "ADVICE SHOULDN'T GO QUIET",
-        "finished": true
-      },
-      "reels": null,
-      "arc": "2nd Opinion — advisor communication/access ('when did you last hear from your advisor?'). Framed as the standard you deserve, no disparagement. HNW; clear over clever.",
-      "type": "image",
-      "week": 1,
-      "utm_content": "2nd-opinion-communication",
-      "images": [
-        "ad14-communication-feed.png",
-        "ad14-communication-story.png"
-      ],
-      "image_direction": "NEW CREATIVE NEEDED. 2nd Opinion / communication: advisor + client in easy, regular conversation (accessible, attentive). Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'Know Where You Stand.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     }
   ],
   "client": "confluence-fp-consultation"

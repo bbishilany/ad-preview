@@ -151,7 +151,7 @@
     },
     {
       "num": 5,
-      "title": "Maximizing Wealth · Make the Most",
+      "title": "Legacy · By Design",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -159,29 +159,29 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Is your wealth working as hard as you did?\n\nThe goal isn't just to keep it. It's to make the most of it.\n\nOur Wealth Planning Team works to put what you've built to work toward your goals.\n\nRequest a consultation, with no obligation.",
-      "headline": "Make the Most of It",
-      "description": "Put it to work.",
+      "primary_text": "Will your legacy happen by design, or by default?\n\nBy design, you make the most of what you pass on.\n\nOur Wealth Planning Team helps you plan it with intention, focused on the people and causes you care about.\n\nRequest a consultation, with no obligation.",
+      "headline": "A Legacy By Design",
+      "description": "Make the most of it.",
       "cta": "Request Time",
-      "hook": "Is your wealth working as hard as you did?",
+      "hook": "Will your legacy happen by design, or by default?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "Grandparents and grandchild at golden hour looking to the horizon; green bottom scrim, centered white Ivypresto headline",
-        "text_overlay": "Make the Most of It.",
-        "secondary_text": "Put it to work.",
+        "text_overlay": "A Legacy By Design.",
+        "secondary_text": "Make the most of it.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Maximizing Wealth — put what you've built to work (offensive, not defensive). Thought-provoking, HNW; clear over clever.",
+      "arc": "Legacy — make the most of what you pass on, by design not default (paired with Generational Wealth, which owns next-gen readiness). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 2,
-      "utm_content": "maximizing-wealth",
+      "utm_content": "legacy-by-design",
       "images": [
         "ad5-t3-legacy-a-feed.png",
         "ad5-t3-legacy-a-story.png"
       ],
-      "image_direction": "Maximizing-wealth concept (OFFENSIVE, not defensive; repositioned from legacy). Confident, forward-looking shot (advisor+client working a plan, or an assured individual) — NOT the family-beach scene. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Make the Most of It.' Deep-green scrim, white IvyPresto, outlined white pill CTA. NOTE: keep planning-framed, no returns/performance promise."
+      "image_direction": "Legacy concept: making the most of what you pass on (people + causes). RE-EXPORT: eyebrow -> 'WEALTH PLANNING' (was 'LEGACY & FAMILY'); on-image headline -> 'A Legacy By Design.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
       "num": 6,

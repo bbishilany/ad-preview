@@ -49,7 +49,7 @@
     },
     {
       "num": 2,
-      "title": "T1 Coordination · Variation B",
+      "title": "WM Purpose · Intentional",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -57,29 +57,29 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "A concentrated stock position, the sale of a business, or years of equity compensation can leave a financial life powerful in its parts yet unaligned as a whole.\n\nOur advisors work to bring each decision into alignment.\n\nRequest a consultation, with no obligation.",
-      "headline": "Coordinated, or Just Coexisting?",
-      "description": "One aligned strategy.",
+      "primary_text": "You were intentional about building your wealth. Is your plan just as intentional?\n\nGrowing wealth is one thing. Giving it direction is another.\n\nOur Wealth Planning Team works to align it with your goals and the life you're building.\n\nRequest a consultation, with no obligation.",
+      "headline": "Aligned With Your Purpose",
+      "description": "Wealth with direction.",
       "cta": "Learn More",
-      "hook": "Your investments, your taxes, and your estate plan are all in place. Are they coordinated, or simply coexisting?",
+      "hook": "You were intentional about building your wealth. Is your plan just as intentional?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
-        "image": "Advisors coordinating a plan together over a deep-green scrim; centered Ivypresto headline",
-        "text_overlay": "Coordinated, or Just Coexisting?",
-        "secondary_text": "One aligned strategy.",
+        "image": "Advisor and client in focused conversation over a deep-green scrim; centered IvyPresto headline",
+        "text_overlay": "Aligned With Your Purpose.",
+        "secondary_text": "Wealth with direction.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Coordination — powerful in its parts, aligned as a whole (UHNW complexity: concentrated position, business sale, equity comp)",
+      "arc": "Wealth management — intention & purpose (replaces T1 Coordination B). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "t1-coordination-b",
+      "utm_content": "wm-purpose-intentional",
       "images": [
         "ad2-t1-coordination-b-feed.png",
         "ad2-t1-coordination-b-story.png"
       ],
-      "image_direction": "Photo-dominant. BRANDED team CONFLUENCE_2025-578 (Bill-approved) — advisors working a plan together, warm mature lead. Standard scrim, faces-first, compact block, 10-12% padding, logo scrim. White Ivypresto headline, mint eyebrow, outlined white pill CTA."
+      "image_direction": "Photo-dominant, WEALTH MANAGEMENT / purpose concept (REPLACES coordination B). Advisor + client in focused, forward-looking conversation, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Coordinated, or Just Coexisting?' -> 'Aligned With Your Purpose.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
     {
       "num": 3,
@@ -337,36 +337,36 @@
     },
     {
       "num": 10,
-      "title": "T1 Coordination · Often Managed Apart (gap-frame)",
+      "title": "WM Peace of Mind",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
         "Stories"
       ],
       "production": "",
-      "primary_text": "Investments, taxes, estate, and retirement each affect the others, yet they are often managed apart.\n\nConfluence works to coordinate them into one strategy, reviewed together by our Wealth Managers and Certified Financial Planners®.\n\nRequest a consultation, with no obligation.",
-      "headline": "Managed Apart, or as One?",
-      "description": "Coordinated as one plan.",
+      "primary_text": "You have the wealth. Do you have the peace of mind?\n\nThe two don't always arrive together.\n\nOur Wealth Planning Team works to give you both, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
+      "headline": "Wealth, and Peace of Mind",
+      "description": "Confidence in the plan.",
       "cta": "Learn More",
-      "hook": "Investments, taxes, estate planning, and the timing of your retirement each affect the others, yet they are often managed apart.",
+      "hook": "You have the wealth. Do you have the peace of mind?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
-        "image": "Three-generation family, photo-forward dark, centered headline",
-        "text_overlay": "Managed Apart, or Managed as One?",
-        "secondary_text": "Coordinated as one plan.",
+        "image": "Client looking calm and assured over a deep-green scrim; centered IvyPresto headline",
+        "text_overlay": "Wealth, and Peace of Mind.",
+        "secondary_text": "Move forward with confidence.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Coordination — gap-frame stopper (the strongest pattern-interrupt from the carousel hook), photo-forward dark",
+      "arc": "Wealth management — confidence & peace of mind (replaces T1 Coordination gap-frame). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "t1-coordination-gap-frame",
+      "utm_content": "wm-peace-of-mind",
       "images": [
         "ad10-t1-often-managed-apart-feed.png",
         "ad10-t1-often-managed-apart-story.png"
       ],
-      "image_direction": "Photo-dominant dark. Full-bleed three-generation family (stock lifestyle — intentionally kept; the library has no branded couple/family-at-home shot). Green-weighted bottom scrim (Max) + text-shadow, faces-first, compact block. Feed content block lifted +30px (CTA off the 150px floor). White Ivypresto 'Managed Apart, or Managed as One?' (2-line)."
+      "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     }
   ],
   "client": "confluence-fp-consultation"

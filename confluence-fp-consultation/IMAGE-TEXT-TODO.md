@@ -10,5 +10,11 @@ Everything else (caption, feed link-headline, story on-image overlay) is data-dr
 |----|---------|------------------|----|---------------|
 | **1** — WM Clarity | Eyebrow | `COORDINATED WEALTH PLANNING` | `WEALTH PLANNING` | No — keep the existing advisor+client shot |
 | **1** — WM Clarity | Feed on-image headline | `Is Every Piece Working Together?` | `See the Whole Picture Clearly.` | — |
+| **2** — WM Purpose | Eyebrow | `COORDINATED WEALTH PLANNING` *(verify)* | `WEALTH PLANNING` | No — keep existing photo |
+| **2** — WM Purpose | Feed on-image headline | `Coordinated, or Just Coexisting?` | `Aligned With Your Purpose.` | — |
+| **10** — WM Peace of Mind | Eyebrow | `COORDINATED WEALTH PLANNING` *(verify)* | `WEALTH PLANNING` | No — keep existing photo |
+| **10** — WM Peace of Mind | Feed on-image headline | `Managed Apart, or Managed as One?` | `Wealth, and Peace of Mind.` | — |
 
-_Ads 2 and 3 (the other two coordination replacements) will be added here once their copy is locked._
+All three are **text-only Figma edits** (eyebrow + headline); photos stay. Story on-image overlays are data-driven and already correct live.
+
+_Ad 9 (T1 Coordination carousel) is the one remaining coordination ad — format decision pending (keep carousel vs. convert to single image)._

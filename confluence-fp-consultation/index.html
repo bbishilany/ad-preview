@@ -1198,7 +1198,7 @@ let _activeImageVersion = {};
 let _placementIdx = {};
 let _feedbackCache = {};
 const CAMPAIGN_ID = 'confluence-fp-consultation';
-const ASSET_V = '1787061490';  // cache-bust token, stamped at bake time
+const ASSET_V = '1787061829';  // cache-bust token, stamped at bake time
 
 // ── Utility ────────────────────────────────────────────────────────────────
 function esc(s) {
@@ -2237,9 +2237,15 @@ function renderAdNav() {
   initAdNavObserver();
 }
 
+let _navLock = false, _navLockTimer = null;
 function scrollToAd(adNum) {
   const card = document.getElementById('ad-card-' + adNum);
   if (!card) return;
+  // set the clicked item active immediately + suppress scroll-spy during the programmatic scroll
+  document.querySelectorAll('.ad-nav-item').forEach(n => n.classList.toggle('active', n.dataset.adNum === String(adNum)));
+  _navLock = true;
+  if (_navLockTimer) clearTimeout(_navLockTimer);
+  _navLockTimer = setTimeout(() => { _navLock = false; }, 900);
   const navHeight = 53 + 44; // sticky header + ad nav bar
   const top = card.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
   window.scrollTo({ top, behavior: 'smooth' });
@@ -2249,6 +2255,7 @@ function initAdNavObserver() {
   const navItems = document.querySelectorAll('.ad-nav-item');
   if (!navItems.length) return;
   const observer = new IntersectionObserver((entries) => {
+    if (_navLock) return;
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const adNum = entry.target.dataset.adNum;

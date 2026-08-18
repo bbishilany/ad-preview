@@ -253,7 +253,7 @@
     },
     {
       "num": 8,
-      "title": "T5 Life-Stage · Variation B",
+      "title": "Retirement Planning · Income That Lasts",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -261,29 +261,29 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "The years surrounding a major transition often shape the decades that follow.\n\nAs retirement, a relocation, or the sale of a business draws closer, the answers rarely sit in one place.\n\nOur advisors work to coordinate them.\n\nRequest a consultation, with no obligation.",
-      "headline": "Is Your Plan Ready for What's Next?",
-      "description": "Ready for the next chapter.",
+      "primary_text": "How do you turn a lifetime of saving into income that lasts?\n\nSaving it was the first half. Making it last is the second.\n\nOur Wealth Planning Team helps you build a retirement income plan made to last.\n\nRequest a consultation, with no obligation.",
+      "headline": "Income That Lasts",
+      "description": "Savings into lasting income.",
       "cta": "Request Time",
-      "hook": "The years surrounding a major transition often shape the decades that follow.",
+      "hook": "How do you turn a lifetime of saving into income that lasts?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "Freedom/next-chapter lifestyle image in brand green; centered white Ivypresto headline",
-        "text_overlay": "A Plan for What Comes Next",
-        "secondary_text": "Ready for the next chapter.",
+        "text_overlay": "Income That Lasts.",
+        "secondary_text": "The paycheck stops. The plan shouldn't.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Life-stage transitions — forward-looking, the next chapter",
+      "arc": "Retirement Planning — turning a lifetime of saving into lasting income. AUDIENCE ~$1M-$5M investable (Meta targeting only; signal by situation, NEVER a dollar figure in copy). Thought-provoking; clear over clever.",
       "type": "image",
       "week": 4,
-      "utm_content": "t5-life-stage-b",
+      "utm_content": "retirement-income-lasts",
       "images": [
         "ad8-t5-life-stage-b-feed.png",
         "ad8-t5-life-stage-b-story.png"
       ],
-      "image_direction": "Photo-dominant. SITE image Confluence-About-Hero — a mature 50+ couple, warm, a next-chapter transition moment (T5 life-stage; the branded shoot has no couple/lifestyle shot). Standard scrim, faces-first, compact block. White Ivypresto headline."
+      "image_direction": "Retirement Planning concept (audience ~$1M-$5M, targeting only, NO dollars in creative). Confident near-/in-retirement couple or individual, unhurried. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Income That Lasts.' Deep-green scrim, white IvyPresto, outlined white pill CTA. No guarantees/performance."
     },
     {
       "num": 9,

@@ -288,7 +288,7 @@
     {
       "num": 9,
       "title": "WM Breadth · Carousel",
-      "format": "Carousel, 4 cards at 1080x1350 (Feed 4:5)",
+      "format": "Carousel, 10 cards at 1080x1350 (Feed 4:5)",
       "placements": [
         "Carousel"
       ],
@@ -302,23 +302,53 @@
       "cards": [
         {
           "num": 1,
-          "label": "Your whole financial life",
-          "caption": "Wealth management is more than managing investments."
+          "label": "One team for every part of your financial life.",
+          "caption": ""
         },
         {
           "num": 2,
-          "label": "One dedicated team",
-          "caption": "A team of planning specialists, working alongside your financial advisor."
+          "label": "Retirement Planning",
+          "caption": "Turn a lifetime of saving into income that lasts."
         },
         {
           "num": 3,
-          "label": "Every part of the plan",
-          "caption": "Retirement Planning · Estate Planning · Social Security Analysis · Tax Planning · Employee Benefit Review · Insurance Planning · Cash Flow Analysis · Philanthropic Planning · Education Planning"
+          "label": "Estate Planning",
+          "caption": "Plan for how what you've built passes on."
         },
         {
           "num": 4,
-          "label": "Built around you",
-          "caption": "One plan, aligned with your goals. Request a consultation, with no obligation."
+          "label": "Social Security Analysis",
+          "caption": "Time your benefits to get the most from them."
+        },
+        {
+          "num": 5,
+          "label": "Tax Planning",
+          "caption": "Plan with taxes in mind, all year."
+        },
+        {
+          "num": 6,
+          "label": "Employee Benefit Review",
+          "caption": "Make the most of the benefits you're offered."
+        },
+        {
+          "num": 7,
+          "label": "Insurance Planning",
+          "caption": "Protect the plan against the unexpected."
+        },
+        {
+          "num": 8,
+          "label": "Cash Flow Analysis",
+          "caption": "See what comes in, goes out, and what's left to build on."
+        },
+        {
+          "num": 9,
+          "label": "Philanthropic Planning",
+          "caption": "Give in a way that reflects your values."
+        },
+        {
+          "num": 10,
+          "label": "Education Planning",
+          "caption": "Fund education without derailing your plan."
         }
       ],
       "stories": {
@@ -333,9 +363,15 @@
         "ad9-carousel-card1.png",
         "ad9-carousel-card2.png",
         "ad9-carousel-card3.png",
-        "ad9-carousel-card4.png"
+        "ad9-carousel-card4.png",
+        "ad9-carousel-card5.png",
+        "ad9-carousel-card6.png",
+        "ad9-carousel-card7.png",
+        "ad9-carousel-card8.png",
+        "ad9-carousel-card9.png",
+        "ad9-carousel-card10.png"
       ],
-      "image_direction": "Carousel, 4 cards, WEALTH MANAGEMENT breadth (REPLACES coordination carousel). RE-DESIGN all 4 card PNGs in Figma, deep-green scrim + white IvyPresto, per cards[]: Card 1 cover 'Wealth management is more than managing investments.'; Card 2 the team; Card 3 = the SERVICES, two-column like the confluencefp services page, cased exactly: Retirement Planning, Estate Planning, Social Security Analysis, Tax Planning, Employee Benefit Review, Insurance Planning, Cash Flow Analysis, Philanthropic Planning, Education Planning (EXCLUDE Business Consulting and Banking); Card 4 invitation. Files: ad9-carousel-card1..4.png."
+      "image_direction": "Service carousel (cover + 9 services, minus Business Consulting & RJ Banking per Marissa). Cards are BRANDED PLACEHOLDERS (green #12493C, mint accents) — design to polish typography (IvyPresto), add icons, and finalize. Each service card = eyebrow + service name + one-line description + the client concern it answers. Files ad9-carousel-card1..10.png."
     },
     {
       "num": 10,

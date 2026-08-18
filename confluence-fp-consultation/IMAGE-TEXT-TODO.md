@@ -17,14 +17,10 @@ Everything else (caption, feed link-headline, story on-image overlay) is data-dr
 
 All three are **text-only Figma edits** (eyebrow + headline); photos stay. Story on-image overlays are data-driven and already correct live.
 
-### Ad 9 — WM Breadth (carousel) — RE-DESIGN all 4 card PNGs
+### Ad 9 — WM Service Carousel — cards now populated as branded PLACEHOLDERS (design to polish)
 
-Keep carousel. Deep-green scrim + white IvyPresto. Replace the old coordination cards with:
-- **Card 1 (cover):** "Wealth management is more than managing investments."
-- **Card 2 (the team):** "A team of planning specialists, working alongside your financial advisor."
-- **Card 3 (the services):** two-column list like the confluencefp services page — **Retirement Planning · Estate Planning · Social Security Analysis · Tax Planning · Employee Benefit Review · Insurance Planning · Cash Flow Analysis · Philanthropic Planning · Education Planning** (EXCLUDE Business Consulting and Banking, per Marissa).
-- **Card 4 (invitation):** "One plan, built around you. Request a consultation, with no obligation."
-- Files: `ad9-carousel-card1..4.png`.
+10 cards live (cover + 9 services, minus Business Consulting & RJ Banking per Marissa). Each service card carries name + one-line description + the client concern it answers. Design pass: polish typography (IvyPresto), add icons, finalize layout; content/spec is locked in data.json `cards[]` + `ad9-carousel-card1..10.png`.
+
 
 ### Ad 11 — WM Value of Advice — NEW CREATIVE (no v1 frame yet)
 

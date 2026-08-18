@@ -287,53 +287,55 @@
     },
     {
       "num": 9,
-      "title": "T1 Coordination · Carousel",
+      "title": "WM Breadth · Carousel",
       "format": "Carousel, 4 cards at 1080x1350 (Feed 4:5)",
       "placements": [
         "Carousel"
       ],
       "production": "",
-      "primary_text": "You have built investments, a business, taxes, and an estate.\n\nToo often, they are managed apart.\n\nOur Wealth Managers and Certified Financial Planners® work to coordinate them into one strategy.\n\nRequest a consultation, with no obligation.",
-      "headline": "Everything You've Built",
-      "description": "One coordinated strategy.",
+      "primary_text": "Your financial life is bigger than your investments alone.\n\nThe more of it that moves together, the clearer the path forward.\n\nOur Wealth Planning Team brings every part into one plan built around you.\n\nRequest a consultation, with no obligation.",
+      "headline": "One Team, One Plan",
+      "description": "Your whole financial life.",
       "cta": "Learn More",
-      "hook": "The swipe illustrates the pieces coming together into one coordinated strategy.",
+      "hook": "Your financial life is bigger than your investments alone.",
       "alt_headlines": [],
       "cards": [
         {
           "num": 1,
-          "label": "The life you have built",
-          "caption": "You have spent years building each piece of your financial life."
+          "label": "Your whole financial life",
+          "caption": "Wealth management is more than managing investments."
         },
         {
           "num": 2,
-          "label": "The pieces",
-          "caption": "Investments, taxes, estate planning, and the timing of your retirement. Often managed apart."
+          "label": "One dedicated team",
+          "caption": "A team of planning specialists, working alongside your financial advisor."
         },
         {
           "num": 3,
-          "label": "Coordinated into one strategy",
-          "caption": "Confluence coordinates them into a single strategy, reviewed together by a team of Wealth Managers and Certified Financial Planners®."
+          "label": "Every part of the plan",
+          "caption": "Retirement Planning · Estate Planning · Social Security Analysis · Tax Planning · Employee Benefit Review · Insurance Planning · Cash Flow Analysis · Philanthropic Planning · Education Planning"
         },
         {
           "num": 4,
-          "label": "The invitation",
-          "caption": "Request a consultation for an initial conversation, with no obligation."
+          "label": "Built around you",
+          "caption": "One plan, aligned with your goals. Request a consultation, with no obligation."
         }
       ],
-      "stories": null,
+      "stories": {
+        "cta_sticker": "Request a Consultation"
+      },
       "reels": null,
-      "arc": "Coordination — the swipe illustrates the pieces working together (T1 carousel format test within the primary territory)",
+      "arc": "Wealth management — full-service breadth via the Wealth Planning Team (replaces T1 Coordination carousel). Services shown on the swipe per Marissa. Clear over clever.",
       "type": "carousel",
       "week": 1,
-      "utm_content": "t1-coordination-a-carousel",
+      "utm_content": "wm-breadth-carousel",
       "images": [
         "ad9-carousel-card1.png",
         "ad9-carousel-card2.png",
         "ad9-carousel-card3.png",
         "ad9-carousel-card4.png"
       ],
-      "image_direction": "4-card carousel, photo-forward. Arc: 1) the life you have built -> 2) the pieces, often managed apart -> 3) coordinated into one strategy, reviewed together by the team (BRANDED team CONFLUENCE_2025-305, Pittsburgh skyline, Standard scrim) -> 4) the invitation / generations (grandparents+grandchild iStock-1315439286, Standard scrim). Card 2 opens (animation-ready for Tendai). Green-weighted bottom scrim + text-shadow, faces-first, CFP® on card 3. All clear 4.5:1 on the text band."
+      "image_direction": "Carousel, 4 cards, WEALTH MANAGEMENT breadth (REPLACES coordination carousel). RE-DESIGN all 4 card PNGs in Figma, deep-green scrim + white IvyPresto, per cards[]: Card 1 cover 'Wealth management is more than managing investments.'; Card 2 the team; Card 3 = the SERVICES, two-column like the confluencefp services page, cased exactly: Retirement Planning, Estate Planning, Social Security Analysis, Tax Planning, Employee Benefit Review, Insurance Planning, Cash Flow Analysis, Philanthropic Planning, Education Planning (EXCLUDE Business Consulting and Banking); Card 4 invitation. Files: ad9-carousel-card1..4.png."
     },
     {
       "num": 10,

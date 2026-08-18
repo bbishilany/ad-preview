@@ -1,3 +1,5 @@
+> **Ad 1 — DONE.** Finished Figma creative (feed + story) pulled into the preview; `stories.finished=true` so the story mockup shows it as-is. Remaining items below.
+
 # On-Image Text — Figma Re-Export Queue (do all at once)
 
 These changes live in the **baked PNG creative** (feed image), so they need a Figma text edit + re-export.

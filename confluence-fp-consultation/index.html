@@ -1203,7 +1203,7 @@ let _activeImageVersion = {};
 let _placementIdx = {};
 let _feedbackCache = {};
 const CAMPAIGN_ID = 'confluence-fp-consultation';
-const ASSET_V = '1787076341';  // cache-bust token, stamped at bake time
+const ASSET_V = '1787076928';  // cache-bust token, stamped at bake time
 
 // ── Utility ────────────────────────────────────────────────────────────────
 function esc(s) {
@@ -1996,6 +1996,7 @@ function carouselGo(adNum, dir) {
 // ── Stories Mockup ─────────────────────────────────────────────────────────
 function renderStoryMockup(ad) {
   const s = ad.stories || {};
+  const finished = !!s.finished;
   const overlay = s.text_overlay || ad.hook || '';
   const secondary = s.secondary_text || '';
   const cta = s.cta_sticker || ad.cta || 'Learn More';
@@ -2013,11 +2014,11 @@ function renderStoryMockup(ad) {
       <div class="ig-story-avatar"><img src="${_brandmark()}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
       <div class="ig-story-handle">${esc(_igHandle())}</div>
     </div>
-    ${s.eyebrow ? `<div class="ig-story-eyebrow">${esc(s.eyebrow)}</div>` : ''}
-    <div class="ig-story-text">${esc(overlay)}</div>
-    ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
-    <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
-    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
+    ${(!finished && s.eyebrow) ? `<div class="ig-story-eyebrow">${esc(s.eyebrow)}</div>` : ''}
+    ${finished ? '' : `<div class="ig-story-text">${esc(overlay)}</div>`}
+    ${(!finished && secondary) ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
+    ${finished ? '' : `<div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>`}
+    ${finished ? '' : (_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`)}
     <div class="ig-story-message-bar">
       <div class="ig-story-message-input">Send message</div>
       <div class="ig-story-message-send">${SVG_ICONS.share}</div>

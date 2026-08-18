@@ -22,7 +22,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative pulled in (node 1864:2 feed / 1865:114 story).",
       "primary_text": "When did you last feel completely clear about your whole financial picture?\n\nAs your wealth grows, the full picture gets harder to see on your own.\n\nOur Wealth Planning Team works to bring it into focus, so you can move forward with confidence.\n\nRequest a consultation, with no obligation.",
       "headline": "Clarity on the Whole Picture",
       "description": "See it all clearly.",
@@ -35,7 +35,8 @@
         "text_overlay": "See the Whole Picture Clearly.",
         "secondary_text": "Move forward with confidence.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "WHEN THE PICTURE GETS COMPLEX"
+        "eyebrow": "WHEN THE PICTURE GETS COMPLEX",
+        "finished": true
       },
       "reels": null,
       "arc": "Wealth Management — clarity of the whole financial picture (replaces T1 Coordination A). Thought-provoking, HNW; clear over clever.",
@@ -43,8 +44,8 @@
       "week": 1,
       "utm_content": "wm-clarity-whole-picture",
       "images": [
-        "ad1-t1-coordination-a-feed.png",
-        "ad1-t1-coordination-a-story.png"
+        "ad1-wm-clarity-feed.png",
+        "ad1-wm-clarity-story.png"
       ],
       "image_direction": "Photo-dominant, WEALTH MANAGEMENT / clarity concept (REPLACES coordination). Advisor + client (or the planning team with a client) reviewing a single plan together at the table, calm and unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow 'COORDINATED WEALTH PLANNING' -> 'WEALTH PLANNING'; on-image headline 'Is Every Piece Working Together?' -> 'See the Whole Picture Clearly.' Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },

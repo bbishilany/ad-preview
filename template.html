@@ -878,6 +878,11 @@
     color: white; font-size: 10px; font-weight: 600;
     text-shadow: 0 1px 4px rgba(0,0,0,0.6);
   }
+  .ig-story-eyebrow {
+    color: #7EFBC8; font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; margin-bottom: 8px; text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    position: relative; z-index: 2;
+  }
   .ig-story-text {
     color: white; font-size: 14px; font-weight: 700; line-height: 1.4;
     margin-bottom: 6px; text-shadow: 0 1px 6px rgba(0,0,0,0.7);
@@ -2006,6 +2011,7 @@ function renderStoryMockup(ad) {
       <div class="ig-story-avatar"><img src="${_brandmark()}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
       <div class="ig-story-handle">${esc(_igHandle())}</div>
     </div>
+    ${s.eyebrow ? `<div class="ig-story-eyebrow">${esc(s.eyebrow)}</div>` : ''}
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
     <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>

@@ -69,3 +69,22 @@ Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
 - Eyebrow: `WEALTH PLANNING`
 - On-image headline: `Know Where You Stand.`
 - Photo: advisor + client in easy, attentive conversation.
+
+## On-image text spec — eyebrow + hook (Approach A: stakes/tension eyebrow)
+Bake on each creative: small mint uppercase eyebrow above the white IvyPresto hook.
+| # | Eyebrow | Hook |
+|---|---------|------|
+| 1 | WHEN THE PICTURE GETS COMPLEX | See the Whole Picture Clearly. |
+| 2 | WEALTH NEEDS DIRECTION | Aligned With Your Purpose. |
+| 3 | WEALTH ALONE ISN'T PEACE | Wealth, and Peace of Mind. |
+| 5 | MORE THAN INVESTMENTS | The Standard You Should Expect. |
+| 6 | WHY WAIT TO BE ASKED? | Advice That Comes to You. |
+| 7 | IT'S NOT THE FEE | What Is Your Fee Buying? |
+| 8 | THE PAYCHECK STOPS | Income That Lasts. |
+| 9 | BY DESIGN, OR BY DEFAULT? | A Legacy By Design. |
+| 10 | MORE THAN THE MONEY | Preparing the Next Generation. |
+| 11 | LIFE RARELY STANDS STILL | When Life Changes, So Should the Plan. |
+| 12 | THE OFFER WILL COME | Exit on Your Terms. |
+| 13 | GOOD INTENTIONS AREN'T A PLAN | Give With Intention. |
+| 14 | ADVICE SHOULDN'T GO QUIET | Know Where You Stand. |
+| 4 | (carousel — align cover/card eyebrows to Approach A in design) | per-card |

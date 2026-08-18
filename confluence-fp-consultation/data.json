@@ -286,19 +286,19 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "You know what you pay. Do you know what you're paying for?\n\nThe real measure isn't the fee, it's the value behind it.\n\nOur Wealth Planning Team brings holistic planning and a partnership built around your goals.\n\nRequest a consultation, with no obligation.",
-      "headline": "What Is Your Fee Buying?",
-      "description": "The value behind the fee.",
+      "primary_text": "You know what you pay. Do you know what you're paying for?\n\nThe real measure isn't the cost, it's the value behind it.\n\nOur Wealth Planning Team brings holistic planning and a partnership built around your goals.\n\nRequest a consultation, with no obligation.",
+      "headline": "What Are You Paying For?",
+      "description": "The value behind the cost.",
       "cta": "Request Time",
       "hook": "You know what you pay. Do you know what you're paying for?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "Advisor and client in a trusting conversation over a deep-green scrim; centered IvyPresto headline",
-        "text_overlay": "What Is Your Fee Buying?",
-        "secondary_text": "The value behind the fee.",
+        "text_overlay": "What Are You Paying For?",
+        "secondary_text": "The value behind the cost.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "IT'S NOT THE FEE"
+        "eyebrow": "COST IS ONLY HALF OF IT"
       },
       "reels": null,
       "arc": "2nd Opinion — value of advice (from the client-liked v2 Ad 10; re-voiced to the Wealth Planning Team). Mass-affluent-leaning; clear over clever.",
@@ -306,7 +306,7 @@
       "week": 1,
       "utm_content": "wm-value-of-advice",
       "images": [],
-      "image_direction": "NEW CREATIVE NEEDED (no v1 frame yet). WEALTH MANAGEMENT / value-of-advice. Advisor + client in a trusting conversation, city window, faces-first. Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'What Is Your Fee Buying?'. Deep-green scrim, white IvyPresto headline, outlined white pill CTA. Feed 1080x1350 + Story 1080x1920."
+      "image_direction": "NEW CREATIVE NEEDED (no v1 frame yet). WEALTH MANAGEMENT / value-of-advice. Advisor + client in a trusting conversation, city window, faces-first. Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'What Are You Paying For?'. Deep-green scrim, white IvyPresto headline, outlined white pill CTA. Feed 1080x1350 + Story 1080x1920."
     },
     {
       "num": 8,

@@ -28,7 +28,7 @@ All three are **text-only Figma edits** (eyebrow + headline); photos stay. Story
 
 Build from scratch (feed 1080x1350 + story 1080x1920), same deep-green scrim + white IvyPresto system.
 - Eyebrow: `WEALTH PLANNING`
-- On-image headline: `What Is Your Fee Buying?`
+- On-image headline: `What Are You Paying For?`
 - Photo: advisor + client in a trusting conversation, city window, faces-first.
 - Files: `ad11-...-feed.png`, `ad11-...-story.png`.
 
@@ -81,7 +81,7 @@ Bake on each creative: small mint uppercase eyebrow above the white IvyPresto ho
 | 3 | WEALTH ALONE ISN'T PEACE | Wealth, and Peace of Mind. |
 | 5 | MORE THAN INVESTMENTS | The Standard You Should Expect. |
 | 6 | WHY WAIT TO BE ASKED? | Advice That Comes to You. |
-| 7 | IT'S NOT THE FEE | What Is Your Fee Buying? |
+| 7 | COST IS ONLY HALF OF IT | What Are You Paying For? |
 | 8 | THE PAYCHECK STOPS | Income That Lasts. |
 | 9 | BY DESIGN, OR BY DEFAULT? | A Legacy By Design. |
 | 10 | MORE THAN THE MONEY | Preparing the Next Generation. |

@@ -439,7 +439,7 @@
     },
     {
       "num": 12,
-      "title": "Exit Planning · The Morning After",
+      "title": "Exit Planning · Plan It, Don't React",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -447,26 +447,26 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "You've thought about the sale. Have you thought about the morning after?\n\nWhat you keep is often shaped long before the deal closes, not after.\n\nOur Wealth Planning Team helps you align the business, your finances, and what comes next, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
-      "headline": "Plan the Exit, Not Just the Sale",
-      "description": "Plan for what comes after.",
+      "primary_text": "Are you planning your exit, or waiting for an offer?\n\nThe best exits are planned years ahead, not decided in a moment.\n\nOur Wealth Planning Team helps you prepare early, so you exit on your terms.\n\nRequest a consultation, with no obligation.",
+      "headline": "Exit on Your Terms",
+      "description": "Plan it, don't react to it.",
       "cta": "Request Time",
-      "hook": "You've thought about the sale. Have you thought about the morning after?",
+      "hook": "Are you planning your exit, or waiting for an offer?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "Business owner at a pivotal moment over a deep-green scrim; centered IvyPresto headline",
-        "text_overlay": "Plan the Exit, Not Just the Sale.",
-        "secondary_text": "Plan for what comes after.",
+        "text_overlay": "Exit on Your Terms.",
+        "secondary_text": "Plan it, don't react to it.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Exit Planning — the business exit + what comes after (from v2 Ad 1). CEPA specialty is the differentiator; add 'Certified Exit Planning Advisor' to body once a named advisor is verified. HNW business owner; clear over clever.",
+      "arc": "Exit Planning — plan the exit proactively, don't react to an offer. CEPA specialty is the differentiator; add 'Certified Exit Planning Advisor' to body once a named advisor is verified. HNW business owner; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "exit-planning-morning-after",
+      "utm_content": "exit-planning-proactive",
       "images": [],
-      "image_direction": "NEW CREATIVE NEEDED. Exit Planning: business owner at a pivotal, forward-looking moment (NOT a sad exit). Build in Figma: eyebrow 'WEALTH PLANNING' (or 'EXIT PLANNING'); on-image headline 'Plan the Exit, Not Just the Sale.' Deep-green scrim, white IvyPresto, outlined white pill CTA. Add CEPA (Certified Exit Planning Advisor) to copy ONLY after verifying a named advisor holds it."
+      "image_direction": "NEW CREATIVE NEEDED. Exit Planning (proactive): confident business owner in control, forward-looking. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'EXIT PLANNING'); on-image headline 'Exit on Your Terms.' Deep-green scrim, white IvyPresto, outlined white pill CTA. Add CEPA (Certified Exit Planning Advisor) to copy ONLY after verifying a named advisor holds it."
     }
   ],
   "client": "confluence-fp-consultation"

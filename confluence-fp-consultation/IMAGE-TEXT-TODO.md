@@ -54,6 +54,6 @@ Keep/refresh photo (confident near-retirement couple or individual).
 ### Ad 12 — Exit Planning — NEW CREATIVE (no frame yet)
 Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
 - Eyebrow: `WEALTH PLANNING` (or `EXIT PLANNING`)
-- On-image headline: `Plan the Exit, Not Just the Sale.`
+- On-image headline: `Exit on Your Terms.`
 - Photo: business owner at a forward-looking, pivotal moment.
 - Copy: add "Certified Exit Planning Advisor" (CEPA) only after verifying a named advisor holds it.

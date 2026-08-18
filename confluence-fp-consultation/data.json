@@ -346,11 +346,11 @@
         "Stories"
       ],
       "production": "",
-      "primary_text": "You have the wealth. Do you have the peace of mind?\n\nThe two don't always arrive together.\n\nOur Wealth Planning Team works to give you both, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
+      "primary_text": "Does your wealth bring peace of mind, or just more to manage?\n\nPeace of mind doesn't always come with it.\n\nOur Wealth Planning Team works to help you find it, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
       "headline": "Wealth, and Peace of Mind",
       "description": "Confidence in the plan.",
       "cta": "Request Time",
-      "hook": "You have the wealth. Do you have the peace of mind?",
+      "hook": "Does your wealth bring peace of mind, or just more to manage?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
@@ -369,37 +369,6 @@
         "ad10-t1-often-managed-apart-story.png"
       ],
       "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
-    },
-    {
-      "num": 11,
-      "title": "WM Value of Advice",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "",
-      "primary_text": "You know what you pay. Do you know what you're paying for?\n\nThe real measure isn't the fee, it's the value behind it.\n\nOur Wealth Planning Team brings holistic planning and a partnership built around your goals.\n\nRequest a consultation, with no obligation.",
-      "headline": "What Is Your Fee Buying?",
-      "description": "The value behind the fee.",
-      "cta": "Request Time",
-      "hook": "You know what you pay. Do you know what you're paying for?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Advisor and client in a trusting conversation over a deep-green scrim; centered IvyPresto headline",
-        "text_overlay": "What Is Your Fee Buying?",
-        "secondary_text": "The value behind the fee.",
-        "cta_sticker": "Request a Consultation"
-      },
-      "reels": null,
-      "arc": "Wealth Management — value of advice (from the client-liked v2 Ad 10; re-voiced to the Wealth Planning Team). Mass-affluent-leaning; clear over clever.",
-      "type": "image",
-      "week": 1,
-      "utm_content": "wm-value-of-advice",
-      "images": [],
-      "image_direction": "NEW CREATIVE NEEDED (no v1 frame yet). WEALTH MANAGEMENT / value-of-advice. Advisor + client in a trusting conversation, city window, faces-first. Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'What Is Your Fee Buying?'. Deep-green scrim, white IvyPresto headline, outlined white pill CTA. Feed 1080x1350 + Story 1080x1920."
     }
   ],
   "client": "confluence-fp-consultation"

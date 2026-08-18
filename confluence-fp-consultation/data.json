@@ -83,210 +83,39 @@
     },
     {
       "num": 3,
-      "title": "Your Advisor · The Standard",
+      "title": "WM Peace of Mind",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
-        "Stories",
-        "Reels"
+        "Stories"
       ],
       "production": "",
-      "primary_text": "What should your financial advisor be doing for you?\n\nGreat advice is about your whole financial life, not just your investments.\n\nThat's what our Wealth Planning Team is built to do, honestly and objectively, around your goals.\n\nRequest a consultation, with no obligation.",
-      "headline": "The Standard You Deserve",
-      "description": "What great advice does.",
+      "primary_text": "Does your wealth bring peace of mind, or just more to manage?\n\nPeace of mind doesn't always come with it.\n\nOur Wealth Planning Team works to help you find it, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
+      "headline": "Wealth, and Peace of Mind",
+      "description": "Confidence in the plan.",
       "cta": "Request Time",
-      "hook": "What should your financial advisor be doing for you?",
+      "hook": "Does your wealth bring peace of mind, or just more to manage?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
-        "image": "A candid advisory conversation; centered white Ivypresto headline over deep-green scrim",
-        "text_overlay": "The Standard You Should Expect.",
-        "secondary_text": "What great advice does.",
+        "image": "Client looking calm and assured over a deep-green scrim; centered IvyPresto headline",
+        "text_overlay": "Wealth, and Peace of Mind.",
+        "secondary_text": "Move forward with confidence.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "2nd Opinion — the standard great advice should meet (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
+      "arc": "Wealth Management — confidence & peace of mind (replaces T1 Coordination gap-frame). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "advisor-the-standard",
+      "utm_content": "wm-peace-of-mind",
       "images": [
-        "ad3-t2-second-opinion-a-feed.png",
-        "ad3-t2-second-opinion-a-story.png"
+        "ad10-t1-often-managed-apart-feed.png",
+        "ad10-t1-often-managed-apart-story.png"
       ],
-      "image_direction": "Your-advisor / the-standard concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'An Independent, Outside Perspective' -> 'The Standard You Should Expect.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
+      "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
     {
       "num": 4,
-      "title": "Your Advisor · Proactive",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "",
-      "primary_text": "When did your advisor last bring you something you didn't ask for?\n\nGood advice doesn't wait to be asked.\n\nOur Wealth Planning Team works to stay a step ahead, bringing ideas before you need them.\n\nRequest a consultation, with no obligation.",
-      "headline": "Advice That Comes to You",
-      "description": "A step ahead.",
-      "cta": "Request Time",
-      "hook": "When did your advisor last bring you something you didn't ask for?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Engaged advisory discussion; centered white Ivypresto headline over deep-green scrim",
-        "text_overlay": "Advice That Comes to You.",
-        "secondary_text": "A step ahead.",
-        "cta_sticker": "Request a Consultation"
-      },
-      "reels": null,
-      "arc": "2nd Opinion — proactive advice, brings you ideas before you ask (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
-      "type": "image",
-      "week": 2,
-      "utm_content": "advisor-proactive",
-      "images": [
-        "ad4-t2-second-opinion-b-feed.png",
-        "ad4-t2-second-opinion-b-story.png"
-      ],
-      "image_direction": "Your-advisor / proactive concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'A Second Perspective on Your Plan' -> 'Advice That Comes to You.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
-    },
-    {
-      "num": 5,
-      "title": "Legacy · By Design",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "",
-      "primary_text": "Will your legacy happen by design, or by default?\n\nBy design, you make the most of what you pass on.\n\nOur Wealth Planning Team helps you plan it with intention, focused on the people and causes you care about.\n\nRequest a consultation, with no obligation.",
-      "headline": "A Legacy By Design",
-      "description": "Make the most of it.",
-      "cta": "Request Time",
-      "hook": "Will your legacy happen by design, or by default?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Grandparents and grandchild at golden hour looking to the horizon; green bottom scrim, centered white Ivypresto headline",
-        "text_overlay": "A Legacy By Design.",
-        "secondary_text": "Make the most of it.",
-        "cta_sticker": "Request a Consultation"
-      },
-      "reels": null,
-      "arc": "Legacy & Generational Wealth — make the most of what you pass on, by design not default (paired with Generational Wealth, which owns next-gen readiness). Thought-provoking, HNW; clear over clever.",
-      "type": "image",
-      "week": 2,
-      "utm_content": "legacy-by-design",
-      "images": [
-        "ad5-t3-legacy-a-feed.png",
-        "ad5-t3-legacy-a-story.png"
-      ],
-      "image_direction": "Legacy concept: making the most of what you pass on (people + causes). RE-EXPORT: eyebrow -> 'WEALTH PLANNING' (was 'LEGACY & FAMILY'); on-image headline -> 'A Legacy By Design.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
-    },
-    {
-      "num": 6,
-      "title": "Generational Wealth · Built to Last",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "",
-      "primary_text": "Will the next generation be ready for the wealth you pass on?\n\nLasting wealth is as much about the people as the plan.\n\nOur Wealth Planning Team helps you prepare both, the family and the wealth they'll inherit.\n\nRequest a consultation, with no obligation.",
-      "headline": "Preparing the Next Generation",
-      "description": "More than the money.",
-      "cta": "Request Time",
-      "hook": "Will the next generation be ready for the wealth you pass on?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Three generations together (grandmother and granddaughter); green bottom scrim, centered white Ivypresto headline",
-        "text_overlay": "Preparing the Next Generation.",
-        "secondary_text": "More than the money.",
-        "cta_sticker": "Request a Consultation"
-      },
-      "reels": null,
-      "arc": "Legacy & Generational Wealth — wealth that lasts across generations (not just handed off). Thought-provoking, HNW; clear over clever.",
-      "type": "image",
-      "week": 3,
-      "utm_content": "generational-wealth-lasts",
-      "images": [
-        "ad6-t3-legacy-b-feed.png",
-        "ad6-t3-legacy-b-story.png"
-      ],
-      "image_direction": "Generational-wealth concept centered on the PEOPLE: preparing the next generation (multi-gen family, or a parent + adult child). RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Preparing the Next Generation.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
-    },
-    {
-      "num": 7,
-      "title": "T5 Life-Stage · Variation A",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "",
-      "primary_text": "Few transitions arrive in isolation.\n\nApproaching retirement, selling a business, or a change in the family: these are the moments your financial life most needs to move together.\n\nOur advisors work to coordinate the pieces as one.\n\nRequest a consultation, with no obligation.",
-      "headline": "When Life Changes, So Should the Plan",
-      "description": "Guidance through transition.",
-      "cta": "Request Time",
-      "hook": "Few transitions in life arrive in isolation.",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Warm next-chapter lifestyle moment (retirement / relocation / family change) in brand green; centered white Ivypresto headline",
-        "text_overlay": "When Life Changes, So Should the Plan",
-        "secondary_text": "Guidance through transition.",
-        "cta_sticker": "Request a Consultation"
-      },
-      "reels": null,
-      "arc": "Life-Stage Transitions — recognition/empathy (accessible on-ramp)",
-      "type": "image",
-      "week": 4,
-      "utm_content": "t5-life-stage-a",
-      "images": [
-        "ad7-t5-life-stage-a-feed.png",
-        "ad7-t5-life-stage-a-story.png"
-      ],
-      "image_direction": "Photo-dominant, branded/site imagery. A mature 50+ couple or individual at a transition moment (retirement / move / family change), warm, faces-first. Standard scrim, compact block. White Ivypresto headline. Sofia to select."
-    },
-    {
-      "num": 8,
-      "title": "Retirement Planning · Income That Lasts",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Feed",
-        "Stories",
-        "Reels"
-      ],
-      "production": "",
-      "primary_text": "How do you turn a lifetime of saving into income that lasts?\n\nSaving it was the first half. Making it last is the second.\n\nOur Wealth Planning Team helps you build a retirement income plan made to last.\n\nRequest a consultation, with no obligation.",
-      "headline": "Income That Lasts",
-      "description": "Savings into lasting income.",
-      "cta": "Request Time",
-      "hook": "How do you turn a lifetime of saving into income that lasts?",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "image": "Freedom/next-chapter lifestyle image in brand green; centered white Ivypresto headline",
-        "text_overlay": "Income That Lasts.",
-        "secondary_text": "The paycheck stops. The plan shouldn't.",
-        "cta_sticker": "Request a Consultation"
-      },
-      "reels": null,
-      "arc": "Retirement Planning — turning a lifetime of saving into lasting income. AUDIENCE ~$1M-$5M investable (Meta targeting only; signal by situation, NEVER a dollar figure in copy). Thought-provoking; clear over clever.",
-      "type": "image",
-      "week": 4,
-      "utm_content": "retirement-income-lasts",
-      "images": [
-        "ad8-t5-life-stage-b-feed.png",
-        "ad8-t5-life-stage-b-story.png"
-      ],
-      "image_direction": "Retirement Planning concept (audience ~$1M-$5M, targeting only, NO dollars in creative). Confident near-/in-retirement couple or individual, unhurried. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Income That Lasts.' Deep-green scrim, white IvyPresto, outlined white pill CTA. No guarantees/performance."
-    },
-    {
-      "num": 9,
       "title": "WM Breadth · Carousel",
       "format": "Carousel, 10 cards at 1080x1350 (Feed 4:5)",
       "placements": [
@@ -374,40 +203,75 @@
       "image_direction": "Service carousel (cover + 9 services, minus Business Consulting & RJ Banking per Marissa). Cards are BRANDED PLACEHOLDERS (green #12493C, mint accents) — design to polish typography (IvyPresto), add icons, and finalize. Each service card = eyebrow + service name + one-line description + the client concern it answers. Files ad9-carousel-card1..10.png."
     },
     {
-      "num": 10,
-      "title": "WM Peace of Mind",
+      "num": 5,
+      "title": "Your Advisor · The Standard",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
-        "Stories"
+        "Stories",
+        "Reels"
       ],
       "production": "",
-      "primary_text": "Does your wealth bring peace of mind, or just more to manage?\n\nPeace of mind doesn't always come with it.\n\nOur Wealth Planning Team works to help you find it, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
-      "headline": "Wealth, and Peace of Mind",
-      "description": "Confidence in the plan.",
+      "primary_text": "What should your financial advisor be doing for you?\n\nGreat advice is about your whole financial life, not just your investments.\n\nThat's what our Wealth Planning Team is built to do, honestly and objectively, around your goals.\n\nRequest a consultation, with no obligation.",
+      "headline": "The Standard You Deserve",
+      "description": "What great advice does.",
       "cta": "Request Time",
-      "hook": "Does your wealth bring peace of mind, or just more to manage?",
+      "hook": "What should your financial advisor be doing for you?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
-        "image": "Client looking calm and assured over a deep-green scrim; centered IvyPresto headline",
-        "text_overlay": "Wealth, and Peace of Mind.",
-        "secondary_text": "Move forward with confidence.",
+        "image": "A candid advisory conversation; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "The Standard You Should Expect.",
+        "secondary_text": "What great advice does.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Wealth Management — confidence & peace of mind (replaces T1 Coordination gap-frame). Thought-provoking, HNW; clear over clever.",
+      "arc": "2nd Opinion — the standard great advice should meet (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 1,
-      "utm_content": "wm-peace-of-mind",
+      "utm_content": "advisor-the-standard",
       "images": [
-        "ad10-t1-often-managed-apart-feed.png",
-        "ad10-t1-often-managed-apart-story.png"
+        "ad3-t2-second-opinion-a-feed.png",
+        "ad3-t2-second-opinion-a-story.png"
       ],
-      "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
+      "image_direction": "Your-advisor / the-standard concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'An Independent, Outside Perspective' -> 'The Standard You Should Expect.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
-      "num": 11,
+      "num": 6,
+      "title": "Your Advisor · Proactive",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "When did your advisor last bring you something you didn't ask for?\n\nGood advice doesn't wait to be asked.\n\nOur Wealth Planning Team works to stay a step ahead, bringing ideas before you need them.\n\nRequest a consultation, with no obligation.",
+      "headline": "Advice That Comes to You",
+      "description": "A step ahead.",
+      "cta": "Request Time",
+      "hook": "When did your advisor last bring you something you didn't ask for?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Engaged advisory discussion; centered white Ivypresto headline over deep-green scrim",
+        "text_overlay": "Advice That Comes to You.",
+        "secondary_text": "A step ahead.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "2nd Opinion — proactive advice, brings you ideas before you ask (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
+      "type": "image",
+      "week": 2,
+      "utm_content": "advisor-proactive",
+      "images": [
+        "ad4-t2-second-opinion-b-feed.png",
+        "ad4-t2-second-opinion-b-story.png"
+      ],
+      "image_direction": "Your-advisor / proactive concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'A Second Perspective on Your Plan' -> 'Advice That Comes to You.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
+    },
+    {
+      "num": 7,
       "title": "WM Value of Advice",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
@@ -436,6 +300,142 @@
       "utm_content": "wm-value-of-advice",
       "images": [],
       "image_direction": "NEW CREATIVE NEEDED (no v1 frame yet). WEALTH MANAGEMENT / value-of-advice. Advisor + client in a trusting conversation, city window, faces-first. Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'What Is Your Fee Buying?'. Deep-green scrim, white IvyPresto headline, outlined white pill CTA. Feed 1080x1350 + Story 1080x1920."
+    },
+    {
+      "num": 8,
+      "title": "Retirement Planning · Income That Lasts",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "How do you turn a lifetime of saving into income that lasts?\n\nSaving it was the first half. Making it last is the second.\n\nOur Wealth Planning Team helps you build a retirement income plan made to last.\n\nRequest a consultation, with no obligation.",
+      "headline": "Income That Lasts",
+      "description": "Savings into lasting income.",
+      "cta": "Request Time",
+      "hook": "How do you turn a lifetime of saving into income that lasts?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Freedom/next-chapter lifestyle image in brand green; centered white Ivypresto headline",
+        "text_overlay": "Income That Lasts.",
+        "secondary_text": "The paycheck stops. The plan shouldn't.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Retirement Planning — turning a lifetime of saving into lasting income. AUDIENCE ~$1M-$5M investable (Meta targeting only; signal by situation, NEVER a dollar figure in copy). Thought-provoking; clear over clever.",
+      "type": "image",
+      "week": 4,
+      "utm_content": "retirement-income-lasts",
+      "images": [
+        "ad8-t5-life-stage-b-feed.png",
+        "ad8-t5-life-stage-b-story.png"
+      ],
+      "image_direction": "Retirement Planning concept (audience ~$1M-$5M, targeting only, NO dollars in creative). Confident near-/in-retirement couple or individual, unhurried. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Income That Lasts.' Deep-green scrim, white IvyPresto, outlined white pill CTA. No guarantees/performance."
+    },
+    {
+      "num": 9,
+      "title": "Legacy · By Design",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Will your legacy happen by design, or by default?\n\nBy design, you make the most of what you pass on.\n\nOur Wealth Planning Team helps you plan it with intention, focused on the people and causes you care about.\n\nRequest a consultation, with no obligation.",
+      "headline": "A Legacy By Design",
+      "description": "Make the most of it.",
+      "cta": "Request Time",
+      "hook": "Will your legacy happen by design, or by default?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Grandparents and grandchild at golden hour looking to the horizon; green bottom scrim, centered white Ivypresto headline",
+        "text_overlay": "A Legacy By Design.",
+        "secondary_text": "Make the most of it.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & Generational Wealth — make the most of what you pass on, by design not default (paired with Generational Wealth, which owns next-gen readiness). Thought-provoking, HNW; clear over clever.",
+      "type": "image",
+      "week": 2,
+      "utm_content": "legacy-by-design",
+      "images": [
+        "ad5-t3-legacy-a-feed.png",
+        "ad5-t3-legacy-a-story.png"
+      ],
+      "image_direction": "Legacy concept: making the most of what you pass on (people + causes). RE-EXPORT: eyebrow -> 'WEALTH PLANNING' (was 'LEGACY & FAMILY'); on-image headline -> 'A Legacy By Design.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
+    },
+    {
+      "num": 10,
+      "title": "Generational Wealth · Built to Last",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Will the next generation be ready for the wealth you pass on?\n\nLasting wealth is as much about the people as the plan.\n\nOur Wealth Planning Team helps you prepare both, the family and the wealth they'll inherit.\n\nRequest a consultation, with no obligation.",
+      "headline": "Preparing the Next Generation",
+      "description": "More than the money.",
+      "cta": "Request Time",
+      "hook": "Will the next generation be ready for the wealth you pass on?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Three generations together (grandmother and granddaughter); green bottom scrim, centered white Ivypresto headline",
+        "text_overlay": "Preparing the Next Generation.",
+        "secondary_text": "More than the money.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Legacy & Generational Wealth — wealth that lasts across generations (not just handed off). Thought-provoking, HNW; clear over clever.",
+      "type": "image",
+      "week": 3,
+      "utm_content": "generational-wealth-lasts",
+      "images": [
+        "ad6-t3-legacy-b-feed.png",
+        "ad6-t3-legacy-b-story.png"
+      ],
+      "image_direction": "Generational-wealth concept centered on the PEOPLE: preparing the next generation (multi-gen family, or a parent + adult child). RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Preparing the Next Generation.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
+    },
+    {
+      "num": 11,
+      "title": "T5 Life-Stage · Variation A",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "Few transitions arrive in isolation.\n\nApproaching retirement, selling a business, or a change in the family: these are the moments your financial life most needs to move together.\n\nOur advisors work to coordinate the pieces as one.\n\nRequest a consultation, with no obligation.",
+      "headline": "When Life Changes, So Should the Plan",
+      "description": "Guidance through transition.",
+      "cta": "Request Time",
+      "hook": "Few transitions in life arrive in isolation.",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Warm next-chapter lifestyle moment (retirement / relocation / family change) in brand green; centered white Ivypresto headline",
+        "text_overlay": "When Life Changes, So Should the Plan",
+        "secondary_text": "Guidance through transition.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "Life-Stage Transitions — recognition/empathy (accessible on-ramp)",
+      "type": "image",
+      "week": 4,
+      "utm_content": "t5-life-stage-a",
+      "images": [
+        "ad7-t5-life-stage-a-feed.png",
+        "ad7-t5-life-stage-a-story.png"
+      ],
+      "image_direction": "Photo-dominant, branded/site imagery. A mature 50+ couple or individual at a transition moment (retirement / move / family change), warm, faces-first. Standard scrim, compact block. White Ivypresto headline. Sofia to select."
     }
   ],
   "client": "confluence-fp-consultation"

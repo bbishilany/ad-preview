@@ -50,3 +50,10 @@ Text-only edits (keep photos; Ad 6 optional swap to a business-owner + successor
 Keep/refresh photo (confident near-retirement couple or individual).
 - Eyebrow → `WEALTH PLANNING`
 - On-image headline FROM `Is Your Plan Ready for What's Next?` → `Income That Lasts.`
+
+### Ad 12 — Exit Planning — NEW CREATIVE (no frame yet)
+Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
+- Eyebrow: `WEALTH PLANNING` (or `EXIT PLANNING`)
+- On-image headline: `Plan the Exit, Not Just the Sale.`
+- Photo: business owner at a forward-looking, pivotal moment.
+- Copy: add "Certified Exit Planning Advisor" (CEPA) only after verifying a named advisor holds it.

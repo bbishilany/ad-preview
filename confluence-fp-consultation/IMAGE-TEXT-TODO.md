@@ -87,6 +87,6 @@ Bake on each creative: small mint uppercase eyebrow above the white IvyPresto ho
 | 10 | MORE THAN THE MONEY | Preparing the Next Generation. |
 | 11 | LIFE RARELY STANDS STILL | When Life Changes, So Should the Plan. |
 | 12 | THE OFFER WILL COME | Exit on Your Terms. |
-| 13 | GOOD INTENTIONS AREN'T A PLAN | Give With Intention. |
+| 13 | GENEROSITY, WITH A PLAN | Give With Intention. |
 | 14 | ADVICE SHOULDN'T GO QUIET | Know Where You Stand. |
 | 4 | (carousel — align cover/card eyebrows to Approach A in design) | per-card |

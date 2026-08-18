@@ -121,36 +121,6 @@
       "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
     {
-      "num": 4,
-      "title": "WM Breadth · One Team, One Plan",
-      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
-      "placements": [
-        "Carousel"
-      ],
-      "production": "",
-      "primary_text": "Your financial life is bigger than your portfolio.\n\nRetirement and income. Taxes. Estate. Insurance. Education. Giving.\n\nOur Wealth Planning Team brings every part into one plan, built around you.\n\nRequest a consultation, with no obligation.",
-      "headline": "One Team, One Plan",
-      "description": "Your whole financial life.",
-      "cta": "Request Time",
-      "hook": "Your financial life is bigger than your portfolio.",
-      "alt_headlines": [],
-      "cards": [],
-      "stories": {
-        "cta_sticker": "Request a Consultation",
-        "image": "The Wealth Planning Team together / comprehensive planning over a deep-green scrim; centered IvyPresto headline",
-        "eyebrow": "YOUR WHOLE FINANCIAL LIFE",
-        "text_overlay": "One Team, One Plan.",
-        "secondary_text": "Every part, one plan."
-      },
-      "reels": null,
-      "arc": "Wealth Management — the full suite in one plan (pivoted from the service carousel to a single image; caption touches the whole suite). HNW; clear over clever.",
-      "type": "image",
-      "week": 1,
-      "utm_content": "wm-breadth-one-plan",
-      "images": [],
-      "image_direction": "NEW SINGLE-IMAGE creative (pivoted from the 10-card carousel). One comprehensive shot: the Wealth Planning Team together, or an advisor+client with a whole-picture feel. Eyebrow 'YOUR WHOLE FINANCIAL LIFE'; on-image headline 'One Team, One Plan.' Deep-green scrim, white IvyPresto, outlined white pill CTA. The caption carries the service suite; the image stays clean (no service list baked in). Old ad9-carousel-card*.png now orphaned (left in place)."
-    },
-    {
       "num": 5,
       "title": "Your Advisor · The Standard",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
@@ -264,11 +234,11 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "How do you turn a lifetime of saving into income that lasts?\n\nSaving it was the first half. Making it last is the second.\n\nOur Wealth Planning Team helps you build a retirement income plan made to last.\n\nRequest a consultation, with no obligation.",
+      "primary_text": "What does a retirement built to last look like?\n\nIt's income you can count on, planned for the decades ahead.\n\nOur Wealth Planning Team helps you turn a lifetime of saving into a plan built to last.\n\nRequest a consultation, with no obligation.",
       "headline": "Income That Lasts",
       "description": "Savings into lasting income.",
       "cta": "Request Time",
-      "hook": "How do you turn a lifetime of saving into income that lasts?",
+      "hook": "What does a retirement built to last look like?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
@@ -276,7 +246,7 @@
         "text_overlay": "Income That Lasts.",
         "secondary_text": "The paycheck stops. The plan shouldn't.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "THE PAYCHECK STOPS"
+        "eyebrow": "IT HAS TO LAST DECADES"
       },
       "reels": null,
       "arc": "Retirement Planning — turning a lifetime of saving into lasting income. AUDIENCE ~$1M-$5M investable (Meta targeting only; signal by situation, NEVER a dollar figure in copy). Thought-provoking; clear over clever.",
@@ -287,7 +257,7 @@
         "ad8-t5-life-stage-b-feed.png",
         "ad8-t5-life-stage-b-story.png"
       ],
-      "image_direction": "Retirement Planning concept (audience ~$1M-$5M, targeting only, NO dollars in creative). Confident near-/in-retirement couple or individual, unhurried. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Income That Lasts.' Deep-green scrim, white IvyPresto, outlined white pill CTA. No guarantees/performance."
+      "image_direction": "NEW CREATIVE. Retirement Planning ($1-5M audience, targeting only, no dollars). Concept 2: aspirational 'built to last' — a confident, ACTIVE near-/in-retirement couple (purposeful, not frail). Eyebrow 'IT HAS TO LAST DECADES'; on-image 'Income That Lasts.' Deep-green scrim, white IvyPresto, outlined white pill CTA. No guarantees/performance."
     },
     {
       "num": 9,

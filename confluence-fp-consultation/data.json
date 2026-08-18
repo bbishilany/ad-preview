@@ -58,7 +58,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "You were intentional about building your wealth. Is your plan just as intentional?\n\nGrowing wealth is one thing. Giving it direction is another.\n\nOur Wealth Planning Team works to align it with your goals and the life you're building.\n\nRequest a consultation, with no obligation.",
       "headline": "Aligned With Your Purpose",
       "description": "Wealth with direction.",
@@ -71,7 +71,8 @@
         "text_overlay": "Aligned With Your Purpose.",
         "secondary_text": "Wealth with direction.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "WEALTH NEEDS DIRECTION"
+        "eyebrow": "WEALTH NEEDS DIRECTION",
+        "finished": true
       },
       "reels": null,
       "arc": "Wealth Management — intention & purpose (replaces T1 Coordination B). Thought-provoking, HNW; clear over clever.",
@@ -79,8 +80,8 @@
       "week": 1,
       "utm_content": "wm-purpose-intentional",
       "images": [
-        "ad2-t1-coordination-b-feed.png",
-        "ad2-t1-coordination-b-story.png"
+        "ad2-purpose-feed.jpg",
+        "ad2-purpose-story.jpg"
       ],
       "image_direction": "Photo-dominant, WEALTH MANAGEMENT / purpose concept (REPLACES coordination B). Advisor + client in focused, forward-looking conversation, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Coordinated, or Just Coexisting?' -> 'Aligned With Your Purpose.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
@@ -92,7 +93,7 @@
         "Feed",
         "Stories"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "Does your wealth bring peace of mind, or just more to manage?\n\nPeace of mind doesn't always come with it.\n\nOur Wealth Planning Team works to help you find it, with clarity and confidence.\n\nRequest a consultation, with no obligation.",
       "headline": "Wealth, and Peace of Mind",
       "description": "Confidence in the plan.",
@@ -105,7 +106,8 @@
         "text_overlay": "Wealth, and Peace of Mind.",
         "secondary_text": "Move forward with confidence.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "WEALTH ALONE ISN'T PEACE"
+        "eyebrow": "WEALTH ALONE ISN'T PEACE",
+        "finished": true
       },
       "reels": null,
       "arc": "Wealth Management — confidence & peace of mind (replaces T1 Coordination gap-frame). Thought-provoking, HNW; clear over clever.",
@@ -113,8 +115,8 @@
       "week": 1,
       "utm_content": "wm-peace-of-mind",
       "images": [
-        "ad10-t1-often-managed-apart-feed.png",
-        "ad10-t1-often-managed-apart-story.png"
+        "ad3-peace-feed.jpg",
+        "ad3-peace-story.jpg"
       ],
       "image_direction": "Photo-dominant, WEALTH MANAGEMENT / peace-of-mind concept (REPLACES coordination gap-frame). A calm, assured client (or client+advisor), unhurried, city window, faces-first. RE-EXPORT in Figma: eyebrow -> 'WEALTH PLANNING'; on-image headline 'Managed Apart, or Managed as One?' -> 'Wealth, and Peace of Mind.' Keep existing photo; text-only edit. Deep-green scrim, white IvyPresto headline, outlined white pill CTA."
     },
@@ -215,7 +217,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "What should your financial advisor be doing for you?\n\nGreat advice is about your whole financial life, not just your investments.\n\nThat's what our Wealth Planning Team is built to do, honestly and objectively, around your goals.\n\nRequest a consultation, with no obligation.",
       "headline": "The Standard You Deserve",
       "description": "What great advice does.",
@@ -228,7 +230,8 @@
         "text_overlay": "The Standard You Should Expect.",
         "secondary_text": "What great advice does.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "MORE THAN INVESTMENTS"
+        "eyebrow": "MORE THAN INVESTMENTS",
+        "finished": true
       },
       "reels": null,
       "arc": "2nd Opinion — the standard great advice should meet (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
@@ -236,8 +239,8 @@
       "week": 1,
       "utm_content": "advisor-the-standard",
       "images": [
-        "ad3-t2-second-opinion-a-feed.png",
-        "ad3-t2-second-opinion-a-story.png"
+        "ad5-standard-feed.jpg",
+        "ad5-standard-story.jpg"
       ],
       "image_direction": "Your-advisor / the-standard concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'An Independent, Outside Perspective' -> 'The Standard You Should Expect.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
@@ -250,7 +253,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "When did your advisor last bring you something you didn't ask for?\n\nGood advice doesn't wait to be asked.\n\nOur Wealth Planning Team works to stay a step ahead, bringing ideas before you need them.\n\nRequest a consultation, with no obligation.",
       "headline": "Advice That Comes to You",
       "description": "A step ahead.",
@@ -263,7 +266,8 @@
         "text_overlay": "Advice That Comes to You.",
         "secondary_text": "A step ahead.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "WHY WAIT TO BE ASKED?"
+        "eyebrow": "WHY WAIT TO BE ASKED?",
+        "finished": true
       },
       "reels": null,
       "arc": "2nd Opinion — proactive advice, brings you ideas before you ask (repositioned from second opinion). Thought-provoking, HNW; clear over clever.",
@@ -271,8 +275,8 @@
       "week": 2,
       "utm_content": "advisor-proactive",
       "images": [
-        "ad4-t2-second-opinion-b-feed.png",
-        "ad4-t2-second-opinion-b-story.png"
+        "ad6-proactive-feed.jpg",
+        "ad6-proactive-story.jpg"
       ],
       "image_direction": "Your-advisor / proactive concept (repositioned from second opinion). Keep an advisor+client photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'A Second Perspective on Your Plan' -> 'Advice That Comes to You.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
@@ -352,7 +356,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "Will your legacy happen by design, or by default?\n\nBy design, you make the most of what you pass on.\n\nOur Wealth Planning Team helps you plan it with intention, focused on the people and causes you care about.\n\nRequest a consultation, with no obligation.",
       "headline": "A Legacy By Design",
       "description": "Make the most of it.",
@@ -365,7 +369,8 @@
         "text_overlay": "A Legacy By Design.",
         "secondary_text": "Make the most of it.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "BY DESIGN, OR BY DEFAULT?"
+        "eyebrow": "BY DESIGN, OR BY DEFAULT?",
+        "finished": true
       },
       "reels": null,
       "arc": "Legacy & Generational Wealth — make the most of what you pass on, by design not default (paired with Generational Wealth, which owns next-gen readiness). Thought-provoking, HNW; clear over clever.",
@@ -373,8 +378,8 @@
       "week": 2,
       "utm_content": "legacy-by-design",
       "images": [
-        "ad5-t3-legacy-a-feed.png",
-        "ad5-t3-legacy-a-story.png"
+        "ad9-legacy-feed.jpg",
+        "ad9-legacy-story.jpg"
       ],
       "image_direction": "Legacy concept: making the most of what you pass on (people + causes). RE-EXPORT: eyebrow -> 'WEALTH PLANNING' (was 'LEGACY & FAMILY'); on-image headline -> 'A Legacy By Design.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
@@ -387,7 +392,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "Will the next generation be ready for the wealth you pass on?\n\nLasting wealth is as much about the people as the plan.\n\nOur Wealth Planning Team helps you prepare both, the family and the wealth they'll inherit.\n\nRequest a consultation, with no obligation.",
       "headline": "Preparing the Next Generation",
       "description": "More than the money.",
@@ -400,7 +405,8 @@
         "text_overlay": "Preparing the Next Generation.",
         "secondary_text": "More than the money.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "MORE THAN THE MONEY"
+        "eyebrow": "MORE THAN THE MONEY",
+        "finished": true
       },
       "reels": null,
       "arc": "Legacy & Generational Wealth — wealth that lasts across generations (not just handed off). Thought-provoking, HNW; clear over clever.",
@@ -408,8 +414,8 @@
       "week": 3,
       "utm_content": "generational-wealth-lasts",
       "images": [
-        "ad6-t3-legacy-b-feed.png",
-        "ad6-t3-legacy-b-story.png"
+        "ad10-generational-feed.jpg",
+        "ad10-generational-story.jpg"
       ],
       "image_direction": "Generational-wealth concept centered on the PEOPLE: preparing the next generation (multi-gen family, or a parent + adult child). RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline -> 'Preparing the Next Generation.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
@@ -422,7 +428,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "Few transitions arrive in isolation.\n\nApproaching retirement, selling a business, or a change in the family: these are the moments your financial life most needs to move together.\n\nOur advisors work to coordinate the pieces as one.\n\nRequest a consultation, with no obligation.",
       "headline": "When Life Changes, So Should the Plan",
       "description": "Guidance through transition.",
@@ -435,7 +441,8 @@
         "text_overlay": "When Life Changes, So Should the Plan",
         "secondary_text": "Guidance through transition.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "LIFE RARELY STANDS STILL"
+        "eyebrow": "LIFE RARELY STANDS STILL",
+        "finished": true
       },
       "reels": null,
       "arc": "Life-Stage Transitions — recognition/empathy (accessible on-ramp)",
@@ -443,8 +450,8 @@
       "week": 4,
       "utm_content": "t5-life-stage-a",
       "images": [
-        "ad7-t5-life-stage-a-feed.png",
-        "ad7-t5-life-stage-a-story.png"
+        "ad11-lifestage-feed.jpg",
+        "ad11-lifestage-story.jpg"
       ],
       "image_direction": "Photo-dominant, branded/site imagery. A mature 50+ couple or individual at a transition moment (retirement / move / family change), warm, faces-first. Standard scrim, compact block. White Ivypresto headline. Sofia to select."
     },
@@ -457,7 +464,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "Are you planning your exit, or waiting for an offer?\n\nThe best exits are planned years ahead, not decided in a moment.\n\nOur Wealth Planning Team helps you prepare early, so you exit on your terms.\n\nRequest a consultation, with no obligation.",
       "headline": "Exit on Your Terms",
       "description": "Plan it, don't react to it.",
@@ -477,7 +484,9 @@
       "type": "image",
       "week": 1,
       "utm_content": "exit-planning-proactive",
-      "images": [],
+      "images": [
+        "ad12-exit-feed.jpg"
+      ],
       "image_direction": "NEW CREATIVE NEEDED. Exit Planning (proactive): confident business owner in control, forward-looking. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'EXIT PLANNING'); on-image headline 'Exit on Your Terms.' Deep-green scrim, white IvyPresto, outlined white pill CTA. Add CEPA (Certified Exit Planning Advisor) to copy ONLY after verifying a named advisor holds it."
     },
     {
@@ -489,7 +498,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "Your generosity has a purpose. Does it have a plan?\n\nThe intention is already there. A plan helps it go further.\n\nOur Wealth Planning Team helps you turn generosity into a strategy, tax-aware and built around your values.\n\nRequest a consultation, with no obligation.",
       "headline": "Give With Intention",
       "description": "Generosity, with a plan.",
@@ -502,14 +511,18 @@
         "text_overlay": "Give With Intention.",
         "secondary_text": "Generosity, with a plan.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "GENEROSITY, WITH A PLAN"
+        "eyebrow": "GENEROSITY, WITH A PLAN",
+        "finished": true
       },
       "reels": null,
       "arc": "Philanthropic Planning — turn generosity into an intentional, tax-aware strategy woven into the wealth plan (grounds in the new service page, Figma node 1680-348). HNW; clear over clever.",
       "type": "image",
       "week": 1,
       "utm_content": "philanthropic-planning-intention",
-      "images": [],
+      "images": [
+        "ad13-philanthropic-feed.jpg",
+        "ad13-philanthropic-story.jpg"
+      ],
       "image_direction": "NEW CREATIVE NEEDED. Philanthropic Planning: warm but dignified (a cause, a family giving together) — not saccharine. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'PHILANTHROPIC PLANNING'); on-image headline 'Give With Intention.' Deep-green scrim, white IvyPresto, outlined white pill CTA. 'tax-aware' framed as planning only, never tax advice."
     },
     {
@@ -521,7 +534,7 @@
         "Stories",
         "Reels"
       ],
-      "production": "",
+      "production": "Figma finished creative placed (mapped by content).",
       "primary_text": "When did you last hear from your advisor?\n\nGood advice is an ongoing conversation, not an annual update.\n\nOur Wealth Planning Team stays in regular touch, so you know where you stand.\n\nRequest a consultation, with no obligation.",
       "headline": "Know Where You Stand",
       "description": "Never left wondering.",
@@ -534,14 +547,18 @@
         "text_overlay": "Know Where You Stand.",
         "secondary_text": "Never left wondering.",
         "cta_sticker": "Request a Consultation",
-        "eyebrow": "ADVICE SHOULDN'T GO QUIET"
+        "eyebrow": "ADVICE SHOULDN'T GO QUIET",
+        "finished": true
       },
       "reels": null,
       "arc": "2nd Opinion — advisor communication/access ('when did you last hear from your advisor?'). Framed as the standard you deserve, no disparagement. HNW; clear over clever.",
       "type": "image",
       "week": 1,
       "utm_content": "2nd-opinion-communication",
-      "images": [],
+      "images": [
+        "ad14-communication-feed.jpg",
+        "ad14-communication-story.jpg"
+      ],
       "image_direction": "NEW CREATIVE NEEDED. 2nd Opinion / communication: advisor + client in easy, regular conversation (accessible, attentive). Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'Know Where You Stand.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     }
   ],

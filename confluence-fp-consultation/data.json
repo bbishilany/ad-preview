@@ -151,7 +151,7 @@
     },
     {
       "num": 5,
-      "title": "Legacy · By Design",
+      "title": "Wealth Preservation · Protect It",
       "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
       "placements": [
         "Feed",
@@ -159,29 +159,29 @@
         "Reels"
       ],
       "production": "",
-      "primary_text": "Will your legacy happen by design, or by default?\n\nBy design, more of what you've built reaches the people you love.\n\nOur Wealth Planning Team works to protect it and pass it on, the way you intend.\n\nRequest a consultation, with no obligation.",
-      "headline": "A Legacy By Design",
-      "description": "Plan it with intention.",
+      "primary_text": "You've spent years building your wealth. What's the plan to protect it?\n\nGrowing it and keeping it take different kinds of planning.\n\nOur Wealth Planning Team works to protect what you've built and help it last.\n\nRequest a consultation, with no obligation.",
+      "headline": "Protect What You've Built",
+      "description": "Grow it, and keep it.",
       "cta": "Request Time",
-      "hook": "Will your legacy happen by design, or by default?",
+      "hook": "You've spent years building your wealth. What's the plan to protect it?",
       "alt_headlines": [],
       "cards": [],
       "stories": {
         "image": "Grandparents and grandchild at golden hour looking to the horizon; green bottom scrim, centered white Ivypresto headline",
-        "text_overlay": "A Legacy By Design.",
-        "secondary_text": "Plan it with intention.",
+        "text_overlay": "Protect What You've Built.",
+        "secondary_text": "Grow it, and keep it.",
         "cta_sticker": "Request a Consultation"
       },
       "reels": null,
-      "arc": "Legacy — plan your legacy with intention, not by default. Thought-provoking, HNW; clear over clever.",
+      "arc": "Wealth Preservation — protecting and preserving what you've built (repositioned from legacy). Thought-provoking, HNW; clear over clever.",
       "type": "image",
       "week": 2,
-      "utm_content": "legacy-by-design",
+      "utm_content": "wealth-preservation",
       "images": [
         "ad5-t3-legacy-a-feed.png",
         "ad5-t3-legacy-a-story.png"
       ],
-      "image_direction": "Legacy / by-design concept. Keep a warm legacy photo; text-only Figma edit. RE-EXPORT: eyebrow -> 'WEALTH PLANNING'; on-image headline 'The Clarity You Leave Behind' -> 'A Legacy By Design.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
+      "image_direction": "Wealth PRESERVATION concept (repositioned from legacy/family). SWAP the family-beach photo for a wealth-oriented shot (advisor+client reviewing, or a confident individual), NOT a multi-gen beach scene. RE-EXPORT: eyebrow 'LEGACY & FAMILY' -> 'WEALTH PLANNING'; on-image headline 'Who's Coordinating It All?' -> 'Protect What You've Built.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     },
     {
       "num": 6,

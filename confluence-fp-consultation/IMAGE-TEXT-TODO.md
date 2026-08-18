@@ -41,3 +41,11 @@ Keep existing advisor+client photos; edit eyebrow + headline in Figma.
 |----|-------------------|------------------------------|
 | **3** — The Standard | *(verify)* → `WEALTH PLANNING` | `An Independent, Outside Perspective` → `The Standard You Should Expect.` |
 | **4** — Proactive | *(verify)* → `WEALTH PLANNING` | `A Second Perspective on Your Plan` → `Advice That Comes to You.` |
+
+### Ads 5 & 6 — Legacy / Succession (repositioned)
+
+Text-only edits (keep photos; Ad 6 optional swap to a business-owner + successor shot).
+| Ad | Eyebrow → | On-image headline FROM → TO |
+|----|-----------|------------------------------|
+| **5** — Legacy | `WEALTH PLANNING` | `The Clarity You Leave Behind` → `A Legacy By Design.` |
+| **6** — Succession | `WEALTH PLANNING` | `Wealth That Passes On With Purpose` → `Who Carries It Forward?` |

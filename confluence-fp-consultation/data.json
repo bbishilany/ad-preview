@@ -498,6 +498,37 @@
       "utm_content": "philanthropic-planning-intention",
       "images": [],
       "image_direction": "NEW CREATIVE NEEDED. Philanthropic Planning: warm but dignified (a cause, a family giving together) — not saccharine. Build in Figma: eyebrow 'WEALTH PLANNING' (or 'PHILANTHROPIC PLANNING'); on-image headline 'Give With Intention.' Deep-green scrim, white IvyPresto, outlined white pill CTA. 'tax-aware' framed as planning only, never tax advice."
+    },
+    {
+      "num": 14,
+      "title": "2nd Opinion · Communication",
+      "format": "Static image, 1080x1350 (Feed 4:5) + 1080x1920 (Story 9:16)",
+      "placements": [
+        "Feed",
+        "Stories",
+        "Reels"
+      ],
+      "production": "",
+      "primary_text": "When did you last hear from your advisor?\n\nYou shouldn't have to wonder how your money is doing.\n\nOur Wealth Planning Team stays in regular touch, so you know where you stand.\n\nRequest a consultation, with no obligation.",
+      "headline": "Know Where You Stand",
+      "description": "Never left wondering.",
+      "cta": "Request Time",
+      "hook": "When did you last hear from your advisor?",
+      "alt_headlines": [],
+      "cards": [],
+      "stories": {
+        "image": "Advisor and client in easy, regular conversation over a deep-green scrim; centered IvyPresto headline",
+        "text_overlay": "Know Where You Stand.",
+        "secondary_text": "Never left wondering.",
+        "cta_sticker": "Request a Consultation"
+      },
+      "reels": null,
+      "arc": "2nd Opinion — advisor communication/access ('when did you last hear from your advisor?'). Framed as the standard you deserve, no disparagement. HNW; clear over clever.",
+      "type": "image",
+      "week": 1,
+      "utm_content": "2nd-opinion-communication",
+      "images": [],
+      "image_direction": "NEW CREATIVE NEEDED. 2nd Opinion / communication: advisor + client in easy, regular conversation (accessible, attentive). Build in Figma: eyebrow 'WEALTH PLANNING'; on-image headline 'Know Where You Stand.' Deep-green scrim, white IvyPresto, outlined white pill CTA."
     }
   ],
   "client": "confluence-fp-consultation"

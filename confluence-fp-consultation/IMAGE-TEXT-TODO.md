@@ -63,3 +63,9 @@ Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
 - Eyebrow: `WEALTH PLANNING` (or `PHILANTHROPIC PLANNING`)
 - On-image headline: `Give With Intention.`
 - Photo: warm but dignified giving/values scene (a cause, a family giving together).
+
+### Ad 14 — 2nd Opinion (Communication) — NEW CREATIVE (no frame yet)
+Build feed 1080x1350 + story 1080x1920, deep-green scrim + white IvyPresto.
+- Eyebrow: `WEALTH PLANNING`
+- On-image headline: `Know Where You Stand.`
+- Photo: advisor + client in easy, attentive conversation.

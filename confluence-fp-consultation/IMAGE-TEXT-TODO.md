@@ -93,3 +93,10 @@ Bake on each creative: small mint uppercase eyebrow above the white IvyPresto ho
 | 13 | GENEROSITY, WITH A PLAN | Give With Intention. |
 | 14 | ADVICE SHOULDN'T GO QUIET | Know Where You Stand. |
 | 4 | (carousel — align cover/card eyebrows to Approach A in design) | per-card |
+
+## Design polish — Stephanie's notes (2026-08-20) → Mayo, Figma
+Apply across all 13 frames (feed + story), then re-export + I re-place.
+- **Green eyebrow copy** — bump up a few points; it reads small / gets lost.
+- **No widows** — no single word/short line stranded on its own. Ad 1 is the clear example ("...Clearly." sitting alone) — rebalance line breaks so headlines don't orphan a word.
+- **Main headline** — nudge the white IvyPresto headline a little larger.
+- **Logo** — enlarge the Confluence logo on the graphic.

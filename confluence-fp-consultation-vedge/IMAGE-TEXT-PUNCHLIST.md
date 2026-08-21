@@ -7,7 +7,7 @@ Source: `feedback` table, campaign `confluence-fp-consultation-vedge`.
 
 | Ad | Concept | Current on-image | Katie's requested edit | Status |
 |----|---------|------------------|------------------------|--------|
-| 1 | Clarity | eyebrow: WHEN THE PICTURE GETS COMPLEX | eyebrow → **"As wealth grows, so does complexity."** | ☐ |
+| 1 | Clarity | eyebrow: WHEN THE PICTURE GETS COMPLEX | eyebrow → **"As wealth grows, so does complexity."** | ✅ placed (output 96) |
 | 2 | Purpose | eyebrow: WEALTH NEEDS DIRECTION | eyebrow → **"The numbers matter. So does the plan behind them."** | ☐ |
 | 3 | Peace | headline: More Wealth. More Decisions. More Room for Mistakes? | headline → **"Does Your Plan Keep Up?"** | ☐ |
 | 4 | Standard | (no comment) | — | ✓ |

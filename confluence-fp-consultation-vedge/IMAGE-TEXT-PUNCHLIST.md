@@ -21,6 +21,6 @@ Source: `feedback` table, campaign `confluence-fp-consultation-vedge`.
 | 12 | Exit | I'm Ready to Sell My Business. What's Next? / THE OFFER WILL COME | → **"Preparing for life after the sale starts before the transaction."** | ☐ |
 | 13 | Philanthropic | A Big Charitable Gift Could Come With a Big Tax Opportunity. / GENEROSITY, WITH A PLAN | headline → **"Charitable giving can be an important part of a broader tax and financial planning strategy."** | ☐ |
 
-**Also not-yet-addressed:** Ads 1 & 2 dollar-figure headlines ($5M, $3M/$5M/$10M) — still on the graphic; Katie's edits target the eyebrows, not those headlines. Confirm whether the dollar figures stay or go.
+**Dollar figures:** Katie (compliance) reviewed ad-by-ad and kept the $ headlines on Ads 1 & 2 (edited only their eyebrows). That's her compliance call — leave as approved, no action.
 
 **Net effect:** these pull the edge register back toward compliant/plain language (no $ figures, tax framed as "part of a broader strategy," softer provocations). Effectively the compliance pass on vEdge.

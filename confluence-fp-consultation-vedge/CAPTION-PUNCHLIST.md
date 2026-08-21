@@ -19,7 +19,7 @@ These are CAPTION / primary_text edits (distinct from her Aug 21 on-image edits 
 | 10 | "edit: Wealth transfer planning involves more than assets alone.  We help families explore strategies for preparing both beneficiaries and the assets they may inherit." | replace beats | ✅ done |
 | 11 | "instead of: \"We help your plan keep pace, at every stage of life.\" edit to: We help clients evaluate and adjust their planning strategies as circumstances evolve." | single-beat swap | ✅ done |
 | 12 | "edit: We help business owners evaluate transition, succession, and financial planning considerations for the future." | replace last beat | ✅ done |
-| 13 | "instead of: A plan helps it go further. edit to: Thoughtful planning can help align charitable giving with your broader financial goals." | single-beat swap | ☐ pending |
+| 13 | "instead of: A plan helps it go further. edit to: Thoughtful planning can help align charitable giving with your broader financial goals." | single-beat swap | ✅ done |
 
 **Also (not Aug 20):** Marissa, Aug 3 — Ad 4 photo swap (person next to Bill no longer works there).
 

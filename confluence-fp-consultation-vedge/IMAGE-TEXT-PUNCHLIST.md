@@ -16,7 +16,7 @@ Source: `feedback` table, campaign `confluence-fp-consultation-vedge`.
 | 7 | Communication | An Annual Financial Check-In Isn't a Relationship / ADVICE SHOULDN'T GO QUIET | eyebrow → **"Financial planning is an ongoing conversation."** | ✅ placed (output 99) |
 | 8 | Retirement | $5 Million Saved. Is It Enough for Your Retirement? / FROM BUILDING TO LIVING | on-image → **"$5 Million Saved. Is It Enough for the Retirement You Envision?"** · eyebrow → **"From building wealth to living from it."** · link-bar headline matched | ✅ placed (output 101) + link headline updated |
 | 9 | Legacy | A Legacy Without a Plan Is Just a Wish. / BY DESIGN, OR BY DEFAULT? | headline → **"A Legacy Takes More Than Assets Alone."** | ☐ |
-| 10 | Generational | Don't Just Build Your Legacy. Prepare Your Heirs. / MORE THAN THE MONEY | headline → **"Don't Just Build Your Legacy. Plan for the Next Generation."** | ☐ |
+| 10 | Generational | Don't Just Build Your Legacy. Prepare Your Heirs. / MORE THAN THE MONEY | headline → **"Don't Just Build Your Legacy. Plan for the Next Generation."** | ✅ placed (output 103) |
 | 11 | Life-Stage | Life's Milestones Don't Come With a Financial Playbook. / LIFE RARELY STANDS STILL | (no comment) | ✓ |
 | 12 | Exit | I'm Ready to Sell My Business. What's Next? / THE OFFER WILL COME | → **"Preparing for life after the sale starts before the transaction."** | ☐ |
 | 13 | Philanthropic | A Big Charitable Gift Could Come With a Big Tax Opportunity. / GENEROSITY, WITH A PLAN | headline → **"Charitable giving can be an important part of a broader tax and financial planning strategy."** | ☐ |

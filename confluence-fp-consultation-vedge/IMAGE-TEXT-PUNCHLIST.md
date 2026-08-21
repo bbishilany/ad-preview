@@ -13,7 +13,7 @@ Source: `feedback` table, campaign `confluence-fp-consultation-vedge`.
 | 4 | Standard | (no comment) | — | ✓ |
 | 5 | Proactive | Is Your Financial Advisor Proactive or Reactive? / WHY WAIT TO BE ASKED | headline → **"Is Your Financial Advisor Helping You Prepare for What's Next?"** · sub → **"Financial planning is about more than responding to change."** | ☐ |
 | 6 | Value | Your Advisor Charges a Fee. Do They Deliver the Value? / COST IS ONLY HALF OF IT | headline → **"Your Advisor Charges a Fee. Do You Understand the Services Behind It?"** · eyebrow → **"Cost Is Only Part of the Equation."** | ☐ |
-| 7 | Communication | An Annual Financial Check-In Isn't a Relationship / ADVICE SHOULDN'T GO QUIET | eyebrow → **"Financial planning is an ongoing conversation."** (Katie also floated headline "Financial planning isn't a one-time conversation." — confirm) | ☐ |
+| 7 | Communication | An Annual Financial Check-In Isn't a Relationship / ADVICE SHOULDN'T GO QUIET | eyebrow → **"Financial planning is an ongoing conversation."** | ✅ placed (output 99) |
 | 8 | Retirement | $5 Million Saved. Is It Enough for Your Retirement? / FROM BUILDING TO LIVING | headline → **"Is It Enough for the Retirement You Envision?"** · eyebrow → **"Retirement happens by design, not by default."** (drops the $ figure) | ☐ |
 | 9 | Legacy | A Legacy Without a Plan Is Just a Wish. / BY DESIGN, OR BY DEFAULT? | headline → **"A Legacy Takes More Than Assets Alone."** | ☐ |
 | 10 | Generational | Don't Just Build Your Legacy. Prepare Your Heirs. / MORE THAN THE MONEY | headline → **"Don't Just Build Your Legacy. Plan for the Next Generation."** | ☐ |

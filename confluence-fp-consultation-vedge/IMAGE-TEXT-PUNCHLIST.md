@@ -19,7 +19,7 @@ Source: `feedback` table, campaign `confluence-fp-consultation-vedge`.
 | 10 | Generational | Don't Just Build Your Legacy. Prepare Your Heirs. / MORE THAN THE MONEY | headline → **"Don't Just Build Your Legacy. Plan for the Next Generation."** | ✅ placed (output 103) |
 | 11 | Life-Stage | Life's Milestones Don't Come With a Financial Playbook. / LIFE RARELY STANDS STILL | (no comment) | ✓ |
 | 12 | Exit | I'm Ready to Sell My Business. What's Next? / THE OFFER WILL COME | eyebrow → **"Preparing for life after the sale starts before the transaction."** | ✅ placed (output 104) |
-| 13 | Philanthropic | A Big Charitable Gift Could Come With a Big Tax Opportunity. / GENEROSITY, WITH A PLAN | headline → **"Charitable giving can be an important part of a broader tax and financial planning strategy."** | ☐ |
+| 13 | Philanthropic | A Big Charitable Gift Could Come With a Big Tax Opportunity. / GENEROSITY, WITH A PLAN | headline → **"Charitable giving can be an important part of a broader tax and financial planning strategy."** | ✅ placed (output 105) |
 
 **Dollar figures:** Katie (compliance) reviewed ad-by-ad and kept the $ headlines on Ads 1 & 2 (edited only their eyebrows). That's her compliance call — leave as approved, no action.
 

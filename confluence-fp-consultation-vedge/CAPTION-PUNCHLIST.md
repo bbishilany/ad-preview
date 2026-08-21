@@ -23,4 +23,4 @@ These are CAPTION / primary_text edits (distinct from her Aug 21 on-image edits 
 
 **Also (not Aug 20):** Marissa, Aug 3 — Ad 4 photo swap (person next to Bill no longer works there).
 
-**Done so far (5):** Ads 1, 2, 3, 7, 8. **Pending (8):** Ads 4, 5, 6, 9, 10, 11, 12, 13.
+**COMPLETE — all 13 caption edits applied to vEdge** (Ads 1–13). Katie's Aug 20 primary-text pass fully implemented.

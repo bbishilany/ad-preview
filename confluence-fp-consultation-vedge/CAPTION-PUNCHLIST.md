@@ -17,7 +17,7 @@ These are CAPTION / primary_text edits (distinct from her Aug 21 on-image edits 
 | 8 | "edit: It's not just what you've saved. It's how those resources fit into your broader financial picture.  We bring the pieces of your financial life together to help you evaluate your retirement goals and priorities." | keep opening + beats below | ✅ done (per Bill, split 3 beats) |
 | 9 | "Instead of \"Make the most of what you pass on.\", edit to: Thoughtful planning can help ensure your wishes are reflected in the decisions made for the future." | single-beat swap | ✅ done |
 | 10 | "edit: Wealth transfer planning involves more than assets alone.  We help families explore strategies for preparing both beneficiaries and the assets they may inherit." | replace beats | ✅ done |
-| 11 | "instead of: \"We help your plan keep pace, at every stage of life.\" edit to: We help clients evaluate and adjust their planning strategies as circumstances evolve." | single-beat swap | ☐ pending |
+| 11 | "instead of: \"We help your plan keep pace, at every stage of life.\" edit to: We help clients evaluate and adjust their planning strategies as circumstances evolve." | single-beat swap | ✅ done |
 | 12 | "edit: We help business owners evaluate transition, succession, and financial planning considerations for the future." | replace last beat | ☐ pending |
 | 13 | "instead of: A plan helps it go further. edit to: Thoughtful planning can help align charitable giving with your broader financial goals." | single-beat swap | ☐ pending |
 

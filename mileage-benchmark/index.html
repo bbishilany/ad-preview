@@ -1533,6 +1533,15 @@ function renderVariantBar(ad) {
 // ── Image URL helpers ──────────────────────────────────────────────────────
 function _imgUrl(filename) { return `images/${filename}`; }
 
+function _isVideoUrl(u) { return typeof u === 'string' && /\.mp4($|\?)/i.test(u); }
+function _mediaEl(url, cls, alt) {
+  if (_isVideoUrl(url)) {
+    const poster = url.replace(/\.mp4($|\?)/i, '.jpg$1');
+    return `<video class="${cls || ''}" src="${url}" poster="${poster}" muted loop playsinline autoplay preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block"></video>`;
+  }
+  return `<img class="${cls || ''}" src="${url}" alt="${alt || ''}" loading="lazy">`;
+}
+
 function _findFeedImage(ad, varNum) {
   const slotKey = varNum != null ? `${ad.num}_v${varNum}_feed` : `${ad.num}_feed`;
   const override = _imageOverrides[slotKey];
@@ -1542,7 +1551,7 @@ function _findFeedImage(ad, varNum) {
     : ad.images || [];
   if (!images.length) return null;
   const img = images.find(f => f.includes('feed') || (!f.includes('story') && !f.includes('card')));
-  return img ? _imgUrl(img) : null;
+  return img ? _imgUrl(img) : (images[0] ? _imgUrl(images[0]) : null);
 }
 
 function _findStoryImage(ad, varNum) {
@@ -1909,7 +1918,7 @@ function renderFeedMockup(ad) {
   }
   let mediaHtml;
   if (imgUrl) {
-    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap"><img class="feed-creative" data-ad="${ad.num}" src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">${uploadBtn}${downloadBtn}</div></div>`;
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap">${_isVideoUrl(imgUrl) ? _mediaEl(imgUrl, 'feed-creative', '') : `<img class="feed-creative" data-ad="${ad.num}" src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">`}${uploadBtn}${downloadBtn}</div></div>`;
   } else {
     mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
   }
@@ -1956,7 +1965,7 @@ function renderStoryMockup(ad) {
   const storyDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${bgImg}','ad${ad.num}-story.png')" title="Download image">&#8681;</button>` : '';
 
   return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-mockup-type="story" data-ad-num="${ad.num}">
-    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0"><img class="ig-story-bg" src="${bgImg}" alt="" loading="lazy">${storyUploadBtn}${storyDownloadBtn}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0">${_mediaEl(bgImg, 'ig-story-bg', '')}${storyUploadBtn}${storyDownloadBtn}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
     <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
     <div class="ig-story-account">
       <div class="ig-story-avatar"><img src="${_brandmark()}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
@@ -2443,7 +2452,7 @@ document.addEventListener('keydown', function(e) {
 // ── Init ──────────────────────────────────────────────────────────────────
 async function init() {
   try {
-    const res = await fetch('data.json');
+    const res = await fetch('data.json?v=' + Date.now());
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     _data = await res.json();
     await loadImageVersions();

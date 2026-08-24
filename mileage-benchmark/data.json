@@ -1,481 +1,595 @@
 {
-  "campaign": "Online Visibility Benchmark — $500M+ RIAs",
-  "client": "Mileage Design",
-  "page_name": "Mileage Design",
-  "ig_handle": "mileage_design",
-  "brandmark": "images/mileage-icon.jpg",
-  "cta_url": "https://benchmark.mileagedesign.com",
-  "banner": [
-    "Full campaign arc — written and gated. A wave visible here is written, not live; ship gates in strategy §9 govern.",
-    "Ads 1, 3, 4: Bill-built creative, five image variations each — pick per ad."
-  ],
-  "event_date": "",
-  "venue": "",
-  "co_presenters": "",
-  "hide_design_direction": true,
-  "use_static_images": true,
-  "waves": [
-    {
-      "key": "1",
-      "label": "Wave 1 · Cold prospecting",
-      "title": "Five concepts",
-      "subtitle": "Broad US, 35-70, no detailed targeting · benchmark.mileagedesign.com · Learn More · floor line carried · the three Bill-built concepts each show five image variations as their own cards, so a variation can be approved on its own",
-      "gate": "§7 blockers clear, verified test Lead event before dollar one."
-    },
-    {
-      "key": "2a",
-      "label": "Wave 2a · Warm, no report",
-      "title": "Two at open, third at first refresh",
-      "subtitle": "Site visitors 180d, LP visitors who did not submit 30-60d, page and post engagers 365d, video viewers 50%+ once video exists · benchmark.mileagedesign.com · Learn More · floor line carried",
-      "gate": "Pool size, never the calendar. If the pool is thin at week 3, cold holds 100% and we re-check weekly."
-    },
-    {
-      "key": "2b",
-      "label": "Wave 2b · Warm, report viewers",
-      "title": "One to two, opening on 2b-2",
-      "subtitle": "Report openers who did not book, the highest-intent pool in the funnel · consult link via the server-side /api/consult?token= redirect · Request Time · no floor line",
-      "gate": "Instrumentation, not pool. /r/[token] and /status/[token] carry no pixel today, so this audience cannot be built yet."
-    },
-    {
-      "key": "3",
-      "label": "Wave 3 · Challengers and refresh",
-      "title": "One in, one out",
-      "subtitle": "Cold broad, same as wave 1 · benchmark.mileagedesign.com · Learn More · floor line carried · no sixth concept, a new concept enters only against a freed slot",
-      "gate": "Day-42 winner call, or a slot freed by the T1b/T4 collapse watch, or frequency above 3.5 per 7 days forcing a refresh."
-    },
-    {
-      "key": "fp",
-      "label": "Caption challengers · Hormozi fingerprint",
-      "title": "Three challenger captions, Gate B passed, awaiting Bill's pick",
-      "subtitle": "Same three flexible units, same locked headline, description, images and cards. Only the primary text changes: the gated arguments rewritten at the cadence of the Alex Hormozi account's measured caption fingerprint (750 active ads, 12 captions). Every deck rule held; mechanical checks run clean.",
-      "gate": "Gate B (adapted) PASS WITH EDITS, Serena FP-1..FP-3, 2026-08-03. Bill picks. Challengers never replace a gated control silently; if run, they test cadence only, same unit otherwise."
-    }
-  ],
-  "compliance_notes": [
-    "Full campaign arc, written and gated. A wave visible in this preview is written, not live; the ship gates in strategy §9 govern what runs when.",
-    "Round 1 draft frames throughout. Single photographic treatment, one frame per ad. Not the Figma component system.",
-    "Feed only. Stories and Reels variants do not exist yet and are not represented.",
-    "One headline and one description per ad, as fixed pairings. Not dynamic creative — do not enable Advantage+ creative text variations.",
-    "T3 ships the 96% card, and that card is valid only under the headline 'They look you up before they call'. The benched alternative is the no-stat subhead plate under 'See what your referrals see'. Neither half of either pair travels alone.",
-    "Stat concurrency is a binding scheduling rule: no locked stat rendering may run in two live ads at the same time. 3-2 and T1-S never run concurrently; any later challenger carrying the 96% waits for T3's slot.",
-    "Never ship: '96% of referred prospects', 'never using referrals', the Wealthtender 25% (ages 35-64, plan to use ChatGPT), the 31% and the 96% in the same ad, or any Ficomm figure stretched past advised investors.",
-    "Waves 2 and 3 on the content argument: never 'Google penalizes YMYL sites', never an invented AI-search mechanic, never stretch scaled-content-abuse into 'your library is spam', and no acronyms in any reader-facing line.",
-    "Wave 2 register: the reader chose a content library for defensible reasons and is never the butt of the line. No 'cookie-cutter', no 'recycled', no vendor named.",
-    "Marketing engineering is warm and downstream vocabulary only — 2a-2, 2b-1 and 2b-2, and nowhere in cold."
-  ],
-  "ads": [
-    {
-      "num": 1,
-      "title": "T1-S — flexible: 5 image assets",
-      "format": "Static image, 1080x1350 (4:5) · Bill-built",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Arrival V1 — the 50%, and the one route a firm can build",
-      "wave": "1",
-      "primary_text": [
-        "How did your last five clients find you?\n\nThe benchmark answers that for your market. Your firm, scored next to the four firms covering the most\nground in your metro.\n\nReferrals and centers of influence built the book. They still carry it.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and\nAbsolute Engagement, 2026).\n\nIntroductions still happen. They are not the only way clients arrive.\n\nSome of those routes a firm cannot do anything about. One it can build is what the market shows when\nsomeone looks the firm up.\n\nThat is the part the benchmark puts a number on. Two fields and about thirty seconds, and the report\ncomes back in about ten minutes, yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-        "The book got built on relationships, and that has not changed.\n\nThe benchmark shows what your market returns today. Your firm, scored next to the four firms covering\nthe most ground in your metro.\n\nWhat has changed is how many people arrive some other way.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and\nAbsolute Engagement, 2026).\n\nThose routes vary, and most of them a firm cannot control. One it can is what the market shows when\nsomeone looks the firm up.\n\nTwo fields and about thirty seconds. The report comes back in about ten minutes, yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "See where your firm stands",
-      "description": "Two fields, thirty seconds.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "50% of investors with $5M+ found their current advisor with no referral involved.\nFicomm Partners + Absolute Engagement, 2026",
-      "production": "Bill-built creative, image variation 1 of 5 for the T1-S unit. Copy, headline and description are identical across all five cards; only the photograph changes. Same stat on every one, rendered as a LinkedIn-style post card over the photo, with engagement counts hidden per the fabricated-proof rule, reaction emojis kept per Bill, and the source on its own line without parentheses. The card carries the full permitted prose rendering rather than the landing page's label-and-figure card treatment. Figma masters at 4320x5400 live on Bill's machine and belong on Drive; these are the 1080x1350 exports. Approve the variation you want on its own card. Split out of the old territory 1 on Bill's preview note that the caption and the image were arguing two different things. The image is unchanged; this copy is written to it, so the 50% is the argument rather than a supporting figure. The D-1 ceiling binds harder here because the whole ad is the figure: the study says no referral was involved, not that those investors arrived through search, so the copy stops at 'one route a firm can build'. This territory does not invoke the stool at all. Plate conditions carry over intact: 4:5 and 1:1 only from purpose-built crops, Meta auto-crop and image expansion OFF, 1.91:1 composed separately; the label and the source line are both hard elements, since the label carries the referent for 'without one'. Any placement that cannot guarantee them takes a no-stat plate instead. Headline plural deliberately. Recorded per G-11 for the A/B read: variant A's hook asks how the last five clients found you, and for many principals the honest answer confirms the belief the ad is trying to move, so if A trails B that is the first hypothesis rather than a mystery. Stat concurrency: the 50% also appears in wave 3 ad 3-2, and the two must never run at the same time.",
-      "images": [
-        "ad1-v1.jpg",
-        "ad1-v2.jpg",
-        "ad1-v3.jpg",
-        "ad1-v4.jpg",
-        "ad1-v5.jpg"
-      ],
-      "variation": "V1 of 5"
-    },
-    {
-      "num": 2,
-      "title": "T2 — flexible: 5 image assets",
-      "format": "Static image, 1080x1350 (4:5) · Bill-built",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Digital investment V1 — what the current spend is buying",
-      "wave": "1",
-      "primary_text": [
-        "The site and the search work have reporting behind them. What would a second read of the same market\nsay?\n\nThe benchmark is that read. Your firm scored the same way as the four firms covering the most ground in\nyour metro, plus the condition of the site underneath.\n\nThe practice grew on relationships, and that engine is still running.\n\n25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute\nEngagement, 2026).\n\nThat puts a new question on the site: whether an answer engine can read it.\n\nIf it lines up with what you're already seeing, that's worth knowing. If something reads differently,\nit's a useful conversation to have with whoever runs the work.\n\nTwo fields and about thirty seconds. The read comes back in about ten minutes, yours either way: an\nindependently measured view of the market you're growing in.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-        "Somewhere in the budget there is a line for being found. A site rebuilt two years ago, or search work\nrunning every month, or both.\n\nThe benchmark is where that gets measured. Your firm next to the four firms covering the most ground in\nyour metro, plus whether the site is built the way search engines and answer engines can read it.\n\nThe relationships still bring people in, and the introduction is still where most of this starts.\n\nWhat happens after it is the part nobody sends you a report on.\n\nThe market keeps adding routes that do not run through a person. 25% of investors under 45 used an AI\ntool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nTwo fields. Yours whether we ever speak.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "Your firm, measured in your metro",
-      "description": "Organic read. Thirty seconds.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "25% of investors under 45 used an AI tool while choosing an advisor.\nFicomm Partners + Absolute Engagement, 2026",
-      "production": "Bill-built creative, image variation 1 of 5 for the T2 unit. Copy, headline and description are identical across all five cards; only the photograph changes. Same stat on every one, rendered as a LinkedIn-style post card over the photo, with engagement counts hidden per the fabricated-proof rule, reaction emojis kept per Bill, and the source on its own line without parentheses. The card carries the full permitted prose rendering rather than the landing page's label-and-figure card treatment. Figma masters at 4320x5400 live on Bill's machine and belong on Drive; these are the 1080x1350 exports. Approve the variation you want on its own card. Hero stat: the 25% (Ficomm Partners and Absolute Engagement, 2026 — under 45, USED an AI tool). The plate runs the landing page's own stat card word for word, §02 card three of three. Do not substitute the Wealthtender 25%, which is a different study, a different age band (35-64) and a different tense (PLAN to use ChatGPT). Both variants scope the report to organic visibility and site condition, because the report does not grade paid. Variant A runs 152 words against the deck's 110-124 band, deliberately: the restored balance line and the closing growth beat are Gate B requirements and they outrank the band.",
-      "images": [
-        "ad3-v1.jpg",
-        "ad3-v2.jpg",
-        "ad3-v3.jpg",
-        "ad3-v4.jpg",
-        "ad3-v5.jpg"
-      ],
-      "variation": "V1 of 5"
-    },
-    {
-      "num": 3,
-      "title": "T3 — flexible: 5 image assets",
-      "format": "Static image, 1080x1350 (4:5) · Bill-built",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Message match V1 — a referral earns the introduction, the digital presence earns the meeting",
-      "wave": "1",
-      "primary_text": [
-        "Your name still gets passed along. Where does that person go next?\n\nThe benchmark shows you the list they find. Your firm, scored next to the four firms covering the most\nground in your metro.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family.\n\nAnd, separately, 96% of prospects research advisors online before they decide who to hire (Wealthtender,\n2025).\n\nHow a search starts and what settles it are not the same question.\n\nThe introduction is still how most of the book got built. The few minutes after it are the part nobody\nwatches.\n\nTwo fields, about thirty seconds. About ten minutes later you know where you stand, and it's yours\neither way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-        "A referral earns the introduction. Your digital presence earns the meeting.\n\nThe benchmark measures the second half. Your firm next to the four firms covering the most ground in\nyour metro, and what the site looks like when someone arrives.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family.\n\nAnd, separately, 96% of prospects research advisors online before they decide who to hire (Wealthtender,\n2025).\n\nBoth are true at once, and only one of them is visible from inside the firm.\n\nClients and centers of influence hand your name to people who trust them. That is how most of the book\ngot built.\n\nTwo fields. Yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "See what your market returns",
-      "description": "Two fields to run it.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "96% of prospects research advisors online before they decide who to hire.\nWealthtender, 2025",
-      "production": "Bill-built creative, image variation 1 of 5 for the T3 unit. Copy, headline and description are identical across all five cards; only the photograph changes. Same stat on every one, rendered as a LinkedIn-style post card over the photo, with engagement counts hidden per the fabricated-proof rule, reaction emojis kept per Bill, and the source on its own line without parentheses. The card carries the full permitted prose rendering rather than the landing page's label-and-figure card treatment. Figma masters at 4320x5400 live on Bill's machine and belong on Drive; these are the 1080x1350 exports. Approve the variation you want on its own card. The 96% card ships, per Bill: place 96 in the most prominent position. This is half of a binding pair, not a plate choice — D-3 permits the card only alongside a headline carrying no referral noun, so 'They look you up before they call' and this plate travel together and Stage 6 must never ship one half without the other. The swap costs the deck its strongest message match: 'See what your referrals see' was the landing page H1 verbatim. It is benched as a decided unit with its own no-stat plate (the landing page subhead, frame draft-t3-default.png, deliberately not in this preview) and comes back whole if the card ever has to come out. No label on this card, deliberately: the 96% is the page's hero figure rather than one of the three labelled §02 cards, and inventing an eyebrow would break the word-for-word rule. Three elements rather than four, which makes the source line the only vulnerable element and the first thing a top-biased crop removes — so 4:5 and 1:1 only from purpose-built crops, auto-crop and expansion off, and any placement that cannot guarantee the source line at full legibility takes the benched unit instead, headline included. Stat concurrency: the 96% is live here, so any later challenger carrying it waits for this slot rather than doubling it.",
-      "images": [
-        "ad4-v1.jpg",
-        "ad4-v2.jpg",
-        "ad4-v3.jpg",
-        "ad4-v4.jpg",
-        "ad4-v5.jpg"
-      ],
-      "variation": "V1 of 5"
-    },
-    {
-      "num": 4,
-      "title": "T1-W — What the practice is worth without you",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Practice worth — enterprise value, and the leg that stays in the building",
-      "wave": "1",
-      "primary_text": [
-        "What is this practice worth to someone who isn't you?\n\nReferrals and centers of influence built the book, and they still carry it.\n\nBoth of those legs live inside relationships that belong to the people who hold them.\n\nThe third leg is different. It sits inside the practice rather than inside a person, and it keeps working on a Tuesday when nobody is making an introduction.\n\nThat is the part a buyer can be shown.\n\nThe benchmark measures where yours stands. What the market can see of your firm, next to the four firms covering the most ground in your metro.\n\nTen minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-        "The introduction from a client. The referral from an accountant who trusts you.\n\nThe first two legs your practice grows on live inside people, and neither one transfers when you step back.\n\nThe third leg is the one that stays in the building. It is what a prospect finds at eleven at night, months before anyone says your name out loud.\n\nIt is also the part that builds value inside the practice itself.\n\nThe benchmark shows where yours stands. Your firm and the four firms with the widest coverage in your metro, scored on the same keyword set and the same technical checks.\n\nTen minutes. Yours to keep.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "What the practice is worth without you",
-      "description": "Ten minutes. Yours to keep.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "The first two legs live inside people.\nThe third leg stays in the building.",
-      "production": "The other half of the old territory 1. The 50% has moved out entirely and belongs to T1-S; carrying it in both would put one figure in two ads and make the pair read as variants of each other. The figure was never load-bearing here, so removing it returns each variant to the shape it had before the stat-forward pass and costs the argument nothing. New plate, no stat, two beats, seven words then seven: no figure, no source line, no label, no eyebrow. Checked against the E-1 lesson — line one states what the first two legs are rather than what they lack, and line two is additive, so an image-first reader gets a statement about where value sits and no claim that anything is broken. Seam with T4: T1-W addresses a firm past the line and carries the floor line; T4 addresses a firm approaching it and does not. Never merge them into a single rendering.",
-      "images": [
-        "draft-t1w.png"
-      ]
-    },
-    {
-      "num": 5,
-      "title": "T4 — The size you're growing into",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Inflection — the approach to $500M, and what the next phase asks for",
-      "wave": "1",
-      "primary_text": [
-        "What does the next stretch of this practice need that the last one did not?\n\nReferrals and centers of influence got the firm here, and they are still the engine.\n\nSomewhere approaching $500M in AUM the arithmetic changes, because the same number of introductions has to cover a larger base.\n\nThe same dollar inflow that felt like growth a few years ago reads flat against a bigger one.\n\nThat is where a second way to be found starts to matter. Building it is its own discipline now, and it has more moving parts than it used to.\n\nThe benchmark shows where your firm stands today, next to the four firms covering the most ground in your metro.\n\nTen minutes, and it's yours either way.",
-        "Somewhere on the approach to $500M in AUM, the arithmetic of growth changes.\n\nReferrals and centers of influence got the firm here, and they are still the engine. What shifts is how much that engine has to carry.\n\nThe same dollar inflow that used to read as a strong year reads flat against a larger base.\n\nThe work of being found has more moving parts than it used to. It is its own discipline now, and it runs on a different clock than a referral does.\n\nThe benchmark shows where your firm stands in your metro today, next to the four firms covering the most ground in it.\n\nTwo fields. Yours either way."
-      ],
-      "headline": "The size you're growing into",
-      "description": "Where the firm stands today.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "What built this practice still works.\nThe next phase asks for something more.",
-      "production": "No stat, deliberately: the slate should not read as stat cards, and the 31% needed two bridge sentences to sit here honestly. Narrative territory — the reader is a principal at $350M to $500M who already feels the inflection. This is the only territory permitted 'approaching' language and the only cold ad that does not carry the floor line; blending 'at, approaching, or beyond' would hand the filter back on every ad. Plate is the two-beat statement build, six words then seven, no figure, no source line, no label, no eyebrow. Presses the complexity of the work, never the adequacy of a person: no headcount comparison, and 'marketing engineering' is warm and downstream vocabulary only, so it appears nowhere in this copy. Known gap: T4 has no ad-to-page loop — its click lands on a hero addressed to a firm already past the line, and the inflection premise has no page-side beat at all. Judge it with that known. Week-one watch: comment sentiment for a 'they are telling me I am not good enough' reading.",
-      "images": [
-        "draft-t4.png"
-      ]
-    },
-    {
-      "num": 6,
-      "title": "2a-1 — Borrowed words, the diagnosis",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Borrowed words — the diagnosis",
-      "wave": "2a",
-      "primary_text": "The articles on most advisory sites came from a subscription.\n\nThat was a defensible decision. Pre-approved content clears compliance, and for a lot of firms that is the whole reason it is there.\n\nIt was compliant. It was also identical, and the same pieces are on hundreds of other firms' sites this week.\n\nGoogle's published guidelines instruct its evaluators to hold financial content to a higher standard than almost anything else they review. What that standard asks about is whether the person writing has done the work.\n\nA firm's own perspective is the one thing a subscription cannot supply.\n\nThe benchmark does not read your articles. It records where your firm lands on the terms people search in your metro, next to the four firms covering the most ground in it.\n\nIf the gap is there, that is where it shows up. Ten minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-      "headline": "The same articles, on hundreds of sites",
-      "description": "Ten minutes on your market.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "Subscription content was compliant.\nIt was also identical.",
-      "production": "Leads the wave: Borrowed words is the diagnosis, marketing engineering answers what fixing it takes. Validates before it diagnoses — 'that was a defensible decision' arrives before anything about sameness, and the sameness line describes the library rather than the buyer. The honesty ceiling is quoted and extended by one clause: Google's published guidelines instruct its evaluators to hold financial content to a higher standard 'than almost anything else they review'. Never 'than almost anything else it ranks', which is a ranking-algorithm claim the ceiling rules unclaimable. No 'penalizes', no invented answer-engine mechanic, no acronyms, and the scaled-content-abuse policy is not invoked. The ad names undifferentiated content as a likely cause and promises to measure the visible symptom; it never offers to read anyone's articles. Plate per G-1: the subject goes on the plate because an image-first reader supplies their own referent for a bare 'it', and 'my firm' supplied makes the line an insult. Four words then four.",
-      "images": [
-        "draft-2a1.png"
-      ]
-    },
-    {
-      "num": 7,
-      "title": "2a-2 — Marketing engineering, the answer",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Marketing engineering — the answer",
-      "wave": "2a",
-      "primary_text": "Being found is not one job.\n\nThe work that earns visibility now runs across several disciplines at once: the structure a search engine can read, the substance behind it, the technical condition of the site, and the measurement that shows whether any of it moved.\n\nThose are different skills, and they only produce something when they fit together.\n\nPerformance marketing in this field has moved closer to engineering than to advertising, which is why we call it marketing engineering.\n\nThe benchmark is where it starts. Ten minutes on your own market, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-      "headline": "Being found is not one job",
-      "description": "Where the work starts.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "Visibility is several disciplines now.\nThey only work when they fit together.",
-      "production": "Marketing engineering vocabulary is permitted here — warm is its home, and it appears nowhere in cold copy. Presses the complexity of the work and never the adequacy of a person: the disciplines are named, who performs them is not, and nothing hardens the work into a roster, a headcount or a staffing description. Plate is two beats, five words then seven, no stat, no card.",
-      "images": [
-        "draft-2a2.png"
-      ]
-    },
-    {
-      "num": 8,
-      "title": "2a-3 — The campaign as its own proof",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Campaign as proof — the demonstration",
-      "wave": "2a",
-      "primary_text": "This ad reached you the same way your next client could be reached.\n\nVisibility earns the search. Paid attention reaches the people the search has not reached yet.\n\nThey are two halves of one system, and the second one is how this reached you.\n\nThe benchmark measures the first half on your own market: where your firm lands on the terms people search in your metro, next to the four firms covering the most ground in it.\n\nTen minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-      "headline": "This ad is half the system",
-      "description": "The other half is measured.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "This ad reached you.\nThe other half is how clients find you.",
-      "production": "The third 2a slot, confirmed. Three reasons it beat a second Borrowed words angle: the campaign-as-its-own-proof argument is cleared for warm and explicitly banned in cold, where it reads as a gimmick at first touch, so warm is the only place it can ever run; it gives the pool diagnosis, answer and demonstration rather than two diagnoses; and a small warm pool running two versions of one argument hits argument-level fatigue well before concept-level fatigue, which is the failure this slot exists to delay. Enters at the first refresh rather than at open. Plate is two beats, four words then eight.",
-      "images": [
-        "draft-2a3.png"
-      ]
-    },
-    {
-      "num": 9,
-      "title": "2b-1 — What closing them takes",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Closing the distance — what it takes",
-      "wave": "2b",
-      "primary_text": "You have seen where your firm stands. The question after that one is what closing the distance takes.\n\nIt is not a single fix. The structure a search engine can read, the substance behind it, the technical condition of the site, and the measurement that shows whether any of it moved are four different disciplines.\n\nThey only produce something when they fit together, which is why we call it marketing engineering rather than marketing.\n\nFifteen minutes with Bill, on what your report showed and what we would do about it.",
-      "headline": "What closing them takes",
-      "description": "Fifteen minutes with Bill.",
-      "cta": "Request Time",
-      "cta_url": "",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "You have the measurement.\nThe next question is the sequence.",
-      "production": "Destination is the consult link, routed through the server-side /api/consult?token= redirect rather than the bare HubSpot constant, so the Schedule event fires and the booking joins back to the lead. That route returns 404 today, so the CTA is not wired in this preview. Request Time is tested on 2b only. No floor line: this reader submitted the form and answered the AUM field, so the line would be telling them something they already told us. The ads reference the reader's situation, never their specific report. Sequencing dependency: 2b-1 sits at the higher altitude and needs the report CTA altitude fix before it ships. If 2b has to open before that fix lands, it opens on 2b-2 alone and 2b-1 joins later as an addition, never as a replacement, so the ad set keeps its learning. Plate per G-7: some of this pool opened a report that looked fine, so the plate says 'you have the measurement', which is true of every reader in it. Four words then six.",
-      "images": [
-        "draft-2b1.png"
-      ]
-    },
-    {
-      "num": 10,
-      "title": "2b-2 — The measurement and the sequence",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Sequence — the measurement, then the order",
-      "wave": "2b",
-      "primary_text": "The report gave you a measurement. What it cannot give you is the sequence.\n\nWhich gap to close first depends on what the others are doing and on which ones compound. That judgment is the part a person does.\n\nThe work behind it runs across several disciplines at once, which is why marketing engineering is the honest name for it.\n\nFifteen minutes on what we would do first, and why.",
-      "headline": "The measurement, then the sequence",
-      "description": "What we would do first.",
-      "cta": "Request Time",
-      "cta_url": "",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "The report measures.\nA person decides what to do first.",
-      "production": "Destination is the consult link via the server-side /api/consult?token= redirect; that route returns 404 today, so the CTA is not wired in this preview. This is the ad 2b opens on if the instrumentation gate clears before the report CTA altitude fix, because it is written at the altitude the report already promises — sequencing gaps is exactly what the report's current CTA offers, so there is no contradiction to fix first. A single-ad ad set is acceptable here given how small and how warm the pool is. No floor line. Plate is two beats, three words then seven.",
-      "images": [
-        "draft-2b2.png"
-      ]
-    },
-    {
-      "num": 11,
-      "title": "3-1 — Borrowed words, cold rebuild",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Borrowed words cold — the rebuilt spine",
-      "wave": "3",
-      "primary_text": "Somewhere in your market, four firms are covering ground your firm has not reached.\n\nThat gap has causes. One of the most common is that the words on the site came from a subscription every firm in the category can buy.\n\nPre-approved content clears compliance, which is a real benefit and the reason most firms have one.\n\nIt was compliant. It was also identical.\n\nThe benchmark does not read anyone's articles. It records where your firm lands on the terms people search, next to the four firms covering the most ground in your metro, plus the technical condition of the site underneath.\n\nA gap shows up there first. Ten minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-      "headline": "Where four firms cover more ground",
-      "description": "Ten minutes, yours to keep.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "The words came from a subscription.\nThe gap they leave is measurable.",
-      "production": "First in the challenger queue. The spine is rebuilt to the report's actual scope, which was the condition on promoting this vein to cold: it names undifferentiated content as a likely cause and promises to measure the symptom, and never offers to read anyone's articles. If a future edit makes this ad promise a content audit, it has failed the only test that kept it out of wave 1. Per G-4 the validation is now its own beat placed ahead of the sting line — this ad needs it more than 2a-1, because it is cold and reaches a reader at first touch with no relationship behind it. Plate is deliberately different from 2a-1's even though the vein is the same, so the two can run in different waves without reading as the same ad twice. Six words then six.",
-      "images": [
-        "draft-3-1.png"
-      ]
-    },
-    {
-      "num": 12,
-      "title": "3-2 — The 'cannot find' reserve",
-      "format": "Static image, 1080x1350 (4:5)",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "Cannot find — the reserve, and the page's own pull quote",
-      "wave": "3",
-      "primary_text": "You cannot request a meeting with a firm you cannot find.\n\nReferrals and centers of influence still bring people in, and that is how most of the book got built.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nThose people arrived some other way, and the routes vary. The one a firm can build is being findable at all.\n\nThe benchmark shows what your market returns: where your firm lands on the terms people search in your metro, next to the four firms covering the most ground in it.\n\nTen minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
-      "headline": "You cannot request what you cannot find",
-      "description": "Ten minutes on your metro.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "No one can request a meeting\nwith a firm they can’t find.",
-      "production": "Second in the challenger queue. Binding deployment condition: the 50% is deployed in T1-S, and 3-2 and T1-S must never run concurrently, because one figure in two live ads makes them read as variants of each other and doubles a single study's weight in the slate. It resolves cleanly if 3-2 enters against a slot T1-S vacated, which is the likeliest case since it enters on a winner call; the fallback is 3-2 running the no-stat plate with the figure dropped from primary text. The recommended plate is the no-stat one partly for that reason and partly because it is the exact page match: this is the landing page's own §02 pull quote word for word, contraction and typographic apostrophe included, and a near-match would buy nothing and quietly make the claim false. Six words then six. The alternative 50% card plate carries the same Stage 6 conditions as T1-S. Respects the D-1 ceiling: the study establishes that no referral was involved and stops, so the copy reads 'those people arrived some other way, and the routes vary'. One thing to weigh before choosing it: research ruled the absence framing already spent at §02 of the landing page and warned that using it as an ad spine argues the page twice in the same shape. As a challenger against a freed slot the calculus differs, because the ad it replaces is by definition not working, but the objection is diminished rather than resolved.",
-      "images": [
-        "draft-3-2.png"
-      ]
-    },
-    {
-      "num": 13,
-      "title": "T1-S H — fingerprint challenger",
-      "format": "Static image, 1080x1350 (4:5) · Bill-built",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "T1-S argument at fingerprint cadence — belief conceded then completed, triad as validation",
-      "wave": "fp",
-      "primary_text": [
-        "Your book says referrals built this firm. Your book is right.\n\nIt is also half the data.\n\nThe benchmark shows the other half. Your firm, scored next to the four firms covering the most ground in your metro. Two fields, about thirty seconds.\n\nThe introductions still happen. The trust still transfers. The name still gets passed along.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nHalf of them chose an advisor in a way no book records. Not lost. Never counted.\n\nMost of those routes a firm cannot build. One it can: what the market shows when someone looks the firm up.\n\nThe report comes back in about ten minutes. Yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "See where your firm stands",
-      "description": "Two fields, thirty seconds.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "50% of investors with $5M+ found their current advisor with no referral involved.\nFicomm Partners + Absolute Engagement, 2026",
-      "production": "Gate B (adapted) PASSED challenger (Serena FP pass, 2026-08-03; FP-1 applied) primary text at direct-response cadence. Headline, description, CTA, images and on-image cards identical to the control unit. Source: flightdeck copy/challenger-deck-hormozi.md.",
-      "images": [
-        "ad1-v1.jpg",
-        "ad1-v2.jpg",
-        "ad1-v3.jpg",
-        "ad1-v4.jpg",
-        "ad1-v5.jpg"
-      ],
-      "variation": "Challenger caption · same 5 image assets"
-    },
-    {
-      "num": 14,
-      "title": "T2 H — fingerprint challenger",
-      "format": "Static image, 1080x1350 (4:5) · Bill-built",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "T2 argument at fingerprint cadence — incumbent validated, scope-gap frame above the figure",
-      "wave": "fp",
-      "primary_text": [
-        "The site got rebuilt. The search work runs every month. Both send you reporting.\n\nThe benchmark is the read neither one is built to give: your firm, scored the same way as the four firms covering the most ground in your metro, plus the condition of the site underneath. Two fields, about thirty seconds.\n\nThe relationships still bring people in. Nothing here replaces that engine.\n\nWhat changed is how people choose. Some of the tools they use now did not exist when most sites were last rebuilt.\n\n25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nOne new question for the site: can an answer engine read it.\n\nIf the read matches what you're seeing, that is worth knowing. If it differs, it is a useful conversation with whoever runs the work.\n\nAbout ten minutes later you have it, yours either way: an independently measured view of the market you're growing in.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "Your firm, measured in your metro",
-      "description": "Organic read. Thirty seconds.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "25% of investors under 45 used an AI tool while choosing an advisor.\nFicomm Partners + Absolute Engagement, 2026",
-      "production": "DRAFT, UNGATED challenger primary text at direct-response cadence. Headline, description, CTA, images and on-image cards identical to the control unit. Source: flightdeck copy/challenger-deck-hormozi.md.",
-      "images": [
-        "ad3-v1.jpg",
-        "ad3-v2.jpg",
-        "ad3-v3.jpg",
-        "ad3-v4.jpg",
-        "ad3-v5.jpg"
-      ],
-      "variation": "Challenger caption · same 5 image assets"
-    },
-    {
-      "num": 15,
-      "title": "T3 H — fingerprint challenger",
-      "format": "Static image, 1080x1350 (4:5) · Bill-built",
-      "placements": [
-        "Feed"
-      ],
-      "type": "static",
-      "arc": "T3 argument at fingerprint cadence — visibility reframe, chain and de-nesting devices intact",
-      "wave": "fp",
-      "primary_text": [
-        "Your name gets handed to someone who already trusts the person saying it. That part still works, and nothing here changes it.\n\nThe benchmark measures what happens next. Your firm, scored next to the four firms covering the most ground in your metro. Two fields, about thirty seconds.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family.\n\nAnd, separately, 96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nBoth are true at once. Only one of them happens where you can see it.\n\nThe introduction earns the first look. The next few minutes decide the meeting. Nobody watches those minutes.\n\nThe report comes back in about ten minutes. Yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-      ],
-      "headline": "See what your market returns",
-      "description": "Two fields to run it.",
-      "cta": "Learn More",
-      "hook": "",
-      "stories": null,
-      "reels": null,
-      "image_direction": "",
-      "on_image_text": "96% of prospects research advisors online before they decide who to hire.\nWealthtender, 2025",
-      "production": "DRAFT, UNGATED challenger primary text at direct-response cadence. Headline, description, CTA, images and on-image cards identical to the control unit. Source: flightdeck copy/challenger-deck-hormozi.md.",
-      "images": [
-        "ad4-v1.jpg",
-        "ad4-v2.jpg",
-        "ad4-v3.jpg",
-        "ad4-v4.jpg",
-        "ad4-v5.jpg"
-      ],
-      "variation": "Challenger caption · same 5 image assets"
-    }
-  ]
+ "campaign": "Online Visibility Benchmark — $500M+ RIAs",
+ "client": "Mileage Design",
+ "page_name": "Mileage Design",
+ "ig_handle": "mileage_design",
+ "brandmark": "images/mileage-icon.jpg",
+ "cta_url": "https://benchmark.mileagedesign.com",
+ "banner": [
+  "Full campaign arc — written and gated. A wave visible here is written, not live; ship gates in strategy §9 govern.",
+  "Ads 1, 3, 4: Bill-built creative, five image variations each — pick per ad."
+ ],
+ "event_date": "",
+ "venue": "",
+ "co_presenters": "",
+ "hide_design_direction": true,
+ "use_static_images": true,
+ "waves": [
+  {
+   "key": "edu",
+   "label": "EDUCATE · The story chapters",
+   "title": "Five chapters, animatic v1",
+   "subtitle": "ThruPlay to broad · hard cuts at storyboard timing (motion polish follows) · soft CTA only · judged on hook rate and cost per ThruPlay, never CPL",
+   "gate": "Launches with the ramp. Warm pools build from 50%+ viewers per chapter."
+  },
+  {
+   "key": "1",
+   "label": "Wave 1 · Cold prospecting",
+   "title": "Five concepts",
+   "subtitle": "Broad US, 35-70, no detailed targeting · benchmark.mileagedesign.com · Learn More · floor line carried · the three Bill-built concepts each show five image variations as their own cards, so a variation can be approved on its own",
+   "gate": "§7 blockers clear, verified test Lead event before dollar one."
+  },
+  {
+   "key": "2a",
+   "label": "Wave 2a · Warm, no report",
+   "title": "Two at open, third at first refresh",
+   "subtitle": "Site visitors 180d, LP visitors who did not submit 30-60d, page and post engagers 365d, video viewers 50%+ once video exists · benchmark.mileagedesign.com · Learn More · floor line carried",
+   "gate": "Pool size, never the calendar. If the pool is thin at week 3, cold holds 100% and we re-check weekly."
+  },
+  {
+   "key": "2b",
+   "label": "Wave 2b · Warm, report viewers",
+   "title": "One to two, opening on 2b-2",
+   "subtitle": "Report openers who did not book, the highest-intent pool in the funnel · consult link via the server-side /api/consult?token= redirect · Request Time · no floor line",
+   "gate": "Instrumentation, not pool. /r/[token] and /status/[token] carry no pixel today, so this audience cannot be built yet."
+  },
+  {
+   "key": "3",
+   "label": "Wave 3 · Challengers and refresh",
+   "title": "One in, one out",
+   "subtitle": "Cold broad, same as wave 1 · benchmark.mileagedesign.com · Learn More · floor line carried · no sixth concept, a new concept enters only against a freed slot",
+   "gate": "Day-42 winner call, or a slot freed by the T1b/T4 collapse watch, or frequency above 3.5 per 7 days forcing a refresh."
+  },
+  {
+   "key": "fp",
+   "label": "Caption challengers · Hormozi fingerprint",
+   "title": "Three challenger captions, Gate B passed, awaiting Bill's pick",
+   "subtitle": "Same three flexible units, same locked headline, description, images and cards. Only the primary text changes: the gated arguments rewritten at the cadence of the Alex Hormozi account's measured caption fingerprint (750 active ads, 12 captions). Every deck rule held; mechanical checks run clean.",
+   "gate": "Gate B (adapted) PASS WITH EDITS, Serena FP-1..FP-3, 2026-08-03. Bill picks. Challengers never replace a gated control silently; if run, they test cadence only, same unit otherwise."
+  }
+ ],
+ "compliance_notes": [
+  "Full campaign arc, written and gated. A wave visible in this preview is written, not live; the ship gates in strategy §9 govern what runs when.",
+  "Round 1 draft frames throughout. Single photographic treatment, one frame per ad. Not the Figma component system.",
+  "Feed only. Stories and Reels variants do not exist yet and are not represented.",
+  "One headline and one description per ad, as fixed pairings. Not dynamic creative — do not enable Advantage+ creative text variations.",
+  "T3 ships the 96% card, and that card is valid only under the headline 'They look you up before they call'. The benched alternative is the no-stat subhead plate under 'See what your referrals see'. Neither half of either pair travels alone.",
+  "Stat concurrency is a binding scheduling rule: no locked stat rendering may run in two live ads at the same time. 3-2 and T1-S never run concurrently; any later challenger carrying the 96% waits for T3's slot.",
+  "Never ship: '96% of referred prospects', 'never using referrals', the Wealthtender 25% (ages 35-64, plan to use ChatGPT), the 31% and the 96% in the same ad, or any Ficomm figure stretched past advised investors.",
+  "Waves 2 and 3 on the content argument: never 'Google penalizes YMYL sites', never an invented AI-search mechanic, never stretch scaled-content-abuse into 'your library is spam', and no acronyms in any reader-facing line.",
+  "Wave 2 register: the reader chose a content library for defensible reasons and is never the butt of the line. No 'cookie-cutter', no 'recycled', no vendor named.",
+  "Marketing engineering is warm and downstream vocabulary only — 2a-2, 2b-1 and 2b-2, and nowhere in cold."
+ ],
+ "ads": [
+  {
+   "num": 1,
+   "title": "T1-S — flexible: 5 image assets · EDGE PASS",
+   "format": "Static image, 1080x1350 (4:5) · Bill-built",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Arrival V1 — the 50%, and the one route a firm can build",
+   "wave": "1",
+   "primary_text": [
+    "50% of investors with $5 million or more found their current advisor with no referral involved. Ficomm and Absolute Engagement, 2026.\n\nRead that once more. Half of the asset tier every firm wants next never asked anyone for a name.\n\nYour referrals still close. This is about the other half of the market, the one your pipeline never sees. They search, they compare, and they hire.\n\nWe built a benchmark that shows what they find: your firm, ranked beside the four firms with the widest coverage in your metro. It takes about 30 seconds to start and the report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Two fields, thirty seconds.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "NEW composited top line (set in Figma after approval): “Half of $5M+ investors. No referral.” · ",
+   "on_image_text": "50% of investors with $5M+ found their current advisor with no referral involved.\nFicomm Partners + Absolute Engagement, 2026",
+   "production": "Bill-built creative, image variation 1 of 5 for the T1-S unit. Copy, headline and description are identical across all five cards; only the photograph changes. Same stat on every one, rendered as a LinkedIn-style post card over the photo, with engagement counts hidden per the fabricated-proof rule, reaction emojis kept per Bill, and the source on its own line without parentheses. The card carries the full permitted prose rendering rather than the landing page's label-and-figure card treatment. Figma masters at 4320x5400 live on Bill's machine and belong on Drive; these are the 1080x1350 exports. Approve the variation you want on its own card. Split out of the old territory 1 on Bill's preview note that the caption and the image were arguing two different things. The image is unchanged; this copy is written to it, so the 50% is the argument rather than a supporting figure. The D-1 ceiling binds harder here because the whole ad is the figure: the study says no referral was involved, not that those investors arrived through search, so the copy stops at 'one route a firm can build'. This territory does not invoke the stool at all. Plate conditions carry over intact: 4:5 and 1:1 only from purpose-built crops, Meta auto-crop and image expansion OFF, 1.91:1 composed separately; the label and the source line are both hard elements, since the label carries the referent for 'without one'. Any placement that cannot guarantee them takes a no-stat plate instead. Headline plural deliberately. Recorded per G-11 for the A/B read: variant A's hook asks how the last five clients found you, and for many principals the honest answer confirms the belief the ad is trying to move, so if A trails B that is the first hypothesis rather than a mystery. Stat concurrency: the 50% also appears in wave 3 ad 3-2, and the two must never run at the same time.",
+   "images": [
+    "ad1-v1.jpg",
+    "ad1-v2.jpg",
+    "ad1-v3.jpg",
+    "ad1-v4.jpg",
+    "ad1-v5.jpg"
+   ],
+   "variation": "V1 of 5"
+  },
+  {
+   "num": 2,
+   "title": "T2 — flexible: 5 image assets · EDGE PASS",
+   "format": "Static image, 1080x1350 (4:5) · Bill-built",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Digital investment V1 — what the current spend is buying",
+   "wave": "1",
+   "primary_text": [
+    "25% of investors under 45 used an AI tool while choosing an advisor. Ficomm and Absolute Engagement, 2026.\n\nThe next generation of your book is already choosing this way. The question worth asking is what those tools say when your firm comes up, and whether you appear at all.\n\nThe benchmark measures it: your visibility in your own metro, your site's structure the way answer engines read it, and the four firms covering the ground you have not reached. About 30 seconds to start.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "Your firm, measured in your metro",
+   "description": "Organic read. Thirty seconds.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "NEW composited top line (set in Figma after approval): “A quarter of them asked an AI.” · ",
+   "on_image_text": "25% of investors under 45 used an AI tool while choosing an advisor.\nFicomm Partners + Absolute Engagement, 2026",
+   "production": "Bill-built creative, image variation 1 of 5 for the T2 unit. Copy, headline and description are identical across all five cards; only the photograph changes. Same stat on every one, rendered as a LinkedIn-style post card over the photo, with engagement counts hidden per the fabricated-proof rule, reaction emojis kept per Bill, and the source on its own line without parentheses. The card carries the full permitted prose rendering rather than the landing page's label-and-figure card treatment. Figma masters at 4320x5400 live on Bill's machine and belong on Drive; these are the 1080x1350 exports. Approve the variation you want on its own card. Hero stat: the 25% (Ficomm Partners and Absolute Engagement, 2026 — under 45, USED an AI tool). The plate runs the landing page's own stat card word for word, §02 card three of three. Do not substitute the Wealthtender 25%, which is a different study, a different age band (35-64) and a different tense (PLAN to use ChatGPT). Both variants scope the report to organic visibility and site condition, because the report does not grade paid. Variant A runs 152 words against the deck's 110-124 band, deliberately: the restored balance line and the closing growth beat are Gate B requirements and they outrank the band.",
+   "images": [
+    "ad3-v1.jpg",
+    "ad3-v2.jpg",
+    "ad3-v3.jpg",
+    "ad3-v4.jpg",
+    "ad3-v5.jpg"
+   ],
+   "variation": "V1 of 5"
+  },
+  {
+   "num": 3,
+   "title": "T3 — flexible: 5 image assets · EDGE PASS",
+   "format": "Static image, 1080x1350 (4:5) · Bill-built",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Message match V1 — a referral earns the introduction, the digital presence earns the meeting",
+   "wave": "1",
+   "primary_text": [
+    "96% of prospects research advisors online before they decide who to hire. Wealthtender, 2025.\n\nThe meeting that never happens rarely announces itself. Someone respected your name enough to pass it along, and then a search result made the decision.\n\nSee what that search shows: your firm, measured beside the four firms with the widest coverage in your metro. About 30 seconds to start, and the report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your market returns",
+   "description": "Two fields to run it.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "NEW composited top line (set in Figma after approval): “Before the call. Every time.” · ",
+   "on_image_text": "96% of prospects research advisors online before they decide who to hire.\nWealthtender, 2025",
+   "production": "Bill-built creative, image variation 1 of 5 for the T3 unit. Copy, headline and description are identical across all five cards; only the photograph changes. Same stat on every one, rendered as a LinkedIn-style post card over the photo, with engagement counts hidden per the fabricated-proof rule, reaction emojis kept per Bill, and the source on its own line without parentheses. The card carries the full permitted prose rendering rather than the landing page's label-and-figure card treatment. Figma masters at 4320x5400 live on Bill's machine and belong on Drive; these are the 1080x1350 exports. Approve the variation you want on its own card. The 96% card ships, per Bill: place 96 in the most prominent position. This is half of a binding pair, not a plate choice — D-3 permits the card only alongside a headline carrying no referral noun, so 'They look you up before they call' and this plate travel together and Stage 6 must never ship one half without the other. The swap costs the deck its strongest message match: 'See what your referrals see' was the landing page H1 verbatim. It is benched as a decided unit with its own no-stat plate (the landing page subhead, frame draft-t3-default.png, deliberately not in this preview) and comes back whole if the card ever has to come out. No label on this card, deliberately: the 96% is the page's hero figure rather than one of the three labelled §02 cards, and inventing an eyebrow would break the word-for-word rule. Three elements rather than four, which makes the source line the only vulnerable element and the first thing a top-biased crop removes — so 4:5 and 1:1 only from purpose-built crops, auto-crop and expansion off, and any placement that cannot guarantee the source line at full legibility takes the benched unit instead, headline included. Stat concurrency: the 96% is live here, so any later challenger carrying it waits for this slot rather than doubling it.",
+   "images": [
+    "ad4-v1.jpg",
+    "ad4-v2.jpg",
+    "ad4-v3.jpg",
+    "ad4-v4.jpg",
+    "ad4-v5.jpg"
+   ],
+   "variation": "V1 of 5"
+  },
+  {
+   "num": 4,
+   "title": "T1-W — What the practice is worth without you",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Practice worth — enterprise value, and the leg that stays in the building",
+   "wave": "1",
+   "primary_text": [
+    "What is this practice worth to someone who isn't you?\n\nReferrals and centers of influence built the book, and they still carry it.\n\nBoth of those legs live inside relationships that belong to the people who hold them.\n\nThe third leg is different. It sits inside the practice rather than inside a person, and it keeps working on a Tuesday when nobody is making an introduction.\n\nThat is the part a buyer can be shown.\n\nThe benchmark measures where yours stands. What the market can see of your firm, next to the four firms covering the most ground in your metro.\n\nTen minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+    "The introduction from a client. The referral from an accountant who trusts you.\n\nThe first two legs your practice grows on live inside people, and neither one transfers when you step back.\n\nThe third leg is the one that stays in the building. It is what a prospect finds at eleven at night, months before anyone says your name out loud.\n\nIt is also the part that builds value inside the practice itself.\n\nThe benchmark shows where yours stands. Your firm and the four firms with the widest coverage in your metro, scored on the same keyword set and the same technical checks.\n\nTen minutes. Yours to keep.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "What the practice is worth without you",
+   "description": "Ten minutes. Yours to keep.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "The first two legs live inside people.\nThe third leg stays in the building.",
+   "production": "The other half of the old territory 1. The 50% has moved out entirely and belongs to T1-S; carrying it in both would put one figure in two ads and make the pair read as variants of each other. The figure was never load-bearing here, so removing it returns each variant to the shape it had before the stat-forward pass and costs the argument nothing. New plate, no stat, two beats, seven words then seven: no figure, no source line, no label, no eyebrow. Checked against the E-1 lesson — line one states what the first two legs are rather than what they lack, and line two is additive, so an image-first reader gets a statement about where value sits and no claim that anything is broken. Seam with T4: T1-W addresses a firm past the line and carries the floor line; T4 addresses a firm approaching it and does not. Never merge them into a single rendering.",
+   "images": [
+    "draft-t1w.png"
+   ]
+  },
+  {
+   "num": 5,
+   "title": "T4 — The size you're growing into",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Inflection — the approach to $500M, and what the next phase asks for",
+   "wave": "1",
+   "primary_text": [
+    "What does the next stretch of this practice need that the last one did not?\n\nReferrals and centers of influence got the firm here, and they are still the engine.\n\nSomewhere approaching $500M in AUM the arithmetic changes, because the same number of introductions has to cover a larger base.\n\nThe same dollar inflow that felt like growth a few years ago reads flat against a bigger one.\n\nThat is where a second way to be found starts to matter. Building it is its own discipline now, and it has more moving parts than it used to.\n\nThe benchmark shows where your firm stands today, next to the four firms covering the most ground in your metro.\n\nTen minutes, and it's yours either way.",
+    "Somewhere on the approach to $500M in AUM, the arithmetic of growth changes.\n\nReferrals and centers of influence got the firm here, and they are still the engine. What shifts is how much that engine has to carry.\n\nThe same dollar inflow that used to read as a strong year reads flat against a larger base.\n\nThe work of being found has more moving parts than it used to. It is its own discipline now, and it runs on a different clock than a referral does.\n\nThe benchmark shows where your firm stands in your metro today, next to the four firms covering the most ground in it.\n\nTwo fields. Yours either way."
+   ],
+   "headline": "The size you're growing into",
+   "description": "Where the firm stands today.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "What built this practice still works.\nThe next phase asks for something more.",
+   "production": "No stat, deliberately: the slate should not read as stat cards, and the 31% needed two bridge sentences to sit here honestly. Narrative territory — the reader is a principal at $350M to $500M who already feels the inflection. This is the only territory permitted 'approaching' language and the only cold ad that does not carry the floor line; blending 'at, approaching, or beyond' would hand the filter back on every ad. Plate is the two-beat statement build, six words then seven, no figure, no source line, no label, no eyebrow. Presses the complexity of the work, never the adequacy of a person: no headcount comparison, and 'marketing engineering' is warm and downstream vocabulary only, so it appears nowhere in this copy. Known gap: T4 has no ad-to-page loop — its click lands on a hero addressed to a firm already past the line, and the inflection premise has no page-side beat at all. Judge it with that known. Week-one watch: comment sentiment for a 'they are telling me I am not good enough' reading.",
+   "images": [
+    "draft-t4.png"
+   ]
+  },
+  {
+   "num": 6,
+   "title": "2a-1 — Borrowed words, the diagnosis",
+   "format": "Static image, 1080x1350 (4:5) · plate rebuilt on v3 photography (Gate-B strings)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Borrowed words — the diagnosis",
+   "wave": "2a",
+   "primary_text": "The articles on most advisory sites came from a subscription.\n\nThat was a defensible decision. Pre-approved content clears compliance, and for a lot of firms that is the whole reason it is there.\n\nIt was compliant. It was also identical, and the same pieces are on hundreds of other firms' sites this week.\n\nGoogle's published guidelines instruct its evaluators to hold financial content to a higher standard than almost anything else they review. What that standard asks about is whether the person writing has done the work.\n\nA firm's own perspective is the one thing a subscription cannot supply.\n\nThe benchmark does not read your articles. It records where your firm lands on the terms people search in your metro, next to the four firms covering the most ground in it.\n\nIf the gap is there, that is where it shows up. Ten minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+   "headline": "The same articles, on hundreds of sites",
+   "description": "Ten minutes on your market.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "Subscription content was compliant.\nIt was also identical.",
+   "production": "Leads the wave: Borrowed words is the diagnosis, marketing engineering answers what fixing it takes. Validates before it diagnoses — 'that was a defensible decision' arrives before anything about sameness, and the sameness line describes the library rather than the buyer. The honesty ceiling is quoted and extended by one clause: Google's published guidelines instruct its evaluators to hold financial content to a higher standard 'than almost anything else they review'. Never 'than almost anything else it ranks', which is a ranking-algorithm claim the ceiling rules unclaimable. No 'penalizes', no invented answer-engine mechanic, no acronyms, and the scaled-content-abuse policy is not invoked. The ad names undifferentiated content as a likely cause and promises to measure the visible symptom; it never offers to read anyone's articles. Plate per G-1: the subject goes on the plate because an image-first reader supplies their own referent for a bare 'it', and 'my firm' supplied makes the line an insult. Four words then four.",
+   "images": [
+    "warm-2a1-plate.png"
+   ]
+  },
+  {
+   "num": 7,
+   "title": "2a-2 — Marketing engineering, the answer",
+   "format": "Static image, 1080x1350 (4:5) · plate rebuilt on v3 photography (Gate-B strings)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Marketing engineering — the answer",
+   "wave": "2a",
+   "primary_text": "Being found is not one job.\n\nThe work that earns visibility now runs across several disciplines at once: the structure a search engine can read, the substance behind it, the technical condition of the site, and the measurement that shows whether any of it moved.\n\nThose are different skills, and they only produce something when they fit together.\n\nPerformance marketing in this field has moved closer to engineering than to advertising, which is why we call it marketing engineering.\n\nThe benchmark is where it starts. Ten minutes on your own market, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+   "headline": "Being found is not one job",
+   "description": "Where the work starts.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "Visibility is several disciplines now.\nThey only work when they fit together.",
+   "production": "Marketing engineering vocabulary is permitted here — warm is its home, and it appears nowhere in cold copy. Presses the complexity of the work and never the adequacy of a person: the disciplines are named, who performs them is not, and nothing hardens the work into a roster, a headcount or a staffing description. Plate is two beats, five words then seven, no stat, no card.",
+   "images": [
+    "warm-2a2-plate.png"
+   ]
+  },
+  {
+   "num": 8,
+   "title": "2a-3 — The campaign as its own proof",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Campaign as proof — the demonstration",
+   "wave": "2a",
+   "primary_text": "This ad reached you the same way your next client could be reached.\n\nVisibility earns the search. Paid attention reaches the people the search has not reached yet.\n\nThey are two halves of one system, and the second one is how this reached you.\n\nThe benchmark measures the first half on your own market: where your firm lands on the terms people search in your metro, next to the four firms covering the most ground in it.\n\nTen minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+   "headline": "This ad is half the system",
+   "description": "The other half is measured.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "This ad reached you.\nThe other half is how clients find you.",
+   "production": "The third 2a slot, confirmed. Three reasons it beat a second Borrowed words angle: the campaign-as-its-own-proof argument is cleared for warm and explicitly banned in cold, where it reads as a gimmick at first touch, so warm is the only place it can ever run; it gives the pool diagnosis, answer and demonstration rather than two diagnoses; and a small warm pool running two versions of one argument hits argument-level fatigue well before concept-level fatigue, which is the failure this slot exists to delay. Enters at the first refresh rather than at open. Plate is two beats, four words then eight.",
+   "images": [
+    "draft-2a3.png"
+   ]
+  },
+  {
+   "num": 9,
+   "title": "2b-1 — What closing them takes",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Closing the distance — what it takes",
+   "wave": "2b",
+   "primary_text": "You have seen where your firm stands. The question after that one is what closing the distance takes.\n\nIt is not a single fix. The structure a search engine can read, the substance behind it, the technical condition of the site, and the measurement that shows whether any of it moved are four different disciplines.\n\nThey only produce something when they fit together, which is why we call it marketing engineering rather than marketing.\n\nFifteen minutes with Bill, on what your report showed and what we would do about it.",
+   "headline": "What closing them takes",
+   "description": "Fifteen minutes with Bill.",
+   "cta": "Request Time",
+   "cta_url": "",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "You have the measurement.\nThe next question is the sequence.",
+   "production": "Destination is the consult link, routed through the server-side /api/consult?token= redirect rather than the bare HubSpot constant, so the Schedule event fires and the booking joins back to the lead. That route returns 404 today, so the CTA is not wired in this preview. Request Time is tested on 2b only. No floor line: this reader submitted the form and answered the AUM field, so the line would be telling them something they already told us. The ads reference the reader's situation, never their specific report. Sequencing dependency: 2b-1 sits at the higher altitude and needs the report CTA altitude fix before it ships. If 2b has to open before that fix lands, it opens on 2b-2 alone and 2b-1 joins later as an addition, never as a replacement, so the ad set keeps its learning. Plate per G-7: some of this pool opened a report that looked fine, so the plate says 'you have the measurement', which is true of every reader in it. Four words then six.",
+   "images": [
+    "draft-2b1.png"
+   ]
+  },
+  {
+   "num": 10,
+   "title": "2b-2 — The measurement and the sequence",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Sequence — the measurement, then the order",
+   "wave": "2b",
+   "primary_text": "The report gave you a measurement. What it cannot give you is the sequence.\n\nWhich gap to close first depends on what the others are doing and on which ones compound. That judgment is the part a person does.\n\nThe work behind it runs across several disciplines at once, which is why marketing engineering is the honest name for it.\n\nFifteen minutes on what we would do first, and why.",
+   "headline": "The measurement, then the sequence",
+   "description": "What we would do first.",
+   "cta": "Request Time",
+   "cta_url": "",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "The report measures.\nA person decides what to do first.",
+   "production": "Destination is the consult link via the server-side /api/consult?token= redirect; that route returns 404 today, so the CTA is not wired in this preview. This is the ad 2b opens on if the instrumentation gate clears before the report CTA altitude fix, because it is written at the altitude the report already promises — sequencing gaps is exactly what the report's current CTA offers, so there is no contradiction to fix first. A single-ad ad set is acceptable here given how small and how warm the pool is. No floor line. Plate is two beats, three words then seven.",
+   "images": [
+    "draft-2b2.png"
+   ]
+  },
+  {
+   "num": 11,
+   "title": "3-1 — Borrowed words, cold rebuild",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Borrowed words cold — the rebuilt spine",
+   "wave": "3",
+   "primary_text": "Somewhere in your market, four firms are covering ground your firm has not reached.\n\nThat gap has causes. One of the most common is that the words on the site came from a subscription every firm in the category can buy.\n\nPre-approved content clears compliance, which is a real benefit and the reason most firms have one.\n\nIt was compliant. It was also identical.\n\nThe benchmark does not read anyone's articles. It records where your firm lands on the terms people search, next to the four firms covering the most ground in your metro, plus the technical condition of the site underneath.\n\nA gap shows up there first. Ten minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+   "headline": "Where four firms cover more ground",
+   "description": "Ten minutes, yours to keep.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "The words came from a subscription.\nThe gap they leave is measurable.",
+   "production": "First in the challenger queue. The spine is rebuilt to the report's actual scope, which was the condition on promoting this vein to cold: it names undifferentiated content as a likely cause and promises to measure the symptom, and never offers to read anyone's articles. If a future edit makes this ad promise a content audit, it has failed the only test that kept it out of wave 1. Per G-4 the validation is now its own beat placed ahead of the sting line — this ad needs it more than 2a-1, because it is cold and reaches a reader at first touch with no relationship behind it. Plate is deliberately different from 2a-1's even though the vein is the same, so the two can run in different waves without reading as the same ad twice. Six words then six.",
+   "images": [
+    "draft-3-1.png"
+   ]
+  },
+  {
+   "num": 12,
+   "title": "3-2 — The 'cannot find' reserve",
+   "format": "Static image, 1080x1350 (4:5)",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Cannot find — the reserve, and the page's own pull quote",
+   "wave": "3",
+   "primary_text": "You cannot request a meeting with a firm you cannot find.\n\nReferrals and centers of influence still bring people in, and that is how most of the book got built.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nThose people arrived some other way, and the routes vary. The one a firm can build is being findable at all.\n\nThe benchmark shows what your market returns: where your firm lands on the terms people search in your metro, next to the four firms covering the most ground in it.\n\nTen minutes, and it's yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM.",
+   "headline": "You cannot request what you cannot find",
+   "description": "Ten minutes on your metro.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "No one can request a meeting\nwith a firm they can’t find.",
+   "production": "Second in the challenger queue. Binding deployment condition: the 50% is deployed in T1-S, and 3-2 and T1-S must never run concurrently, because one figure in two live ads makes them read as variants of each other and doubles a single study's weight in the slate. It resolves cleanly if 3-2 enters against a slot T1-S vacated, which is the likeliest case since it enters on a winner call; the fallback is 3-2 running the no-stat plate with the figure dropped from primary text. The recommended plate is the no-stat one partly for that reason and partly because it is the exact page match: this is the landing page's own §02 pull quote word for word, contraction and typographic apostrophe included, and a near-match would buy nothing and quietly make the claim false. Six words then six. The alternative 50% card plate carries the same Stage 6 conditions as T1-S. Respects the D-1 ceiling: the study establishes that no referral was involved and stops, so the copy reads 'those people arrived some other way, and the routes vary'. One thing to weigh before choosing it: research ruled the absence framing already spent at §02 of the landing page and warned that using it as an ad spine argues the page twice in the same shape. As a challenger against a freed slot the calculus differs, because the ad it replaces is by definition not working, but the objection is diminished rather than resolved.",
+   "images": [
+    "draft-3-2.png"
+   ]
+  },
+  {
+   "num": 13,
+   "title": "T1-S H — fingerprint challenger",
+   "format": "Static image, 1080x1350 (4:5) · Bill-built",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "T1-S argument at fingerprint cadence — belief conceded then completed, triad as validation",
+   "wave": "fp",
+   "primary_text": [
+    "Your book says referrals built this firm. Your book is right.\n\nIt is also half the data.\n\nThe benchmark shows the other half. Your firm, scored next to the four firms covering the most ground in your metro. Two fields, about thirty seconds.\n\nThe introductions still happen. The trust still transfers. The name still gets passed along.\n\n50% of investors with $5M+ found their current advisor with no referral involved (Ficomm Partners and Absolute Engagement, 2026).\n\nHalf of them chose an advisor in a way no book records. Not lost. Never counted.\n\nMost of those routes a firm cannot build. One it can: what the market shows when someone looks the firm up.\n\nThe report comes back in about ten minutes. Yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Two fields, thirty seconds.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "50% of investors with $5M+ found their current advisor with no referral involved.\nFicomm Partners + Absolute Engagement, 2026",
+   "production": "Gate B (adapted) PASSED challenger (Serena FP pass, 2026-08-03; FP-1 applied) primary text at direct-response cadence. Headline, description, CTA, images and on-image cards identical to the control unit. Source: flightdeck copy/challenger-deck-hormozi.md.",
+   "images": [
+    "ad1-v1.jpg",
+    "ad1-v2.jpg",
+    "ad1-v3.jpg",
+    "ad1-v4.jpg",
+    "ad1-v5.jpg"
+   ],
+   "variation": "Challenger caption · same 5 image assets"
+  },
+  {
+   "num": 14,
+   "title": "T2 H — fingerprint challenger",
+   "format": "Static image, 1080x1350 (4:5) · Bill-built",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "T2 argument at fingerprint cadence — incumbent validated, scope-gap frame above the figure",
+   "wave": "fp",
+   "primary_text": [
+    "The site got rebuilt. The search work runs every month. Both send you reporting.\n\nThe benchmark is the read neither one is built to give: your firm, scored the same way as the four firms covering the most ground in your metro, plus the condition of the site underneath. Two fields, about thirty seconds.\n\nThe relationships still bring people in. Nothing here replaces that engine.\n\nWhat changed is how people choose. Some of the tools they use now did not exist when most sites were last rebuilt.\n\n25% of investors under 45 used an AI tool while choosing an advisor (Ficomm Partners and Absolute Engagement, 2026).\n\nOne new question for the site: can an answer engine read it.\n\nIf the read matches what you're seeing, that is worth knowing. If it differs, it is a useful conversation with whoever runs the work.\n\nAbout ten minutes later you have it, yours either way: an independently measured view of the market you're growing in.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "Your firm, measured in your metro",
+   "description": "Organic read. Thirty seconds.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "25% of investors under 45 used an AI tool while choosing an advisor.\nFicomm Partners + Absolute Engagement, 2026",
+   "production": "DRAFT, UNGATED challenger primary text at direct-response cadence. Headline, description, CTA, images and on-image cards identical to the control unit. Source: flightdeck copy/challenger-deck-hormozi.md.",
+   "images": [
+    "ad3-v1.jpg",
+    "ad3-v2.jpg",
+    "ad3-v3.jpg",
+    "ad3-v4.jpg",
+    "ad3-v5.jpg"
+   ],
+   "variation": "Challenger caption · same 5 image assets"
+  },
+  {
+   "num": 15,
+   "title": "T3 H — fingerprint challenger",
+   "format": "Static image, 1080x1350 (4:5) · Bill-built",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "T3 argument at fingerprint cadence — visibility reframe, chain and de-nesting devices intact",
+   "wave": "fp",
+   "primary_text": [
+    "Your name gets handed to someone who already trusts the person saying it. That part still works, and nothing here changes it.\n\nThe benchmark measures what happens next. Your firm, scored next to the four firms covering the most ground in your metro. Two fields, about thirty seconds.\n\nOne 2025 Wealthtender study asked two questions. 62% start with a recommendation from friends or family.\n\nAnd, separately, 96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025).\n\nBoth are true at once. Only one of them happens where you can see it.\n\nThe introduction earns the first look. The next few minutes decide the meeting. Nobody watches those minutes.\n\nThe report comes back in about ten minutes. Yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your market returns",
+   "description": "Two fields to run it.",
+   "cta": "Learn More",
+   "hook": "",
+   "stories": null,
+   "reels": null,
+   "image_direction": "",
+   "on_image_text": "96% of prospects research advisors online before they decide who to hire.\nWealthtender, 2025",
+   "production": "DRAFT, UNGATED challenger primary text at direct-response cadence. Headline, description, CTA, images and on-image cards identical to the control unit. Source: flightdeck copy/challenger-deck-hormozi.md.",
+   "images": [
+    "ad4-v1.jpg",
+    "ad4-v2.jpg",
+    "ad4-v3.jpg",
+    "ad4-v4.jpg",
+    "ad4-v5.jpg"
+   ],
+   "variation": "Challenger caption · same 5 image assets"
+  },
+  {
+   "num": 16,
+   "title": "CH1 · The toll bridge — animatic v1",
+   "format": "Video animatic 1080x1920 · ~26s · hard cuts at storyboard timing; eased motion pass follows",
+   "placements": [
+    "Feed",
+    "Reels"
+   ],
+   "type": "video",
+   "arc": "CH1 · The toll bridge",
+   "wave": "edu",
+   "primary_text": [
+    "Schwab just told its advisor network it will keep client referrals of $5 million or less in-house.\n\nThe minimum used to be $500,000. Then $2 million. In January it becomes $5 million.\n\nNo one did anything wrong here. Schwab owns the channel, so Schwab sets the terms. That is what it means to rent a growth channel.\n\nIt leaves every firm one quiet question. Which part of your growth engine do you own?\n\nYour website and your visibility in the searches your ideal clients run are the growth infrastructure that is yours. We built a benchmark that measures both against the four firms with the widest coverage in your metro. It takes about 30 seconds to start, and the report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your firm owns in your metro",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "ch1-animatic.mp4"
+   ],
+   "production": "Frames live in Figma · page 'Benchmark · Education Arc — Motion' · all strings Gate-B cleared"
+  },
+  {
+   "num": 17,
+   "title": "CH2 · The invisible step — animatic v1",
+   "format": "Video animatic 1080x1920 · ~22s · hard cuts at storyboard timing; eased motion pass follows",
+   "placements": [
+    "Feed",
+    "Reels"
+   ],
+   "type": "video",
+   "arc": "CH2 · The invisible step",
+   "wave": "edu",
+   "primary_text": [
+    "Did your last referral look you up before they called back?\n\nA recommendation still opens the door. 62% of prospects start with one. But 96% research advisors online before they decide who to hire. Both figures are Wealthtender, 2025.\n\nThe introduction still happens. The decision now happens somewhere the firm cannot see. Nothing in a pipeline records that step. It shows up only as referrals that quietly did not convert.\n\nWe built a benchmark that shows what that research finds: your firm, measured against the four firms with the widest coverage in your metro. About 30 seconds to start. Built for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what they see",
+   "description": "Independent and automated.",
+   "cta": "LEARN MORE",
+   "images": [
+    "ch2-animatic.mp4"
+   ],
+   "production": "Frames live in Figma · page 'Benchmark · Education Arc — Motion' · all strings Gate-B cleared"
+  },
+  {
+   "num": 18,
+   "title": "CH3 · How clients arrive now — animatic v1",
+   "format": "Video animatic 1080x1920 · ~21s · hard cuts at storyboard timing; eased motion pass follows",
+   "placements": [
+    "Feed",
+    "Reels"
+   ],
+   "type": "video",
+   "arc": "CH3 · How clients arrive now",
+   "wave": "edu",
+   "primary_text": [
+    "50% of investors with $5 million or more found their current advisor with no referral involved. Ficomm and Absolute Engagement, 2026.\n\nThe front door moved. For a growing share of exactly the clients a firm wants next, the path to an advisor never touches the referral network at all. Among investors under 45, a quarter used an AI tool while choosing one.\n\nYour referrals still work. The question is what the other half of the market finds when they go looking.\n\nThe benchmark shows you: your metro, four named competitors, about 30 seconds to start. Built for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "Your firm, measured in your metro",
+   "description": "The report is yours either way.",
+   "cta": "LEARN MORE",
+   "images": [
+    "ch3-animatic.mp4"
+   ],
+   "production": "Frames live in Figma · page 'Benchmark · Education Arc — Motion' · all strings Gate-B cleared"
+  },
+  {
+   "num": 19,
+   "title": "CH4 · The leg you own — animatic v1",
+   "format": "Video animatic 1080x1920 · ~24s · hard cuts at storyboard timing; eased motion pass follows",
+   "placements": [
+    "Feed",
+    "Reels"
+   ],
+   "type": "video",
+   "arc": "CH4 · The leg you own",
+   "wave": "edu",
+   "primary_text": [
+    "Referrals built your firm. Centers of influence built your firm. That is not the problem. It is the proof the firm is good.\n\nBut look at the stool honestly. The first two legs live in other people: your clients' goodwill, other firms' relationships. Real, and not property. The third leg, your digital presence and the lead generation built on it, is the only growth infrastructure the firm owns outright. Nobody can reprice it. Nobody can keep its leads. It compounds instead of resetting. And when a principal eventually thinks about succession, it is the engine that transfers with the firm.\n\nMeasure yours: your metro, four named competitors, about 30 seconds to start. Built for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "The leg your firm owns",
+   "description": "See where it stands today.",
+   "cta": "LEARN MORE",
+   "images": [
+    "ch4-animatic.mp4"
+   ],
+   "production": "Frames live in Figma · page 'Benchmark · Education Arc — Motion' · all strings Gate-B cleared"
+  },
+  {
+   "num": 20,
+   "title": "CH5 · Measure it — animatic v1",
+   "format": "Video animatic 1080x1920 · ~20s · hard cuts at storyboard timing; eased motion pass follows",
+   "placements": [
+    "Feed",
+    "Reels"
+   ],
+   "type": "video",
+   "arc": "CH5 · Measure it",
+   "wave": "edu",
+   "primary_text": [
+    "Before any firm decides what to build, it should know where it stands.\n\nThe benchmark measures your visibility the way your ideal clients experience it: a tracked keyword set for your metro, your firm ranked next to the four firms with the widest coverage in your market, and the technical read on whether your site is built so search engines and AI answers can find it.\n\nAbout 30 seconds to start. The report arrives in minutes and it is yours either way. Built for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "ch5-animatic.mp4"
+   ],
+   "production": "Frames live in Figma · page 'Benchmark · Education Arc — Motion' · all strings Gate-B cleared"
+  }
+ ]
 }

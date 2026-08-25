@@ -6,8 +6,8 @@
  "brandmark": "images/mileage-icon.jpg",
  "cta_url": "https://benchmark.mileagedesign.com",
  "banner": [
-  "SPRINT · team-pass copy in (Marcus read + Aaliyah rewrite + Serena gate). Marcus's cold ranking: C anchor, F converts, G week-two, video contender.",
-  "Forbes firing banned from all copy (Bill 2026-08-25). Josh Brown quote verbatim from his post; canonical post-URL trace owed before spend. Take G 'stronger multiple' flagged to the gate."
+  "SPRINT · CFP-structure visuals in Mileage blue (Bill 2026-08-25) · team-pass copy · Marcus ranking: C anchor, F converts, video contender, G week-two.",
+  "Forbes firing banned from all copy. No third-party attribution anywhere (Bill 2026-08-25). Take G 'stronger multiple' flagged to the gate."
  ],
  "hide_design_direction": true,
  "use_static_images": true,
@@ -23,16 +23,16 @@
  "ads": [
   {
    "num": 1,
-   "title": "Take A · The declaration (Josh Brown quote)",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "title": "Take A · The declaration",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],
    "type": "static",
-   "arc": "Take A · The declaration (Josh Brown quote)",
+   "arc": "Take A · The declaration",
    "wave": "sprint",
    "primary_text": [
-    "“We are now witnessing the end of the Steroid Era for financial advisors.” Josh Brown, CEO of Ritholtz Wealth Management.\n\nHe is right. For twenty years, growth came with enhancements. Rankings you could pay for. Scale you could borrow. Referrals you could rent. All three are being withdrawn at once.\n\nWhat remains is what your firm owns. The benchmark measures exactly that: your real visibility, in your metro, beside four named competitors.\n\nAbout 30 seconds to start. The report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "How much of your growth would survive the rented channels closing?\n\nFor twenty years, advisory growth came with enhancements. Rankings you could pay for. Scale you could borrow. Referrals you could rent. All three are being withdrawn at once.\n\nWhat remains is what your firm owns. The benchmark measures exactly that: your real visibility, in your metro, beside four named competitors.\n\nAbout 30 seconds to start. The report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See what your firm owns",
    "description": "The clean era starts here.",
@@ -40,12 +40,12 @@
    "images": [
     "take-a.png"
    ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
+   "production": "Rebuilt without attribution (Bill 2026-08-25: no citing Brown). New hook owes a re-gate."
   },
   {
    "num": 2,
    "title": "Take B · Own vs rent",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],
@@ -66,7 +66,7 @@
   {
    "num": 3,
    "title": "Take C · The ratchet",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],
@@ -87,7 +87,7 @@
   {
    "num": 4,
    "title": "Take D · The asterisk",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],
@@ -108,7 +108,7 @@
   {
    "num": 5,
    "title": "Take E · The clean era",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],
@@ -129,7 +129,7 @@
   {
    "num": 6,
    "title": "Take F · Spring training",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],
@@ -150,7 +150,7 @@
   {
    "num": 7,
    "title": "Take G · The silver lining",
-   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
    "placements": [
     "Feed"
    ],

@@ -1,0 +1,151 @@
+{
+ "campaign": "The End of the Steroid Era for Financial Advisors — Sprint",
+ "client": "Mileage Design",
+ "page_name": "Mileage Design",
+ "ig_handle": "mileage_design",
+ "brandmark": "images/mileage-icon.jpg",
+ "cta_url": "https://benchmark.mileagedesign.com",
+ "banner": [
+  "SPRINT campaign — six creative takes, one ask, no warming ladder. All strings DRAFT, gate before spend.",
+  "Forbes facts verified (NYT via ThinkAdvisor/RIABiz, Aug 2026); Schwab facts verified; roll-up vein held to general truths."
+ ],
+ "hide_design_direction": true,
+ "use_static_images": true,
+ "waves": [
+  {
+   "key": "sprint",
+   "label": "SPRINT · Six takes, one ask",
+   "title": "The End of the Steroid Era",
+   "subtitle": "3 weeks · $50/day · straight to the benchmark · Meta finds the anchor take",
+   "gate": "Credentials + verified test Lead before dollar one. News is perishable; this sprint is the launch vehicle."
+  }
+ ],
+ "ads": [
+  {
+   "num": 1,
+   "title": "Take A · The declaration",
+   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The steroid era of advisor growth is ending. On a published schedule.",
+   "wave": "sprint",
+   "primary_text": [
+    "For twenty years, advisory growth came with enhancements. Rankings you could pay for. Scale you could borrow. Referrals you could rent from a custodian.\n\nAll three are being withdrawn at once. The New York Times just took apart the rankings. Rates took apart the roll-up math. And Schwab put an end date on rented referrals: January 5, 2027.\n\nWhat is left is what a firm actually owns.\n\nThe benchmark shows where your firm actually stands: your metro, four named competitors, about 30 seconds to start. The report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your firm owns",
+   "description": "Independent and automated. About 30 seconds.",
+   "cta": "LEARN MORE",
+   "images": [
+    "take-a.png"
+   ],
+   "production": "Draft frame on the Figma page 'Steroid Era — Sprint (draft takes)' · strings ungated"
+  },
+  {
+   "num": 2,
+   "title": "Take B · The plaque",
+   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "A ranking you could pay for was never a ranking.",
+   "wave": "sprint",
+   "primary_text": [
+    "The New York Times reported that Forbes fired its top editor over a secret $6 million payment from the founder of the research firm behind its advisor rankings. Morgan Stanley suspended participation days later.\n\nEvery firm bought the plaques because every firm bought the plaques. That was the era's rule, and nobody broke it. The era is what just ended.\n\nCredibility is moving back to things that can be measured.\n\nThe benchmark shows where your firm actually stands: your metro, four named competitors, about 30 seconds to start. The report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "Measured beats awarded",
+   "description": "Your real visibility, in your metro.",
+   "cta": "LEARN MORE",
+   "images": [
+    "take-b.png"
+   ],
+   "production": "Draft frame on the Figma page 'Steroid Era — Sprint (draft takes)' · strings ungated"
+  },
+  {
+   "num": 3,
+   "title": "Take C · The ratchet",
+   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "$500K. Then $2M. Now $5M.",
+   "wave": "sprint",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm held near $500,000 for two decades. In January 2026 it became $2 million. On January 5, 2027 it becomes $5 million, while Schwab hires thousands of financial consultants of its own.\n\nNo one did anything wrong. The channel's owner changed the terms, because it can. That is what renting a growth channel means, and the rent just went up for the last time.\n\nThe benchmark shows where your firm actually stands: your metro, four named competitors, about 30 seconds to start. The report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your firm owns",
+   "description": "The rented era has an end date.",
+   "cta": "LEARN MORE",
+   "images": [
+    "take-c.png"
+   ],
+   "production": "Draft frame on the Figma page 'Steroid Era — Sprint (draft takes)' · strings ungated"
+  },
+  {
+   "num": 4,
+   "title": "Take D · The asterisk",
+   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Rented growth gets an asterisk.",
+   "wave": "sprint",
+   "primary_text": [
+    "When a firm eventually values a book, growth that arrived through someone else's brand gets discounted. Buyers pay multiples for the growth engine that transfers with the firm: the pipeline it owns, the visibility it earned, the clients who chose it directly.\n\nThe era that just ended inflated a lot of stat lines. The one starting rewards the real ones.\n\nThe benchmark shows where your firm actually stands: your metro, four named competitors, about 30 seconds to start. The report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "The leg your firm owns",
+   "description": "Growth a multiple gets paid on.",
+   "cta": "LEARN MORE",
+   "images": [
+    "take-d.png"
+   ],
+   "production": "Draft frame on the Figma page 'Steroid Era — Sprint (draft takes)' · strings ungated"
+  },
+  {
+   "num": 5,
+   "title": "Take E · The clean era",
+   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The future belongs to firms that earn their growth.",
+   "wave": "sprint",
+   "primary_text": [
+    "Own pipeline. Own clients. Own numbers.\n\nThe firms that thrive after an era ends are the ones whose results were theirs all along: visibility they earned, a site that converts, lead generation that runs on their own name. That has always been true in every field where the enhancements got taken away.\n\nThe benchmark shows where your firm actually stands: your metro, four named competitors, about 30 seconds to start. The report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "Earn the next client",
+   "description": "Own pipeline. Own numbers.",
+   "cta": "LEARN MORE",
+   "images": [
+    "take-e.png"
+   ],
+   "production": "Draft frame on the Figma page 'Steroid Era — Sprint (draft takes)' · strings ungated"
+  },
+  {
+   "num": 6,
+   "title": "Take F · Spring training",
+   "format": "Static 1080x1350 (4:5) · type-led draft plate",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The clean era starts with a measurement.",
+   "wave": "sprint",
+   "primary_text": [
+    "Before a firm builds anything, it should know its real, unassisted numbers. What your ideal clients see when they look you up. Where you rank beside the four firms with the widest coverage in your metro. Whether your site is built so search engines and AI answers can even read it.\n\nAbout 30 seconds to start. The report arrives in minutes and it is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds.",
+   "cta": "LEARN MORE",
+   "images": [
+    "take-f.png"
+   ],
+   "production": "Draft frame on the Figma page 'Steroid Era — Sprint (draft takes)' · strings ungated"
+  }
+ ]
+}

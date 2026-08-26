@@ -6,8 +6,8 @@
  "brandmark": "images/mileage-icon.jpg",
  "cta_url": "https://benchmark.mileagedesign.com",
  "banner": [
-  "SPRINT · CFP-structure visuals in Mileage blue (Bill 2026-08-25) · team-pass copy · Marcus ranking: C anchor, F converts, video contender, G week-two.",
-  "Forbes firing banned from all copy. No third-party attribution anywhere (Bill 2026-08-25). Take G 'stronger multiple' flagged to the gate."
+  "FINAL STAGING · 26 units: SPRINT takes (8) + ORIGAMI awards (9) + ORIGAMI routes (9). Cream canvas locked (construction paper killed). One caption per origami batch.",
+  "H1s: awards = Measured beats “awarded.” · routes = per-unit “was never yours” noun. H2s: awards two-sentence · routes one line. All origami strings DRAFT until Serena's gate; launch gated on credentials + verified test Lead."
  ],
  "hide_design_direction": true,
  "use_static_images": true,
@@ -18,6 +18,20 @@
    "title": "The End of the Steroid Era",
    "subtitle": "3 weeks · $50/day · straight to the benchmark · Meta finds the anchor take",
    "gate": "Credentials + verified test Lead before dollar one. News is perishable; this sprint is the launch vehicle."
+  },
+  {
+   "key": "awards",
+   "label": "ORIGAMI · The #1 Advisor Collection",
+   "title": "Measured beats “awarded.”",
+   "subtitle": "9 money-origami objects · one caption · H1/H2 set by Bill · Meta finds the anchor object",
+   "gate": "All strings DRAFT until Serena's gate. Cream canvas locked (Bill 2026-08-26)."
+  },
+  {
+   "key": "routes",
+   "label": "ORIGAMI · The Severed Route",
+   "title": "The route was never yours.",
+   "subtitle": "9 diorama scenes · the Schwab cut · one caption · per-unit H1 noun",
+   "gate": "News register: Schwab renderings verbatim. All strings DRAFT until Serena's gate. Scenes enlarged per Bill 2026-08-26."
   }
  ],
  "ads": [
@@ -189,6 +203,384 @@
     "steroid-video-a.mp4"
    ],
    "production": "Montage v1: three Veo cracks + plates. Poster steroid-video-a.jpg"
+  },
+  {
+   "num": 9,
+   "title": "Award · The trophy",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-trophy.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 10,
+   "title": "Award · The mug",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-mug.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 11,
+   "title": "Award · The championship belt",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-belt.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 12,
+   "title": "Award · The rosette",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-rosette.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 13,
+   "title": "Award · The pennant",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-pennant.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 14,
+   "title": "Award · The foam finger",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-foamfinger.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 15,
+   "title": "Award · The license plate",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-plate.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 16,
+   "title": "Award · The deal toy",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-dealtoy.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 17,
+   "title": "Award · The Best-in-State plaque",
+   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "Measured beats “awarded.”",
+   "wave": "awards",
+   "primary_text": [
+    "For twenty years, advisor credibility could be bought.\n\nTo generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-plaque.png"
+   ],
+   "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 18,
+   "title": "Route · The broken trestle",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The track was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-train.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 19,
+   "title": "Route · The canal lock",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The channel was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-canal.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 20,
+   "title": "Route · The padlocked faucet",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The tap was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-faucet.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 21,
+   "title": "Route · The dam",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The river was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-dam.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 22,
+   "title": "Route · The toll gate",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The road was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-tollgate.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 23,
+   "title": "Route · The sealed mail slot",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The door was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-mailslot.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 24,
+   "title": "Route · The capped hydrant",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The water was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-hydrant.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 25,
+   "title": "Route · The chained revolving door",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The entrance was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-revolvingdoor.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
+  },
+  {
+   "num": 26,
+   "title": "Route · The runway X",
+   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The runway was never yours.",
+   "wave": "routes",
+   "primary_text": [
+    "Schwab's minimum to refer a client out to an advisory firm was $500,000. Then $2 million. In January it becomes $5 million.\n\nThe rented referral pipeline is closing. To generate meeting requests online, you need three things:\n\n1. Visibility where your next client actually looks\n2. Monthly optimization that compounds your authority\n3. An ad campaign like the one you're looking at\n\nThe good news? We designed a personalized Online Visibility Benchmark that shows how visible your firm is against the four firms with the widest coverage in your metro.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See where your firm stands",
+   "description": "Independent and automated. About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "sr-runway.png"
+   ],
+   "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   }
  ]
 }

@@ -6,19 +6,12 @@
  "brandmark": "images/mileage-icon.jpg",
  "cta_url": "https://benchmark.mileagedesign.com",
  "banner": [
-  "FINAL STAGING · 26 units: SPRINT takes (8) + ORIGAMI awards (9) + ORIGAMI routes (9). Cream canvas locked (construction paper killed). One caption per origami batch.",
-  "H1s: awards = Measured beats “awarded.” · routes = per-unit “was never yours” noun. H2s: awards two-sentence · routes one line. All origami strings DRAFT until Serena's gate; launch gated on credentials + verified test Lead."
+  "FINAL STAGING · 18 origami units: awards (9) + routes (9). Cream canvas locked. One caption per batch.",
+  "H1s: awards = Measured beats “awarded.” · routes = per-unit “was never yours” noun. All strings DRAFT until Serena's gate; launch gated on credentials + verified test Lead."
  ],
  "hide_design_direction": true,
  "use_static_images": true,
  "waves": [
-  {
-   "key": "sprint",
-   "label": "SPRINT · Six takes, one ask",
-   "title": "The End of the Steroid Era",
-   "subtitle": "3 weeks · $50/day · straight to the benchmark · Meta finds the anchor take",
-   "gate": "Credentials + verified test Lead before dollar one. News is perishable; this sprint is the launch vehicle."
-  },
   {
    "key": "awards",
    "label": "ORIGAMI · The #1 Advisor Collection",
@@ -37,175 +30,6 @@
  "ads": [
   {
    "num": 1,
-   "title": "Take A · The declaration",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take A · The declaration",
-   "wave": "sprint",
-   "primary_text": [
-    "How much of your growth would survive the rented channels closing?\n\nFor twenty years, advisory growth came with enhancements. Rankings you could pay for. Scale you could borrow. Referrals you could rent. All three are being withdrawn at once.\n\nWhat remains is what your firm owns. The benchmark measures exactly that: your real visibility, in your metro, beside four named competitors.\n\nAbout 30 seconds to start. The report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "See what your firm owns",
-   "description": "The clean era starts here.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-a.png"
-   ],
-   "production": "Rebuilt without attribution (Bill 2026-08-25: no citing Brown). New hook owes a re-gate."
-  },
-  {
-   "num": 2,
-   "title": "Take B · Own vs rent",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue · Bill portrait (NBP setting variant — likeness pending Bill sign-off)",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take B · Own vs rent",
-   "wave": "sprint",
-   "primary_text": [
-    "Rented growth has a landlord. Owned growth has a multiple.\n\nSchwab's minimum to refer a client out held near $500,000 for two decades. It became $2 million in January 2026. It becomes $5 million on January 5, 2027.\n\nThe benchmark measures the part you own: your real visibility, your metro, four named competitors. About 30 seconds to start, and the report is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "Owned growth has a multiple",
-   "description": "Rented growth has a landlord.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-b.png"
-   ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
-  },
-  {
-   "num": 3,
-   "title": "Take C · The ratchet",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take C · The ratchet",
-   "wave": "sprint",
-   "primary_text": [
-    "The rented referral era has an end date: January 5, 2027.\n\nSchwab's minimum to refer a client out held near $500,000 for two decades. It became $2 million in January 2026. Next January it becomes $5 million, while Schwab hires thousands of financial consultants of its own.\n\nThat is what a rented channel means: the owner sets the terms. The benchmark measures the channel you own. Your metro, four named competitors, about 30 seconds to start.\n\nThe report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "Growth you own sets its own terms",
-   "description": "The rented era ends in 2027.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-c.png"
-   ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
-  },
-  {
-   "num": 4,
-   "title": "Take D · The asterisk",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take D · The asterisk",
-   "wave": "sprint",
-   "primary_text": [
-    "Rented growth gets an asterisk.\n\nWhen a firm is valued, buyers discount growth that arrived through someone else's brand. They pay multiples for the engine that transfers: the pipeline you own, the visibility you earned, the clients who chose you directly.\n\nThe benchmark measures that engine. Your real visibility, your metro, four named competitors. About 30 seconds to start.\n\nThe report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "Growth a multiple gets paid on",
-   "description": "Measure the engine you own.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-d.png"
-   ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
-  },
-  {
-   "num": 5,
-   "title": "Take E · The clean era",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue · Bill portrait (NBP setting variant — likeness pending Bill sign-off)",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take E · The clean era",
-   "wave": "sprint",
-   "primary_text": [
-    "The future belongs to firms that earn their growth.\n\n50% of investors with $5 million or more found their current advisor with no referral involved (Ficomm and Absolute Engagement, 2026). They searched and they chose.\n\nThe benchmark shows whether investors like that can find you. Your real visibility, your metro, four named competitors.\n\nAbout 30 seconds to start. The report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "Earn the next client",
-   "description": "Own pipeline. Own numbers.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-e.png"
-   ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
-  },
-  {
-   "num": 6,
-   "title": "Take F · Spring training",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue (#2E75F7) gradient over Veo stills",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take F · Spring training",
-   "wave": "sprint",
-   "primary_text": [
-    "The clean era starts with a measurement.\n\nBefore your firm builds anything, know your real numbers. 96% of prospects research advisors online before they decide who to hire (Wealthtender, 2025). What do they see when they look you up?\n\nThe benchmark answers that: your ranking beside the four firms with the widest coverage in your metro, and whether search engines and AI answers can even read your site.\n\nAbout 30 seconds to start. The report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "See where your firm stands",
-   "description": "About 30 seconds to start.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-f.png"
-   ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
-  },
-  {
-   "num": 7,
-   "title": "Take G · The silver lining",
-   "format": "Static 1080x1350 (4:5) · CFP structure, Mileage blue · Bill portrait (NBP setting variant — likeness pending Bill sign-off)",
-   "placements": [
-    "Feed"
-   ],
-   "type": "static",
-   "arc": "Take G · The silver lining",
-   "wave": "sprint",
-   "primary_text": [
-    "Sometimes it takes an ending to force the change.\n\nEveryone used the rented channels because that was the era's rule. Now the era is closing them, and the firms that come out ahead will be the ones that start owning their growth first.\n\nOwned growth compounds, builds enterprise value, and exits on a stronger multiple. The benchmark shows where yours stands today: your metro, four named competitors, about 30 seconds to start.\n\nThe report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "Own the growth you build next",
-   "description": "Exit on a stronger multiple.",
-   "cta": "LEARN MORE",
-   "images": [
-    "take-g.png"
-   ],
-   "production": "Team-pass copy (Aaliyah rewrite, Serena gate, Marcus conversion read). C hook integrated per Marcus — that one line owes a re-gate."
-  },
-  {
-   "num": 8,
-   "title": "Take H · VIDEO — the montage (12.5s)",
-   "format": "Video 1080x1920 · 12.5s · Veo 3.1 generated baseball (no team marks) + type plates + end card, native audio",
-   "placements": [
-    "Feed",
-    "Reels"
-   ],
-   "type": "video",
-   "arc": "Crack. Crack. Crack. The era ends.",
-   "wave": "sprint",
-   "primary_text": [
-    "For twenty years, the numbers were enhanced. That era just ended. For financial advisors, too.\n\nRankings you could pay for. Referrals you could rent. Both are being withdrawn, and what is left is what your firm owns.\n\nThe benchmark measures it: your real visibility, your metro, four named competitors. About 30 seconds to start.\n\nThe report arrives in minutes and is yours either way.\n\nBuilt for RIAs at and beyond $500M in AUM."
-   ],
-   "headline": "What's left is what you own",
-   "description": "See your real numbers.",
-   "cta": "LEARN MORE",
-   "images": [
-    "steroid-video-a.mp4"
-   ],
-   "production": "Montage v1: three Veo cracks + plates. Poster steroid-video-a.jpg"
-  },
-  {
-   "num": 9,
    "title": "Award · The trophy",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -226,7 +50,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 10,
+   "num": 2,
    "title": "Award · The mug",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -247,7 +71,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 11,
+   "num": 3,
    "title": "Award · The championship belt",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -268,7 +92,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 12,
+   "num": 4,
    "title": "Award · The rosette",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -289,7 +113,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 13,
+   "num": 5,
    "title": "Award · The pennant",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -310,7 +134,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 14,
+   "num": 6,
    "title": "Award · The foam finger",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -331,7 +155,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 15,
+   "num": 7,
    "title": "Award · The license plate",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -352,7 +176,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 16,
+   "num": 8,
    "title": "Award · The deal toy",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -373,7 +197,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 17,
+   "num": 9,
    "title": "Award · The Best-in-State plaque",
    "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
@@ -394,7 +218,7 @@
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 18,
+   "num": 10,
    "title": "Route · The broken trestle",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -415,7 +239,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 19,
+   "num": 11,
    "title": "Route · The canal lock",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -436,7 +260,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 20,
+   "num": 12,
    "title": "Route · The padlocked faucet",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -457,7 +281,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 21,
+   "num": 13,
    "title": "Route · The dam",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -478,7 +302,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 22,
+   "num": 14,
    "title": "Route · The toll gate",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -499,7 +323,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 23,
+   "num": 15,
    "title": "Route · The sealed mail slot",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -520,7 +344,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 24,
+   "num": 16,
    "title": "Route · The capped hydrant",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -541,7 +365,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 25,
+   "num": 17,
    "title": "Route · The chained revolving door",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -562,7 +386,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 26,
+   "num": 18,
    "title": "Route · The runway X",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [

@@ -6,7 +6,7 @@
  "brandmark": "images/mileage-icon.jpg",
  "cta_url": "https://benchmark.mileagedesign.com",
  "banner": [
-  "FINAL STAGING · 18 origami units: awards (9) + routes (9). Cream canvas locked. One caption per batch.",
+  "FINAL STAGING · 19 origami units: awards (10, incl. the syringe era-closer) + routes (9). Cream card on navy paper frame. One caption per batch.",
   "H1s: awards = Measured beats “awarded.” · routes = per-unit “was never yours” noun. All strings DRAFT until Serena's gate; launch gated on credentials + verified test Lead."
  ],
  "hide_design_direction": true,
@@ -219,6 +219,27 @@
   },
   {
    "num": 10,
+   "title": "Award · The syringe (era closer)",
+   "format": "Static 1080x1350 (4:5) · money-origami syringe with falling drop · era H1",
+   "placements": [
+    "Feed"
+   ],
+   "type": "static",
+   "arc": "The steroid era for advisors is over.",
+   "wave": "awards",
+   "primary_text": [
+    "The rankings, the lists, the badges: every one of them is rent.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Monthly work that moves you up the results and earns you citations in AI search conversations\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+   ],
+   "headline": "See what your next client sees",
+   "description": "About 30 seconds to start.",
+   "cta": "LEARN MORE",
+   "images": [
+    "og-syringe.png"
+   ],
+   "production": "NBP money-origami render (barrel = folded $100s, plunger/needle = kraft, drop = folded bill). Cut with a low island floor so the falling drop survives. Figma component + feed/story frames. FLAG: syringe imagery may trip Meta's drug-paraphernalia review; watch this unit's approval."
+  },
+  {
+   "num": 11,
    "title": "Route · The broken trestle",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -239,7 +260,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 11,
+   "num": 12,
    "title": "Route · The canal lock",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -260,7 +281,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 12,
+   "num": 13,
    "title": "Route · The padlocked faucet",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -281,7 +302,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 13,
+   "num": 14,
    "title": "Route · The dam",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -302,7 +323,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 14,
+   "num": 15,
    "title": "Route · The toll gate",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -323,7 +344,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 15,
+   "num": 16,
    "title": "Route · The sealed mail slot",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -344,7 +365,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 16,
+   "num": 17,
    "title": "Route · The capped hydrant",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -365,7 +386,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 17,
+   "num": 18,
    "title": "Route · The chained revolving door",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
@@ -386,7 +407,7 @@
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
-   "num": 18,
+   "num": 19,
    "title": "Route · The runway X",
    "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [

@@ -31,9 +31,11 @@
   {
    "num": 1,
    "title": "Award · The trophy",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -45,16 +47,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-trophy.png"
+    "og-trophy.png",
+    "og-trophy-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 2,
    "title": "Award · The mug",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -66,16 +71,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-mug.png"
+    "og-mug.png",
+    "og-mug-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 3,
    "title": "Award · The championship belt",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -87,16 +95,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-belt.png"
+    "og-belt.png",
+    "og-belt-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 4,
    "title": "Award · The rosette",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -108,16 +119,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-rosette.png"
+    "og-rosette.png",
+    "og-rosette-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 5,
    "title": "Award · The pennant",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -129,16 +143,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-pennant.png"
+    "og-pennant.png",
+    "og-pennant-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 6,
    "title": "Award · The foam finger",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -150,16 +167,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-foamfinger.png"
+    "og-foamfinger.png",
+    "og-foamfinger-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 7,
    "title": "Award · The license plate",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -171,16 +191,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-plate.png"
+    "og-plate.png",
+    "og-plate-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 8,
    "title": "Award · The deal toy",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -192,16 +215,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-dealtoy.png"
+    "og-dealtoy.png",
+    "og-dealtoy-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 9,
    "title": "Award · The Best-in-State plaque",
-   "format": "Static 1080x1350 (4:5) · money-origami object on campaign canvas · H1 + H2 set type",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami object on campaign canvas · H1 + H2 set type",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "Measured beats “awarded.”",
@@ -213,16 +239,19 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-plaque.png"
+    "og-plaque.png",
+    "og-plaque-story.png"
    ],
    "production": "NBP money-origami render, rembg cutout, Figma component system (Origami page). Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 10,
    "title": "Award · The syringe (era closer)",
-   "format": "Static 1080x1350 (4:5) · money-origami syringe with falling drop · era H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami syringe with falling drop · era H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The steroid era for advisors is over.",
@@ -234,196 +263,224 @@
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "og-syringe.png"
+    "og-syringe.png",
+    "og-syringe-story.png"
    ],
    "production": "NBP money-origami render (barrel = folded $100s, plunger/needle = kraft, drop = folded bill). Cut with a low island floor so the falling drop survives. Figma component + feed/story frames. FLAG: syringe imagery may trip Meta's drug-paraphernalia review; watch this unit's approval."
   },
   {
    "num": 11,
    "title": "Route · The broken trestle",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The track was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-train.png"
+    "sr-train.png",
+    "sr-train-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 12,
    "title": "Route · The canal lock",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The channel was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-canal.png"
+    "sr-canal.png",
+    "sr-canal-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 13,
    "title": "Route · The padlocked faucet",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The tap was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-faucet.png"
+    "sr-faucet.png",
+    "sr-faucet-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 14,
    "title": "Route · The dam",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The river was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-dam.png"
+    "sr-dam.png",
+    "sr-dam-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 15,
    "title": "Route · The toll gate",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The road was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-tollgate.png"
+    "sr-tollgate.png",
+    "sr-tollgate-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 16,
    "title": "Route · The sealed mail slot",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The door was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-mailslot.png"
+    "sr-mailslot.png",
+    "sr-mailslot-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 17,
    "title": "Route · The capped hydrant",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The water was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-hydrant.png"
+    "sr-hydrant.png",
+    "sr-hydrant-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 18,
    "title": "Route · The chained revolving door",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The entrance was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-revolvingdoor.png"
+    "sr-revolvingdoor.png",
+    "sr-revolvingdoor-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   },
   {
    "num": 19,
    "title": "Route · The runway X",
-   "format": "Static 1080x1350 (4:5) · money-origami diorama on campaign canvas · per-unit H1",
+   "format": "Static 1080x1350 (4:5) + 1080x1920 (9:16) · money-origami diorama on campaign canvas · per-unit H1",
    "placements": [
-    "Feed"
+    "Feed",
+    "Stories",
+    "Reels"
    ],
    "type": "static",
    "arc": "The runway was never yours.",
    "wave": "routes",
    "primary_text": [
-    "How much of your growth still depends on someone else's referral pipeline?\n\nSchwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nEvery one of those referrals was rented.\n\nTime to own it.\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first one. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nAnd we've personalized it for your firm.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
+    "Schwab's minimum to refer a client out to an advisory firm:\n\nFor two decades: $500,000\nJanuary 2026: $2 million\nJanuary 5, 2027: $5 million\n\nTo win more clients online, you need three things:\n\n1. Being easy to find when someone searches for an advisor\n2. Climbing in search and AI answers, month after month\n3. An ad campaign like the one you're looking at\n\nThe good news? We built an Online Visibility Benchmark that measures the first two. It shows where your firm shows up online, next to four named firms in your area.\n\nOnce you can see where you stand, you can plan your way to owned lead generation.\n\nWe're confident it can help you own your organic growth.\n\nJust answer a few questions, and the report is yours.\n\nBuilt for RIAs at and beyond $500M in AUM."
    ],
    "headline": "See where your firm stands",
    "description": "About 30 seconds to start.",
    "cta": "LEARN MORE",
    "images": [
-    "sr-runway.png"
+    "sr-runway.png",
+    "sr-runway-story.png"
    ],
    "production": "NBP self-contained diorama render (composition law: floats with margin, kraft bases), rembg cutout, Figma component system. Story 1080x1920 built in Figma, exports on approval."
   }

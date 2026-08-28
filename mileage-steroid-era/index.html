@@ -1529,7 +1529,8 @@ function renderVariantBar(ad) {
 }
 
 // ── Image URL helpers ──────────────────────────────────────────────────────
-function _imgUrl(filename) { return `images/${filename}`; }
+const ASSET_V = 'cta-1787936136';
+function _imgUrl(filename) { return `images/${filename}?v=${ASSET_V}`; }
 
 function _isVideoUrl(u) { return typeof u === 'string' && /\.mp4($|\?)/i.test(u); }
 function _mediaEl(url, cls, alt) {

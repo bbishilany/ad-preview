@@ -1,0 +1,2528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Preview — Mileage Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3350;
+    --accent: #7EFBC8;
+    --accent2: #12493C;
+    --green: #22c55e;
+    --orange: #f59e0b;
+    --text: #e8eaf6;
+    --text2: #8b92b8;
+    --danger: #ef4444;
+    --gold: #7EFBC8;
+    --brand-deep-green: #12493C;
+    --brand-mint: #7EFBC8;
+    --brand-charcoal: #27333C;
+  }
+
+  body.light-mode {
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --surface2: #eef0f5;
+    --border: #d4d7e0;
+    --accent: #12493C;
+    --accent2: #0d3a2f;
+    --green: #16a34a;
+    --orange: #d97706;
+    --text: #1a1d27;
+    --text2: #5c6280;
+    --danger: #dc2626;
+    --gold: #12493C;
+    --brand-deep-green: #12493C;
+    --brand-mint: #7EFBC8;
+    --brand-charcoal: #27333C;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 0;
+  }
+
+  /* ── STICKY HEADER ─────────────────────────────────────────────── */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(15,17,23,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.2s;
+  }
+  body.light-mode .sticky-header {
+    background: rgba(245,246,250,0.85);
+  }
+  .sticky-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  .sticky-header-left img {
+    height: 24px; width: 24px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+  }
+  .sticky-header-left .campaign-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-header-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .progress-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: transparent;
+    transition: all 0.2s;
+  }
+  .progress-dot.approved {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .sticky-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .theme-toggle {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
+  .reviewer-identity {
+    font-size: 11px; color: var(--text2);
+    display: flex; align-items: center; gap: 6px;
+    white-space: nowrap;
+  }
+  .reviewer-identity strong { color: var(--text); }
+  .reviewer-identity .edit-name-btn {
+    background: none; border: none; color: var(--text2);
+    cursor: pointer; font-size: 12px; padding: 2px;
+  }
+  .reviewer-identity .edit-name-btn:hover { color: var(--text); }
+
+  /* ── AD NAV BAR (anchored below sticky header) ────────────────── */
+  .ad-nav {
+    position: sticky;
+    top: 53px;
+    z-index: 39;
+    background: var(--brand-deep-green);
+    border-bottom: 1px solid rgba(126,251,200,0.15);
+    padding: 0 24px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .ad-nav::-webkit-scrollbar { display: none; }
+  .ad-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .ad-nav-item:hover {
+    color: rgba(255,255,255,0.85);
+    background: rgba(126,251,200,0.06);
+  }
+  .ad-nav-item.active {
+    color: var(--brand-mint);
+    border-bottom-color: var(--brand-mint);
+  }
+  .ad-nav-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .ad-nav-item.active .ad-nav-num {
+    background: var(--brand-mint);
+    color: var(--brand-deep-green);
+  }
+  .ad-nav-item.approved-dot .ad-nav-num {
+    background: var(--green);
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .ad-nav { padding: 0 8px; top: 49px; }
+    .ad-nav-item { padding: 8px 12px; font-size: 11px; }
+    .ad-nav-label { display: none; }
+  }
+
+  /* ── HERO SECTION ──────────────────────────────────────────────── */
+  .hero {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--text), var(--text2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-meta {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+  .hero-meta strong { color: var(--text); font-weight: 600; }
+
+  /* ── WAVE SECTION HEADERS ──────────────────────────────────────── */
+  .wave-header {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .wave-header-inner {
+    border-top: 2px solid var(--brand-mint);
+    padding: 20px 0 12px;
+    text-align: center;
+  }
+  .wave-header-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brand-mint);
+    margin-bottom: 4px;
+  }
+  .wave-header-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .wave-header-subtitle {
+    font-size: 13px;
+    color: var(--text2);
+  }
+  .wave-header-gate {
+    max-width: 720px;
+    margin: 12px auto 0;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text2);
+    text-align: left;
+  }
+  .wave-gate-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 3px;
+  }
+  .arc-banner {
+    max-width: 720px;
+    margin: 18px auto 0;
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text2);
+    text-align: left;
+  }
+
+  /* ── AD CARD ───────────────────────────────────────────────────── */
+  .ad-card {
+    max-width: 1060px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .ad-card-inner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  }
+  .ad-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ad-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ad-card-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text2);
+  }
+  .ad-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .ad-card-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .ad-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--surface2);
+    color: var(--text2);
+    border: 1px solid var(--border);
+  }
+  .ad-chip-accent {
+    background: rgba(79,122,255,0.12);
+    color: var(--accent);
+    border-color: rgba(79,122,255,0.3);
+  }
+  .ad-chip-variation {
+    background: rgba(245,158,11,0.14);
+    color: var(--orange);
+    border-color: rgba(245,158,11,0.35);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .ad-card-status {
+    font-size: 12px;
+    color: var(--text2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .ad-card-status.is-approved {
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* ── AD CARD BODY: MOCKUPS + COPY GRID ─────────────────────────── */
+  .ad-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .ad-card-mockups {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 24px 16px;
+  }
+  .ad-card-copy {
+    min-width: 0;
+    border-top: 1px solid var(--border);
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+  .copy-field-wide { grid-column: 1 / -1; }
+
+  /* Placement tabs */
+  .placement-tabs {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .placement-tab {
+    padding: 7px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .placement-tab:hover { border-color: var(--accent); color: var(--text); }
+  .placement-tab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .placement-panel { display: flex; flex-direction: column; align-items: center; }
+  .placement-panel.hidden { display: none; }
+
+  /* Variant bar (copy + image variant pills) */
+  .variant-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 24px;
+  }
+  .variant-bar:empty { display: none; }
+  .variant-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .variant-row-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 110px;
+  }
+  .variant-row-pills {
+    display: flex;
+    gap: 4px;
+  }
+  .variant-pill {
+    min-width: 30px; height: 26px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px; font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .variant-pill:hover { border-color: var(--accent); color: var(--text); }
+  .variant-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .ad-card-copy {
+      grid-template-columns: 1fr;
+    }
+    .ig-story { width: 220px; }
+  }
+
+  /* Copy version toggle */
+  .copy-version-pills {
+    display: flex;
+    gap: 4px;
+    margin-left: 6px;
+  }
+  .copy-version-pill {
+    width: 30px; height: 24px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .copy-version-pill:hover { border-color: var(--accent); color: var(--text); }
+  .copy-version-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+
+  /* Copy fields */
+  .copy-field {
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .copy-field-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--brand-mint);
+    margin-bottom: 6px;
+  }
+  .copy-field-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+  /* Design direction panel */
+  .design-direction-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    margin-top: 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-mint);
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+  }
+  .design-direction-toggle:hover {
+    background: rgba(126,251,200,0.06);
+    border-color: var(--brand-mint);
+  }
+  .design-direction-toggle .dd-chevron {
+    transition: transform 0.2s;
+    font-size: 11px;
+  }
+  .design-direction-toggle.open .dd-chevron {
+    transform: rotate(90deg);
+  }
+  .design-direction-body {
+    display: none;
+    margin-top: 8px;
+    padding: 14px 16px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+  .design-direction-body.open {
+    display: block;
+  }
+  .design-direction-body code,
+  .design-direction-body pre {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.25);
+    border-radius: 4px;
+    padding: 2px 5px;
+  }
+  .design-direction-body pre {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .design-direction-body strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  body.light-mode .design-direction-body code,
+  body.light-mode .design-direction-body pre {
+    background: rgba(0,0,0,0.06);
+  }
+  .editable-field {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin: -6px -8px;
+    transition: border-color 0.15s, background 0.15s;
+    outline: none;
+    cursor: text;
+  }
+  .editable-field:hover {
+    border-color: var(--border);
+    background: rgba(79,122,255,0.04);
+  }
+  .editable-field:focus {
+    border-color: var(--accent);
+    background: rgba(79,122,255,0.06);
+  }
+  .editable-field-saved {
+    position: absolute;
+    top: 0; right: 0;
+    font-size: 10px;
+    color: var(--green);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .editable-field-saved.visible { opacity: 1; }
+
+  /* ── AD CARD FOOTER: FEEDBACK ROW ──────────────────────────────── */
+  .ad-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .approve-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 2px solid var(--green);
+    background: rgba(34,197,94,0.08);
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .approve-btn:hover {
+    background: rgba(34,197,94,0.18);
+    transform: translateY(-1px);
+  }
+  .approve-btn svg { width: 16px; height: 16px; }
+  .approve-btn.approved {
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+    cursor: default;
+  }
+  .approve-btn.approved:hover { transform: none; }
+
+  .feedback-inline-input {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .feedback-inline-input input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .feedback-inline-input input:focus { border-color: var(--accent); }
+  .feedback-inline-send {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .feedback-inline-send:hover { opacity: 0.9; }
+  .feedback-inline-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .feedback-count-link {
+    font-size: 12px;
+    color: var(--text2);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 0.15s;
+  }
+  .feedback-count-link:hover { color: var(--accent); }
+
+  /* ── FEEDBACK THREAD (collapsible below card) ──────────────────── */
+  .feedback-thread-wrap {
+    max-width: 1060px;
+    margin: -32px auto 48px;
+    padding: 0 24px;
+    display: none;
+  }
+  .feedback-thread-wrap.open { display: block; }
+  .feedback-thread-inner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    padding: 16px 24px;
+  }
+  .feedback-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    background: var(--surface2);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .feedback-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .feedback-entry-name { font-weight: 600; color: var(--text); }
+  .feedback-entry-time {
+    font-size: 10px;
+    color: var(--text2);
+    margin-left: auto;
+  }
+  .feedback-entry-comment {
+    color: var(--text);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+  .verdict-badge {
+    font-size: 10px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .verdict-badge.approve { background: rgba(34,197,94,0.15); color: var(--green); }
+  .verdict-badge.request_changes { background: rgba(245,158,11,0.15); color: var(--orange); }
+  .verdict-badge.comment_only { background: var(--surface); color: var(--text2); }
+  .feedback-delete-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--text2); opacity: 0.4; padding: 2px;
+    margin-left: auto; line-height: 1; transition: all 0.15s;
+  }
+  .feedback-delete-btn:hover { opacity: 1; color: var(--danger); }
+  .feedback-empty {
+    font-size: 12px; color: var(--text2); font-style: italic; padding: 4px 0;
+  }
+
+  /* ── FEED MOCKUP ───────────────────────────────────────────────── */
+  .fb-feed {
+    width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+    cursor: zoom-in;
+  }
+  @media (max-width: 768px) { .fb-feed { width: 100%; max-width: 420px; } }
+  .fb-feed-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    position: relative;
+  }
+  .fb-header-menu {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .fb-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .fb-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .fb-page-name { font-weight: 600; font-size: 13px; color: var(--text); }
+  .fb-sponsored { font-size: 11px; color: var(--text2); }
+  .fb-feed-text {
+    padding: 0 14px 10px;
+    font-size: 13px; line-height: 1.5; color: var(--text);
+  }
+  .fb-media-wrap {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .fb-media-wrap img { display: block; width: 100%; }
+  .fb-image-placeholder {
+    width: 100%; aspect-ratio: 1/1;
+    background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text2); font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .fb-engagement-icons {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px 2px;
+    gap: 14px;
+  }
+  .fb-engagement-icons .fb-engage-icon {
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .fb-engagement-icons .fb-engage-icon:hover { color: var(--text); }
+  .fb-engagement-icons .fb-engage-icon.fb-engage-bookmark {
+    margin-left: auto;
+  }
+  .fb-feed-cta {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+  }
+  .fb-feed-cta-text { flex: 1; min-width: 0; }
+  .fb-feed-cta-headline {
+    font-size: 13px; font-weight: 600; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .fb-feed-cta-desc { font-size: 11px; color: var(--text2); }
+  .fb-cta-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 7px 16px; border-radius: 6px;
+    font-size: 12px; font-weight: 600; white-space: nowrap;
+    flex-shrink: 0; margin-left: 12px;
+    cursor: pointer;
+  }
+  a.fb-cta-btn { text-decoration: none; display: inline-block; }
+  .fb-reactions {
+    display: flex; align-items: center; gap: 20px;
+    padding: 6px 14px 10px; color: var(--text2); font-size: 12px; font-weight: 600;
+  }
+
+  /* ── STORIES MOCKUP ────────────────────────────────────────────── */
+  .ig-story {
+    width: 280px; aspect-ratio: 9/16;
+    border-radius: 14px; overflow: hidden;
+    position: relative; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 24px 18px 60px; text-align: center;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, #1a1a2e, #16213e);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+    cursor: zoom-in;
+    flex-shrink: 0;
+  }
+  .ig-story-has-img { justify-content: flex-end; padding-bottom: 70px; }
+  .ig-story-bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.7;
+  }
+  .ig-story-progress {
+    position: absolute; top: 8px; left: 8px; right: 8px;
+    height: 2px; background: rgba(255,255,255,0.3); border-radius: 2px; z-index: 2;
+  }
+  .ig-story-progress-fill { width: 40%; height: 100%; background: white; border-radius: 2px; }
+  .ig-story-account {
+    position: absolute;
+    top: 18px; left: 12px;
+    display: flex; align-items: center; gap: 8px;
+    z-index: 3;
+  }
+  .ig-story-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 10px; font-weight: 700;
+    border: 2px solid rgba(255,255,255,0.5);
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .ig-story-avatar img {
+    width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+  }
+  .ig-story-handle {
+    color: white; font-size: 10px; font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .ig-story-text {
+    color: white; font-size: 14px; font-weight: 700; line-height: 1.4;
+    margin-bottom: 6px; text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-text.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 1.8s forwards;
+  }
+  .ig-story-secondary {
+    color: rgba(255,255,255,0.8); font-size: 10px; line-height: 1.3;
+    margin-bottom: 14px; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    position: relative; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-secondary.cta-animate {
+    animation: storyFadeIn 0.5s ease-out 2.8s forwards;
+  }
+  @keyframes storyFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .ig-story-swipe-up {
+    position: absolute;
+    bottom: 48px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255,255,255,0.7);
+    opacity: 0;
+  }
+  @keyframes swipeUpBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-4px); }
+  }
+  @keyframes ctaRiseUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes ctaRiseUpCentered {
+    from { transform: translateX(-50%) translateY(40px); opacity: 0; }
+    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+  }
+  .ig-story-swipe-up.cta-animate {
+    animation: ctaRiseUpCentered 0.3s ease-out 3.8s forwards;
+  }
+  .ig-story-swipe-up.anim-bounce {
+    opacity: 1;
+    animation: swipeUpBounce 2s ease-in-out infinite;
+  }
+  .ig-story-cta {
+    background: white; color: #1a1a2e;
+    padding: 7px 18px; border-radius: 20px;
+    font-size: 11px; font-weight: 700;
+    position: absolute; bottom: 28px; z-index: 2;
+    opacity: 0;
+  }
+  .ig-story-cta.cta-animate {
+    animation: ctaRiseUp 0.4s ease-out 4.8s forwards;
+  }
+  .ig-story-message-bar {
+    position: absolute;
+    bottom: 6px; left: 10px; right: 10px;
+    z-index: 3;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .ig-story-message-input {
+    flex: 1;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+  }
+  .ig-story-message-send {
+    color: rgba(255,255,255,0.5);
+    display: flex; align-items: center;
+  }
+
+  /* ── IMAGE UPLOAD/DOWNLOAD/REVERT ──────────────────────────────── */
+  .img-upload-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .img-upload-btn {
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px; font-weight: 700; line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .img-upload-btn:hover { transform: scale(1.1); background: #3a65e6; }
+  .img-download-btn {
+    position: absolute;
+    top: 8px; right: 46px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: #1a8a5c;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 14px; font-weight: 700; line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
+    text-decoration: none;
+  }
+  .img-download-btn:hover { transform: scale(1.1); background: #15704a; }
+  .img-revert-pill {
+    position: absolute;
+    top: 8px; left: 8px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--danger);
+    color: #fff;
+    font-size: 10px; font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s;
+    letter-spacing: 0.3px;
+  }
+  .img-revert-pill:hover { transform: scale(1.05); }
+
+  /* ── IMAGE VERSION BAR ───────────────────────────────────────── */
+  .img-version-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 0 2px;
+    justify-content: center;
+  }
+  .img-version-pill {
+    min-width: 32px; height: 26px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 11px; font-weight: 700;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .img-version-pill:hover { border-color: var(--accent); color: var(--text); }
+  .img-version-pill.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+
+  /* ── MOCKUP ZOOM OVERLAY ───────────────────────────────────────── */
+  .mockup-zoom-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 50;
+    display: flex; align-items: flex-start; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+    overflow-y: auto;
+    padding: 40px 20px;
+  }
+  .mockup-zoom-overlay.active {
+    opacity: 1; pointer-events: auto;
+  }
+  .mockup-zoom-content {
+    width: 500px;
+    max-width: 95vw;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .mockup-zoom-content .fb-feed { width: 100% !important; }
+  .mockup-zoom-content .ig-story { width: 320px; margin: 0 auto; }
+  .mockup-zoom-close {
+    position: fixed; top: 20px; right: 20px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: none;
+    color: white; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 51;
+  }
+  .mockup-zoom-close:hover { background: rgba(255,255,255,0.25); }
+
+  /* ── TOAST ─────────────────────────────────────────────────────── */
+  .upload-toast {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px; font-weight: 600;
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    animation: toastIn 0.2s ease-out;
+  }
+  .upload-toast.success { border-color: var(--green); }
+  .upload-toast.error { border-color: var(--danger); }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── FOOTER ────────────────────────────────────────────────────── */
+  .site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text2);
+    margin-top: 24px;
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 16px 24px; }
+    .hero-title { font-size: 26px; }
+    .ad-card { padding: 0 12px; margin-bottom: 32px; }
+    .ad-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .ad-card-body { padding: 16px; }
+    .ad-card-footer { flex-wrap: wrap; padding: 12px 16px; }
+    .feedback-inline-input { flex-basis: 100%; }
+    .sticky-header { padding: 8px 12px; gap: 8px; }
+    .sticky-header-left .campaign-label { font-size: 12px; }
+    .wave-header { padding: 0 12px; }
+  }
+  @media (max-width: 480px) {
+    .sticky-header-center { display: none; }
+    .fb-feed { width: 100%; }
+    .ig-story { width: 180px; }
+    .ad-card-chips { display: none; }
+  }
+
+.var-strip{margin-top:10px}
+.var-strip-label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#8a93ad);margin-bottom:6px}
+.var-strip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.var-thumb{position:relative;border:2px solid transparent;border-radius:8px;padding:0;background:none;cursor:pointer;flex:0 0 auto;width:64px;height:80px;overflow:hidden}
+.var-thumb img{width:100%;height:100%;object-fit:cover;display:block;border-radius:6px}
+.var-thumb span{position:absolute;bottom:2px;right:4px;font-size:10px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.8)}
+.var-thumb.active{border-color:#f08a3c}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<div class="sticky-header">
+  <div class="sticky-header-left">
+    <img src="images/mileage-icon.jpg" alt="Mileage">
+    <span class="campaign-label" id="header-campaign-label"></span>
+  </div>
+  <div class="sticky-header-center" id="progress-dots"></div>
+  <div class="sticky-header-right">
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">&#9790;</button>
+    <div class="reviewer-identity" id="reviewer-identity" style="display:none">
+      <strong id="reviewer-identity-name"></strong>
+      <button class="edit-name-btn" onclick="showEditNamePrompt()" title="Change name">&#9998;</button>
+    </div>
+  </div>
+</div>
+
+<!-- AD NAV BAR -->
+<nav class="ad-nav" id="ad-nav"></nav>
+
+<!-- HERO SECTION -->
+<div class="hero" id="hero-section"></div>
+
+<!-- DECK CONTAINER — all waves + ad cards render here -->
+<div id="deck-container"></div>
+
+<!-- FOOTER -->
+<div class="site-footer">
+  Confidential &mdash; Powered by Mileage Intelligence &mdash; For internal and client review only.
+</div>
+
+<!-- MOCKUP ZOOM OVERLAY -->
+<div class="mockup-zoom-overlay" id="mockup-zoom-overlay" onclick="handleZoomOverlayClick(event)">
+  <button class="mockup-zoom-close" onclick="closeMockupZoom()">&times;</button>
+  <div class="mockup-zoom-content" id="mockup-zoom-content"></div>
+</div>
+
+<!-- Supabase SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// ── Configuration ──────────────────────────────────────────────────────────
+const SUPABASE_URL = 'https://byuxmsohwsvnqfirgeit.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5dXhtc29od3N2bnFmaXJnZWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0MDE3NzYsImV4cCI6MjA4OTk3Nzc3Nn0.YctPyGRzwgdz9-HaHDnWO0KhrVhElRhYKg7feIWPd1c';
+
+let sb = null;
+try {
+  if (SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+} catch (e) {
+  console.warn('Supabase not configured yet:', e.message);
+}
+
+// ── SVG Icon Library ──────────────────────────────────────────────────────
+const SVG_ICONS = {
+  heart: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  comment: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  share: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
+  bookmark: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
+  threeDots: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>`,
+  chevronUp: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="20 6 9 17 4 12"/></svg>`,
+};
+
+// ── State ──────────────────────────────────────────────────────────────────
+let _data = null;
+let _optionIdx = {};
+let _imageOverrides = {};
+let _imageVersions = {};
+let _activeImageVersion = {};
+let _placementIdx = {};
+let _feedbackCache = {};
+const CAMPAIGN_ID = 'mileage-steroid-era';
+
+// ── Utility ────────────────────────────────────────────────────────────────
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function _getField(ad, field, idx) {
+  const v = ad[field];
+  if (Array.isArray(v)) return v[idx || 0] || '';
+  return v || '';
+}
+
+function _fieldCount(ad, field) {
+  return Array.isArray(ad[field]) ? ad[field].length : 1;
+}
+
+// ── Image Override System ──────────────────────────────────────────────────
+async function loadImageVersions() {
+  if (!sb) return;
+  try {
+    // The ad_images table has no version_num/label columns, so query the base
+    // schema directly (avoids a 400) and synthesize version numbers by per-slot
+    // upload order. If those columns are added later, this still works.
+    const { data, error } = await sb.from('ad_images')
+      .select('id, ad_num, slot, public_url, is_active, storage_path, created_at')
+      .eq('campaign_id', CAMPAIGN_ID)
+      .order('created_at', { ascending: true });
+    if (error) throw error;
+    // Assign synthetic version numbers by upload order per slot
+    const counters = {};
+    (data || []).forEach(row => {
+      const key = `${row.ad_num}_${row.slot}`;
+      counters[key] = (counters[key] || 0) + 1;
+      row.version_num = counters[key];
+      row.label = null;
+    });
+    _imageOverrides = {};
+    _imageVersions = {};
+    _activeImageVersion = {};
+    (data || []).forEach(row => {
+      const key = `${row.ad_num}_${row.slot}`;
+      if (!_imageVersions[key]) _imageVersions[key] = [];
+      _imageVersions[key].push(row);
+      if (row.is_active) {
+        _imageOverrides[key] = row.public_url;
+        _activeImageVersion[key] = row.version_num;
+      }
+    });
+  } catch (e) {
+    console.warn('Could not load image versions:', e.message);
+  }
+}
+
+function showUploadToast(msg, type) {
+  const existing = document.querySelector('.upload-toast');
+  if (existing) existing.remove();
+  const el = document.createElement('div');
+  el.className = `upload-toast ${type || ''}`;
+  el.innerHTML = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+
+function _patchImageWithVersions(adNum, slot, newUrl) {
+  // Update the image src
+  const wraps = document.querySelectorAll('.img-upload-wrap');
+  for (const wrap of wraps) {
+    const btn = wrap.querySelector('.img-upload-btn');
+    if (!btn) continue;
+    const onclick = btn.getAttribute('onclick') || '';
+    if (!onclick.includes(`(${adNum},'${slot}')`) && !onclick.includes(`(${adNum},"${slot}")`)) continue;
+    const img = wrap.querySelector('img');
+    if (img && newUrl) img.src = newUrl;
+    // Remove old revert pill if present
+    const oldPill = wrap.querySelector('.img-revert-pill');
+    if (oldPill) oldPill.remove();
+    break;
+  }
+  // Re-render the variant bar for this ad card
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (ad) {
+    const barEl = document.getElementById(`variant-bar-${adNum}`);
+    if (barEl) barEl.outerHTML = renderVariantBar(ad);
+  }
+}
+
+function downloadImage(ev, imgUrl, filename) {
+  ev.stopPropagation();
+  ev.preventDefault();
+  fetch(imgUrl)
+    .then(r => r.blob())
+    .then(blob => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename || imgUrl.split('/').pop();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    });
+}
+
+function triggerUpload(adNum, slot) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/png,image/jpeg,image/webp';
+  input.onchange = () => {
+    if (input.files && input.files[0]) handleFileSelected(input.files[0], adNum, slot);
+  };
+  input.click();
+}
+
+async function handleFileSelected(file, adNum, slot) {
+  if (!sb) { showUploadToast('Supabase not configured', 'error'); return; }
+  if (file.size > 5 * 1024 * 1024) { showUploadToast('File too large (max 5MB)', 'error'); return; }
+  showUploadToast('Uploading...', '');
+  const ext = file.name.split('.').pop() || 'png';
+  const storagePath = `${CAMPAIGN_ID}/ad${adNum}_${slot}_${Date.now()}.${ext}`;
+  const key = `${adNum}_${slot}`;
+  try {
+    const { error: uploadError } = await sb.storage.from('ad-creatives').upload(storagePath, file, { upsert: true });
+    if (uploadError) throw uploadError;
+    const { data: urlData } = sb.storage.from('ad-creatives').getPublicUrl(storagePath);
+    const publicUrl = urlData.publicUrl;
+    await sb.from('ad_images').update({ is_active: false }).eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('is_active', true);
+    // Compute next version number
+    const existing = _imageVersions[key] || [];
+    const maxVer = existing.reduce((m, r) => Math.max(m, r.version_num || 0), 0);
+    const nextVer = maxVer + 1;
+    const ad = _data.ads.find(a => a.num === adNum);
+    let origFilename = '';
+    if (ad && ad.images) {
+      if (slot === 'story' || slot === 'reel') origFilename = ad.images.find(f => f.includes('story')) || ad.images[0] || '';
+      else origFilename = ad.images.find(f => !f.includes('story') && !f.includes('card')) || ad.images[0] || '';
+    }
+    let inserted, insertError;
+    ({ data: inserted, error: insertError } = await sb.from('ad_images').insert({
+      campaign_id: CAMPAIGN_ID, ad_num: adNum, slot: slot,
+      filename: origFilename, storage_path: storagePath,
+      public_url: publicUrl, uploaded_by: 'mileage',
+      version_num: nextVer
+    }).select());
+    if (insertError && insertError.code === '42703') {
+      // version_num column doesn't exist yet — insert without it
+      ({ data: inserted, error: insertError } = await sb.from('ad_images').insert({
+        campaign_id: CAMPAIGN_ID, ad_num: adNum, slot: slot,
+        filename: origFilename, storage_path: storagePath,
+        public_url: publicUrl, uploaded_by: 'mileage'
+      }).select());
+    }
+    if (insertError) throw insertError;
+    // Update local state
+    if (_imageVersions[key]) {
+      _imageVersions[key].forEach(r => r.is_active = false);
+    }
+    const newRow = (inserted && inserted[0]) || {
+      ad_num: adNum, slot, public_url: publicUrl, is_active: true,
+      version_num: nextVer, label: null, created_at: new Date().toISOString()
+    };
+    newRow.is_active = true;
+    if (!_imageVersions[key]) _imageVersions[key] = [];
+    _imageVersions[key].push(newRow);
+    _imageOverrides[key] = publicUrl;
+    _activeImageVersion[key] = nextVer;
+    _patchImageWithVersions(adNum, slot, publicUrl);
+    showUploadToast('Image uploaded', 'success');
+  } catch (e) {
+    console.error('Upload failed:', e);
+    showUploadToast('Upload failed: ' + e.message, 'error');
+  }
+}
+
+async function revertImage(adNum, slot) {
+  if (!sb) return;
+  const key = `${adNum}_${slot}`;
+  try {
+    // Deactivate ALL versions for this slot
+    await sb.from('ad_images').update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot);
+    delete _imageOverrides[key];
+    delete _activeImageVersion[key];
+    if (_imageVersions[key]) {
+      _imageVersions[key].forEach(r => r.is_active = false);
+    }
+    const ad = _data.ads.find(a => a.num === adNum);
+    let origUrl = null;
+    if (ad) {
+      // Temporarily delete override so helpers return the static file
+      if (slot === 'story' || slot === 'reel') origUrl = _findStoryImage(ad);
+      else origUrl = _findFeedImage(ad);
+    }
+    _patchImageWithVersions(adNum, slot, origUrl);
+    showUploadToast('Reverted to original', 'success');
+  } catch (e) {
+    showUploadToast('Revert failed: ' + e.message, 'error');
+  }
+}
+
+async function switchImageVersion(adNum, slot, versionNum) {
+  if (!sb) return;
+  const key = `${adNum}_${slot}`;
+  try {
+    // Deactivate current
+    await sb.from('ad_images').update({ is_active: false })
+      .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('is_active', true);
+    // Activate selected — find the row by version_num from local state (handles missing column)
+    const targetRow = (_imageVersions[key] || []).find(r => r.version_num === versionNum);
+    if (targetRow && targetRow.id) {
+      await sb.from('ad_images').update({ is_active: true }).eq('id', targetRow.id);
+    } else {
+      // Fallback: try version_num column directly
+      await sb.from('ad_images').update({ is_active: true })
+        .eq('campaign_id', CAMPAIGN_ID).eq('ad_num', adNum).eq('slot', slot).eq('version_num', versionNum);
+    }
+    // Update local state
+    let newUrl = null;
+    if (_imageVersions[key]) {
+      _imageVersions[key].forEach(r => {
+        r.is_active = (r.version_num === versionNum);
+        if (r.is_active) newUrl = r.public_url;
+      });
+    }
+    _imageOverrides[key] = newUrl;
+    _activeImageVersion[key] = versionNum;
+    _patchImageWithVersions(adNum, slot, newUrl);
+    _scrollToMockup(adNum);
+  } catch (e) {
+    showUploadToast('Switch failed: ' + e.message, 'error');
+  }
+}
+
+function _getLatestBatch(adNum, slot) {
+  const key = `${adNum}_${slot}`;
+  const all = _imageVersions[key];
+  if (!all || all.length === 0) return [];
+  // Sort by created_at descending
+  const sorted = [...all].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  // Group into latest batch: all uploads within 10 minutes of the most recent
+  const latest = new Date(sorted[0].created_at);
+  const BATCH_WINDOW = 10 * 60 * 1000; // 10 minutes
+  const batch = sorted.filter(r => (latest - new Date(r.created_at)) < BATCH_WINDOW);
+  // Sort batch by version_num ascending for display
+  batch.sort((a, b) => (a.version_num || 0) - (b.version_num || 0));
+  return batch;
+}
+
+function renderImageVersionBar(adNum, slot) {
+  const batch = _getLatestBatch(adNum, slot);
+  // Only show the bar when there are 2+ versions in the latest batch
+  if (batch.length < 2) return '';
+  const key = `${adNum}_${slot}`;
+  const activeVer = _activeImageVersion[key] || null;
+  let pills = '';
+  batch.forEach((v, i) => {
+    // Label: parse from storage_path (_v1_, _v2_) or fall back to "v1", "v2"
+    let label = v.label;
+    if (!label && v.storage_path) {
+      const m = v.storage_path.match(/_v(\d+)_/);
+      if (m) label = 'v' + m[1];
+    }
+    if (!label) label = 'v' + (i + 1);
+    const isActive = v.version_num === activeVer;
+    pills += `<button class="img-version-pill${isActive ? ' active' : ''}" onclick="switchImageVersion(${adNum},'${slot}',${v.version_num})">${esc(label)}</button>`;
+  });
+  return `<div class="img-version-bar">${pills}</div>`;
+}
+
+// ── Variant bar (consolidated copy + image variant pills) ─────────────────
+function renderVariantBar(ad) {
+  const adNum = ad.num;
+  const letters = ['A','B','C','D','E'];
+  let rows = '';
+
+  // Copy variant row
+  const optCount = Array.isArray(ad.primary_text) ? ad.primary_text.length : 1;
+  if (optCount >= 2) {
+    const _oi = _optionIdx[adNum] || 0;
+    let pills = '';
+    for (let i = 0; i < optCount; i++) {
+      pills += `<button class="variant-pill copy-version-pill${i === _oi ? ' active' : ''}" onclick="switchOption(${adNum}, ${i})">${letters[i] || i+1}</button>`;
+    }
+    rows += `<div class="variant-row"><span class="variant-row-label">Copy Variant</span><div class="variant-row-pills">${pills}</div></div>`;
+  }
+
+  // Image variant row (based on active placement)
+  const activePlacement = _placementIdx[adNum] || 'feed';
+  const slot = activePlacement === 'reel' ? 'story' : activePlacement;
+  const batch = _getLatestBatch(adNum, slot);
+  if (batch.length >= 2) {
+    const key = `${adNum}_${slot}`;
+    const activeVer = _activeImageVersion[key] || null;
+    let pills = '';
+    batch.forEach((v, i) => {
+      const isActive = v.version_num === activeVer;
+      pills += `<button class="variant-pill img-version-pill${isActive ? ' active' : ''}" onclick="switchImageVersion(${adNum},'${slot}',${v.version_num})">${letters[i] || i+1}</button>`;
+    });
+    rows += `<div class="variant-row"><span class="variant-row-label">Image Variant</span><div class="variant-row-pills">${pills}</div></div>`;
+  }
+
+  if (rows) {
+    return `<div class="variant-bar" id="variant-bar-${adNum}">${rows}</div>`;
+  }
+  return `<div id="variant-bar-${adNum}"></div>`;
+}
+
+// ── Image URL helpers ──────────────────────────────────────────────────────
+function _imgUrl(filename) { return `images/${filename}`; }
+
+function _isVideoUrl(u) { return typeof u === 'string' && /\.mp4($|\?)/i.test(u); }
+function _mediaEl(url, cls, alt) {
+  if (_isVideoUrl(url)) {
+    const poster = url.replace(/\.mp4($|\?)/i, '.jpg$1');
+    return `<video class="${cls || ''}" src="${url}" poster="${poster}" muted loop playsinline autoplay preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block"></video>`;
+  }
+  return `<img class="${cls || ''}" src="${url}" alt="${alt || ''}" loading="lazy">`;
+}
+
+function _findFeedImage(ad, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_feed` : `${ad.num}_feed`;
+  const override = _imageOverrides[slotKey];
+  if (override) return override;
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const img = images.find(f => f.includes('feed') || (!f.includes('story') && !f.includes('card')));
+  return img ? _imgUrl(img) : (images[0] ? _imgUrl(images[0]) : null);
+}
+
+function _findStoryImage(ad, varNum) {
+  const slotKey = varNum != null ? `${ad.num}_v${varNum}_story` : `${ad.num}_story`;
+  const override = _imageOverrides[slotKey];
+  if (override) return override;
+  const images = varNum != null && ad.variations
+    ? (ad.variations.find(v => v.num === varNum) || {}).images || []
+    : ad.images || [];
+  if (!images.length) return null;
+  const storyImg = images.find(f => f.includes('story'));
+  return storyImg ? _imgUrl(storyImg) : _findFeedImage(ad, varNum);
+}
+
+// An ad may override the campaign destination. An empty cta_url on the ad means
+// its button is deliberately unlinked, not that it falls back to the campaign URL.
+function _ctaDest(ad) {
+  return Object.prototype.hasOwnProperty.call(ad, 'cta_url') ? ad.cta_url : (_data && _data.cta_url);
+}
+
+function _pageName(d) { return (d && d.page_name) || (_data && _data.page_name) || 'Confluence Financial Partners'; }
+function _brandmark() { return (_data && _data.brandmark) || 'images/confluence-brandmark.jpg'; }
+function _igHandle() { return (_data && _data.ig_handle) || 'confluencefp'; }
+
+// ── Scroll mockup into view after variant switch ──────────────────────────
+function _scrollToMockup(adNum) {
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Switch placement tab ──────────────────────────────────────────────────
+function switchPlacement(adNum, placement) {
+  _placementIdx[adNum] = placement;
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (!card) return;
+  card.querySelectorAll('.placement-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.placement === placement);
+  });
+  card.querySelectorAll('.placement-panel').forEach(panel => {
+    panel.classList.toggle('hidden', panel.dataset.placement !== placement);
+  });
+  // Re-render variant bar (image variants differ per placement)
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (ad) {
+    const barEl = document.getElementById(`variant-bar-${adNum}`);
+    if (barEl) barEl.outerHTML = renderVariantBar(ad);
+  }
+}
+
+// ── Switch copy version (A/B/C) ───────────────────────────────────────────
+function switchOption(adNum, optIdx) {
+  _optionIdx[adNum] = optIdx;
+  updateCopyInPlace(adNum);
+  _scrollToMockup(adNum);
+}
+
+function updateCopyInPlace(adNum) {
+  const cardEl = document.getElementById(`ad-card-${adNum}`);
+  if (!cardEl) return;
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (!ad) return;
+  const _oi = _optionIdx[adNum] || 0;
+
+  // Update pill active states
+  cardEl.querySelectorAll('.copy-version-pill').forEach((pill, i) => {
+    pill.classList.toggle('active', i === _oi);
+  });
+
+  // Update each copy field text in place
+  cardEl.querySelectorAll('.editable-field[data-field]').forEach(el => {
+    const field = el.getAttribute('data-field');
+    if (!Array.isArray(ad[field])) return;
+    const val = ad[field][_oi] || '';
+    const isBold = field === 'headline' || field === 'cta';
+    el.innerHTML = isBold ? `<strong>${esc(val)}</strong>` : esc(val);
+  });
+
+  // Update mockup text to match new version
+  const feedText = cardEl.querySelector('.fb-feed-text');
+  if (feedText) feedText.textContent = _getField(ad, 'primary_text', _oi);
+  cardEl.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = _getField(ad, 'headline', _oi));
+  cardEl.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = _getField(ad, 'description', _oi));
+}
+
+function rerenderAdCard(adNum) {
+  const cardEl = document.getElementById(`ad-card-${adNum}`);
+  if (!cardEl) return;
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (!ad) return;
+
+  // Preserve active placement tab
+  const savedPlacement = _placementIdx[adNum];
+
+  const bodyEl = cardEl.querySelector('.ad-card-body');
+  const footerEl = cardEl.querySelector('.ad-card-footer');
+  if (bodyEl) bodyEl.innerHTML = renderAdCardBodyInner(ad);
+  if (footerEl) footerEl.outerHTML = renderAdCardFooter(ad);
+
+  // Restore placement tab if it was set
+  if (savedPlacement) switchPlacement(adNum, savedPlacement);
+
+  attachCardHandlers(adNum);
+  startStoryAnimations(cardEl);
+}
+
+// ── Render the full deck ──────────────────────────────────────────────────
+function renderDeck() {
+  if (!_data || !_data.ads) return;
+
+  const waveThemes = {1:'Awareness', 2:'Consideration', 3:'Urgency'};
+  const waveSubtitles = {1:'Establish credibility, introduce', 2:'Personal connection, emotional depth', 3:'Community identity, final call'};
+
+  const groups = {};
+  _data.ads.forEach(ad => {
+    const w = ad.wave || 0;
+    if (!groups[w]) groups[w] = [];
+    groups[w].push(ad);
+  });
+
+  // A campaign may declare its own wave order, labels and entry gates in data.json.
+  // Without it, waves are numeric and take the default themes above.
+  const declared = Array.isArray(_data.waves) ? _data.waves : null;
+  const order = declared
+    ? declared.map(w => String(w.key))
+    : Object.keys(groups).sort((a,b) => a - b);
+
+  let html = '';
+  order.forEach(wave => {
+    if (!groups[wave] || !groups[wave].length) return;
+    const meta = declared ? (declared.find(w => String(w.key) === String(wave)) || {}) : {};
+    const label = meta.label || ('Wave ' + wave);
+    const theme = meta.title || waveThemes[wave] || '';
+    const subtitle = meta.subtitle || waveSubtitles[wave] || '';
+    const gate = meta.gate || '';
+
+    html += `<div class="wave-header">
+      <div class="wave-header-inner">
+        <div class="wave-header-label">${esc(label)}</div>
+        <div class="wave-header-title">${esc(theme)}</div>
+        ${subtitle ? `<div class="wave-header-subtitle">${esc(subtitle)}</div>` : ''}
+        ${gate ? `<div class="wave-header-gate"><span class="wave-gate-label">Entry gate</span>${esc(gate)}</div>` : ''}
+      </div>
+    </div>`;
+
+    groups[wave].forEach(ad => {
+      html += renderAdCard(ad);
+      html += `<div class="feedback-thread-wrap" id="feedback-thread-${ad.num}">
+        <div class="feedback-thread-inner" id="feedback-thread-inner-${ad.num}"></div>
+      </div>`;
+    });
+  });
+
+  document.getElementById('deck-container').innerHTML = html;
+
+  // Attach all handlers
+  _data.ads.forEach(ad => {
+    attachCardHandlers(ad.num);
+    loadFeedbackCount(ad.num);
+  });
+
+  // Start story animations via Intersection Observer
+  initStoryObserver();
+}
+
+function renderAdCard(ad) {
+  const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
+  const _pl = (ad.placements || []).map(p => p.toLowerCase());
+
+  return `<div class="ad-card" id="ad-card-${ad.num}" data-ad-num="${ad.num}">
+    <div class="ad-card-inner">
+      <div class="ad-card-header">
+        <div class="ad-card-header-left">
+          <span class="ad-card-num">Ad ${ad.num}</span>
+          <span class="ad-card-title">${esc(ad.title)}</span>
+          <div class="ad-card-chips">
+            ${ad.variation ? `<span class="ad-chip ad-chip-variation">${esc(ad.variation)}</span>` : ''}
+            ${_pl.map(p => `<span class="ad-chip ad-chip-accent">${esc(p.charAt(0).toUpperCase() + p.slice(1))}</span>`).join('')}
+          </div>
+        </div>
+        <div class="ad-card-status${isApproved ? ' is-approved' : ''}" id="ad-status-${ad.num}">
+          ${isApproved ? SVG_ICONS.check + ' Approved' : '&#9675; Not reviewed'}
+        </div>
+      </div>
+      <div class="ad-card-body">
+        ${renderAdCardBodyInner(ad)}
+      </div>
+      ${renderAdCardFooter(ad)}
+    </div>
+  </div>`;
+}
+
+function renderAdCardBodyInner(ad) {
+  const _pl = (ad.placements || []).map(p => p.toLowerCase());
+  const _hasFeed = _pl.some(p => p.includes('feed'));
+  const _hasStories = _pl.some(p => p.includes('stories') || p.includes('story'));
+  const _hasReels = _pl.some(p => p.includes('reel'));
+  const _oi = _optionIdx[ad.num] || 0;
+  const activePlacement = _placementIdx[ad.num] || 'feed';
+
+  // Build list of available placements
+  const placements = [];
+  if (_hasFeed) placements.push({ key: 'feed', label: 'Feed' });
+  if (_hasStories) placements.push({ key: 'story', label: 'Stories' });
+  if (_hasReels) placements.push({ key: 'reel', label: 'Reels' });
+
+  let html = '';
+
+  // Mockups section
+  html += `<div class="ad-card-mockups">`;
+
+  // Placement tabs (only if 2+ placements)
+  if (placements.length >= 2) {
+    html += `<div class="placement-tabs">`;
+    placements.forEach(p => {
+      html += `<button class="placement-tab${p.key === activePlacement ? ' active' : ''}" data-placement="${p.key}" onclick="switchPlacement(${ad.num},'${p.key}')">${p.label}</button>`;
+    });
+    html += `</div>`;
+  }
+
+  // Feed panel
+  if (_hasFeed) {
+    const isActive = activePlacement === 'feed';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="feed">`;
+    html += renderFeedMockup(ad);
+    html += `</div>`;
+  }
+
+  // Story panel
+  if (_hasStories) {
+    const isActive = activePlacement === 'story';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="story">`;
+    html += renderStoryMockup(ad);
+    html += `</div>`;
+  }
+
+  // Reels panel (reuses story mockup)
+  if (_hasReels) {
+    const isActive = activePlacement === 'reel';
+    html += `<div class="placement-panel${isActive ? '' : ' hidden'}" data-placement="reel">`;
+    html += renderStoryMockup(ad);
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+
+  // Variant bar (copy + image variant pills)
+  html += renderVariantBar(ad);
+
+  // Copy section (below mockup)
+  html += `<div class="ad-card-copy">`;
+
+  if (ad.primary_text) {
+    html += renderCopyField('Primary Text', 'primary_text', _getField(ad, 'primary_text', _oi), ad.num, false, '', true);
+  }
+  if (ad.headline) {
+    html += renderCopyField('Headline', 'headline', _getField(ad, 'headline', _oi), ad.num, true);
+  }
+  if (ad.description) {
+    html += renderCopyField('Description', 'description', _getField(ad, 'description', _oi), ad.num);
+  }
+  if (ad.cta) {
+    html += renderCopyField('CTA', 'cta', ad.cta, ad.num, true);
+  }
+  if (ad.hook) {
+    html += renderCopyField('Hook', 'hook', ad.hook, ad.num, false, 'font-style:italic');
+  }
+
+  // Design direction panel (collapsible)
+  if (ad.image_direction && !_data.hide_design_direction) {
+    html += `<div class="copy-field-wide">`;
+    html += renderDesignDirection(ad);
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+function renderDesignDirection(ad) {
+  // Convert markdown-ish image_direction to styled HTML
+  let raw = ad.image_direction || '';
+  // Escape HTML
+  raw = raw.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  // Code blocks: ```...```
+  raw = raw.replace(/```\n?([\s\S]*?)```/g, '<pre>$1</pre>');
+  // Bold: **text**
+  raw = raw.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Inline code
+  raw = raw.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  return `<div class="design-direction-section" id="dd-section-${ad.num}">
+    <div class="design-direction-toggle" onclick="toggleDesignDirection(${ad.num})">
+      <span class="dd-chevron">&#9654;</span>
+      Design Direction for Mayo
+    </div>
+    <div class="design-direction-body" id="dd-body-${ad.num}">${raw}</div>
+  </div>`;
+}
+
+function toggleDesignDirection(adNum) {
+  const toggle = document.querySelector(`#dd-section-${adNum} .design-direction-toggle`);
+  const body = document.getElementById(`dd-body-${adNum}`);
+  toggle.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+function renderCopyField(label, field, value, adNum, bold, extraStyle, wide) {
+  const wrap = bold ? '<strong>' : '';
+  const wrapEnd = bold ? '</strong>' : '';
+  const style = extraStyle ? ` style="${extraStyle}"` : '';
+  const wideClass = wide ? ' copy-field-wide' : '';
+  return `<div class="copy-field${wideClass}">
+    <div class="copy-field-label">${label}</div>
+    <div class="copy-field-body editable-field" contenteditable="true" data-field="${field}" data-ad="${adNum}"${style}>${wrap}${esc(value)}${wrapEnd}</div>
+  </div>`;
+}
+
+function renderAdCardFooter(ad) {
+  const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
+  const count = _feedbackCache[ad.num] || 0;
+
+  return `<div class="ad-card-footer" id="ad-footer-${ad.num}">
+    <button class="approve-btn${isApproved ? ' approved' : ''}" id="approve-btn-${ad.num}" onclick="approveAd(${ad.num}, this)" ${isApproved ? 'disabled' : ''}>
+      ${SVG_ICONS.check}
+      ${isApproved ? 'Approved' : 'Approve'}
+    </button>
+    <div class="feedback-inline-input">
+      <input type="text" id="comment-input-${ad.num}" placeholder="Leave a comment..." onkeydown="if(event.key==='Enter'){event.preventDefault();submitComment(${ad.num});}">
+      <button class="feedback-inline-send" onclick="submitComment(${ad.num})">Send</button>
+    </div>
+    <span class="feedback-count-link" id="feedback-count-${ad.num}" onclick="toggleFeedbackThread(${ad.num})">
+      ${count > 0 ? count + ' comment' + (count !== 1 ? 's' : '') : ''}
+    </span>
+  </div>`;
+}
+
+function swapVariant(btn, adNum, url) {
+  const card = btn.closest('[data-mockup-type="feed"]') || document;
+  const img = card.querySelector(`img.feed-creative[data-ad="${adNum}"]`) || document.querySelector(`img.feed-creative[data-ad="${adNum}"]`);
+  if (img) img.src = url;
+  const strip = btn.closest('.var-strip-row');
+  if (strip) strip.querySelectorAll('.var-thumb').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── Feed Mockup ───────────────────────────────────────────────────────────
+function renderFeedMockup(ad) {
+  const pageName = _pageName(_data);
+  const imgUrl = _findFeedImage(ad);
+  const _oi = _optionIdx[ad.num] || 0;
+
+  const slotKey = 'feed';
+  const uploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const downloadBtn = imgUrl ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${imgUrl}','ad${ad.num}-feed.png')" title="Download image">&#8681;</button>` : '';
+
+  // Multi-asset (flexible format) support: several feed images on one ad render
+  // as a swipeable strip under the mockup; clicking a thumb swaps the creative.
+  const feedAssets = (ad.images || []).filter(f => !f.includes('story') && !f.includes('card'));
+  let variantStrip = '';
+  if (feedAssets.length > 1) {
+    const thumbs = feedAssets.map((f, i) =>
+      `<button class="var-thumb${i === 0 ? ' active' : ''}" onclick="event.stopPropagation();swapVariant(this,${ad.num},'${_imgUrl(f)}')" title="Asset ${i + 1}"><img src="${_imgUrl(f)}" alt="asset ${i + 1}" loading="lazy"><span>V${i + 1}</span></button>`).join('');
+    variantStrip = `<div class="var-strip"><div class="var-strip-label">${feedAssets.length} image assets &middot; flexible format &mdash; one ad, Meta selects per auction</div><div class="var-strip-row">${thumbs}</div></div>`;
+  }
+  let mediaHtml;
+  if (imgUrl) {
+    mediaHtml = `<div class="fb-media-wrap"><div class="img-upload-wrap">${_isVideoUrl(imgUrl) ? _mediaEl(imgUrl, 'feed-creative', '') : `<img class="feed-creative" data-ad="${ad.num}" src="${imgUrl}" alt="Ad ${ad.num} creative" loading="lazy">`}${uploadBtn}${downloadBtn}</div></div>`;
+  } else {
+    mediaHtml = `<div class="fb-image-placeholder"><div class="img-upload-wrap">IMAGE &middot; ${esc(ad.format || '1080x1080')}${uploadBtn}</div></div>`;
+  }
+
+  return `<div class="fb-feed" data-mockup-type="feed" data-ad-num="${ad.num}">
+    <div class="fb-feed-header">
+      <div class="fb-avatar"><img src="${_brandmark()}" alt="${esc(pageName)}"></div>
+      <div style="line-height:1.3">
+        <div class="fb-page-name">${esc(pageName)}</div>
+        <div class="fb-sponsored">Sponsored &middot; 2h</div>
+      </div>
+      <div class="fb-header-menu">${SVG_ICONS.threeDots}</div>
+    </div>
+    <div class="fb-feed-text" style="white-space:pre-wrap">${esc(_getField(ad, 'primary_text', _oi))}</div>
+    ${mediaHtml}${variantStrip}
+    <div class="fb-engagement-icons">
+      <span class="fb-engage-icon">${SVG_ICONS.heart}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.comment}</span>
+      <span class="fb-engage-icon">${SVG_ICONS.share}</span>
+      <span class="fb-engage-icon fb-engage-bookmark">${SVG_ICONS.bookmark}</span>
+    </div>
+    <div class="fb-reactions"><span>Like</span><span>Comment</span><span>Share</span></div>
+    <div class="fb-feed-cta">
+      <div class="fb-feed-cta-text">
+        <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _oi))}</div>
+        <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _oi))}</div>
+      </div>
+      ${_ctaDest(ad) ? `<a class="fb-cta-btn" href="${esc(_ctaDest(ad))}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+    </div>
+  </div>`;
+}
+
+// ── Stories Mockup ─────────────────────────────────────────────────────────
+function renderStoryMockup(ad) {
+  const s = ad.stories || {};
+  const overlay = s.text_overlay || ad.hook || '';
+  const secondary = s.secondary_text || '';
+  const cta = s.cta_sticker || ad.cta || 'Learn More';
+  const bgImg = _findStoryImage(ad);
+  const hasImg = !!bgImg;
+
+  const slotKey = 'story';
+  const storyUploadBtn = `<button class="img-upload-btn" onclick="event.stopPropagation();triggerUpload(${ad.num},'${slotKey}')" title="Upload image">&#8679;</button>`;
+  const storyDownloadBtn = bgImg ? `<button class="img-download-btn" onclick="event.stopPropagation();downloadImage(event,'${bgImg}','ad${ad.num}-story.png')" title="Download image">&#8681;</button>` : '';
+
+  return `<div class="ig-story${hasImg ? ' ig-story-has-img' : ''}" data-mockup-type="story" data-ad-num="${ad.num}">
+    ${hasImg ? `<div class="img-upload-wrap" style="position:absolute;inset:0">${_mediaEl(bgImg, 'ig-story-bg', '')}${storyUploadBtn}${storyDownloadBtn}</div>` : `<div class="img-upload-wrap" style="position:absolute;inset:0">${storyUploadBtn}</div>`}
+    <div class="ig-story-progress"><div class="ig-story-progress-fill"></div></div>
+    <div class="ig-story-account">
+      <div class="ig-story-avatar"><img src="${_brandmark()}" alt="" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>
+      <div class="ig-story-handle">${esc(_igHandle())}</div>
+    </div>
+    <div class="ig-story-text">${esc(overlay)}</div>
+    ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
+    <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
+    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
+    <div class="ig-story-message-bar">
+      <div class="ig-story-message-input">Send message</div>
+      <div class="ig-story-message-send">${SVG_ICONS.share}</div>
+    </div>
+  </div>`;
+}
+
+// ── Mockup Zoom ───────────────────────────────────────────────────────────
+let _zoomActive = false;
+let _zoomLoopId = null;
+
+function openMockupZoom(element) {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  const content = document.getElementById('mockup-zoom-content');
+  if (!overlay || !content) return;
+  const clone = element.cloneNode(true);
+  content.innerHTML = '';
+  content.appendChild(clone);
+  _zoomActive = true;
+  overlay.classList.add('active');
+  overlay.scrollTop = 0;
+  if (clone.classList.contains('ig-story')) {
+    _startZoomLoop(content);
+  }
+}
+
+function _startZoomLoop(container) {
+  if (_zoomLoopId) clearTimeout(_zoomLoopId);
+  const ANIM_ELS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta';
+  function run() {
+    if (!_zoomActive) return;
+    const els = container.querySelectorAll(ANIM_ELS);
+    els.forEach(el => {
+      el.classList.remove('cta-animate', 'anim-bounce');
+      const c = el.cloneNode(true); el.replaceWith(c);
+    });
+    _zoomLoopId = setTimeout(() => {
+      if (!_zoomActive) return;
+      container.querySelectorAll(ANIM_ELS).forEach(el => el.classList.add('cta-animate'));
+      _zoomLoopId = setTimeout(() => {
+        if (!_zoomActive) return;
+        container.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
+        _zoomLoopId = setTimeout(run, 3000);
+      }, 5400);
+    }, 600);
+  }
+  run();
+}
+
+function closeMockupZoom() {
+  const overlay = document.getElementById('mockup-zoom-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('active');
+  _zoomActive = false;
+  if (_zoomLoopId) { clearTimeout(_zoomLoopId); _zoomLoopId = null; }
+  setTimeout(() => {
+    const content = document.getElementById('mockup-zoom-content');
+    if (content) content.innerHTML = '';
+  }, 250);
+}
+
+function handleZoomOverlayClick(e) {
+  if (e.target.id === 'mockup-zoom-overlay') closeMockupZoom();
+}
+
+// ── Story Animation via Intersection Observer ─────────────────────────────
+function initStoryObserver() {
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta';
+  const LOOP_CYCLE = 5400;
+  const LOOP_HOLD = 3000;
+  const LOOP_RESET = 600;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const card = entry.target;
+      if (entry.isIntersecting && !card._storyLoopRunning) {
+        card._storyLoopRunning = true;
+        startStoryAnimations(card);
+      } else if (!entry.isIntersecting && card._storyLoopRunning) {
+        card._storyLoopRunning = false;
+        if (card._storyLoopId) clearTimeout(card._storyLoopId);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.ad-card').forEach(card => {
+    if (card.querySelector('.ig-story')) {
+      observer.observe(card);
+    }
+  });
+}
+
+function startStoryAnimations(card) {
+  const ANIM_ELEMENTS = '.ig-story-text, .ig-story-secondary, .ig-story-swipe-up, .ig-story-cta';
+  function runCycle() {
+    if (!card._storyLoopRunning) return;
+    const els = card.querySelectorAll(ANIM_ELEMENTS);
+    els.forEach(el => {
+      el.classList.remove('cta-animate', 'anim-bounce');
+      const clone = el.cloneNode(true);
+      el.replaceWith(clone);
+    });
+    card._storyLoopId = setTimeout(() => {
+      if (!card._storyLoopRunning) return;
+      card.querySelectorAll(ANIM_ELEMENTS).forEach(el => el.classList.add('cta-animate'));
+      card._storyLoopId = setTimeout(() => {
+        if (!card._storyLoopRunning) return;
+        card.querySelectorAll('.ig-story-swipe-up').forEach(el => el.classList.add('anim-bounce'));
+        card._storyLoopId = setTimeout(runCycle, 3000);
+      }, 5400);
+    }, 600);
+  }
+  card._storyLoopRunning = true;
+  runCycle();
+}
+
+// ── Attach card handlers (click-to-zoom, editable fields) ─────────────────
+function attachCardHandlers(adNum) {
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (!card) return;
+
+  // Click-to-zoom on mockups
+  card.querySelectorAll('.fb-feed, .ig-story').forEach(el => {
+    el.addEventListener('click', function(e) {
+      if (e.target.closest('.img-upload-btn') || e.target.closest('.img-download-btn') ||
+          e.target.closest('.img-revert-pill') || e.target.closest('.img-version-bar') ||
+          e.target.closest('.img-version-pill') || e.target.closest('.variant-pill') ||
+          e.target.closest('.fb-engage-icon') ||
+          e.target.closest('.fb-header-menu') || e.target.closest('a.fb-cta-btn') ||
+          e.target.closest('a.ig-story-cta') || e.target.closest('.placement-tab')) return;
+      e.preventDefault();
+      openMockupZoom(el);
+    });
+  });
+
+  // Editable copy fields
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (!ad) return;
+
+  card.querySelectorAll('.editable-field[data-field]').forEach(el => {
+    const field = el.getAttribute('data-field');
+
+    el.addEventListener('input', function() {
+      const newVal = el.innerText.trim();
+      if (Array.isArray(ad[field])) {
+        ad[field][_optionIdx[ad.num] || 0] = newVal;
+      } else {
+        ad[field] = newVal;
+      }
+      refreshMockupField(adNum, field, newVal);
+    });
+
+    el.addEventListener('blur', function() {
+      const section = el.closest('.copy-field');
+      if (section) {
+        let indicator = section.querySelector('.editable-field-saved');
+        if (!indicator) {
+          indicator = document.createElement('span');
+          indicator.className = 'editable-field-saved';
+          indicator.textContent = 'Updated';
+          section.appendChild(indicator);
+        }
+        indicator.classList.add('visible');
+        setTimeout(() => indicator.classList.remove('visible'), 1500);
+      }
+    });
+
+    el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && field !== 'primary_text') {
+        e.preventDefault();
+        el.blur();
+      }
+    });
+  });
+}
+
+function refreshMockupField(adNum, field, value) {
+  const card = document.getElementById(`ad-card-${adNum}`);
+  if (!card) return;
+  const ad = _data.ads.find(a => a.num === adNum);
+  if (!ad) return;
+  const v = _getField(ad, field, _optionIdx[adNum]);
+
+  if (field === 'primary_text') {
+    card.querySelectorAll('.fb-feed-text').forEach(el => el.textContent = v);
+  }
+  if (field === 'headline') {
+    card.querySelectorAll('.fb-feed-cta-headline').forEach(el => el.textContent = v);
+    card.querySelectorAll('.ig-story-text').forEach(el => el.textContent = v);
+  }
+  if (field === 'description') {
+    card.querySelectorAll('.fb-feed-cta-desc').forEach(el => el.textContent = v);
+  }
+  if (field === 'cta') {
+    card.querySelectorAll('.fb-cta-btn').forEach(el => el.textContent = value);
+    card.querySelectorAll('.ig-story-cta').forEach(el => el.textContent = value);
+  }
+}
+
+// ── Progress Dots ─────────────────────────────────────────────────────────
+function renderProgressDots() {
+  if (!_data || !_data.ads) return;
+  const dotsEl = document.getElementById('progress-dots');
+  dotsEl.innerHTML = _data.ads.map(ad => {
+    const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
+    return `<div class="progress-dot${isApproved ? ' approved' : ''}" title="Ad ${ad.num}"></div>`;
+  }).join('');
+}
+
+// ── Ad Nav Bar ──────────────────────────────────────────────────────────
+function renderAdNav() {
+  if (!_data || !_data.ads) return;
+  const navEl = document.getElementById('ad-nav');
+  navEl.innerHTML = _data.ads.map(ad => {
+    const isApproved = localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve';
+    const arcLabel = (ad.arc || '').split('—')[0].trim();
+    const label = arcLabel || (ad.title || '').replace(/\s*—.*$/, '').replace(/\s*image$/, '');
+    return `<a class="ad-nav-item${isApproved ? ' approved-dot' : ''}" data-ad-num="${ad.num}" onclick="scrollToAd(${ad.num})">
+      <span class="ad-nav-num">${ad.num}</span>
+      <span class="ad-nav-label">${esc(label)}</span>
+    </a>`;
+  }).join('');
+  initAdNavObserver();
+}
+
+function scrollToAd(adNum) {
+  const card = document.getElementById('ad-card-' + adNum);
+  if (!card) return;
+  const navHeight = 53 + 44; // sticky header + ad nav bar
+  const top = card.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+function initAdNavObserver() {
+  const navItems = document.querySelectorAll('.ad-nav-item');
+  if (!navItems.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const adNum = entry.target.dataset.adNum;
+        navItems.forEach(n => n.classList.remove('active'));
+        const activeNav = document.querySelector(`.ad-nav-item[data-ad-num="${adNum}"]`);
+        if (activeNav) activeNav.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -60% 0px', threshold: 0 });
+  document.querySelectorAll('.ad-card[data-ad-num]').forEach(card => observer.observe(card));
+}
+
+// ── Approve Ad ───────────────────────────────────────────────────────────
+async function approveAd(adNum, btnEl) {
+  if (btnEl.classList.contains('approved')) return;
+  const reviewerName = localStorage.getItem('adpreview_name') || 'Anonymous';
+
+  localStorage.setItem(`adpreview_verdict_${CAMPAIGN_ID}_${adNum}`, 'approve');
+
+  btnEl.classList.add('approved');
+  btnEl.disabled = true;
+  btnEl.innerHTML = `${SVG_ICONS.check} Approved`;
+
+  const statusEl = document.getElementById(`ad-status-${adNum}`);
+  if (statusEl) {
+    statusEl.className = 'ad-card-status is-approved';
+    statusEl.innerHTML = SVG_ICONS.check + ' Approved';
+  }
+
+  renderProgressDots();
+
+  if (sb) {
+    try {
+      await sb.from('feedback').insert({
+        campaign_id: CAMPAIGN_ID, ad_num: adNum,
+        reviewer_name: reviewerName, reviewer_role: 'Client',
+        verdict: 'approve', comment: `Ad ${adNum} approved`,
+      });
+    } catch(e) { console.warn('Approval notification failed:', e); }
+  }
+
+  const total = _data.ads.length;
+  const approved = _data.ads.filter(ad =>
+    localStorage.getItem(`adpreview_verdict_${CAMPAIGN_ID}_${ad.num}`) === 'approve'
+  ).length;
+
+  if (approved === total) {
+    showUploadToast('All ads approved! The Mileage team has been notified.', 'success');
+  } else {
+    showUploadToast(`Ad ${adNum} approved — ${total - approved} remaining`, 'success');
+  }
+
+  loadFeedbackCount(adNum);
+}
+
+// ── Inline Feedback ──────────────────────────────────────────────────────
+async function submitComment(adNum) {
+  let name = localStorage.getItem('adpreview_name') || '';
+  if (!name) {
+    const entered = prompt('Please enter your name to submit feedback:');
+    if (!entered || !entered.trim()) return;
+    name = entered.trim();
+    localStorage.setItem('adpreview_name', name);
+    initReviewerIdentity();
+  }
+
+  const input = document.getElementById(`comment-input-${adNum}`);
+  const comment = input.value.trim();
+  if (!comment) return;
+
+  try {
+    if (!sb) throw new Error('Not connected');
+    const { error } = await sb.from('feedback').insert({
+      campaign_id: CAMPAIGN_ID, ad_num: adNum,
+      reviewer_name: name, reviewer_role: 'Client',
+      verdict: 'comment_only', comment: comment,
+    });
+    if (error) throw error;
+    input.value = '';
+    loadFeedbackCount(adNum);
+
+    const threadWrap = document.getElementById(`feedback-thread-${adNum}`);
+    if (threadWrap && threadWrap.classList.contains('open')) {
+      renderFeedbackThread(adNum);
+    }
+  } catch(e) {
+    showUploadToast('Error: ' + e.message, 'error');
+  }
+}
+
+async function loadFeedbackCount(adNum) {
+  if (!sb) return;
+  try {
+    const { count, error } = await sb.from('feedback')
+      .select('*', { count: 'exact', head: true })
+      .eq('campaign_id', CAMPAIGN_ID)
+      .eq('ad_num', adNum);
+    if (!error) {
+      _feedbackCache[adNum] = count || 0;
+      const el = document.getElementById(`feedback-count-${adNum}`);
+      if (el) {
+        el.textContent = count > 0 ? count + ' comment' + (count !== 1 ? 's' : '') : '';
+      }
+    }
+  } catch(e) {}
+}
+
+function toggleFeedbackThread(adNum) {
+  const wrap = document.getElementById(`feedback-thread-${adNum}`);
+  if (!wrap) return;
+  const isOpen = wrap.classList.toggle('open');
+  if (isOpen) renderFeedbackThread(adNum);
+}
+
+async function renderFeedbackThread(adNum) {
+  const inner = document.getElementById(`feedback-thread-inner-${adNum}`);
+  if (!inner) return;
+  inner.innerHTML = '<div class="feedback-empty">Loading...</div>';
+
+  let entries = [];
+  if (sb) {
+    try {
+      const { data, error } = await sb.from('feedback').select('*')
+        .eq('campaign_id', CAMPAIGN_ID)
+        .eq('ad_num', adNum)
+        .order('created_at');
+      if (!error && data) entries = data;
+    } catch(e) {}
+  }
+
+  if (entries.length === 0) {
+    inner.innerHTML = '<div class="feedback-empty">No feedback yet.</div>';
+    return;
+  }
+
+  let html = '';
+  entries.forEach(f => {
+    const verdictLabel = f.verdict === 'approve' ? 'Approved' :
+                         f.verdict === 'request_changes' ? 'Changes Requested' : 'Comment';
+    const ts = f.created_at ? new Date(f.created_at).toLocaleString() : '';
+
+    html += `<div class="feedback-entry" data-feedback-id="${f.id}">
+      <div class="feedback-entry-header">
+        <span class="feedback-entry-name">${esc(f.reviewer_name)}</span>
+        <span class="verdict-badge ${f.verdict}">${verdictLabel}</span>
+        <span class="feedback-entry-time">${esc(ts)}</span>
+        <button class="feedback-delete-btn" title="Delete" onclick="deleteFeedback('${f.id}', ${adNum})"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>
+      </div>
+      ${f.comment ? `<div class="feedback-entry-comment">${esc(f.comment)}</div>` : ''}
+    </div>`;
+  });
+  inner.innerHTML = html;
+}
+
+async function deleteFeedback(id, adNum) {
+  if (!confirm('Delete this feedback?')) return;
+  try {
+    if (!sb) throw new Error('Not connected');
+    const { data, error } = await sb.from('feedback').delete().eq('id', id).select();
+    if (error) throw error;
+    if (!data || data.length === 0) {
+      showUploadToast('Could not delete — permission denied.', 'error');
+      return;
+    }
+    renderFeedbackThread(adNum);
+    loadFeedbackCount(adNum);
+  } catch(e) {
+    showUploadToast('Delete failed: ' + e.message, 'error');
+  }
+}
+
+// ── Intersection Observer for sticky header "viewing" indicator ───────────
+function initHeaderObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const adNum = entry.target.id.replace('ad-card-', '');
+        const ad = _data.ads.find(a => a.num == adNum);
+        if (ad) {
+          document.getElementById('header-campaign-label').textContent =
+            `Ad ${ad.num}: ${ad.title}`;
+        }
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-60px 0px 0px 0px' });
+
+  document.querySelectorAll('.ad-card').forEach(card => observer.observe(card));
+}
+
+// ── Theme ──────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('adpreview_theme', isLight ? 'light' : 'dark');
+  document.getElementById('theme-toggle').innerHTML = isLight ? '&#9728;' : '&#9790;';
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('adpreview_theme');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+    document.getElementById('theme-toggle').innerHTML = '&#9728;';
+  }
+}
+
+// ── Reviewer Identity ─────────────────────────────────────────────────────
+function initReviewerIdentity() {
+  const savedName = localStorage.getItem('adpreview_name') || '';
+  const identity = document.getElementById('reviewer-identity');
+  const identityName = document.getElementById('reviewer-identity-name');
+  if (savedName) {
+    if (identity) identity.style.display = 'flex';
+    if (identityName) identityName.textContent = savedName;
+  } else {
+    if (identity) identity.style.display = 'none';
+  }
+}
+
+function showEditNamePrompt() {
+  const currentName = localStorage.getItem('adpreview_name') || '';
+  const newName = prompt('Change your reviewer name:', currentName);
+  if (newName !== null && newName.trim()) {
+    localStorage.setItem('adpreview_name', newName.trim());
+    initReviewerIdentity();
+  }
+}
+
+// ── Keyboard ──────────────────────────────────────────────────────────────
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('mockup-zoom-overlay');
+    if (overlay && overlay.classList.contains('active')) {
+      e.preventDefault();
+      closeMockupZoom();
+    }
+  }
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────
+async function init() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    _data = await res.json();
+    await loadImageVersions();
+    console.log('[ad-preview] Image versions loaded:', {
+      overrides: Object.keys(_imageOverrides).length,
+      versions: Object.keys(_imageVersions).length,
+      activeVersions: Object.keys(_activeImageVersion).length,
+      detail: Object.entries(_imageVersions).map(([k,v]) => `${k}: ${v.length} versions`)
+    });
+
+    // Hero
+    const heroEl = document.getElementById('hero-section');
+    heroEl.innerHTML = `
+      <div class="hero-title">${esc(_data.campaign || CAMPAIGN_ID)}</div>
+      <div class="hero-meta">
+        ${_data.event_date ? esc(_data.event_date) : ''}
+        ${_data.venue ? ' &middot; ' + esc(_data.venue) : ''}
+        ${_data.co_presenters ? '<br><strong>' + esc(_data.co_presenters) + '</strong>' : ''}
+      </div>
+      ${_data.banner ? (Array.isArray(_data.banner) ? _data.banner : [_data.banner]).map(line => `<div class="arc-banner">${esc(line)}</div>`).join('') : ''}
+    `;
+
+    // Header label
+    document.getElementById('header-campaign-label').textContent = _data.campaign || CAMPAIGN_ID;
+
+    // Progress dots
+    renderProgressDots();
+
+    // Initialize placement defaults
+    _data.ads.forEach(ad => {
+      const pl = (ad.placements || []).map(p => p.toLowerCase());
+      if (pl.some(p => p.includes('feed'))) {
+        _placementIdx[ad.num] = 'feed';
+      } else if (pl.some(p => p.includes('stories') || p.includes('story'))) {
+        _placementIdx[ad.num] = 'story';
+      } else if (pl.some(p => p.includes('reel'))) {
+        _placementIdx[ad.num] = 'reel';
+      }
+    });
+
+    // Render all ad cards
+    renderDeck();
+
+    // Build ad nav bar
+    renderAdNav();
+
+    // Observe for sticky header label
+    initHeaderObserver();
+
+  } catch (e) {
+    document.getElementById('deck-container').innerHTML =
+      `<div style="text-align:center;padding:60px 24px;color:var(--danger)">
+        Could not load ad data for "${esc(CAMPAIGN_ID)}". Run <code>python build.py ${esc(CAMPAIGN_ID)}</code> first.
+      </div>`;
+  }
+}
+
+function fullInit() {
+  initTheme();
+  initReviewerIdentity();
+  if (!localStorage.getItem('adpreview_name')) {
+    const name = prompt('Welcome! Please enter your name to get started:');
+    if (name && name.trim()) {
+      localStorage.setItem('adpreview_name', name.trim());
+      initReviewerIdentity();
+    }
+  }
+  init();
+}
+fullInit();
+</script>
+</body>
+</html>

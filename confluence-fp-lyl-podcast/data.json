@@ -1,5 +1,5 @@
 {
-  "campaign": "Living Your Legacy \u2014 Meta Podcast Growth",
+  "campaign": "Living Your Legacy — Meta Podcast Growth (refreshed clip set)",
   "client": "Confluence Financial Partners",
   "page_name": "Living Your Legacy",
   "ig_handle": "LivingYourLegacyCFP",
@@ -11,15 +11,15 @@
   "ads": [
     {
       "num": 1,
-      "title": "Leadership Gaps in the Next Generation",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "Why I Built Mileage",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "Who are we once the titles fall away? On Living Your Legacy, Greg Weimer sits down with people who have lived that question and kept building anyway. Honest conversations about the life beneath the work.",
+      "primary_text": "Who are we once the titles fall away?\n\nOn Living Your Legacy, Greg Weimer sits down with Bill Bishilany on why diverse experience makes a team better at solving problems.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -33,19 +33,21 @@
       "image_direction": "",
       "images": [
         "ad1-story.mp4"
-      ]
+      ],
+      "guest_name": "Bill Bishilany",
+      "guest_title": "Founder & CEO, Mileage Design"
     },
     {
       "num": 2,
-      "title": "What My Son Taught Me",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "The Other Side of Hard",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "Who are we once the titles fall away? On Living Your Legacy, Greg Weimer sits down with people who have lived that question and kept building anyway. Honest conversations about the life beneath the work.",
+      "primary_text": "Who are we once the titles fall away?\n\nGreg Weimer and Bill Bishilany on rewriting the idea that everything you want is on the other side of hard.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -59,24 +61,26 @@
       "image_direction": "",
       "images": [
         "ad2-story.mp4"
-      ]
+      ],
+      "guest_name": "Bill Bishilany",
+      "guest_title": "Founder & CEO, Mileage Design"
     },
     {
       "num": 3,
-      "title": "Build a Life that Starts with Happiness",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "Every Experience Matters",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "primary_text": "Who are we once the titles fall away?\n\nAsked for one do-over, this guest chose nothing. A conversation about how your experiences make you who you are.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "Watch the full conversations on YouTube.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Happiness-first",
+      "arc": "Identity",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -86,25 +90,26 @@
       "images": [
         "ad3-story.mp4"
       ],
-      "guest_name": "Bill Bishilany",
-      "guest_title": "Founder & CEO, Mileage Design"
+      "guest_name": "Yianni Bourbakis",
+      "guest_title": "Restaurateur",
+      "review_flag": "UNCLEARED"
     },
     {
       "num": 4,
-      "title": "What Truly Fills Her Cup",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "Take the Opportunity",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "primary_text": "Who are we once the titles fall away?\n\nGreg Weimer sits down with Betsy Wentz on saying yes to the things that scare you, and the advice she gives her kids.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "Watch the full conversations on YouTube.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Happiness-first",
+      "arc": "Identity",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -113,24 +118,27 @@
       "image_direction": "",
       "images": [
         "ad4-story.mp4"
-      ]
+      ],
+      "guest_name": "Betsy Wentz",
+      "guest_title": "Interior Designer",
+      "review_flag": "UNCLEARED"
     },
     {
       "num": 5,
-      "title": "The Mosaic",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "A Home With Soul",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "primary_text": "Who are we once the titles fall away?\n\nBetsy Wentz on why a home needs soul, and how she gets clients to show her what truly makes them tick.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New episodes every two weeks.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Collective",
+      "arc": "Identity",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -140,25 +148,26 @@
       "images": [
         "ad5-story.mp4"
       ],
-      "guest_name": "Bill Bishilany",
-      "guest_title": "Founder & CEO, Mileage Design"
+      "guest_name": "Betsy Wentz",
+      "guest_title": "Interior Designer",
+      "review_flag": "UNCLEARED"
     },
     {
       "num": 6,
-      "title": "The Power of Collective Experience",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "How the Business Was Born",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "primary_text": "Who are we once the titles fall away?\n\nBetsy Wentz on the moment, and the fire, that gave rise to her brand.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New episodes every two weeks.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Collective",
+      "arc": "Identity",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -168,22 +177,330 @@
       "images": [
         "ad6-story.mp4"
       ],
-      "guest_name": "Bill Bishilany",
-      "guest_title": "Founder & CEO, Mileage Design"
+      "guest_name": "Betsy Wentz",
+      "guest_title": "Interior Designer",
+      "review_flag": "UNCLEARED"
     },
     {
       "num": 7,
-      "title": "It Takes a Team (Sarris Candies)",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "title": "What My Son Taught Me",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "primary_text": "Who are we once the titles fall away?\n\nA father on what his son with special needs taught him about patience, presence, and the little things.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New episodes every two weeks.",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad7-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 8,
+      "title": "Leadership Gaps in the Next Generation",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Who are we once the titles fall away?\n\nA conversation about the leadership the next generation needs, and why investing in relationships still matters most.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad8-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 9,
+      "title": "A Career of Continuous Learning",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Who are we once the titles fall away?\n\nA guest on the twelve-dollar-an-hour job that lit a fire, and why the desire to keep learning changed everything.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad9-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 10,
+      "title": "Creating Meaningful Change",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nGreg Weimer sits down with Beth Vietmeier on why real happiness comes from the impact you make on one person's life.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad10-story.mp4"
+      ],
+      "guest_name": "Beth Vietmeier",
+      "guest_title": "Owner, Valiant 3 Communications",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 11,
+      "title": "What Truly Fills Her Cup",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nA guest on the surprising answer to what she enjoys most, and the privilege of helping people give.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad11-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 12,
+      "title": "Falling in Love With the Process",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nGreg Weimer sits down with Chris Lee on putting in the time, and learning to love the process the way great coaches do.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad12-story.mp4"
+      ],
+      "guest_name": "Chris Lee",
+      "guest_title": "Attorney",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 13,
+      "title": "Learning Through Reading",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nOne guest's simplest advice for any craft, trade, or life: read, and learn everything you can.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad13-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 14,
+      "title": "Proactive, Not Reactive",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nGreg Weimer sits down with Dr. Sunjay Mannan on the concierge model, and preventing what the seven-minute appointment misses.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad14-story.mp4"
+      ],
+      "guest_name": "Sunjay Mannan",
+      "guest_title": "Concierge Physician",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 15,
+      "title": "How He Handles Stress",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nDr. Sunjay Mannan on practicing what he tells his patients: be proactive, not reactive, with stress.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad15-story.mp4"
+      ],
+      "guest_name": "Sunjay Mannan",
+      "guest_title": "Concierge Physician",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 16,
+      "title": "Modeling Self-Care",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nDr. Sunjay Mannan on what he hopes his children see in him: self-care, autonomy, and the freedom to choose their path.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad16-story.mp4"
+      ],
+      "guest_name": "Sunjay Mannan",
+      "guest_title": "Concierge Physician",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 17,
+      "title": "Not Just Dinner",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What if a life well lived begins with happiness, not the balance sheet?\n\nA private chef on turning a meal into a completely personalized experience, for a handful of guests or twenty.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad17-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 18,
+      "title": "The Mosaic",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nGreg Weimer and Bill Bishilany on the mosaic of pieces, from design to structure, that make the whole work.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
@@ -194,51 +511,27 @@
       },
       "image_direction": "",
       "images": [
-        "ad7-story.mp4"
-      ]
+        "ad18-story.mp4"
+      ],
+      "guest_name": "Bill Bishilany",
+      "guest_title": "Founder & CEO, Mileage Design"
     },
     {
-      "num": 8,
-      "title": "Sarris Candies Story",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "num": 19,
+      "title": "The Mindset",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
-      "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New episodes every two weeks.",
-      "cta": "Watch More",
-      "hook": "",
-      "arc": "Collective / bench",
-      "wave": "T1",
-      "stories": {
-        "text_overlay": "",
-        "cta_sticker": "Watch on YouTube"
-      },
-      "image_direction": "",
-      "images": [
-        "ad8-story.mp4"
-      ]
-    },
-    {
-      "num": 9,
-      "title": "A Career of Continuous Learning",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
-      "placements": [
-        "Instagram Reels",
-        "Facebook Reels",
-        "Stories",
-        "Feed"
-      ],
-      "primary_text": "Who are we once the titles fall away? On Living Your Legacy, Greg Weimer sits down with people who have lived that question and kept building anyway. Honest conversations about the life beneath the work.",
+      "primary_text": "What shapes a life worth remembering?\n\nGreg Weimer sits down with Yianni Bourbakis on vision, gathering people together, and love as the main ingredient.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Identity / bench",
+      "arc": "Collective",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -246,25 +539,28 @@
       },
       "image_direction": "",
       "images": [
-        "ad9-story.mp4"
-      ]
+        "ad19-story.mp4"
+      ],
+      "guest_name": "Yianni Bourbakis",
+      "guest_title": "Restaurateur",
+      "review_flag": "UNCLEARED"
     },
     {
-      "num": 10,
-      "title": "Learning Through Reading",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "num": 20,
+      "title": "They Sold a Ring to Start",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "primary_text": "What shapes a life worth remembering?\n\nGreg Weimer sits down with Lou and Veronica Guarino on the wedding ring they sold to start the business they built together.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "Watch the full conversations on YouTube.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Happiness-first / bench",
+      "arc": "Collective",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -272,25 +568,28 @@
       },
       "image_direction": "",
       "images": [
-        "ad10-story.mp4"
-      ]
+        "ad20-story.mp4"
+      ],
+      "guest_name": "Lou & Veronica Guarino",
+      "guest_title": "Jewelers",
+      "review_flag": "UNCLEARED"
     },
     {
-      "num": 11,
-      "title": "Not Just Dinner, a Curated Experience",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "num": 21,
+      "title": "Make People Feel at Home",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What shapes a life worth remembering? On Living Your Legacy, Greg Weimer explores the people, the mentors, and the moments behind it, one conversation at a time.",
+      "primary_text": "What shapes a life worth remembering?\n\nLou and Veronica Guarino on making people feel comfortable, and a lesson learned walking through Children's Hospital.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New episodes every two weeks.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Collective / bench",
+      "arc": "Collective",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -298,25 +597,198 @@
       },
       "image_direction": "",
       "images": [
-        "ad11-story.mp4"
-      ]
+        "ad21-story.mp4"
+      ],
+      "guest_name": "Lou & Veronica Guarino",
+      "guest_title": "Jewelers",
+      "review_flag": "UNCLEARED"
     },
     {
-      "num": 12,
+      "num": 22,
+      "title": "Success Is Not a Destination",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nLou and Veronica Guarino on why success is not a destination, but something you work at every single day.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad22-story.mp4"
+      ],
+      "guest_name": "Lou & Veronica Guarino",
+      "guest_title": "Jewelers",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 23,
+      "title": "First to the NHL",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nGreg Weimer sits down with Ryan Malone on being the first from his Pittsburgh programs to reach the NHL, and the belief that got him there.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad23-story.mp4"
+      ],
+      "guest_name": "Ryan Malone",
+      "guest_title": "Former NHL Player",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 24,
+      "title": "The Privilege of the Game",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nRyan Malone on treating a place in the game as a privilege, and why one last-place season was still the time of his life.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad24-story.mp4"
+      ],
+      "guest_name": "Ryan Malone",
+      "guest_title": "Former NHL Player",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 25,
+      "title": "A Harder Chapter",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nRyan Malone shares an honest, difficult chapter of his story.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad25-story.mp4"
+      ],
+      "guest_name": "Ryan Malone",
+      "guest_title": "Former NHL Player",
+      "review_flag": "UNCLEARED · SENSITIVE-MENTAL-HEALTH"
+    },
+    {
+      "num": 26,
+      "title": "It Takes a Team",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nA founder's hard-won advice for anyone building a business: learn to delegate, and lean on the team.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad26-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 27,
+      "title": "The Sarris Candies Story",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nA Pittsburgh institution's origin story, which began with a single box of candy.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad27-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 28,
       "title": "The Margin of Excellence",
-      "format": "Reel / Story video \u2014 1080x1920 (9:16)",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
       "placements": [
         "Instagram Reels",
         "Facebook Reels",
         "Stories",
         "Feed"
       ],
-      "primary_text": "What if a life well built begins with happiness rather than the balance sheet? Greg Weimer talks with people who chose intention over accumulation, and found their way to both.",
+      "primary_text": "What shapes a life worth remembering?\n\nA guest on how philanthropy provides the margin of excellence, the difference between keeping the lights on and truly making a difference.\n\nNew conversations every two weeks. Follow along on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
-      "description": "Watch the full conversations on YouTube.",
+      "description": "New conversations every two weeks.",
       "cta": "Watch More",
       "hook": "",
-      "arc": "Happiness-first / bench",
+      "arc": "Collective",
       "wave": "T1",
       "stories": {
         "text_overlay": "",
@@ -324,8 +796,96 @@
       },
       "image_direction": "",
       "images": [
-        "ad12-story.mp4"
-      ]
+        "ad28-story.mp4"
+      ],
+      "review_flag": "GUEST-TBD"
+    },
+    {
+      "num": 29,
+      "title": "Lead by Example",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nA story about character and making a difference in someone's day, drawn from years of working alongside a Pittsburgh icon.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad29-story.mp4"
+      ],
+      "guest_name": "Beth Vietmeier",
+      "guest_title": "Owner, Valiant 3 Communications",
+      "review_flag": "UNCLEARED · STEELERS-CHECK"
+    },
+    {
+      "num": 30,
+      "title": "Treat People the Right Way",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nChris Lee on a reputation built by treating everyone the right way, from clients and employees to opposing counsel.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad30-story.mp4"
+      ],
+      "guest_name": "Chris Lee",
+      "guest_title": "Attorney",
+      "review_flag": "UNCLEARED"
+    },
+    {
+      "num": 31,
+      "title": "The Case That Defined a Career",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What shapes a life worth remembering?\n\nChris Lee on the landmark outbreak case that shaped his career.\n\nNew conversations every two weeks. Follow along on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "T1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad31-story.mp4"
+      ],
+      "guest_name": "Chris Lee",
+      "guest_title": "Attorney",
+      "review_flag": "UNCLEARED"
     }
   ]
 }

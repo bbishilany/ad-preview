@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Christmas in Aruba — Strategic Update</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dark-bg:#141d2b; --dark-surface:#1a2332; --dark-card:#1e2a3a; --dark-card-alt:#243244; --dark-elevated:#2d3d50;
+  --accent:#ffb84d; --accent-glow:rgba(255,184,77,.2); --accent-border:rgba(255,184,77,.3); --accent-subtle:rgba(255,184,77,.12);
+  --text-primary:#f5f3ed; --text-secondary:rgba(245,243,237,.7); --text-muted:rgba(245,243,237,.45); --text-faint:rgba(245,243,237,.25);
+  --color-green:#4ADE80;
+  --font-display:'Inter Tight',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --radius-md:8px; --radius-lg:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--dark-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:48px 28px 120px}
+/* brand */
+.brand{display:flex;align-items:center;gap:6px;margin-bottom:64px}
+.brand-mark{font-family:var(--font-display);font-weight:900;font-size:11px;letter-spacing:.32em;color:var(--text-primary);text-transform:uppercase}
+.brand-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+/* hero */
+.kicker{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-family:var(--font-display);font-weight:900;font-size:clamp(34px,6vw,54px);letter-spacing:-.03em;line-height:1.05;color:var(--text-primary);margin-bottom:20px}
+.period{font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--text-muted);margin-bottom:40px}
+.lede{font-size:17px;line-height:1.7;color:var(--text-secondary);max-width:720px;margin-bottom:64px}
+.lede strong{color:var(--text-primary);font-weight:600}
+/* sections */
+h2{font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:-.01em;color:var(--text-primary);margin:72px 0 24px}
+/* stat row */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:8px}
+.stat{background:var(--dark-card);border-radius:var(--radius-md);padding:24px}
+.stat .n{font-family:var(--font-display);font-weight:900;font-size:2.6em;letter-spacing:-.04em;color:var(--accent);line-height:1}
+.stat .l{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-top:10px}
+.stat-note{font-size:12px;color:var(--text-muted);margin:14px 2px 0}
+/* table */
+.tablewrap{overflow-x:auto;margin-top:8px}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;border-radius:var(--radius-lg);overflow:hidden}
+th{background:var(--dark-card-alt);font-family:var(--font-body);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);text-align:left;padding:12px 16px}
+td{background:var(--dark-card);font-size:14px;color:var(--text-secondary);padding:12px 16px;border-top:1px solid rgba(255,184,77,.08)}
+td:first-child{color:var(--text-primary);font-weight:600}
+td .up{color:var(--color-green);font-weight:600}
+td .warn{color:var(--accent);font-weight:600}
+/* callout */
+.callout{background:var(--dark-card-alt);border-left:3px solid var(--accent);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:28px 0}
+.callout h3{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+.callout p{font-size:14px}
+/* findings */
+.finding{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--text-faint)}
+.finding:last-child{border-bottom:none}
+.fnum{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-subtle);color:var(--accent);font-family:var(--font-display);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.finding h3{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:6px}
+.finding p{font-size:14px}
+.finding em{color:var(--text-primary);font-style:normal;font-weight:600}
+/* recs */
+.rec{background:var(--dark-card);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:14px}
+.rec.hl{border-left:3px solid var(--accent)}
+.rec h3{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:6px}
+.rec h3 .tag{font-family:var(--font-body);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-subtle);border-radius:4px;padding:3px 8px;margin-left:10px;vertical-align:2px}
+.rec p{font-size:14px}
+/* asks */
+.asks{background:var(--dark-card-alt);border-radius:var(--radius-lg);padding:28px 30px;margin-top:8px}
+.ask{display:flex;gap:16px;padding:12px 0}
+.ask .fnum{margin-top:0}
+.ask p{font-size:14px}
+.ask .r{color:var(--text-muted);font-size:13px}
+.ask .r b{color:var(--accent);font-weight:600}
+/* footer */
+.foot{margin-top:88px;padding-top:18px;border-top:1px solid var(--text-faint);display:flex;justify-content:space-between;gap:12px;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted)}
+.method{font-size:12px;color:var(--text-muted);margin-top:26px;line-height:1.7}
+.strip{position:fixed;left:0;right:0;bottom:0;height:4px;background:var(--accent);z-index:50}
+/* gate */
+#gate{position:fixed;inset:0;background:var(--dark-bg);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px}
+.gatebox{max-width:360px;width:100%;text-align:center}
+.gatebox .brand{justify-content:center;margin-bottom:28px}
+.gatebox h2{margin:0 0 6px;font-size:20px}
+.gatebox p{font-size:13px;color:var(--text-muted);margin-bottom:22px}
+.gatebox input{width:100%;background:var(--dark-card);border:1px solid var(--dark-elevated);border-radius:var(--radius-md);color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:12px 16px;outline:none;text-align:center}
+.gatebox input:focus{border-color:var(--accent-border)}
+.gatebox button{margin-top:12px;width:100%;background:var(--accent);color:#141d2b;border:none;border-radius:var(--radius-md);font-family:var(--font-display);font-weight:700;font-size:14px;padding:12px;cursor:pointer}
+#gate-err{color:var(--accent);font-size:12px;margin-top:10px;min-height:16px}
+@media (max-width:560px){.wrap{padding:32px 18px 100px}.lede{font-size:15px}}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gatebox">
+    <div class="brand"><span class="brand-mark">Mileage</span><span class="brand-dot"></span></div>
+    <h2>Strategic Update</h2>
+    <p>Enter the access code you received from Mileage.</p>
+    <input id="gate-input" type="password" autocomplete="off" placeholder="Access code">
+    <button id="gate-btn">View report</button>
+    <div id="gate-err"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="brand"><span class="brand-mark">Mileage</span><span class="brand-dot"></span></div>
+
+  <div class="kicker">Meta Ads &middot; Strategic Update</div>
+  <h1>The campaign is doing its job.</h1>
+  <div class="period">Christmas in Aruba &middot; Campaign launch (July 28) through August 24, 2026 &middot; Prepared September 1</div>
+
+  <p class="lede">Four weeks in, the campaign finds buyers at about <strong>$4 per add-to-cart</strong> in a market of roughly 106,000 people, and it converted paid traffic into pre-orders from week one. Cost per result has crept up as the campaign saturates the small audience — the auction price of reaching people rose 73% in the latest period — and that is the expected pattern in a market this size, arriving on the schedule we predicted at launch. <strong>The lever that resets it is fresh creative</strong>, and that is our top recommendation below.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">161</div><div class="l">Add-to-carts, 28 days</div></div>
+    <div class="stat"><div class="n">$4.07</div><div class="l">Blended cost per cart</div></div>
+    <div class="stat"><div class="n">$655</div><div class="l">Total spend</div></div>
+    <div class="stat"><div class="n">5.7</div><div class="l">Carts per day, steady</div></div>
+  </div>
+
+  <h2>Performance by period</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Metric</th><th>Jul 28 – Aug 6</th><th>Aug 6 – 14</th><th>Aug 14 – 24</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td>Spend</td><td>$188.97</td><td>$186.93</td><td>$278.90</td><td>—</td></tr>
+        <tr><td>Add to cart</td><td>52</td><td>46</td><td>63</td><td><span class="up">steady volume</span></td></tr>
+        <tr><td>Cost per cart</td><td>$3.63</td><td>$4.06</td><td>$4.43</td><td><span class="warn">+22% since launch</span></td></tr>
+        <tr><td>Impressions</td><td>80,157</td><td>63,798</td><td>61,759</td><td>—</td></tr>
+        <tr><td>CPM (cost per 1,000)</td><td>~$2.36</td><td>~$2.93</td><td>$4.52</td><td><span class="warn">+73% latest period</span></td></tr>
+        <tr><td>Click-through rate</td><td>5.73%</td><td>—</td><td>4.74%</td><td>cooling</td></tr>
+        <tr><td>Page-to-cart rate</td><td>—</td><td>2.98%</td><td>3.37%</td><td><span class="up">improving</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="stat-note">Middle-period figures are derived from cumulative reporting. Aug 6–14 click-through and page-to-cart were reported cumulatively; the trend columns show the reported values.</p>
+
+  <div class="callout">
+    <h3>Orders &amp; revenue</h3>
+    <p>In the first 8 days, the campaign produced <strong style="color:var(--text-primary)">5 Shopify pre-orders totaling AWG 2,064 (~$1,155)</strong> — roughly 6x return on the ad spend in that window, with cart-to-order running near 10%. Later reports tracked cart activity only, so treat that order count as a week-one floor; we are reconciling the full 28-day order picture in Shopify and will bring it to the next update. Pre-orders are partially paid by design — final collections land closer to delivery.</p>
+  </div>
+
+  <h2>What we're seeing</h2>
+  <div class="finding"><div class="fnum">1</div><div><h3>The engine works</h3><p>Volume has held near 5.7 add-to-carts per day for four straight weeks, with click-through at 5.7% early and 4.7% in the latest period. People in Aruba are responding to the product.</p></div></div>
+  <div class="finding"><div class="fnum">2</div><div><h3>Costs are rising for a knowable reason</h3><p>The increase is almost entirely auction price (CPM +73%), while the site itself is converting <em>better</em> — page-to-cart improved from 2.98% to 3.37%. The ads and the store are fine; the audience pool is tightening after 28 days of the same six creatives. This is the standard lifecycle of a campaign in a small market.</p></div></div>
+  <div class="finding"><div class="fnum">3</div><div><h3>The ad set has a clear hierarchy</h3><p>Meta rotated its favorite from &ldquo;Preorders Close Soon&rdquo; (71% of early budget) to &ldquo;Christmas Comes Home&rdquo; (56% of the latest period at $3.93 per cart, rated Above Average on conversion rate). &ldquo;Reserve Now Save&rdquo; has quietly been the cheapest converter in the account — <em>$2.68 per cart</em> — while receiving almost no budget. &ldquo;Lit in Minutes&rdquo; has effectively not converted.</p></div></div>
+  <div class="finding"><div class="fnum">4</div><div><h3>Frequency ran ahead of schedule</h3><p>The average person reached had seen the ads about 5 times by day 17. Our launch plan called for refreshing creative when frequency approaches 6 — the rising CPM in the latest period is that threshold announcing itself in dollars.</p></div></div>
+
+  <h2>Recommendations</h2>
+  <div class="rec hl"><h3>1 &middot; Refresh the creative set now<span class="tag">Highest leverage</span></h3><p>Three or more new variations, built around what the data endorsed: the homecoming/family angle of &ldquo;Christmas Comes Home&rdquo; and the savings-forward angle of &ldquo;Reserve Now Save.&rdquo; Retire &ldquo;Lit in Minutes.&rdquo;</p></div>
+  <div class="rec"><h3>2 &middot; Give the savings message a fair test</h3><p>&ldquo;Reserve Now Save&rdquo; earned carts at roughly 40% below account average and the algorithm underfed it. The refresh carries its offer framing into multiple new variants so budget can find it.</p></div>
+  <div class="rec"><h3>3 &middot; Reconcile orders before the next spend decision</h3><p>The week-one signal was strong; a 28-day Shopify pull tells us the true cart-to-order rate at scale and whether follow-up on partially-paid pre-orders is needed.</p></div>
+  <div class="rec"><h3>4 &middot; Plan the seasonal budget step now</h3><p>September and October are the natural pre-order window. At today&rsquo;s ~$4 cost per cart and the current ~$750/month pace, the campaign has room to buy more volume at an efficiency we like. Once fresh creative stabilizes costs, we recommend agreeing the step-up level in advance so the scale decision is already made when the season arrives.</p></div>
+  <div class="rec"><h3>5 &middot; Move ad-account billing back to your card</h3><p>Interim billing has been running through Mileage since the payment interruption in early August. A 5-minute swap in Business Manager puts it back where it belongs before spend scales.</p></div>
+
+  <h2>What we need from you</h2>
+  <div class="asks">
+    <div class="ask"><div class="fnum">1</div><div><p><strong style="color:var(--text-primary)">Green light on the creative refresh</strong> — we produce; your only lift is final review.</p><p class="r"><b>Our rec:</b> yes, this week — every week at current frequency costs more per result.</p></div></div>
+    <div class="ask"><div class="fnum">2</div><div><p><strong style="color:var(--text-primary)">Shopify access confirmation</strong> for the order reconciliation, if anything has changed since August.</p></div></div>
+    <div class="ask"><div class="fnum">3</div><div><p><strong style="color:var(--text-primary)">A budget conversation for the season</strong> — 15 minutes, once the refreshed creative has a week of data.</p><p class="r"><b>Our rec:</b> hold current pace until then.</p></div></div>
+    <div class="ask"><div class="fnum">4</div><div><p><strong style="color:var(--text-primary)">Card swap in Business Manager</strong> — we&rsquo;ll send the two-step instructions.</p></div></div>
+  </div>
+
+  <p class="method">All figures are from Mileage&rsquo;s analyst reporting of August 6, 14, and 24. Middle-period columns are arithmetic on cumulative totals from those reports. Pre-order revenue is Shopify-confirmed.</p>
+
+  <div class="foot"><span>Christmas in Aruba</span><span>Meta Campaign Strategic Update &middot; September 2026</span></div>
+</div>
+
+<div class="strip"></div>
+
+<script>
+(function(){
+  var H="9c1e4b138cde027ca233111a158665addaa09f7021edf05a67ee970e1f2781a6";
+  function sha(s){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')})}
+  var g=document.getElementById('gate');
+  if(sessionStorage.getItem('cia_gate_ok')==='1'){g.parentNode.removeChild(g);return;}
+  document.documentElement.style.overflow='hidden';
+  function tryit(){var v=document.getElementById('gate-input').value.trim().toLowerCase();sha(v).then(function(h){if(h===H){sessionStorage.setItem('cia_gate_ok','1');document.documentElement.style.overflow='';g.parentNode.removeChild(g);}else{document.getElementById('gate-err').textContent='Incorrect code. Try again.';}})}
+  document.getElementById('gate-btn').addEventListener('click',tryit);
+  document.getElementById('gate-input').addEventListener('keydown',function(e){if(e.key==='Enter')tryit();});
+})();
+</script>
+</body>
+</html>

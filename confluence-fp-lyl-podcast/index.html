@@ -1881,7 +1881,7 @@ function renderFeedMockup(ad) {
         <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _oi))}</div>
         <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _oi))}</div>
       </div>
-      ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+      ${(ad.cta_url||_data.cta_url) ? `<a class="fb-cta-btn" href="${esc(ad.cta_url||_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
     </div>
   </div>`;
 }
@@ -1913,7 +1913,7 @@ function renderStoryMockup(ad) {
       ${ad.guest_title ? `<div style="color:#7EFBC8;font-size:12px;margin-top:2px;line-height:1.2">${esc(ad.guest_title)}</div>` : ''}
     </div>` : ''}
     <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
-    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
+    ${(ad.cta_url||_data.cta_url) ? `<a class="ig-story-cta" href="${esc(ad.cta_url||_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
     <div class="ig-story-message-bar">
       <div class="ig-story-message-input">Send message</div>
       <div class="ig-story-message-send">${SVG_ICONS.share}</div>

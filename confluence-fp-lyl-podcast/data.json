@@ -35,7 +35,8 @@
         "ad1-story.mp4"
       ],
       "guest_name": "Bill Bishilany",
-      "guest_title": "Founder & CEO, Mileage Design"
+      "guest_title": "Founder & CEO, Mileage Design",
+      "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
     },
     {
       "num": 2,
@@ -63,7 +64,8 @@
         "ad2-story.mp4"
       ],
       "guest_name": "Bill Bishilany",
-      "guest_title": "Founder & CEO, Mileage Design"
+      "guest_title": "Founder & CEO, Mileage Design",
+      "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
     },
     {
       "num": 3,
@@ -91,8 +93,9 @@
         "ad3-story.mp4"
       ],
       "guest_name": "Yianni Bourbakis",
-      "guest_title": "Restaurateur",
-      "review_flag": "UNCLEARED"
+      "guest_title": "Restaurateur, Elia",
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
     },
     {
       "num": 4,
@@ -121,7 +124,8 @@
       ],
       "guest_name": "Betsy Wentz",
       "guest_title": "Interior Designer",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
     },
     {
       "num": 5,
@@ -150,7 +154,8 @@
       ],
       "guest_name": "Betsy Wentz",
       "guest_title": "Interior Designer",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
     },
     {
       "num": 6,
@@ -179,7 +184,8 @@
       ],
       "guest_name": "Betsy Wentz",
       "guest_title": "Interior Designer",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
     },
     {
       "num": 7,
@@ -206,7 +212,10 @@
       "images": [
         "ad7-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "GUEST-TBD · UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4",
+      "guest_name": "Jason Esch",
+      "guest_title": "Chief Executive Officer"
     },
     {
       "num": 8,
@@ -289,7 +298,8 @@
       ],
       "guest_name": "Beth Vietmeier",
       "guest_title": "Owner, Valiant 3 Communications",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
     },
     {
       "num": 11,
@@ -316,7 +326,10 @@
       "images": [
         "ad11-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "GUEST-TBD · UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
+      "guest_name": "Rachel Petrucelli",
+      "guest_title": "UPMC Children's Hospital Foundation"
     },
     {
       "num": 12,
@@ -345,7 +358,8 @@
       ],
       "guest_name": "Chris Lee",
       "guest_title": "Attorney",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     },
     {
       "num": 13,
@@ -401,7 +415,8 @@
       ],
       "guest_name": "Sunjay Mannan",
       "guest_title": "Concierge Physician",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
     },
     {
       "num": 15,
@@ -430,7 +445,8 @@
       ],
       "guest_name": "Sunjay Mannan",
       "guest_title": "Concierge Physician",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
     },
     {
       "num": 16,
@@ -459,7 +475,8 @@
       ],
       "guest_name": "Sunjay Mannan",
       "guest_title": "Concierge Physician",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
     },
     {
       "num": 17,
@@ -486,7 +503,10 @@
       "images": [
         "ad17-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "GUEST-TBD · UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY",
+      "guest_name": "Ezra Shapiro",
+      "guest_title": "Private Chef"
     },
     {
       "num": 18,
@@ -514,7 +534,8 @@
         "ad18-story.mp4"
       ],
       "guest_name": "Bill Bishilany",
-      "guest_title": "Founder & CEO, Mileage Design"
+      "guest_title": "Founder & CEO, Mileage Design",
+      "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
     },
     {
       "num": 19,
@@ -542,8 +563,9 @@
         "ad19-story.mp4"
       ],
       "guest_name": "Yianni Bourbakis",
-      "guest_title": "Restaurateur",
-      "review_flag": "UNCLEARED"
+      "guest_title": "Restaurateur, Elia",
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
     },
     {
       "num": 20,
@@ -572,7 +594,8 @@
       ],
       "guest_name": "Lou & Veronica Guarino",
       "guest_title": "Jewelers",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
     },
     {
       "num": 21,
@@ -601,7 +624,8 @@
       ],
       "guest_name": "Lou & Veronica Guarino",
       "guest_title": "Jewelers",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
     },
     {
       "num": 22,
@@ -630,7 +654,8 @@
       ],
       "guest_name": "Lou & Veronica Guarino",
       "guest_title": "Jewelers",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
     },
     {
       "num": 23,
@@ -659,7 +684,8 @@
       ],
       "guest_name": "Ryan Malone",
       "guest_title": "Former NHL Player",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
     {
       "num": 24,
@@ -688,7 +714,8 @@
       ],
       "guest_name": "Ryan Malone",
       "guest_title": "Former NHL Player",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
     {
       "num": 25,
@@ -717,7 +744,8 @@
       ],
       "guest_name": "Ryan Malone",
       "guest_title": "Former NHL Player",
-      "review_flag": "UNCLEARED · SENSITIVE-MENTAL-HEALTH"
+      "review_flag": "UNCLEARED · SENSITIVE-MENTAL-HEALTH",
+      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
     {
       "num": 26,
@@ -744,7 +772,10 @@
       "images": [
         "ad26-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "GUEST-TBD · UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
+      "guest_name": "Bill Sarris",
+      "guest_title": "Sarris Candies"
     },
     {
       "num": 27,
@@ -771,7 +802,10 @@
       "images": [
         "ad27-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "GUEST-TBD · UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
+      "guest_name": "Bill Sarris",
+      "guest_title": "Sarris Candies"
     },
     {
       "num": 28,
@@ -798,7 +832,10 @@
       "images": [
         "ad28-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "GUEST-TBD · UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
+      "guest_name": "Rachel Petrucelli",
+      "guest_title": "UPMC Children's Hospital Foundation"
     },
     {
       "num": 29,
@@ -827,7 +864,8 @@
       ],
       "guest_name": "Beth Vietmeier",
       "guest_title": "Owner, Valiant 3 Communications",
-      "review_flag": "UNCLEARED · STEELERS-CHECK"
+      "review_flag": "UNCLEARED · STEELERS-CHECK",
+      "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
     },
     {
       "num": 30,
@@ -856,7 +894,8 @@
       ],
       "guest_name": "Chris Lee",
       "guest_title": "Attorney",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     },
     {
       "num": 31,
@@ -885,7 +924,8 @@
       ],
       "guest_name": "Chris Lee",
       "guest_title": "Attorney",
-      "review_flag": "UNCLEARED"
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     }
   ]
 }

@@ -867,5 +867,31 @@
       "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     }
-  ]
+  ],
+  "success": {
+    "definition": "Success means cold Pittsburgh high-net-worth viewers watching these conversations at an efficient cost, building a warm audience that becomes YouTube subscribers over time. Meta optimizes for ThruPlay video views; subscriber growth is the scoreboard, measured in YouTube Studio.",
+    "kpis": [
+      {
+        "label": "ThruPlay rate",
+        "target": "> 25%",
+        "note": "Primary — cold audience"
+      },
+      {
+        "label": "Cost per ThruPlay",
+        "target": "< $0.05",
+        "note": "Primary — honest baseline set in month one"
+      },
+      {
+        "label": "Warm-viewer pool",
+        "target": "1,000–3,000",
+        "note": "50%+ viewers in 4–6 weeks — seeds retargeting"
+      },
+      {
+        "label": "YouTube subscribers",
+        "target": "Lift vs. pre-launch",
+        "note": "Measured in YouTube Studio"
+      }
+    ],
+    "footnote": "Budget: $1,000 per month, Meta only. Decision rule: after each concept clears about 50 ThruPlays and one week, rank by ThruPlay rate and cost — the winner earns double weight, a clear loser is cut, and a fresh clip rotates in."
+  }
 }

@@ -207,6 +207,23 @@
   }
 
   /* ── HERO SECTION ──────────────────────────────────────────────── */
+
+  /* ── SUCCESS / KPI BLOCK ─────────────────────────────────────── */
+  .success-block { max-width: 860px; margin: 26px auto 0; text-align: left; }
+  .success-def { color: var(--text2); font-size: 15px; line-height: 1.6; text-align: center; max-width: 740px; margin: 0 auto 18px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .kpi-cell { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .kpi-label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text2); margin-bottom: 6px; }
+  .kpi-target { font-size: 20px; font-weight: 700; color: #7EFBC8; }
+  .kpi-note { font-size: 12px; color: var(--text2); margin-top: 4px; line-height: 1.4; }
+  .kpi-footnote { font-size: 12.5px; color: var(--text2); margin-top: 14px; text-align: center; line-height: 1.55; }
+
+
+  /* ── CLEAN VIDEO MODE: no overlays over the clips (Bill 2026-09-01) ── */
+  .ig-story-progress, .ig-story-account, .ig-story-text, .ig-story-secondary,
+  .ig-story-eyebrow, .ig-story-swipe-up, .ig-story-cta, .ig-story-message-bar,
+  .img-upload-btn, .img-download-btn { display: none !important; }
+
   .hero {
     max-width: 1060px;
     margin: 0 auto;
@@ -2407,6 +2424,11 @@ async function init() {
         ${_data.venue ? ' &middot; ' + esc(_data.venue) : ''}
         ${_data.co_presenters ? '<br><strong>' + esc(_data.co_presenters) + '</strong>' : ''}
       </div>
+      ${_data.success ? `<div class="success-block">
+        <div class="success-def">${esc(_data.success.definition)}</div>
+        <div class="kpi-grid">${(_data.success.kpis||[]).map(k=>`<div class="kpi-cell"><div class="kpi-label">${esc(k.label)}</div><div class="kpi-target">${esc(k.target)}</div><div class="kpi-note">${esc(k.note||'')}</div></div>`).join('')}</div>
+        ${_data.success.footnote ? `<div class="kpi-footnote">${esc(_data.success.footnote)}</div>` : ''}
+      </div>` : ''}
     `;
 
     // Header label

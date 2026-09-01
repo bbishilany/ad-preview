@@ -1908,7 +1908,6 @@ function renderStoryMockup(ad) {
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
-    </div>` : ''}
     <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
     ${(ad.cta_url||_data.cta_url) ? `<a class="ig-story-cta" href="${esc(ad.cta_url||_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
     <div class="ig-story-message-bar">

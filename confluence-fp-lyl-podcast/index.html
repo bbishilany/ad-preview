@@ -1116,23 +1116,6 @@
 </style>
 </head>
 <body>
-<div id="lyl-gate" style="position:fixed;inset:0;z-index:99999;background:#12493C;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;">
-  <div style="text-align:center;max-width:420px;padding:0 28px;color:#fff;">
-    <img src="images/lyl-brandmark.png" alt="Living Your Legacy" style="width:150px;border-radius:16px;margin-bottom:24px;">
-    <div style="font-size:18px;color:#7EFBC8;margin-bottom:18px;">This preview is private. Enter the access code to view.</div>
-    <input id="lyl-gate-input" type="password" placeholder="Access code" autofocus style="width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;font-size:17px;text-align:center;letter-spacing:2px;">
-    <div id="lyl-gate-err" style="height:20px;color:#ffb4b4;font-size:14px;margin-top:10px;"></div>
-    <button id="lyl-gate-btn" style="margin-top:6px;background:#7EFBC8;color:#12493C;border:none;border-radius:999px;padding:13px 40px;font-size:16px;font-family:Georgia,serif;cursor:pointer;">View plan &amp; ads</button>
-  </div></div>
-<script>
-(function(){var HASH="08553b2a2caba329c234c03b9f4b8571876124f669224c195caa2542be1ce8d4";
- var g=document.getElementById('lyl-gate'),i=document.getElementById('lyl-gate-input'),e=document.getElementById('lyl-gate-err'),b=document.getElementById('lyl-gate-btn');
- function op(){g.style.display='none';document.body.style.overflow='';}
- if(sessionStorage.getItem('lyl_gate_ok')==='1'){op();return;} document.body.style.overflow='hidden';
- async function sha(s){var x=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(x)).map(y=>y.toString(16).padStart(2,'0')).join('');}
- async function c(){var h=await sha(i.value.trim());if(h===HASH){sessionStorage.setItem('lyl_gate_ok','1');op();}else{e.textContent='Incorrect code. Please try again.';i.value='';i.focus();}}
- b.addEventListener('click',c);i.addEventListener('keydown',function(ev){if(ev.key==='Enter')c();});})();
-</script>
 
 
 <!-- STICKY HEADER -->
@@ -2426,7 +2409,7 @@ async function init() {
       </div>
       ${_data.success ? `<div class="success-block">
         <div class="success-def">${esc(_data.success.definition)}</div>
-        <div class="kpi-grid">${(_data.success.kpis||[]).map(k=>`<div class="kpi-cell"><div class="kpi-label">${esc(k.label)}</div><div class="kpi-target">${esc(k.target)}</div><div class="kpi-note">${esc(k.note||'')}</div></div>`).join('')}</div>
+        <div class="kpi-grid">${(_data.success.kpis||[]).map(k=>`<div class="kpi-cell"><div class="kpi-label">${esc(k.label)}</div>${k.target ? `<div class="kpi-target">${esc(k.target)}</div>` : ``}<div class="kpi-note">${esc(k.note||'')}</div></div>`).join('')}</div>
         ${_data.success.footnote ? `<div class="kpi-footnote">${esc(_data.success.footnote)}</div>` : ''}
       </div>` : ''}
     `;

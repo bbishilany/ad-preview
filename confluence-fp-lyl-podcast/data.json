@@ -873,23 +873,23 @@
     "kpis": [
       {
         "label": "ThruPlay rate",
-        "target": "> 25%",
-        "note": "Primary — cold audience"
+        "target": "",
+        "note": "How many viewers watch the clips in a meaningful way"
       },
       {
         "label": "Cost per ThruPlay",
-        "target": "< $0.05",
-        "note": "Primary — honest baseline set in month one"
+        "target": "",
+        "note": "Efficiency of each view; month one sets the honest baseline"
       },
       {
         "label": "Warm-viewer pool",
-        "target": "1,000–3,000",
-        "note": "50%+ viewers in 4–6 weeks — seeds retargeting"
+        "target": "",
+        "note": "Viewers who watched 50% or more; this seeds retargeting"
       },
       {
         "label": "YouTube subscribers",
-        "target": "Lift vs. pre-launch",
-        "note": "Measured in YouTube Studio"
+        "target": "",
+        "note": "The scoreboard; measured in YouTube Studio against pre-launch"
       }
     ],
     "footnote": "Budget: $1,000 per month, Meta only. Decision rule: after each concept clears about 50 ThruPlays and one week, rank by ThruPlay rate and cost — the winner earns double weight, a clear loser is cut, and a fresh clip rotates in."

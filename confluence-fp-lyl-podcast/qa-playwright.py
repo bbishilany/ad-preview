@@ -17,18 +17,8 @@ async def main():
         pg.on("pageerror", lambda e: console_errors.append(str(e)))
 
         await pg.goto(URL, wait_until="domcontentloaded", timeout=60000)
-        # 1) gate appears
-        gate=await pg.is_visible("#lyl-gate")
-        rec("gate shown", gate)
-        # wrong code rejected
-        await pg.fill("#lyl-gate-input","wrongcode"); await pg.click("#lyl-gate-btn")
-        await pg.wait_for_timeout(400)
-        err=await pg.text_content("#lyl-gate-err")
-        rec("gate rejects bad code", bool(err and "Incorrect" in err))
-        # right code opens
-        await pg.fill("#lyl-gate-input",CODE); await pg.click("#lyl-gate-btn")
-        await pg.wait_for_timeout(800)
-        rec("gate opens with lyl726", not await pg.is_visible("#lyl-gate"))
+        # 1) preview is UNGATED by design (Bill 2026-09-02)
+        rec("no gate present", (await pg.locator("#lyl-gate").count())==0)
 
         # data.json ground truth
         data=json.loads(await (await pg.request.get(f"{URL}/data.json")).text())

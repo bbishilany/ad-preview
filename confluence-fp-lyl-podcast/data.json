@@ -127,7 +127,7 @@
       "review_flag": "GUEST-TBD · UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4",
       "guest_name": "Jason Esch",
-      "guest_title": "Chief Executive Officer"
+      "guest_title": "Owner, TeamLogic IT Pittsburgh"
     },
     {
       "num": 5,
@@ -139,7 +139,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "The next generation will not lead with titles. They will lead with the relationships they choose to invest in.\n\nA guest on Living Your Legacy on the kind of leadership that actually lasts.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New conversations on YouTube.",
+      "primary_text": "The next generation will not lead with titles. They will lead with the relationships they choose to invest in.\n\nJason Esch, owner of TeamLogic IT Pittsburgh, on the kind of leadership that actually lasts.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New conversations on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -154,7 +154,10 @@
       "images": [
         "ad8-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "UNCLEARED",
+      "guest_name": "Jason Esch",
+      "guest_title": "Owner, TeamLogic IT Pittsburgh",
+      "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4"
     },
     {
       "num": 6,
@@ -166,7 +169,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "He took a twelve-dollar-an-hour job and went home every night thinking about it. That hunger changed his life.\n\nA guest on Living Your Legacy on the moment work stopped being a paycheck and became a calling.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New episodes on YouTube.",
+      "primary_text": "He took a twelve-dollar-an-hour job and went home every night thinking about it. That hunger changed his life.\n\nPrivate chef Ezra Shapiro on the moment work stopped being a paycheck and became a calling.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -181,7 +184,10 @@
       "images": [
         "ad9-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "UNCLEARED",
+      "guest_name": "Ezra Shapiro",
+      "guest_title": "Private Chef",
+      "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY"
     },
     {
       "num": 7,
@@ -283,7 +289,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "The most important advice he has for any craft fits in two words: keep reading.\n\nA guest on Living Your Legacy on curiosity as a way of life.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New episodes on YouTube.",
+      "primary_text": "The most important advice he has for any craft fits in two words: keep reading.\n\nPrivate chef Ezra Shapiro on curiosity as a way of life.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -298,7 +304,10 @@
       "images": [
         "ad13-story.mp4"
       ],
-      "review_flag": "GUEST-TBD"
+      "review_flag": "UNCLEARED",
+      "guest_name": "Ezra Shapiro",
+      "guest_title": "Private Chef",
+      "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY"
     },
     {
       "num": 11,

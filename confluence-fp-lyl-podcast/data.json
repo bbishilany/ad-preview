@@ -126,7 +126,7 @@
       ],
       "guest_name": "Beth Vietmeier",
       "guest_title": "The Jerome Bettis Bus Stops Here Foundation",
-      "review_flag": "UNCLEARED · STEELERS-CHECK",
+      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
     },
     {
@@ -943,7 +943,7 @@
       "label": "Go to market · Wave 1",
       "title": "Six ads, launching first",
       "subtitle": "Six guests, six episodes, each ad linking to its own conversation. Copy written guest-first: the guest and their organization named in every ad, an opening question, and a reason to watch rather than a summary of the episode.",
-      "gate": "Guest permissions confirmed by Confluence. Ad 24 additionally pending a decision on naming Jerome Bettis."
+      "gate": "Guest permissions confirmed by Confluence."
     },
     {
       "key": "BENCH",

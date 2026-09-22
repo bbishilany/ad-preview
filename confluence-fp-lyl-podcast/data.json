@@ -36,7 +36,6 @@
       ],
       "guest_name": "Betsy Wentz",
       "guest_title": "Founder, Betsy Wentz Interior Design",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
     },
     {
@@ -49,7 +48,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "What does it take to call a last-place season the time of your life?\n\nRyan Malone's first year, the team missed the playoffs and finished at the bottom.\n\nHe loved every minute of it. He was playing in the National Hockey League, and he never once treated that as owed to him.\n\nRetired NHL player. Founder, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "primary_text": "What does it take to call a last-place season the time of your life?\n\nRyan Malone's first year, the team missed the playoffs and finished at the bottom.\n\nHe loved every minute of it. He was playing in the National Hockey League, and he never once treated that as owed to him.\n\nRetired NHL player, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -65,8 +64,7 @@
         "ad24-story.mp4"
       ],
       "guest_name": "Ryan Malone",
-      "guest_title": "Retired NHL Player, Malone Family Foundation",
-      "review_flag": "UNCLEARED",
+      "guest_title": "Retired NHL player, Malone Family Foundation",
       "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
     {
@@ -79,7 +77,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "How does a Pittsburgh institution start?\n\nWith a box of candy that was not very good.\n\nBill Sarris's father bought it for his mother, felt embarrassed, decided he could do better, and went down to the basement to make his own.\n\nSarris Candies.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "primary_text": "How does a Pittsburgh institution start?\n\nWith a box of candy that was not very good.\n\nBill Sarris's father bought it for his mother, felt embarrassed, decided he could do better, and went down to the basement to make his own.\n\nOwner, Sarris Candies.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -94,10 +92,9 @@
       "images": [
         "ad27-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
       "guest_name": "Bill Sarris",
-      "guest_title": "Sarris Candies"
+      "guest_title": "Owner, Sarris Candies"
     },
     {
       "num": 24,
@@ -109,7 +106,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "What does character look like when nobody is keeping score?\n\nBeth Vietmeier has traveled the world with Jerome Bettis and has never once seen him turn down a stranger asking for a photo.\n\nShe asked him why. He said that if he can make a difference in someone's day, that is what he is here to do.\n\nThe Jerome Bettis Bus Stops Here Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "primary_text": "What does character look like when nobody is keeping score?\n\nBeth Vietmeier has traveled the world with Jerome Bettis and has never once seen him turn down a stranger asking for a photo.\n\nShe asked him why. He said that if he can make a difference in someone's day, that is what he is here to do.\n\nFounder, Valiant 3 Communications.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -125,8 +122,7 @@
         "ad29-story.mp4"
       ],
       "guest_name": "Beth Vietmeier",
-      "guest_title": "The Jerome Bettis Bus Stops Here Foundation",
-      "review_flag": "UNCLEARED",
+      "guest_title": "Founder, Valiant 3 Communications",
       "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
     },
     {
@@ -156,7 +152,6 @@
       ],
       "guest_name": "Andrew DiDonato",
       "guest_title": "Head Football Coach, Grove City College",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=g68fOcKlLZU"
     },
     {
@@ -186,7 +181,6 @@
       ],
       "guest_name": "Sabrina Saunders Mosby",
       "guest_title": "President and Chief Executive Officer, Vibrant Pittsburgh",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=wA2wt0sifJA"
     },
     {
@@ -216,7 +210,6 @@
       ],
       "guest_name": "Yianni Bourbakis",
       "guest_title": "Co-Owner, Elia Mediterranean Grille",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
     },
     {
@@ -246,7 +239,6 @@
       ],
       "guest_name": "Betsy Wentz",
       "guest_title": "Founder, Betsy Wentz Interior Design",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
     },
     {
@@ -274,7 +266,6 @@
       "images": [
         "ad7-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4",
       "guest_name": "Jason Esch",
       "guest_title": "President and Owner, TeamLogic IT Pittsburgh"
@@ -304,7 +295,6 @@
       "images": [
         "ad8-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "guest_name": "Jason Esch",
       "guest_title": "President and Owner, TeamLogic IT Pittsburgh",
       "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4"
@@ -334,9 +324,8 @@
       "images": [
         "ad9-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "guest_name": "Ezra Shapiro",
-      "guest_title": "Private Chef",
+      "guest_title": "Private chef",
       "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY"
     },
     {
@@ -366,7 +355,6 @@
       ],
       "guest_name": "Beth Vietmeier",
       "guest_title": "Founder, Valiant 3 Communications",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
     },
     {
@@ -394,7 +382,6 @@
       "images": [
         "ad11-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
       "guest_name": "Rachel Petrucelli",
       "guest_title": "President, UPMC Children's Hospital Foundation"
@@ -426,7 +413,6 @@
       ],
       "guest_name": "Chris Lee",
       "guest_title": "Managing Director and COO, Dickie McCamey",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     },
     {
@@ -454,9 +440,8 @@
       "images": [
         "ad13-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "guest_name": "Ezra Shapiro",
-      "guest_title": "Private Chef",
+      "guest_title": "Private chef",
       "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY"
     },
     {
@@ -486,7 +471,6 @@
       ],
       "guest_name": "Dr. Sunjay Mannan",
       "guest_title": "Founder, Health Is Wealth Concierge Medicine",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
     },
     {
@@ -516,7 +500,6 @@
       ],
       "guest_name": "Dr. Sunjay Mannan",
       "guest_title": "Founder, Health Is Wealth Concierge Medicine",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
     },
     {
@@ -546,7 +529,6 @@
       ],
       "guest_name": "Dr. Sunjay Mannan",
       "guest_title": "Founder, Health Is Wealth Concierge Medicine",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
     },
     {
@@ -574,10 +556,9 @@
       "images": [
         "ad17-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY",
       "guest_name": "Ezra Shapiro",
-      "guest_title": "Private Chef"
+      "guest_title": "Private chef"
     },
     {
       "num": 15,
@@ -606,7 +587,6 @@
       ],
       "guest_name": "Yianni Bourbakis",
       "guest_title": "Co-Owner, Elia Mediterranean Grille",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
     },
     {
@@ -636,7 +616,6 @@
       ],
       "guest_name": "Lou & Veronica Guarino",
       "guest_title": "Co-Owners, Louis Anthony Jewelers",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
     },
     {
@@ -666,7 +645,6 @@
       ],
       "guest_name": "Lou & Veronica Guarino",
       "guest_title": "Co-Owners, Louis Anthony Jewelers",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
     },
     {
@@ -679,7 +657,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "Did you ever really believe in the thing you were working toward?\n\nRyan Malone grew up in St. Clair watching his father play for the Penguins, and became the first Pittsburgh-raised player to reach the NHL.\n\nHe is honest that he never thought it was actually attainable. It sat in the back of his mind as motivation through the early mornings.\n\nRetired NHL player. Founder, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "primary_text": "Did you ever really believe in the thing you were working toward?\n\nRyan Malone grew up in St. Clair watching his father play for the Penguins, and became the first Pittsburgh-raised player to reach the NHL.\n\nHe is honest that he never thought it was actually attainable. It sat in the back of his mind as motivation through the early mornings.\n\nRetired NHL player, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -695,8 +673,7 @@
         "ad23-story.mp4"
       ],
       "guest_name": "Ryan Malone",
-      "guest_title": "Founder, Malone Family Foundation",
-      "review_flag": "UNCLEARED",
+      "guest_title": "Retired NHL player, Malone Family Foundation",
       "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
     {
@@ -709,7 +686,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "What was the bravest thing Ryan Malone ever did?\n\nIt happened nowhere near a rink. He checked himself into a hospital and asked for help.\n\nGreg calls that hero stuff and says it counts for more than anything he did in the NHL. Plenty of the people who need that help never make the call.\n\nRetired NHL player. Founder, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "primary_text": "What was the bravest thing Ryan Malone ever did?\n\nIt happened nowhere near a rink. He checked himself into a hospital and asked for help.\n\nGreg calls that hero stuff and says it counts for more than anything he did in the NHL. Plenty of the people who need that help never make the call.\n\nRetired NHL player, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -725,8 +702,8 @@
         "ad25-story.mp4"
       ],
       "guest_name": "Ryan Malone",
-      "guest_title": "Founder, Malone Family Foundation",
-      "review_flag": "UNCLEARED · SENSITIVE-MENTAL-HEALTH",
+      "guest_title": "Retired NHL player, Malone Family Foundation",
+      "review_flag": "SENSITIVE-MENTAL-HEALTH",
       "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
     {
@@ -739,7 +716,7 @@
         "Stories",
         "Feed"
       ],
-      "primary_text": "What has to happen before a business can grow past one person?\n\nBill Sarris says you learn to hand the work to other people.\n\nYou cannot do it all yourself. He calls it the hardest question anyone can ask a founder.\n\nSarris Candies.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "primary_text": "What has to happen before a business can grow past one person?\n\nBill Sarris says you learn to hand the work to other people.\n\nYou cannot do it all yourself. He calls it the hardest question anyone can ask a founder.\n\nOwner, Sarris Candies.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
       "headline": "Living Your Legacy with Greg Weimer",
       "description": "New conversations every two weeks.",
       "cta": "Watch More",
@@ -754,10 +731,9 @@
       "images": [
         "ad26-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
       "guest_name": "Bill Sarris",
-      "guest_title": "Sarris Candies"
+      "guest_title": "Owner, Sarris Candies"
     },
     {
       "num": 23,
@@ -784,7 +760,6 @@
       "images": [
         "ad28-story.mp4"
       ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
       "guest_name": "Rachel Petrucelli",
       "guest_title": "President, UPMC Children's Hospital Foundation"
@@ -816,7 +791,6 @@
       ],
       "guest_name": "Chris Lee",
       "guest_title": "Managing Director and COO, Dickie McCamey",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     },
     {
@@ -846,7 +820,6 @@
       ],
       "guest_name": "Chris Lee",
       "guest_title": "Managing Director and COO, Dickie McCamey",
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
     },
     {
@@ -942,8 +915,7 @@
       "key": "W1",
       "label": "Go to market · Wave 1",
       "title": "Six ads, launching first",
-      "subtitle": "Six guests, six episodes, each ad linking to its own conversation. Copy written guest-first: the guest and their organization named in every ad, an opening question, and a reason to watch rather than a summary of the episode.",
-      "gate": "Guest permissions confirmed by Confluence."
+      "subtitle": "Six guests, six episodes, each ad linking to its own conversation. Copy written guest-first: the guest and their organization named in every ad, an opening question, and a reason to watch rather than a summary of the episode."
     },
     {
       "key": "BENCH",

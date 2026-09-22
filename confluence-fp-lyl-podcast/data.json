@@ -10,36 +10,6 @@
   "compliance_notes": "Real podcast footage + branded end card. No advice/performance claims. Steelers branding NOT used. SEC disclaimer in footer.",
   "ads": [
     {
-      "num": 1,
-      "title": "Every Experience Matters",
-      "format": "Reel / Story video — 1080x1920 (9:16)",
-      "placements": [
-        "Instagram Reels",
-        "Facebook Reels",
-        "Stories",
-        "Feed"
-      ],
-      "primary_text": "Offered one do-over, he chose nothing. Not the failures, not the pain, none of it.\n\nYianni Bourbakis on why the life you would not change is the one that made you.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New episodes on YouTube.",
-      "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New conversations every two weeks.",
-      "cta": "Watch More",
-      "hook": "",
-      "arc": "Identity",
-      "wave": "T1",
-      "stories": {
-        "text_overlay": "",
-        "cta_sticker": "Watch on YouTube"
-      },
-      "image_direction": "",
-      "images": [
-        "ad3-story.mp4"
-      ],
-      "guest_name": "Yianni Bourbakis",
-      "guest_title": "Restaurateur, Elia",
-      "review_flag": "UNCLEARED",
-      "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
-    },
-    {
       "num": 2,
       "title": "The Power of Saying Yes",
       "format": "Reel / Story video — 1080x1920 (9:16)",
@@ -55,7 +25,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "W1",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -68,6 +38,186 @@
       "guest_title": "Founder, Betsy Wentz Interior Design",
       "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
+    },
+    {
+      "num": 19,
+      "title": "Finding Joy In the Journey",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Why would a player call a last-place season the time of his life?\n\nRyan Malone, retired NHL player and founder of the Malone Family Foundation, grew up in St. Clair and became the first Pittsburgh-raised player to reach the league. Twelve years in, he measured a good season by something that never showed up in the standings.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "W1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad24-story.mp4"
+      ],
+      "guest_name": "Ryan Malone",
+      "guest_title": "Retired NHL Player, Malone Family Foundation",
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
+    },
+    {
+      "num": 22,
+      "title": "Sarris Candies Story",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "How does a disappointing box of chocolates become a Pittsburgh institution?\n\nBill Sarris traces Sarris Candies back to a gift his father brought his mother. His father was embarrassed by it, decided he could do better, and went down to the basement to start making candy himself.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "W1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad27-story.mp4"
+      ],
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
+      "guest_name": "Bill Sarris",
+      "guest_title": "Sarris Candies"
+    },
+    {
+      "num": 24,
+      "title": "Lessons Learned from Jerome Bettis",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What does character look like on an early morning flight?\n\nBeth Vietmeier of The Jerome Bettis Bus Stops Here Foundation has traveled the world alongside Jerome Bettis and has never once seen him turn down a stranger who asked for a photo. His reason is the part she carried into how she leads.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "W1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad29-story.mp4"
+      ],
+      "guest_name": "Beth Vietmeier",
+      "guest_title": "The Jerome Bettis Bus Stops Here Foundation",
+      "review_flag": "UNCLEARED · STEELERS-CHECK",
+      "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
+    },
+    {
+      "num": 30,
+      "title": "Start with Your Why",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What happens to the person who is never quite intentional about anything?\n\nAndrew DiDonato took over a Grove City College football program that had not won a game in three years. The head coach answers that question with one phrase he repeats to his players, and the reason it works has very little to do with football.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "W1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad30-story.mp4"
+      ],
+      "guest_name": "Andrew DiDonato",
+      "guest_title": "Head Football Coach, Grove City College",
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=g68fOcKlLZU"
+    },
+    {
+      "num": 31,
+      "title": "The Joy of Missing Out",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Why would someone give a TED Talk about everything they were getting wrong?\n\nSabrina Saunders Mosby, President and Chief Executive Officer of Vibrant Pittsburgh, was building a business with an infant at home while telling everyone it was possible to have it all. She was breaking down behind it, and she named the talk after what she found on the other side.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "W1",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad31-story.mp4"
+      ],
+      "guest_name": "Sabrina Saunders Mosby",
+      "guest_title": "President and Chief Executive Officer, Vibrant Pittsburgh",
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=wA2wt0sifJA"
+    },
+    {
+      "num": 1,
+      "title": "Every Experience Matters",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Offered one do-over, he chose nothing. Not the failures, not the pain, none of it.\n\nYianni Bourbakis on why the life you would not change is the one that made you.\n\nLiving Your Legacy with Greg Weimer, Chief Executive Officer and Chairman of Confluence Financial Partners. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad3-story.mp4"
+      ],
+      "guest_name": "Yianni Bourbakis",
+      "guest_title": "Restaurateur, Elia",
+      "review_flag": "UNCLEARED",
+      "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
     },
     {
       "num": 3,
@@ -85,7 +235,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -115,7 +265,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -145,7 +295,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -175,7 +325,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -205,7 +355,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -235,7 +385,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -265,7 +415,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -295,7 +445,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -325,7 +475,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -355,7 +505,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -385,7 +535,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -415,7 +565,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Happiness",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -445,7 +595,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -475,7 +625,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -505,7 +655,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -535,7 +685,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -546,36 +696,6 @@
       ],
       "guest_name": "Ryan Malone",
       "guest_title": "Former NHL Player",
-      "review_flag": "UNCLEARED",
-      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
-    },
-    {
-      "num": 19,
-      "title": "Finding Joy In the Journey",
-      "format": "Reel / Story video — 1080x1920 (9:16)",
-      "placements": [
-        "Instagram Reels",
-        "Facebook Reels",
-        "Stories",
-        "Feed"
-      ],
-      "primary_text": "Why would a player call a last-place season the time of his life?\n\nRyan Malone, retired NHL player and founder of the Malone Family Foundation, grew up in St. Clair and became the first Pittsburgh-raised player to reach the league. Twelve years in, he measured a good season by something that never showed up in the standings.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
-      "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New conversations every two weeks.",
-      "cta": "Watch More",
-      "hook": "",
-      "arc": "Collective",
-      "wave": "T1",
-      "stories": {
-        "text_overlay": "",
-        "cta_sticker": "Watch on YouTube"
-      },
-      "image_direction": "",
-      "images": [
-        "ad24-story.mp4"
-      ],
-      "guest_name": "Ryan Malone",
-      "guest_title": "Retired NHL Player, Malone Family Foundation",
       "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
     },
@@ -595,7 +715,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -625,7 +745,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -635,36 +755,6 @@
         "ad26-story.mp4"
       ],
       "review_flag": "GUEST-TBD · UNCLEARED",
-      "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
-      "guest_name": "Bill Sarris",
-      "guest_title": "Sarris Candies"
-    },
-    {
-      "num": 22,
-      "title": "Sarris Candies Story",
-      "format": "Reel / Story video — 1080x1920 (9:16)",
-      "placements": [
-        "Instagram Reels",
-        "Facebook Reels",
-        "Stories",
-        "Feed"
-      ],
-      "primary_text": "How does a disappointing box of chocolates become a Pittsburgh institution?\n\nBill Sarris traces Sarris Candies back to a gift his father brought his mother. His father was embarrassed by it, decided he could do better, and went down to the basement to start making candy himself.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
-      "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New conversations every two weeks.",
-      "cta": "Watch More",
-      "hook": "",
-      "arc": "Collective",
-      "wave": "T1",
-      "stories": {
-        "text_overlay": "",
-        "cta_sticker": "Watch on YouTube"
-      },
-      "image_direction": "",
-      "images": [
-        "ad27-story.mp4"
-      ],
-      "review_flag": "UNCLEARED",
       "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
       "guest_name": "Bill Sarris",
       "guest_title": "Sarris Candies"
@@ -685,7 +775,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -698,36 +788,6 @@
       "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
       "guest_name": "Rachel Petrucelli",
       "guest_title": "UPMC Children's Hospital Foundation"
-    },
-    {
-      "num": 24,
-      "title": "Lessons Learned from Jerome Bettis",
-      "format": "Reel / Story video — 1080x1920 (9:16)",
-      "placements": [
-        "Instagram Reels",
-        "Facebook Reels",
-        "Stories",
-        "Feed"
-      ],
-      "primary_text": "What does character look like on an early morning flight?\n\nBethany Vietmeier, founder of Valiant 3 Communications, has traveled the world alongside Jerome Bettis and has never once seen him turn down a stranger who asked for a photo. His reason is the part she carried into how she leads.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
-      "headline": "Living Your Legacy with Greg Weimer",
-      "description": "New conversations every two weeks.",
-      "cta": "Watch More",
-      "hook": "",
-      "arc": "Collective",
-      "wave": "T1",
-      "stories": {
-        "text_overlay": "",
-        "cta_sticker": "Watch on YouTube"
-      },
-      "image_direction": "",
-      "images": [
-        "ad29-story.mp4"
-      ],
-      "guest_name": "Bethany Vietmeier",
-      "guest_title": "Founder, Valiant 3 Communications",
-      "review_flag": "UNCLEARED · STEELERS-CHECK",
-      "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
     },
     {
       "num": 25,
@@ -745,7 +805,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -775,7 +835,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -805,7 +865,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -834,7 +894,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Identity",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -863,7 +923,7 @@
       "cta": "Watch More",
       "hook": "",
       "arc": "Collective",
-      "wave": "T1",
+      "wave": "BENCH",
       "stories": {
         "text_overlay": "",
         "cta_sticker": "Watch on YouTube"
@@ -875,6 +935,22 @@
       "guest_name": "Bill Bishilany",
       "guest_title": "Founder & CEO, Mileage Design",
       "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
+    }
+  ],
+  "waves": [
+    {
+      "key": "W1",
+      "label": "Go to market · Wave 1",
+      "title": "Six ads, launching first",
+      "subtitle": "Six guests, six episodes, each ad linking to its own conversation. Copy written guest-first: the guest and their organization named in every ad, an opening question, and a reason to watch rather than a summary of the episode.",
+      "gate": "Guest permissions confirmed by Confluence. Ad 24 additionally pending a decision on naming Jerome Bettis."
+    },
+    {
+      "key": "BENCH",
+      "label": "Bench · held, not retired",
+      "title": "25 ads kept in reserve",
+      "subtitle": "Nothing here is deleted. These rotate into the launch set as it produces clear winners and losers. Their captions still carry the earlier treatment and would be rewritten to match Wave 1 before any of them runs.",
+      "gate": "Enters only against a slot freed in Wave 1."
     }
   ]
 }

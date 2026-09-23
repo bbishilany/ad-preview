@@ -1,0 +1,740 @@
+{
+  "_note": "The 25 ads held off the client review deck on 2026-09-23 for review simplicity. Not deleted. Captions, chips and episode links are final and match the Wave 1 standard. To restore: merge these back into data.json's ads array and re-add the BENCH entry to waves.",
+  "parked": "2026-09-23",
+  "campaign": "Living Your Legacy — Meta Podcast Growth (refreshed clip set)",
+  "bench_waves_entry": {
+    "key": "BENCH",
+    "label": "Bench · held, not retired",
+    "title": "25 ads kept in reserve",
+    "subtitle": "Nothing here is deleted. These rotate into the launch set as it produces clear winners and losers. Their captions still carry the earlier treatment and would be rewritten to match Wave 1 before any of them runs.",
+    "gate": "Enters only against a slot freed in Wave 1."
+  },
+  "ads": [
+    {
+      "num": 1,
+      "title": "Every Experience Matters",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "If you were handed one do-over, what would you use it on?\n\nYianni Bourbakis was asked exactly that and answered in one word. Nothing.\n\nHe would not trade any of it. The person he is came out of the things he went through.\n\nCo-Owner, Elia Mediterranean Grille.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad3-story.mp4"
+      ],
+      "guest_name": "Yianni Bourbakis",
+      "guest_title": "Co-Owner, Elia Mediterranean Grille",
+      "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
+    },
+    {
+      "num": 3,
+      "title": "A Home With Soul",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Why do so many beautiful houses feel like nobody lives in them?\n\nBetsy Wentz calls it a soulless home, and she refuses to build one.\n\nShe makes clients sit in her studio and pull fabrics until she can see what makes them tick. The house has to come out of them.\n\nFounder, Betsy Wentz Interior Design.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad5-story.mp4"
+      ],
+      "guest_name": "Betsy Wentz",
+      "guest_title": "Founder, Betsy Wentz Interior Design",
+      "cta_url": "https://www.youtube.com/watch?v=TxHD1pzMJfs"
+    },
+    {
+      "num": 4,
+      "title": "What My Son Taught Me",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What has your child taught you that you could not have learned anywhere else?\n\nJason Esch calls his oldest son a superhuman being and says he learns from him every day.\n\nPatience. Presence. Enjoying the small things. His other children are better people for growing up alongside him.\n\nPresident and Owner, TeamLogic IT Pittsburgh.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad7-story.mp4"
+      ],
+      "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4",
+      "guest_name": "Jason Esch",
+      "guest_title": "President and Owner, TeamLogic IT Pittsburgh"
+    },
+    {
+      "num": 5,
+      "title": "Leadership Gaps in the Next Generation",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What makes someone worth following?\n\nJason Esch believes the next generation will lead through the relationships they choose to invest in.\n\nHe also names the hard part. The inspiring side of leadership does not work unless you are willing to be vulnerable and relatable.\n\nPresident and Owner, TeamLogic IT Pittsburgh.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad8-story.mp4"
+      ],
+      "guest_name": "Jason Esch",
+      "guest_title": "President and Owner, TeamLogic IT Pittsburgh",
+      "cta_url": "https://www.youtube.com/watch?v=l_GutuLOKc4"
+    },
+    {
+      "num": 6,
+      "title": "A Career of Continuous Learning",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "When did you last take a pay cut and feel lucky about it?\n\nEzra Shapiro left an office job for twelve dollars an hour in a kitchen.\n\nHe went home every night thinking about what he had cooked and what he would cook tomorrow. He figured he could spend a lifetime in kitchens and still not be finished learning.\n\nPrivate chef.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad9-story.mp4"
+      ],
+      "guest_name": "Ezra Shapiro",
+      "guest_title": "Private chef",
+      "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY"
+    },
+    {
+      "num": 7,
+      "title": "Creating Meaningful Change",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What part of your work would you keep if you had to give up the rest?\n\nBeth Vietmeier runs the marketing and the events and genuinely loves both.\n\nThe part she would keep is the nonprofit work. Changing one person's life is the thing she believes she is here to do.\n\nFounder, Valiant 3 Communications.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad10-story.mp4"
+      ],
+      "guest_name": "Beth Vietmeier",
+      "guest_title": "Founder, Valiant 3 Communications",
+      "cta_url": "https://www.youtube.com/watch?v=TGEdz2zbF98"
+    },
+    {
+      "num": 8,
+      "title": "What Truly Fills Her Cup",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What does someone who raises money for a children's hospital love most about the job?\n\nRachel Petrucelli said the donors, and it surprised the person asking her.\n\nShe sits with people deciding what their own hard-earned money should do in the world, and helps them find the answer. She calls that a privilege.\n\nPresident, UPMC Children's Hospital Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad11-story.mp4"
+      ],
+      "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
+      "guest_name": "Rachel Petrucelli",
+      "guest_title": "President, UPMC Children's Hospital Foundation"
+    },
+    {
+      "num": 9,
+      "title": "Falling in Love With the Process",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What happens the first time you genuinely put in the work?\n\nChris Lee had never done it before law school. Class every day, studying until nine, every Sunday gone.\n\nHe fell in love with the process itself, the way he had watched great coaches do. The results came after that, and the confidence came with them.\n\nManaging Director and COO, Dickie McCamey.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad12-story.mp4"
+      ],
+      "guest_name": "Chris Lee",
+      "guest_title": "Managing Director and COO, Dickie McCamey",
+      "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
+    },
+    {
+      "num": 10,
+      "title": "Learning Through Reading",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What is the advice for getting good at anything?\n\nEzra Shapiro says it in two words. Just read.\n\nBefore anyone paid him to cook, he worked through chef biographies, cookbooks and books on the business of running a restaurant, and practiced in his spare time.\n\nPrivate chef.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad13-story.mp4"
+      ],
+      "guest_name": "Ezra Shapiro",
+      "guest_title": "Private chef",
+      "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY"
+    },
+    {
+      "num": 11,
+      "title": "Proactive, Not Reactive",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "How much can your doctor learn about you in seven minutes?\n\nThat is the appointment most of us get. Cut the carbs, see you in a year.\n\nDr. Sunjay Mannan sits at his patients' kitchen tables for two hours instead, working out what is actually going on before it becomes an emergency.\n\nFounder, Health Is Wealth Concierge Medicine.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad14-story.mp4"
+      ],
+      "guest_name": "Dr. Sunjay Mannan",
+      "guest_title": "Founder, Health Is Wealth Concierge Medicine",
+      "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
+    },
+    {
+      "num": 12,
+      "title": "How He Handles Stress",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Does your doctor follow his own advice?\n\nDr. Sunjay Mannan handles his stress the way he tells his patients to handle theirs.\n\nSleep protected. Workouts in. Nothing on the plate he knows will affect his head. The stress is coming either way, so he prepares for it.\n\nFounder, Health Is Wealth Concierge Medicine.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad15-story.mp4"
+      ],
+      "guest_name": "Dr. Sunjay Mannan",
+      "guest_title": "Founder, Health Is Wealth Concierge Medicine",
+      "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
+    },
+    {
+      "num": 13,
+      "title": "Modeling Self-Care",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What is your child learning from the way you work?\n\nDr. Sunjay Mannan puts his daughter on the bus in the morning and makes the Boy Scout meeting at night.\n\nHe has brought her along on patient visits so she can watch him spend an hour on a blood pressure check. What he wants her to take from it is that she gets to build her life on her own terms.\n\nFounder, Health Is Wealth Concierge Medicine.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad16-story.mp4"
+      ],
+      "guest_name": "Dr. Sunjay Mannan",
+      "guest_title": "Founder, Health Is Wealth Concierge Medicine",
+      "cta_url": "https://www.youtube.com/watch?v=8IQMIOCsVIQ"
+    },
+    {
+      "num": 14,
+      "title": "Not Just Dinner",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What makes a dinner the one people still talk about a year later?\n\nEzra Shapiro cooks in other people's homes, for four guests or for twenty.\n\nThe menu gets built around one person at the table. If it is your husband's fiftieth, the whole night is designed to land on him.\n\nPrivate chef.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Happiness",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad17-story.mp4"
+      ],
+      "cta_url": "https://www.youtube.com/watch?v=v2BKyY1J4IY",
+      "guest_name": "Ezra Shapiro",
+      "guest_title": "Private chef"
+    },
+    {
+      "num": 15,
+      "title": "The Mindset",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What do you call it when you can see something that is not there yet?\n\nYianni Bourbakis calls it vision.\n\nThe restaurant is named Elia, the Greek word for olive, after the tree his country gathers under. He tells his chefs the main ingredient in any recipe is love.\n\nCo-Owner, Elia Mediterranean Grille.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad19-story.mp4"
+      ],
+      "guest_name": "Yianni Bourbakis",
+      "guest_title": "Co-Owner, Elia Mediterranean Grille",
+      "cta_url": "https://www.youtube.com/watch?v=xjlKSv2q_PY"
+    },
+    {
+      "num": 16,
+      "title": "They Sold a Ring to Start",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What would you sell to bet on yourselves?\n\nLou and Veronica Guarino sold her wedding ring for ten thousand dollars.\n\nA client had been asking to buy that ring for years. They took him up on it, and that money started the store.\n\nCo-Owners, Louis Anthony Jewelers.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad20-story.mp4"
+      ],
+      "guest_name": "Lou & Veronica Guarino",
+      "guest_title": "Co-Owners, Louis Anthony Jewelers",
+      "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
+    },
+    {
+      "num": 17,
+      "title": "Make People Feel at Home",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What can a jeweler learn from watching a hospital president pick up litter?\n\nWalking through Children's Hospital, the Guarinos saw its president reach down for a piece of paper on the floor.\n\nHer rule for her staff was that the hospital is your home, and you would not leave paper on the floor at home. Everything matters, down to who is at the front door.\n\nCo-Owners, Louis Anthony Jewelers.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad21-story.mp4"
+      ],
+      "guest_name": "Lou & Veronica Guarino",
+      "guest_title": "Co-Owners, Louis Anthony Jewelers",
+      "cta_url": "https://www.youtube.com/watch?v=r8jFqU4Qu54"
+    },
+    {
+      "num": 18,
+      "title": "First to the NHL",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Did you ever really believe in the thing you were working toward?\n\nRyan Malone grew up in St. Clair watching his father play for the Penguins, and became the first Pittsburgh-raised player to reach the NHL.\n\nHe is honest that he never thought it was actually attainable. It sat in the back of his mind as motivation through the early mornings.\n\nRetired NHL player, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad23-story.mp4"
+      ],
+      "guest_name": "Ryan Malone",
+      "guest_title": "Retired NHL player, Malone Family Foundation",
+      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
+    },
+    {
+      "num": 20,
+      "title": "A Harder Chapter",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What was the bravest thing Ryan Malone ever did?\n\nIt happened nowhere near a rink. He checked himself into a hospital and asked for help.\n\nGreg calls that hero stuff and says it counts for more than anything he did in the NHL. Plenty of the people who need that help never make the call.\n\nRetired NHL player, Malone Family Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad25-story.mp4"
+      ],
+      "guest_name": "Ryan Malone",
+      "guest_title": "Retired NHL player, Malone Family Foundation",
+      "review_flag": "SENSITIVE-MENTAL-HEALTH",
+      "cta_url": "https://www.youtube.com/watch?v=LU08M8ghw0s"
+    },
+    {
+      "num": 21,
+      "title": "It Takes a Team",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What has to happen before a business can grow past one person?\n\nBill Sarris says you learn to hand the work to other people.\n\nYou cannot do it all yourself. He calls it the hardest question anyone can ask a founder.\n\nOwner, Sarris Candies.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad26-story.mp4"
+      ],
+      "cta_url": "https://www.youtube.com/watch?v=Fl3y05p2LA0",
+      "guest_name": "Bill Sarris",
+      "guest_title": "Owner, Sarris Candies"
+    },
+    {
+      "num": 23,
+      "title": "The Margin of Excellence",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What does a donation to a children's hospital actually pay for?\n\nRachel Petrucelli calls it the margin of excellence.\n\nGiving is what puts a rheumatologist, a heart doctor and a geneticist in the same city as the family who needs them, so a sick child does not have to travel for care.\n\nPresident, UPMC Children's Hospital Foundation.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad28-story.mp4"
+      ],
+      "cta_url": "https://www.youtube.com/watch?v=4KZbc03AwM4",
+      "guest_name": "Rachel Petrucelli",
+      "guest_title": "President, UPMC Children's Hospital Foundation"
+    },
+    {
+      "num": 25,
+      "title": "Treat People the Right Way",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "How does a law firm treat the lawyers on the other side of the case?\n\nAt Chris Lee's firm, the same way it treats its own people.\n\nEmployees, partners, opposing counsel, all of it. They go to court prepared and they protect their clients hard, and they do it professionally.\n\nManaging Director and COO, Dickie McCamey.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad30-story.mp4"
+      ],
+      "guest_name": "Chris Lee",
+      "guest_title": "Managing Director and COO, Dickie McCamey",
+      "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
+    },
+    {
+      "num": 26,
+      "title": "The Case That Defined a Career",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "What does it do to a lawyer to catch a case that size?\n\nIn 2003 a hepatitis A outbreak at a restaurant in the Beaver Valley Mall affected a thousand people, the largest in the country at that point.\n\nChris Lee got the case. The FDA, the CDC and the national news arrived at once, and some of the people involved died. It shaped how he has practiced ever since.\n\nManaging Director and COO, Dickie McCamey.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad31-story.mp4"
+      ],
+      "guest_name": "Chris Lee",
+      "guest_title": "Managing Director and COO, Dickie McCamey",
+      "cta_url": "https://www.youtube.com/watch?v=iLGASL1LhT4"
+    },
+    {
+      "num": 27,
+      "title": "Why I Built Mileage",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Should you master one thing, or try everything first?\n\nBill Bishilany built his company on trying everything.\n\nHuman-centered design taught him that the wider the range of experience on a team, the better equipped it is to solve a hard problem. He thinks the younger generation needs to hear that.\n\nFounder, Mileage Design.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad1-story.mp4"
+      ],
+      "guest_name": "Bill Bishilany",
+      "guest_title": "Founder, Mileage Design",
+      "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
+    },
+    {
+      "num": 28,
+      "title": "The Other Side of Hard",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Is everything you want really on the other side of hard?\n\nBill Bishilany had that line framed in his office, and then he rewrote it.\n\nHis version says everything you have ever wanted is on the other side of happiness. Be happy first, and the rest follows.\n\nFounder, Mileage Design.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Identity",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad2-story.mp4"
+      ],
+      "guest_name": "Bill Bishilany",
+      "guest_title": "Founder, Mileage Design",
+      "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
+    },
+    {
+      "num": 29,
+      "title": "The Mosaic",
+      "format": "Reel / Story video — 1080x1920 (9:16)",
+      "placements": [
+        "Instagram Reels",
+        "Facebook Reels",
+        "Stories",
+        "Feed"
+      ],
+      "primary_text": "Why does good marketing still fail?\n\nBill Bishilany describes the work as a mosaic where every tile has to be there.\n\nDesign and build. Site structure. Targeting the words your future clients actually search. Miss one tile and the picture never quite comes together.\n\nFounder, Mileage Design.\n\nLiving Your Legacy with Greg Weimer. New episodes on YouTube.",
+      "headline": "Living Your Legacy with Greg Weimer",
+      "description": "New conversations every two weeks.",
+      "cta": "Watch More",
+      "hook": "",
+      "arc": "Collective",
+      "wave": "BENCH",
+      "stories": {
+        "text_overlay": "",
+        "cta_sticker": "Watch on YouTube"
+      },
+      "image_direction": "",
+      "images": [
+        "ad18-story.mp4"
+      ],
+      "guest_name": "Bill Bishilany",
+      "guest_title": "Founder, Mileage Design",
+      "cta_url": "https://www.youtube.com/watch?v=rRX7A8AXMJ0"
+    }
+  ]
+}

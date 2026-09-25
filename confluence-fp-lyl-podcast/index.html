@@ -207,6 +207,25 @@
   }
 
   /* ── HERO SECTION ──────────────────────────────────────────────── */
+
+  /* ── SUCCESS / KPI BLOCK ─────────────────────────────────────── */
+  .success-block { max-width: 860px; margin: 26px auto 0; text-align: left; }
+  .success-def { color: var(--text2); font-size: 15px; line-height: 1.6; text-align: center; max-width: 740px; margin: 0 auto 18px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .kpi-cell { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .kpi-label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text2); margin-bottom: 6px; }
+  .kpi-target { font-size: 20px; font-weight: 700; color: #7EFBC8; }
+  .kpi-note { font-size: 12px; color: var(--text2); margin-top: 4px; line-height: 1.4; }
+  .kpi-footnote { font-size: 12.5px; color: var(--text2); margin-top: 14px; text-align: center; line-height: 1.55; }
+
+
+  /* ── CLEAN VIDEO MODE: no overlays over the clips (Bill 2026-09-01) ── */
+  .ig-story-progress, .ig-story-account, .ig-story-text, .ig-story-secondary,
+  .ig-story-eyebrow, .ig-story-swipe-up, .ig-story-cta, .ig-story-message-bar,
+  .img-upload-btn, .img-download-btn { display: none !important; }
+  .ig-story-bg { opacity: 1 !important; }
+  .ig-story { background: #000; box-shadow: none; }
+
   .hero {
     max-width: 1060px;
     margin: 0 auto;
@@ -258,6 +277,28 @@
   .wave-header-subtitle {
     font-size: 13px;
     color: var(--text2);
+  }
+
+  .wave-header-gate {
+    max-width: 720px;
+    margin: 12px auto 0;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text2);
+    text-align: left;
+  }
+  .wave-gate-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 3px;
   }
 
   /* ── AD CARD ───────────────────────────────────────────────────── */
@@ -1100,6 +1141,7 @@
 </head>
 <body>
 
+
 <!-- STICKY HEADER -->
 <div class="sticky-header">
   <div class="sticky-header-left">
@@ -1172,7 +1214,7 @@ let _imageVersions = {};
 let _activeImageVersion = {};
 let _placementIdx = {};
 let _feedbackCache = {};
-const CAMPAIGN_ID = '__CAMPAIGN_ID__';
+const CAMPAIGN_ID = 'confluence-fp-lyl-podcast';
 
 // ── Utility ────────────────────────────────────────────────────────────────
 function esc(s) {
@@ -1620,15 +1662,27 @@ function renderDeck() {
   });
 
   let html = '';
-  Object.keys(groups).sort((a,b) => a - b).forEach(wave => {
-    const theme = waveThemes[wave] || '';
-    const subtitle = waveSubtitles[wave] || '';
+  // A campaign may declare its own wave order, labels and entry gates in data.json.
+  // Without it, waves stay numeric and take the default themes above.
+  const declared = Array.isArray(_data.waves) ? _data.waves : null;
+  const order = declared
+    ? declared.map(w => String(w.key))
+    : Object.keys(groups).sort((a,b) => a - b);
+
+  order.forEach(wave => {
+    if (!groups[wave] || !groups[wave].length) return;
+    const meta = declared ? (declared.find(w => String(w.key) === String(wave)) || {}) : {};
+    const label = meta.label || ('Wave ' + wave);
+    const theme = meta.title || waveThemes[wave] || '';
+    const subtitle = meta.subtitle || waveSubtitles[wave] || '';
+    const gate = meta.gate || '';
 
     html += `<div class="wave-header">
       <div class="wave-header-inner">
-        <div class="wave-header-label">Wave ${wave}</div>
+        <div class="wave-header-label">${esc(label)}</div>
         <div class="wave-header-title">${esc(theme)}</div>
         ${subtitle ? `<div class="wave-header-subtitle">${esc(subtitle)}</div>` : ''}
+        ${gate ? `<div class="wave-header-gate"><span class="wave-gate-label">Entry gate</span>${esc(gate)}</div>` : ''}
       </div>
     </div>`;
 
@@ -1863,7 +1917,7 @@ function renderFeedMockup(ad) {
         <div class="fb-feed-cta-headline">${esc(_getField(ad, 'headline', _oi))}</div>
         <div class="fb-feed-cta-desc">${esc(_getField(ad, 'description', _oi))}</div>
       </div>
-      ${_data.cta_url ? `<a class="fb-cta-btn" href="${esc(_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
+      ${(ad.cta_url||_data.cta_url) ? `<a class="fb-cta-btn" href="${esc(ad.cta_url||_data.cta_url)}" target="_blank" rel="noopener">${esc(ad.cta)}</a>` : `<div class="fb-cta-btn">${esc(ad.cta)}</div>`}
     </div>
   </div>`;
 }
@@ -1890,12 +1944,8 @@ function renderStoryMockup(ad) {
     </div>
     <div class="ig-story-text">${esc(overlay)}</div>
     ${secondary ? `<div class="ig-story-secondary">${esc(secondary)}</div>` : ''}
-    ${ad.guest_name ? `<div class="ig-guest-chip" style="position:absolute;left:14px;top:92px;max-width:80%;z-index:3;padding:9px 13px;border-radius:11px;background:linear-gradient(90deg,rgba(18,73,60,.94),rgba(18,73,60,.55))">
-      <div style="color:#fff;font-weight:600;font-size:15px;line-height:1.15">${esc(ad.guest_name)}</div>
-      ${ad.guest_title ? `<div style="color:#7EFBC8;font-size:12px;margin-top:2px;line-height:1.2">${esc(ad.guest_title)}</div>` : ''}
-    </div>` : ''}
     <div class="ig-story-swipe-up">${SVG_ICONS.chevronUp}</div>
-    ${_data.cta_url ? `<a class="ig-story-cta" href="${esc(_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
+    ${(ad.cta_url||_data.cta_url) ? `<a class="ig-story-cta" href="${esc(ad.cta_url||_data.cta_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(cta)}</a>` : `<div class="ig-story-cta">${esc(cta)}</div>`}
     <div class="ig-story-message-bar">
       <div class="ig-story-message-input">Send message</div>
       <div class="ig-story-message-send">${SVG_ICONS.share}</div>
@@ -2373,7 +2423,7 @@ document.addEventListener('keydown', function(e) {
 // ── Init ──────────────────────────────────────────────────────────────────
 async function init() {
   try {
-    const res = await fetch('data.json');
+    const res = await fetch('data.json?v='+Date.now());
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     _data = await res.json();
     await loadImageVersions();
@@ -2393,6 +2443,11 @@ async function init() {
         ${_data.venue ? ' &middot; ' + esc(_data.venue) : ''}
         ${_data.co_presenters ? '<br><strong>' + esc(_data.co_presenters) + '</strong>' : ''}
       </div>
+      ${_data.success ? `<div class="success-block">
+        <div class="success-def">${esc(_data.success.definition)}</div>
+        <div class="kpi-grid">${(_data.success.kpis||[]).map(k=>`<div class="kpi-cell"><div class="kpi-label">${esc(k.label)}</div>${k.target ? `<div class="kpi-target">${esc(k.target)}</div>` : ``}<div class="kpi-note">${esc(k.note||'')}</div></div>`).join('')}</div>
+        ${_data.success.footnote ? `<div class="kpi-footnote">${esc(_data.success.footnote)}</div>` : ''}
+      </div>` : ''}
     `;
 
     // Header label
